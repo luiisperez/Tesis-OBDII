@@ -54,6 +54,7 @@ freeline.py
 freeline/
 freeline_project_description.json
 
+icons/Thumbs.db
 /heyDriver/.gradle
 /heyDriver/*.iml
 /heyDriver/local.properties
