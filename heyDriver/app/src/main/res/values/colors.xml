@@ -3,4 +3,7 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="black">#000000</color>
+    <color name="heyDriverLightGreen">#2ECC71</color>
+    <color name="heyDriverDarkGreen">#27AE60</color>
 </resources>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">HeyDriver</string>
+    <string name="app_name">Hey Driver</string>
 
     <!-- Strings related to login -->
     <string name="string_email">Email</string>
