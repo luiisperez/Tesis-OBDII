@@ -6,4 +6,5 @@
     <color name="black">#000000</color>
     <color name="heyDriverLightGreen">#2ECC71</color>
     <color name="heyDriverDarkGreen">#27AE60</color>
+    <color name="heyDriverDarkSlateGray">#2F4F4F</color>
 </resources>

@@ -17,4 +17,18 @@
         <item name="android:typeface">serif</item>
     </style>
 
+    <style name="HeyDriverTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="HeyDriverTheme.NoActionBarLogin">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="HeyDriverTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="HeyDriverTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
 </resources>

@@ -1,4 +1,5 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,6 +12,18 @@
     tools:context="com.app.heydriver.heydriver.controller.LoginActivity">
 
     <!-- Login progress -->
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="27dp" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="101dp"
+        android:layout_marginBottom="60dp"
+        android:layout_marginTop="45dp"
+        app:srcCompat="@drawable/heydriver_black_logo" />
+
     <ProgressBar
         android:id="@+id/login_progress"
         style="?android:attr/progressBarStyleLarge"
@@ -38,6 +51,7 @@
                     android:id="@+id/et_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
                     android:hint="@string/string_email"
                     android:inputType="textEmailAddress"
                     android:maxLines="1"
@@ -53,9 +67,10 @@
                     android:id="@+id/et_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="sans-serif"
                     android:hint="@string/string_password"
                     android:imeOptions="actionUnspecified"
-                    android:fontFamily="sans-serif"
                     android:maxLines="1"
                     android:singleLine="true" />
 
@@ -66,8 +81,10 @@
                 style="?android:textAppearanceSmall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/heyDriverLightGreen"
                 android:text="@string/button_sign_in"
+                android:textColor="@android:color/white"
                 android:textStyle="bold" />
 
         </LinearLayout>

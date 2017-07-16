@@ -10,13 +10,20 @@
         android:roundIcon="@mipmap/icon_driver"
         android:supportsRtl="true"
         android:theme="@style/HeyDriverTheme">
-        <activity android:name=".controller.LoginActivity">
+        <activity
+            android:name=".controller.LoginActivity"
+            android:theme="@style/HeyDriverTheme.NoActionBarLogin">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".controller.HomeActivity"
+            android:label="@string/title_activity_home"
+            android:theme="@style/HeyDriverTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
