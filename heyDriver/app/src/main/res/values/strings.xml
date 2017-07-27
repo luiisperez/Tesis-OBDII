@@ -6,9 +6,11 @@
     <string name="string_password">Password</string>
     <string name="button_sign_in">Sign in</string>
     <string name="button_register">Sign up</string>
+    <string name="welcome_message">Welcome to Hey Driver</string>
     <string name="error_invalid_email">This email address is invalid</string>
     <string name="error_invalid_password">This password is too short</string>
-    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_incorrect_login">The email or password you entered is not valid</string>
+    <string name="error_bad_communication">There was a trouble with the communication. Please try again</string>
     <string name="error_field_required">This field is required</string>
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."

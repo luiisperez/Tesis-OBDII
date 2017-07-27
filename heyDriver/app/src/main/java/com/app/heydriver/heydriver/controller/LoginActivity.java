@@ -19,6 +19,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.app.heydriver.heydriver.R;
 import com.app.heydriver.heydriver.common.Entities.User;
@@ -220,8 +221,6 @@ public class LoginActivity extends AppCompatActivity  {
             // TODO: attempt authentication against a network service.
 
             try {
-                // Simulate network access.
-                Thread.sleep(2000);
                 RestCommunication con = new RestCommunication();
                 response = con.callMethodPrueba();
                 return true;
@@ -241,10 +240,24 @@ public class LoginActivity extends AppCompatActivity  {
                 if (response.get_email().equals("Prueba exitosa")){
                     Intent myintent = new Intent(LoginActivity.this, HomeActivity.class);
                     startActivity(myintent);
+                    Context context = getApplicationContext();
+                    CharSequence text = getString(R.string.welcome_message);
+                    int duration = Toast.LENGTH_SHORT;
+                    Toast toast = Toast.makeText(context, text, duration);
+                    toast.show();
+                }else{
+                    Context context = getApplicationContext();
+                    CharSequence text = getString(R.string.error_incorrect_login);
+                    int duration = Toast.LENGTH_SHORT;
+                    Toast toast = Toast.makeText(context, text, duration);
+                    toast.show();
                 }
             } else {
-                mPasswordView.setError(getString(R.string.error_incorrect_password));
-                mPasswordView.requestFocus();
+                Context context = getApplicationContext();
+                CharSequence text = getString(R.string.error_bad_communication);
+                int duration = Toast.LENGTH_SHORT;
+                Toast toast = Toast.makeText(context, text, duration);
+                toast.show();
             }
         }
 
