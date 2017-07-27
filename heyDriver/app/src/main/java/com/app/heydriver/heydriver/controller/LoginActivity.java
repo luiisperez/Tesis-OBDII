@@ -21,6 +21,8 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.app.heydriver.heydriver.R;
+import com.app.heydriver.heydriver.common.Entities.User;
+import com.app.heydriver.heydriver.model.Rest.RestCommunication;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -204,7 +206,7 @@ public class LoginActivity extends AppCompatActivity  {
      * the user.
      */
     public class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
-
+        private User response;
         private final String mEmail;
         private final String mPassword;
 
@@ -220,8 +222,10 @@ public class LoginActivity extends AppCompatActivity  {
             try {
                 // Simulate network access.
                 Thread.sleep(2000);
+                RestCommunication con = new RestCommunication();
+                response = con.callMethodPrueba();
                 return true;
-            } catch (InterruptedException e) {
+            } catch (Exception e) {
                 return false;
             }
 
@@ -234,8 +238,10 @@ public class LoginActivity extends AppCompatActivity  {
 
             if (success) {
                 //finish();
-                Intent myintent = new Intent(LoginActivity.this, HomeActivity.class);
-                startActivity(myintent);
+                if (response.get_email().equals("Prueba exitosa")){
+                    Intent myintent = new Intent(LoginActivity.this, HomeActivity.class);
+                    startActivity(myintent);
+                }
             } else {
                 mPasswordView.setError(getString(R.string.error_incorrect_password));
                 mPasswordView.requestFocus();
