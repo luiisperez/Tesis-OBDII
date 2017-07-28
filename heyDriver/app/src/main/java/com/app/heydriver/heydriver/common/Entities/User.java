@@ -2,13 +2,13 @@ package com.app.heydriver.heydriver.common.Entities;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
+
 /**
  * Created by LuisAlejandro on 18-07-2017.
  */
 
 public class User {
-    @SerializedName("_id")
-    private int _idUser;
     @SerializedName("_username")
     private String _username;
     @SerializedName("_password")
@@ -21,7 +21,8 @@ public class User {
     private char _sex;
     @SerializedName("_birthdate")
     private String _birthdate;
-
+    @SerializedName("_carsList")
+    private ArrayList<Car> _carsList;
 
 
     /**
@@ -29,63 +30,36 @@ public class User {
      */
     public User(){ }
 
-    public User(int idUser){ }
-
-    public User(int idUser, String username, String password){
-        _idUser=idUser;
-        _username=username;
-        _password=password;
+    public User(String email, String password){
+        _email = email;
+        _password = password;
     }
 
-    public User(String username, String password){
-        _username=username;
-        _password=password;
+    public User(String username, String password, String email){
+        _username = username;
+        _password = password;
+        _email = email;
     }
 
-    public User(int idUser, String username, String password,String email){
-        _idUser=idUser;
-        _username=username;
-        _password=password;
-        _email=email;
-    }
-
-    public User(int idUser, String email){
-        _idUser=idUser;
-        _email=email;
-    }
-
-    public User(String email){
-        _email=email;
-    }
-
-    public User(int idUser, String username, String password,String email, String phone,
+    public User(String username, String password,String email, String phone,
                 char sex, String birthdate){
-        _idUser=idUser;
-        _username=username;
-        _password=password;
-        _email=email;
-        _phone=phone;
-        _sex=sex;
-        _birthdate=birthdate;
+        _username = username;
+        _password = password;
+        _email = email;
+        _phone = phone;
+        _sex = sex;
+        _birthdate = birthdate;
     }
 
 
 
-    public User(int _idUser, String _username, String _email, String _phone, char _sex, String _birthdate) {
-        this._idUser = _idUser;
+    public User(String _username, String _email, String _phone, char _sex, String _birthdate, ArrayList<Car> _carsList) {
         this._username = _username;
         this._email = _email;
         this._phone = _phone;
         this._sex = _sex;
         this._birthdate = _birthdate;
-    }
-
-    public int get_idUser() {
-        return _idUser;
-    }
-
-    public void set_idUser(int _idUser) {
-        this._idUser = _idUser;
+        this._carsList = _carsList;
     }
 
     public String get_username() {
@@ -135,5 +109,15 @@ public class User {
     public void set_birthdate(String _birthdate) {
         this._birthdate = _birthdate;
     }
+
+    public ArrayList<Car> get_carsList() {
+        return _carsList;
+    }
+
+    public void set_carsList(ArrayList<Car> _carsList) {
+        this._carsList = _carsList;
+    }
+
+
 
 }

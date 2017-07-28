@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLEncoder;
 
 public class RestCommunication {
     private String ip = "192.168.1.104";
@@ -47,6 +48,24 @@ public class RestCommunication {
             User _user = new User();
             while ((output = br.readLine()) != null) {
                 Gson gson = new GsonBuilder().create();
+                _user = gson.fromJson(output, User.class);
+            }
+            conn.disconnect();
+            return _user;
+        }
+        catch (Exception ex){
+            throw ex;
+        }
+    }
+
+    public User callMethodSignUpUser(User u) throws Exception {
+        try {
+            conn = null;
+            Gson gson = new GsonBuilder().create();
+            BufferedReader br = communicate("GET", "signUpUser?user=" + URLEncoder.encode(gson.toJson( u ).toString(), "UTF-8"));
+            String output;
+            User _user = new User();
+            while ((output = br.readLine()) != null) {
                 _user = gson.fromJson(output, User.class);
             }
             conn.disconnect();

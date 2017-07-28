@@ -7,4 +7,5 @@
     <color name="heyDriverLightGreen">#2ECC71</color>
     <color name="heyDriverDarkGreen">#27AE60</color>
     <color name="heyDriverDarkSlateGray">#2F4F4F</color>
+    <color name="white">#FFFFFF</color>
 </resources>

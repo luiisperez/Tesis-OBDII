@@ -1,10 +1,16 @@
 <resources>
     <string name="app_name">Hey Driver</string>
 
+    <!-- Strings related to StartUp -->
+    <string name="tv_startup_welcome">Bienvenido a Hey Driver</string>
+    <string name="tv_startup_message">Entérate de lo que sucede en tu automóvil</string>
+
     <!-- Strings related to login -->
     <string name="string_email">Email</string>
     <string name="string_password">Contraseña</string>
     <string name="button_sign_in">Iniciar sesión</string>
+    <string name="button_log_in">Iniciar sesión</string>
+    <string name="button_sign_up">Regístrate</string>
     <string name="button_register">Registrarse</string>
     <string name="welcome_message">Bienvenido a Hey Driver</string>
     <string name="error_invalid_email">El correo ingresado no es válido</string>

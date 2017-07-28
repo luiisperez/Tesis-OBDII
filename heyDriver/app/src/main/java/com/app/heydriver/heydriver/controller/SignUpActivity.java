@@ -6,40 +6,56 @@ import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
 import android.graphics.Typeface;
+import android.support.annotation.NonNull;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.app.LoaderManager.LoaderCallbacks;
 
+import android.content.CursorLoader;
+import android.content.Loader;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.AsyncTask;
 
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.text.TextUtils;
 import android.text.method.PasswordTransformationMethod;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.inputmethod.EditorInfo;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.app.heydriver.heydriver.R;
-import com.app.heydriver.heydriver.common.Entities.Car;
-import com.app.heydriver.heydriver.common.Entities.User;
-import com.app.heydriver.heydriver.model.Rest.RestCommunication;
-
 import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import com.app.heydriver.heydriver.R;
+import com.app.heydriver.heydriver.common.Entities.User;
+import com.app.heydriver.heydriver.model.Rest.RestCommunication;
+
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
+
+import static android.Manifest.permission.READ_CONTACTS;
 
 /**
  * A login screen that offers login via email/password.
  */
-public class LoginActivity extends AppCompatActivity  {
+public class SignUpActivity extends AppCompatActivity {
     /**
      * Keep track of the login task to ensure we can cancel it if requested.
      */
-    private UserLoginTask mAuthTask = null;
+    private SignUpActivity.UserSignUpTask mAuthTask = null;
 
     // UI references.
     private EditText mEmailView;
@@ -64,7 +80,7 @@ public class LoginActivity extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_sign_up);
         // Set up the login form.
         mEmailView = (EditText) findViewById(R.id.et_email);
 
@@ -142,7 +158,7 @@ public class LoginActivity extends AppCompatActivity  {
             // Show a progress spinner, and kick off a background task to
             // perform the user login attempt.
             showProgress(true);
-            mAuthTask = new UserLoginTask(email, password);
+            mAuthTask = new SignUpActivity.UserSignUpTask(email, password);
             mAuthTask.execute((Void) null);
         }
     }
@@ -195,12 +211,12 @@ public class LoginActivity extends AppCompatActivity  {
      * Represents an asynchronous login/registration task used to authenticate
      * the user.
      */
-    public class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
+    public class UserSignUpTask extends AsyncTask<Void, Void, Boolean> {
         private User response;
         private final String mEmail;
         private final String mPassword;
 
-        UserLoginTask(String email, String password) {
+        UserSignUpTask(String email, String password) {
             mEmail = email;
             mPassword = password;
         }
@@ -231,7 +247,7 @@ public class LoginActivity extends AppCompatActivity  {
             if (success) {
                 //finish();
                 if (response.get_email().equals("Prueba exitosa")){
-                    Intent myintent = new Intent(LoginActivity.this, HomeActivity.class);
+                    Intent myintent = new Intent(SignUpActivity.this, HomeActivity.class);
                     startActivity(myintent);
                     Context context = getApplicationContext();
                     CharSequence text = getString(R.string.welcome_message);

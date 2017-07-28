@@ -27,6 +27,11 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="HeyDriverTheme.NoActionBarStartUp">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
     <style name="HeyDriverTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="HeyDriverTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
