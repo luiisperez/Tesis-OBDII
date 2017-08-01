@@ -8,6 +8,10 @@
     <!-- Strings related to login -->
     <string name="string_email">Email</string>
     <string name="string_password">Contraseña</string>
+    <string name="string_confirmpwd">Confirmación de contraseña</string>
+    <string name="string_username">Nombre de usuario</string>
+    <string name="string_firstname">Primer nombre</string>
+    <string name="string_lastname">Primer apellido</string>
     <string name="button_sign_in">Iniciar sesión</string>
     <string name="button_log_in">Iniciar sesión</string>
     <string name="button_sign_up">Regístrate</string>
@@ -15,8 +19,13 @@
     <string name="welcome_message">Bienvenido a Hey Driver</string>
     <string name="error_invalid_email">El correo ingresado no es válido</string>
     <string name="error_invalid_password">La contraseña es muy corta</string>
+    <string name="error_characters_password">La contraseña no puede contener espacios ni tros caracteres especiales diferentes a @._-</string>
+    <string name="error_invalid_name">Este campo no puede contener caracteres especiales</string>
+    <string name="error_starts_with_space">Este campo no puede empezar con un espacio</string>
+    <string name="error_invalid_username">Este campo no puede tener espacios u otros caracteres especiales diferentes a @._-</string>
+    <string name="error_matching_passwords">Las contraseñas no coinciden</string>
     <string name="error_incorrect_login">El correo electrónico o la contraseña que has ingresado no son válidos</string>
-    <string name="error_bad_communication">Se produjo un problema con la comunicación. Inténtelo de nuevo</string>
+    <string name="error_bad_communication">Se produjo un problema con la comunicación con nuestros servidores. Inténtelo de nuevo</string>
     <string name="error_field_required">Este campo es requerido</string>
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
@@ -27,4 +36,5 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Ajustes</string>
+    <string name="title_activity_sign_up">Registro de usuario</string>
 </resources>

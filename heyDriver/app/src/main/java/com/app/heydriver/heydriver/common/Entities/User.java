@@ -15,12 +15,10 @@ public class User {
     private String _password;
     @SerializedName("_email")
     private String _email;
-    @SerializedName("_phone")
-    private String _phone;
-    @SerializedName("_sex")
-    private char _sex;
-    @SerializedName("_birthdate")
-    private String _birthdate;
+    @SerializedName("_firstname")
+    private String _firstname;
+    @SerializedName("_lastname")
+    private String _lastname;
     @SerializedName("_carsList")
     private ArrayList<Car> _carsList;
 
@@ -41,24 +39,21 @@ public class User {
         _email = email;
     }
 
-    public User(String username, String password,String email, String phone,
-                char sex, String birthdate){
+    public User(String username, String password,String email, String firstname, String lastname){
         _username = username;
         _password = password;
         _email = email;
-        _phone = phone;
-        _sex = sex;
-        _birthdate = birthdate;
+        _firstname = firstname;
+        _lastname = lastname;
     }
 
 
 
-    public User(String _username, String _email, String _phone, char _sex, String _birthdate, ArrayList<Car> _carsList) {
+    public User(String _username, String _email, String _firstname, String _lastname, ArrayList<Car> _carsList) {
         this._username = _username;
         this._email = _email;
-        this._phone = _phone;
-        this._sex = _sex;
-        this._birthdate = _birthdate;
+        this._firstname = _firstname;
+        this._lastname = _lastname;
         this._carsList = _carsList;
     }
 
@@ -86,28 +81,20 @@ public class User {
         this._email = _email;
     }
 
-    public String get_phone() {
-        return _phone;
+    public String get_firstname() {
+        return _firstname;
     }
 
-    public void set_phone(String _phone) {
-        this._phone = _phone;
+    public void set_firstname(String _firstname) {
+        this._firstname = _firstname;
     }
 
-    public char get_sex() {
-        return _sex;
+    public String get_lastname() {
+        return _lastname;
     }
 
-    public void set_sex(char _sex) {
-        this._sex = _sex;
-    }
-
-    public String get_birthdate() {
-        return _birthdate;
-    }
-
-    public void set_birthdate(String _birthdate) {
-        this._birthdate = _birthdate;
+    public void set_lastname(String _lastname) {
+        this._lastname = _lastname;
     }
 
     public ArrayList<Car> get_carsList() {
@@ -117,7 +104,5 @@ public class User {
     public void set_carsList(ArrayList<Car> _carsList) {
         this._carsList = _carsList;
     }
-
-
 
 }

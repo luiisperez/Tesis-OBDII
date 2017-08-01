@@ -5,9 +5,13 @@
     <string name="tv_startup_welcome">Welcome to Hey Driver</string>
     <string name="tv_startup_message">Find out what\'s happening in your car</string>
 
-    <!-- Strings related to login -->
+    <!-- Strings related to login and sign up -->
     <string name="string_email">Email</string>
     <string name="string_password">Password</string>
+    <string name="string_confirmpwd">Confirm password</string>
+    <string name="string_username">Username</string>
+    <string name="string_firstname">First name</string>
+    <string name="string_lastname">Last name</string>
     <string name="button_sign_in">Sign in</string>
     <string name="button_log_in">Log in</string>
     <string name="button_sign_up">Sign up</string>
@@ -15,8 +19,13 @@
     <string name="welcome_message">Welcome to Hey Driver</string>
     <string name="error_invalid_email">This email address is invalid</string>
     <string name="error_invalid_password">This password is too short</string>
+    <string name="error_characters_password">The password cannot contain spaces or any other special characters differents than @._-</string>
+    <string name="error_invalid_name">This field cannot contain special characters</string>
+    <string name="error_starts_with_space">This field cannot start with a space</string>
+    <string name="error_invalid_username">This field cannot have spaces or other special characters differents than @._-</string>
+    <string name="error_matching_passwords">The passwords does not match</string>
     <string name="error_incorrect_login">The email or password you entered is not valid</string>
-    <string name="error_bad_communication">There was a trouble with the communication. Please try again</string>
+    <string name="error_bad_communication">There was a trouble with the communication with our servers. Please try again</string>
     <string name="error_field_required">This field is required</string>
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
@@ -27,5 +36,5 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
-    <string name="title_activity_sign_up">Sign Up</string>
+    <string name="title_activity_sign_up">User registration</string>
 </resources>
