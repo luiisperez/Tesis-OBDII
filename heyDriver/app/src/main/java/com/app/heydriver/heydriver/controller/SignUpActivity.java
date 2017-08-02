@@ -9,6 +9,8 @@ import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.graphics.Typeface;
 import android.preference.PreferenceManager;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 
 import android.os.AsyncTask;
@@ -76,6 +78,13 @@ public class SignUpActivity extends AppCompatActivity {
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent myintent = new Intent(SignUpActivity.this, StartUpActivity.class);
+        finish();
+        startActivity(myintent);
     }
 
     @Override
@@ -321,6 +330,7 @@ public class SignUpActivity extends AppCompatActivity {
                     storeinfo.writeUserInformation(response, getApplicationContext());
                     User u = storeinfo.getUserInformation(getApplicationContext());
                     Intent myintent = new Intent(SignUpActivity.this, HomeActivity.class);
+                    finish();
                     startActivity(myintent);
                     Context context = getApplicationContext();
                     CharSequence text = getString(R.string.welcome_message);

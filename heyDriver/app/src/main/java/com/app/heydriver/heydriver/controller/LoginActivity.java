@@ -60,6 +60,13 @@ public class LoginActivity extends AppCompatActivity  {
     }
 
     @Override
+    public void onBackPressed() {
+        Intent myintent = new Intent(LoginActivity.this, StartUpActivity.class);
+        finish();
+        startActivity(myintent);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
@@ -231,6 +238,7 @@ public class LoginActivity extends AppCompatActivity  {
                 //finish();
                 if (response.get_email().equals("Prueba exitosa")){
                     Intent myintent = new Intent(LoginActivity.this, HomeActivity.class);
+                    finish();
                     startActivity(myintent);
                     Context context = getApplicationContext();
                     CharSequence text = getString(R.string.welcome_message);

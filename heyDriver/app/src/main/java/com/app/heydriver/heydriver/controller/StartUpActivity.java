@@ -2,6 +2,7 @@ package com.app.heydriver.heydriver.controller;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -25,6 +26,8 @@ public class StartUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_up);
 
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
         Button mLogInButton = (Button) findViewById(R.id.btn_su_sign_in);
         Button mSignUpButton = (Button) findViewById(R.id.btn_su_sign_up);
         mLogInButton.setOnClickListener(new View.OnClickListener() {
@@ -44,12 +47,14 @@ public class StartUpActivity extends AppCompatActivity {
 
     private void moveToLogIn() {
         Intent myintent = new Intent(StartUpActivity.this, LoginActivity.class);
+        finish();
         startActivity(myintent);
     }
 
 
     private void moveToSignUp() {
         Intent myintent = new Intent(StartUpActivity.this, SignUpActivity.class);
+        finish();
         startActivity(myintent);
     }
 }

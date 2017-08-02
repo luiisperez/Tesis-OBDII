@@ -1,10 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:theme="@android:style/Theme.NoDisplay"
-    tools:context="com.app.heydriver.heydriver.controller.LauncherActivity">
+    android:background="@color/heyDriverDarkSlateGray"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.app.heydriver.heydriver.controller.LauncherActivity"
+    android:weightSum="1">
 
-</android.support.constraint.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="match_parent"
+        android:layout_height="104dp"
+        android:layout_marginTop="175dp"
+        android:adjustViewBounds="false"
+        app:srcCompat="@drawable/heydriver_white_logo" />
+
+
+</LinearLayout>
+

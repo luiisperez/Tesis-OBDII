@@ -31,7 +31,9 @@
             android:name=".controller.StartUpActivity"
             android:theme="@style/HeyDriverTheme.NoActionBarLogin">
         </activity>
-        <activity android:name=".controller.LauncherActivity">
+        <activity
+            android:name=".controller.LauncherActivity"
+            android:theme="@style/HeyDriverTheme.NoActionBarLogin">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
