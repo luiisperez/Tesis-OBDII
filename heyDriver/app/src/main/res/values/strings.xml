@@ -24,8 +24,9 @@
     <string name="error_starts_with_space">This field cannot start with a space</string>
     <string name="error_invalid_username">This field cannot have spaces or other special characters differents than @._-</string>
     <string name="error_matching_passwords">The passwords does not match</string>
-    <string name="error_incorrect_login">The email or password you entered is not valid</string>
+    <string name="error_cant_signup">There was a trouble with your registration, please try again</string>
     <string name="error_bad_communication">There was a trouble with the communication with our servers. Please try again</string>
+    <string name="operation_cancelled">The operation has been cancelled</string>
     <string name="error_field_required">This field is required</string>
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."

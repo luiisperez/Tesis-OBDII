@@ -1,4 +1,4 @@
-package com.app.heydriver.heydriver.model.Rest;
+package com.app.heydriver.heydriver.model;
 
 
 import com.app.heydriver.heydriver.common.Entities.User;

@@ -22,11 +22,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.app.heydriver.heydriver.R;
-import com.app.heydriver.heydriver.common.Entities.Car;
 import com.app.heydriver.heydriver.common.Entities.User;
-import com.app.heydriver.heydriver.model.Rest.RestCommunication;
+import com.app.heydriver.heydriver.model.ManageInformation;
+import com.app.heydriver.heydriver.model.RestCommunication;
 
-import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -258,6 +257,11 @@ public class LoginActivity extends AppCompatActivity  {
         protected void onCancelled() {
             mAuthTask = null;
             showProgress(false);
+            Context context = getApplicationContext();
+            CharSequence text = getString(R.string.operation_cancelled);
+            int duration = Toast.LENGTH_SHORT;
+            Toast toast = Toast.makeText(context, text, duration);
+            toast.show();
         }
     }
 }

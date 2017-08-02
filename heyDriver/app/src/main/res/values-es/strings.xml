@@ -26,6 +26,8 @@
     <string name="error_matching_passwords">Las contraseñas no coinciden</string>
     <string name="error_incorrect_login">El correo electrónico o la contraseña que has ingresado no son válidos</string>
     <string name="error_bad_communication">Se produjo un problema con la comunicación con nuestros servidores. Inténtelo de nuevo</string>
+    <string name="error_cant_signup">Hubo un problema y no se ha podido registrar, por favor inténtelo nuevamente</string>
+    <string name="operation_cancelled">La operación ha sido cancelada</string>
     <string name="error_field_required">Este campo es requerido</string>
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."

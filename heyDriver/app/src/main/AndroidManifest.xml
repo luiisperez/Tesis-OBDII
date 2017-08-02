@@ -19,8 +19,7 @@
         android:theme="@style/HeyDriverTheme">
         <activity
             android:name=".controller.LoginActivity"
-            android:theme="@style/HeyDriverTheme.NoActionBarLogin">
-        </activity>
+            android:theme="@style/HeyDriverTheme.NoActionBarLogin"></activity>
         <activity
             android:name=".controller.HomeActivity"
             android:label="@string/title_activity_home"
@@ -31,6 +30,8 @@
         <activity
             android:name=".controller.StartUpActivity"
             android:theme="@style/HeyDriverTheme.NoActionBarLogin">
+        </activity>
+        <activity android:name=".controller.LauncherActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

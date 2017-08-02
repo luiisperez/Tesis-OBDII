@@ -5,8 +5,10 @@ import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.graphics.Typeface;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 
 import android.os.AsyncTask;
@@ -26,7 +28,8 @@ import java.util.regex.Pattern;
 
 import com.app.heydriver.heydriver.R;
 import com.app.heydriver.heydriver.common.Entities.User;
-import com.app.heydriver.heydriver.model.Rest.RestCommunication;
+import com.app.heydriver.heydriver.model.ManageInformation;
+import com.app.heydriver.heydriver.model.RestCommunication;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
@@ -313,7 +316,10 @@ public class SignUpActivity extends AppCompatActivity {
 
             if (success) {
                 //finish();
-                if (response.get_email().equals("Prueba exitosa")){
+                if (response != null){
+                    ManageInformation storeinfo = new ManageInformation();
+                    storeinfo.writeUserInformation(response, getApplicationContext());
+                    User u = storeinfo.getUserInformation(getApplicationContext());
                     Intent myintent = new Intent(SignUpActivity.this, HomeActivity.class);
                     startActivity(myintent);
                     Context context = getApplicationContext();
@@ -323,7 +329,7 @@ public class SignUpActivity extends AppCompatActivity {
                     toast.show();
                 }else{
                     Context context = getApplicationContext();
-                    CharSequence text = getString(R.string.error_incorrect_login);
+                    CharSequence text = getString(R.string.error_cant_signup);
                     int duration = Toast.LENGTH_SHORT;
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
@@ -341,6 +347,11 @@ public class SignUpActivity extends AppCompatActivity {
         protected void onCancelled() {
             mAuthTask = null;
             showProgress(false);
+            Context context = getApplicationContext();
+            CharSequence text = getString(R.string.operation_cancelled);
+            int duration = Toast.LENGTH_SHORT;
+            Toast toast = Toast.makeText(context, text, duration);
+            toast.show();
         }
     }
 }
