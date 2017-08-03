@@ -3,8 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/LAPGrock/Documents/NetBeansProjects/HeyDriverWS/src/java/common/entities/User.java</file>
+            <file>file:/C:/Users/LAPGrock/Documents/NetBeansProjects/HeyDriverWS/src/java/model/DAO.java</file>
+            <file>file:/C:/Users/LAPGrock/Documents/NetBeansProjects/HeyDriverWS/src/java/controller/Command.java</file>
+            <file>file:/C:/Users/LAPGrock/Documents/NetBeansProjects/HeyDriverWS/src/java/controller/users_module/LoginCommand.java</file>
+            <file>file:/C:/Users/LAPGrock/Documents/NetBeansProjects/HeyDriverWS/src/java/model/Registry.java</file>
+            <file>file:/C:/Users/LAPGrock/Documents/NetBeansProjects/HeyDriverWS/src/java/controller/users_module/SignUpCommand.java</file>
             <file>file:/C:/Users/LAPGrock/Documents/NetBeansProjects/HeyDriverWS/src/java/service/HeyDriverWS.java</file>
+            <file>file:/C:/Users/LAPGrock/Documents/NetBeansProjects/HeyDriverWS/src/java/model/users_module/DAOUser.java</file>
         </group>
     </open-files>
 </project-private>

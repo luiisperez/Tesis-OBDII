@@ -1,23 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package common.entities;
 
-/**
- *
- * @author LuisAlejandro
- */
+import java.util.ArrayList;
+
 public class User {
-    private int _idUser;
     private String _username;
     private String _password;
     private String _email;
-    private String _phone;
-    private char _sex;
-    private String _birthdate;
-
+    private String _firstname;
+    private String _lastname;
+    private ArrayList<Car> _carsList;
 
 
     /**
@@ -25,63 +16,33 @@ public class User {
      */
     public User(){ }
 
-    public User(int idUser){ }
-
-    public User(int idUser, String username, String password){
-        _idUser=idUser;
-        _username=username;
-        _password=password;
+    public User(String email, String password){
+        _email = email;
+        _password = password;
     }
 
-    public User(String username, String password){
-        _username=username;
-        _password=password;
+    public User(String username, String password, String email){
+        _username = username;
+        _password = password;
+        _email = email;
     }
 
-    public User(int idUser, String username, String password,String email){
-        _idUser=idUser;
-        _username=username;
-        _password=password;
-        _email=email;
-    }
-
-    public User(int idUser, String email){
-        _idUser=idUser;
-        _email=email;
-    }
-
-    public User(String email){
-        _email=email;
-    }
-
-    public User(int idUser, String username, String password,String email, String phone,
-                char sex, String birthdate){
-        _idUser=idUser;
-        _username=username;
-        _password=password;
-        _email=email;
-        _phone=phone;
-        _sex=sex;
-        _birthdate=birthdate;
+    public User(String username, String password,String email, String firstname, String lastname){
+        _username = username;
+        _password = password;
+        _email = email;
+        _firstname = firstname;
+        _lastname = lastname;
     }
 
 
 
-    public User(int _idUser, String _username, String _email, String _phone, char _sex, String _birthdate) {
-        this._idUser = _idUser;
+    public User(String _username, String _email, String _firstname, String _lastname, ArrayList<Car> _carsList) {
         this._username = _username;
         this._email = _email;
-        this._phone = _phone;
-        this._sex = _sex;
-        this._birthdate = _birthdate;
-    }
-
-    public int get_idUser() {
-        return _idUser;
-    }
-
-    public void set_idUser(int _idUser) {
-        this._idUser = _idUser;
+        this._firstname = _firstname;
+        this._lastname = _lastname;
+        this._carsList = _carsList;
     }
 
     public String get_username() {
@@ -108,28 +69,28 @@ public class User {
         this._email = _email;
     }
 
-    public String get_phone() {
-        return _phone;
+    public String get_firstname() {
+        return _firstname;
     }
 
-    public void set_phone(String _phone) {
-        this._phone = _phone;
+    public void set_firstname(String _firstname) {
+        this._firstname = _firstname;
     }
 
-    public char get_sex() {
-        return _sex;
+    public String get_lastname() {
+        return _lastname;
     }
 
-    public void set_sex(char _sex) {
-        this._sex = _sex;
+    public void set_lastname(String _lastname) {
+        this._lastname = _lastname;
     }
 
-    public String get_birthdate() {
-        return _birthdate;
+    public ArrayList<Car> get_carsList() {
+        return _carsList;
     }
 
-    public void set_birthdate(String _birthdate) {
-        this._birthdate = _birthdate;
+    public void set_carsList(ArrayList<Car> _carsList) {
+        this._carsList = _carsList;
     }
 
 }

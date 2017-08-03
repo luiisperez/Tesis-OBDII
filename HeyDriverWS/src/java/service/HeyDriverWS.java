@@ -1,6 +1,7 @@
 package service;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import common.entities.User;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
@@ -8,8 +9,10 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.Produces;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PUT;
+import javax.ws.rs.QueryParam;
 
 /**
  * REST Web Service
@@ -61,4 +64,15 @@ public class HeyDriverWS {
         result.set_email("Prueba exitosa");
         return gson.toJson( result );//nuevo
     }
+    
+    @GET
+    @Path("signUpUser")
+    @Produces("application/json")
+    public String signUpUser (@QueryParam("user") String _user){
+        Gson gson = new GsonBuilder().create();
+        User userToInsert = gson.fromJson(_user, User.class);
+        return gson.toJson( userToInsert );//nuevo
+    }
+    
+    
 }
