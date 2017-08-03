@@ -1,0 +1,3 @@
+CREATE USER heydriver PASSWORD 'h3yDr1v3r';
+ALTER ROLE heydriver WITH SUPERUSER;
+CREATE DATABASE HeyDriverDB WITH OWNER heydriver;

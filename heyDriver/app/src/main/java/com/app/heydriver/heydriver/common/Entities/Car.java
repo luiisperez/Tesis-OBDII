@@ -2,7 +2,7 @@ package com.app.heydriver.heydriver.common.Entities;
 
 
 public class Car {
-    private String _licensePlate;
+    private String _serial;
     private String _brand;
     private String _model;
 
@@ -11,8 +11,8 @@ public class Car {
      */
     public Car(){ }
 
-    public Car(String _licensePlate, String _brand, String _model){
-        this._licensePlate = _licensePlate;
+    public Car(String _serial, String _brand, String _model){
+        this._serial = _serial;
         this._brand = _brand;
         this._model = _model;
     }
