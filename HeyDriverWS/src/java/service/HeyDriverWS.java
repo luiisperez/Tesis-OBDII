@@ -3,6 +3,9 @@ package service;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import common.entities.User;
+import controller.users_module.SignUpCommand;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.PathParam;
@@ -71,7 +74,13 @@ public class HeyDriverWS {
     public String signUpUser (@QueryParam("user") String _user){
         Gson gson = new GsonBuilder().create();
         User userToInsert = gson.fromJson(_user, User.class);
-        return gson.toJson( userToInsert );//nuevo
+        SignUpCommand cmd = new SignUpCommand(userToInsert);
+        try {
+            cmd.execute();
+            return gson.toJson( cmd.getResponse() );//nuevo
+        } catch (Exception ex) {
+            return gson.toJson( null );//nuevo
+        }
     }
     
     

@@ -20,7 +20,7 @@ import model.Registry;
 public class DAOUser extends DAO{
     private Connection _bdCon;
     private static String _sqlUserLogin = "{?=call USER_LOGIN(?,?)}";
-    private static String _sqlCreateUser = "{?=call CREATE_USER(?,?,?,?,?,?,?,?)}";
+    private static String _sqlCreateUser = "{?=call CREATE_USER(?,?,?,?,?)}";
     
     public User create(User _user) throws Exception {
 
@@ -32,6 +32,7 @@ public class DAOUser extends DAO{
 
 
         try {
+            _bdCon = DAO.getBdConnect();
             cstmt = _bdCon.prepareCall(_sqlCreateUser);
             //Parametro de salida
             cstmt.registerOutParameter(1, Types.INTEGER);
