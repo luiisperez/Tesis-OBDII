@@ -217,11 +217,8 @@ public class LoginActivity extends AppCompatActivity  {
 
             try {
                 RestCommunication con = new RestCommunication();
-                /*User u = new User("LAPGrock", "hhhhh", "dsdsds", 'm', "3343", new ArrayList<Car>());
-                ArrayList<Car> list = u.get_carsList();
-                list.add(new Car("233232", "hola", "hola"));
-                u.set_carsList(list);*/ //PRUEBA DE ENVIO DE OBJETOS DE ANDROID AL WS
-                response = con.callMethodPrueba();
+                User u = new User(mEmail, mPassword);
+                response = con.callMethodLoginUser(u);
                 return true;
             } catch (Exception e) {
                 return false;
@@ -236,7 +233,9 @@ public class LoginActivity extends AppCompatActivity  {
 
             if (success) {
                 //finish();
-                if (response.get_email().equals("Prueba exitosa")){
+                if (response != null){
+                    ManageInformation storeinfo = new ManageInformation();
+                    storeinfo.writeUserInformation(response, getApplicationContext());
                     Intent myintent = new Intent(LoginActivity.this, HomeActivity.class);
                     finish();
                     startActivity(myintent);

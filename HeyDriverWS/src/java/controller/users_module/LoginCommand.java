@@ -7,6 +7,7 @@ package controller.users_module;
 
 import common.entities.User;
 import controller.Command;
+import model.users_module.DAOUser;
 
 /**
  *
@@ -14,11 +15,27 @@ import controller.Command;
  */
 public class LoginCommand extends Command{
     
-    private User userLogin;
+    private User userToLogin;
+    private User response;
     
+    public LoginCommand(User _userToLogin){
+        this.userToLogin = _userToLogin;
+    }
+    
+    public User getResponse(){
+        return this.response;
+    }
+
     @Override
-    public void execute() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void execute() throws Exception{
+        try{
+            DAOUser dao = new DAOUser();
+            response = dao.login(userToLogin);
+        }catch (Exception ex){
+            throw ex;
+        }
+        
     }
     
 }
+

@@ -17,4 +17,5 @@ public class Registry {
     public static String BD_CLASS_FOR_NAME = "org.postgresql.Driver";
     
     public static int RESULT_CODE_OK = 200;
+    public static int RESULT_CODE_FAIL = 500;
 }

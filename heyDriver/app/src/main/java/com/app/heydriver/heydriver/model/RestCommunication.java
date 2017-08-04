@@ -75,4 +75,22 @@ public class RestCommunication {
             throw ex;
         }
     }
+
+    public User callMethodLoginUser(User u) throws Exception {
+        try {
+            conn = null;
+            Gson gson = new GsonBuilder().create();
+            BufferedReader br = communicate("GET", "userLogin?user=" + URLEncoder.encode(gson.toJson( u ).toString(), "UTF-8"));
+            String output;
+            User _user = new User();
+            while ((output = br.readLine()) != null) {
+                _user = gson.fromJson(output, User.class);
+            }
+            conn.disconnect();
+            return _user;
+        }
+        catch (Exception ex){
+            throw ex;
+        }
+    }
 }
