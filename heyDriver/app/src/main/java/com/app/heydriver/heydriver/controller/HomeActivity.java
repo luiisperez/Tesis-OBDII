@@ -13,13 +13,22 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import com.app.heydriver.heydriver.R;
+import com.app.heydriver.heydriver.common.Entities.User;
+import com.app.heydriver.heydriver.model.ManageInformation;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    // UI references.
+    private TextView mNameView;
+    private TextView mMailView;
+    private TextView mUserNameView;
 
     @Override
     protected void attachBaseContext(Context newBase) {
@@ -30,6 +39,10 @@ public class HomeActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        ManageInformation storeinfo = new ManageInformation();
+        User u = storeinfo.getUserInformation(getApplicationContext());
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -42,6 +55,13 @@ public class HomeActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        View headerView = navigationView.getHeaderView(0);
+        mNameView = (TextView) headerView.findViewById(R.id.tv_home_name);
+        mMailView = (TextView) headerView.findViewById(R.id.tv_home_mail);
+        mUserNameView = (TextView) headerView.findViewById(R.id.tv_home_username);
+        mNameView.setText(u.get_firstname() + " " + u.get_lastname());
+        mUserNameView.setText(u.get_username());
+        mMailView.setText(u.get_email());
     }
 
     @Override
