@@ -32,11 +32,15 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
-    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_activity_sign_up">Registro de usuario</string>
+
+    <!-- Strings related to home -->
+    <string name="title_activity_home">Inicio</string>
+    <string name="menu_OBDII_scanning">Escaneo con OBD-II</string>
+    <string name="menu_vehicle_registration">Registro de vehículo</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Ajustes</string>
-    <string name="title_activity_sign_up">Registro de usuario</string>
 </resources>
