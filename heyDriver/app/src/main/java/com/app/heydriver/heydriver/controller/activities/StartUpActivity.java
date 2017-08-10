@@ -1,4 +1,4 @@
-package com.app.heydriver.heydriver.controller;
+package com.app.heydriver.heydriver.controller.activities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,8 +9,6 @@ import android.view.View;
 import android.widget.Button;
 
 import com.app.heydriver.heydriver.R;
-import com.app.heydriver.heydriver.common.Entities.User;
-import com.app.heydriver.heydriver.model.ManageInformation;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 

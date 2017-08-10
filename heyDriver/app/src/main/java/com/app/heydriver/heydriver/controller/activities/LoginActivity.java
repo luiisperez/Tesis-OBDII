@@ -1,4 +1,4 @@
-package com.app.heydriver.heydriver.controller;
+package com.app.heydriver.heydriver.controller.activities;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;

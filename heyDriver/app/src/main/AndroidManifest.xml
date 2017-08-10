@@ -18,21 +18,20 @@
         android:supportsRtl="true"
         android:theme="@style/HeyDriverTheme">
         <activity
-            android:name=".controller.LoginActivity"
-            android:theme="@style/HeyDriverTheme.NoActionBarLogin"></activity>
+            android:name=".controller.activities.LoginActivity"
+            android:theme="@style/HeyDriverTheme.NoActionBarLogin" />
         <activity
-            android:name=".controller.HomeActivity"
+            android:name=".controller.activities.HomeActivity"
             android:label="@string/title_activity_home"
             android:theme="@style/HeyDriverTheme.NoActionBar" />
         <activity
-            android:name=".controller.SignUpActivity"
+            android:name=".controller.activities.SignUpActivity"
             android:label="@string/title_activity_sign_up" />
         <activity
-            android:name=".controller.StartUpActivity"
-            android:theme="@style/HeyDriverTheme.NoActionBarLogin">
-        </activity>
+            android:name=".controller.activities.StartUpActivity"
+            android:theme="@style/HeyDriverTheme.NoActionBarLogin" />
         <activity
-            android:name=".controller.LauncherActivity"
+            android:name=".controller.activities.LauncherActivity"
             android:theme="@style/HeyDriverTheme.NoActionBarLogin">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

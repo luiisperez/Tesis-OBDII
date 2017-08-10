@@ -34,13 +34,17 @@
     </string>
     <string name="title_activity_sign_up">User registration</string>
 
-    <!-- Strings related to home -->
+    <!-- Strings related to menu -->
     <string name="title_activity_home">Home</string>
     <string name="menu_OBDII_scanning">OBD-II Scanning</string>
     <string name="menu_vehicle_registration">Vehicle Registration</string>
+    <string name="menu_home">Home</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+
+    <!-- Strings related to car registration -->
+    <string name="title_activity_car_registration">Car Registration</string>
 </resources>
