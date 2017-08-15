@@ -23,6 +23,7 @@ import com.app.heydriver.heydriver.model.ManageInformation;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
+import static com.app.heydriver.heydriver.common.FragmentSwap.changeFragment;
 import static com.app.heydriver.heydriver.controller.activities.LauncherActivity.itemPositionStacks;
 
 public class HomeActivity extends AppCompatActivity
@@ -128,7 +129,7 @@ public class HomeActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    public void changeFragment(Fragment newFragment, int id, String tag){
+   /* public void changeFragment(Fragment newFragment, int id, String tag){
         FragmentManager fragmentManager = getFragmentManager();
         fragmentManager.beginTransaction()
                 .setCustomAnimations(R.animator.slide_in_up, R.animator.slide_out_up, R.animator.slide_out_down, R.animator.slide_in_down)
@@ -137,7 +138,7 @@ public class HomeActivity extends AppCompatActivity
                 .addToBackStack(tag)
                 .commit();
         itemPositionStacks.add(id);
-    }
+    }*/
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -150,9 +151,9 @@ public class HomeActivity extends AppCompatActivity
         FragmentManager fragmentManager = getFragmentManager();
         if (id != previousId) {
             if (id == R.id.nav_home) {
-                changeFragment(new HomeFragment(), id, "home");
+                changeFragment(R.id.content_frame, fragmentManager, new HomeFragment(), id, "home");
             } else if (id == R.id.nav_carregistration) {
-                changeFragment(new CarSelectionFragment(), id, "car_selection");
+                changeFragment(R.id.content_frame, fragmentManager, new CarSelectionFragment(), id, "car_selection");
             } else if (id == R.id.nav_gallery) {
 
             } else if (id == R.id.nav_slideshow) {

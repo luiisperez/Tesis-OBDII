@@ -35,7 +35,7 @@
     <string name="title_activity_sign_up">Registro de usuario</string>
 
     <!-- Strings related to menu -->
-    <string name="title_activity_home">Inicio</string>
+    <string name="title_fragment_home">Inicio</string>
     <string name="menu_OBDII_scanning">Escaneo con OBD-II</string>
     <string name="menu_vehicle_registration">Registro de vehículo</string>
     <string name="menu_home">Inicio</string>
@@ -46,5 +46,7 @@
     <string name="action_settings">Ajustes</string>
 
     <!-- Strings related to car registration -->
-    <string name="title_activity_car_registration">Registro de automoviles</string>
+    <string name="title_fragment_car_registration">Registro de vehículos</string>
+    <string name="title_fragment_car_selection">Selección de vehículos</string>
+    <string name="deleted_vehicle">Has borrado el vehículo exitosamente</string>
 </resources>

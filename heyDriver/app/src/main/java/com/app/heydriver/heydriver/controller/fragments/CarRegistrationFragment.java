@@ -14,15 +14,15 @@ import com.app.heydriver.heydriver.controller.activities.HomeActivity;
  * Created by LAPGrock on 8/10/2017.
  */
 
-public class HomeFragment extends Fragment {
+public class CarRegistrationFragment extends Fragment {
 
     private View view;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_home, container, false);
-        ((HomeActivity) getActivity()).setActionBarTitle(getString(R.string.title_fragment_home));
+        view = inflater.inflate(R.layout.fragment_car_registration, container, false);
+        ((HomeActivity) getActivity()).setActionBarTitle(getString(R.string.title_fragment_car_registration));
         return view;
     }
 }

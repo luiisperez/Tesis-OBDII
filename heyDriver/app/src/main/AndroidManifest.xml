@@ -22,7 +22,7 @@
             android:theme="@style/HeyDriverTheme.NoActionBarLogin" />
         <activity
             android:name=".controller.activities.HomeActivity"
-            android:label="@string/title_activity_home"
+            android:label="@string/title_fragment_home"
             android:theme="@style/HeyDriverTheme.NoActionBar" />
         <activity
             android:name=".controller.activities.SignUpActivity"
