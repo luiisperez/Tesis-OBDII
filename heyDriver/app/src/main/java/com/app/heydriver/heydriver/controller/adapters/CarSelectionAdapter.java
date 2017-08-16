@@ -45,7 +45,8 @@ public class CarSelectionAdapter extends RecyclerView.Adapter<CarSelectionAdapte
             vehicleName.setOnClickListener(new View.OnClickListener() {
                 @Override public void onClick(View v) {
                     String brand_model = vehicleName.getText().toString();
-                    boolean checkSelected = checkSelectedCar(brand_model);
+                    String _serial = vehicleSerial.getText().toString();
+                    boolean checkSelected = checkSelectedCar(brand_model, _serial);
                     if ((vehicleName.isChecked()) && (!checkSelected)){
                         String brand = brand_model.split("/")[0];
                         String model = brand_model.split("/")[1];
@@ -69,15 +70,21 @@ public class CarSelectionAdapter extends RecyclerView.Adapter<CarSelectionAdapte
         }
     }
 
-    public boolean checkSelectedCar(String model_brand){
+    public boolean checkSelectedCar(String model_brand, String _serial){
         boolean selected = false;
         for (ViewHolder vh: holdersList) {
             String car = vh.vehicleName.getText().toString();
-            if (vh.vehicleName.isChecked() && (!car.equals(model_brand))){
+            String serial = vh.vehicleSerial.getText().toString();
+            boolean checked = vh.vehicleName.isChecked();
+            if (checked && (!car.equals(model_brand)) && (!serial.equals(_serial))){
                 selected = true;
             }
         }
         return selected;
+    }
+
+    public void removeFromHoldersList(int position){
+        holdersList.remove(position);
     }
 
     @Override
@@ -97,14 +104,13 @@ public class CarSelectionAdapter extends RecyclerView.Adapter<CarSelectionAdapte
         Car storedCar = storedInformation.getCarInformation(context);
         if (storedCar.get_serial().equals(car.get_serial())){
             holder.vehicleName.setChecked(true);
+        }else{
+            holder.vehicleName.setChecked(false);
         }
         final String vehicleName = car.get_brand() + "/" + car.get_model();
         holder.vehicleName.setText(vehicleName);
         holder.vehicleSerial.setText("Serial: " + car.get_serial());
-
         holdersList.add(holder);
-
-
     }
 
     @Override

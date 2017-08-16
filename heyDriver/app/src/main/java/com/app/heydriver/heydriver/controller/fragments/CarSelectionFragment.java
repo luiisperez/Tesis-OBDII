@@ -72,7 +72,7 @@ public class CarSelectionFragment extends Fragment {
     private void manageRecyclerView(){
 
         try {
-
+            carsArrayList.clear();
             Car car1 = new Car("4564546", "Mazda", "1");
             Car car2 = new Car("4564541", "Mazda", "2");
             Car car3 = new Car("4564542", "Mazda", "3");
@@ -85,9 +85,6 @@ public class CarSelectionFragment extends Fragment {
             carsArrayList.add(car2);
             carsArrayList.add(car3);
             carsArrayList.add(car4);
-            carsArrayList.add(car5);
-            carsArrayList.add(car6);
-            carsArrayList.add(car7);
             carSelectionAdapter = new CarSelectionAdapter(carsArrayList);
             CarSelectionAdapter.holdersList = new ArrayList<CarSelectionAdapter.ViewHolder>();
             LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
@@ -112,7 +109,9 @@ public class CarSelectionFragment extends Fragment {
                                     for (int position : reverseSortedPositions) {
                                         carsArrayList.remove(position);
                                         carSelectionAdapter.notifyItemRemoved(position);
+                                        carSelectionAdapter.removeFromHoldersList(position);
                                     }
+                                    CarSelectionAdapter.holdersList = new ArrayList<CarSelectionAdapter.ViewHolder>();
                                     carSelectionAdapter.notifyDataSetChanged();
                                     Context context = getActivity();
                                     CharSequence text = getString(R.string.deleted_vehicle);
@@ -125,8 +124,10 @@ public class CarSelectionFragment extends Fragment {
                                 public void onDismissedBySwipeRight(RecyclerView recyclerView, int[] reverseSortedPositions) {
                                     for (int position : reverseSortedPositions) {
                                         carsArrayList.remove(position);
+                                        carSelectionAdapter.removeFromHoldersList(position);
                                         carSelectionAdapter.notifyItemRemoved(position);
                                     }
+                                    CarSelectionAdapter.holdersList = new ArrayList<CarSelectionAdapter.ViewHolder>();
                                     carSelectionAdapter.notifyDataSetChanged();
                                     Context context = getActivity();
                                     CharSequence text = getString(R.string.deleted_vehicle);
