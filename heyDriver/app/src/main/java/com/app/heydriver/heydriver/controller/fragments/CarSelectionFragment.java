@@ -33,8 +33,7 @@ public class CarSelectionFragment extends Fragment {
     private View view;
     private FloatingActionButton fab_add;
     private RecyclerView rv_vehicle_list;
-    //private ArrayList<Car> carsArrayList;
-    private ArrayList<String> carsArrayList = new ArrayList<String>();
+    private ArrayList<Car> carsArrayList = new ArrayList<Car>();
     private CarSelectionAdapter carSelectionAdapter;
 
     @Nullable
@@ -73,23 +72,24 @@ public class CarSelectionFragment extends Fragment {
     private void manageRecyclerView(){
 
         try {
-            carsArrayList.add("Mazda 3");
-            carsArrayList.add("Mazda 4");
-            carsArrayList.add("Mazda 5");
-            carsArrayList.add("Mazda 6");
-            carsArrayList.add("Mazda 7");
-            carsArrayList.add("Mazda 8");
-            carsArrayList.add("Mazda 8");
-            carsArrayList.add("Mazda 8");
-            carsArrayList.add("Mazda 8");
-            carsArrayList.add("Mazda 8");
-            carsArrayList.add("Mazda 8");
-            carsArrayList.add("Mazda 8");
-            carsArrayList.add("Mazda 8");
-            carsArrayList.add("Mazda 8");
-            carsArrayList.add("Mazda 8");
-            carsArrayList.add("Mazda 8");
+
+            Car car1 = new Car("4564546", "Mazda", "1");
+            Car car2 = new Car("4564541", "Mazda", "2");
+            Car car3 = new Car("4564542", "Mazda", "3");
+            Car car4 = new Car("4564543", "Mazda", "4");
+            Car car5 = new Car("4564544", "Mazda", "5");
+            Car car6 = new Car("4564545", "Mazda", "6");
+            Car car7 = new Car("4564547", "Mazda", "7");
+
+            carsArrayList.add(car1);
+            carsArrayList.add(car2);
+            carsArrayList.add(car3);
+            carsArrayList.add(car4);
+            carsArrayList.add(car5);
+            carsArrayList.add(car6);
+            carsArrayList.add(car7);
             carSelectionAdapter = new CarSelectionAdapter(carsArrayList);
+            CarSelectionAdapter.holdersList = new ArrayList<CarSelectionAdapter.ViewHolder>();
             LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
             rv_vehicle_list.setLayoutManager(layoutManager);
             rv_vehicle_list.setItemAnimator(new DefaultItemAnimator());

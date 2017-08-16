@@ -49,4 +49,5 @@
     <string name="title_fragment_car_registration">Car Registration</string>
     <string name="title_fragment_car_selection">Car Selection</string>
     <string name="deleted_vehicle">You have successfully deleted the vehicle</string>
+    <string name="selected_vehicle">You have already selected a vehicle</string>
 </resources>

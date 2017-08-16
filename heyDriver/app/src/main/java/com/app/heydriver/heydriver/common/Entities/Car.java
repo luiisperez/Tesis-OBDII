@@ -16,4 +16,30 @@ public class Car {
         this._brand = _brand;
         this._model = _model;
     }
+
+
+
+    public String get_serial() {
+        return _serial;
+    }
+
+    public void set_serial(String _serial) {
+        this._serial = _serial;
+    }
+
+    public String get_brand() {
+        return _brand;
+    }
+
+    public void set_brand(String _brand) {
+        this._brand = _brand;
+    }
+
+    public String get_model() {
+        return _model;
+    }
+
+    public void set_model(String _model) {
+        this._model = _model;
+    }
 }

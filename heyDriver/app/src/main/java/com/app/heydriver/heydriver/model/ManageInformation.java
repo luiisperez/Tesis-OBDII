@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
+import com.app.heydriver.heydriver.common.Entities.Car;
 import com.app.heydriver.heydriver.common.Entities.User;
 
 /**
@@ -30,11 +31,32 @@ public class ManageInformation {
     public User getUserInformation(Context context){
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         User storedUser = new User(preferences.getString("username", null),
-                                   preferences.getString("password", null),
-                                   preferences.getString("email", null),
-                                   preferences.getString("firstname", null),
-                                   preferences.getString("lastname", null));
+                preferences.getString("password", null),
+                preferences.getString("email", null),
+                preferences.getString("firstname", null),
+                preferences.getString("lastname", null));
         return storedUser;
+
+    }
+
+    public void writeCarInformation(Car car, Context context){
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("brand", car.get_brand());
+        editor.putString("model", car.get_model());
+        editor.putString("serial", car.get_serial());
+
+        editor.commit();
+    }
+
+
+    public Car getCarInformation(Context context){
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        Car storedCar = new Car(preferences.getString("serial", null),
+                preferences.getString("brand", null),
+                preferences.getString("model", null));
+        return storedCar;
 
     }
 }
