@@ -73,13 +73,13 @@ public class CarSelectionFragment extends Fragment {
 
         try {
             carsArrayList.clear();
-            Car car1 = new Car("4564546", "Mazda", "1");
-            Car car2 = new Car("4564541", "Mazda", "2");
-            Car car3 = new Car("4564542", "Mazda", "3");
-            Car car4 = new Car("4564543", "Mazda", "4");
-            Car car5 = new Car("4564544", "Mazda", "5");
-            Car car6 = new Car("4564545", "Mazda", "6");
-            Car car7 = new Car("4564547", "Mazda", "7");
+            Car car1 = new Car("4564546", "Mazda", "1", 2012);
+            Car car2 = new Car("4564541", "Mazda", "2", 2012);
+            Car car3 = new Car("4564542", "Mazda", "3", 2012);
+            Car car4 = new Car("4564543", "Mazda", "4", 2012);
+            Car car5 = new Car("4564544", "Mazda", "5", 2012);
+            Car car6 = new Car("4564545", "Mazda", "6", 2012);
+            Car car7 = new Car("4564547", "Mazda", "7", 2012);
 
             carsArrayList.add(car1);
             carsArrayList.add(car2);

@@ -46,6 +46,7 @@ public class ManageInformation {
         editor.putString("brand", car.get_brand());
         editor.putString("model", car.get_model());
         editor.putString("serial", car.get_serial());
+        editor.putInt("year", car.get_year());
 
         editor.commit();
     }
@@ -55,7 +56,8 @@ public class ManageInformation {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         Car storedCar = new Car(preferences.getString("serial", null),
                 preferences.getString("brand", null),
-                preferences.getString("model", null));
+                preferences.getString("model", null),
+                preferences.getInt("year", 0));
         return storedCar;
 
     }

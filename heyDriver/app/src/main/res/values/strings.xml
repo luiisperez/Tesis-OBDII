@@ -45,9 +45,17 @@
 
     <string name="action_settings">Settings</string>
 
-    <!-- Strings related to car registration -->
+    <!-- Strings related to car selection -->
     <string name="title_fragment_car_registration">Car Registration</string>
     <string name="title_fragment_car_selection">Car Selection</string>
     <string name="deleted_vehicle">You have successfully deleted the vehicle</string>
     <string name="selected_vehicle">You have already selected a vehicle</string>
+    <string name="year">Year:</string>
+
+    <!-- Strings related to car registration -->
+    <string name="string_serial">Serial</string>
+    <string name="string_brand">Brand</string>
+    <string name="string_model">Model</string>
+    <string name="string_year">Year</string>
+    <string name="button_add_car">Add vehicle</string>
 </resources>

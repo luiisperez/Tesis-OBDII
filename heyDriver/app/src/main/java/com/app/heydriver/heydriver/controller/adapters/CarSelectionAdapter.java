@@ -33,6 +33,7 @@ public class CarSelectionAdapter extends RecyclerView.Adapter<CarSelectionAdapte
     public class ViewHolder extends RecyclerView.ViewHolder {
         public View v;
         public Switch vehicleName;
+        public TextView vehicleYear;
         public TextView vehicleSerial;
         public LinearLayout layout;
 
@@ -40,18 +41,20 @@ public class CarSelectionAdapter extends RecyclerView.Adapter<CarSelectionAdapte
             super(view);
             v = view;
             vehicleName = (Switch) view.findViewById(R.id.sw_vehicle_name_list);
+            vehicleYear = (TextView) view.findViewById(R.id.tv_vehicle_year_list);
             vehicleSerial = (TextView) view.findViewById(R.id.tv_vehicle_serial_list);
             layout = (LinearLayout) view.findViewById(R.id.adapter_vehicle_list_layout);
             vehicleName.setOnClickListener(new View.OnClickListener() {
                 @Override public void onClick(View v) {
                     String brand_model = vehicleName.getText().toString();
                     String _serial = vehicleSerial.getText().toString();
+                    String year = vehicleYear.getText().toString().split(": ")[1];
                     boolean checkSelected = checkSelectedCar(brand_model, _serial);
                     if ((vehicleName.isChecked()) && (!checkSelected)){
                         String brand = brand_model.split("/")[0];
                         String model = brand_model.split("/")[1];
                         String serial = vehicleSerial.getText().toString().split(": ")[1];
-                        Car selectedCar = new Car(serial, brand, model);
+                        Car selectedCar = new Car(serial, brand, model, Integer.parseInt(year));
                         storedInformation.writeCarInformation(selectedCar, v.getContext());
                     } else if (vehicleName.isChecked() && (checkSelected)){
 
@@ -109,6 +112,8 @@ public class CarSelectionAdapter extends RecyclerView.Adapter<CarSelectionAdapte
         }
         final String vehicleName = car.get_brand() + "/" + car.get_model();
         holder.vehicleName.setText(vehicleName);
+        CharSequence text = context.getString(R.string.year);
+        holder.vehicleYear.setText(text + " " + String.valueOf(car.get_year()));
         holder.vehicleSerial.setText("Serial: " + car.get_serial());
         holdersList.add(holder);
     }

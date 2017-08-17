@@ -5,16 +5,18 @@ public class Car {
     private String _serial;
     private String _brand;
     private String _model;
+    private int _year;
 
     /**
      * Constructor vacio
      */
     public Car(){ }
 
-    public Car(String _serial, String _brand, String _model){
+    public Car(String _serial, String _brand, String _model, int _year){
         this._serial = _serial;
         this._brand = _brand;
         this._model = _model;
+        this._year = _year;
     }
 
 
@@ -41,5 +43,13 @@ public class Car {
 
     public void set_model(String _model) {
         this._model = _model;
+    }
+
+    public int get_year() {
+        return _year;
+    }
+
+    public void set_year(int _year) {
+        this._year = _year;
     }
 }
