@@ -3,6 +3,7 @@ package com.app.heydriver.heydriver.controller.activities;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Context;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -72,6 +73,8 @@ public class HomeActivity extends AppCompatActivity
         MenuItem it = menuNav.findItem(R.id.nav_home);
         it.setChecked(true);
         itemPositionStacks.add(R.id.nav_home);
+
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         FragmentManager fragmentManager = getFragmentManager();
         fragmentManager.beginTransaction()

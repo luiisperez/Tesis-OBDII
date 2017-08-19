@@ -20,7 +20,8 @@
     <string name="error_invalid_email">El correo ingresado no es válido</string>
     <string name="error_invalid_password">La contraseña es muy corta</string>
     <string name="error_characters_password">La contraseña no puede contener espacios ni tros caracteres especiales diferentes a @._-</string>
-    <string name="error_invalid_name">Este campo no puede contener caracteres especiales</string>
+    <string name="error_special_char">Este campo no puede contener caracteres especiales</string>
+    <string name="error_invalid_space_char">Este campo no puede contener caracteres especiales o espacios</string>
     <string name="error_starts_with_space">Este campo no puede empezar con un espacio</string>
     <string name="error_invalid_username">Este campo no puede tener espacios u otros caracteres especiales diferentes a @._-</string>
     <string name="error_matching_passwords">Las contraseñas no coinciden</string>
@@ -58,4 +59,6 @@
     <string name="string_model">Modelo</string>
     <string name="string_year">Año</string>
     <string name="button_add_car">Agregar vehículo</string>
+    <string name="error_year_rank">El año de fabricación debe estar entre 1900 y 2150</string>
+    <string name="error_serial_lenght">El serial del vehículo debe tener 17 caracteres</string>
 </resources>

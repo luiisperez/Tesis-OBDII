@@ -153,7 +153,7 @@ public class SignUpActivity extends AppCompatActivity {
             focusView = mFirstNameView;
             cancel = true;
         }else if (!validateName(firstname)) {
-            mFirstNameView.setError(getString(R.string.error_invalid_name));
+            mFirstNameView.setError(getString(R.string.error_special_char));
             focusView = mFirstNameView;
             cancel = true;
         }else if (firstname.startsWith(" ")) {
@@ -166,7 +166,7 @@ public class SignUpActivity extends AppCompatActivity {
             focusView = mLastNameView;
             cancel = true;
         }else if (!validateName(lastname)) {
-            mLastNameView.setError(getString(R.string.error_invalid_name));
+            mLastNameView.setError(getString(R.string.error_special_char));
             focusView = mLastNameView;
             cancel = true;
         }else if (lastname.startsWith(" ")) {

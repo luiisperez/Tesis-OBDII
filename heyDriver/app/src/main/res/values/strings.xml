@@ -20,7 +20,8 @@
     <string name="error_invalid_email">This email address is invalid</string>
     <string name="error_invalid_password">This password is too short</string>
     <string name="error_characters_password">The password cannot contain spaces or any other special characters differents than @._-</string>
-    <string name="error_invalid_name">This field cannot contain special characters</string>
+    <string name="error_special_char">This field cannot contain special characters</string>
+    <string name="error_invalid_space_char">This field cannot contain special characters or spaces</string>
     <string name="error_starts_with_space">This field cannot start with a space</string>
     <string name="error_invalid_username">This field cannot have spaces or other special characters differents than @._-</string>
     <string name="error_matching_passwords">The passwords does not match</string>
@@ -58,4 +59,6 @@
     <string name="string_model">Model</string>
     <string name="string_year">Year</string>
     <string name="button_add_car">Add vehicle</string>
+    <string name="error_year_rank">The fabrication year should be between 1900 and 2150</string>
+    <string name="error_serial_lenght">The vehicle serial should have 17 characters</string>
 </resources>
