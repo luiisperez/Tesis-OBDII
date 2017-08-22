@@ -4,6 +4,8 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.app.Fragment;
+import android.app.FragmentManager;
+import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -13,8 +15,11 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.app.heydriver.heydriver.R;
 import com.app.heydriver.heydriver.common.Entities.Car;
@@ -23,6 +28,8 @@ import com.app.heydriver.heydriver.controller.activities.HomeActivity;
 import com.app.heydriver.heydriver.controller.activities.SignUpActivity;
 import com.app.heydriver.heydriver.model.ManageInformation;
 import com.app.heydriver.heydriver.model.RestCommunication;
+
+import static com.app.heydriver.heydriver.common.FragmentSwap.changeFragment;
 
 /**
  * Created by LAPGrock on 8/10/2017.
@@ -38,6 +45,7 @@ public class CarRegistrationFragment extends Fragment {
     private EditText et_car_rg_year;
     private View pb_add_car;
     private View sv_addcar_form;
+    //private Spinner spinner;
 
     public static final String VALID_STRING_REGEX = "^((?=[A-Za-z0-9ñÑáéíóúÁÉÍÓÚ ])(?![_\\\\-]).)*$";
     public static final String VALID_SERIAL_REGEX = "^((?=[A-Za-z0-9])(?![_\\\\-]).)*$";
@@ -53,6 +61,12 @@ public class CarRegistrationFragment extends Fragment {
         et_car_rg_year = (EditText) view.findViewById(R.id.et_car_rg_year);
         pb_add_car = view.findViewById(R.id.pb_add_car);
         sv_addcar_form = view.findViewById(R.id.sv_addcar_form);
+        /*spinner = (Spinner) view.findViewById(R.id.spinner);
+        String[] iplTeam= {"KKR", "CSK", "RR", "KXIP", "RR", "MI", "MI", "MI", "MI", "MI", "MI", "MI", "MI", "MI", "MI", "MI", "MI" };
+
+        ArrayAdapter<CharSequence> adapter = new ArrayAdapter<CharSequence>(getActivity(), android.R.layout.simple_spinner_item, iplTeam);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);*/
 
         Button btn_car_rg_add = (Button) view.findViewById(R.id.btn_car_rg_add);
         btn_car_rg_add.setOnClickListener(new View.OnClickListener() {
@@ -170,7 +184,7 @@ public class CarRegistrationFragment extends Fragment {
             ManageInformation manageInformation = new ManageInformation();
             User user = manageInformation.getUserInformation(getActivity());
             Car car = new Car (serial.toUpperCase(), brand, model, Integer.parseInt(year));
-            Task = new CarRegistrationFragment.UserAddCarTask(user, car);
+            Task = new CarRegistrationFragment.UserAddCarTask(user.get_username(), car);
             Task.execute((Void) null);
         }
     }
@@ -212,11 +226,11 @@ public class CarRegistrationFragment extends Fragment {
 
 
     public class UserAddCarTask extends AsyncTask<Void, Void, Boolean> {
-        private final User user;
+        private final String user;
         private final Car carToAdd;
-        private Car response;
+        private int response;
 
-        UserAddCarTask(User _user, Car _car) {
+        UserAddCarTask(String _user, Car _car) {
             this.user = _user;
             this.carToAdd = _car;
         }
@@ -226,9 +240,9 @@ public class CarRegistrationFragment extends Fragment {
             // TODO: attempt authentication against a network service.
 
             try {
-                Thread.sleep(2000);
+                //Thread.sleep(2000);
                 RestCommunication con = new RestCommunication();
-                //response = con.callMethodSignUpUser(userToRegister);
+                response = con.callMethodAddVehicle(user, carToAdd);
                 return true;
             } catch (Exception e) {
                 return false;
@@ -243,43 +257,45 @@ public class CarRegistrationFragment extends Fragment {
 
             if (success) {
                 //finish();
-                if (response != null){
-                    /*ManageInformation storeinfo = new ManageInformation();
-                    storeinfo.writeUserInformation(response, getApplicationContext());
-                    User u = storeinfo.getUserInformation(getApplicationContext());
-                    Intent myintent = new Intent(SignUpActivity.this, HomeActivity.class);
-                    finish();
-                    startActivity(myintent);
-                    Context context = getApplicationContext();
-                    CharSequence text = getString(R.string.welcome_message);
+                if (response == 200){
+                    Context context = getActivity();
+                    CharSequence text = getString(R.string.added_car_succesfully);
                     int duration = Toast.LENGTH_SHORT;
                     Toast toast = Toast.makeText(context, text, duration);
-                    toast.show();*/
-                }else{
-                    /*Context context = getApplicationContext();
-                    CharSequence text = getString(R.string.error_cant_signup);
+                    toast.show();
+                    FragmentManager fragmentManager = getFragmentManager();
+                    changeFragment(R.id.content_frame, fragmentManager, new CarSelectionFragment(), R.id.nav_carregistration, "car_selection");
+                }else if (response == 700){
+                    Context context = getActivity();
+                    CharSequence text = getString(R.string.error_duplicated_car);
                     int duration = Toast.LENGTH_SHORT;
                     Toast toast = Toast.makeText(context, text, duration);
-                    toast.show();*/
+                    toast.show();
+                }else if (response == 500){
+                    Context context = getActivity();
+                    CharSequence text = getString(R.string.error_bad_communication);
+                    int duration = Toast.LENGTH_SHORT;
+                    Toast toast = Toast.makeText(context, text, duration);
+                    toast.show();
                 }
             } else {
-                /*Context context = getApplicationContext();
+                Context context = getActivity();
                 CharSequence text = getString(R.string.error_bad_communication);
                 int duration = Toast.LENGTH_SHORT;
                 Toast toast = Toast.makeText(context, text, duration);
-                toast.show();*/
+                toast.show();
             }
         }
 
         @Override
         protected void onCancelled() {
-            /*mAuthTask = null;
+            Task = null;
             showProgress(false);
-            Context context = getApplicationContext();
+            Context context = getActivity();
             CharSequence text = getString(R.string.operation_cancelled);
             int duration = Toast.LENGTH_SHORT;
             Toast toast = Toast.makeText(context, text, duration);
-            toast.show();*/
+            toast.show();
         }
     }
 }

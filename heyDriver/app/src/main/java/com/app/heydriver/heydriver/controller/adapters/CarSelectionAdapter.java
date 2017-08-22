@@ -105,10 +105,12 @@ public class CarSelectionAdapter extends RecyclerView.Adapter<CarSelectionAdapte
         View v = holder.v;
         Context context = v.getContext();
         Car storedCar = storedInformation.getCarInformation(context);
-        if (storedCar.get_serial().equals(car.get_serial())){
-            holder.vehicleName.setChecked(true);
-        }else{
-            holder.vehicleName.setChecked(false);
+        if ((storedCar.get_brand() != null) && (storedCar.get_model() != null) && (storedCar.get_serial() != null)){
+            if (storedCar.get_serial().equals(car.get_serial())) {
+                holder.vehicleName.setChecked(true);
+            } else {
+                holder.vehicleName.setChecked(false);
+            }
         }
         final String vehicleName = car.get_brand() + "/" + car.get_model();
         holder.vehicleName.setText(vehicleName);

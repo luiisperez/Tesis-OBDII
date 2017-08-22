@@ -234,16 +234,24 @@ public class LoginActivity extends AppCompatActivity  {
             if (success) {
                 //finish();
                 if (response != null){
-                    ManageInformation storeinfo = new ManageInformation();
-                    storeinfo.writeUserInformation(response, getApplicationContext());
-                    Intent myintent = new Intent(LoginActivity.this, HomeActivity.class);
-                    finish();
-                    startActivity(myintent);
-                    Context context = getApplicationContext();
-                    CharSequence text = getString(R.string.welcome_message);
-                    int duration = Toast.LENGTH_SHORT;
-                    Toast toast = Toast.makeText(context, text, duration);
-                    toast.show();
+                    if (response.get_error() == 500) {
+                        Context context = getApplicationContext();
+                        CharSequence text = getString(R.string.error_bad_communication);
+                        int duration = Toast.LENGTH_SHORT;
+                        Toast toast = Toast.makeText(context, text, duration);
+                        toast.show();
+                    }else{
+                        ManageInformation storeinfo = new ManageInformation();
+                        storeinfo.writeUserInformation(response, getApplicationContext());
+                        Intent myintent = new Intent(LoginActivity.this, HomeActivity.class);
+                        finish();
+                        startActivity(myintent);
+                        Context context = getApplicationContext();
+                        CharSequence text = getString(R.string.welcome_message);
+                        int duration = Toast.LENGTH_SHORT;
+                        Toast toast = Toast.makeText(context, text, duration);
+                        toast.show();
+                    }
                 }else{
                     Context context = getApplicationContext();
                     CharSequence text = getString(R.string.error_incorrect_login);

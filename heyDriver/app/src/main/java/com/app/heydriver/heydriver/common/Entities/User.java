@@ -19,8 +19,8 @@ public class User {
     private String _firstname;
     @SerializedName("_lastname")
     private String _lastname;
-    @SerializedName("_carsList")
-    private ArrayList<Car> _carsList;
+    @SerializedName("_error")
+    private int _error;
 
 
     /**
@@ -47,15 +47,6 @@ public class User {
         _lastname = lastname;
     }
 
-
-
-    public User(String _username, String _email, String _firstname, String _lastname, ArrayList<Car> _carsList) {
-        this._username = _username;
-        this._email = _email;
-        this._firstname = _firstname;
-        this._lastname = _lastname;
-        this._carsList = _carsList;
-    }
 
     public String get_username() {
         return _username;
@@ -97,12 +88,12 @@ public class User {
         this._lastname = _lastname;
     }
 
-    public ArrayList<Car> get_carsList() {
-        return _carsList;
+    public int get_error() {
+        return _error;
     }
 
-    public void set_carsList(ArrayList<Car> _carsList) {
-        this._carsList = _carsList;
+    public void set_error(int _error) {
+        this._error = _error;
     }
 
 }

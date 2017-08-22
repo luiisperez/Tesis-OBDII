@@ -28,6 +28,8 @@
     <string name="error_incorrect_login">El correo electrónico o la contraseña que has ingresado no son válidos</string>
     <string name="error_bad_communication">Se produjo un problema con la comunicación con nuestros servidores. Inténtelo de nuevo</string>
     <string name="error_cant_signup">Hubo un problema y no se ha podido registrar, por favor inténtelo nuevamente</string>
+    <string name="error_username_taken">El nombre de usuario ya está en uso</string>
+    <string name="error_email_taken">El correo ya está en uso</string>
     <string name="operation_cancelled">La operación ha sido cancelada</string>
     <string name="error_field_required">Este campo es requerido</string>
     <string name="permission_rationale">"Contacts permissions are needed for providing email
@@ -60,5 +62,7 @@
     <string name="string_year">Año</string>
     <string name="button_add_car">Agregar vehículo</string>
     <string name="error_year_rank">El año de fabricación debe estar entre 1900 y 2150</string>
-    <string name="error_serial_lenght">El serial del vehículo debe tener 17 caracteres</string>
+    <string name="error_serial_lenght">El número de serie debe tener 17 caracteres</string>
+    <string name="error_duplicated_car">El número de serie que está intentando registrar ya está registrado</string>
+    <string name="added_car_succesfully">El vehículo fue añadido exitosamente</string>
 </resources>

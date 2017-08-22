@@ -2,7 +2,9 @@ package service;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import common.entities.Car;
 import common.entities.User;
+import controller.cars_module.AddCarCommand;
 import controller.users_module.LoginCommand;
 import controller.users_module.SignUpCommand;
 import java.util.logging.Level;
@@ -80,7 +82,9 @@ public class HeyDriverWS {
             cmd.execute();
             return gson.toJson( cmd.getResponse() );//nuevo
         } catch (Exception ex) {
-            return gson.toJson( null );//nuevo
+            User error = new User();
+            error.set_error(500);
+            return gson.toJson( error );//nuevo
         }
     }
     
@@ -95,7 +99,24 @@ public class HeyDriverWS {
             cmd.execute();
             return gson.toJson( cmd.getResponse() );//nuevo
         } catch (Exception ex) {
-            return gson.toJson( null );//nuevo
+            User error = new User();
+            error.set_error(500);
+            return gson.toJson( error );//nuevo
+        }
+    }
+    
+    @GET
+    @Path("addVehicle")
+    @Produces("application/json")
+    public String addVehicle (@QueryParam("user") String _user, @QueryParam("car") String _car){
+        Gson gson = new GsonBuilder().create();
+        Car carToAdd = gson.fromJson(_car, Car.class);
+        AddCarCommand cmd = new AddCarCommand(_user, carToAdd);
+        try {
+            cmd.execute();
+            return gson.toJson( cmd.getResponseCode());//nuevo
+        } catch (Exception ex) {
+            return gson.toJson( 500 );//nuevo
         }
     }
     

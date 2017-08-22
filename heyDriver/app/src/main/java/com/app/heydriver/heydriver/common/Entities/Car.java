@@ -1,11 +1,14 @@
 package com.app.heydriver.heydriver.common.Entities;
 
 
+import com.google.gson.annotations.SerializedName;
+
 public class Car {
     private String _serial;
     private String _brand;
     private String _model;
     private int _year;
+    private int _error;
 
     /**
      * Constructor vacio
@@ -51,5 +54,13 @@ public class Car {
 
     public void set_year(int _year) {
         this._year = _year;
+    }
+
+    public int get_error() {
+        return _error;
+    }
+
+    public void set_error(int _error) {
+        this._error = _error;
     }
 }

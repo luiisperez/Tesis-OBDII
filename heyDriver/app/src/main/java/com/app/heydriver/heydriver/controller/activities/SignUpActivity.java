@@ -318,10 +318,11 @@ public class SignUpActivity extends AppCompatActivity {
         protected void onPostExecute(final Boolean success) {
             mAuthTask = null;
             showProgress(false);
+            View focusView = null;
 
             if (success) {
                 //finish();
-                if (response != null){
+                if ((!response.get_email().equals("duplicated")) && (!response.get_email().equals("duplicated"))){
                     ManageInformation storeinfo = new ManageInformation();
                     storeinfo.writeUserInformation(response, getApplicationContext());
                     User u = storeinfo.getUserInformation(getApplicationContext());
@@ -333,13 +334,22 @@ public class SignUpActivity extends AppCompatActivity {
                     int duration = Toast.LENGTH_SHORT;
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
-                }else{
+                }else if((!response.get_email().equals("duplicated"))){
+                    mEmailView.setError(getString(R.string.error_username_taken));
+                    focusView = mEmailView;
+                    focusView.requestFocus();
+                }else if((!response.get_username().equals("duplicated"))){
+                    mUsernameView.setError(getString(R.string.error_email_taken));
+                    focusView = mUsernameView;
+                    focusView.requestFocus();
+                }else if (response.get_error() == 500){
                     Context context = getApplicationContext();
-                    CharSequence text = getString(R.string.error_cant_signup);
+                    CharSequence text = getString(R.string.error_bad_communication);
                     int duration = Toast.LENGTH_SHORT;
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
                 }
+
             } else {
                 Context context = getApplicationContext();
                 CharSequence text = getString(R.string.error_bad_communication);

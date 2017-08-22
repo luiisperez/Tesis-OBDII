@@ -26,6 +26,8 @@
     <string name="error_invalid_username">This field cannot have spaces or other special characters differents than @._-</string>
     <string name="error_matching_passwords">The passwords does not match</string>
     <string name="error_incorrect_login">The email or password you entered is not valid</string>
+    <string name="error_username_taken">The username have been already taken</string>
+    <string name="error_email_taken">The email have been already taken</string>
     <string name="error_cant_signup">There was a trouble with your registration, please try again</string>
     <string name="error_bad_communication">There was a trouble with the communication with our servers. Please try again</string>
     <string name="operation_cancelled">The operation has been cancelled</string>
@@ -60,5 +62,7 @@
     <string name="string_year">Year</string>
     <string name="button_add_car">Add vehicle</string>
     <string name="error_year_rank">The fabrication year should be between 1900 and 2150</string>
-    <string name="error_serial_lenght">The vehicle serial should have 17 characters</string>
+    <string name="error_serial_lenght">The serial number should have 17 characters</string>
+    <string name="error_duplicated_car">The serial number you are trying to register is already registered</string>
+    <string name="added_car_succesfully">The vehicle has been added succesfully</string>
 </resources>

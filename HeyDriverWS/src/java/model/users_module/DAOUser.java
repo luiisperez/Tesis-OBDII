@@ -52,12 +52,30 @@ public class DAOUser extends DAO{
 
             if (response == Registry.RESULT_CODE_OK) {
                 
+                _user.set_error(0);
+                return _user;
+                
+            }
+            else if (response == Registry.RESULT_CODE_USERNAME) {
+                
+                _user.set_error(0);
+                _user.set_username("duplicated");
+                return _user;
+                
+            }
+            else if (response == Registry.RESULT_CODE_EMAIL) {
+                
+                _user.set_error(0);
+                _user.set_email("duplicated");
                 return _user;
                 
             }
             else {
-
-                return _userFail;
+                
+                _user.set_error(0);
+                _user.set_username("duplicated");
+                _user.set_email("duplicated");
+                return _user;
                 
             }
 
@@ -111,6 +129,7 @@ public class DAOUser extends DAO{
                                        rs.getString("personfirstname"), 
                                        rs.getString("personlastname"));
                 }
+                _userOK.set_error(0);
                 return _userOK;
                 
             }

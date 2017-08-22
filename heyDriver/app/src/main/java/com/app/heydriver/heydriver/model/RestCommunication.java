@@ -1,6 +1,7 @@
 package com.app.heydriver.heydriver.model;
 
 
+import com.app.heydriver.heydriver.common.Entities.Car;
 import com.app.heydriver.heydriver.common.Entities.User;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -15,7 +16,7 @@ import java.net.URL;
 import java.net.URLEncoder;
 
 public class RestCommunication {
-    private String ip = "192.168.1.102";
+    private String ip = "192.168.1.106";
     private static HttpURLConnection conn;
 
     private BufferedReader communicate(String _requetMethod, String _restfulMethod) throws IOException {
@@ -88,6 +89,24 @@ public class RestCommunication {
             }
             conn.disconnect();
             return _user;
+        }
+        catch (Exception ex){
+            throw ex;
+        }
+    }
+
+    public int callMethodAddVehicle(String username, Car c) throws Exception {
+        try {
+            conn = null;
+            Gson gson = new GsonBuilder().create();
+            BufferedReader br = communicate("GET", "addVehicle?user=" + username + "&car=" + URLEncoder.encode(gson.toJson( c ).toString(), "UTF-8"));
+            String output;
+            int _code = 500;
+            while ((output = br.readLine()) != null) {
+                _code = gson.fromJson(output, Integer.class);
+            }
+            conn.disconnect();
+            return _code;
         }
         catch (Exception ex){
             throw ex;
