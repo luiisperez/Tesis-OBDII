@@ -184,7 +184,7 @@ public class CarRegistrationFragment extends Fragment {
             ManageInformation manageInformation = new ManageInformation();
             User user = manageInformation.getUserInformation(getActivity());
             Car car = new Car (serial.toUpperCase(), brand, model, Integer.parseInt(year));
-            Task = new CarRegistrationFragment.UserAddCarTask(user.get_username(), car);
+            Task = new CarRegistrationFragment.UserAddCarTask(user.get_username(), car, this);
             Task.execute((Void) null);
         }
     }
@@ -229,10 +229,12 @@ public class CarRegistrationFragment extends Fragment {
         private final String user;
         private final Car carToAdd;
         private int response;
+        private final CarRegistrationFragment actualFragment;
 
-        UserAddCarTask(String _user, Car _car) {
+        UserAddCarTask(String _user, Car _car, CarRegistrationFragment _actualFragment) {
             this.user = _user;
             this.carToAdd = _car;
+            this.actualFragment = _actualFragment;
         }
 
         @Override
@@ -263,8 +265,7 @@ public class CarRegistrationFragment extends Fragment {
                     int duration = Toast.LENGTH_SHORT;
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
-                    FragmentManager fragmentManager = getFragmentManager();
-                    changeFragment(R.id.content_frame, fragmentManager, new CarSelectionFragment(), R.id.nav_carregistration, "car_selection");
+                    getFragmentManager().popBackStack();
                 }else if (response == 700){
                     Context context = getActivity();
                     CharSequence text = getString(R.string.error_duplicated_car);
