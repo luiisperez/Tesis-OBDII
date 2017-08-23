@@ -108,3 +108,31 @@ BEGIN
  	RETURN result;
 END;
 $$ LANGUAGE plpgsql;
+
+/**************************************************CONSULTAR VEHICULOS DE UN USUARIO**************************************************/
+
+CREATE OR REPLACE FUNCTION CARS_USER_INFORMATION(varchar(20)) RETURNS TABLE (carserial varchar(20), carbrand varchar(20), carmodel varchar(20), caryear numeric) AS $$
+
+BEGIN
+ 	RETURN QUERY
+	 	SELECT C.CARSERIAL, C.CARBRAND, C.CARMODEL, C.CARYEAR
+		FROM PERSON P, CAR C, PERSON_CAR PC
+		WHERE P.PERSONCAR_FK_CAR = C.CARSERIAL AND C.PERSONCAR_FK_PERSON = P.PERSONUSERNAME AND P.PERSONUSERNAME = $1
+	;
+END;
+$$ LANGUAGE plpgsql;
+
+/**************************************************BORRAR VEHICULO DE UN USUARIO**************************************************/
+
+CREATE OR REPLACE FUNCTION REMOVE_VEHICLE(varchar(20), varchar(20)) RETURNS integer AS $$
+DECLARE
+ result integer;
+
+BEGIN
+	DELETE FROM PERSON_CAR WHERE PERSONCARID = (SELECT PERSONCARID 
+												FROM PERSON_CAR
+												WHERE PERSONCAR_FK_CAR = $1 AND PERSONCAR_FK_PERSON = $2);
+	result := 200;
+ 	RETURN result;
+END;
+$$ LANGUAGE plpgsql;

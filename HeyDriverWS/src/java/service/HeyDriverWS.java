@@ -5,6 +5,8 @@ import com.google.gson.GsonBuilder;
 import common.entities.Car;
 import common.entities.User;
 import controller.cars_module.AddCarCommand;
+import controller.cars_module.GetUsersCarsCommand;
+import controller.cars_module.RemoveCarCommand;
 import controller.users_module.LoginCommand;
 import controller.users_module.SignUpCommand;
 import java.util.logging.Level;
@@ -117,6 +119,32 @@ public class HeyDriverWS {
             return gson.toJson( cmd.getResponseCode());//nuevo
         } catch (Exception ex) {
             return gson.toJson( 500 );//nuevo
+        }
+    }
+    
+    @GET
+    @Path("removeVehicle")
+    @Produces("application/json")
+    public String removeVehicle (@QueryParam("user") String _user, @QueryParam("car") String _car){
+        RemoveCarCommand cmd = new RemoveCarCommand(_car, _user);
+        try {
+            cmd.execute();
+            return gson.toJson( cmd.getResponseCode());//nuevo
+        } catch (Exception ex) {
+            return gson.toJson( 500 );//nuevo
+        }
+    }
+    
+    @GET
+    @Path("getUserVehicles")
+    @Produces("application/json")
+    public String getUserVehicles (@QueryParam("user") String _user){
+        GetUsersCarsCommand cmd = new GetUsersCarsCommand(_user);
+        try {
+            cmd.execute();
+            return gson.toJson( cmd.getResponse());//nuevo
+        } catch (Exception ex) {
+            return gson.toJson( null );//nuevo
         }
     }
     

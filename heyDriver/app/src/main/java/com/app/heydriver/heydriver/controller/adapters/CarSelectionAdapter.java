@@ -79,7 +79,7 @@ public class CarSelectionAdapter extends RecyclerView.Adapter<CarSelectionAdapte
             String car = vh.vehicleName.getText().toString();
             String serial = vh.vehicleSerial.getText().toString();
             boolean checked = vh.vehicleName.isChecked();
-            if (checked && (!car.equals(model_brand)) && (!serial.equals(_serial))){
+            if (checked && (!serial.equals(_serial))){
                 selected = true;
             }
         }
@@ -101,23 +101,27 @@ public class CarSelectionAdapter extends RecyclerView.Adapter<CarSelectionAdapte
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
 
-        Car car = _vehicleList.get(position);
-        View v = holder.v;
-        Context context = v.getContext();
-        Car storedCar = storedInformation.getCarInformation(context);
-        if ((storedCar.get_brand() != null) && (storedCar.get_model() != null) && (storedCar.get_serial() != null)){
-            if (storedCar.get_serial().equals(car.get_serial())) {
-                holder.vehicleName.setChecked(true);
-            } else {
-                holder.vehicleName.setChecked(false);
+        try {
+            Car car = (Car) _vehicleList.get(position);
+            View v = holder.v;
+            Context context = v.getContext();
+            Car storedCar = storedInformation.getCarInformation(context);
+            if ((storedCar.get_brand() != null) && (storedCar.get_model() != null) && (storedCar.get_serial() != null)) {
+                if (storedCar.get_serial().equals(car.get_serial())) {
+                    holder.vehicleName.setChecked(true);
+                } else {
+                    holder.vehicleName.setChecked(false);
+                }
             }
+            final String vehicleName = car.get_brand() + "/" + car.get_model();
+            holder.vehicleName.setText(vehicleName);
+            CharSequence text = context.getString(R.string.year);
+            holder.vehicleYear.setText(text + " " + String.valueOf(car.get_year()));
+            holder.vehicleSerial.setText("Serial: " + car.get_serial());
+            holdersList.add(holder);
+        }catch (Exception ex){
+            ex.getStackTrace();
         }
-        final String vehicleName = car.get_brand() + "/" + car.get_model();
-        holder.vehicleName.setText(vehicleName);
-        CharSequence text = context.getString(R.string.year);
-        holder.vehicleYear.setText(text + " " + String.valueOf(car.get_year()));
-        holder.vehicleSerial.setText("Serial: " + car.get_serial());
-        holdersList.add(holder);
     }
 
     @Override
