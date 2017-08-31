@@ -8,6 +8,10 @@ import android.preference.PreferenceManager;
 import com.app.heydriver.heydriver.common.Entities.Car;
 import com.app.heydriver.heydriver.common.Entities.User;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * Created by LAPGrock on 8/1/2017.
  */
@@ -59,6 +63,26 @@ public class ManageInformation {
                 preferences.getString("model", null),
                 preferences.getInt("year", 0));
         return storedCar;
+
+    }
+
+    public void writeAllBrandsFromNHTSA(ArrayList<String> brands, Context context){
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences.Editor editor = preferences.edit();
+        Set<String> set = new HashSet<String>();
+        set.addAll(brands);
+        editor.putStringSet("brands", set);
+        editor.commit();
+    }
+
+
+    public ArrayList<String> getAllBrandsFromNHTSA(Context context){
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        Set<String> set = preferences.getStringSet("brands", null);
+        ArrayList<String> storedBrands = new ArrayList<String>();
+        for (String str : set)
+            storedBrands.add(str);
+        return storedBrands;
 
     }
 }
