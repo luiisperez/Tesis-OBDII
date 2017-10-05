@@ -106,7 +106,7 @@ public class CarRegistrationFragment extends Fragment implements AdapterView.OnI
                         sp_car_rg_model.setEnabled(true);
 
                     }catch (Exception ex){
-
+                        ex.getStackTrace();
                     }
                 }else{
                     try{
@@ -351,12 +351,17 @@ public class CarRegistrationFragment extends Fragment implements AdapterView.OnI
 
         @Override
         protected void onPostExecute(final Boolean success) {
-            Task = null;
+            try {
+                _Task.finalize();
+            } catch (Throwable throwable) {
+                throwable.printStackTrace();
+            }
+            _Task = null;
         }
 
         @Override
         protected void onCancelled() {
-            Task = null;
+            _Task = null;
         }
 
     }
