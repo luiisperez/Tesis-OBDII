@@ -52,16 +52,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <EditText
-                    android:id="@+id/et_car_rg_brand"
-                    android:layout_width="match_parent"
+                <Spinner
+                    android:id="@+id/sp_car_rg_brand"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
-                    android:hint="@string/string_brand"
-                    android:maxLength="20"
-                    android:inputType="text"
-                    android:maxLines="1"
-                    android:singleLine="true" />
+                    style="@style/Widget.AppCompat.Spinner.Underlined" />
+
 
             </android.support.design.widget.TextInputLayout>
 
@@ -69,16 +66,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <EditText
-                    android:id="@+id/et_car_rg_model"
-                    android:layout_width="match_parent"
+                <Spinner
+                    android:id="@+id/sp_car_rg_model"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
-                    android:hint="@string/string_model"
-                    android:maxLength="20"
-                    android:inputType="text"
-                    android:maxLines="1"
-                    android:singleLine="true" />
+                    style="@style/Widget.AppCompat.Spinner.Underlined" />
 
             </android.support.design.widget.TextInputLayout>
 

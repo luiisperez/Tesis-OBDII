@@ -1,5 +1,6 @@
 package com.app.heydriver.heydriver.model;
 
+import com.app.heydriver.heydriver.R;
 import com.app.heydriver.heydriver.common.Entities.User;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -17,6 +18,8 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -40,6 +43,12 @@ public class ApiNHTSA {
                 String h = aux.get(1).getValue();
                 brands.add(h);
             }
+            Collections.sort(brands, new Comparator<String>() {
+                @Override
+                public int compare(String s1, String s2) {
+                    return s1.compareTo(s2);
+                }
+            });
             return brands;
         }
         catch (Exception ex){
@@ -62,6 +71,12 @@ public class ApiNHTSA {
                 String h = aux.get(3).getValue();
                 models.add(h);
             }
+            Collections.sort(models, new Comparator<String>() {
+                @Override
+                public int compare(String s1, String s2) {
+                    return s1.compareTo(s2);
+                }
+            });
             return models;
         }
         catch (Exception ex){
