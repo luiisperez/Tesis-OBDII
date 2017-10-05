@@ -41,6 +41,7 @@ public class ApiNHTSA {
             for (Element e:resultsList) {
                 List<Element> aux = e.getChildren();
                 String h = aux.get(1).getValue();
+                h = h.trim();
                 brands.add(h);
             }
             Collections.sort(brands, new Comparator<String>() {
@@ -59,6 +60,7 @@ public class ApiNHTSA {
     public ArrayList<String> getModelsOfABrand(String brand) throws Exception {
         try {
             ArrayList<String> models = new ArrayList<String>();
+            brand = brand.replace(" ", "%20");
             URL url = new URL("https://vpic.nhtsa.dot.gov/api/vehicles/getmodelsformake/" + brand + "?format=xml");
             SAXBuilder builder = new SAXBuilder();
             Document doc = builder.build(url);

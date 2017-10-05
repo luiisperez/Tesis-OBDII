@@ -70,57 +70,31 @@ public class CarRegistrationFragment extends Fragment implements AdapterView.OnI
         sv_addcar_form = view.findViewById(R.id.sv_addcar_form);
         sp_car_rg_brand = (Spinner) view.findViewById(R.id.sp_car_rg_brand);
         sp_car_rg_model = (Spinner) view.findViewById(R.id.sp_car_rg_model);
+        brands.add(0, getString(R.string.string_brand));
+        sp_car_rg_brand.setEnabled(false);
         _Task = new CarRegistrationFragment.UserGetInfoNHTSA();
         _Task.execute((Void) null);
-        try{
-            Thread.sleep(15000);
-            brands.add(0, getString(R.string.string_brand));
-            brands.add(1, "------------------------------");
-            String[] brandsList = new String[brands.size()];
-            brandsList = brands.toArray(brandsList);
-            ArrayAdapter<CharSequence> adapter = new ArrayAdapter<CharSequence>(getActivity(), android.R.layout.simple_spinner_item, brandsList);
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            sp_car_rg_brand.setAdapter(adapter);
-
-        }catch (Exception ex){
-
-        }
+        /*ManageInformation info = new ManageInformation();
+        brands = info.getAllBrandsFromNHTSA(getActivity());
+        brands.add(0, getString(R.string.string_brand));
+        brands.add(1, "------------------------------");
+        String[] brandsList = new String[brands.size()];
+        brandsList = brands.toArray(brandsList);
+        ArrayAdapter<CharSequence> adapter = new ArrayAdapter<CharSequence>(getActivity(), android.R.layout.simple_spinner_item, brandsList);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        sp_car_rg_brand.setAdapter(adapter);*/
 
         sp_car_rg_brand.setOnItemSelectedListener(new Spinner.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String marca = sp_car_rg_brand.getSelectedItem().toString();
                 String str = getString(R.string.string_brand);
-                if ((!marca.equals(str)) && (!marca.equals("------------------------------"))){
-                    try{
-                        _Task = new CarRegistrationFragment.UserGetInfoNHTSA(sp_car_rg_brand.getSelectedItem().toString());
-                        _Task.execute((Void) null);
-                        Thread.sleep(15000);
-                        models.add(0, getString(R.string.string_model));
-                        models.add(1, "------------------------------");
-                        String[] modelsList = new String[models.size()];
-                        modelsList = models.toArray(modelsList);
-                        ArrayAdapter<CharSequence> adapter = new ArrayAdapter<CharSequence>(getActivity(), android.R.layout.simple_spinner_item, modelsList);
-                        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                        sp_car_rg_model.setAdapter(adapter);
-                        sp_car_rg_model.setEnabled(true);
+                try{
+                    _Task = new CarRegistrationFragment.UserGetInfoNHTSA(sp_car_rg_brand.getSelectedItem().toString());
+                    _Task.execute((Void) null);
 
-                    }catch (Exception ex){
-                        ex.getStackTrace();
-                    }
-                }else{
-                    try{
-                        sp_car_rg_model.setEnabled(false);
-                        models.add(0, getString(R.string.string_model));
-                        String[] modelsList = new String[models.size()];
-                        modelsList = models.toArray(modelsList);
-                        ArrayAdapter<CharSequence> adapter = new ArrayAdapter<CharSequence>(getActivity(), android.R.layout.simple_spinner_item, modelsList);
-                        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                        sp_car_rg_model.setAdapter(adapter);
-
-                    }catch (Exception ex){
-                        ex.getStackTrace();
-                    }
+                }catch (Exception ex){
+                    ex.getStackTrace();
                 }
             }
 
@@ -326,37 +300,86 @@ public class CarRegistrationFragment extends Fragment implements AdapterView.OnI
             // TODO: attempt authentication against a network service.
             ApiNHTSA apiNHTSA = new ApiNHTSA();
 
-            try{
-                if (brand.equals("")){
-                    ArrayList<String> vehicleBrands = apiNHTSA.getVehicleBrands();
-                    CarRegistrationFragment.brands = vehicleBrands;
-                    return true;
-                }else{
-                    ArrayList<String> vehicleModels = apiNHTSA.getModelsOfABrand(brand);
-                    CarRegistrationFragment.models = vehicleModels;
-                    return true;
+            boolean exito = false;
+            int repeticiones = 0;
+            while ((!exito) && (repeticiones !=2)) {
+                try {
+                    if (brand.equals("")) {
+                        ArrayList<String> vehicleBrands = apiNHTSA.getVehicleBrands();
+                        CarRegistrationFragment.brands = vehicleBrands;
+                        //return true;
+                        exito = true;
+                    } else {
+                        ArrayList<String> vehicleModels = apiNHTSA.getModelsOfABrand(brand);
+                        CarRegistrationFragment.models = vehicleModels;
+                        //return true;
+                        exito = true;
+                    }
+
+                } catch (Exception ex) {
+                    //return false;
+                    repeticiones++;
                 }
+            }
+            return exito;
+        }
 
-
-            }catch (Exception ex){
+        @Override
+        protected void onPostExecute(final Boolean success) {
+            if (success) {
+                try {
+                    if (brand.equals("")) {
+                        String[] brandsList = new String[brands.size()];
+                        brandsList = brands.toArray(brandsList);
+                        ArrayAdapter<CharSequence> adapter = new ArrayAdapter<CharSequence>(getActivity(), android.R.layout.simple_spinner_item, brandsList);
+                        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                        sp_car_rg_brand.setAdapter(adapter);
+                        sp_car_rg_brand.setEnabled(true);
+                    } else {
+                        String[] modelsList = new String[models.size()];
+                        modelsList = models.toArray(modelsList);
+                        ArrayAdapter<CharSequence> adapter = new ArrayAdapter<CharSequence>(getActivity(), android.R.layout.simple_spinner_item, modelsList);
+                        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                        sp_car_rg_model.setAdapter(adapter);
+                        sp_car_rg_model.setEnabled(true);
+                    }
+                    _Task = null;
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                }
+            }else{
                 Context context = getActivity();
                 CharSequence text = getString(R.string.error_bad_communication);
                 int duration = Toast.LENGTH_SHORT;
                 Toast toast = Toast.makeText(context, text, duration);
                 toast.show();
-                return false;
-            }
+                try {
+                    if (brand.equals("")) {
+                        brands = new ArrayList<String>();
+                        brands.add(0, getString(R.string.string_brand));
+                        String[] brandsList = new String[brands.size()];
+                        brandsList = brands.toArray(brandsList);
+                        ArrayAdapter<CharSequence> adapter = new ArrayAdapter<CharSequence>(getActivity(), android.R.layout.simple_spinner_item, brandsList);
+                        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                        sp_car_rg_brand.setAdapter(adapter);
+                        sp_car_rg_brand.setEnabled(false);
+                    } else {
+                        models = new ArrayList<String>();
+                        models.add(0, getString(R.string.string_model));
+                        String[] modelsList = new String[models.size()];
+                        modelsList = models.toArray(modelsList);
+                        ArrayAdapter<CharSequence> adapter = new ArrayAdapter<CharSequence>(getActivity(), android.R.layout.simple_spinner_item, modelsList);
+                        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                        sp_car_rg_model.setAdapter(adapter);
+                        sp_car_rg_model.setEnabled(false);
+                    }
+                    _Task = null;
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                }
 
-        }
 
-        @Override
-        protected void onPostExecute(final Boolean success) {
-            try {
-                _Task.finalize();
-            } catch (Throwable throwable) {
-                throwable.printStackTrace();
             }
-            _Task = null;
         }
 
         @Override
