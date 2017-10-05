@@ -70,8 +70,21 @@ public class CarRegistrationFragment extends Fragment implements AdapterView.OnI
         sv_addcar_form = view.findViewById(R.id.sv_addcar_form);
         sp_car_rg_brand = (Spinner) view.findViewById(R.id.sp_car_rg_brand);
         sp_car_rg_model = (Spinner) view.findViewById(R.id.sp_car_rg_model);
+        
         brands.add(0, getString(R.string.string_brand));
+        String[] brandsList = new String[brands.size()];
+        brandsList = brands.toArray(brandsList);
+        ArrayAdapter<CharSequence> adapter = new ArrayAdapter<CharSequence>(getActivity(), android.R.layout.simple_spinner_item, brandsList);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        sp_car_rg_brand.setAdapter(adapter);
+
         models.add(0, getString(R.string.string_model));
+        String[] modelsList = new String[models.size()];
+        modelsList = models.toArray(modelsList);
+        adapter = new ArrayAdapter<CharSequence>(getActivity(), android.R.layout.simple_spinner_item, modelsList);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        sp_car_rg_model.setAdapter(adapter);
         sp_car_rg_brand.setEnabled(false);
         sp_car_rg_model.setEnabled(false);
         _Task = new CarRegistrationFragment.UserGetInfoNHTSA();
