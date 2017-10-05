@@ -71,7 +71,9 @@ public class CarRegistrationFragment extends Fragment implements AdapterView.OnI
         sp_car_rg_brand = (Spinner) view.findViewById(R.id.sp_car_rg_brand);
         sp_car_rg_model = (Spinner) view.findViewById(R.id.sp_car_rg_model);
         brands.add(0, getString(R.string.string_brand));
+        models.add(0, getString(R.string.string_model));
         sp_car_rg_brand.setEnabled(false);
+        sp_car_rg_model.setEnabled(false);
         _Task = new CarRegistrationFragment.UserGetInfoNHTSA();
         _Task.execute((Void) null);
         /*ManageInformation info = new ManageInformation();
