@@ -61,12 +61,6 @@ public class CarRegistrationFragment extends Fragment {
         et_car_rg_year = (EditText) view.findViewById(R.id.et_car_rg_year);
         pb_add_car = view.findViewById(R.id.pb_add_car);
         sv_addcar_form = view.findViewById(R.id.sv_addcar_form);
-        /*spinner = (Spinner) view.findViewById(R.id.spinner);
-        String[] iplTeam= {"KKR", "CSK", "RR", "KXIP", "RR", "MI", "MI", "MI", "MI", "MI", "MI", "MI", "MI", "MI", "MI", "MI", "MI" };
-
-        ArrayAdapter<CharSequence> adapter = new ArrayAdapter<CharSequence>(getActivity(), android.R.layout.simple_spinner_item, iplTeam);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);*/
 
         Button btn_car_rg_add = (Button) view.findViewById(R.id.btn_car_rg_add);
         btn_car_rg_add.setOnClickListener(new View.OnClickListener() {
