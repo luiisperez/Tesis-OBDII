@@ -15,6 +15,7 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -26,8 +27,11 @@ import com.app.heydriver.heydriver.common.Entities.Car;
 import com.app.heydriver.heydriver.common.Entities.User;
 import com.app.heydriver.heydriver.controller.activities.HomeActivity;
 import com.app.heydriver.heydriver.controller.activities.SignUpActivity;
+import com.app.heydriver.heydriver.model.ApiNHTSA;
 import com.app.heydriver.heydriver.model.ManageInformation;
 import com.app.heydriver.heydriver.model.RestCommunication;
+
+import java.util.ArrayList;
 
 import static com.app.heydriver.heydriver.common.FragmentSwap.changeFragment;
 
@@ -35,9 +39,13 @@ import static com.app.heydriver.heydriver.common.FragmentSwap.changeFragment;
  * Created by LAPGrock on 8/10/2017.
  */
 
-public class CarRegistrationFragment extends Fragment {
+public class CarRegistrationFragment extends Fragment implements AdapterView.OnItemSelectedListener {
 
+    public static ArrayList<String> brands = new ArrayList<String>();
+
+    public static ArrayList<String> models = new ArrayList<String>();
     private CarRegistrationFragment.UserAddCarTask Task = null;
+    private CarRegistrationFragment.UserGetInfoNHTSA _Task = null;
     private View view;
     private EditText et_car_rg_serial;
     private EditText et_car_rg_brand;
@@ -45,7 +53,8 @@ public class CarRegistrationFragment extends Fragment {
     private EditText et_car_rg_year;
     private View pb_add_car;
     private View sv_addcar_form;
-    //private Spinner spinner;
+    private Spinner sp_car_rg_brand;
+    private Spinner sp_car_rg_model;
 
     public static final String VALID_STRING_REGEX = "^((?=[A-Za-z0-9ñÑáéíóúÁÉÍÓÚ ])(?![_\\\\-]).)*$";
     public static final String VALID_SERIAL_REGEX = "^((?=[A-Za-z0-9])(?![_\\\\-]).)*$";
@@ -56,11 +65,59 @@ public class CarRegistrationFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_car_registration, container, false);
         ((HomeActivity) getActivity()).setActionBarTitle(getString(R.string.title_fragment_car_registration));
         et_car_rg_serial = (EditText) view.findViewById(R.id.et_car_rg_serial);
-        et_car_rg_brand = (EditText) view.findViewById(R.id.et_car_rg_brand);
-        et_car_rg_model = (EditText) view.findViewById(R.id.et_car_rg_model);
         et_car_rg_year = (EditText) view.findViewById(R.id.et_car_rg_year);
         pb_add_car = view.findViewById(R.id.pb_add_car);
         sv_addcar_form = view.findViewById(R.id.sv_addcar_form);
+        sp_car_rg_brand = (Spinner) view.findViewById(R.id.sp_car_rg_brand);
+        sp_car_rg_model = (Spinner) view.findViewById(R.id.sp_car_rg_model);
+
+        brands.add(0, getString(R.string.string_brand));
+        String[] brandsList = new String[brands.size()];
+        brandsList = brands.toArray(brandsList);
+        ArrayAdapter<CharSequence> adapter = new ArrayAdapter<CharSequence>(getActivity(), android.R.layout.simple_spinner_item, brandsList);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        sp_car_rg_brand.setAdapter(adapter);
+
+        models.add(0, getString(R.string.string_model));
+        String[] modelsList = new String[models.size()];
+        modelsList = models.toArray(modelsList);
+        adapter = new ArrayAdapter<CharSequence>(getActivity(), android.R.layout.simple_spinner_item, modelsList);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        sp_car_rg_model.setAdapter(adapter);
+        sp_car_rg_brand.setEnabled(false);
+        sp_car_rg_model.setEnabled(false);
+        _Task = new CarRegistrationFragment.UserGetInfoNHTSA();
+        _Task.execute((Void) null);
+        /*ManageInformation info = new ManageInformation();
+        brands = info.getAllBrandsFromNHTSA(getActivity());
+        brands.add(0, getString(R.string.string_brand));
+        brands.add(1, "------------------------------");
+        String[] brandsList = new String[brands.size()];
+        brandsList = brands.toArray(brandsList);
+        ArrayAdapter<CharSequence> adapter = new ArrayAdapter<CharSequence>(getActivity(), android.R.layout.simple_spinner_item, brandsList);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        sp_car_rg_brand.setAdapter(adapter);*/
+
+        sp_car_rg_brand.setOnItemSelectedListener(new Spinner.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String marca = sp_car_rg_brand.getSelectedItem().toString();
+                String str = getString(R.string.string_brand);
+                try{
+                    _Task = new CarRegistrationFragment.UserGetInfoNHTSA(sp_car_rg_brand.getSelectedItem().toString());
+                    _Task.execute((Void) null);
+
+                }catch (Exception ex){
+                    ex.getStackTrace();
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         Button btn_car_rg_add = (Button) view.findViewById(R.id.btn_car_rg_add);
         btn_car_rg_add.setOnClickListener(new View.OnClickListener() {
@@ -70,6 +127,34 @@ public class CarRegistrationFragment extends Fragment {
             }
         });
         return view;
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+        try{
+            ApiNHTSA apiNHTSA = new ApiNHTSA();
+            ArrayList<String> vehicleModels = apiNHTSA.getModelsOfABrand(sp_car_rg_brand.getSelectedItem().toString());
+
+            String[] modelsList = new String[vehicleModels.size()];
+            modelsList = vehicleModels.toArray(modelsList);
+
+            ArrayAdapter<CharSequence> adapter = new ArrayAdapter<CharSequence>(getActivity(), android.R.layout.simple_spinner_item, modelsList);
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            sp_car_rg_model.setAdapter(adapter);
+
+        }catch (Exception ex){
+            Context context = getActivity();
+            CharSequence text = getString(R.string.error_bad_communication);
+            int duration = Toast.LENGTH_SHORT;
+            Toast toast = Toast.makeText(context, text, duration);
+            toast.show();
+        }
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
     }
 
 
@@ -96,8 +181,8 @@ public class CarRegistrationFragment extends Fragment {
 
         // Store values at the time of the sign up attempt.
         String serial = et_car_rg_serial.getText().toString();
-        String brand = et_car_rg_brand.getText().toString();
-        String model = et_car_rg_model.getText().toString();
+        String brand = sp_car_rg_brand.getSelectedItem().toString();
+        String model = sp_car_rg_model.getSelectedItem().toString();
         String year = et_car_rg_year.getText().toString();
 
         boolean cancel = false;
@@ -217,6 +302,107 @@ public class CarRegistrationFragment extends Fragment {
         }
     }
 
+    public class UserGetInfoNHTSA extends AsyncTask<Void, Void, Boolean> {
+        private String brand = "";
+
+        public UserGetInfoNHTSA(){}
+        public UserGetInfoNHTSA(String brand){
+            this.brand = brand;
+        }
+
+        @Override
+        protected Boolean doInBackground(Void... params) {
+            // TODO: attempt authentication against a network service.
+            ApiNHTSA apiNHTSA = new ApiNHTSA();
+
+            boolean exito = false;
+            int repeticiones = 0;
+            while ((!exito) && (repeticiones !=2)) {
+                try {
+                    if (brand.equals("")) {
+                        ArrayList<String> vehicleBrands = apiNHTSA.getVehicleBrands();
+                        CarRegistrationFragment.brands = vehicleBrands;
+                        //return true;
+                        exito = true;
+                    } else {
+                        ArrayList<String> vehicleModels = apiNHTSA.getModelsOfABrand(brand);
+                        CarRegistrationFragment.models = vehicleModels;
+                        //return true;
+                        exito = true;
+                    }
+
+                } catch (Exception ex) {
+                    //return false;
+                    repeticiones++;
+                }
+            }
+            return exito;
+        }
+
+        @Override
+        protected void onPostExecute(final Boolean success) {
+            if (success) {
+                try {
+                    if (brand.equals("")) {
+                        String[] brandsList = new String[brands.size()];
+                        brandsList = brands.toArray(brandsList);
+                        ArrayAdapter<CharSequence> adapter = new ArrayAdapter<CharSequence>(getActivity(), android.R.layout.simple_spinner_item, brandsList);
+                        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                        sp_car_rg_brand.setAdapter(adapter);
+                        sp_car_rg_brand.setEnabled(true);
+                    } else {
+                        String[] modelsList = new String[models.size()];
+                        modelsList = models.toArray(modelsList);
+                        ArrayAdapter<CharSequence> adapter = new ArrayAdapter<CharSequence>(getActivity(), android.R.layout.simple_spinner_item, modelsList);
+                        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                        sp_car_rg_model.setAdapter(adapter);
+                        sp_car_rg_model.setEnabled(true);
+                    }
+                    _Task = null;
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                }
+            }else{
+                Context context = getActivity();
+                CharSequence text = getString(R.string.error_bad_communication);
+                int duration = Toast.LENGTH_SHORT;
+                Toast toast = Toast.makeText(context, text, duration);
+                toast.show();
+                try {
+                    if (brand.equals("")) {
+                        brands = new ArrayList<String>();
+                        brands.add(0, getString(R.string.string_brand));
+                        String[] brandsList = new String[brands.size()];
+                        brandsList = brands.toArray(brandsList);
+                        ArrayAdapter<CharSequence> adapter = new ArrayAdapter<CharSequence>(getActivity(), android.R.layout.simple_spinner_item, brandsList);
+                        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                        sp_car_rg_brand.setAdapter(adapter);
+                        sp_car_rg_brand.setEnabled(false);
+                    } else {
+                        models = new ArrayList<String>();
+                        models.add(0, getString(R.string.string_model));
+                        String[] modelsList = new String[models.size()];
+                        modelsList = models.toArray(modelsList);
+                        ArrayAdapter<CharSequence> adapter = new ArrayAdapter<CharSequence>(getActivity(), android.R.layout.simple_spinner_item, modelsList);
+                        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                        sp_car_rg_model.setAdapter(adapter);
+                        sp_car_rg_model.setEnabled(false);
+                    }
+                    _Task = null;
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                }
+
+
+            }
+        }
+
+        @Override
+        protected void onCancelled() {
+            _Task = null;
+        }
+
+    }
 
 
     public class UserAddCarTask extends AsyncTask<Void, Void, Boolean> {
