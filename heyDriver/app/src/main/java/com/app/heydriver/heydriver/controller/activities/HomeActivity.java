@@ -1,8 +1,8 @@
 package com.app.heydriver.heydriver.controller.activities;
 
-import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
@@ -15,11 +15,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.app.heydriver.heydriver.R;
+import com.app.heydriver.heydriver.common.Entities.ControladorSQLite;
 import com.app.heydriver.heydriver.common.Entities.User;
 import com.app.heydriver.heydriver.controller.fragments.CarSelectionFragment;
 import com.app.heydriver.heydriver.controller.fragments.HomeFragment;
+import com.app.heydriver.heydriver.controller.fragments.ObdReaderFragment;
 import com.app.heydriver.heydriver.model.ManageInformation;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
@@ -36,6 +39,7 @@ public class HomeActivity extends AppCompatActivity
     private TextView mUserNameView;
     private Toolbar toolbar;
     private NavigationView navigationView;
+    public static ControladorSQLite controladorSQLite;
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
@@ -126,13 +130,19 @@ public class HomeActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            try {
+                startActivity(new Intent(this, ConfigActivity.class));
+            } catch (Exception e) {
+                Toast.makeText(getApplicationContext(), e.toString(),Toast.LENGTH_LONG).show();
+            }
+
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
 
-   /* public void changeFragment(Fragment newFragment, int id, String tag){
+/*    public void changeFragment(Fragment newFragment, int id, String tag){
         FragmentManager fragmentManager = getFragmentManager();
         fragmentManager.beginTransaction()
                 .setCustomAnimations(R.animator.slide_in_up, R.animator.slide_out_up, R.animator.slide_out_down, R.animator.slide_in_down)
@@ -141,7 +151,8 @@ public class HomeActivity extends AppCompatActivity
                 .addToBackStack(tag)
                 .commit();
         itemPositionStacks.add(id);
-    }*/
+    }
+*/
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -150,6 +161,7 @@ public class HomeActivity extends AppCompatActivity
         int id = item.getItemId();
 
         int previousId = itemPositionStacks.get(itemPositionStacks.size() - 1);
+
 
         FragmentManager fragmentManager = getFragmentManager();
         if (id != previousId) {
@@ -161,7 +173,10 @@ public class HomeActivity extends AppCompatActivity
 
             } else if (id == R.id.nav_slideshow) {
 
-            } else if (id == R.id.nav_obdIIscanning) {
+            } else if (id == R.id.nav_obdIIscanning)
+            {
+
+                changeFragment(R.id.content_frame, fragmentManager, new ObdReaderFragment(), id, "reader");
 
             } else if (id == R.id.nav_share) {
 

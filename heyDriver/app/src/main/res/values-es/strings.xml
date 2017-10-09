@@ -65,4 +65,5 @@
     <string name="error_serial_lenght">El número de serie debe tener 17 caracteres</string>
     <string name="error_duplicated_car">El número de serie que está intentando registrar ya está registrado</string>
     <string name="added_car_succesfully">El vehículo fue añadido exitosamente</string>
+    <string name="button_start_data">Iniciar Lectura</string>
 </resources>

@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.app.heydriver.heydriver.R;
+import com.app.heydriver.heydriver.controller.fragments.ObdReaderFragment;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
@@ -44,7 +45,8 @@ public class StartUpActivity extends AppCompatActivity {
 
 
     private void moveToLogIn() {
-        Intent myintent = new Intent(StartUpActivity.this, LoginActivity.class);
+        //Intent myintent = new Intent(StartUpActivity.this, LoginActivity.class);
+        Intent myintent = new Intent(StartUpActivity.this, HomeActivity.class);
         finish();
         startActivity(myintent);
     }

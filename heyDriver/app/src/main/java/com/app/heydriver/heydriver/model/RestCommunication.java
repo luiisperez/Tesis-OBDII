@@ -21,7 +21,7 @@ import java.net.URLEncoder;
 import java.util.ArrayList;
 
 public class RestCommunication {
-    private String ip = "192.168.1.100";
+    private String ip = "192.168.1.108";
     private static HttpURLConnection conn;
 
     private BufferedReader communicate(String _requetMethod, String _restfulMethod) throws IOException {
