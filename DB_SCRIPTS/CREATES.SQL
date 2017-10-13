@@ -16,7 +16,7 @@ CREATE TABLE CAR(
 );
 
 CREATE TABLE PERSON_CAR(
-	PERSONCARID					varchar(20) not null,
+	PERSONCARID					serial not null,
 	PERSONCAR_FK_PERSON			varchar(20) not null,
 	PERSONCAR_FK_CAR			varchar(20) not null,
  	CONSTRAINT PK_PERSON_CAR PRIMARY KEY (PERSONCARID)
