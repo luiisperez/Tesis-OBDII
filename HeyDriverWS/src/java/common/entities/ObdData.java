@@ -1,7 +1,8 @@
-package com.app.heydriver.heydriver.common.Entities;
+package common.entities;
 
 /**
- * Created by cristian on 9/8/2017.
+ *
+ * @author cristian
  */
 
 public class ObdData {
@@ -353,3 +354,4 @@ public class ObdData {
                 '}';
     }
 }
+
