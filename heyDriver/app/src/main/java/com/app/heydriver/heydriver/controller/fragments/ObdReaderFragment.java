@@ -321,6 +321,9 @@ public class ObdReaderFragment extends Fragment
     public void updateBdStatistic( String sensorName, String value) {
         final ControladorSQLite controladorSQLite = new ControladorSQLite(getActivity().getApplicationContext());
         SQLiteDatabase db = controladorSQLite.getWritableDatabase();
+        long mils = System.currentTimeMillis();
+        SimpleDateFormat mask = new SimpleDateFormat("_dd_MM_yyyy_HH_mm_ss");
+        //Date creationDate = mask.parse(el_string_con_la_fecha);
         double lat = 0;
         double lon = 0;
         double alt = 0;
@@ -461,14 +464,12 @@ public class ObdReaderFragment extends Fragment
             }
             //end_while
         }
+        dataSensor.setTime_mark(mask.format(new Date(mils)).toString());
         dataSensor.setLat(lat);
         dataSensor.setLon(lon);
         dataSensor.setAlt(alt);
-
         events.add(dataSensor);
 
-        //recordar que se debe guardar todo
-        //valores.put(ControladorSQLite.DatosTabla.COLUMNA_ID,"1");
         valores.put(ControladorSQLite.DatosTabla.AIR_INTAKE_TEMP,String.valueOf(dataSensor.getAir_Intake_Temperature()));
         valores.put(ControladorSQLite.DatosTabla.AMBIENT_AIR_TEMP,String.valueOf(dataSensor.getAmbient_Air_Temperature()));
         valores.put(ControladorSQLite.DatosTabla.ENGINE_COOLANT_TEMP,String.valueOf(dataSensor.getEngine_Coolant_Temperature()));
@@ -499,13 +500,13 @@ public class ObdReaderFragment extends Fragment
         valores.put(ControladorSQLite.DatosTabla.ENGINE_OIL_TEMP,String.valueOf(dataSensor.getEngine_oil_temperature()));
         valores.put(ControladorSQLite.DatosTabla.AIR_FUEL_RATIO,String.valueOf(dataSensor.getAirFuel_Ratio()));
         valores.put(ControladorSQLite.DatosTabla.WIDEBAND_AIR_FUEL_RATIO,String.valueOf(dataSensor.getWideband_AirFuel_Ratio()));
+        valores.put(ControladorSQLite.DatosTabla.TIME_MARK,String.valueOf(dataSensor.getTime_mark()));
         valores.put(ControladorSQLite.DatosTabla.LAT,String.valueOf(dataSensor.getLat()));
         valores.put(ControladorSQLite.DatosTabla.LON,String.valueOf(dataSensor.getLon()));
         valores.put(ControladorSQLite.DatosTabla.ALT,String.valueOf(dataSensor.getAlt()));
 
         try
         {
-
             long IdGuardado = db.insert(ControladorSQLite.DatosTabla.NOMBRE_TABLA, "id", valores);
             db.close();
         }
@@ -558,9 +559,7 @@ public class ObdReaderFragment extends Fragment
             }
         }
         gpsStatusTextView.setText(getString(R.string.status_gps_no_support));
-        CharSequence text = "Sorry, your device doesn\\'t support or has disabled GPS";
-        int duration = Toast.LENGTH_SHORT;
-        Toast toast = Toast.makeText(getActivity(), text, duration);
+        Toast toast = Toast.makeText(getActivity(), "Sorry, your device doesn\\'t support or has disabled GPS", Toast.LENGTH_SHORT);
         toast.show();
         return false;
     }
@@ -570,9 +569,6 @@ public class ObdReaderFragment extends Fragment
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_obd_reader, container, false);
         ((HomeActivity) getActivity()).setActionBarTitle(getString(R.string.title_fragment_obd_reader));
-        if(controladorSQLite == null)
-            controladorSQLite = new ControladorSQLite(getActivity().getApplicationContext());
-
 
         //Starting mobile sensors and power manager
         powerManager = (PowerManager) getActivity().getSystemService(Context.POWER_SERVICE);
@@ -597,10 +593,7 @@ public class ObdReaderFragment extends Fragment
         if (sensors.size() > 0)
             orientSensor = sensors.get(0);
         else {
-            Context context = getActivity();
-            CharSequence text = "No Orientation Sensor";
-            int duration = Toast.LENGTH_SHORT;
-            Toast toast = Toast.makeText(context, text, duration);
+            Toast toast = Toast.makeText(getActivity(), "No Orientation Sensor", Toast.LENGTH_SHORT);
             toast.show();
         }
 

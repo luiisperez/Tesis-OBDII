@@ -47,6 +47,7 @@ public class ControladorSQLite extends SQLiteOpenHelper
         public static final String ENGINE_OIL_TEMP = "Engine_oil_temperature";
         public static final String AIR_FUEL_RATIO = "AirFuel_Ratio";
         public static final String WIDEBAND_AIR_FUEL_RATIO = "Wideband_AirFuel_Ratio";
+        public static final String TIME_MARK = "time_mark";
         //GPS coordenades
         public static final String LAT = "lat";
         public static final String LON = "lon";
@@ -89,6 +90,7 @@ public class ControladorSQLite extends SQLiteOpenHelper
                         DatosTabla.ENGINE_OIL_TEMP + TEXT_TYPE + COMMA_SEP +
                         DatosTabla.AIR_FUEL_RATIO + TEXT_TYPE + COMMA_SEP +
                         DatosTabla.WIDEBAND_AIR_FUEL_RATIO + TEXT_TYPE + COMMA_SEP +
+                        DatosTabla.TIME_MARK + TEXT_TYPE + COMMA_SEP +
                         DatosTabla.LAT + TEXT_TYPE + COMMA_SEP +
                         DatosTabla.LON + TEXT_TYPE + COMMA_SEP +
                         DatosTabla.ALT + TEXT_TYPE + " )";

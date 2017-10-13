@@ -1,10 +1,15 @@
 package com.app.heydriver.heydriver.controller.activities;
 
 import android.app.FragmentManager;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -19,14 +24,23 @@ import android.widget.Toast;
 
 import com.app.heydriver.heydriver.R;
 import com.app.heydriver.heydriver.common.Entities.ControladorSQLite;
+import com.app.heydriver.heydriver.common.Entities.ObdData;
 import com.app.heydriver.heydriver.common.Entities.User;
+import com.app.heydriver.heydriver.controller.adapters.SynchronizingAdapter;
 import com.app.heydriver.heydriver.controller.fragments.CarSelectionFragment;
 import com.app.heydriver.heydriver.controller.fragments.HomeFragment;
 import com.app.heydriver.heydriver.controller.fragments.ObdReaderFragment;
 import com.app.heydriver.heydriver.model.ManageInformation;
+import com.app.heydriver.heydriver.model.RestCommunication;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
+import static android.content.ContentValues.TAG;
 import static com.app.heydriver.heydriver.common.FragmentSwap.changeFragment;
 import static com.app.heydriver.heydriver.controller.activities.LauncherActivity.itemPositionStacks;
 
@@ -40,6 +54,8 @@ public class HomeActivity extends AppCompatActivity
     private Toolbar toolbar;
     private NavigationView navigationView;
     public static ControladorSQLite controladorSQLite;
+    private HomeActivity.Synchronizing mSynchronizeTask = null;
+
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
@@ -56,6 +72,8 @@ public class HomeActivity extends AppCompatActivity
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        if(controladorSQLite == null)
+            controladorSQLite = new ControladorSQLite(this.getApplicationContext());
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -182,6 +200,8 @@ public class HomeActivity extends AppCompatActivity
 
             } else if (id == R.id.nav_send) {
 
+                mSynchronizeTask = new Synchronizing();
+                mSynchronizeTask.execute((Void) null);
             }
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -192,4 +212,56 @@ public class HomeActivity extends AppCompatActivity
     public void setActionBarTitle(String title){
         toolbar.setTitle(title);
     }
+
+
+
+    private class Synchronizing extends AsyncTask<Void, Void, Boolean> {
+        private ManageInformation info = new ManageInformation();
+        private ProgressDialog dialog = new ProgressDialog(HomeActivity.this);
+        private boolean response;
+        SynchronizingAdapter sa = new SynchronizingAdapter();
+
+        @Override
+        protected void onPreExecute() {
+            this.dialog.setMessage("Please wait");
+            this.dialog.show();
+        }
+
+        @Override
+        protected Boolean doInBackground(Void... params) {
+            try {
+                RestCommunication con = new RestCommunication();
+                response = con.callMethodSynchronization(sa.syncData(getApplicationContext()));
+                if (response == true) {
+                    return true;
+                }
+                else return false;
+            } catch (Exception e) {
+                return false;
+            }
+        }
+
+        @Override
+        protected void onPostExecute(final Boolean success) {
+
+            if (success) {
+                if (response == true) {
+                    CharSequence text = getString(R.string.sincronized_data);
+                    int duration = Toast.LENGTH_SHORT;
+                    Toast toast = Toast.makeText(getApplicationContext(), text, duration);
+                    toast.show();
+                }
+            }
+            else
+            {
+                Toast toast = Toast.makeText(getApplicationContext(), R.string.error_bad_communication, Toast.LENGTH_SHORT);
+                toast.show();
+            }
+
+            if (dialog.isShowing()) {
+                dialog.dismiss();
+            }
+        }
+    }
+
 }

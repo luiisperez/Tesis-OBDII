@@ -1,14 +1,19 @@
 package service;
 
+import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import common.entities.Car;
+import common.entities.ObdData;
 import common.entities.User;
 import controller.cars_module.AddCarCommand;
 import controller.cars_module.GetUsersCarsCommand;
 import controller.cars_module.RemoveCarCommand;
+import controller.obdData_module.AddObdDataCommand;
 import controller.users_module.LoginCommand;
 import controller.users_module.SignUpCommand;
+import java.lang.ProcessBuilder.Redirect.Type;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.ws.rs.core.Context;
@@ -147,6 +152,25 @@ public class HeyDriverWS {
             return gson.toJson( null );//nuevo
         }
     }
-    
-    
+  
+    @GET
+    @Path("synchronization")
+    @Produces("application/json")
+    public String synchronization (@QueryParam("obddata") String _readings){
+        Gson gson = new GsonBuilder().create();
+        ObdData obd_data = gson.fromJson(_readings, ObdData.class);
+        AddObdDataCommand cmd = new AddObdDataCommand(obd_data);
+        try {
+        //List<ObdData> readings_add = gson.fromJson(_readings, new TypeToken<List<ObdData>>(){}.getType());
+            cmd.execute();
+            if (obd_data != null)
+            return "true";
+        else
+            return "false";
+        } catch (Exception ex) {
+
+            return gson.toJson( "error" );//nuevo
+        }
+    }    
+   
 }

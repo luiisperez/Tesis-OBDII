@@ -66,4 +66,7 @@
     <string name="error_duplicated_car">El número de serie que está intentando registrar ya está registrado</string>
     <string name="added_car_succesfully">El vehículo fue añadido exitosamente</string>
     <string name="button_start_data">Iniciar Lectura</string>
+    <string name="title_pref_obd">Preferencias de OBD</string>
+    <string name="no_data">No existen datos para sincronizar</string>
+    <string name="sincronized_data">Sincronización Completada!</string>
 </resources>
