@@ -47,6 +47,7 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Ajustes</string>
+    <string name="error_not_selected_car">No se ha seleccionado ningún vehículo para escanearlo</string>
 
     <!-- Strings related to car selection-->
     <string name="title_fragment_car_registration">Registro de vehículos</string>

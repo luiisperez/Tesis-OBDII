@@ -18,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.app.heydriver.heydriver.R;
+import com.app.heydriver.heydriver.common.Entities.Car;
 import com.app.heydriver.heydriver.common.Entities.ControladorSQLite;
 import com.app.heydriver.heydriver.common.Entities.User;
 import com.app.heydriver.heydriver.controller.fragments.CarSelectionFragment;
@@ -175,9 +176,13 @@ public class HomeActivity extends AppCompatActivity
 
             } else if (id == R.id.nav_obdIIscanning)
             {
-
-                changeFragment(R.id.content_frame, fragmentManager, new ObdReaderFragment(), id, "reader");
-
+                ManageInformation info = new ManageInformation();
+                Car selectedCar = info.getCarInformation(getApplicationContext());
+                if ((selectedCar.get_model() != null) && (selectedCar.get_brand() != null) && (selectedCar.get_serial() != null)) {
+                    changeFragment(R.id.content_frame, fragmentManager, new ObdReaderFragment(), id, "reader");
+                }else{
+                    Toast.makeText(getApplicationContext(), getString(R.string.error_not_selected_car),Toast.LENGTH_LONG).show();
+                }
             } else if (id == R.id.nav_share) {
 
             } else if (id == R.id.nav_send) {
