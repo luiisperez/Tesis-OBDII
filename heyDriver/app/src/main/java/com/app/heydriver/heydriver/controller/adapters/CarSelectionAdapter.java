@@ -66,6 +66,9 @@ public class CarSelectionAdapter extends RecyclerView.Adapter<CarSelectionAdapte
                         int duration = Toast.LENGTH_SHORT;
                         Toast toast = Toast.makeText(context, text, duration);
                         toast.show();
+                    }else if (!vehicleName.isChecked()){
+                        Car unselect = new Car(null, null, null, 0);
+                        storedInformation.writeCarInformation(unselect, v.getContext());
                     }
 
                 }

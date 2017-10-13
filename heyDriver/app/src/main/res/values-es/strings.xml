@@ -47,6 +47,7 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Ajustes</string>
+    <string name="error_not_selected_car">No se ha seleccionado ningún vehículo para escanearlo</string>
 
     <!-- Strings related to car selection-->
     <string name="title_fragment_car_registration">Registro de vehículos</string>
@@ -65,4 +66,9 @@
     <string name="error_serial_lenght">El número de serie debe tener 17 caracteres</string>
     <string name="error_duplicated_car">El número de serie que está intentando registrar ya está registrado</string>
     <string name="added_car_succesfully">El vehículo fue añadido exitosamente</string>
+    <string name="no_vehicles">No has registrado vehículos</string>
+    <string name="button_start_data">Iniciar Lectura</string>
+    <string name="title_pref_obd">Preferencias de OBD</string>
+    <string name="no_data">No existen datos para sincronizar</string>
+    <string name="sincronized_data">Sincronización completada</string>
 </resources>

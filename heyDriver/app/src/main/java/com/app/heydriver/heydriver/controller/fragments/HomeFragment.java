@@ -25,4 +25,5 @@ public class HomeFragment extends Fragment {
         ((HomeActivity) getActivity()).setActionBarTitle(getString(R.string.title_fragment_home));
         return view;
     }
+
 }

@@ -1,9 +1,11 @@
 package com.app.heydriver.heydriver.controller.activities;
 
-import android.app.Fragment;
 import android.app.FragmentManager;
+import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -15,12 +17,18 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.app.heydriver.heydriver.R;
+import com.app.heydriver.heydriver.common.Entities.Car;
+import com.app.heydriver.heydriver.common.Entities.ControladorSQLite;
 import com.app.heydriver.heydriver.common.Entities.User;
+import com.app.heydriver.heydriver.controller.adapters.SynchronizingAdapter;
 import com.app.heydriver.heydriver.controller.fragments.CarSelectionFragment;
 import com.app.heydriver.heydriver.controller.fragments.HomeFragment;
+import com.app.heydriver.heydriver.controller.fragments.ObdReaderFragment;
 import com.app.heydriver.heydriver.model.ManageInformation;
+import com.app.heydriver.heydriver.model.RestCommunication;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
@@ -36,6 +44,9 @@ public class HomeActivity extends AppCompatActivity
     private TextView mUserNameView;
     private Toolbar toolbar;
     private NavigationView navigationView;
+    public static ControladorSQLite controladorSQLite;
+    private HomeActivity.Synchronizing mSynchronizeTask = null;
+
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
@@ -52,6 +63,8 @@ public class HomeActivity extends AppCompatActivity
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        if(controladorSQLite == null)
+            controladorSQLite = new ControladorSQLite(this.getApplicationContext());
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -126,13 +139,19 @@ public class HomeActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            try {
+                startActivity(new Intent(this, ConfigActivity.class));
+            } catch (Exception e) {
+                Toast.makeText(getApplicationContext(), e.toString(),Toast.LENGTH_LONG).show();
+            }
+
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
 
-   /* public void changeFragment(Fragment newFragment, int id, String tag){
+/*    public void changeFragment(Fragment newFragment, int id, String tag){
         FragmentManager fragmentManager = getFragmentManager();
         fragmentManager.beginTransaction()
                 .setCustomAnimations(R.animator.slide_in_up, R.animator.slide_out_up, R.animator.slide_out_down, R.animator.slide_in_down)
@@ -141,7 +160,8 @@ public class HomeActivity extends AppCompatActivity
                 .addToBackStack(tag)
                 .commit();
         itemPositionStacks.add(id);
-    }*/
+    }
+*/
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -150,6 +170,7 @@ public class HomeActivity extends AppCompatActivity
         int id = item.getItemId();
 
         int previousId = itemPositionStacks.get(itemPositionStacks.size() - 1);
+
 
         FragmentManager fragmentManager = getFragmentManager();
         if (id != previousId) {
@@ -161,12 +182,20 @@ public class HomeActivity extends AppCompatActivity
 
             } else if (id == R.id.nav_slideshow) {
 
-            } else if (id == R.id.nav_obdIIscanning) {
-
+            } else if (id == R.id.nav_obdIIscanning)
+            {
+                ManageInformation info = new ManageInformation();
+                Car selectedCar = info.getCarInformation(getApplicationContext());
+                if ((selectedCar.get_model() != null) && (selectedCar.get_brand() != null) && (selectedCar.get_serial() != null)) {
+                    changeFragment(R.id.content_frame, fragmentManager, new ObdReaderFragment(), id, "reader");
+                }else{
+                    Toast.makeText(getApplicationContext(), getString(R.string.error_not_selected_car),Toast.LENGTH_LONG).show();
+                }
             } else if (id == R.id.nav_share) {
 
             } else if (id == R.id.nav_send) {
-
+                mSynchronizeTask = new Synchronizing();
+                mSynchronizeTask.execute((Void) null);
             }
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -176,5 +205,54 @@ public class HomeActivity extends AppCompatActivity
 
     public void setActionBarTitle(String title){
         toolbar.setTitle(title);
+    }
+
+    private class Synchronizing extends AsyncTask<Void, Void, Boolean> {
+        private ManageInformation info = new ManageInformation();
+        private ProgressDialog dialog = new ProgressDialog(HomeActivity.this);
+        private boolean response;
+        SynchronizingAdapter sa = new SynchronizingAdapter();
+
+        @Override
+        protected void onPreExecute() {
+            this.dialog.setMessage("Please wait");
+            this.dialog.show();
+        }
+
+        @Override
+        protected Boolean doInBackground(Void... params) {
+            try {
+                RestCommunication con = new RestCommunication();
+                response = con.callMethodSynchronization(sa.syncData(getApplicationContext()));
+                if (response == true) {
+                    return true;
+                }
+                else return false;
+            } catch (Exception e) {
+                return false;
+            }
+        }
+
+        @Override
+        protected void onPostExecute(final Boolean success) {
+
+            if (success) {
+                if (response == true) {
+                    CharSequence text = getString(R.string.sincronized_data);
+                    int duration = Toast.LENGTH_SHORT;
+                    Toast toast = Toast.makeText(getApplicationContext(), text, duration);
+                    toast.show();
+                }
+            }
+            else
+            {
+                Toast toast = Toast.makeText(getApplicationContext(), R.string.error_bad_communication, Toast.LENGTH_SHORT);
+                toast.show();
+            }
+
+            if (dialog.isShowing()) {
+                dialog.dismiss();
+            }
+        }
     }
 }

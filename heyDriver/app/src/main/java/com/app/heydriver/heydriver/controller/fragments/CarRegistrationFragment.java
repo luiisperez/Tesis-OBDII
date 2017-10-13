@@ -70,7 +70,7 @@ public class CarRegistrationFragment extends Fragment implements AdapterView.OnI
         sv_addcar_form = view.findViewById(R.id.sv_addcar_form);
         sp_car_rg_brand = (Spinner) view.findViewById(R.id.sp_car_rg_brand);
         sp_car_rg_model = (Spinner) view.findViewById(R.id.sp_car_rg_model);
-        
+
         brands.add(0, getString(R.string.string_brand));
         String[] brandsList = new String[brands.size()];
         brandsList = brands.toArray(brandsList);
@@ -175,8 +175,6 @@ public class CarRegistrationFragment extends Fragment implements AdapterView.OnI
 
         // Reset errors.
         et_car_rg_serial.setError(null);
-        et_car_rg_brand.setError(null);
-        et_car_rg_model.setError(null);
         et_car_rg_year.setError(null);
 
         // Store values at the time of the sign up attempt.
@@ -208,7 +206,7 @@ public class CarRegistrationFragment extends Fragment implements AdapterView.OnI
         }
 
 
-        if (TextUtils.isEmpty(brand)) {
+        /*if (TextUtils.isEmpty(brand)) {
             et_car_rg_brand.setError(getString(R.string.error_field_required));
             focusView = et_car_rg_brand;
             cancel = true;
@@ -235,7 +233,7 @@ public class CarRegistrationFragment extends Fragment implements AdapterView.OnI
             et_car_rg_model.setError(getString(R.string.error_starts_with_space));
             focusView = et_car_rg_model;
             cancel = true;
-        }
+        }*/
 
         // Check for a valid username.
         if (TextUtils.isEmpty(year)) {

@@ -1,7 +1,10 @@
 package com.app.heydriver.heydriver.model;
 
 
+import android.util.Log;
+
 import com.app.heydriver.heydriver.common.Entities.Car;
+import com.app.heydriver.heydriver.common.Entities.ObdData;
 import com.app.heydriver.heydriver.common.Entities.User;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -15,14 +18,23 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.lang.reflect.Type;
 import java.net.HttpURLConnection;
+import java.net.Inet4Address;
+import java.net.InetAddress;
+import java.net.NetworkInterface;
 import java.net.Proxy;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Locale;
+
+import static android.content.ContentValues.TAG;
 
 public class RestCommunication {
-    private String ip = "192.168.1.100";
+    private String ip = "192.168.0.103";
     private static HttpURLConnection conn;
+
 
     private BufferedReader communicate(String _requetMethod, String _restfulMethod) throws IOException {
         try {
@@ -45,6 +57,26 @@ public class RestCommunication {
         catch (Exception ex){
             throw ex;
         }
+    }
+
+    //get the actual IP
+    public static String getIP(){
+        List<InetAddress> addrs;
+        String address = "";
+        try{
+            List<NetworkInterface> interfaces = Collections.list(NetworkInterface.getNetworkInterfaces());
+            for(NetworkInterface intf : interfaces){
+                addrs = Collections.list(intf.getInetAddresses());
+                for(InetAddress addr : addrs){
+                    if(!addr.isLoopbackAddress() && addr instanceof Inet4Address){
+                        address = addr.getHostAddress().toUpperCase(new Locale("es", "MX"));
+                    }
+                }
+            }
+        }catch (Exception e){
+            Log.w(TAG, "Ex getting IP value " + e.getMessage());
+        }
+        return address;
     }
 
     public User callMethodPrueba() throws Exception {
@@ -152,6 +184,36 @@ public class RestCommunication {
             }
             conn.disconnect();
             return _code;
+        }
+        catch (Exception ex){
+            throw ex;
+        }
+    }
+
+    // Este método recibe las lecuras que serán transmitidas al servidor
+    public boolean callMethodSynchronization(List<ObdData> reading) throws Exception {
+        try {
+            conn = null;
+            Gson gson = new GsonBuilder().create();
+            if(reading != null){
+                for (ObdData obdData : reading) {
+                    BufferedReader br = communicate("GET", "synchronization?obddata=" + URLEncoder.encode(gson.toJson(obdData).toString(), "UTF-8"));
+                    String a;
+                    String _result="";
+                    if ((a = br.readLine()) != null) {
+                        _result = gson.fromJson(a, String.class);
+                    }
+                    if (_result.equals("false")) {
+                        conn.disconnect();
+                        return false;
+                    }
+                }
+            }
+            else
+                return false;
+
+            conn.disconnect();
+            return true;
         }
         catch (Exception ex){
             throw ex;

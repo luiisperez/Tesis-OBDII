@@ -162,7 +162,7 @@ public class CarSelectionFragment extends Fragment {
                     rv_vehicle_list.addOnItemTouchListener(swipeTouchListener);
                 }else {
                     Context context = getActivity();
-                    CharSequence text = getString(R.string.error_bad_communication);
+                    CharSequence text = getString(R.string.no_vehicles);
                     int duration = Toast.LENGTH_SHORT;
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
