@@ -45,8 +45,8 @@ public class StartUpActivity extends AppCompatActivity {
 
 
     private void moveToLogIn() {
-        Intent myintent = new Intent(StartUpActivity.this, LoginActivity.class);
-        //Intent myintent = new Intent(StartUpActivity.this, HomeActivity.class);
+        //Intent myintent = new Intent(StartUpActivity.this, LoginActivity.class);
+        Intent myintent = new Intent(StartUpActivity.this, HomeActivity.class);
         finish();
         startActivity(myintent);
     }

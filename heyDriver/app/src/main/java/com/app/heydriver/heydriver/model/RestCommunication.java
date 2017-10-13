@@ -1,14 +1,7 @@
 package com.app.heydriver.heydriver.model;
 
 
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
-import android.widget.Toast;
-
-import com.app.heydriver.heydriver.R;
 import com.app.heydriver.heydriver.common.Entities.Car;
-import com.app.heydriver.heydriver.common.Entities.ObdData;
 import com.app.heydriver.heydriver.common.Entities.User;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -26,10 +19,6 @@ import java.net.Proxy;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ArrayList;
-import java.util.List;
-
-import static android.content.ContentValues.TAG;
-import static com.app.heydriver.heydriver.controller.activities.HomeActivity.controladorSQLite;
 
 public class RestCommunication {
     private String ip = "192.168.0.103";
@@ -168,34 +157,4 @@ public class RestCommunication {
             throw ex;
         }
     }
-    // Este método recibe las lecuras que serán transmitidas al servidor
-    public boolean callMethodSynchronization(List<ObdData> reading) throws Exception {
-        try {
-            conn = null;
-            Gson gson = new GsonBuilder().create();
-            if(reading != null){
-                for (ObdData obdData : reading) {
-                    BufferedReader br = communicate("GET", "synchronization?obddata=" + URLEncoder.encode(gson.toJson(obdData).toString(), "UTF-8"));
-                    String a;
-                    String _result="";
-                    if ((a = br.readLine()) != null) {
-                        _result = gson.fromJson(a, String.class);
-                    }
-                    if (_result.equals("false")) {
-                        conn.disconnect();
-                        return false;
-                    }
-                }
-            }
-            else
-                return false;
-
-            conn.disconnect();
-            return true;
-        }
-        catch (Exception ex){
-            throw ex;
-        }
-    }
-
 }
