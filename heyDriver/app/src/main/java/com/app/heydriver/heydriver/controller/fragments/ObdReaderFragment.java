@@ -57,6 +57,7 @@ import com.app.heydriver.heydriver.common.Entities.ObdData;
 import com.app.heydriver.heydriver.controller.activities.ConfigActivity;
 import com.app.heydriver.heydriver.controller.activities.HomeActivity;
 import com.app.heydriver.heydriver.model.AbstractGatewayService;
+import com.app.heydriver.heydriver.model.ManageInformation;
 import com.app.heydriver.heydriver.model.MockObdGatewayService;
 import com.app.heydriver.heydriver.model.ObdCommandJob;
 import com.app.heydriver.heydriver.model.ObdConfig;
@@ -371,8 +372,9 @@ public class ObdReaderFragment extends Fragment
             }
             if (e.getKey().equals( VIN.toString()))
             {
-                // ingresar aquí el VIN
-                dataSensor.setVehicle_Identification_Number((String) e.getValue());
+                //dataSensor.setVehicle_Identification_Number((String) e.getValue());
+                ManageInformation info = new ManageInformation();
+                dataSensor.setVehicle_Identification_Number(info.getCarInformation(getActivity()).get_serial());
             }
             if (e.getKey().equals( TROUBLE_CODES.toString()))
             {
