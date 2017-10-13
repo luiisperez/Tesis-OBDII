@@ -1,5 +1,6 @@
 package com.app.heydriver.heydriver.model;
 
+import com.app.heydriver.heydriver.R;
 import com.app.heydriver.heydriver.common.Entities.User;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -17,6 +18,8 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -38,8 +41,15 @@ public class ApiNHTSA {
             for (Element e:resultsList) {
                 List<Element> aux = e.getChildren();
                 String h = aux.get(1).getValue();
+                h = h.trim();
                 brands.add(h);
             }
+            Collections.sort(brands, new Comparator<String>() {
+                @Override
+                public int compare(String s1, String s2) {
+                    return s1.compareTo(s2);
+                }
+            });
             return brands;
         }
         catch (Exception ex){
@@ -50,6 +60,7 @@ public class ApiNHTSA {
     public ArrayList<String> getModelsOfABrand(String brand) throws Exception {
         try {
             ArrayList<String> models = new ArrayList<String>();
+            brand = brand.replace(" ", "%20");
             URL url = new URL("https://vpic.nhtsa.dot.gov/api/vehicles/getmodelsformake/" + brand + "?format=xml");
             SAXBuilder builder = new SAXBuilder();
             Document doc = builder.build(url);
@@ -62,6 +73,12 @@ public class ApiNHTSA {
                 String h = aux.get(3).getValue();
                 models.add(h);
             }
+            Collections.sort(models, new Comparator<String>() {
+                @Override
+                public int compare(String s1, String s2) {
+                    return s1.compareTo(s2);
+                }
+            });
             return models;
         }
         catch (Exception ex){

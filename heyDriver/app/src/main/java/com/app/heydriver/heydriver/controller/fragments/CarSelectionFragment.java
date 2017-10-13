@@ -24,6 +24,7 @@ import com.app.heydriver.heydriver.common.Entities.Car;
 import com.app.heydriver.heydriver.common.Entities.User;
 import com.app.heydriver.heydriver.controller.activities.HomeActivity;
 import com.app.heydriver.heydriver.controller.adapters.CarSelectionAdapter;
+import com.app.heydriver.heydriver.model.ApiNHTSA;
 import com.app.heydriver.heydriver.model.ManageInformation;
 import com.app.heydriver.heydriver.model.RestCommunication;
 import com.github.brnunes.swipeablerecyclerview.SwipeableRecyclerViewTouchListener;

@@ -80,8 +80,12 @@ public class ManageInformation {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         Set<String> set = preferences.getStringSet("brands", null);
         ArrayList<String> storedBrands = new ArrayList<String>();
-        for (String str : set)
-            storedBrands.add(str);
+        if (set == null){
+            storedBrands = null;
+        }else{
+            for (String str : set)
+                storedBrands.add(str);
+        }
         return storedBrands;
 
     }
