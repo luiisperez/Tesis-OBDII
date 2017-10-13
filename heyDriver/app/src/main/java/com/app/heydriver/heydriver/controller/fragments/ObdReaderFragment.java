@@ -374,6 +374,7 @@ public class ObdReaderFragment extends Fragment
             }
             if (e.getKey().equals( VIN.toString()))
             {
+                // ingresar aquí el VIN
                 dataSensor.setVehicle_Identification_Number((String) e.getValue());
             }
             if (e.getKey().equals( TROUBLE_CODES.toString()))
