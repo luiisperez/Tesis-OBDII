@@ -53,7 +53,7 @@ CREATE TABLE HISTORY (
 	ENGINE_OIL_TEMP 			float(30) not null, 
 	AIR_FUEL_RATIO 				float(30) not null, 
 	WIDEBAND_AIR_FUEL_RATIO 	float(30) not null, 
-	TIME_MARK 					varchar(30) not null,
+	TIME_MARK 					timestamp not null,
 	LAT 						varchar(30) not null, 
 	LON 						varchar(30) not null, 
 	ALT 						varchar(30) not null

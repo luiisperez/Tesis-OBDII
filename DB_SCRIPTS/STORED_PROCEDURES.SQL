@@ -142,7 +142,7 @@ $$ LANGUAGE plpgsql;
 
 CREATE OR REPLACE FUNCTION ADD_OBDDATA(float(30), float(30), float(30), float(30), float(30), float(30), float(30), varchar(30), float(30), float(30), float(30), 
 	float(30), varchar(30), float(30), varchar(30), float(30), float(30),varchar(30), float(30), float(30), float(30), varchar(30), float(30),float(30),float(30),
-	float(30),float(30),float(30),float(30),float(30),varchar(30),varchar(30),varchar(30),varchar(30)) RETURNS integer AS $$
+	float(30),float(30),float(30),float(30),float(30),timestamp,varchar(30),varchar(30),varchar(30)) RETURNS integer AS $$
 DECLARE
  result integer;
 
@@ -166,7 +166,7 @@ CREATE OR REPLACE FUNCTION HISTORY_INFORMATION_CAR(varchar(30)) RETURNS TABLE (A
 							TROUBLE_CODES varchar(30), FUEL_LEVEL float(30), FUEL_TYPE varchar(30), FUEL_CONSUMPTION_RATE float(30), TIMING_ADVANCE float(30), 
 							DTC_NUMBER varchar(30), EQUIV_RATIO float(30), CONTROL_MODULE_VOLTAGE float(30), FUEL_RAIL_PRESSURE float(30), VIN varchar(30),
 							DISTANCE_TRAVELED_MIL_ON float(30), STFT2 float(30), STFT1 float(30), LTFT2 float(30), LTFT1 float(30), 
-							ENGINE_OIL_TEMP float(30), AIR_FUEL_RATIO float(30), WIDEBAND_AIR_FUEL_RATIO float(30), TIME_MARK varchar(30), LAT varchar(30), LON varchar(30), ALT varchar(30)) AS $$
+							ENGINE_OIL_TEMP float(30), AIR_FUEL_RATIO float(30), WIDEBAND_AIR_FUEL_RATIO float(30), TIME_MARK timestamp, LAT varchar(30), LON varchar(30), ALT varchar(30)) AS $$
 
 BEGIN
  	RETURN QUERY

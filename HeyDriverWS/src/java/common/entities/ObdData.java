@@ -1,5 +1,7 @@
 package common.entities;
 
+import java.sql.Timestamp;
+
 /**
  *
  * @author cristian
@@ -36,18 +38,18 @@ public class ObdData {
     private float fuel_Level; // nivel de combustible -> %
     private float air_Intake_Temperature; // ºC -> C
     private float fuel_Rail_Pressure; // kilopascal -> kPa
-    private String time_mark;
+    private Timestamp time_mark;
     private double lat = 0;
     private double lon = 0;
     private double alt = 0;
 
     public ObdData() {}
 
-    public String getTime_mark() {
+    public Timestamp getTime_mark() {
         return time_mark;
     }
 
-    public void setTime_mark(String time_mark) {
+    public void setTime_mark(Timestamp time_mark) {
         this.time_mark = time_mark;
     }
 

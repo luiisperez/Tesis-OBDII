@@ -65,6 +65,7 @@ import com.github.pires.obd.enums.AvailableCommandNames;
 import static com.app.heydriver.heydriver.controller.activities.HomeActivity.controladorSQLite;
 import static com.github.pires.obd.enums.AvailableCommandNames.*;
 import java.io.IOException;
+import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -461,7 +462,10 @@ public class ObdReaderFragment extends Fragment
             }
             //end_while
         }
-        dataSensor.setTime_mark(mask.format(new Date(mils)).toString());
+        Timestamp time_mark = new Timestamp(mils);
+
+        //Date date = new Date(mils);
+        dataSensor.setTime_mark(time_mark);
         dataSensor.setLat(lat);
         dataSensor.setLon(lon);
         dataSensor.setAlt(alt);
@@ -497,7 +501,7 @@ public class ObdReaderFragment extends Fragment
         valores.put(ControladorSQLite.DatosTabla.ENGINE_OIL_TEMP,String.valueOf(dataSensor.getEngine_oil_temperature()));
         valores.put(ControladorSQLite.DatosTabla.AIR_FUEL_RATIO,String.valueOf(dataSensor.getAirFuel_Ratio()));
         valores.put(ControladorSQLite.DatosTabla.WIDEBAND_AIR_FUEL_RATIO,String.valueOf(dataSensor.getWideband_AirFuel_Ratio()));
-        valores.put(ControladorSQLite.DatosTabla.TIME_MARK,String.valueOf(dataSensor.getTime_mark()));
+        valores.put(ControladorSQLite.DatosTabla.TIME_MARK,String.valueOf(time_mark.toString()));
         valores.put(ControladorSQLite.DatosTabla.LAT,String.valueOf(dataSensor.getLat()));
         valores.put(ControladorSQLite.DatosTabla.LON,String.valueOf(dataSensor.getLon()));
         valores.put(ControladorSQLite.DatosTabla.ALT,String.valueOf(dataSensor.getAlt()));

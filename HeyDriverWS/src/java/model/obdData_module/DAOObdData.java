@@ -10,6 +10,7 @@ import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.sql.Types;
 import model.DAO;
 
@@ -58,7 +59,6 @@ public class DAOObdData extends DAO{
             cstmt.setFloat(21, _obddata.getControl_Module_Power_Supply());
             cstmt.setFloat(22, _obddata.getFuel_Rail_Pressure());
             cstmt.setString(23, _obddata.getVehicle_Identification_Number());
-            //ojo
             cstmt.setFloat(24, _obddata.getDistance_traveled_with_MIL_on());
             cstmt.setFloat(25, _obddata.getSTFT2());
             cstmt.setFloat(26, _obddata.getSTFT1());
@@ -66,10 +66,10 @@ public class DAOObdData extends DAO{
             cstmt.setFloat(28, _obddata.getLTFT1());
             cstmt.setFloat(29, _obddata.getEngine_oil_temperature());
             cstmt.setFloat(30, _obddata.getAirFuel_Ratio());
-            cstmt.setFloat(31, _obddata.getWideband_AirFuel_Ratio());
-            cstmt.setString(32, _obddata.getTime_mark());
-            //puede cambiar
-            cstmt.setString(33, String.valueOf(_obddata.getLat()));
+            cstmt.setFloat(31, _obddata.getWideband_AirFuel_Ratio());                                 
+            cstmt.setTimestamp(32,_obddata.getTime_mark());
+            //puede cambiar 
+            cstmt.setString(33, String.valueOf(_obddata.getLat()));            
             cstmt.setString(34, String.valueOf(_obddata.getLon()));
             cstmt.setString(35, String.valueOf(_obddata.getAlt()));
                        

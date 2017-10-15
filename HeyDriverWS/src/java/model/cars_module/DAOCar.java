@@ -74,7 +74,6 @@ public class DAOCar extends DAO{
 
         int response = 0;
 
-
         try {
             _bdCon = DAO.getBdConnect();
             cstmt = _bdCon.prepareCall(_sqlCarsUserInformation);

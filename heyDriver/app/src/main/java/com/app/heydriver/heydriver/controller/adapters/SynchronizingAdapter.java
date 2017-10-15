@@ -10,6 +10,9 @@ import com.app.heydriver.heydriver.R;
 import com.app.heydriver.heydriver.common.Entities.ObdData;
 import com.app.heydriver.heydriver.controller.activities.HomeActivity;
 
+import java.sql.Timestamp;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,8 +24,9 @@ import static android.content.ContentValues.TAG;
 
 public class SynchronizingAdapter {
     List<ObdData> readings = new ArrayList<ObdData>();
+    SimpleDateFormat mask = new SimpleDateFormat("_dd_MM_yyyy_HH_mm_ss");
 
-    public List<ObdData> syncData(Context context) {
+    public List<ObdData> syncData(Context context) throws ParseException {
 
         try {
             SQLiteDatabase db = HomeActivity.controladorSQLite.getWritableDatabase();
@@ -69,7 +73,10 @@ public class SynchronizingAdapter {
                     reading.setEngine_oil_temperature(cursor.getFloat(27));
                     reading.setAirFuel_Ratio(cursor.getFloat(28));
                     reading.setWideband_AirFuel_Ratio(cursor.getFloat(29));
-                    reading.setTime_mark(cursor.getString(30));
+                    //date
+                    String datetime = cursor.getString(30);
+                    reading.setTime_mark(Timestamp.valueOf(datetime));
+                    //ubication
                     reading.setLat(cursor.getFloat(31));
                     reading.setLon(cursor.getFloat(32));
                     reading.setAlt(cursor.getFloat(33));
