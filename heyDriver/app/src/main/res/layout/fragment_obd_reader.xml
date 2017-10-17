@@ -134,20 +134,30 @@
             android:gravity="center"
             android:text="" />
 
-
-
     </TableRow>
+
+
+        <Button
+            android:id="@+id/b_start_data"
+            style="?android:textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/heyDriverLightGreen"
+            android:text="@string/button_start_data"
+            android:textColor="@android:color/white"
+            android:textSize="14dp"
+            android:textStyle="bold" />
     <Button
-        android:id="@+id/b_start_data"
+        android:id="@+id/b_stop_data"
         style="?android:textAppearanceSmall"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:background="@color/heyDriverLightGreen"
-        android:text="@string/button_start_data"
+        android:background="@color/heyDriverDarkSlateGray"
+        android:text="@string/button_stop_data"
         android:textColor="@android:color/white"
         android:textSize="14dp"
         android:textStyle="bold" />
 
-
-</LinearLayout>
+    </LinearLayout>

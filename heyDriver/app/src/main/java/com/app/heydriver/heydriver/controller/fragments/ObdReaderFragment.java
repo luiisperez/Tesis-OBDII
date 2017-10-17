@@ -100,6 +100,8 @@ public class ObdReaderFragment extends Fragment
     private static final int REQUEST_ENABLE_BT = 1234;
     private static boolean bluetoothDefaultIsEnable = false;
     private Button b_start_data;
+    private Button b_stop_data;
+
     List<ObdData> events = new ArrayList<ObdData>();
 
     public Map<String, String> commandResult = new HashMap<String, String>();
@@ -333,6 +335,13 @@ public class ObdReaderFragment extends Fragment
         //Colección para almacenar en BD
         ContentValues valores = new ContentValues();
         ObdData dataSensor = new ObdData();
+        Iterator et = commandResult.entrySet().iterator();
+        while (et.hasNext()) {
+            Map.Entry e = (Map.Entry) et.next();
+            if (e.getValue().equals("NA") ||e.getValue().equals("NODATA")) {
+                e.setValue("0.0");
+            }
+        }
         Iterator it = commandResult.entrySet().iterator();
         while (it.hasNext()) {
             Map.Entry e = (Map.Entry)it.next();
@@ -617,6 +626,7 @@ public class ObdReaderFragment extends Fragment
         vv = (LinearLayout) view.findViewById(R.id.vehicle_view);
         tl = (TableLayout) view.findViewById(R.id.data_table);
         b_start_data = (Button) view.findViewById(R.id.b_start_data);
+        b_stop_data = (Button) view.findViewById(R.id.b_stop_data);
 
         final BluetoothAdapter btAdapter = BluetoothAdapter.getDefaultAdapter();
         if (btAdapter != null)
@@ -636,6 +646,12 @@ public class ObdReaderFragment extends Fragment
             @Override
             public void onClick(View view) {
                 startLiveData();
+            }
+        });
+        b_stop_data.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                stopLiveData();
             }
         });
         return view;

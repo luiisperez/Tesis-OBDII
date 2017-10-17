@@ -16,6 +16,7 @@
     <string name="button_log_in">Log in</string>
     <string name="button_sign_up">Sign up</string>
     <string name="button_start_data">Read Sensors</string>
+    <string name="button_stop_data">Stop</string>
     <string name="button_register">Sign up</string>
     <string name="welcome_message">Welcome to Hey Driver</string>
     <string name="error_invalid_email">This email address is invalid</string>
