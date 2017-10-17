@@ -543,6 +543,27 @@ public class ObdReaderFragment extends Fragment
         }
     }
 
+/*    private boolean gpsInit() {
+        mLocService = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
+        if(!checkLocationPermission())
+            ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1222);
+        else
+        if (mLocService != null ) {
+            mLocProvider = mLocService.getProvider(LocationManager.NETWORK_PROVIDER);
+            if (mLocProvider != null) {
+                mLocService.addGpsStatusListener(this);
+                if (mLocService.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+                    gpsStatusTextView.setText(getString(R.string.status_gps_ready));
+                    return true;
+                }
+            }
+        }
+        gpsStatusTextView.setText(getString(R.string.status_gps_no_support));
+        Toast toast = Toast.makeText(getActivity(), "Sorry, your device doesn\\'t support or has disabled GPS", Toast.LENGTH_SHORT);
+        toast.show();
+        return false;
+    }
+    */
     // Start GPS services & Controller permissions
     private boolean gpsInit() {
         mLocService = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
@@ -550,12 +571,24 @@ public class ObdReaderFragment extends Fragment
             ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1222);
         else
         if (mLocService != null ) {
-            mLocProvider = mLocService.getProvider(LocationManager.GPS_PROVIDER);
+            mLocProvider = mLocService.getProvider(LocationManager.NETWORK_PROVIDER);
             if (mLocProvider != null) {
                 mLocService.addGpsStatusListener(this);
-                if (mLocService.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+                if (mLocService.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
                     gpsStatusTextView.setText(getString(R.string.status_gps_ready));
                     return true;
+                }
+                else
+                {
+                    mLocProvider = mLocService.getProvider(LocationManager.GPS_PROVIDER);
+                    if (mLocProvider != null) {
+                        mLocService.addGpsStatusListener(this);
+                        if (mLocService.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+                            gpsStatusTextView.setText(getString(R.string.status_gps_ready));
+                            return true;
+                        }
+                    }
+
                 }
             }
         }
@@ -753,24 +786,6 @@ public class ObdReaderFragment extends Fragment
         }
         // screen won't turn off until wakeLock.release()
         wakeLock.acquire();
-        /*
-        //Aquí, interfaz para guardar datos.
-        if (prefs.getBoolean(ConfigActivity.ENABLE_FULL_LOGGING_KEY, false)) {
-
-            // Create the CSV Logger
-            long mils = System.currentTimeMillis();
-            SimpleDateFormat sdf = new SimpleDateFormat("_dd_MM_yyyy_HH_mm_ss");
-
-            try {
-                myCSVWriter = new LogCSVWriter("Log" + sdf.format(new Date(mils)).toString() + ".csv",
-                        prefs.getString(ConfigActivity.DIRECTORY_FULL_LOGGING_KEY,
-                                getString(R.string.default_dirname_full_logging))
-                );
-            } catch (FileNotFoundException | RuntimeException e) {
-                Log.e(TAG, "Can't enable logging to file.", e);
-            }
-        }
-        */
     }
 
     private void stopLiveData() {
@@ -782,33 +797,7 @@ public class ObdReaderFragment extends Fragment
         //endTrip();
 
         releaseWakeLockIfHeld();
-        /*
-        //Para enviar datos por email
-        final String devemail = prefs.getString(ConfigActivity.DEV_EMAIL_KEY, null);
-        if (devemail != null && !devemail.isEmpty()) {
-            DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    switch (which) {
-                        case DialogInterface.BUTTON_POSITIVE:
-                            ObdGatewayService.saveLogcatToFile(getApplicationContext(), devemail);
-                            break;
 
-                        case DialogInterface.BUTTON_NEGATIVE:
-                            //No button clicked
-                            break;
-                    }
-                }
-            };
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setMessage("Where there issues?\nThen please send us the logs.\nSend Logs?").setPositiveButton("Yes", dialogClickListener)
-                    .setNegativeButton("No", dialogClickListener).show();
-        }
-
-        if (myCSVWriter != null) {
-            myCSVWriter.closeLogCSVWriter();
-        }
-        */
     }
 
     /*
@@ -974,7 +963,7 @@ public class ObdReaderFragment extends Fragment
     */
 
     private synchronized void gpsStart() {
-        if (!mGpsIsStarted && mLocProvider != null && mLocService != null && mLocService.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+        if (!mGpsIsStarted && mLocProvider != null && mLocService != null && (mLocService.isProviderEnabled(LocationManager.GPS_PROVIDER) || mLocService.isProviderEnabled(LocationManager.NETWORK_PROVIDER))) {
             if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                 return;
             }
