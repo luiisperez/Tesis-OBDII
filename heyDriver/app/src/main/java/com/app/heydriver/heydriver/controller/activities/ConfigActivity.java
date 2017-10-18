@@ -1,10 +1,12 @@
 package com.app.heydriver.heydriver.controller.activities;
 
+import android.Manifest;
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.location.LocationManager;
 import android.location.LocationProvider;
 import android.os.Bundle;
@@ -17,6 +19,7 @@ import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
+import android.support.v4.app.ActivityCompat;
 import android.widget.Toast;
 
 import com.github.pires.obd.commands.ObdCommand;
@@ -29,6 +32,11 @@ import java.util.Set;
 
 public class ConfigActivity extends PreferenceActivity implements OnPreferenceChangeListener {
 
+
+    private static final String[] INITIAL_PERMS={
+            Manifest.permission.ACCESS_FINE_LOCATION,
+            Manifest.permission.READ_CONTACTS
+    };
     public static final String BLUETOOTH_LIST_KEY = "bluetooth_list_preference";
     public static final String UPLOAD_URL_KEY = "upload_url_preference";
     public static final String UPLOAD_DATA_KEY = "upload_data_preference";
@@ -184,109 +192,127 @@ public class ConfigActivity extends PreferenceActivity implements OnPreferenceCh
         return period;
     }
 
+///////////////////////////////////////////////////////////////////////
+///////////////////////                         ///////////////////////
+///////////////////////   INICIO DEL ONCREATE   ///////////////////////
+///////////////////////                         ///////////////////////
+///////////////////////////////////////////////////////////////////////
+
 
     public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        try {
+            super.onCreate(savedInstanceState);
 
     /*
      * Read preferences resources available at res/xml/preferences.xml
      */
-        addPreferencesFromResource(R.layout.preferences);
+            addPreferencesFromResource(R.layout.preferences);
 
-        checkGps();
+            checkGps();
 
-        ArrayList<CharSequence> pairedDeviceStrings = new ArrayList<>();
-        ArrayList<CharSequence> vals = new ArrayList<>();
-        ListPreference listBtDevices = (ListPreference) getPreferenceScreen()
-                .findPreference(BLUETOOTH_LIST_KEY);
-        ArrayList<CharSequence> protocolStrings = new ArrayList<>();
-        ListPreference listProtocols = (ListPreference) getPreferenceScreen()
-                .findPreference(PROTOCOLS_LIST_KEY);
-        String[] prefKeys = new String[]{ENGINE_DISPLACEMENT_KEY,
-                VOLUMETRIC_EFFICIENCY_KEY, OBD_UPDATE_PERIOD_KEY, MAX_FUEL_ECON_KEY};
-        for (String prefKey : prefKeys) {
-            EditTextPreference txtPref = (EditTextPreference) getPreferenceScreen()
-                    .findPreference(prefKey);
-            txtPref.setOnPreferenceChangeListener(this);
-        }
+            ArrayList<CharSequence> pairedDeviceStrings = new ArrayList<>();
+            ArrayList<CharSequence> vals = new ArrayList<>();
+            ListPreference listBtDevices = (ListPreference) getPreferenceScreen()
+                    .findPreference(BLUETOOTH_LIST_KEY);
+            ArrayList<CharSequence> protocolStrings = new ArrayList<>();
+            ListPreference listProtocols = (ListPreference) getPreferenceScreen()
+                    .findPreference(PROTOCOLS_LIST_KEY);
+            String[] prefKeys = new String[]{ENGINE_DISPLACEMENT_KEY,
+                    VOLUMETRIC_EFFICIENCY_KEY, OBD_UPDATE_PERIOD_KEY, MAX_FUEL_ECON_KEY};
+            for (String prefKey : prefKeys) {
+                EditTextPreference txtPref = (EditTextPreference) getPreferenceScreen()
+                        .findPreference(prefKey);
+                txtPref.setOnPreferenceChangeListener(this);
+            }
 
     /*
      * Available OBD commands
      *
      * TODO This should be read from preferences database
      */
-        ArrayList<ObdCommand> cmds = ObdConfig.getCommands();
-        PreferenceScreen cmdScr = (PreferenceScreen) getPreferenceScreen()
-                .findPreference(COMMANDS_SCREEN_KEY);
-        for (ObdCommand cmd : cmds) {
-            CheckBoxPreference cpref = new CheckBoxPreference(this);
-            cpref.setTitle(cmd.getName());
-            cpref.setKey(cmd.getName());
-            cpref.setChecked(true);
-            cmdScr.addPreference(cpref);
-        }
+            ArrayList<ObdCommand> cmds = ObdConfig.getCommands();
+            PreferenceScreen cmdScr = (PreferenceScreen) getPreferenceScreen()
+                    .findPreference(COMMANDS_SCREEN_KEY);
+            for (ObdCommand cmd : cmds) {
+                CheckBoxPreference cpref = new CheckBoxPreference(this);
+                cpref.setTitle(cmd.getName());
+                cpref.setKey(cmd.getName());
+                cpref.setChecked(true);
+                cmdScr.addPreference(cpref);
+            }
 
     /*
      * Available OBD protocols
      *
      */
-        for (ObdProtocols protocol : ObdProtocols.values()) {
-            protocolStrings.add(protocol.name());
-        }
-        listProtocols.setEntries(protocolStrings.toArray(new CharSequence[0]));
-        listProtocols.setEntryValues(protocolStrings.toArray(new CharSequence[0]));
+            for (ObdProtocols protocol : ObdProtocols.values()) {
+                protocolStrings.add(protocol.name());
+            }
+            listProtocols.setEntries(protocolStrings.toArray(new CharSequence[0]));
+            listProtocols.setEntryValues(protocolStrings.toArray(new CharSequence[0]));
 
     /*
      * Let's use this device Bluetooth adapter to select which paired OBD-II
      * compliant device we'll use.
      */
-        final BluetoothAdapter mBtAdapter = BluetoothAdapter.getDefaultAdapter();
-        if (mBtAdapter == null) {
-            listBtDevices
-                    .setEntries(pairedDeviceStrings.toArray(new CharSequence[0]));
-            listBtDevices.setEntryValues(vals.toArray(new CharSequence[0]));
+            final BluetoothAdapter mBtAdapter = BluetoothAdapter.getDefaultAdapter();
+            if (mBtAdapter == null) {
+                listBtDevices
+                        .setEntries(pairedDeviceStrings.toArray(new CharSequence[0]));
+                listBtDevices.setEntryValues(vals.toArray(new CharSequence[0]));
 
-            // we shouldn't get here, still warn user
-            Toast.makeText(this, "This device does not support Bluetooth.",
-                    Toast.LENGTH_LONG).show();
+                // we shouldn't get here, still warn user
+                Toast.makeText(this, "This device does not support Bluetooth.",
+                        Toast.LENGTH_LONG).show();
 
-            return;
-        }
+                return;
+            }
 
     /*
      * Listen for preferences click.
      *
      * TODO there are so many repeated validations :-/
      */
-        final Activity thisActivity = this;
-        listBtDevices.setEntries(new CharSequence[1]);
-        listBtDevices.setEntryValues(new CharSequence[1]);
-        listBtDevices.setOnPreferenceClickListener(new OnPreferenceClickListener() {
-            public boolean onPreferenceClick(Preference preference) {
-                // see what I mean in the previous comment?
-                if (mBtAdapter == null || !mBtAdapter.isEnabled()) {
-                    Toast.makeText(thisActivity,
-                            "This device does not support Bluetooth or it is disabled.",
-                            Toast.LENGTH_LONG).show();
-                    return false;
+            final Activity thisActivity = this;
+            listBtDevices.setEntries(new CharSequence[1]);
+            listBtDevices.setEntryValues(new CharSequence[1]);
+            listBtDevices.setOnPreferenceClickListener(new OnPreferenceClickListener() {
+                public boolean onPreferenceClick(Preference preference) {
+                    // see what I mean in the previous comment?
+                    if (mBtAdapter == null || !mBtAdapter.isEnabled()) {
+                        Toast.makeText(thisActivity,
+                                "This device does not support Bluetooth or it is disabled.",
+                                Toast.LENGTH_LONG).show();
+                        return false;
+                    }
+                    return true;
                 }
-                return true;
-            }
-        });
+            });
 
     /*
      * Get paired devices and populate preference list.
      */
-        Set<BluetoothDevice> pairedDevices = mBtAdapter.getBondedDevices();
-        if (pairedDevices.size() > 0) {
-            for (BluetoothDevice device : pairedDevices) {
-                pairedDeviceStrings.add(device.getName() + "\n" + device.getAddress());
-                vals.add(device.getAddress());
+            Set<BluetoothDevice> pairedDevices = mBtAdapter.getBondedDevices();
+            if (pairedDevices.size() > 0) {
+                for (BluetoothDevice device : pairedDevices) {
+                    pairedDeviceStrings.add(device.getName() + "\n" + device.getAddress());
+                    vals.add(device.getAddress());
+                }
             }
+            listBtDevices.setEntries(pairedDeviceStrings.toArray(new CharSequence[0]));
+            listBtDevices.setEntryValues(vals.toArray(new CharSequence[0]));
+        }catch(Exception ex){
+            ex.getStackTrace();
         }
-        listBtDevices.setEntries(pairedDeviceStrings.toArray(new CharSequence[0]));
-        listBtDevices.setEntryValues(vals.toArray(new CharSequence[0]));
     }
+
+
+
+///////////////////////////////////////////////////////////////////////
+///////////////////////                         ///////////////////////
+///////////////////////    FIN DEL ONCREATE     ///////////////////////
+///////////////////////                         ///////////////////////
+///////////////////////////////////////////////////////////////////////
 
     /**
      * OnPreferenceChangeListener method that will validate a preferencen new
@@ -315,14 +341,45 @@ public class ConfigActivity extends PreferenceActivity implements OnPreferenceCh
         return false;
     }
 
+
+    // Check permission for the GPS
+    public boolean checkLocationPermission()
+    {
+        String permission = "android.permission.ACCESS_FINE_LOCATION";
+        int res = this.checkCallingOrSelfPermission(permission);
+
+        return (res == PackageManager.PERMISSION_GRANTED);
+    }
+
+    // control request permission
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case 1: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    Toast toast = Toast.makeText(this, R.string.status_gps_ready, Toast.LENGTH_SHORT);
+                    toast.show();
+
+                } else {
+                    Toast toast = Toast.makeText(this, R.string.status_bluetooth_disabled, Toast.LENGTH_SHORT);
+                    toast.show();
+                }
+                return;
+            }
+        }
+    }
+
     private void checkGps() {
         LocationManager mLocService = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        if (mLocService != null) {
-            LocationProvider mLocProvider = mLocService.getProvider(LocationManager.GPS_PROVIDER);
+        if (mLocService != null && checkLocationPermission()) {
+            LocationProvider mLocProvider = mLocService.getProvider(LocationManager.NETWORK_PROVIDER);
             if (mLocProvider == null) {
                 hideGPSCategory();
             }
         }
+        else
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1222);
     }
 
     private void hideGPSCategory() {
