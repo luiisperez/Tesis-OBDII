@@ -62,6 +62,7 @@ import com.app.heydriver.heydriver.model.ObdService;
 import com.github.pires.obd.commands.ObdCommand;
 import com.github.pires.obd.enums.AvailableCommandNames;
 
+import static android.content.ContentValues.TAG;
 import static com.app.heydriver.heydriver.controller.activities.HomeActivity.controladorSQLite;
 import static com.github.pires.obd.enums.AvailableCommandNames.*;
 import java.io.IOException;
@@ -95,8 +96,6 @@ public class ObdReaderFragment extends Fragment
     private static final int TABLE_ROW_MARGIN = 7;
     private static final int NO_ORIENTATION_SENSOR = 8;
     private static final int NO_GPS_SUPPORT = 9;
-    private static final int TRIPS_LIST = 10;
-    private static final int SAVE_TRIP_NOT_AVAILABLE = 11;
     private static final int REQUEST_ENABLE_BT = 1234;
     private static boolean bluetoothDefaultIsEnable = false;
     private Button b_start_data;
@@ -514,7 +513,6 @@ public class ObdReaderFragment extends Fragment
         valores.put(ControladorSQLite.DatosTabla.LAT,String.valueOf(dataSensor.getLat()));
         valores.put(ControladorSQLite.DatosTabla.LON,String.valueOf(dataSensor.getLon()));
         valores.put(ControladorSQLite.DatosTabla.ALT,String.valueOf(dataSensor.getAlt()));
-
         try
         {
             long IdGuardado = db.insert(ControladorSQLite.DatosTabla.NOMBRE_TABLA, "id", valores);
@@ -552,27 +550,6 @@ public class ObdReaderFragment extends Fragment
         }
     }
 
-/*    private boolean gpsInit() {
-        mLocService = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
-        if(!checkLocationPermission())
-            ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1222);
-        else
-        if (mLocService != null ) {
-            mLocProvider = mLocService.getProvider(LocationManager.NETWORK_PROVIDER);
-            if (mLocProvider != null) {
-                mLocService.addGpsStatusListener(this);
-                if (mLocService.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
-                    gpsStatusTextView.setText(getString(R.string.status_gps_ready));
-                    return true;
-                }
-            }
-        }
-        gpsStatusTextView.setText(getString(R.string.status_gps_no_support));
-        Toast toast = Toast.makeText(getActivity(), "Sorry, your device doesn\\'t support or has disabled GPS", Toast.LENGTH_SHORT);
-        toast.show();
-        return false;
-    }
-    */
     // Start GPS services & Controller permissions
     private boolean gpsInit() {
         mLocService = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
@@ -640,7 +617,6 @@ public class ObdReaderFragment extends Fragment
             Toast toast = Toast.makeText(getActivity(), "No Orientation Sensor", Toast.LENGTH_SHORT);
             toast.show();
         }
-
         obdStatusTextView.setText(getString(R.string.status_obd_disconnected));
         b_start_data.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -652,6 +628,9 @@ public class ObdReaderFragment extends Fragment
             @Override
             public void onClick(View view) {
                 stopLiveData();
+                gpsStatusTextView.setText(getString(R.string.status_gps_stopped));
+                Toast toast = Toast.makeText(getActivity(), R.string.menu_stop_live_data, Toast.LENGTH_LONG);
+                toast.show();
             }
         });
         return view;
@@ -662,8 +641,6 @@ public class ObdReaderFragment extends Fragment
         super.onStart();
         Log.d(TAG, "Entered onStart...");
     }
-
-
 
     @Override
     public void onDestroy() {
@@ -776,26 +753,15 @@ public class ObdReaderFragment extends Fragment
 
     private void startLiveData() {
         Log.d(TAG, "Starting live data..");
-
         tl.removeAllViews(); //start fresh
         doBindService();
-
-        //currentTrip = triplog.startTrip();
-        //if (currentTrip == null)
-        //    showDialog(SAVE_TRIP_NOT_AVAILABLE);
-
 
         // start command execution
         new Handler().post(mQueueCommands);
 
-        /*if (prefs.getBoolean(ConfigActivity.ENABLE_GPS_KEY, false))
-            gpsStart();
-        else
-            gpsStatusTextView.setText(getString(R.string.status_gps_stopped));*/
-
-
         try {
             gpsStart();
+            gpsInit();
         }
         catch (Exception e) {
             gpsStatusTextView.setText(getString(R.string.status_gps_stopped));
@@ -806,63 +772,10 @@ public class ObdReaderFragment extends Fragment
 
     private void stopLiveData() {
         Log.d(TAG, "Stopping live data..");
-
-        gpsStop();
-
+        tl.removeAllViews();
         doUnbindService();
-        //endTrip();
-
         releaseWakeLockIfHeld();
-
     }
-
-    /*
-    // Dialog (only in Activity class)
-    protected Dialog onCreateDialog(int id) {
-        AlertDialog.Builder build = new AlertDialog.Builder(getActivity());
-        switch (id) {
-            case NO_BLUETOOTH_ID:
-                build.setMessage(getString(R.string.text_no_bluetooth_id));
-                return build.create();
-            case BLUETOOTH_DISABLED:
-                Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-                startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
-                return build.create();
-            case NO_ORIENTATION_SENSOR:
-                build.setMessage(getString(R.string.text_no_orientation_sensor));
-                return build.create();
-            case NO_GPS_SUPPORT:
-                build.setMessage(getString(R.string.text_no_gps_support));
-                return build.create();
-            case SAVE_TRIP_NOT_AVAILABLE:
-                build.setMessage(getString(R.string.text_save_trip_not_available));
-                return build.create();
-        }
-        return null;
-    }
-*/
-/*
-    public boolean onPrepareOptionsMenu(Menu menu) {
-        MenuItem startItem = menu.findItem(START_LIVE_DATA);
-        MenuItem stopItem = menu.findItem(STOP_LIVE_DATA);
-        MenuItem settingsItem = menu.findItem(SETTINGS);
-        MenuItem getDTCItem = menu.findItem(GET_DTC);
-
-        if (service != null && service.isRunning()) {
-            getDTCItem.setEnabled(false);
-            startItem.setEnabled(false);
-            stopItem.setEnabled(true);
-            settingsItem.setEnabled(false);
-        } else {
-            getDTCItem.setEnabled(true);
-            stopItem.setEnabled(false);
-            startItem.setEnabled(true);
-            settingsItem.setEnabled(true);
-        }
-
-        return true;
-    }
-*/
 
     //Agrega una fila a la lista de parámetros VER
     private void addTableRow(String id, String key, String val) {
@@ -964,20 +877,6 @@ public class ObdReaderFragment extends Fragment
 
     }
 
-    /*
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == REQUEST_ENABLE_BT) {
-            if (resultCode == Activity.RESULT_OK) {
-                btStatusTextView.setText(getString(R.string.status_bluetooth_connected));
-            } else {
-                Toast.makeText(this, R.string.text_bluetooth_disabled, Toast.LENGTH_LONG).show();
-            }
-        }
-        super.onActivityResult(requestCode, resultCode, data);
-    }
-    */
-
     private synchronized void gpsStart() {
         if (!mGpsIsStarted && mLocProvider != null && mLocService != null && (mLocService.isProviderEnabled(LocationManager.GPS_PROVIDER) || mLocService.isProviderEnabled(LocationManager.NETWORK_PROVIDER))) {
             if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -1001,13 +900,6 @@ public class ObdReaderFragment extends Fragment
     public void setSupportActionBar(Toolbar supportActionBar) {
         this.supportActionBar = supportActionBar;
     }
-
-/*    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        return false;
-    }
-    */
-
 
     @Override
     public Context getContext() {

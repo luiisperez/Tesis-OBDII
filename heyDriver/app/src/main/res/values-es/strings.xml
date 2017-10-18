@@ -72,4 +72,5 @@
     <string name="no_data">No existen datos para sincronizar</string>
     <string name="sincronized_data">Sincronización completada</string>
     <string name="button_stop_data">Detener</string>
+    <string name="menu_stop_live_data">OBD-II detenido</string>
 </resources>

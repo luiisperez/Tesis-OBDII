@@ -81,6 +81,7 @@ public class SynchronizingAdapter {
                     reading.setLon(cursor.getFloat(32));
                     reading.setAlt(cursor.getFloat(33));
                     readings.add(reading);
+                    db.execSQL("DELETE from HISTORICO WHERE time_mark='"+cursor.getString(30)+"'");
                 } while (cursor.moveToNext());
             }
 

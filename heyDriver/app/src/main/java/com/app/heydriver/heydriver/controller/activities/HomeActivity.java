@@ -229,6 +229,8 @@ public class HomeActivity extends AppCompatActivity
                 }
                 else return false;
             } catch (Exception e) {
+                Toast toast = Toast.makeText(getApplicationContext(), R.string.no_data, Toast.LENGTH_LONG);
+                toast.show();
                 return false;
             }
         }
@@ -246,8 +248,15 @@ public class HomeActivity extends AppCompatActivity
             }
             else
             {
-                Toast toast = Toast.makeText(getApplicationContext(), R.string.error_bad_communication, Toast.LENGTH_SHORT);
-                toast.show();
+                if (response==false)
+                {
+                    Toast toast = Toast.makeText(getApplicationContext(), R.string.no_data, Toast.LENGTH_LONG);
+                    toast.show();
+                }
+                else {
+                    Toast toast = Toast.makeText(getApplicationContext(), R.string.error_bad_communication, Toast.LENGTH_SHORT);
+                    toast.show();
+                }
             }
 
             if (dialog.isShowing()) {
