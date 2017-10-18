@@ -30,7 +30,14 @@ import com.app.heydriver.heydriver.model.ObdConfig;
 import java.util.ArrayList;
 import java.util.Set;
 
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
+
 public class ConfigActivity extends PreferenceActivity implements OnPreferenceChangeListener {
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+    }
 
 
     private static final String[] INITIAL_PERMS={
