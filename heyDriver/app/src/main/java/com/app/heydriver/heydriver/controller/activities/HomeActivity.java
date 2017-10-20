@@ -22,6 +22,7 @@ import android.widget.Toast;
 import com.app.heydriver.heydriver.R;
 import com.app.heydriver.heydriver.common.Entities.Car;
 import com.app.heydriver.heydriver.common.Entities.ControladorSQLite;
+import com.app.heydriver.heydriver.common.Entities.ObdData;
 import com.app.heydriver.heydriver.common.Entities.User;
 import com.app.heydriver.heydriver.controller.adapters.SynchronizingAdapter;
 import com.app.heydriver.heydriver.controller.fragments.CarSelectionFragment;
@@ -29,6 +30,8 @@ import com.app.heydriver.heydriver.controller.fragments.HomeFragment;
 import com.app.heydriver.heydriver.controller.fragments.ObdReaderFragment;
 import com.app.heydriver.heydriver.model.ManageInformation;
 import com.app.heydriver.heydriver.model.RestCommunication;
+
+import java.util.List;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
@@ -203,6 +206,10 @@ public class HomeActivity extends AppCompatActivity
         return true;
     }
 
+    public Context getContext(){
+        return this;
+    }
+
     public void setActionBarTitle(String title){
         toolbar.setTitle(title);
     }
@@ -210,7 +217,7 @@ public class HomeActivity extends AppCompatActivity
     private class Synchronizing extends AsyncTask<Void, Void, Boolean> {
         private ManageInformation info = new ManageInformation();
         private ProgressDialog dialog = new ProgressDialog(HomeActivity.this);
-        private boolean response;
+        private int response = 0;
         SynchronizingAdapter sa = new SynchronizingAdapter();
 
         @Override
@@ -221,16 +228,16 @@ public class HomeActivity extends AppCompatActivity
 
         @Override
         protected Boolean doInBackground(Void... params) {
+            List<ObdData> sincData = null;
             try {
                 RestCommunication con = new RestCommunication();
-                response = con.callMethodSynchronization(sa.syncData(getApplicationContext()));
-                if (response == true) {
-                    return true;
-                }
+                response = con.callMethodSynchronization(sa.syncData());
+               if (response == 1)
+                return true;
                 else return false;
-            } catch (Exception e) {
-                Toast toast = Toast.makeText(getApplicationContext(), R.string.no_data, Toast.LENGTH_LONG);
-                toast.show();
+            }
+            catch (Exception e) {
+                response = 0;
                 return false;
             }
         }
@@ -239,7 +246,7 @@ public class HomeActivity extends AppCompatActivity
         protected void onPostExecute(final Boolean success) {
 
             if (success) {
-                if (response == true) {
+                if (response == 1) {
                     CharSequence text = getString(R.string.sincronized_data);
                     int duration = Toast.LENGTH_SHORT;
                     Toast toast = Toast.makeText(getApplicationContext(), text, duration);
@@ -248,17 +255,17 @@ public class HomeActivity extends AppCompatActivity
             }
             else
             {
-                if (response==false)
+                if (response==404)
                 {
                     Toast toast = Toast.makeText(getApplicationContext(), R.string.no_data, Toast.LENGTH_LONG);
                     toast.show();
                 }
-                else {
-                    Toast toast = Toast.makeText(getApplicationContext(), R.string.error_bad_communication, Toast.LENGTH_SHORT);
+                else if (response==0)
+                {
+                    Toast toast = Toast.makeText(getApplicationContext(), R.string.error_bad_communication, Toast.LENGTH_LONG);
                     toast.show();
                 }
             }
-
             if (dialog.isShowing()) {
                 dialog.dismiss();
             }

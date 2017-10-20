@@ -26,7 +26,7 @@ public class SynchronizingAdapter {
     List<ObdData> readings = new ArrayList<ObdData>();
     SimpleDateFormat mask = new SimpleDateFormat("_dd_MM_yyyy_HH_mm_ss");
 
-    public List<ObdData> syncData(Context context) throws ParseException {
+    public List<ObdData> syncData() throws ParseException {
 
         try {
             SQLiteDatabase db = HomeActivity.controladorSQLite.getWritableDatabase();
@@ -81,10 +81,8 @@ public class SynchronizingAdapter {
                     reading.setLon(cursor.getFloat(32));
                     reading.setAlt(cursor.getFloat(33));
                     readings.add(reading);
-                    db.execSQL("DELETE from HISTORICO WHERE time_mark='"+cursor.getString(30)+"'");
                 } while (cursor.moveToNext());
             }
-
             db.close();
             if (readings.size() >= 1) {
                 return readings;
@@ -92,11 +90,8 @@ public class SynchronizingAdapter {
                 return null;
             }
 
-            // aquí se debe preguntar si readings size es >=1 y si es así, tran
         } catch (Exception e) {
             Log.d(TAG, "callMethodSynchronization: Error de sincronización");
-            Toast toast = Toast.makeText(context, R.string.error_bad_communication, Toast.LENGTH_LONG);
-            toast.show();
             throw e;
         }
     }

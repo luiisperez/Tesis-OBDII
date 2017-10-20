@@ -1,11 +1,13 @@
 package com.app.heydriver.heydriver.model;
 
 
+import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
 import com.app.heydriver.heydriver.common.Entities.Car;
 import com.app.heydriver.heydriver.common.Entities.ObdData;
 import com.app.heydriver.heydriver.common.Entities.User;
+import com.app.heydriver.heydriver.controller.activities.HomeActivity;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.internal.LinkedTreeMap;
@@ -191,7 +193,8 @@ public class RestCommunication {
     }
 
     // Este método recibe las lecuras que serán transmitidas al servidor
-    public boolean callMethodSynchronization(List<ObdData> reading) throws Exception {
+    public int callMethodSynchronization(List<ObdData> reading) throws Exception {
+        SQLiteDatabase db = HomeActivity.controladorSQLite.getWritableDatabase();
         try {
             conn = null;
             Gson gson = new GsonBuilder().create();
@@ -202,20 +205,27 @@ public class RestCommunication {
                     String _result="";
                     if ((a = br.readLine()) != null) {
                         _result = gson.fromJson(a, String.class);
+                        String fecha = String.valueOf(obdData.getTime_mark().toString());
+                        db.execSQL("DELETE from HISTORICO WHERE time_mark='"+fecha+"'");
                     }
                     if (_result.equals("false")) {
                         conn.disconnect();
-                        return false;
+                        db.close();
+                        return 0;
                     }
                 }
             }
             else
-                return false;
-
+            {
+                db.close();
+                return 404;
+            }
             conn.disconnect();
-            return true;
+            db.close();
+            return 1;
         }
         catch (Exception ex){
+            db.close();
             throw ex;
         }
     }
