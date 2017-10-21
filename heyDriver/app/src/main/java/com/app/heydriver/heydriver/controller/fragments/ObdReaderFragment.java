@@ -295,8 +295,6 @@ public class ObdReaderFragment extends Fragment
         //si ya tengo todos los valores, los almaceno
         if (commandResult.size() == 30)
             updateBdStatistic(cmdID, cmdResult);
-        //updateTripStatistic(job, cmdID);
-
     }
 
     public float stringToFloat(String string) {
@@ -305,12 +303,20 @@ public class ObdReaderFragment extends Fragment
             if (string.charAt(i) >= 48 &&
                     string.charAt(i) <= 57 ||
                     string.charAt(i) == '.' ||
-                    string.charAt(i) == '-') {
-                newString += string.charAt(i);
+                    string.charAt(i) == ',' ||
+                    string.charAt(i) == '-')
+            {
+                if (string.charAt(i) == ',')
+                {
+                    newString += '.';
+                }
+                else
+                    newString += string.charAt(i);
             } else {
                 break;
             }
         }
+
         return Float.parseFloat(newString);
     }
 
@@ -320,7 +326,6 @@ public class ObdReaderFragment extends Fragment
         SQLiteDatabase db = controladorSQLite.getWritableDatabase();
         long mils = System.currentTimeMillis();
         SimpleDateFormat mask = new SimpleDateFormat("_dd_MM_yyyy_HH_mm_ss");
-        //Date creationDate = mask.parse(el_string_con_la_fecha);
         double lat = 0;
         double lon = 0;
         double alt = 0;
@@ -693,20 +698,14 @@ public class ObdReaderFragment extends Fragment
         if (!preRequisites && prefs.getBoolean(ConfigActivity.ENABLE_BT_KEY, false)) {
             preRequisites = btAdapter != null && btAdapter.enable();
         }
-        //try&catch
         gpsInit();
 
         if (!preRequisites) {
-            //showDialog(BLUETOOTH_DISABLED);
             btStatusTextView.setText(getString(R.string.status_bluetooth_disabled));
         } else {
             btStatusTextView.setText(getString(R.string.status_bluetooth_ok));
         }
     }
-/*    private void updateConfig() {
-        startActivity(new Intent(getActivity(), ConfigActivity.class));
-    }*/
-
 /*
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -928,7 +927,6 @@ public class ObdReaderFragment extends Fragment
                 } catch (RetrofitError re) {
                     Log.e(TAG, re.toString());
                 }
-
             }
             Log.d(TAG, "Done");
             return null;
