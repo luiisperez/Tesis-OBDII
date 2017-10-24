@@ -77,6 +77,8 @@
 
     <!-- Strings related to obd reader -->
     <string name="title_fragment_obd_reader">Escaneo con OBD-II</string>
+    <string name="unknown_obd_code">Error desconocido. Por favor consulte a un experto</string>
+
 
     <!-- Strings related to notifications -->
     <string name="failure_detected_title">Falla detectada</string>

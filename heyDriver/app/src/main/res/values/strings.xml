@@ -74,6 +74,7 @@
 
     <!-- Strings related to obd reader -->
     <string name="title_fragment_obd_reader">OBD-II Scanning</string>
+    <string name="unknown_obd_code">Unknown error code. Please consult an expert</string>
     <string name="action_clear_codes">Clear Codes</string>
     <string name="notification_action">Tap to open OBD-Reader</string>
     <string name="command_list">Choose a command</string>

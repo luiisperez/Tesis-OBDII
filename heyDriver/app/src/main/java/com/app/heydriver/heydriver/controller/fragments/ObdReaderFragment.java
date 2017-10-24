@@ -390,6 +390,23 @@ public class ObdReaderFragment extends Fragment
         return dtcCodes;
     }
 
+    private String getTroubleMessage(String code) {
+        Map<String, String> dtcVals = getDict(R.array.dtc_keys, R.array.dtc_values);
+        //TODO replace below codes (res) with aboce dtcVals
+        //String tmpVal = dtcVals.get(res.split("\n"));
+        //String[] dtcCodes = new String[]{};
+        String dtcMessage = getString(R.string.unknown_obd_code);
+        //int i =1;
+        try{
+            if (dtcVals.get(code).equals("")) {
+                dtcMessage = dtcVals.get(code);
+            }
+            return dtcMessage;
+        }catch (Exception ex) {
+            return dtcMessage;
+        }
+    }
+
     // update SQLite Statistics
     public void updateBdStatistic( String sensorName, String value) {
         /* Prueba para obtener lista de errores
@@ -468,6 +485,7 @@ public class ObdReaderFragment extends Fragment
                 for (String n:split_codes) {
                     if (!DETECTED_ERRORS.contains(n)) {
                         DETECTED_ERRORS.add(n);
+                        getTroubleCodes(n);
                         showFailureNotification(n, "todo bien"); //FALTA LEER EL MENSAJE DE ERROR
                     }
                 }
