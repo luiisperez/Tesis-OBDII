@@ -43,8 +43,10 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -359,8 +361,41 @@ public class ObdReaderFragment extends Fragment
         return Float.parseFloat(newString);
     }
 
+    Map<String, String> getDict(int keyId, int valId) {
+        String[] keys = getResources().getStringArray(keyId);
+        String[] vals = getResources().getStringArray(valId);
+
+        Map<String, String> dict = new HashMap<String, String>();
+        for (int i = 0, l = keys.length; i < l; i++) {
+            dict.put(keys[i], vals[i]);
+        }
+
+        return dict;
+    }
+
+    private ArrayList<String> getTroubleCodes(String res) {
+        Map<String, String> dtcVals = getDict(R.array.dtc_keys, R.array.dtc_values);
+        //TODO replace below codes (res) with aboce dtcVals
+        //String tmpVal = dtcVals.get(res.split("\n"));
+        //String[] dtcCodes = new String[]{};
+        ArrayList<String> dtcCodes = new ArrayList<String>();
+        //int i =1;
+        if (res != null) {
+            for (String dtcCode : res.split("\n")) {
+                dtcCodes.add(dtcCode + " : " + dtcVals.get(dtcCode));
+            }
+        } else {
+            dtcCodes.add("There are no errors");
+        }
+        return dtcCodes;
+    }
+
     // update SQLite Statistics
     public void updateBdStatistic( String sensorName, String value) {
+        /* Prueba para obtener lista de errores
+        String a ="P0174\nP0741";
+        ArrayList<String> list = getTroubleCodes(a);
+        */
         final ControladorSQLite controladorSQLite = new ControladorSQLite(getActivity().getApplicationContext());
         SQLiteDatabase db = controladorSQLite.getWritableDatabase();
         long mils = System.currentTimeMillis();
