@@ -67,10 +67,19 @@
     <string name="error_duplicated_car">El número de serie que está intentando registrar ya está registrado</string>
     <string name="added_car_succesfully">El vehículo fue añadido exitosamente</string>
     <string name="no_vehicles">No has registrado vehículos</string>
+
     <string name="button_start_data">Iniciar Lectura</string>
     <string name="title_pref_obd">Preferencias de OBD</string>
     <string name="no_data">No existen datos para sincronizar</string>
     <string name="sincronized_data">Sincronización completada</string>
     <string name="button_stop_data">Detener</string>
     <string name="menu_stop_live_data">OBD-II detenido</string>
+
+    <!-- Strings related to obd reader -->
+    <string name="title_fragment_obd_reader">Escaneo con OBD-II</string>
+
+    <!-- Strings related to notifications -->
+    <string name="failure_detected_title">Falla detectada</string>
+    <string name="failure_detected_message_pt1">El código de la falla es </string>
+    <string name="failure_detected_message_pt2">y el mensaje del error es </string>
 </resources>

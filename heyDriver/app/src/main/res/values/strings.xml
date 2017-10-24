@@ -58,9 +58,6 @@
     <string name="selected_vehicle">You have already selected a vehicle</string>
     <string name="year">Year:</string>
 
-    <!-- Strings related to obd reader -->
-    <string name="title_fragment_obd_reader">OBD-II Scann</string>
-
     <!-- Strings related to car registration -->
     <string name="string_serial">Serial</string>
     <string name="string_brand">Brand</string>
@@ -74,6 +71,9 @@
     <string name="no_vehicles">You have not registered an vehicles</string>
 
     <!-- Response Strings -->
+
+    <!-- Strings related to obd reader -->
+    <string name="title_fragment_obd_reader">OBD-II Scanning</string>
     <string name="action_clear_codes">Clear Codes</string>
     <string name="notification_action">Tap to open OBD-Reader</string>
     <string name="command_list">Choose a command</string>
@@ -178,6 +178,14 @@
     <string name="pref_dev_email_title">Developer Email</string>
     <string name="pref_dev_email_summary">Logs will be emailed to this address</string>
     <string name="text_noerrors">There were no errors found.!</string>
+
+    <!-- Strings related to notifications -->
+    <string name="failure_detected_title">Failure detected</string>
+    <string name="failure_detected_message_pt1">The failure code is </string>
+    <string name="failure_detected_message_pt2">and the error message is </string>
+
+
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

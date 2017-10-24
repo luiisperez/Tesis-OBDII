@@ -3,6 +3,9 @@ package com.app.heydriver.heydriver.controller.fragments;
 import android.Manifest;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.bluetooth.BluetoothAdapter;
 import android.content.ComponentName;
 import android.content.ContentValues;
@@ -13,6 +16,7 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.BitmapFactory;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -31,6 +35,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.app.Fragment;
+import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -63,6 +68,7 @@ import com.github.pires.obd.commands.ObdCommand;
 import com.github.pires.obd.enums.AvailableCommandNames;
 
 import static android.content.ContentValues.TAG;
+import static android.content.Context.NOTIFICATION_SERVICE;
 import static com.app.heydriver.heydriver.controller.activities.HomeActivity.controladorSQLite;
 import static com.github.pires.obd.enums.AvailableCommandNames.*;
 import java.io.IOException;
@@ -74,6 +80,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 import retrofit.RestAdapter;
 import retrofit.RetrofitError;
@@ -85,6 +92,38 @@ import static com.app.heydriver.heydriver.controller.activities.ConfigActivity.g
 
 public class ObdReaderFragment extends Fragment
         implements ObdProgressListener, LocationListener, GpsStatus.Listener {
+
+
+    //NOTIFICACIONES EN ANDROID
+
+    public void showFailureNotification(String errorcode, String message) {
+        NotificationCompat.Builder mBuilder;
+        NotificationManager mNotifyMgr =(NotificationManager) getContext().getSystemService(NOTIFICATION_SERVICE);
+
+        int icono = R.mipmap.icon_driver;
+        Intent i = new Intent(getActivity(), HomeActivity.class);
+        PendingIntent pendingIntent = PendingIntent.getActivity(getActivity(), 0, i, 0);
+
+        mBuilder =new NotificationCompat.Builder(getContext())
+                .setContentIntent(pendingIntent)
+                .setSmallIcon(icono)
+                .setLargeIcon(BitmapFactory.decodeResource(getResources(), icono))
+                .setContentTitle(getString(R.string.failure_detected_title))
+                .setContentText(getString(R.string.failure_detected_message_pt1) + "\"" + errorcode + "\"" +
+                                getString(R.string.failure_detected_message_pt2) + "\"" + message + "\"")
+                .setVibrate(new long[] {100, 250, 100, 500})
+                .setStyle(new NotificationCompat.BigTextStyle()
+                        .bigText(getString(R.string.failure_detected_message_pt1) + " \"" + errorcode + "\" " +
+                                getString(R.string.failure_detected_message_pt2) + " \"" + message + "\""))
+                .setAutoCancel(true);
+
+        Random random = new Random();
+        int m = random.nextInt(9999 - 1000) + 1000;
+        mNotifyMgr.notify(m, mBuilder.build());
+    }
+
+
+    private static ArrayList<String> DETECTED_ERRORS = new ArrayList<String>();
 
     private static final String TAG = ObdReaderFragment.class.getName();
     private static final int NO_BLUETOOTH_ID = 0;
@@ -390,6 +429,12 @@ public class ObdReaderFragment extends Fragment
             if (e.getKey().equals( TROUBLE_CODES.toString()))
             {
                 dataSensor.setTrouble_Codes((String) e.getValue());
+                String [] split_codes = e.getValue().toString().split("\n");
+                for (String n:split_codes) {
+                    DETECTED_ERRORS.add(n);
+                    showFailureNotification(n, "todo bien"); //FALTA LEER EL MENSAJE DE ERROR
+                }
+
             }
             if (e.getKey().equals( TIMING_ADVANCE.toString()))
             {
@@ -438,6 +483,7 @@ public class ObdReaderFragment extends Fragment
             if (e.getKey().equals( DTC_NUMBER.toString()))
             {
                 dataSensor.setDiagnostic_Trouble_Codes((String) e.getValue());
+
             }
             //AFR
             if (e.getKey().equals( WIDEBAND_AIR_FUEL_RATIO.toString()))
