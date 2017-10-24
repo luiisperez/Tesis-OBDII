@@ -381,7 +381,7 @@ public class ObdReaderFragment extends Fragment
         Iterator et = commandResult.entrySet().iterator();
         while (et.hasNext()) {
             Map.Entry e = (Map.Entry) et.next();
-            if (e.getValue().equals("NA") ||e.getValue().equals("NODATA")) {
+            if (e.getValue().equals("NA") ||e.getValue().equals("NODATA") ||e.getValue().equals("......UNABLETOCONNECT")) {
                 e.setValue("0.0");
             }
         }
