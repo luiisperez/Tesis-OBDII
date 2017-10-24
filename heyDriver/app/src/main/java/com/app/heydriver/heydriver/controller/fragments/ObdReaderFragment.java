@@ -466,8 +466,10 @@ public class ObdReaderFragment extends Fragment
                 dataSensor.setTrouble_Codes((String) e.getValue());
                 String [] split_codes = e.getValue().toString().split("\n");
                 for (String n:split_codes) {
-                    DETECTED_ERRORS.add(n);
-                    showFailureNotification(n, "todo bien"); //FALTA LEER EL MENSAJE DE ERROR
+                    if (!DETECTED_ERRORS.contains(n)) {
+                        DETECTED_ERRORS.add(n);
+                        showFailureNotification(n, "todo bien"); //FALTA LEER EL MENSAJE DE ERROR
+                    }
                 }
 
             }
