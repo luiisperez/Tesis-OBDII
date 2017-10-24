@@ -18,8 +18,9 @@
     <ImageView
         android:id="@+id/logo"
         android:layout_width="match_parent"
-        android:layout_height="104dp"
-        android:layout_marginTop="175dp"
+        android:layout_height="@dimen/height_launcher_logo"
+        android:layout_marginTop="@dimen/margin_top_launcher_logo"
+        android:layout_gravity="center"
         android:adjustViewBounds="false"
         app:srcCompat="@drawable/heydriver_white_logo" />
 

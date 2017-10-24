@@ -2,4 +2,6 @@
 <resources>
     <dimen name="btn_obd_reader">280dp</dimen>
     <dimen name="margin_right_obd_reader">10dp</dimen>
+    <dimen name="margin_top_launcher_logo">300dp</dimen>
+    <dimen name="height_launcher_logo">150dp</dimen>
 </resources>
