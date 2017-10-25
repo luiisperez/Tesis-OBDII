@@ -9,8 +9,8 @@
 
 CREATE TABLE CAR(
 	CARSERIAL					varchar(20) not null,
-	CARBRAND					varchar(20) not null,
-	CARMODEL					varchar(20) not null,
+	CARBRAND					varchar(40) not null,
+	CARMODEL					varchar(40) not null,
 	CARYEAR						numeric(20) not null,
  	CONSTRAINT PK_CAR PRIMARY KEY (CARSERIAL)
 );
@@ -20,6 +20,17 @@ CREATE TABLE PERSON_CAR(
 	PERSONCAR_FK_PERSON			varchar(20) not null,
 	PERSONCAR_FK_CAR			varchar(20) not null,
  	CONSTRAINT PK_PERSON_CAR PRIMARY KEY (PERSONCARID)
+);
+
+CREATE TABLE BRAND(
+	BRANDNAME 					varchar(40) not null,	
+	CONSTRAINT PK_BRAND PRIMARY KEY (BRANDNAME)			
+);
+
+CREATE TABLE MODEL(
+	MODELNAME 					varchar(40) not null,	
+	MODEL_FK_BRAND				varchar(40) not null,	
+	CONSTRAINT PK_MODEL PRIMARY KEY (MODELNAME)			
 );
 
 CREATE TABLE HISTORY (
