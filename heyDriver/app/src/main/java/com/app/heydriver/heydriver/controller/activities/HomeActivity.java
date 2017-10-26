@@ -30,6 +30,7 @@ import com.app.heydriver.heydriver.controller.fragments.HomeFragment;
 import com.app.heydriver.heydriver.controller.fragments.ObdReaderFragment;
 import com.app.heydriver.heydriver.model.ManageInformation;
 import com.app.heydriver.heydriver.model.RestCommunication;
+import com.github.pires.obd.commands.control.TroubleCodesCommand;
 
 import java.util.List;
 
@@ -181,11 +182,7 @@ public class HomeActivity extends AppCompatActivity
                 changeFragment(R.id.content_frame, fragmentManager, new HomeFragment(), id, "home");
             } else if (id == R.id.nav_carregistration) {
                 changeFragment(R.id.content_frame, fragmentManager, new CarSelectionFragment(), id, "car_selection");
-            } else if (id == R.id.nav_gallery) {
-
-            } else if (id == R.id.nav_slideshow) {
-
-            } else if (id == R.id.nav_obdIIscanning)
+            }  else if (id == R.id.nav_obdIIscanning)
             {
                 ManageInformation info = new ManageInformation();
                 Car selectedCar = info.getCarInformation(getApplicationContext());
@@ -194,9 +191,11 @@ public class HomeActivity extends AppCompatActivity
                 }else{
                     Toast.makeText(getApplicationContext(), getString(R.string.error_not_selected_car),Toast.LENGTH_LONG).show();
                 }
-            } else if (id == R.id.nav_share) {
-
-            } else if (id == R.id.nav_send) {
+            } else if (id == R.id.nav_trouble_codes) {
+                //changeFragment(R.id.content_frame, fragmentManager, new TroubleCodesFragment(), id, "trouble_codes");
+            } else if (id == R.id.nav_predictions) {
+                //changeFragment(R.id.content_frame, fragmentManager, new PredictionsFragment(), id, "predictions");
+            } else if (id == R.id.nav_sync) {
                 mSynchronizeTask = new Synchronizing();
                 mSynchronizeTask.execute((Void) null);
             }
