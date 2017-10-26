@@ -372,11 +372,7 @@ public class ObdReaderFragment extends Fragment
 
     private String getTroubleMessage(String code) {
         Map<String, String> dtcVals = getDict(R.array.dtc_keys, R.array.dtc_values);
-        //TODO replace below codes (res) with aboce dtcVals
-        //String tmpVal = dtcVals.get(res.split("\n"));
-        //String[] dtcCodes = new String[]{};
         String dtcMessage = getString(R.string.unknown_obd_code);
-        //int i =1;
         try{
             if (!dtcVals.get(code).equals("")) {
                 dtcMessage = dtcVals.get(code);
@@ -456,7 +452,6 @@ public class ObdReaderFragment extends Fragment
             }
             if (e.getKey().equals(TROUBLE_CODES.toString())) {
                 dataSensor.setTrouble_Codes((String) e.getValue());
-                //si contiene datos de error
                 if ( !((String) e.getValue()).equals(""))
                 {
                     String[] split_codes = e.getValue().toString().split("\n");
