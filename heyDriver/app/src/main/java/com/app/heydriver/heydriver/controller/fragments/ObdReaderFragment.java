@@ -97,7 +97,6 @@ public class ObdReaderFragment extends Fragment
 
 
     //NOTIFICACIONES EN ANDROID
-
     public void showFailureNotification(String errorcode, String message) {
         NotificationCompat.Builder mBuilder;
         NotificationManager mNotifyMgr =(NotificationManager) getContext().getSystemService(NOTIFICATION_SERVICE);
@@ -124,9 +123,7 @@ public class ObdReaderFragment extends Fragment
         mNotifyMgr.notify(m, mBuilder.build());
     }
 
-
     private static ArrayList<String> DETECTED_ERRORS = new ArrayList<String>();
-
     private static final String TAG = ObdReaderFragment.class.getName();
     private static final int NO_BLUETOOTH_ID = 0;
     private static final int BLUETOOTH_DISABLED = 1;
@@ -373,23 +370,6 @@ public class ObdReaderFragment extends Fragment
         return dict;
     }
 
-    private ArrayList<String> getTroubleCodes(String res) {
-        Map<String, String> dtcVals = getDict(R.array.dtc_keys, R.array.dtc_values);
-        //TODO replace below codes (res) with aboce dtcVals
-        //String tmpVal = dtcVals.get(res.split("\n"));
-        //String[] dtcCodes = new String[]{};
-        ArrayList<String> dtcCodes = new ArrayList<String>();
-        //int i =1;
-        if (res != null) {
-            for (String dtcCode : res.split("\n")) {
-                dtcCodes.add(dtcCode + " : " + dtcVals.get(dtcCode));
-            }
-        } else {
-            dtcCodes.add("There are no errors");
-        }
-        return dtcCodes;
-    }
-
     private String getTroubleMessage(String code) {
         Map<String, String> dtcVals = getDict(R.array.dtc_keys, R.array.dtc_values);
         //TODO replace below codes (res) with aboce dtcVals
@@ -398,7 +378,7 @@ public class ObdReaderFragment extends Fragment
         String dtcMessage = getString(R.string.unknown_obd_code);
         //int i =1;
         try{
-            if (dtcVals.get(code).equals("")) {
+            if (!dtcVals.get(code).equals("")) {
                 dtcMessage = dtcVals.get(code);
             }
             return dtcMessage;
@@ -409,10 +389,6 @@ public class ObdReaderFragment extends Fragment
 
     // update SQLite Statistics
     public void updateBdStatistic( String sensorName, String value) {
-        /* Prueba para obtener lista de errores
-        String a ="P0174\nP0741";
-        ArrayList<String> list = getTroubleCodes(a);
-        */
         final ControladorSQLite controladorSQLite = new ControladorSQLite(getActivity().getApplicationContext());
         SQLiteDatabase db = controladorSQLite.getWritableDatabase();
         long mils = System.currentTimeMillis();
@@ -478,18 +454,19 @@ public class ObdReaderFragment extends Fragment
                 ManageInformation info = new ManageInformation();
                 dataSensor.setVehicle_Identification_Number(info.getCarInformation(getActivity()).get_serial());
             }
-            if (e.getKey().equals( TROUBLE_CODES.toString()))
-            {
+            if (e.getKey().equals(TROUBLE_CODES.toString())) {
                 dataSensor.setTrouble_Codes((String) e.getValue());
-                String [] split_codes = e.getValue().toString().split("\n");
-                for (String n:split_codes) {
-                    if (!DETECTED_ERRORS.contains(n)) {
-                        DETECTED_ERRORS.add(n);
-                        getTroubleCodes(n);
-                        showFailureNotification(n, "todo bien"); //FALTA LEER EL MENSAJE DE ERROR
+                //si contiene datos de error
+                if ( !((String) e.getValue()).equals(""))
+                {
+                    String[] split_codes = e.getValue().toString().split("\n");
+                    for (String n : split_codes) {
+                        if (!DETECTED_ERRORS.contains(n)) {
+                            DETECTED_ERRORS.add(n);
+                            showFailureNotification(n, getTroubleMessage(n)); //FALTA LEER EL MENSAJE DE ERROR
+                        }
                     }
                 }
-
             }
             if (e.getKey().equals( TIMING_ADVANCE.toString()))
             {
