@@ -80,7 +80,7 @@ $$ LANGUAGE plpgsql;
 
 /**************************************************AGREGAR VEHICULO**************************************************/
 
-CREATE OR REPLACE FUNCTION ADD_VEHICLE(varchar(20), varchar(20), varchar(20), varchar(20), numeric) RETURNS integer AS $$
+CREATE OR REPLACE FUNCTION ADD_VEHICLE(varchar(20), varchar(20), varchar(1000), varchar(1000), numeric) RETURNS integer AS $$
 DECLARE
  result integer;
 
@@ -111,7 +111,7 @@ $$ LANGUAGE plpgsql;
 
 /**************************************************CONSULTAR VEHICULOS DE UN USUARIO**************************************************/
 
-CREATE OR REPLACE FUNCTION CARS_USER_INFORMATION(varchar(20)) RETURNS TABLE (carserial varchar(20), carbrand varchar(20), carmodel varchar(20), caryear numeric) AS $$
+CREATE OR REPLACE FUNCTION CARS_USER_INFORMATION(varchar(20)) RETURNS TABLE (carserial varchar(20), carbrand varchar(1000), carmodel varchar(1000), caryear numeric) AS $$
 
 BEGIN
  	RETURN QUERY
@@ -139,7 +139,7 @@ $$ LANGUAGE plpgsql;
 
 /**************************************************AGREGAR MARCAS DE VEHICULOS**************************************************/
 
-CREATE OR REPLACE FUNCTION SYNC_NHTSA_INFORMATION_BRANDS(varchar(40)) RETURNS integer AS $$
+CREATE OR REPLACE FUNCTION SYNC_NHTSA_INFORMATION_BRANDS(varchar(1000)) RETURNS integer AS $$
 DECLARE
  result integer;
 
@@ -156,7 +156,7 @@ $$ LANGUAGE plpgsql;
 
 /**************************************************AGREGAR MODELOS DE VEHICULOS**************************************************/
 
-CREATE OR REPLACE FUNCTION SYNC_NHTSA_INFORMATION_MODELS(varchar(40), varchar(40)) RETURNS integer AS $$
+CREATE OR REPLACE FUNCTION SYNC_NHTSA_INFORMATION_MODELS(varchar(1000), varchar(1000)) RETURNS integer AS $$
 DECLARE
  result integer;
 
@@ -171,6 +171,30 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
+/**************************************************CONSULTAR MARCAS DE VEHICULOS**************************************************/
+
+CREATE OR REPLACE FUNCTION CAR_BRANDS_INFORMATION() RETURNS TABLE (brandname varchar(1000)) AS $$
+
+BEGIN
+ 	RETURN QUERY
+	 	SELECT BRANDNAME
+		FROM BRAND
+	;
+END;
+$$ LANGUAGE plpgsql;
+
+/**************************************************CONSULTAR MODELOS DE VEHICULOS POR MARCA**************************************************/
+
+CREATE OR REPLACE FUNCTION CAR_MODELS_BY_BRAND_INFORMATION(varchar(1000)) RETURNS TABLE (modelname varchar(1000), brandname varchar(1000)) AS $$
+
+BEGIN
+ 	RETURN QUERY
+	 	SELECT M.MODELNAME, B.BRANDNAME
+		FROM MODEL M, BRAND B
+		WHERE M.MODEL_FK_BRAND = B.BRANDNAME AND B.BRANDNAME = $1
+	;
+END;
+$$ LANGUAGE plpgsql;
 
 /**************************************************AGREGAR_HISTORICO_PORCARRO**************************************************/
 

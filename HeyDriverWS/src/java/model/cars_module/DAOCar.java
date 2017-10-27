@@ -25,6 +25,8 @@ public class DAOCar extends DAO{
     private static String _sqlAddVehicle = "{?=call ADD_VEHICLE(?,?,?,?,?)}";
     private static String _sqlCarsUserInformation = "{call CARS_USER_INFORMATION(?)}";
     private static String _sqlRemoveVehicle = "{?=call REMOVE_VEHICLE(?,?)}";
+    private static String _sqlCarBrandsInformation = "{?=call CAR_BRANDS_INFORMATION()}";
+    private static String _sqlCarModelsByBrandInformation = "{?=call CAR_MODELS_BY_BRAND_INFORMATION(?)}";
     private ResultSet rs;
     
     public int create(String username, Car _car) throws Exception {
@@ -137,4 +139,71 @@ public class DAOCar extends DAO{
             _bdCon.close();
         }
     }
+    
+    public ArrayList<String> getBrands() throws Exception {
+
+        User _userFail = null;
+        ArrayList<String> brandsList = new ArrayList<String>();
+        
+        CallableStatement cstmt;
+
+        int response = 0;
+
+        try {
+            _bdCon = DAO.getBdConnect();
+            cstmt = _bdCon.prepareCall(_sqlCarBrandsInformation);
+            rs = cstmt.executeQuery();
+            while(rs.next()){
+                brandsList.add(rs.getString("brandname"));
+            }
+            return brandsList;
+
+
+        } catch (SQLException ex) {
+
+            throw ex;
+
+        } catch (Exception ex) {
+            
+            throw ex;
+
+        } finally {
+            _bdCon.close();
+        }
+    }
+    
+    public ArrayList<String> getModelsByBrand(String brandname) throws Exception {
+
+        User _userFail = null;
+        ArrayList<String> modelsByBrand = new ArrayList<String>();
+        
+        CallableStatement cstmt;
+
+        int response = 0;
+
+        try {
+            _bdCon = DAO.getBdConnect();
+            cstmt = _bdCon.prepareCall(_sqlCarBrandsInformation);
+            cstmt.setString(1, brandname);
+            rs = cstmt.executeQuery();
+            while(rs.next()){
+                modelsByBrand.add(rs.getString("brandname"));
+            }
+            return modelsByBrand;
+
+
+        } catch (SQLException ex) {
+
+            throw ex;
+
+        } catch (Exception ex) {
+            
+            throw ex;
+
+        } finally {
+            _bdCon.close();
+        }
+    }
+    
+    
 }

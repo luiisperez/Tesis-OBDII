@@ -6,6 +6,8 @@ import common.entities.Car;
 import common.entities.ObdData;
 import common.entities.User;
 import controller.cars_module.AddCarCommand;
+import controller.cars_module.GetCarBrandsCommand;
+import controller.cars_module.GetCarModelsByBrandCommand;
 import controller.cars_module.GetUsersCarsCommand;
 import controller.cars_module.RemoveCarCommand;
 import controller.obdData_module.AddObdDataCommand;
@@ -141,6 +143,32 @@ public class HeyDriverWS {
     @Produces("application/json")
     public String getUserVehicles (@QueryParam("user") String _user){
         GetUsersCarsCommand cmd = new GetUsersCarsCommand(_user);
+        try {
+            cmd.execute();
+            return gson.toJson( cmd.getResponse());//nuevo
+        } catch (Exception ex) {
+            return gson.toJson( null );//nuevo
+        }
+    }
+    
+    @GET
+    @Path("getBrands")
+    @Produces("application/json")
+    public String getBrands (){
+        GetCarBrandsCommand cmd = new GetCarBrandsCommand();
+        try {
+            cmd.execute();
+            return gson.toJson( cmd.getResponse());//nuevo
+        } catch (Exception ex) {
+            return gson.toJson( null );//nuevo
+        }
+    }
+    
+    @GET
+    @Path("getModels")
+    @Produces("application/json")
+    public String getModels (@QueryParam("brand") String _brand){
+        GetCarModelsByBrandCommand cmd = new GetCarModelsByBrandCommand(_brand);
         try {
             cmd.execute();
             return gson.toJson( cmd.getResponse());//nuevo
