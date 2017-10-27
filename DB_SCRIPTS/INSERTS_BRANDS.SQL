@@ -1,6843 +1,6785 @@
---
--- PostgreSQL database dump
---
-
--- Dumped from database version 9.4.1
--- Dumped by pg_dump version 9.4.1
--- Started on 2017-10-27 16:27:51
-
-SET statement_timeout = 0;
-SET lock_timeout = 0;
-SET client_encoding = 'UTF8';
-SET standard_conforming_strings = on;
-SET check_function_bodies = false;
-SET client_min_messages = warning;
-
-SET search_path = public, pg_catalog;
-
-SET default_tablespace = '';
-
-SET default_with_oids = false;
-
---
--- TOC entry 176 (class 1259 OID 82121)
--- Name: brand; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE TABLE brand (
-    brandname character varying(1000) NOT NULL
-);
-
-
-ALTER TABLE brand OWNER TO postgres;
-
---
--- TOC entry 2021 (class 0 OID 82121)
--- Dependencies: 176
--- Data for Name: brand; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY brand (brandname) FROM stdin;
-2-G Trailer Co LLC
-58th Street Customs
-A to Z Auto
-ABI Caravans Ltd
-ADMIRATION HOMES
-AG Works International
-ALTAMONT TECHNOLOGIES, INC
-AMP Customs
-ARO SA
-ATT R&D
-Accelerated Tanks and Trailers
-Activmo Auto
-Advance Metal Fabrication and Machine
-Aero Motors
-AirTech Tools
-Aldura
-All Custom Fabrications
-Allentown Shotcrete Technology, Inc.
-Alsalor Corp.
-Aluminum Trailers, Inc.
-American Best Corporation
-American IronHorse Motorcycles
-American Sport Trailer
-American Truck & Trailer Body
-Anhui Ankai
-Applied Cryo Technologies
-Arkfeld
-Asphalt Equipment & Service
-Atoka Trailer & Mfg.
-Avanti
-B & M HI-LITE
-B&M Performance Cycles
-BAZ MFG.
-BERGEI'S BAD BOYZ BIKES
-BJN Manufacturing
-BOOM
-BROWN EQUIPMENT COMPANY
-BULLDOG TRAILERWORKS
-BackTrek
-Baggett's Trailer Connection
-Ballews
-Bare Knuckle Choppers
-Batco
-Beach King Inc
-Behnke Enterprises
-Bentley Industries, LLC
-BestBilt Trailers
-Big City Cycle
-Bike Performance & Accessories
-Bitter End - Old School Choppers
-Blair Trailers
-Blue Ridge Trailers
-Bob Gerena Fabricating Inc
-Boot Hill Trailer
-Bradley
-Brewer Cote Southwest
-Bruder Trailers
-Buell
-Bulldog Steel Fabrication LLC
-Bushman
-C & D Trailers
-C&B Manufacturing (Hitchdoc)
-CAJUN TRAILER AND FARM MFG.
-CC Trikes & Custom Bikes
-CGS Premier
-CHONGQING ASTRONAUTICAL BASHAN MOTORCYCLE
-CIRCLE CITY CHOPPERS
-CLARK TRAILER SERVICE
-CLEARSPRING CONVERSIONS, INC.
-COASTLINE MANUFACTURING
-COM-FAB INC.
-CONCAR
-COPPER STATE CYCLES
-CRARY A DIV OF TERRAMARC INDUSTRIES
-CRYENCO, INC.
-CYGNUS MANUFACTURING COMPANY (CMC)
-California Sidecar
-Canada Trailers Manufacturing
-Capitol Packaging
-Cargo Trailer Sales
-Carriage
-Cascade Trailer & Truck
-Cedar Crest Park Homes Inc
-Centreville
-Chameleon Transportation Systems Inc
-Chandler Originals
-Chase Trailers, LLC
-China Off-Road Products, Inc.
-Chops and Bobbers, LLC
-Circle N Trailers
-Coachmen
-Colorado
-Compaks
-Cool City Inc
-Country Coach
-Coyote MFG LLC Trailers
-Create-a-Custom Cycle
-Crosley Trailers
-Crown Food Carts Incorporated
-Curry Customs
-Custom Crank Down Fish Houses
-Custom Hauler
-CycleStream
-D & M Trailers
-DARDON, INC
-DEEP SOUTH CARGO TRAILERS LLC
-DICKSON
-DOOHAN
-DUCKWORTH BOAT WORKS, INC.
-DaimlerChrysler Commercial Bus
-Dandy Digger & Supply, Inc.
-Daughtry
-DePuy's Custom Cycles
-Delaware Valley Cycle
-Dentoni's Welding Works
-Determan Welding & Tank Service, Inc.
-Diamond Builders, Inc.
-Diamondback Choppers LLC
-Dixie Welding
-Donnerite Incorporated
-Douglas Trailers Inc
-Drake Truck & Trailer Equipment
-Duesway
-Dutch Park Homes
-E & T UTILITY TRAILERS
-E-Z Tow
-ECHO
-EL-MAR
-ENERGICA
-EQUIBUILT, LLC
-EVAC
-EZ Life Campers
-Eagle Ford Tanks & Trailers LLC
-East Kentucky Trailers Mfg Co
-Echo Manufacturing, LLC
-Eddy's Welding
-Electric Vehicles International
-Elite Trailers
-Enduraplas
-Esarati Electric Technologies Corp
-Evergreen Trailer
-Experimental Fabrication Inc
-Eye4Design Conversions
-FIMCO
-FMB Choppers
-FUTURE HOME TECHNOLOGY
-Fair West
-Fast Screen Trailers
-Federal Motors Inc
-Fiberlite Travel Trailers, Inc
-First Line Manufacturing
-Fleet Equine
-Flow Tech Fabricators
-Forest River
-Four Horseman Motorcycle Co LLC
-Freedom Fabrication
-Frontier Equipment Design
-Fun Slides Inc
-GAMBLE TRAILERS INC
-GENERAC MOBILE PRODUCTS, LLC
-GM
-GT Mfg
-2231545 Ontario
-5R Ranch Trailers
-A-1 Custom Trailer aka Tow Master
-ABU
-ADVANCED BOAT TRAILERS, INC.
-AG-Quip, Inc.
-ALVAREZ
-AMP Motor Vehicles
-ARROWHEAD
-ATTITUDE CUSTOM CYCLES, INC.
-Ace
-Acura
-Advance Pump & Equipment
-Aero Teardrops, LLC
-Airbagged Trailers, Inc.
-Aleph Group, Inc.
-All Day Lawn
-Alley Rat Custom Cycles LLC
-Altec
-Aluminx
-American Bos Corp
-American Ironhorse
-American SportWorks
-American Wash Company
-Antioch
-Aprilia spa
-Armadillo Camper Kits
-Asphalt Machinery
-Atomic Electric Vehicles
-Avanti Motors
-B & M Manufacturing
-B&W
-BB Buggies
-BERLON INDUSTRIES, LLC
-BK Developments Ltd.
-BOOTSTRAP INC
-BROWN MANUFACTURING
-BURRO TRAVEL TRAILERS, LLC
-Backwoods Choppers
-Bahn Wagen
-Balon Corporation
-Barlow's Welding
-Battle Wagon Trailers
-Beall Trailers
-Beijing North Huade Neoplan Bus
-Bentley Trailers & Custom Coaches
-Bestmade
-Big D's Products
-Bil-Jax
-Bittercreek Hunting Blinds & Dog Boxes, Inc.
-Blairz Homes
-Blue Steel Axle & Fabrication
-Bob's Custom Creations
-Booth Specialty Manufacturing
-Brainard Kilman Drill Company
-Brindle Products, Inc.
-Brumby Iron Horse Cycles
-Buell (EBR)
-Bulletproof Trailers
-Bushtec
-C & H Quality Trailer Sales LLC
-C&M TRAILERS INC
-CAL CENTRAL CATERING TRAILERS
-CCC
-CH TRAILER COMPANY
-CHONGQING KINGTON INDUSTRY GROUP
-CIRCLE D TRAILERS
-CLARKS WELDING
-CLEASBY CONVEYORS
-COASTLINE TRAILER
-COMFORT CAMPER
-CONCEPT PRODUCTS
-COPY CATT TRAILERS
-CRC Cemetery Services
-CT Coachworks
-Cable Pulling Equipment Inc
-California Trailer Works
-Canadian Electric Vehicles
-Capones Street Rod
-Cargo-Liner Inc
-Carrocerias Ayats
-Cascadian Co
-Cee-Jay Tool Company
-Century Built
-Champagne
-Changzhou Kwang Yang Motor Co.
-Chatham Enterprises
-Choice Trailers Manufacturing, LTD
-Christen Brothers, INC
-City Trailers
-Coachworks
-Colorado Teardrop Trailers
-Comptank
-Cooper Cycles
-Country Pride Trailers
-Coyote Welding
-Creative Coachworks
-Crosley Trailers, Inc
-Cruise Car
-Curry Supply
-Custom Cut Fabrication
-Custom Iron Workz
-Cyclone
-D & N Trailers
-DARKSIDE CHOPPERS
-DEERSKIN
-DIEDRICH DRILL, INC.
-DORCHEAT MANUFACTURING COMPANY
-DURALITE, INC
-Daix
-Daniel Lohr
-Dauntless Motors
-DeSoto Motors
-Delco Trailers
-Dependable Trailer
-Detroit Bros.
-Diamond C Trailer Mfg.
-Diamondback Trailers
-Dixon Trailers & Fabrication, LLC
-Dons Truck Sales
-Dover Trailer & Fab
-Dream Coach Trailers
-Duffer's Manufacturing
-Dutcher Ptv
-E & W Manufacturing
-E-Z-Go Division of Textron
-ECHO Bear Cat
-EL-SAN, INC
-ENERGY ABSORPTION SYSTEMS
-EQUIPMENT DEVELOPMENT
-EVANGEL
-EZ Loader Adjustable Boat Trailers
-Eagle General Contractors, Inc
-East Manufacturing CORP.
-Echo Trailer
-Edmondson Custom Built
-Electro-Technologies
-Elk River Machine
-Enduratrailer
-Escape
-Evil Empire Choppers
-Express Shuttle Service
-Eyeball Eng.
-FINCO
-FMD Fabrication Services
-FWM Inc.
-Fairplay Electric Cars, LLC
-Fast Truck Body & Equipment
-Feel Good Cars
-Fibertech Services
-First Products Inc
-Fleet Equipment
-Flow-Boy by Hi-Way
-Foretravel
-Four Winds International Corporation
-Freedom Motorcycle Company
-Frontier Industrial
-Funbuddy
-GANGTIEXIA
-GENESIS SUPREME RV, INC
-GMC
-GOODSON BUILDING SYSTEMS, INC
-280 Trailers
-801 Trailer Manufacturing
-A-1 Hitch & Trailer Sales, Inc.
-AC Customs
-ADVANCED CONTAINMENT SYSTEMS, INC
-AGA Gas Central, Inc
-AM General
-AMPHI-RANGER
-ASC, INC.
-ATWOOD TRAILERS
-Ace Custom Trailers
-Acv Inc
-Advanced Customs & Conversions
-Aero Trailers
-Airstream Inc.
-Alexander Dennis Limited
-All Fab Trailers
-Alleykat Kustoms of Arizona
-Altec Environmental Products
-Alumituff Manufacturing
-American Classic Motors Inc.
-American Kulture Cycles
-American Star Metal Fabrication
-American Welding & Machine Co
-Antrim Metalworking & Repair
-Aptera Motors
-Armbruster Stageway
-Asphalt Zipper Inc
-Audi
-Avera Motors
-B & M Trailer Sales
-B's In A Pod Camping LLC
-BB Rollahome
-BERTOLINI
-BLACK IRON CHOPPERS LTD
-BOULDING & LAWSON, INC.
-BRP
-BURTEK INCORPORATED
-Backyard Choppers
-Bair Bodies and Trailers
-Baltic Industries Inc
-Barnstorm Cycles
-Bauer
-Beamco
-Beiler Machine
-Berg Equipment Corporation
-Bestway
-Big Dog Motorcycles
-Bildon Inc
-Bivy
-Blastcrete Equipment
-Blue Steel Manufacturing
-Bobby's Rule
-Boscher Industrias, SA DE CV dba Boscher
-Braun
-Britton
-Brumley Manufacturing
-Buffalo Trailer Manufacturing
-Bullhead Steel Fabricators, LLC
-Bushtec Products
-C & H TRAILERS, INC.
-C&P Trailer Sales
-CALIFORNIA METAL WORKS
-CCG Corporation
-CHANDLER CUSTOM CYCLES
-CHONGQING KINLON MOTORCYCLE MANUFACTURE
-CIRCLE H TRAILERS
-CLASSIC DESIGN TRAILERS
-CLEVELAND CYCLEWERKS
-COASTLINE TRAILER MFG
-COMFORTS OF HOME SERVICES
-CONDUX INTERNATIONAL
-COUNTRY BOY MFG.
-CREATION DESIGN
-CT Fabrication
-Cadillac
-Callahan Custom Choppers
-Canage Custom Trailers
-Capstone Commerce
-Cargotec Solutions
-Carrocerias Fehr
-Cascon Transportation Equipment
-Cellxion
-Century Tank & Trailer
-Champion
-Changzhou Yamasaki Motorcycle Co.
-Cheetah Chassis Corporation
-Chongqing Hi-Bird Motorcycle
-Christini AWD
-City-el
-Coast
-Colt
-ConTec
-Copper River Fabricators
-Country Stones
-Cozad
-Creative Custom Manufacturing
-Cross Cleaning Solutions
-Cruise N Snooze Inc.
-Curt's Welding
-Custom Cut Fabrication LLC Flat Bed Trailer
-Custom Line Campers
-Cyclops Trike Components
-D & P Welding
-DARTRON INDUSTRIES INC.
-DELUXE WELDING INC.
-DIRECT SALES
-DOSKO INDUSTRIES, INCORPORATED
-DURANGO TRAILER MFG.
-Dakan Mountain Teardrop Trailers
-Daniel's Certified Welding Inc.
-Dave Hanson Trailers, Inc
-DeTect
-Delivery Concepts, Inc.
-Derbi
-Detroit Custom Chassis
-Diamond Cargo
-Diamondback Trailers, LLC.
-Dock Doctors
-Doonan Specialized Trailer
-Dowell Schlumberger Int'l
-Dream Design and Fabrication
-Dukane Precast
-Dutchmen Manufacturing
-E Z Dumper Products LLC
-E.T. Services
-ECONOBOY CORPORATION
-ELAN MANUFACTURING
-ENERGY FABRICATION
-EQUIPMENT INNOVATORS, INC.
-EVCOR
-EZ Loader Boat Trailer
-Eagle Head Lifts
-East Prairie Fabrication
-Eclipse Aluminum Trailers
-Efficient Hauling Systems
-Electromotion Design
-Elk Valley
-Engine Connection
-Escape RV
-Evolve Motorcycles
-Express Trailers Inc
-F-3 Trailers & Fab.
-FINISHLINE CUSTOM TRAILERS
-FNA GROUP INC
-FYRBERG WELDING
-Fairview Automated Burnouts
-FastlaneLSV
-Fehr Industrial Manufacturing
-Fidelity Manufacturing
-First United Industrial Foshan
-Fleet Masters
-Flynn's Welding & Machine Shop
-Forever Concession Trailers LLC
-Four Winns
-Freedom Outdoor Products
-Frontier RV
-Fuzion
-GARDEN STATE CHASSIS REMANUFACTURING INC
-33 East Maintenance Inc
-A & A Manufacturing
-A-1 Truck Repair
-AC Propulsion
-ADVANCED FABRICATORS INC
-AGB
-AMAZE-N-TOW
-AMS
-ASE
-AUTO-MANIA
-Ace Motorcycle
-Adam Trailers
-Advanced Portable Buildings & Trailers
-Aerobilt Manufacturing
-Airtronics Metal Products
-Alfa Romeo
-All Marine Trailers
-Alliance North America, Inc
-Altec Industries, Inc.
-Amar Motor Development
-American Crafted Trailers, Inc.
-American Kulture Rod and Cycle Shoppe
-American Steel Fabricators
-American Welding Service
-Anvil Trailer
-Aquacraft Inc
-Armor Chassis
-Asphalt Zipper Trailer
-Augusta RV
-Avesco Welding & Fabrication
-B & R Trailers
-B+B Trailers
-BBK
-BES&T Inc
-BLACK LABEL CHOPPERS LLC
-BOURG CHEMICAL DISTRIBUTING, INC
-BRUNSWICK TRAILERS PLUS AND MARINE INC.
-BWI
-Bad 2D Bone Trailers
-Baird & Slaska Mfg
-Balzer
-Barnyard Customs
-Baughman Products
-Bean & Conquest, Inc.
-Bell Custom Products
-Berggie
-Better Bilt Custom Fabrication & Repair
-Big Easy Choppers
-Bill's Tralier Sales
-Black Brothers Equipment Sales
-Blazing Technologies
-Blue Streak Manufacturing LLC
-Bocats
-Boss Equipment Trailer
-Braun Northwest
-Broken Bonz
-Brumley's Welding
-Buffalo Truck Equipers, Inc
-Bullmobile Trailers Inc
-Bushwakka
-C & M Fabrication
-C&R Metalworks
-CAMERON AND SONS WELDING
-CDH Industries
-CHANGENT SYSTEMS
-CHONGQING LIFAN INDUSTRY (GROUP) COMPANY
-CIRCLE J TRAILERS
-CLASSIC MC
-CLEVELAND MOTORCYCLE MANUFACTURING CO
-COBRA MOTORHOMES & TRAILERS, INC.
-COMMERCIAL TRAILER
-CONEL
-COUNTY LINE TRAILER CO.
-CREATIVE HOT RODS
-CT&E
-Cajas y Semiremolques Blatz
-Calmarc Cabs
-Canajoharie Customs
-Car Mate Trailers
-Caribean
-Carrocerias Gallegos
-Casinjac
-Cenntro Automotive Corporation
-Century Trailer Company
-Champion Bridge
-Chapman Custom Manufacturing
-Cheetah Trikes
-Chongqing Huansong Industries
-Chrysler
-Clackamas Body and Equipment
-Coastline Trailers
-Columbia Basin Trailers
-Conception Metavic
-Copperhead Trailers
-Country Trailers
-Crafton Equipment
-Creative Cycles
-Cross Country
-Cruiser RV
-Curtis Welding
-Custom Cycle Carrier
-Custom Marine Components
-Cynergy Cargo
-D & S Trailer Builders
-DASH
-DENTON TRAILER CO.
-DIVERSIFIED TRUCK & TRAILER, INC
-DOUGLAS MARINE CORPORATION
-DUTCH PARK INC
-Dakota Airboats
-Danko Emergency Equipment
-Davidson Enterprises Inc
-Dealers Choice LLC
-Dell Rapids Custom Trailers
-Desco Mfg.
-Deus Ex Machina
-Diamond City Trailer
-Dick's Welding, Inc
-Dodge
-Doosan
-Down 2 Earth Cargo LLC
-Dream Ridge Development Corporation
-Dumas Welding
-Duvall Equipment LLC
-E Z Ryder Motor
-E3 Trailers
-ECSTASY
-ELASTEC
-ENERGY PRODUCTS
-EQUIPMENT SERVICES
-EWD Cycles
-EZ Loader Custom Boat Trailers
-Eagle Marine Corporation Ltd
-East Tennessee Trailers LLC
-Eclipse Recreational vehicles, INC
-Eiks Bikes
-Electrovaya
-Elkin Hi-Tech
-Ennis Trailer Mfg
-Escapod Trailers LLC
-Excaliber Fabrications Inc
-Express Welding
-FABRICATION & DESIGN INC
-FIRETAC SYSTEMS, INC.
-FOGLEMAN MANUFACTLURING, INC.
-Fab Tec
-Faith Forgotten, LLC
-Fastload Enterprise
-Felling Trailers
-Fido Motors
-Fischer Tharp
-Fleetwing Travelers, Inc.
-Flyrite Choppers
-Formcaster Inc.
-Fourstar Trailers
-Freedom Trailers
-Frontier Trailer Sales
-G & B Manufacturing
-GARLOCK TRAILERS
-GENIE MANUFACTURING, INC.
-3D Custom Aluminum
-A & B INDUSTRIES
-A-BAR-D MFG.
-ACC TrailRite
-ADVANCED MANUFACTURING & POWER SYSTEMS, INC.
-AI-Springfield
-AMEN CHASSIS WORKS
-AMS Global
-ASHFORD MFG
-AZ-CAL
-Ace Trailers
-Adams Equipment
-Advanced Trailer Solutions
-Aeroglas
-Al's Motorsickle Shop Inc.
-Alfred Industries
-All Phase Trailer and Equipment
-Allianz Sweeper Company
-Alum-Line, Inc.
-Amaze-N-Tow, LLC.
-American Custom Coach
-American LaFrance
-American Steel Horse Cycles
-American pride
-Anysizer Chassis Manufacturing Co
-ArTech Parts Fabrication
-Armor Lite Trailer
-AspireTec
-Aurora Trailers
-Avila Manufacturing
-B & R WELDING
-B-Line Corporation
-BC TRAILERS
-BEST BUILT
-BLACKWATER
-BOURGET'S BIKE WORKS
-BRYAN POAGE INC.
-BWS Trailer
-Bad Ass Choppers
-Baja
-Balzer Inc.
-Baron USA Inc
-Bauss Manufacturing Inc.
-Bear
-Bella Cycles
-Bergkamp
-Better Made Trailers
-Big Horn
-Billings Trailer Fabrication
-Black Hawk
-Blockbuster, Inc
-Blue Thunder Custom Motorcycles Inc.
-Bock Industries
-Boss Hoss Cycles
-Brave
-Brooks Brothers
-Bruno Independent Living Aids
-Bug Motors
-Bully Brand Trailers
-Busscar
-C & M Fabrications, Inc
-C&W Industries
-CAMPER PRODUCT INC
-CDK Mobile Systems, Inc.
-CHANGSHU LIGHT MOTORCYCLE FACTORY
-CHONGQUING DAIJING MOTORCYCLES CO
-CIRCLE R TRAILER MANUFACTURING
-CLASSIC MOTORCYCLES & SIDECARS
-CLEVELAND T-TRIKE MANUFACTURING, INC.
-CODA AUTOMOTIVE
-COMMON SENSE COTTON SYSTEMS
-CONLEY FABRICATION
-COWBOY COACHES
-CREEK HILL WELDING
-CT&T America
-Cajun Gear Inc
-Calnan Enterprises
-Cancade Company Limited
-Car Replica Trailers
-Carlton Professional Tree Equipment
-Carrocerias de Lucio
-Casper's Carts
-Centauro
-Cerberus Trikes
-Champion Bridge Company
-Chapman Enterprise, LLC.
-Chester Built Trailers
-Chongqing Kaier Motorcycle
-Chubbs INC.
-Classic
-Cobra Cars
-Colvin Motorcycle Company
-Concho Choppers
-Coras Welding
-Country Wagon Trailers
-Craig Systems Corporation
-Creative Mobile Systems
-Cross Energy Solutions
-CrustBuster
-Cushman
-Custom Cycle Studio
-Custom Max Trailers
-Cytec Trailers
-D & S Trailer Sales
-DAVE'S WELDING SERVICE
-DESIGN CONCEPTS
-DIW engineering & Fabrication
-DOUGLASS TRUCK BODIES, INC.
-DV Manufacturing
-Dakota Motorcycle Co.
-Danzer Industries, Inc
-Davis Industries
-Deano Motorcycle Company
-Delta Oilfield Tank Co.
-Desert Thunder Customs
-Deviant Design
-Diamond Cut Carriers
-Dina Autobuses
-Dodgen Industries
-Dosko
-Down Low Customs
-Dreamline
-Duncan Supply Company
-Dyal's Welding
-E-Bilt LLC.
-EAGLE BRIDGE
-ECSTASY TRIKES INC
-ELECTRICAL ENGINEERING AND EQUIPMENT
-ENERGY SYSTEMS
-EQUIPT
-EXA Industrial
-EZ Pull Trailers
-Eagle Trailer
-East Texas Trailers
-Eco Motor Company
-El Dorado Foundry Machine & Supply Company, Inc.
-Elevated Security
-Ellington Industry Supply
-Enpro Engineered Products LLC
-Escobar Truck Equipment
-Excalibur Automobile Corporation
-Extreme Chute Trailers
-FAN
-FIRST CLASS TRAILERS
-FORCE MANUFACTURING
-FabWeld, Inc.
-Fajumes SA de CV
-Fastrack Engineering
-Felony Street Gear
-Fifties Trailers
-Fitzgerald Kit Trucks & Sales, LLC
-Fleetwood Enterprises
-Fontaine Specialized Inc
-Formula 1 Street Com
-Fox Hollow Mfg.
-Freedom Trailers LLC
-Frontline
-G & C
-GBA Sales Consignment & Rental
-GETTIG TECHNOLOGIES LTD
-GMNA (Opel & Daewoo)
-3M Dynamic Message Systems
-A & D Company
-A.R.M.
-ACCU-TEK TRAILER MANUFACTURING, INC.
-AEC Enterprises
-AJAX TRAILERS, INC
-AMERI-CAN ENGINEERING, INC.
-APA
-ASI TRAILERS
-AZIMUTH INC.
-Ace of Spades
-Adams MFG
-Advanced Trailer Systems
-Aerovault
-Al-jon, Inc.
-Alien Engineered Products
-All Pro Cycles
-Allied Machine Inc
-Aluma
-Amelit, Inc.
-American Custom Golf Cars, Inc.
-American LaFrance, LLC
-American Steel V-Twin
-Americana
-Anything Goes Cycles
-Arcade Iron Motorcycle Company
-Armstrong Trailer Products, Inc.
-Astec Mobile Screens
-Austin EV METRO
-Awesome Rebuild
-B & S TRAILER SALES
-B-WELDING
-BCA Fabrication LLC
-BEST OF SHOW DETAILING SYSTEMS
-BMC Motorcycle Co.
-BOXED UTILITY TRAILER TECHNOLOGIES
-BRYANT'S TRAILERS, INC
-BXR LLC
-Bad Boy Buggy
-Baja Custom Trailers
-Bama LSV
-Barreto Manufacturing
-Bay Bridge Manufacturing
-Bear Bones
-BellaCar
-Bering Truck Corporation
-Better-Bilt
-Big John Manufacturing
-Billy Bob's Trailer
-Black Hawk Trailers
-Bloomer Trailer Manufacturing
-Bluecar, SAS
-Bodeann Inc
-Boss Powersports
-Bravo Trailers
-Brother's Fleet Service
-Bruno Trailer Co.
-Bugatti
-Bundit
-Butler Trailer Sales
-C & M Trailers
-C&W Manufacturing and Sales Co.
-CAN-AM
-CDM
-CHAPARRAL TRAILERS OF IOWA
-CHOPPER ALLEY LLC
-CIRCUS CITY CUSTOM
-CLASSIC MOTORWORKS
-CLIFF'S WELDING SERVICE, LLC
-COFFEY MFG
-COMMUNITY CARS
-CONSTRUCTION TRAILER SPECIALISTS
-COWBOY TRADING COMPANY INC
-CRESCENT MANUFACTURING
-CTJ Trailers
-Cal-Trailer Mfg
-Cam Superline
-Cannonball Engineering LLC
-Car Twin Trailers Inc
-Carolina Boats & Cars
-Carron Truck Repair LTD
-Caspers Carts
-Centech Specialty Vehicles
-Cerda Industries
-Champion Home Builders Co
-Charger
-Chester County Customs, LLC
-Chongqing Rato
-Chuck Wagon Industries
-Classic Golf Cart Company, Inc
-Cobra Industries
-Combat Support Products
-Condor
-Corbin Motors Inc.
-Countryside Welding
-Craig Welding
-Creative Sports Supply
-Cross Trailer
-Cryogenic Vessel Alternatives (CVA)
-Cusitec
-Custom Cycle Studio LLC
-Custom Metal Projects
-D & D Repair and Fabrication
-D&B Cycle Parts & Accessories
-DAVES AUTO SALES
-DETROIT TOOL INC.
-DKOI INC
-DP Coningplant USA Corp.
-DYER'S DOCKING SYSTEMS, INC.
-Dakota Trailers
-Daredevil Choppers, Inc
-Davis Metal Works
-Debnam
-Delta Scientific Corporation
-Desert Toys RV
-Devil Dawg Custom Cycles
-Diamond E Manufacturing, LLC.
-Direct Trailer
-Dodger Trailer Manufacturing Inc
-Double D Trailers
-Down to Earth
-Dressen Custom Trailers
-DuraLast Trailers
-Dymax Inc.
-E-One
-EAGLE INDUSTRIES
-EDDIE ENGLISH COMPANY, INC.
-ELITE TRAILERS, INC
-ENGINEERED MANUFACTURING
-EQUUS AUTOMOTIVE
-EXCALIBUR TRAILER COMPANY
-EZ Trac
-Eagle Trailer Manufacturing
-Eastcoast Bikeworks
-Eco-Fueler Corporation
-El Tiron Custom Trailers
-Elgin Sweeper Co
-Elliott Machine Works Inc
-Environmental Service Products
-Escort Trailer Corp.
-Excalibur Choppers
-Extreme Classic Trailers
-FANTASY COACH COMPANY, INC
-FISHER WELDING COMPANY
-FOWLER TRAILERS, INC
-Fabco
-Falcon
-Fat Attack Custom Bikes
-Ferguson Built Trailers
-Fineline Trailers
-Five Diamond Trailers
-Fleetwood Folding Trailer (Pioneer)
-Fontaine Trailer
-Formula Trailers
-Fox Trailers
-Freedom Trailers, Inc.
-Fruehauf
-G & D Enterprises
-GC-1
-GFA
-GMR Trailers, Inc
-3T Mfg.
-A & E Fabricators
-A1 Cycles
-ACCURATE CYCLE ENGINEERING
-AEP North America
-ALC Manufacturing
-AMERICAN DOZER INC.
-APACHE  SINCA INDUSTRIES INC
-ASPEN TRAILER INC.
-AZLand
-Acme Group
-Addco
-Advanced Vehicle Assembly
-Affordable Aluminum
-Alameda Trailer Sales
-Aliner
-All Right Steel, LLC.
-Allied Manufacturing, Inc.
-Aluma Pro Trailers, LLC.
-AmeraTrail
-American Eagle Trailers Inc.
-American Made
-American Super Cycle
-Americana Chopper
-Apache
-Arch Cargo Trailers
-Armstrong Trailers
-Astec Underground
-Austin Welding Service
-Axis Corporation
-B & T MANUFACTURING DBA XTREME TRAILER
-BACK 40 CREATIONS
-BCA INDUSTRIES
-BEST TRAILER
-BMS
-BQ Grills
-BSC Motorsports
-BYC
-Bad Boy Enterprises
-Baja Steel Inc
-Bandit Choppers LLC
-Barrett Trailers, Inc.
-Bay City Choppers
-Bear River Fabrication & Machine
-Belmont Machine
-Bert Jensen & Sons, Inc
-Betterbuilt Trailers
-Big O's Manufacturing,Inc
-Billy Goat Industries
-Black Horse Trailer
-Bloomfield Custom Fabrication Inc
-Bluegrass Industries, Inc
-Bodholt Brothers Manufacturing
-Boss-LTG
-Bravo Trailers Inc.
-Brotherhood Cycles
-Bruton Manufacturing
-Buick
-Burch Body Works, Inc.
-Buttler Built
-C & P Engineering and Manufacturing
-C-Hawk Trailers
-CARDEL
-CDS Corp.
-CHAR-KAN SALES
-CHOPPERHEAD ROAD
-CITAIR
-CLASSIC ROADSTERS, LTD
-CM&W
-COHEN METALS GROUP
-COMPACT CONSTRUCTION
-CONTEMPORARY CLASSIC CARS
-COWELL CUSTOM TRAILERS
-CRISMON MOBILE CLASSICS
-CTM
-Calcross
-Cam-Concept
-Cannondale Corporation
-Carbo Tech, Inc
-Carolina Choppers
-Carry-On Trailer
-Castle Motorcycle
-Centex Trailers LTD.
-Certified Advanced Technologies, Inc
-Champion Manufacturing Inc
-Chariot Eagle West
-Chevrolet
-Chongqing Zongshen Automobile Industry Co
-Chucks Wagons
-Classic Motor Works
-Cobra MFG
-Combs Trailer Manufacturing
-Confederate Motor Company Inc
-Cornerstone Manufacturing
-County Line Choppers
-Crane Carrier
-Creative Trailer Concepts
-Cross Trailers
-Cryotech
-Custom
-Custom Design
-Custom Mobile Designs
-D & D SALES
-D&D METAL WORKS AND POWDER COATING
-DAVID BREWER IMPLEMENT INC.
-DEWALT UTILITY TRAILERS
-DLM
-DPJ
-DYMAC International
-Dal-Fab & Machine, Inc
-Dark Dayz Choppers
-Davis Trailer Sales
-Debra H Morgan Co
-Delta Waseca Mini
-Desert Wolf
-Devine
-Diamond Heavy Vehicle Solutions, LLC
-Dirt-A-Holic
-Doepker Industries
-Double Duty
-Doz N Go
-Drewes Engineering
-Durabilt
-Dyna Products
-E-PAK MANUFACTURING
-EAM
-EDDIE INC
-ELLIS INDUSTRIES, INCORPORTED
-ENGLE FABRICATION
-ERICKSON TANK & PUMP
-EXCEL TRAILERS
-EZ Trailers
-Eagle Trailer Sales, INC.
-Eastern Rod and Chopper
-Ecojohn, INC
-ElDorado National
-Eliminator Trailers
-Ellis Manufacturing Inc
-Envoltz
-Essex Performance Boats
-Excel
-Extreme Engineering Inc.
-FARMBILT INC
-FISHING HOLDINGS, LLC
-FOX BETTER BUILT TRAILERS
-Fabform Industries
-Falcon Road Maintenance Equipment, Inc.
-Fat Boy Trailers, LLC.
-Ferguson Truck Body & Equipment
-Fire Plus
-Five Star Custom Trailer
-Fleetwood Folding Trailers
-Fontaine Trailer Co.
-Forrest City Manufacturing
-Fox Valley Metal Tech, Inc
-Freedom Trailers, LLC
-Fruehuaf
-G & G Fab
-GCK Industrial
-GForce Fabrication
-GOLDEN WEST HOMES
-GOVECS
-Galaxy
-4 Person Street
-A & E Trailers
-AA Muffler and Welding
-ACES CHOPPERWORKS
-AEROPUP Trailers LLC
-ALCAN TRAVELER, INC
-AMERICAN MANUFACTURING SUPPORT
-APC EQUIPMENT
-ASTEC INDUSTRIES INC.
-Aapex Trailers Inc
-Acme Industries
-Adirondack White Pine Cabins
-Advanced Welding and Manufacturing
-After Hours Bikes, Inc.
-Alan Autosports
-Alkane
-All Seasons Manufacturing
-Allied Welding Services
-Aluma Tower Company
-Ameri-Camp
-American Eagle Trailers, Inc.
-American Manufacturing Operations
-American Surplus & MFG
-Amfab
-Apache Golf Cars
-Arch Motorcycle Co
-Arnold Machine
-Aston Martin
-Auto Motion Ind.
-Aztec Trailer
-B & W CONSTRUCTION
-BACKWATER TRAILERS
-BCI MANUFACTURING
-BETTER BUILT TRAILERS
-BMW
-BRADFORD BUILT
-BT&T
-BYD
-Bad Boy Trailers
-Bajaj Auto
-Bandy Trailers
-Barrier Systems
-Bay Manufacturing
-Bear Steel
-Belmont Trailers
-Bert Walters and Sons
-Beyond Extreme, LLC dba Extreme Cycle Works
-Big Smith Sales & Service
-Billy's Hot Rod Cycles
-Black River Choppers
-Blue Bird
-Bluegrass Tank & Equipment Co, Inc
-Bohnenkamp's Whitewater Customs
-Boulder Choppers
-Braxton Creek
-Brothers Body and Equipment
-Brutus
-Build 2020
-Burch Tank & Truck
-Buy Enterprise
-C & S CHOPPERS INC
-C-R CHEETAH RACE CARS
-CARGO CRAFT ,INC.
-CEI Equipment Company, Inc.
-CHARLESTON MARINE CONTAINERS
-CHRISMAN CORPORATION
-CIXI KINGRING MOTORCYCLE CO
-CLASSIC TRAILERS
-CMD POWERSYSTEMS
-COLE CUSTOMS
-COMPAIR USA
-CONTINENTAL BIOMASS INDUSTRIES
-COZAD TRAILER SALES
-CROFT TRAILER SUPPLY
-CTM Customs
-Calder Brothers
-Camp
-Canoetote
-Cardale Industries
-Carolina Custom Products
-Carson Trailer
-Cata - Marine
-Central Alabama Trailer & Truck Equipment
-Chad Fuller Construction, Inc.
-Champion Telecom
-Chariot Manufacturing
-Chica Custom Cycles
-Chop Shop
-Chunfeng Holding Group Hangzhou Motorcycles
-Classic Tows
-Cobra Racing Products Inc
-Comet
-Conner Farm and Ranch Supply
-Cornerstone Tiny Homes
-Covered Body
-Crane Hill
-Criminal Choppers of AZ
-CrossRoads RV
-Crystal Welding
-Custom Amusement Products
-Custom Engineered Products
-Custom Mobile Food Equipment
-D & D Speed
-D&D Trailers
-DB Industries,Inc
-DG Fabrication
-DLW Payless Transmissions
-DRAGGIN' P, INC
-DYMAC Vehicle Group
-Dale's Welding Sales
-Dark Warrior
-Davis Trailer World LLC
-Debris Systems Plus
-Demented Cycles
-Design Concepts Manufacturing
-Dex Unlimited Inc
-Diamond K Manufacturing
-Disaster Power & Equipment
-Domatex
-Double K Custom Trailers
-Dp Manufacturing LLC
-Drews Ironworks
-Durabody Industries
-Dynafab
-E-SUV
-EARTH TOOL CO LLC
-EDDIE TROTTA CUSTOM BIKES
-ELSEY MFG.
-ENRY CYCLE CREATIONS LLC
-ERIE ALUMINUM
-EXPLORER VAN COMPANY
-EZ-2-LOAD Trailer
-Eagle Trailers
-Eastern Shore Trailer, Inc
-Econ-O-Haul
-Elco Industries
-Elite
-Ellis Trailers
-Envtech Tank Services, LLC
-Esterel
-Excel Truck Equipment Specialties
-Extreme Fabrication
-FARMERS & CONTRACTORS SUPPLY CO.
-FISKER AUTOMOTIVE
-FRAKER MANUFACTURING CO.
-Fabricacion y Comercializacion Pena
-Falcon Trailers
-Fat Daddy Racing
-Fernando Rivera
-Firebird Custom Choppers
-Five Star Trailers
-Fleetwood RV, Inc.
-Fontaine Truck Equipment Company
-Fortitude Manufacturing
-Foxworth Enterprises
-Freeman Choppers, LLC
-Fruetel
-G & G METAL FABRICATION
-GDM Incorporated
-GIDDINGS MACHINE COMPANY, INC.
-4 Star Fabrication
-A & F TRAILER MFG INC
-AA Screen Supply
-ACG
-AEROTEK
-ALEWINE MOTORS, INC.
-AMERICAN PISTON
-API
-ASTORIA INDUSTRIES, INC.
-Ability Metals
-Acme Trailer Works
-Admiral Drive Systems
-Advantaced Vehicles Assembly
-Ag Spray Equipment
-Alan Ritchey, Inc.
-All About Trailers
-All Star Carts & Vehicles, Inc.
-Allmand Brothers
-AlumaTrek
-Ameri-Carts
-American Electric Vehicle Company, LLC
-American Metal Fabrication
-American Teardrop
-Anaheim Welding & Fabrication
-Apex Motor
-Arcimoto
-Arrow Dump Trailers
-Asuna
-Auto Truck
-Azure Dynamics
-B & W Mantrad
-BACKYARD TRAILERS, LLC
-BCI Trailers
-BETTER WEIGH MFG
-BNM Trailer Sales
-BRC Custom Coaches & Trailers
-BTM
-BYD Auto
-Bad Boys Choppers
-Baker
-Banens
-Barro AG Welding & Trailer Repair
-Bay Town Choppers
-Bear Track Products
-Belshe Industries
-BesTrailers
-Bicknell Racing Products
-Big Tex Trailer Manufacturing
-Bill’s Welding & Repair
-Black Scorpion Off Road
-Blue Coyote
-Blueline Manufacturing Company
-Bohnert Welding
-Boulder Electric Vehicle
-Braxton Trailers
-Brothers Equipment
-Bryant Trailers
-Built By Koch
-Burch Welding & Tank
-Bwise Manufacturing
-C & S TRAILER DEPOT, INC.
-C-Trail
-CARLIN MANUFACTURING, INC.
-CEMENTECH
-CHEETA
-CHRISTIANSEN WELDING & MACHINE, INC.
-CJ CARGO INC
-CLASSIC TRAILERS SD
-CMI
-COLE STEEL
-COMPANION TRAILERS
-CONTRACT MANUFACTURER
-CP Industries, Inc.
-CROMWELL
-CUBE MANUFACTURING
-Calhome
-Camp-Let
-Canyon Trailers
-Carder's Custom Cycles
-Carolina Equipment & Supply
-Cart Company
-Catalina Marina
-Central Florida Choppers
-Chahta Enterprise Metal Fabrication
-Champion Trailer Company
-Charles Blass Welding, LLC
-Chicago Scooter Company
-Chop Shop Customs
-Churchill Holdings, Inc
-Classy Chassis Campers
-Cochise Custom Cycles
-Comfort Station
-Conqueror Trailer
-Corratti Choppers
-Covered Wagon Trailers
-CraneWorks
-Criminal Customs
-Crossed Pistons
-Crysteel Manufacturing
-Custom Bikes of Lauderdale
-Custom Equipment Co Inc
-Custom Motorcycle Works
-D & D Trailers & Equipment
-D&L TRAILERS
-DB Trailers
-DHM Trailers
-DM Machine
-DRC Trailer and Sport
-DYNAMICS COMPOSITE DESIGNS, INC
-Dallas Smith Corporation
-Darkside Chariots
-Davis Village Solutions
-Deceleste SA
-Demon Motorcycle Company
-Design Home
-Di Blasi
-Diamond Line Chassis LLC
-Discovery Cargo Trailers, Inc.
-Domine Enterprises
-Double R Trailer MFG
-Draggin Custom Cycles
-Dri-Doc Inc
-Duraco Inc
-Dynamax Corporation
-E-TON
-EARTHWORM INC
-EDGE MANUFACTURING INC.
-EM Transfer
-ENTECH INDUSTRIES
-ERSKINE & SONS
-EXTREME CHOPPERS, INC
-EZ-HAUL, INC
-Eagle Trailers Inc
-Eastern Trailer Sales
-Econoline Trailer, INC
-Electra Meccanica Vehicles Corp.
-Elite Cottages
-Elusive
-Epic
-Europa International
-Excelsior-Henderson Motorcycles
-Extreme Road & Trail
-FATT HOGG FRAMES
-FIVE STAR TRAILER AND EQUIPMENT
-FREDERIKSEN ENTERPRISES INC
-Fabrication Technologies
-Falcon Trailerworks
-Fat Guinea Customs
-Ferocity Industries
-Fireblast 451
-Five Stars Trailers
-Flex Temp Systems
-Food Buggy
-FortuneSport VES
-Francis Trailer Manufacturing Inc.
-Freeman's
-Fuel Horse
-G & K Steelworks
-GE Packaged Power
-GK Machine
-GOOD PACE INC
-GR Trailers
-4 X 4 Trailers Ltd
-A & H
-AA Welding
-ACME CRYOGENICS, INC.
-AFAB Petroleum Equipment & Steel Fabrication
-ALL IN ONE CUSTOM FABRICATION & DESIGN
-AMERICAN PRODUCTS
-APOLLO TRAILER COMPANY
-ATK
-Able Industries
-Acro Trailer Company
-Admiral Trailers
-Advantage Customs
-Ag Spray Equipment,Inc.
-Alaska Extreme Trailer
-All American Big Twin
-All Star Solutions
-Alloy
-Alumacar
-AmeriFab Industries
-American Electronic Sign Co
-American Motorcycle Corporation
-American Thunder Tryke
-Anderson Custom Iron Works
-Aplus Trailers
-Arcweld
-Arsenal Trailer Manufacturing Inc
-Atec Aanhangwagens
-Autocar
-B & B Enterprises
-B & W TRAILERS
-BAHR CUSTOM BOATS & TRAILERS
-BEALL
-BG Cycles
-BO Manufacturing
-BRENDERUP TRAILERS
-BUCKBILT TRAILERS, INC.
-BYD Coach & Bus
-Bad Boyz Toyz
-Bakers Trailer
-Bantam Trailers USA
-Barro Ag Welding and Trailer Repair
-Bayer Trailers
-Bear Trailer Manufacturing
-Benchmark Motorcycles and Utility Trailers
-Besler Industries
-Bienville
-Big Tony's Choppers
-Binder Trailer Mfg.
-Black Sunshine Customs
-Blue Coyote Trailers
-Blueridge Exotic Transport
-Bollin Tile Stringer
-Bourbon Trailers
-Brazos
-Brower Equipment Sales
-Bubble Buddy
-Bulk Tank International
-Burchland Mfg.
-Bye-Rite Trailer Sales
-C & W Trailers
-C.P.S.
-CARRIER SYSTEMS, LLC
-CENTER LINE FABRICATORS, INC
-CHEETAH CHASSIS
-CHRISTIANSON SYSTEMS
-CJ'S TRAILERS
-CLASSIC TRAILERS, INC
-CMI TEREX
-COLEMAN CUSTOM CHOPPERS
-COMPASS NORTH
-CONTRACT WELDING AND FABRICATING
-CPAT Distribution, Inc.
-CROWD PLEASERS, INC
-CUSTOM AIRBOAT TRAILERS
-Calico Trailer
-Camp365
-Capacity of Texas
-Cardinal Industries
-Carolina Equipment Sales, Inc.
-Cart Masters Inc.
-Catamaran Cruisers
-Central MS Custom Built Trailers
-Chairiot Mobility
-Champion Trailer Works
-Charles Machine Works, Inc.
-Chief Fire
-Chopper City
-Chuy's C&5 Trailers
-Clement Industries
-Coker Enterprises
-Commander
-Conquest Trikes
-Correct Craft Inc
-Cowboy Trailer
-Crary
-Criminalistics
-Crossman
-Cuddle Shuttle
-Custom Bikeworks Inc
-Custom Expansion Fabricators
-Custom Pits and Fabrication
-D & D Trailers Inc.
-D's Fiberglass
-DBAT TRAILER SALES & SERVICE
-DHS Systems
-DMC Five Star Trailers
-DRIVEN FAB LLC
-Daehan
-Dameron
-Darrell's Welding Inc.
-Dawson
-Deep South Choppers
-Demons Cycle
-Design Worx
-Di-Mond Trailers, Inc.
-Diamond Reo
-Display Compnay dba Speedcheck
-Dominight
-Double R Trailers
-Dragon ESP
-Drifta Offroad Tourer
-Duralite Trailers
-Dynamic Air Systems
-E-TUK
-EAST COAST RACE CARS, INC.
-EFL Manufacturing
-EMB INCORPORATED
-ENVIRON PRODUCTS INC
-ET Manufacturing Corp
-EXTREME TRAILERS LLC
-Eager Beaver
-Eagle Trailers LLC
-Easy Time Trailers, Inc.
-Economy Drilling Solutions
-Electric City Motors, North America
-Elite Custom Trailer,LLC
-Emerson Trailers
-Equip Manufacturing, Inc.
-Eurospeed
-Execucoach Inc
-Extreme Trailer
-FBI Motor Co.
-FLAC INDUSTRIES INC.
-FREDY RUIZ MARTINEZ
-Fabricators Plus
-Fanntana Trailers
-Fat Socks Motorsports
-Ferrari
-Firedancer Manufacturing Inc
-Flame King Inc
-Flex Trailers LLC
-Food-Trailers
-Foshan Fosti Motorcycle Manufacturing Co.
-Franklin Retreats
-Freespirit Recreation
-Fujian Changchun (Special Vehicle Mfg)
-G & R Enterprises
-GE Trailers
-GLIDEWELL TRAILER SALES
-GOOD TIME
-GRA-TER INDUSTRIES INC
-4-Star Trailers Inc.
-A & M FABRICATIONS
-AAR Welding
-ACTION WELDING & FABRICATION, INC.
-AFC Company
-ALLEN'S MFG INC.
-AMERICAN QUANTUM CYCLES
-APS Systems
-ATLANTIC TRAILERS
-Absolute Concepts
-Action Enterprises & Fabrication
-Adrenaline
-Advantage Terrafab, LLC
-Agri-Drain Corp
-Alaska Frontier Fabrication LLC
-All American Choppers Co.
-All Star Trailers
-Alloy Custom Products
-Alumax Trailers
-AmeriMax
-American Farrier Systems LLC
-American Motors Corporation
-American Tote
-Anderson Industries
-Apollo Choppers
-Arena Werks
-Arsenal of Virginia
-Atek Trailers
-Autocar Industries
-B & B Fabricators
-B B'S TRAILERS
-BALKO
-BECK TRAILER MANUFACTURING INC
-BGRS INC
-BOB'S TRAILER SALES AND SERVICE
-BRESEE MANUFACTURING
-BUILT RITE TRAILERS OF NEBRASKA, INC
-Bach Built Choppers
-Bad Island Toyz
-Bakkura Mobility
-Bar H Welding
-Barry's Trailers
-Bayshore
-Bearcat
-Bendron Enterprises
-Best Bet Fabrication Inc
-Big Bear Trailers
-Big W Sales
-Biohazard Cycles
-Black Tie Manufacturing
-Blue Lake Industries
-Blueridge Trailer
-Bonnell Industries
-Bovine Pedicure Industries
-Breckenridge
-Brown & Reese Enterprises, Inc.
-Buchanan Welding
-Bulk Tek Manufacturing
-Burke Enterprises
-C & B Quality Trailer Works
-C B Repair & Trailer Maintenance
-C.V. INC
-CARRIER TRANSPORTS, INC
-CENTINELA STATE PRISON
-CHEMGUARD
-CHYONG HORNG ENTERPRISE CO
-CJAY TRAILERS INC.
-CLAY'S TRAILER SALES
-CMS WELDING
-COLLA TRAILERS
-COMPETITION BODYWORKS
-CONTREE SPRAYER AND EQUIPMENT
-CPI
-CRP Racing
-CUSTOM TANK TECHNOLOGY
-California
-Campa International
-Capco
-Carefree Custom Cycles
-Carolina Growler
-Carts Unlimited
-Caterpillar
-Central Ohio Fabrication
-Chalet RV
-Champion Trailers
-Charleston Trailer
-Chilton Manufacturing Corp.
-Chopper Designs
-Cikira RV, LLC
-Cliff's Welding Service
-Coleman
-Commander SCRV
-Consulier
-Corullo Forest Products Corporation
-Cowboy Trailers
-Crary Agricultural Solutions
-Cronkhite Industries
-Crossroads Manufacturing
-Cumberland Adventure Trailers, LLC
-Custom Built Trailers
-Custom Fabrication and Equipment
-Custom Pull Trailer
-D & G Welding
-DABCO FABRICATION
-DBR Systems LLC
-DI BLASI OF AMERICA Inc.
-DMP Awnings
-DRS Cycle Corp
-Daewoo
-Damon
-Darwin Motorcycle
-DayStar Motorcycles of America, Inc.
-Defiance
-Demountable Concepts
-DesignLine
-Diablo Performance, LLC
-Diamond Trailer Manufacturers
-Ditch Witch
-Dominion Motorcycle
-Double R Trailers MFG
-Dragon Mobile Rigs
-Drillers Mud Systems
-Duralite Truck Body & Container
-Dynamic Manufacturing Corporation
-E-Ton I
-EASTERN METAL WORKS
-EH Concepts
-EMBUGGY
-EO TRAILER
-ETHER ENTERPRISES, INC.
-EZ
-Eagle
-Eagle Welding & Machine
-Easyrider Motorcycle Company
-Ecosse Moto Works, Inc.
-Electric Cycle Co
-Elite Custom Trailers
-Empire Cargo Trailers
-Equipment Source
-Eurostyle
-Execuhitch
-Extreme Trailers
-FCM-Group
-FLEET AIR WORLDWIDE, INC
-FREEPORT MILLS SIGNWORKS INC
-Fabtech
-Farmer Fabrications
-Fatmancycleworks
-Ferro Trailers
-Firely ESV
-Flaming Hacksaw Fabrication LLC
-FlexTop Trailers LLC
-Foral Company
-Foshan Nanhai Yiho Hardware Electric Equipment Co
-Franko's Custom Cycles Inc.
-Freightliner
-Fukushu, Inc.
-G-2 Motorcycles
-GEM
-GLOBAL FACTORY PRODUCTS, INC
-GOOD TIME OUTDOORS, INC.
-4M Farm & Trailer Sales
-A & W TRAILOR MANUFACTURE
-ABASTECEDORA DE TRACTOPARTES Y REFACCIONES
-ACcustomX
-AFTER-MARKET SPECIALTIES
-ALLISON DUMP BODIES & TRAILERS
-AMERICAN TRAILER SYSTEMS
-ARC Manufacturing
-ATLAS
-Absolute Performance
-Action Equipment
-Adrian Homes
-Adventure Sports Products, Inc
-AgriFleet Leasing Corporation
-Albert Lea
-All American Manufacturing, Inc.
-All Steel Trailer, LLC
-Alloy Custom Vacuum Products Inc
-Alumina, Inc.
-AmeriQuip
-American Hauler
-American Performance Technologies
-American Trailer Builders
-Anderson Mfg.
-Appalachian Teardrop Company
-Arising Industries
-Art In Motion
-Atlanta Fabricating & Equipment Co
-Autodelta USA Inc
-B & B TRAILER SALES
-B and M Trailer Sales
-BAODIAO
-BEDARD TANKERS INC
-BIG E TRAILERS
-BOB'S WELDING & FABRICATION
-BRIAB
-BUILT-RITE TRAILERS, INC
-Back 40 Supply
-Badass Industries
-Baldor Generators
-Bar Y
-Bartel Welding
-Bayshore Systems, Inc
-Beck's Mobile Home and RV Center
-Benelli
-Best Bilt
-Big Boar Custom Cycles
-BigBoy Trailer, MFG.
-Biotech Systems, Inc
-Blackrock Trailers Corporation
-Blue Line Industries
-Blueridge Trailers
-Boom Trikes USA
-Bowie Industries
-Brehmer
-Brown Industries
-Buck Dandy
-Bull Manufacturing LLC
-Burke's Welding
-C & B TRAILERS MANUFACTURING LLC
-C F Welding & Mfg Inc
-C3 Design
-CART-AWAY CONCRETE
-CENTRAL PURCHASING
-CHENGFEI MOTORCYCLE MANUFACTURING
-CIF Industries, INC
-CK POWER
-CLC
-COAST 2 COAST CHOPPERS
-COLLIERS CUSTOM CYCLES
-COMPLETE FLEET SERVICES
-COOKSHACK
-CPS Trailer Company
-CRT
-CUSTOM TRIKES, INC.
-California Live Floors
-Campagna
-Cape Fear Manufacturing, LLC
-Carga Facil
-Carolina Hitch & Truck
-Cartservices
-Cates
-Central Parts Welding, LLC
-Chalet RV Manufacturing
-Champion Trike
-Charlotte Custom Cycles, LLC
-Chimera Kustom Carts
-Chopper Nation, INC
-Cimarron Trailers, INC.
-Cloud
-Collin-Arndt Trailer Manufacturing Inc
-Commercial Mobile Systems
-Contech
-Costin sports car
-Cowboys Kustoms
-Crater Trailers of LA, LLC
-Crooked River Choppers
-Crow Fabrication, LLC
-Cumberland County Custom Cycles
-Custom Chassis Inc.
-Custom Farm and Ranch Supply
-Custom Services
-D & H Enterprises
-DAECHANG MOTORS COMPANY LIMITED
-DBT Designs, LLC.
-DIAMOND B TRAILERWORKS
-DNA ENTERPRISES INC
-DRV
-Daigle Brothers
-Dan Gurney Alligator Motorcycles, Inc.
-Dast Tanks
-Dayang
-Dejana Truck and Utility Equipment
-Dempster Industries Inc
-DesignLine International Holdings
-Diam D Trailer Manufacturing
-Diamond Trailer Mfg
-Diversified
-Don Johnson Sales
-Double S Enterprises
-Dragon Products
-Driving Ambitions
-Durbin's Custom Weld & Design
-Dynamic Trailers
-E-Ton II
-EASTERN WHOLESALE DISTRIBUTORS
-EHW
-EMERALD WELDING
-EP Design
-ETI ELECTRIC TRANSIT INC
-EZ Deploy Systems
-Eagle Car Carriers
-Easley
-Easyrider Motorcycle Company Trailers
-Ecotrek Camper
-Electric Mobile Cars
-Elite Equipment
-Empire Manufacturing Company
-Equiquest Horse Trailers
-Evaco Acquisition
-Exolon Systems Inc.
-Extreme Trailers (TN)
-FDM
-FLEMING TRAILERS INCORPORATED
-FTEC
-Factory Direct Equipment Inc.
-Farwest Golf
-Faw Jiaxing Happy Messenger
-Fiat
-Firepower
-Flat Bed
-Flicker Group
-Ford
-Foss Developing
-Free Drive EV
-Friesen Welding
-Full Throttle Fabrication
-GALPIN MANUFACTURING, INC
-GEMINI AUTO & TRAILER INC
-5 Starr Trailer Company, Inc
-A Bar K Trailers
-ABC Enterprises
-ADIRONDACK KABINS, LLC
-AG Dryer Services Inc.
-ALMAR MANUFACTURING
-AMERICAN TRAILERS CO
-ARGO FAB, INC
-ATLAS Lift Trailers, Inc.
-Absolute Trailer Sales
-Action Signs and Billboards
-Advance Engineered Products
-Adventure Trailers
-Aguilar's Welding, Inc.
-Albright Bikes
-All American Trailer Manufacturers
-Allco Trailer Manufacturing
-Almax Holding Limited
-Aluminex Fabrication
-America's Best Cargo
-American Hauler Inc.
-American Recreational Vehicles
-American Trailer Manufacturing Company
-Anderson Repair
-Appalachian Trailer Sales
-Arizona Trailer Manufacturing
-Art Roll Tech
-Atlas Copco
-Autokad
-B & B Trailers
-B&A TRAILERS INC.
-BARCO Industrial Supply
-BELL POWER SYSTEMS, INC.
-BIGASS GRILLS AND SMOKERS
-BOLINGER INC.
-BRM Trailers
-BUILTRITE TRAILER
-Back Track Trailers
-Badge Boyz Customz
-Bales Equipment Trailers LLC
-Bar-Bel Fabricating
-Bartley Corporation
-Bazooka Farmstar Trailers
-Beckenridge
-Benelli, Q J Srl
-Best Built Manufacturing Inc.
-Big Boy Manufacturing
-BigLug Trailer Works
-Birschbach MFG.
-Blackseries Campers Inc.
-Blue Mist Holdings
-Blum's Fab & Design
-Boomer's Trikes
-Bowlus Road Chief
-Brenner
-Brownell Boat Trailers, Inc.
-Buckeye Fire
-Bull Stout Manufacturing
-Burkett's Autorama
-C & C Mfg.
-C M MART, INC(PHANTOM TRAILERS)
-C3 Welding
-CARTER'S FABRICATION & DESIGN CO
-CENTRAL TANK OF OKLAHOMA, INC.
-CHIEF TRANSPORTATION PRODUCTS
-CIMC
-CK TRAILERS
-CLEAN - TECH
-COASTAL INDUSTRIES
-COLUMBIA INDUSTRIES
-COMPLIANCE ASSURANCE ASSOCIATES
-COOL AMPHIBIOUS MANUFACTURERS
-CR SPECIALTY MANUFACTURING
-CRUISERS MFG, INC (CMI)
-CUSTOM-FAB BODIES AND TRAILERS,INC.
-California Motorcycle Company (CMC)
-Campbell Supply Co.
-Capital Automotive
-Cargo America
-Carolina Services
-Cary Faas Racing dba Cfrinc
-Catolac
-Central Star Manufacturing
-Challenger Motorcycles
-Chance
-Charlottle County Custom Cycles, Inc.
-Chimera Kustom Choppers
-Chopper Works Cycles
-Cirbin Inc.
-Club Car
-Collins
-Commercial Structures
-Continental
-Cotner
-Cowtown Customs and Cobras, Inc
-Crazy Dago Customs
-Crop Master Trailers
-Crown Coach Corporation
-Cumberland Farms
-Custom ChopperWerks
-Custom Fire Apparatus
-Custom Trailer Company
-D & H Truck Equipment Inc
-DAN'S REPAIR & MFG.
-DDI
-DIAMOND COMPONENTS, INC.
-DNA Specialty
-DRYAIR 2000 Inc.
-Daigle Trailers
-Dan's Golf Car and Trailer Sales
-Dat Trailers
-Daytona Coach Builders
-Del Mar Trailers
-Denbeste Manufacturing
-DesignLine USA
-Diamo
-DiamondBack
-Diversified Service
-Donaldson Fabrications
-Double S Welding
-Dragontail Trailers
-Drydock
-Duruxx
-Dynasty Electric Car
-E-W Trailers
-EASTERN, INC.
-EIP Manufacturing
-EMF
-EPIC CUSTOM CYCLES
-ETI Global Solutions Inc
-EZ Draw Trailers
-Eagle Coach Corporation
-Easley Trailer
-Easyway Tailers, Inc
-Ed Trailers
-Electric Motorsport
-Elite Motor Sales
-Empire Tanker
-Eretz Trailers Manufacturer
-EverGreen Recreational Vehicles
-Exosent Engineering
-Extreme Warrior RVs of Idaho
-FEKON
-FLINT MANUFACTURING
-FTG Equipment Solutions
-Factory Direct Trailer Sales & Manufacturing
-Fast -Way Ideal Mfg Co
-Fearless Choppers
-Fiba Compressed Gas Equipment
-Fireside Recreational Vehicles
-Flat Creek Lodges
-Floe International
-Fords Trailer Sales
-Fosti
-FreeMyer Industries
-Frisbie Construction Co Inc
-Fulmer Fabrications
-GAM
-505 Fabrication
-A Smith GT Bentley
-ABC Manufacturing
-ADIRONDACK KOTTAGES
-AG Industrial, Inc
-ALPINE WELDING & FABRICATION INC
-AMERICAN WARRIOR MOTORCYCLES
-ARGO Trailers
-ATR
-Absolutely Wild Ranch
-Action Trailers
-Advance Lifts
-Aero Fiberglass Company
-Ahoy! Houseboats and Fishhouses
-Alcan Trailers, LLC
-All Around Trailers
-Allen Boat Company
-Alpha Products International
-Aluminum Cargo Trailers Inc
-American Airboat Corporation
-American Homestar Corporation
-American Scooter Manufacturing
-American Trailer and Manufacturing LLC.
-Anderson Truck Body & Equipment
-Appalachian Trailers Inc.
-Arizona Trailer Specialists
-Art's Portable Welding
-Atlas Custom Trailers
-Automated Engineering Systems Inc
-B & D
-B&B MICRO MANUFACTURING INC
-BARON MOTORCYCLES, INC.
-BELLUE'S WELDING
-BILLS
-BOLLINGER-ONKEN INC
-BROCK'S FIELD SERVICE FABRICATION
-BULK
-Back Yard Choppers
-Badger Equipment
-Balestra
-Barclay Truck Rebuilders
-Base Camp Recreational Vehicles
-Be Seen Advertising and Custom Designs
-Bee Trailers
-Bennett's Garage & Towing
-Best Lane Enterprises dba Ramp Free
-Big Boy Trailers
-Bigfoot Industries (2010) Inc.
-Biscamp's Trailer Sales
-Blacksmith Trailers
-Blue Ridge Manufacturing
-Boatmate Trailers
-Boondock Campers LLC
-Boxes Creek Fabricating & Welding
-Brenner Tank
-Brownell Hydraulic Trailers Inc
-Buckner Trailers
-Bull-Dawg Trailers
-Burns Mfg.
-C & C Trailer Manufacturing
-C N Power Systems Inc
-C4 Welding
-CARY CART COMPANY
-CENTURION
-CHLORINATORS & CONTROLS
-CIMC REEFER TRAILER,INC
-CL WHIGHAM
-CLEAN BLAST SERVICES
-COASTAL METAL FAB
-COLUMBIA NORTHWEST
-COMPREHENSIVE COMMUNICATION SERVICES
-COOL CARRIERS CUSTOM TRAILERS
-CRAFTSMEN INDUSTRIES, INC.
-CRUX EXPEDITION TRAILERS
-CW Welding and Fabrication
-California Performance Iron
-Camper Exchange
-Capital Industrial
-Cargo Pro, Inc
-Carolina Trailers & Equipment
-Cascade Custom Manufacturing Inc.
-Cattle Country Equipment
-Central Trailer Corp
-Challenger Trailer
-Chance Trailer Manufacturing & Sales
-Charmac Trailers
-Chimera Motorcycles
-Choppers East
-Circle G Trailers
-CnC TRAILERS FABRICATION
-Collins Trailers
-Commodore Homes of Indiana
-Convoy
-Count's Kustoms
-Cox Fabrication, Inc.
-Crazy Horse Iron
-Cropp Welding & Fabrication
-Crown Custom Trailers,Inc
-Currahee Trailers
-Custom Choppers by Otis
-Custom Fit Trailers
-Custom Trailers Inc
-D & J Fabricating LLC
-DANCO
-DEADEYE WELDING AND FABRICATION
-DIAMOND H SALES
-DNM Teardrop Trailers
-DS Corp dba Crossroads RV
-Daihatsu
-Danco Products
-Data Mfg.
-Dazon
-Del-Val
-Denney Brothers Fabrication LLC
-Desperado
-Diamonback
-DiamondBack Trailer
-Dixie Craft Trailers Inc
-Dongguan Yongqiang Vehicles
-DoubleEagleUSA
-Dragonz Lair Custom Cycles dba Buffalo
-Dub Box USA
-Dusold Custom Cycles
-Dynatest
-E-Z Dumper Products
-ECC
-EISEN
-EMI Technologies
-EPV Corporation
-EV America
-EZ GO
-Eagle Craft, INC.
-East Coast Manufacturing & Design
-Ebert Precision Products LLC
-Ed's Machine & Repair
-Electric Vehicle Manufacturing
-Elite Tool
-End 2 End Welding
-Ernest Spencer Trailer
-Evergreen
-Exotic Choppers
-Extreme Welding
-FEMCO
-FLXIBLE
-FUN TECH INDUSTRIES, INC.
-Factory Motorhomes Inc.
-Fast Eddie's Customs and Classics
-Featherlite Trailers
-Fiber Trailer
-First Call Flagging
-Flatt Enterprises
-Florida Custom Choppers LLC
-Foremost Truck & Trailer Specialists
-Foundry Moto
-Freeborn Customs, Inc.
-5280 Trailerworks
-A Trinity Trailer
-ABI
-ADLY
-AG Shield Manufacturing
-ALTA
-AMERITECH CORPORATION
-ARIZONA WOODRIVER OUTFITTERS, LLC
-ATSATV
-Academi Training Center
-Activity Trailer
-Advance Mechanical Service
-Aero Flite
-Ainley Kennels & Fabrication, Inc.
-Alcom LLC
-All Boat Manufacturing
-Allen Fabricators Inc.
-Alpha Products International, Inc.
-Aluminum Trailer Co.
-American Airport Support & Rescue Systems
-American Hotrod Manufacturing, LLC
-American Skier
-American Trailers
-Andros Engineering
-Appleton Steel, Inc.
-Ark Custom Trailers
-Ashcroft Enterprises
-Atlas Mfg Co Inc
-Automotive Transformation Inc.
-B & H Customs
-B&B Precision Builders, LLC
-BAY EQUIPMENT AND REPAIR (BEAR)
-BENTECH INDUSTRIES
-BIg Red Engineering
-BOMAG PAVING PRODUCTS
-BROUGHAM BRIDGER
-BULK FABRICATED PRODUCTS
-BackRoad Choppers
-Badlands Steel Worx
-Ballard Power Systems Inc.
-Barcroft Welding and Ornamental Iron
-Basecamp
-Beach City Motorcycles
-Beehive Road Welding
-Bentley
-Best Trailers
-Big Bubba's Trailer Sales
-Bigfoot Trailers LLC
-Bison Coach
-Blackstone Trailer Company
-Blue Ridge Mountain Trailers
-Bob Boersma Co.
-Boondocker Trailers
-Boydstun Metal Works
-Brewer Automotive Equipment
-Broyhill
-Bud Antle Inc
-Bulldog Carts
-Busby International, Inc.
-C & C Trailers
-C and C Tooling
-CABIN CRAFT INC
-CC CYCLES
-CGM Fabrications
-CHOCTAW TRAILERS
-CIMC VEHICLES GROUP CO
-CLACKACRAFT DRIFT
-CLEAR CUT FABRICATION
-COASTAL PRODUCTION SYSTEMS
-COLUMBIA PARCAR
-CON-WAY MANUFACTURING
-COOL CITY CUSTOMS
-CRANFORD RADIATOR INC.
-CRUZER
-CYCLE CONCEPTS INC.
-California Scooter
-Campers Choice
-Capital Pump & Equipment
-Cargo South
-Carolina Trikes & Minis
-Cascade General Inc
-Cazzani Custom Cycles
-Centralia Machine & Fab
-Challenger Trailers
-Chancey
-Chart, Inc.
-Chin Yuan Chi Casting Corp
-Choppers Only
-Circle M Trailers
-Coachcraft Technologies, LLC
-Collins Welding
-Commodore Trailers
-Cooke's Trailer Manufacturing
-Country Boy Trailers, Inc
-Coyne Oil
-Create A Custom Cycle
-Crosley
-Crown Energy Technologies
-Current Motor Company
-Custom Concessions Trailers
-Custom Haul
-Cycle Products
-D & M Marketing Inc.
-DANDEA ENTERPRISES, INC.
-DECK OVER DOLLY
-DIAMOND Z TRAILER INC
-DONGFANG
-DTM Trailers
-Dailey Trailers Inc
-Danco Trailer Sales
-Datsun
-17 Creek Enterprises
-1ST CHOICE MANUFACTURING INC
-2 Person Street
-DeNardis Motocross Factory
-Delavan Industries, Inc
-Dennis Boggs Welding Works
-Destiny
-Diamond Boats Inc
-DiamondStar Trailer Industries, Inc.
-Dixie Hitch
-Donham's Mobile Service
-Douglas Holding LLC
-Drake Trailers
-Ducati
-Dutch Master
-E & L Trailers
-E-Z PULL TRAILERS LLC
-ECHELBERRY MANUFACTURING, LLC
-EL PASO TRAILERS
-EMK
-EQUI-TREK
-EV Innovations
-EZ Hunt & Haul
-Eagle Erectors
-East Coast Trailers
-Echo Accessories
-Eddy Motors
-Electric Vehicle Transportation of America
-Elite Trailer Manufacturing
-EnduraMax
-Erwin Precision
-Evergreen Off Road Campers
-Exotix Cycle & Motor Werx
-Exxiss
-FENRIS CYCLE, INC.
-FLYER
-FUQUA HOMES, INC
-Factory Transports, Inc.
-Fast Master Products, Inc.
-Featherlite Vogue
-Fiberlite Trailers
-First Fueling Systems
-Flaunt Electric Vehicles
-Flournoy Trailer Sales
-Foreshee Flatbed Ladders and Manufacturing LLC
-Four - W Trailers
-Freeborn's Chop Shop
-Frontier Cargo
-Fulu
-GRAND DESIGN RECREATIONAL
-GRAND ISLAND
-GRAND LAKE FABRICATION
-GRANDWATT ELECTRIC
-GRAVES CUSTOM CYCLES, LLC
-GRAVITY CONCEPTS
-GREASYHILL
-GREAT AMERICAN CHOPPER
-GREAT LAKES TRAILER
-GREAT NORTHERN TRAILER WORKS
-GREAT PLAINS FABRICATION
-GREAT WHITE TRAILERS
-GREAT WOLF TRAILERS
-GREEN DISTRICT
-GREEN ELEC-MOTOR
-GREEN INTERNATIONAL SOLUTIONS
-GREEN POWER TECHNOLOGY
-GREEN VALLEY MANUFACTURING
-GREEN'S WELDING AND TRAILER SALES
-GREENFIELD TRAILERS
-GREENGO TEK
-GREENKRAFT
-GREENLITE TRAILERS
-GREENTECH AUTOMOTIVE
-GRIFFIN TRAILER
-GRIFFITH CHOPPERS
-GROUND FORCE MANUFACTURING LLC
-GRP Fiberglass Limited
-GRUPO REMOLQUES del NORTE
-GRYPHON BIKES & CHOPPERS
-GS MANUFACTURING
-GS Motor Company
-GSE CUSTOM CARS AND CYCLES
-GSN CUSTOMS
-GT'S BOAT WORKS
-GUAM STEEL SERVICES, LLC dba TSUNAMI MOTORSPORTS
-GUARDAIN TRAILERS INC.
-GUERDON ENTERPRISES LLC
-GUERILLA CUSTOMS
-GULL WING INDUSTRIES, INC.
-GULLWING INTERNATIONAL MOTORS, LTD.
-Gabilan Welding
-Gabriel Villescas West Mesa Choppers
-Gaitway Trailer Co
-Galaxy Trailer Mfg.
-Galfab
-Galion Manufacturing
-Galvanized International
-Galyean Equipment Co.
-Gamble's Welding & Fabrication
-Gambler
-Game Day Traditions
-Gangster Choppers Inc
-Ganzcorp Investments
-Gap Hill Aluminum Shop
-Garcia Industries
-Gardner Denver, Water Jetting Systems
-Garia
-Garland Trailer Designs
-Garneau's Garage, Inc
-Gateway Materials
-Gateway Teardrops
-Gator Made
-Gatormoto Utility Vehicles & More LLC
-Gear Gasm
-Gear Jammer
-Gearheads Inc.
-Geely
-Geistwerks
-Gemco Park Homes
-Gemini Auto Lifts
-GenZe
-Gene's Golf Carts
-Generac Power Systems Inc
-General Automotive Corporation
-General Coach
-General Crane Service
-General Duty Trailers
-General Fertilizer Equipment
-General Machine Products
-General Purpose Vehicles
-General Rich Enterprises
-General Services, Inc (GSI)
-General Shelters
-General Shelters of Kenedy, TX Ltd
-General Welding and Fabricating Inc
-Genesis
-Genesis Supreme Inc
-Genuine Jacks
-Genuine Scooters
-Geo
-Georgia Wholesale Trailers
-Gerdes Fabricating
-Gerling and Associates
-Gibson Brothers Welding
-Gichner Refrigerated Systems
-Gichner Truck Bodies
-Gicon Pumps and Equipment
-Gidget
-Giles RV
-Gillig
-Girtz Industries
-Glacier
-Gladiator Custom Trailers, Inc.
-Glastron
-Glendale RV
-Glenn
-Global Electric Motorcars
-Global Fabricators
-Global Generation Cult
-Global Inventive Industries
-Global Motorsport Group
-Global Power Components
-Global Pump Company
-Global Steel
-Global Truck & Trailer Sales
-Global Vaccum Systems
-Globe Trailer Manufacturing
-Go RV
-Go Rite Trailers, Inc.
-Gold Star
-Gold Star Communications
-Gold Star Custom Trailers
-Gold Star Trailer Manufacturing
-Golden Building Corporation
-Golden Gait Trailers
-Golf Car Center
-Golf Cars of Arizona
-Golf Cart Outlet Inc
-Good Thunder Motorcycles
-Google
-Goose Creek Enterprises
-Gore
-Gorilla Built Enterprises
-Gorilla Vehicles
-Gotwals Brothers
-Grabill RV Manufacturing
-Grace Industries
-Graetz Manufacturing
-Grand Design Recreational Vehicles
-Grande
-Grande West
-Grandeur Cycles Inc
-Grasshopper Enterprises
-Great Basin Industries Inc
-Great Dane
-Great Dane Trailers
-Great Lakes Cargo
-Green Hop'r
-GreenGo Buggies
-GreenPower Motor Company Inc.
-Greenhead Trailers MFG
-Greenman Machinery Group(HK)Limited
-Greenwater Trailers
-Gregory Industries Inc.
-Grigsby
-Grimaldi's Heating & Sheet Metal, Inc.
-Grimes-Parker IND Inc.
-Grizzly Cycle Works
-Grizzly Mountain Manufacturing Inc
-Grooms Welding & Machine Inc
-Ground Heaters
-Grubb Trailers, Inc.
-Grumman
-Grumman Olson
-Grumpys Custom Motorcycles
-Gruppe B
-Guardian
-Gulf Coast Trailer Mfg.
-Gulf South Trailer Works
-Gulf Stream Coach, Inc.
-Gun Fighter Customs
-H & H Motor Cycles
-H & H Supply, LLC
-H & H TRAILER SW
-H & H Trailers, LLC.
-H & H WELDING, LLC
-H & H Welding
-H & H Welding & Repair LLC
-H & M GOPHER CONTROL
-H & M Manufacturing, Inc.
-H & M TRAILERS LLC
-H & W Trailer Works Inc
-H&H
-H&H Custom Solutlons
-H&H Trailer Co
-HARCO TRAILERS
-HARDCORE CHOPPERS
-HARMAR , INC.
-HAULMARK INDUSTRIES, INC
-HAWK TRAILERS
-HAWKINS WESTERN WORLD
-HAYES TRUCK & TRAILERS
-HB Custom Components, Inc.
-HBC GROUP LLC
-HBP-Jaybrake, LLC
-HCL Truck Equipment Inc.
-HDE
-HDK Plastic LTD USA
-HEARTLAND
-HEAVY HITTER
-HEIL ENVIRONMENTAL INDUSTRIES, LTD
-HEMCO
-HERCULES
-HERCULES AJAX
-HERNCO FABRICATION & SERVICES
-HESSE CORPORATION
-HI-Ride Manufacturing LLC
-HI-TECH FABRICATORS INC
-HIDDEN VALLEY MFG, LLC
-HIDDENITE METAL PRODUCTS INC
-HIGH COUNTRY ALUMINUM PRODUCTS, LLC.
-HIGH COUNTRY DEVELOPERS, INC.
-HILLSBORO
-HITCH & TRAILERS OF FORT MYERS, INC.
-HITCH -N-GO- TRAILERS
-HITCH BUDDY
-HITCHCOCK, INC.
-HJ Customs
-HJV Trailers LLC
-HLT TRAILERS
-HMC
-HME Inc.
-HME, Inc
-HMF Engineering, Inc.
-HOBO
-HOG HAULER INC
-HOGENTOGLER & CO INC
-HOMECO MANUFACTURED HOUSING
-HOMIER DISTRIBUTING INC
-HP Piping Solutions
-HTMI
-HUAWIN
-HUNG DAO CONTAINER CO
-HUNTER DESIGN GROUP, LLC
-HUNTER MARINE CORP.
-HYDRA RIG INCORPORATED
-HYOSUNG
-HYUNDAI TRANSLEAD
-Hackney Welding
-Hackney and Sons, Inc.
-Hackstetter Motor Holdings LLC
-Hageman's Custom Welding
-Hahm EV
-Halbert Trailer Service and Repair
-Half Moon
-HallBuilt Trailers
-Halljack Industries LLC
-Hallstar Trailers, LLC
-Halo Cycles LLC
-Halsey Z Trailers
-Hamby
-Hamilton Trailers
-Hamlet Custom Haulers LLC
-Hamlin Trailer Manufacturer
-Hamm & Phillips Service Company, Inc.
-Hammar Lift
-Hammelmann Corporation
-Hammer Down Choppers LLC
-Hammerhead Trailers
-Hamner
-Hampton Amusement Rides LLC
-Hancock Industries
-Hang Time Inc
-Hank Williams Trailer Manufacturing
-Hansen Hydralift
-Hanson
-Haonuo
-Haoying
-HappiTrails
-Happy Trails Trailers LLC
-Happy Valley Campers
-Harborview Choppers
-Hard Bikes
-Hard Hat Trailers
-Hardee Manufacturing Company Inc.
-Hardknock
-Hardkore Karts
-Hargrove Brand
-Harley Corp.
-Harley Davidson
-Harmon
-Harnischfeger
-Harper
-Harrell Performance Engineering
-Harris Custom Cycles
-Harris Fabrication LLC
-Harris Waste Management Group, Inc.
-Harrod Equipment LLC dba Bluegrass Trailer Mfg
-Hart
-Hart Designs
-Hart Manufacturing
-Hart Steel Company
-Hartstra Manufacturing
-Harvest AG
-Harvest International
-Harvest Services
-Hatton Fabrication, Inc.
-Haul'n Ass Customs, LLC
-Haul-All, Inc.
-Haul-Rite
-HaulRite of Four Corners, Inc.
-Haulinit
-Haulmark
-Haulmax Trailer Company
-Haulstar, Inc.
-Hawaiian Chariot Wheelchair Motorbikes, LLC
-Hawes Manufacturing
-Hawk FRP, LLC
-Hawk Motors
-Hawker Well Works, Inc.
-Hawkeye Eagle
-Hawkline LLC
-Hay Competitor
-Hay Seed Farms LLC
-Hayvan Manufacturing
-Heartland Homes
-Heartland Recreational Vehicles LLC
-Heartland Trailers
-Heartland Trailers of BC
-Heat Innovation
-Heat's on Welding & Fabrication
-Heatec, Inc.
-Heavy Duty Cycles
-Heavybilt Manufacturing, Inc.
-Hedererbuilt Manufacturing, Inc.
-Heil Trailer International, Co.
-Heisler Boats
-Helfin Sheet Metal Inc.
-Hell Bound Steel LLC
-Hell-Bent Custom Cycles
-HellBilly Motorcycles
-Hellbound Steel Motorcycles
-Helmuth Quality Power Systems
-Hemisfear Cycles
-Hemphill, LLC
-Henderson Truck Equipment
-Hendrickson Chassis
-Hensim
-Her Chee Industrial Company, Ltd.
-Herbs
-Heritage
-Heritage Custom Trailers
-Heritage Manufacturing
-Heritage Manufacturing, Inc.
-Heritage Motor Cars
-Heritage One RV, Inc.
-Herman Leasing
-Hesco
-Hess Services
-Hester and Walton Tailgating Trailers
-Hewitt
-Hi Line Bodies Inc.
-Hi-Lite RV Manufacturing
-Hi-Standard Mfg.
-Hi-Vac Corporation
-HiPoint
-HiVAC
-Hicks Manufacturing
-High Altitude Aviation, Inc.
-High Desert Golf Cars
-High Gear Repair
-High Plains Custom Cycles LLC
-High Roller Custon Motorcycle
-High Speed Welding
-Medic
-High Tide Boat Trailers
-High Torque Marine
-HighLine Trailers
-Highland
-Highland Manufacturing, LLC.
-Highland Ridge RV, Inc.
-Highway Products, Inc.
-Highwood Global, LP
-Hill Equipment
-Hillbilly Choppers
-Hillbilly Trailors
-Hillcrest Manufacturing LLC
-Hilltop Custom Cycle
-Hiniker
-Hino
-Hinterland
-Hirons Memorial Works
-Hitch-Hiker Mfg
-Hitches 'N' Welding
-Hitman Choppers
-Hitong Motors
-Hive Trailers LLC
-Hobbs Manufacturing LLC
-Hobson & Son
-Hobson Trailers
-Hodges Custom Haulers
-Hodges Manufacturing Inc
-Hoedebeck
-Hog Belt Bikes Inc
-Hog Haulin Inc.
-Hog Heaven Chopper
-Hog Motorcycle Trailers
-Hog Shop
-Hog Wild Customs
-Hogfather Trailers
-Holden
-Holden Industries, Inc
-Hole Shot Cycles
-Holiday Rambler
-Holland Choppers
-Holland Dollie
-Holland Equipment Company
-Holland Industries
-Hollis Trailer Sales Inc
-Holmes Enterprises
-Holt Brothers Customs
-Holt Sales and Service
-Hombilt Trailers
-Home Manufacturing
-Homegrown Trailers
-Homesteader
-Hometown Welding
-Homier Distributing
-Honda
-Hoock Custom Trailers
-Hoopes Manufacturing
-Hoosier Trailer & Truck Equipment, Inc.
-Hoosier Trailers
-Hop Trailers
-Hoppel Fabrication Specialties
-Horizon Manufacturing
-Horizon Products
-Horse Creek Manufacturing
-Horseshoe Trailers
-Horton Homes, Inc.
-Horton Iron Works
-Horton Vans
-Hosking Trailers Ltd
-Hoss Fabricators
-Host Industries, Inc.
-Hot Head Customs
-Hot Rod Factory
-Hot Summer Industries
-Hot Tub Hauler
-Houston Marine
-Howe Brothers
-Howell Precision Machine & Engineering
-Hughes Springs Custom Trailers
-Hughes Trailers Works
-Hulk
-Hull Trailers
-HumDinger Trailers
-Humble Houses
-Hummer
-Hunna Mei
-Hunter
-Hunter Outdoor Products
-Hunter Technology Inc
-Hurd's Custom Machinery Inc
-Husaberg
-Husqvarna
-Hustler
-Hutchins
-Huzhou Daixi Scooters
-Hy-Lift Hunting Blinds Inc
-Hy-Line Enterprises
-Hy-Tech Truck & Trailer
-Hy-way Products
-Hybrid Light Solutions, LLC
-Hyde Drift Boats
-Hyde Equipment Co
-Hydra Service
-Hydra-Lift Trailers
-Hydra-Tension Inc
-Hydratrek LLC
-Hydro Engineering
-HydroCal, LLC
-Hydroglide
-Hydrolift
-Hymer Manufacturing Inc
-Hyosung Motors & Machinery
-Hyper Lite Trailers
-Hyper Products
-Hyundai
-Hyundai Steel Industries, Inc.
-I-85 TRAILER MANUFACTURERS
-I.P.P
-IAP
-IBI
-IC
-IDEAL
-IDEAL QUALITY TRAILERS, LLC
-ILAUG
-IMAGE CYCLES INC
-INDEPENDENT TRAILER & REPAIR, INC
-INDEPENDENT TRAILER MANUFACTURING
-INDUSTRIAL FABRICATION & TESTING
-INFINITY TRAILER SALES
-INLAND EMPIRE CHOPPERS
-INNOVATOR MOTORCYCLES
-INTEGRA MANUFACTURING INC
-INTELLI-CORE LLC
-INTERMOUNTAIN
-INTERSTATE
-INTO THE WILD
-INVADER COACH MANUFACTURING INC.
-IPT, Inc
-IRBY
-IRON DOG, INC.
-IRON MAN WELDING
-IRONHORSE TRAILERS
-IRONMAN CUSTOMS TRAILER MANUFACTURING
-IRVING EQUIPMENT
-ITALJET
-ITI TRAILERS AND TRUCK BODIES
-IZA DESIGN & MANUFACTURING
-Ice Cave
-Ice Houses
-Icon Electric Vehicles
-Icon Manufacturing
-Idaho Tote Dolly
-Idaho Truck Specialties
-Ideal Customs
-Ideal Trailers
-Identity Motors Manufacturing & Assembly
-Illusion Cycles Inc.
-Image Custom Cycles Inc.
-Imaginative Manufacturing
-Immer Enterprises
-Impac Manufacturing, Inc
-Impact Welding and Hydraulics
-Imperial Industries
-SIGNCO
-Imperial Trailer Manufacturing
-Imperial Trailers
-Imperialite
-Impressive Motorsports
-In2Go
-Independence Motorcycle Company
-Indian
-Indian Larry Legacy
-Indian Motorcycle
-Indian River Trailers Inc
-Indiana Custom Cargo, Inc
-Indiana Phoenix Inc
-Indianhead Truck & Body
-Indigan
-Industrial Engineering
-Industrial Machine and Kitting SVCS
-Industrial Machine and Knitting Svcs.
-Industrial Maintenance and Fabricating
-Industrial Manufacturing Solutions Inc
-Industrial Process Services Inc
-Industrial Services Center Inc
-Industrial Structures
-Industrial Systems, Inc
-Industrial Truck Bodies
-Industrial Wheel Exchange
-Industrias Met GRI SA de CV
-Industrias Met Gri
-Industrias Proacero Monterrery
-Infamous Motorcycle
-Infern-O-Therm
-Infiniti
-Ingenieria y Maquinaria de Guadalupe
-Inka Outdoor
-Inland Empire
-Inland Venture
-Innovative
-Innovative Biker
-Innovative Enterprises
-Innovative Structure & Design
-Innovative Trailer
-Innovative Trailer Design Industries
-Innovator Trailers Inc
-Insane Cycle Designs
-Integrity Manufacturing
-Integrity Metal Fab LLC
-Integrity Trailers
-Integrity Trailers Inc.
-Intense Creations
-Intercontinental Truck Body
-Intermodal Container Systems
-Intermountain Truck Rebuilders, Inc.
-International
-International Equipment Mfg Co.
-International Lift Corp
-International Structures
-International Tank & Trailer Inc
-International Trailer
-International Transit System
-Interstate Manufacturing
-Interstate Manufacturing, Inc.
-Interstate Trailers
-Interstate Trailers, Inc.
-Interstate West Corp
-Intrepid Cycles
-Intrepid Engineering Group (IEG)
-Inventors Classical Electric Vehicle
-Invision Trailers Div of Proline Products
-Inzuro
-Iowa Steel Fabrication
-Iowa Trailer Manufacturing
-Irbitski Mototsicletny Zavod
-Irisbus France
-Irish Hill Choppers
-Iron & Oak
-Iron Craft
-Iron Eagle Motorcycles
-Iron Eagle Trailers
-Iron Horse
-Iron Horse BBQ, Incorporated
-Iron Mike Cycles
-Iron Outfitter
-Iron Panther Incorporated
-Ironhorse Manufacturing Inc
-Ironman
-Ironman Trailer Company
-Island Cart
-Island Choppers
-Island Topsoil, LLC
-Isuzu
-Italian Choppers LLC
-Itasca Thunder
-Iveco
-Iverson Manufacturing
-Ives Motors Corporation (IMC)
-J & B TRAILERS & EQUIPMENT INC
-J & C Mfg Inc
-J & D Welding & Trailer Sales
-J & E Custom Trailers
-J & E Manufacturing Inc.
-J & J Marine Services
-J & J Trailer
-J & L EQUIPMENT
-J & L TRAILERS
-J & L Tank, Inc.
-J & L'S CARGO EXPRESS, INC.
-J & M FABRICATION
-J & N SALES
-J & R
-J & S Contractors
-J & S TRAILERS
-J & T MERCHANDISE INC
-J & W Fabrication
-J AND E STEEL LLC
-J Bond & Sons
-J D B Aluminum Fabricating Inc
-J Helgeson Enterprises
-J L TRAILER MFG.
-J R Mills Enterprises Inc.
-J Ray's Trailers
-J T Trailers, Inc.
-J and P Trailer Company
-J&D Cycles
-J&D TRAILERS
-J&J Trailers and Truck Equipment
-J&L
-J&S Repair
-J-Craft
-J-Lo Industries
-J.D. ENTERPRISES
-JACK GREEN CO.
-JACKRABBIT TRAILERS
-JAG Mobile Solutions
-JAMCO USA
-JAMES EQUIPMENT COMPANY, INC
-JANAK TRUCK & EQUIPMENT
-JANUS FABRICATING INC
-JAWA
-JAY'S INC
-JBH CUSTOM TRAILERS, INC.
-JC Custom Welding LLC
-JC Fab, LLC
-JCJ Consulting of Mississippi LLC
-JD Enterprise
-JD Handling Systems, Inc
-JDCI Enterprises Inc.
-JEFCOAT TRAILER'S
-JEFF'S CUSTOM WELDING
-JENKINS & JENKINS ENTERPRISES LTD
-JFM Services, Inc.
-JHC
-JIM CAMPEN TRAILERS
-JIMGLO Trailers
-JINGLONG
-JJ Outdoor Industries
-JJ Trailers
-JJR, INC
-JLE Maunfacturing
-JLFD Production ( Fautras Horse Trailers)
-JLG
-JLG Industries
-JLM
-JLR Trailers & Welding Inc
-JM TRAILERS
-JMD Motor Company
-JMJ Maintenance & Remodeling
-JMW Welding & Manufacturing
-JN
-JN (Chongqing Guangyu Motorcycle)
-JNEN
-JNM Equipment
-JOHN WHITE SERVICES
-JOHNNY'S TRUCK AND TRAILERS
-JOHNS GOLF CARS INC
-JOHNSON MANUFACTURING, INC
-JOHNSON'S WELDING
-JONWAY
-JOSTEN
-JR Custom Trailers
-JR KOOP,Inc.
-JR Manufacturing and Sales
-JR TRAILERS
-JR Welding Inc
-JRB Cuz Enterprises
-JRC Custom Trailers
-JRL Cycles
-JRS Custom Fabrication
-JSD WELDING INC.
-JSG Industries
-JSR Custom
-JTC Sales
-JV Manufacturing
-JV Metal Buildings & Trailers
-JWF Industries
-JZ Riders
-Jac 427
-Jackson Mfg.
-Jacksonville Tire & Automotive
-Jaguar
-Jail Break Choppers
-Jailhouse Choppers Inc.
-Jalopy Choppers
-Jamie Pruitt Trailers
-Janco Enterprises, Inc.
-Janssen Welding and Fabrication Big Bear Trailers
-Jantz-Femco
-Janus
-Jarvis Industries
-Jason Industries Inc.
-Jason Mitchell Welding & Fabrication LLC
-Jasper's Hot Rods LLC
-Jayco
-Jeep
-Jeff Nicklus Customs
-Jefferson State Trailer Works
-Jeffery Brothers
-Jel Corp
-Jenison Airlease Inc.
-Jenner Sales Corp.
-Jensen Trailers
-Jeremy's Welding
-Jerr-Dan
-Jerr-Dan Corporation
-Jerry's Warehouse
-Jerry's Welding Service
-Jersey Devil Motorcycles LLC
-Jesse Rooke Customs
-Jet Company Inc.
-JetHeat LLC
-Jetech,Inc
-Jetstream LLC
-Jiajue
-Jialing
-Jiangmen Qipai Motorcycle Co.
-Jiangsu Jinjie Motor Manufacture Co.
-Jiangsu Linhai Power Machinery Group Corp.
-Jiangsu Sinski Sonik Motor Technology Co.
-Jiangsu Sinski Vehicle Science & Technology Co.
-Jiangxi Kama Business Bus Co.
-Jim Nasi Customs
-Jim's Enterprise
-Jim's Welding Service
-Jim-Glo Trailers, Trading as Jimglo Trailers
-Jim-N-I dba Allied Steel
-Jimmy's Custom Built Trailers & Fabrication
-Jincheng Corporation
-Jinhua Regard Manufacturing Company USA
-Jinhua Shiwei
-Jinhua Shiwei Vehicle Co.
-Jinyun County Xiangyuan Industry Co.
-Jo Mac Ltd
-Joe's Motorcycles
-Joe's Motorycles
-Joe's Trailer
-John Deere
-John Evans Manufacturing
-John Peper Enterprises
-John Thomas
-Johnie Gregory Truck Bodies
-Johnny Pag Motorcycles
-Johnson Crushers International
-Johnson Equipment Sales, Inc
-Johnson Powerlifts
-Johnson Truck Bodies
-Johnson's Mobile Solutions
-Jomar Machining & Fabricating
-Jonco Manufacturing
-Jones County Choppers
-Jones Motorsports
-Jones Welding Service
-Jordan Air
-Joyhon
-Joyride
-Jubilee Motor Campany
-Judgement Custom Design
-Jumping J-Jays Franchises USA
-Jumping Jack
-Junior Motorcycle Manufacturing
-Junior's Golf Carts
-Juskco Services, Inc.
-Justin Palmer Welding
-K & C Conversions
-K & K SYSTEMS, INC.
-K & K Welding
-K & M Manufacturing Co.
-K INDUSTRIES, INC
-K&K REPAIR SERVICE
-K-Jack Motors
-K-Line Trailers Ltd
-K-N Manufacturing
-K-otic Kustoms
-KAL MANUFACTURING
-KALYN SIEBERT
-KAR Fabrication Inc.
-KARI-KOOL
-KARMA
-KAST-RITE
-KAUFMAN TRAILERS
-KAUFMAN TRAILERS OF NC
-KAUFMAN TRAILERS OF SC
-KAZ (Russia) Kamsky Auto Assembly Factory
-KBH
-KDZ Kustoms
-KEENWAY MANUFACTURING INC.
-KELLY WELDING
-KEMP KUSTOMS
-KEN'S CUSTOM TRAILERS AND SUPPLIES
-KENDALL TRAILER MFG.
-KENN TRAILERS
-KERBY BROTHERS LLC
-KERR-BILT
-KEVIN'S REPAIR & AUTO BODY
-KID
-KIEWIT
-KINETIC ENGINEERING LTD.
-KING'S TRAVELER, INC
-KIT HomeBuilders West
-KIT Manufacturing Co
-KJD Enterprises
-KL Welding & Repair
-KLA TRAILERS
-KLD Energy Technologies
-KLEIN CORPORATION
-KLIPPING KING, INC.
-KONCED MOTORCYCLE
-KSM Enterprises, Inc
-KTM
-KTM Aluminum Frame
-KTM Steel Frame
-KTMMEX
-KWIK KAMP
-KYFAB
-KYMCO
-KZ-RV
-Kaase Trailers
-Kace Trailers, LLC
-Kainuo
-Kak Motorcycles
-Kalmar Industries LLC
-Kanamak Hydraulics
-Kandi Steel LLC dba Kandi Steel
-Kandi USA
-Kann Manufacturing Corp
-Kapels Eng & BLD
-Kar-Karriage
-Kar-Tote
-Karavan
-Karavan Trailer
-Karcher North America (KNA)
-Kard Co
-Kasi Infrared
-Katharina Loewen dba Taller Fehr
-Kathy Spell dba Southern Built Trailers
-Kawasaki
-Keino Cycles
-Keith Huber Inc
-Keller Welding
-Kenco Fabricating Company
-Kendon Industries Incorporated
-Kendrick Prefab Welding
-Kent Power Inc.
-Kent Trailers
-Kenworth
-Kepler Motors
-Kev's Welding & Manufacturing
-Key Energy Services
-Keystone
-Keystone Choppers
-Keystone Kabins
-Keystone LSV Co.
-Keystone Oilfield Fabrication
-Keystone Trailers
-Keyway Fabrication & Design
-Kia
-Kickin' Kampers
-Kiefer Manufacturing and Sales LLC
-Kiefer-Built
-Kiepe
-Kikker 5150
-Killion Enterprises
-Kimbel Manufacturing
-Kimberley Kampers PTY
-Kimble
-Kimble Chassis
-King American
-King Custom Motorcycles
-King Equipment Co.
-King Kustom Cycle
-King Trailers
-King of the Road
-Kingdom Customs Motorcycle Company
-Kings Way Trailer Mfg
-Kingston Trailers
-Kinkaid Trailers
-Kinlon
-Kinos Custom Concepts
-Kinroad Xintian Motorcycle Manufacture Co.
-Kioba Industries
-Kirk's Trailer Mfg.
-Kirkley & Son Machine Shop
-Kiwi Air
-Kiwi's Welding & Repair
-Klinger Trailer
-Knapheide Truck
-Knapheide Truck Equipment Company Southwest
-Knievel Motorcycle Manufacturing
-Knight Fabricating
-Knight Trailers
-Knight's Dragon Service
-KnightHaulers
-Knights Choppers
-Knights Fabrication
-Knights Kargo Inc
-Knowles Manufacturing Company, Inc
-Knutson Engineering
-Koastal Trailer
-Kodiak Adventure Products
-Koebrick Welding
-Koenigsegg Automotive
-Komfort Corp.
-Kondor Coach Builders
-Kopavi Trikes Inc
-Korando
-Korrupt Choppers
-Kountry Aire
-Kountry Lite
-Kovatch Mobile Equipment
-Kraft Custom Cycles
-Kriminal Kustoms
-Kripple Kreek
-Kristi Trailer Industries
-Kross Kountry
-Kruger Trailers
-Krugger Auto
-Kruz
-Kruzer Motorcycle Trailer
-Krystal Koach, Inc
-Kubota
-Kubvan
-Kuntry Kustom RV
-Kuryente Enterprises
-Kustom Karz of Scottsboro
-Kustom Koncepts
-Kustom LSVs
-Kustom Machine & Sheet Metal
-Kutz Farm Equipment
-Kwik Equipment Sales
-Kwik Load
-Kwik Trench
-Kyzer Aluminum Inc.
-L & H MANUFACTURING, INC.
-L & J Manufacturing
-L & L Custom
-L & M MACHINE AND FABRICATION
-L & M MANUFACTURING INC
-L & M Steel and MFG.
-L & S Line Mfg
-L B Equipment
-L B Maufacturing Co
-L J Welding Inc
-L and S Trailers & Supply
-L& J HYDRAULICS CO.
-L&F CUSTOM BUILT TRAILERS
-L&J Manufacturing
-L&J Supply
-L6 Systems
-LA Cart's
-LA Custom Trikes
-LA Shadow Trailers
-LACF
-LACOTA INC
-LACROSSE ENTERPRISES, INC.
-LAFAYETTE COUNTY CAR COMPANY, LLC
-LAFORZA
-LAL Acquisition
-LAMAR TRAILERS
-LARSON INTERNATIONAL
-LAU WELDING INC.
-LAZY-DAZ INC
-LB Telesystems
-LBT INC
-LBT Stainless Inc
-LC Services of Louisiana
-LC3
-LCT
-LDC INDUSTRIES, INC
-LDJ Manufacturing
-LED Authority
-LET'S GO AERO
-LEVCO WORLDWIDE
-LEVEL TRAILERS
-LEVON VENDING CARTS CO.
-LEXINGTON TRAILER & HITCH
-LGS INDUSTRIES
-LHT Industries
-LIANYUNGANG UNIVERSAL SPECIAL PURPOSE
-LIBERATOR TRIKES
-LIBERTY
-LIBERTY CABINS
-LIBERTY INDUSTRIES
-LIBERTY MOTORS
-LIBERTY SEAMLESS ENTERPRISES
-LIBERTY TRAILERS, INC.
-LIFAN INDUSTRY
-LIFAN-VIETNAM MOTOR
-LIFESTYLE LUXURY
-LIFETRIKE
-LIFTCO
-LIMBO CONTAINER COMPANY
-LINEAR DYNAMICS INC
-LISLE SPECIALTIES INC
-LITO Green Motion
-LLR Trailers
-LMT
-LOADMASTER TRAILER COMPANY LTD.
-LOBB TRAILER
-LODAL
-LOHR
-LOS ANGELES ROLLERS
-LPD Trailers
-LPG Ventures
-LRG Technologies
-LTT
-LUKE'S TRAILER MFG AND SALES, INC.
-LaBarge Products
-LaFarge
-Ladner
-Lagoon Manufacturing
-Lake City Choppers
-Lake County Cycles Inc
-Lake Forest Builders, Inc.
-Lake Manufacturing
-Lake Norman Trailer
-Lake Technology Products Inc.
-Lake View Lodges Inc.
-Lakeland
-Lakes Enterprises
-Lakeshore Watercraft
-Lakeside Trailer Manufacturing
-Lakeview Mfg
-Lakota
-Lamborghini
-Lamco Mfg and Distributing Company Inc
-Laminated Wood Systems, Inc.
-Lampi Equipment
-Lance Camper
-Lanchester Trailer Supply
-Lancia
-Land & Sea, Inc.
-Land Rover
-Land and Sea Trailer Shoppe
-Landa Trailer
-Landmark
-Landoll Corporation
-Landry's Trailer Sales & Service
-Landscape
-Lane Trailer Manufacturing Co.
-Lanier Marine Trailers
-Lankota Inc.
-Lantz
-Lark United Manufacturing
-Larry's Trailer Sales Inc
-Larson Cable Trailers
-Las Vegas Classic Coach
-Latco
-Late Nyt Choppers
-Latitude
-Laverda
-Lawless Welding
-Lawrimore Manufacturing
-Lawton Trailers
-Lazy B
-Lazy J MFG.
-Lazy N
-Leber Coach Manufacturing
-Lectrus
-Ledbetter Welding Company
-Lees Leisure Industries Limited
-Lefort
-Left Coast Development
-Lefty Brothers Cycles
-Legacy Housing
-Legacy RV
-Legacy Trailers
-Legend
-Legend Ice House
-Legend Manufacturing Inc
-Legend Trailers Inc
-Legendary Innovations
-Legends Custom Cycles
-Legends Motorsports LLC.
-Leggett & Platt
-Legion Motorcycle Company
-Lektron
-Lemco Tool
-Lemna Corporation
-Leon's Welding & Fabrication
-Leonard Aluminum Utility Buildings
-Lerch RV
-Leroy Engineering
-Leroy-Thompson
-Les' Service And Canopies
-Lesters Manufacturing Inc
-Lexus
-Li'l Ice Cream Shop Ltd
-LiVecchi Cycle
-Liberator Motorcycles
-Liberty Outdoors
-Liberty Trailers Inc
-Liddell
-Life Tiny Homes
-Lifestyle
-Lifetime Aluminum
-Lifetime Products Group
-Lifetime Products, Inc.
-Lift N Lock
-Light Campers Inc
-Light Engineering
-Lighthouse RV Manufacturing
-Lightline Products Inc
-Lightning Motors Corp
-Lightning Rod Motorcycles
-Likens Trailer Manufacturing
-Lil John
-Lime City Equipment
-Limos By Tiffany
-Limousine Manufacturing
-Linamar Consumer Products
-Lincoln
-Lindig
-Lindsay Manufacturing
-Lindsay Transportation Solutions
-Lineman & Son
-Linhai
-Lionhead Haulers
-Lippert Component
-Liquid Asphalt Systems
-Liquid Partners
-Lit Motors
-Lit Scooters
-Lite-N-Bolt
-Lithium House
-Little Beaver
-Little D's Utility Trailers
-Little Fox Campers
-Little Guys Group
-Little Joe's Welding & Sons
-Little Stanley Cycles
-Liv Golf Cars
-Livestock Trailer Equipment
-Livin Lite
-Livingston Custom Boat Trailers
-Lo-Pro Fluid Transports
-Load Eaz
-Load Glide Trailers
-Load Maxx Trailer Co.
-Load Pro Trailers
-Load Rite
-Load Technology
-Load Toters Trailers
-Load Trail
-Loadstar
-Location Water Systems
-Lockwood
-Log - Master Portable
-Logan Coach
-Logan Farm Equipment
-Logano Trucking Company Inc
-Logic Motor Company
-Logic Motors
-Lomar Industry
-Loncin
-London
-London Aire
-LondonCoach Inc
-Lone Star Grillz
-Lone Star Oryogenics
-Lone Star Trailer
-Lone Star Trailer Services
-Lone Wolf Customs
-Lone Wolf Trailer Co.
-Lonesome Road Choppers
-Lonestar Dock Products
-Lonestar Manufacturing
-Long Chih Industrial
-Long Dog Enterprise
-Long Horn Welding
-Long Trailer Company
-Longbow Motorcycles
-Longjia
-Longjia or Buccaneer (SSR Motorsports)
-Lopez Welding Shop
-Lotus
-Loudo Trailers
-Low Speed Vehicles
-Low-Tow Trailers
-Loyalty Mobile Innovations
-Lucas
-Lucas Cycles
-Lucky Devil Metal Works
-Lucky MFG
-Lucon
-Ludwigsen Motor Company
-Luedtke
-Lugo Manufacturing
-Lujeana Peters-Howell Rooks County Trailer Sales
-Lumbee Trikes & Bikes
-Lumen
-Lumpkin Enterprises
-Lumpkin Trailers
-Luoyang Northern
-Luttrell Welding
-Lux Customs
-Luxe
-Luxxx Custom Cycle
-Luyuan
-Lynx Industries
-M & G
-M & J Trailers Unlimited Inc
-M & M Development Ltd
-M & M Fabricators
-M & M MANUFACTURING
-M & M TRAILERS & WELDING
-M & M Trailer & Supply
-M & M Trailer Mfg
-M & R Trailers
-M & T RESEARCH AND DEVELOPMENT
-M & W Shops
-M Chein Equipment and Logistics
-M Manufacturing
-M P D Trailer Manufacturing
-M W Bourne Company
-M&C Trailer Sales
-M&M Industrial Maintenance
-M&R Manufacturing
-M&R Speciality Trailers and Trucks
-M&S
-M-B-W, Inc.
-M-Co Welding
-M-ONE
-M8 A1 MULE OFF ROAD TRAILERS
-MAC
-MAC LTT
-MAC TRAILER MANUFACTURING
-MACH ONE TRAILERS
-MACKS METAL FAB
-MAD FABRICATION, LLC
-MADAMI INTERNATIONAL, LLC
-MADEWELL PRODUCTS CORPORATION
-MADVENTURE CAMPING
-MAG
-MAHINDRA & MAHINDRA LIMITED
-MAINE HITCH & TRAILER SALES
-MAMMOTH TRAILERS
-MAN & MATERIAL LIFT ENGINEERING
-MANA
-MANAC
-MANN MADE PRODUCTS INC.
-MANUFACTURERS RESOURCES INTERNATIONAL
-MARION FABTECH, INC
-MARS PERFORMANCE MANUFACTURING
-MARSH INDUSTRIAL SERVICES, INC
-MARSHALL WELDING INC
-MARTIN ENTERPRISES
-MARTINEZ WELDING, INC.
-MASTERCRAFT BOAT COMPANY
-MATTOX
-MAX-ATLAS
-MAXXD Trailers
-MAXXD Trailers DROP-N-LOAD
-MAY MANUFACTURING & DIST CORP
-MB & G Oilfield Fabrication
-MB Equipment Services
-MBI
-MC TOURING PRODUCTS
-MC TRAILERS, LLC
-MC Trailers LLC
-MCBRIDE TRAILERS INC.
-MCBS
-MCCORD MANUFACTURING INC
-MCD Manufacturing & Repair
-MCDONALD TRAILER SALES
-MCGEE TRAILERS
-MCT
-MCT INDUSTRIES, INC.
-MEIDUO
-MELISSA MANUFACTURING, INC.
-MERKUR
-METRO FAB INC
-MGS Grand Sport
-MGS Incorparated
-MHC Group Inc
-MIANO'S WELDING
-MICHAEL MANUFACTURING AND REPAIR
-MICROFORM PRECISION, LLC
-MID-AMERICA TRUCK EQUIPMENT, INC
-MID-ATLANTIC LEASING, CORP.
-MID-SOUTH TRAILERS, INC.
-MIDWEST CHOPPERS OF IOWA
-MIG Trailers
-MIKE'S CUSTOM CARS
-MINI
-MINNESOTA VALLEY ENGINEERING, INC
-MIROX
-MJL
-MJT Manufacturing
-MKR Fabricators, Inc
-MMI
-MMLJ
-MOBI
-MOBILE MEDICAL INNOVATIONS
-MOBILE RESTROOM RENTALS, INC
-MOBILIFT INC
-MOD RODS
-MODEC INC
-MOORE MARINE MARKETING INC
-MOTO1
-MOUNTAIN LION OUTDOOR, INC
-MOUSER STEEL SUPPLY, INC.
-MP Trailer & Truck Bodies Inc
-MPD Trailers
-MQ Power
-MRT Manufacturing
-MSA Trailers
-MSE Welding and Fabrication
-MSR Technologies
-MT TRAILERS
-MTP Trailers
-MTS Manufacturing
-MTTS
-MTX
-MURPHY'S WELDING SERVICE
-MUSKOKA
-MUST Technologies Ltd.
-MV Agusta Motor
-MVL Enterprises
-MVM7, LLC
-MVP RV
-MVP Technologies
-MWE Monaco MFG
-MWE of Ohio
-MYCO Trailers
-MYERS
-MYERS MOTORS
-MYROS
-Mac's Custom Trailers
-Mac-Lander Incorporated
-Mace Welding & Fabrication
-Mack
-Mack Trucks
-Mackey Trailers
-Mad Dawg
-Mad Products
-Maddock Machinery Corporation
-Magic Tilt Trailers
-MagneTek Century Electric
-Magnolia Cargo,Inc
-Magnum
-Magnum Choppers
-Magnum Fire and Safety Systems 2014
-Magnum Performance Motorcycles LLC
-Magnum Products
-Magnum Trailer Manufacturing
-Maine Portage
-Maine Source Machining Co.
-Maine Wood Heat Company, Inc
-Mainline, Inc
-Maintenance & Fabrication Services
-Maintenance Services, Inc.
-Maisons SRM Blondeau Homes Inc
-Majestic Corporation
-Majona Steel Corporation
-Mak Daddy Builders
-Makaha
-Making You Mobile
-Maktec Manufacturing
-Malach USA, LLP
-Malachi Motorcycles
-Malibu Boats
-Malon
-Man Cave RV
-Manac Trailers USA
-Mang
-Manitowoc Cranes Group
-Mann Made Products Inc
-Mann's Welding and Fabricationg
-Manning Marine
-Manorette RV, Inc.
-Mansfield Fabricated Products
-Mantis Choppers
-Manufacture Tent Sales DBA Sunfun Rentals
-Marathon
-Marathon Metalworks
-Marauder Travelers Incorporated
-Marceaux Cycle Works
-Marci's Diesel Service Inc
-Margo
-Marina
-Mariout Motorworks
-Mark Miner Enterprise dba Custom
-Mark Taylor Enterprises
-Mark Wiener Welding
-Mark Williams Welding
-Mark's Trailers Inc
-Markland Trailers
-Marksman Manufacturer
-Marley Continental Homes Inc
-Marmon Motor Co
-Marquardt Trailer & Manufacturing Inc
-Marquez Mfg Ltd
-Marrel Corporation
-Marshall Austin Productions, Inc.
-Marshell
-Martex Global Enterprise
-Martin Camper
-Martin Conquest
-Martin Machine Inc
-Martin RV
-Martin's Steel Inc.
-Martino Motor Company
-Maserati
-Mason Dynamics
-Massimo Motor Sports
-Master Fabricating & Welding
-Master Solutions
-Master Tow
-Mastercarry Trailer Manufacturing
-Masterpiece Trailers, LLC
-Mastiff Trailers
-Materials Processing Systems
-Mathews Mechanical Contractors Inc
-Matott's Welding
-Matri-Arc Creations LLC
-Matrix
-Matrix Manufacturing
-Matrix Manufacturing Company
-Matrix Motor Company
-Mattman Global Specialty Vehicles
-Matty's  Marine & Motorsports, Inc
-Maupin Welding
-Maxey Companies
-Maxey Trailers
-Maxey Welding
-Maxi Roule Inc
-Maxi-Cube
-Maxim
-Maxpro Trailers
-Maxum Trailers Division of Cam Superline, Inc
-Maxweld Boats
-Maxxum
-Maybach
-Mayes Welding
-Maynard Fab & Trailer Sales
-Mazda
-McALLISTER
-McCOY Manufacturing, LLC
-McCann's Customs
-McCartney Trailers
-McClain
-McClain Trailers, Inc
-McCullough
-McKay
-McKenzie
-McMiller's Chop Shop
-McNeilus
-McNew Fabrication Inc.
-Mcadus US Product Development
-Mckinley Enterprises dba Longhorn Trailers
-Mclaren
-Mclendon Trailers
-Me-Two Manufacturing LLC
-Mechanical Mayhem
-Mechtronic Solutions
-Medical Coaches
-Meeks Engineering
-Meeks Truck & Trailer
-Memory Maker
-Menard Manufacturing Company
-Mercedes-Benz
-Merch Motorcycle Co.
-Merchant's Trailers and Grills
-Mercury
-Merhow Industries
-Meridian Motors Company
-Merit Tank
-Merritt Equipment Co.
-Mertz Manufacturing
-Mertz, Inc.
-Meske Welding
-Metal Craft Manufacturing
-Metal Fab
-Metal Mansions
-Metal Works
-Metalcraft Tool & Die
-Metro Tank & Steel, Inc
-Metro Trailer Manufacturing, Inc
-Metzger Machine & Engineering
-Meyers Trailers
-Miami Choppers
-Michael D's Custom Cycles
-Michael Seltzer Welding
-Micro-Lite Trailer
-Mid America Designs
-Mid South Distribution Services
-Mid Valley Industries Inc
-Mid-America Trailer MFG.
-Mid-Atlantic Transport
-Mid-State Tank Company
-Mid-State Trailers, Inc (MST)
-Middle Georgia Trailers
-Midland Equipment Company
-Midsota Manufacturing
-Midsouth Golf Carts
-Midwest
-Midwest Custom Cycles
-Midwest General Repair & Fabrication
-Midwest Industrial Tanks
-Midwest Tack & Trailer Brokers
-Midwest Trailer Manufacturing
-Midwest Trailers
-Mighty Lite Aluminum Products
-Mighty Mite Industries, Inc
-MightyMover Trailers Inc
-Mike Green Hydros Inc
-Mike Olsefski's Auto Accessories
-Mike's Custom Works
-Mike's Welding & Trailer
-Mikes Trailers
-Mikey's Custom Trailers
-Miles
-Miley
-Milford Pipe & Supply
-Milford Welding & Manufacturing
-Mill Street Customs
-Mill Works, Inc.
-Millennium Manufacturing
-Millennium Motorcycle Corporation
-Millennium Transit Services
-Miller
-Miller RV MFG.
-Miller Trailer and Manufacturing Company
-Miller Trailers Incorporated
-Millons Farm Center, Inc.
-Mills Manufacturing
-Milwaukee Motorcycle Company
-Mind's Eye Fabrication Inc
-Mini Big Trucks
-MiniMixx
-Minicars
-Minimover
-Minitears Company
-Minneapolis Custom Cycle
-Minnesota Manufacturing
-Minnesota Teardrop Trailer LLC dba Vistabule
-Mirage Enterprises
-Mirsberger Manufacturing
-Misanthropy Cycles
-Misfit Marketing Services
-Mission Motor Company
-Mission Utility Trailers
-Mister Trailer Co
-Mitch Bergeron Customs Inc
-Mitchell Industries Inc
-Mitsubishi
-Mitsubishi Fuso
-Mity Mite Mfg
-Mizer Motor Works
-Mo Trailers Corp.
-Mobile Armoured Vehicle
-Mobile Barriers
-Mobile Drilling Co.
-Mobile Energy Solutions
-Mobile Medical International Corporation Trailer
-Mobile Mini
-Mobile Motorhead Inc
-Mobile Products Inc
-Mobile Specialties
-Mobile Systems, LLC
-Mobile Tech Trailers
-Mobile Technical Systems, Inc
-Mobile Technologies Group
-Mobile Trailers, Inc
-Mobile Traveler, Inc.
-Mobilight
-Mobility Ventures
-Mobridge Manufacturing, Inc
-Moby1 Expedition Trailers
-Mod Car
-Modern
-Modern Metalworx
-Modisette Welding & Supply
-Modular Structures International Inc
-Moex
-Mogi MFG
-Mohawk Valley Welding & Stainless Steel
-Monaco
-Monaco RV
-Monaco Towable
-Monarch
-Monarch Trailer
-Monarch-McLaren
-Mongoose
-Monitor Systems
-Monon
-Monroe Towmaster
-Monsoon Marine
-Monster Manufacturing
-Monster Power Equipment Inc.
-Monster Tanks
-Montana Dreams
-Moody
-Moonlight Choppers
-Moonra
-Moore Enterpreses
-Moose Boats
-Moped World
-Morbark
-Morgan 3 Wheeler
-Morgan Federal
-Morgan Industries Inc
-Morgan Machine
-Morgan Motor
-Morgan Trailers
-Moritz International
-Morocco Electric Inc.
-Morris Farms
-Morris Trailers
-Morse Manufacturing Inc
-Morton-Davis
-Mosler
-Motion Trailers
-Motive Power Industry
-Moto Electric Vehicles
-Moto Guzzi
-Moto8ight
-MotoAdvent
-MotoCzysz
-Motofino
-Motofino USA
-Motomarina
-Motor Coach Industries
-Motor Truck and Trailer Co
-Motorcycle Machine Shop Services
-Motorized HandleBar
-Motorized Manufacturing Inc
-Motorsport Trailers, Inc
-Motus Motorcycles
-Mountain Creek Cabins LLC
-Mountain Equipment of New Mexico
-Mountain Ridge Trailers
-Mountain Trailer Co.
-Mountain West Industries
-MountainWest
-Mountaineer Welding & Trailer Repair
-Mountaintop Custom Kennels
-Movable Roots, LLC
-Move-It-All
-Mt Customs Motorcycles and Choppers LLC
-MtlWrx
-Mud Technology International
-Mudds Customs
-Muddy Creek Manufacturing
-Muddy River MFG
-Mulligan Engineering
-Mulligan Manufacturing
-Multi-Fab
-Multiphibious
-Multiquip
-Multitek
-Murray's Tag & Title Services
-Mustang Horse Trailers
-Mustang Trailers
-Mutter's Cycle Supply
-Muv-All
-Muz of North America
-My Mini Trailer LLC.
-Mystical Custom Cycles
-N & N Remorque Inc
-N-Line Trailers
-NABI
-NATION TANK & TRAILER
-NATIONAL GROUP OF COMPANIES, INC
-NATIONAL MANUFACTURING COMPANY
-NEA
-NEROWALKER BOATS
-NEVILLE WELDING INC.
-NEW AUTOS INC.
-NEW BUCK CORPORATION
-NEW CUSTOM TRAILERS, LLC
-NEW ENGLAND CHOPPERS
-NEW HEIGHTS LLC
-NEW HORIZONS
-NEW MEXICO STEEL FABRICATORS INC.
-NEW PECO INC.
-NEW PROGRESS INCORPORATED
-NEW RIVER HOMES, LLC
-NEW TECH MACHINERY CORP
-NEW WAVE TEARDROP
-NEWCO INC
-NEWFAB, INC.
-NEWKIRK FABRICATION
-NEWPORT FABRICATING, LLC
-NEXGEN FRAMING SYSTEM, LLC
-NEXHAUL TRAILERS
-NICHOLSON MANUFACTURING, INC.
-NILFISK ADVANCE, INC.
-NILSON MANUFACTURING
-NIX Evil Twins
-NJD Automotive LLC
-NJF MANUFACTURING LLC
-NLB CORP.
-NOMAD GCS
-NOMADGCS
-NORBERT'S MANUFACTURING LTD
-NORMco Energy Products, LLC
-NORTH - EAST STEEL FABRICATION
-NORTH AMERICAN CARGO
-NORTH AMERICAN INDUSTRIES, LTD
-NORTH RIVER JET BOATS
-NORTH SHORE MANUFACTURING COMPANY INC
-NORTH SOUTH AUTO CONNECTION
-NORTH STAR MFG
-NORTH VALLEY INDUSTRIES, INC
-NORTHERN TOOL & EQUIPMENT, INC.
-NORTHWEST MANUFACTURING, INC.
-NORTHWOODS TRAILERS LLC
-NOTO CUSTOM WELDING
-NRG
-NRG Trailers
-NST MotorCycles
-NU WA Trailers
-NY Motorcycles
-Nabors Trailers of America
-Nacional De Carrocerias Sa De Cv
-Nakutis Custom Choppers
-Namron Trailers Manufacturing Inc
-Nanchang Freedom Technology Limited Company
-Nanfang Space Navigation Science & Technology
-Nanjing Vmoto Manufacturing
-Nasatka Barrier
-Nash
-Nash Car Aluminum Trailers
-Nash Car Trailer
-Nash Car Trailers
-Nash Motocycles
-Nashua
-National Customized Trailers
-National Electric Vehicles
-National Golf Cars
-National Oilwell Varco
-National Pump & Compressor
-National Signal
-National Trailer Assembly
-National Trailer, Inc.
-National Truck
-National Vacuum Equipment
-Nations Trailers Inc
-Nationwide Trailer and Equipment Sales
-Navistar
-Neal Manufacturing
-Nealco Equipment
-Neckover Trailers
-Neel's Utility Trailer Mfg
-Neighborhood Electric Vehicle
-Neighbors Garage
-Nelson
-Nelson Manufacturing Company
-Neo Classic Manufacturing
-Neo Manufacturing
-Neoplan
-Ness Motorcycles
-Nest Caravans
-Neumann's Automotive
-Nevada Department of Corrections
-New Flyer
-New Flyer Blue Bird
-New Flyer Ikarus
-New Generation Park Model Inc
-New Market Metal Craft
-New York City Custom Motorcycles
-New Zealand
-Newman Industries, INC
-Newman's Manufacturing Incorporated
-Newmar Corporation
-Nexgen Innovations LLC
-Next Door Inc
-Niagara Fabrication,Inc
-Nickels Boat Works, Inc.
-Niftylift
-Nikota USA
-Nilfisk Pressure-Pro LLC
-Nina
-Ningbo Motorcycle Factory
-Ninth Circle Customs
-Nissan
-NoGas Electric Scooter Co
-Nogas LLC
-Nomad Custom Cycles
-Nor-Tech Fabrication LLC
-Norac Systems International Inc
-Nordic
-Nordskog Marketeer
-Norman Power Systems
-Norris Truck & Trailer
-Norstar Trailers
-North American Mfg.
-North American Motorcycles
-North American Tank
-North American Traveler LLC
-North Bay Truckworks
-North Coast Truck Body  LLC
-North Country Trailers
-North Jersey Cycle
-North Shore Motorcycle
-North South Connection Auto Sales Ltd
-North park Manufacturing
-NorthStar Fabrication & Machine
-Northeast Custom Cycles LLC
-Northeast Fabricators, LLC
-Northland Machine Inc
-Northstar
-Northwest Aluminum Trailers
-Northwest Custom aluminum Trailers
-Northwest Enterprises Inc
-Northwest technologies Inc
-Norton MotorCycles
-Nortrail
-Norwalk Trailers
-Norwood Sales
-NovaBUS
-Novae Trailers
-Novak Custom Motorcycle
-Now Systems
-Nu-Gen Products
-Nu-Wave Mfg Inc
-Nuko Industries
-Numi
-Nuttall Trailers LLC
-O & J Trailer Systems
-O'Dell Mfg & Truck Sales
-O'Neal Trailers
-O3 Industries
-OCO Pressure Control Trailers
-OCS Marine Inc
-ODDI CYCLES
-OGAWA ENTERPRISE
-OH DEER AUTO BODY LLC
-OKLAHOMA GOOSENECK MFG INC
-OKT
-OLIVER
-OLYMPIC FIBERGLASS INDUSTRIES, INC
-OMC Fishing Boat Group, Inc.
-OMJC Signal Trailer
-OP Tank Trailer
-OPM Specialties
-OSCHOOL CHOPPERS
-OUTBACK TRAILERS
-OUTLAW RANCH TRAILER SALES INC
-OX Industrial
-Oak & Iron Trailers
-Oak Creek Homes
-Oakland County Chopper Motorcycle
-Oakley Trailers
-Ocean Choppers
-Octane Trailers
-Odom
-Odom's Manufacturers
-Odulair
-Off The Hook Trailers Corp
-Ohalee Trailers
-Ohio Fluid Products Company
-Ohio Steel Trailers
-Oilfield Repair Trailers
-Ok Schooners
-Okie Built Trailers
-Old Dominion Brush
-Old Glory Trailers
-Old School Motorcycle
-Old Town Choppers
-Oldsmobile
-Olmax Fabrication
-Olson Owsley
-Olympic
-Olympic Manufacturing and Sales, Inc.
-Olympic Trailer
-Olympic Trailers Inc
-Olympus Technologies Trailer
-Omega Manufacturing Inc
-Omega RV
-Omni
-On The Road
-On-site Fleet Services
-Onken's Trailer
-Ontario Bus Industries Inc.
-Opel
-Open Range RV Company
-Open Road Motorcycles, Inc.
-Optima
-Orange County Choppers
-Orange EV LLC
-Orchard Hill Welding
-Oregon Food Trucks LLC
-Oregon Trailer
-Oreion Motors
-Orion Bus
-Orlando Metal Fabrication
-Ornamental Iron Works LLC
-Orteq Energy Services
-Osborne Construction & Backhoe Inc
-Osbornes Welding
-Oshkosh
-Oshkosh Trailer
-Ottawa Brimont Corporation
-Otterbacher
-OutAbout
-Outback
-Outbreak Customz
-Outdoor Aluminum
-Outdoors RV
-Outer Banks Beach Buggies
-Outkast Cycles
-Outkast Trailer
-Outlander Trailer, LLC
-Outlaw Custom
-Outlaw Mfg Inc
-Outlaw Trailers
-Overland
-Overland Tank
-Owens Cargo
-Owens Classic
-Owensby
-Owings Equipment Co.
-Owosso
-Ox
-Oxbo International
-Oxygen SPA
-Oyler
-Ozark
-P & S Machine
-P & T Palmer, Inc
-PACIFIC INDUSTRIAL SUPPLY
-PACKER INDUSTRIES, INC.
-PAMLICO TRAILERS
-PANELLA TRAILERS
-PANOZ AUTO DEVELOPMENT
-PARKLANE ENTERPRISES INC.
-PAS
-PAUL THUN'S CUSTOM WELDING
-PAYNE'S TRAILER
-PBM
-PCI Manufacturing
-PEMBERTON FABRICATORS
-PERAVES AG
-PEREWITZ CUSTOMS
-PERFORMANCE FABRICATING
-PERFORMANCE TRAILER INC.
-PES Inc
-PETERSON BUILT PRODUCTS, INC.
-PETERSON INDUSTRIES
-PETROSSI WELDING
-PETTY TRAILERS
-PEZZAIOLI
-PHANTOM CYCLE
-PHOENIX MOTORCYCLE WORKS
-PHOENIX TRAILERS
-PI MOBILITY
-PID TRANSIT
-PIKE EQUIPMENT & SUPPLY
-PINES
-PINNACLE INDUSTRIAL SERVICES
-PIONEER METAL WORKS, INC
-PITBULL MOTORSPORTS LTD
-PJ
-PLAY PEN PRODUCTS
-PLEASANT HILLS
-PLS TRAILER MANUFACTURING
-PMD Motorcycles
-PMI
-POL-TECH MANUFACTORY
-POLYCOAT SYSTEMS
-POLYJOHN TRAILER
-POND KING
-POTTER & SON TRAILER FABRICATING INC
-POWER SLED MOTORCYCLES, INC.
-POWERSECURE
-PRECISION COACH INC.
-PRECISION EQUIPMENT COMPANY, INC.
-PRECISION FABRICATING & CLEANING
-PRECISION WELDING
-PREMCO PRODUCTS
-PREMIER NORTHWEST
-PREMIER TRAILER MANUFACTURING, INC.
-PRO PULL
-PRO TILT
-PRO X TRAILERS
-PRO-TRAK TRAILERS
-PRODUCTION WELDING
-PROFILE TRAILERS
-PROGRESSIVE DESIGNS
-PROWELD
-PRYCO, INC.
-PST
-PT WELDING
-PULVER RACE FAB
-PURDY ADVENTURE TEARDROP TRAILERS LLC
-PURGATORY TOWING INC.
-Pace American
-Pacesetter
-Pacesetter Boat
-Pacific Aloha
-Pacific Coachworks
-Pacific Coachworks LLC
-Pacific Coast RV Inc
-Pacific Tank Energy
-Pacific Tek Trailers
-Pack Mule Camper
-PackUp Trailers
-Packrat Trailers
-Paddle King
-Pagani
-Pagsta
-Paiute Trailers
-Palm Beach Golf Cars
-Palm Harbor Homes
-Palmer
-Palmer Bodies
-Palmer's Welding & Fabrication
-Palmetto Precision
-Palomino
-Panther
-Panther Motors
-ParCar
-Paradise Trailers Mfg
-Paragon Enviromental System
-Paragon Motorcycles, LLC dba Janus Motorcycles
-Paramount Custom Cycles
-Paris
-Park City Chopper
-Park Liner
-Park Models Manufacturing Inc
-ParkWest Industries, Inc.
-Parker Brothers Choppers
-Parker Industries
-Parker Trailers
-Parker Utility
-Parklane Enterprises Inc
-Parkview Mansions
-Patent Products, Inc
-Patriot
-Patriot Campers
-Patriot Energy Services
-Patriot Manufacturing
-Patriot Motorcycles
-Patriot Motorcycles DBA
-Patriot Steel Fabrication
-Paughco MC, LLC
-Pauite Trailers
-Paul Yaffe Originals
-Pauli
-PavMaster
-Paver Motorcycles
-Peach Cargo
-Peachland Design and Fabrication
-Peak Fabrications
-Peak Industries
-Peak Manufacturing
-Peak Manufacturing Inc
-Pearson and Pearson dba Chasony Concession
-Peck Manufacturing
-Pecru Group
-Pedal Crawler
-Peel
-Peerless Limited
-Peerless Manufacturing Co
-Peersouth
-Pegasus
-Pelletier Manufacturing
-Peltz Mfg Inc
-Peltzer Enterprises
-Pemco Equipment Co
-Penn Jersey Cycles
-Pennsylvania Motorcycles
-Peoria Custom Cookers
-Performance Indian
-Performance Trailers
-Performance Trailers Inc
-Perrin MFG
-Perry
-Perry Ent
-Personal Trailers
-Pete's Golf Carts
-Petenwell Industries
-Peterbilt
-Peterson Trailers
-Petro2Go
-Petrobull
-Petrofab Inc
-Peugeot
-Phantom Choppers
-Phase ll Truck Body, lnc
-Phat Custom Cycles
-Pheonix
-Phillips Diversified Manufacturing
-Phoenix
-Phoenix Global
-Phoenix Motorcars
-Phoenix Rotary Equipment Ltd.
-Phoenix Trailers INC.
-Phoenix Trailers LLC
-Photo-Sonics
-Piaggio and Vespa
-Pick A Spot
-Piedmont Custom Trailers
-Pierce Manufacturing
-Pierce Manufacturing Company
-Pik Rite
-Pilgrim International
-Pilgrim International, Inc.
-Pin Oak Service
-Pine Cone Low Speed
-Pine Ridge
-Pininfarina
-Pinnacle Manufacturing
-Pinnacle Power Services Inc.
-Pioneer
-Pioneer Fabricating Inc
-Pioneer Pump
-PipeHunter
-Pitbull Fabrication
-Pits by JJ
-Pitt Steel
-Pitt's & Spitt's
-Pitts Trailers
-Pittsville Homes
-Placer Fire Equipment
-Platinum Cottages
-Platinum Manufacturing LLC
-Pleasant Valley Homes, Inc.
-Pleasant Valley Teardrop Trailers
-Pleasant Valley Trailers, Inc.
-Pleasant View Mfg
-Plunkett
-Plymouth
-Poke Tote
-Polar Corporation
-Polar Tank Trailer
-Polaris
-Polk's Farm & Fab
-Poly Cal Plastics
-Pontiac
-Pool Trailer Design
-Pop's LSV's
-Porkys Chopper
-Porsche
-Port-A-Cool
-PortAFrame
-Portaboards
-Porteon Electric Vehicles
-Pothole Patrol
-Power
-Power Dynamics
-Power Factory
-Power Manufacturing Inc
-Power Play RV
-Power Products
-Power Sports Factory dba Yamati Motorcycles
-Power Up Mobile
-Power, Process & Industrial
-PowerFab
-Powers Auto & Custom Bikes
-Powertek
-Prairie Creek MFG
-Pratt & Whitney Power Systems
-Pratt Industries
-Prebola Products
-Precedent
-Precious Metal Customs Inc.
-Precis
-Precise Metal Welding
-Precision
-Precision Boatworks
-Precision Chassis & Engineering, Inc.
-Precision Custom Trailers
-Precision Custom Trailers LLC
-Precision Cycle Works
-Precision Equipment Manufacturing
-Precision Laser & Mfg LLC
-Precision Metal Works & Fabrication
-Precision Motorcycle Concepts
-Precision Performance Motorcycles
-Precision Solar Controls
-Precision Trailer
-Precision Welding and Fabrication
-Precision-Bilt
-Predator Custom Trailers
-Premier
-Premier Coachbuilders Inc
-Premier Fabricating INC
-Premier Fabricators LLC
-Premier Pump Company
-Premier Pump and Power
-Premier Trailer
-Premier Trailers
-Presidential Arm
-Prevost
-Priefert MFG
-Priest Motor Corp.
-Primus Steel Solutions
-Pro Cycles & Accessories
-Pro Dog Creations
-Pro Fab IND
-Pro Fab US
-Pro Fish Enterprises
-Pro Welding & Fabricating
-Pro West Mechanical, Inc
-Pro-Craft
-Pro-Formance Manufacturing
-Pro-One
-Pro-Par
-Pro-Street Frameworks
-Pro-Tec
-Pro-Tech
-ProService
-Proaxis
-Probilt Body & Trailer
-Proc
-Productos Y Servicios Regger
-Profab Mex SA DE CV
-Professional Welding
-Proform Trailers
-Progress
-Progress Solar Solutions
-Progress Tank
-Progressive Products
-Progressive Trailers
-Prohauler
-Project X Choppers
-Proline Products
-Proline Trailers
-Prolite Trailers
-Proper Chopper
-Prostar
-Protected Vehicles
-Proterra
-Protow Trailers
-Psycles
-Puck Custom Enterprises
-Puffy Boy
-Pull-Wright
-Pullman Modular
-Pullright Trailer Inc
-Pulverisateur
-PurdyBilt
-Pure Hell
-Purple Chopper
-Purple Line LLC
-Putzmeister
-Pyramid
-QIANJIANG MOTORCYCLES GROUP CORPORATION
-QMC Hydraulic Cranes
-QMe
-QPS
-QUALITY PRODUCTS
-QUALITY SPECIALTY PRODUCTS
-QUALITY TRAILER & RV'S
-QUICK SILVER CUSTOM TRAILERS
-QWS TRAILER INC.
-Qianjiang Motorcycles
-Qingdao Singamas
-Qingqi
-Qingqi Group Ningbo Rhon Motorcycle
-Qipai
-Qualitech
-Quality Concession Trailers
-Quality Discount Trailers
-Quality Industrial Construction
-Quality Machine Company
-Quality Manufacturing Co
-Quality Manufacturing Corporation
-Quality Modular Structures
-Quality Performance Trailers
-Quality Rebuilt Autos & Manufacturing
-Quality Specialty Trailers
-Quality Steel & Aluminum Products
-Quality Trailer Enterprises
-Quality Trailers, Inc
-Quality Trailers, Inc.
-Quality Truck Bodies & Repair, Inc
-Quality Welding & Fabrication, Inc.
-Quality Welding Service Inc
-QualityTrailer Manufactury, Inc.
-Quantum Leap
-Quantya SA
-Queens Motor Company
-Quest Manufacturing
-Quickloadz Container Delivery System
-Quik Manufacturing DBA QMC
-Quitman Tank Solutions, LLC.
-Quixote MM LLC
-Qunsheng Group
-R & A Manufacturing
-R & B Aluminum Fabricators
-R & B Industries
-R & D Baker Trailers
-R & D Design and Fabrication
-R & H Specialties
-R & J Trading
-R & J Trailers
-R & J Trailers, Inc.
-R & R
-R & R CUSTOM TRAILERS & PARTS INC
-R & R FARMS, MFG
-R & R TRUCK AND TRAILER
-R & R Trailers
-R & R Welding
-R & W Enterprises
-R Jenkins Trailers
-R Way Trailer
-R&D Machine of Marlboro County
-R&D Precision Machine & Fab Inc
-R&M Trailer
-R&S CUSTOM CYCLES
-R&S Custom Trailers
-R&S Trailers
-R&W TRAILERS INC
-R-ANELL HOUSING GROUP
-R-Vision
-RACE CITY RV PRODUCTS, LLC.
-RACE COACHES LLC
-RACE TRAILERS
-RACEMASTER ENGINEERING TIRE AND PERFORMANCE
-RADIOACTIVE CYCLES
-RAMP AGE TRAILER CO.
-RAMSHORN WELDING
-RANGE
-RAS Internation LLC
-RAT Trailer Mfg
-RAVEN MOTORCYCLE
-RAYCO
-RB Components
-RB Fabrication LLC
-RB Trailer Manufacturing
-RBG INC.
-RC
-RC MOTORSPORTS
-RCM
-RCM Motorcycles
-RDVehicles
-RE-TECH
-REBELL INNOVATION
-REBUILDERS & SANDBLASTERS, INC
-RED RIVER M TRAILER SALES
-REDWOOD METAL WORKS
-REED'S WELDING INC
-RHC Specialni Privesy
-RHINO
-RHINO MARINE
-RHM
-RICE
-RIONED
-RIVER RIM TEARDROPS, LLC
-RIVER RUN ENTERPRISES, INC.
-RIVER VALLEY SALES
-RJ Distribution Inc.
-RJ's Welding
-RJK&H Inc
-RKB Inc.
-RMC
-RMD Technologies
-ROAD RUNNER
-ROADMASTER INDUSTRIES, INC
-ROADMASTER LLC
-ROADSTERTEC
-ROADWORKS MANUFACTURING INC
-ROBBINS MANUFACTURING,INC.
-ROBBINS MFG.
-ROBCOL, INC.
-ROBERT VAN VLEET
-ROCK CREEK CUSTOM TRAILER INC.
-ROCKET FIBERGLASS
-ROCKING R ENTERPRISES INC
-ROGUE CHOPPERS
-RONNIE AKERY WELDING
-ROPER MANUFACTURING
-ROSEWOOD
-ROYAL CARGO, LLC
-RPM
-RPM Custom Choppers
-RS Spider
-RSSI Barriers
-RTA Trailers
-RTD Manufacturing
-RTDI
-RTM Group
-RTM Trailers
-RUFFNECK TRAILER COMPANY, INC.
-RV Direct
-RVC Trailers
-RVSQUARED
-RW Welding
-RWCI, INC.
-RWN Contractors
-Race Tech
-Raceport Custom Trailers
-Racing Lizard Chopper
-Radical Curves Custom Motorcycles
-Radley Custom Trailers
-Rage'n, Inc.
-Raging Iron Choppers
-Raglan Industries Inc
-Rainbow Trailers inc
-Rainier Enterprises
-Rainier Truck and Chassis
-Raja Trailer
-Rally Sport
-Rally Time
-RallyTime Trailers
-Ram
-Ram Enterprises, LLC
-Ram Fabrication
-Ram Transcorp
-Ram-Lin
-RamVac
-Ramika
-Ramirez
-Ramp Champ
-Rampless
-Rampless Motorcycle Trailers
-Ramptek
-Ramsey Fabrication
-Rance Aluminum Fabrication Inc
-Rancher Trailer Company, Inc.
-Randco Tanks
-Ranger
-Ranger Boat
-Ranger Trailers
-Rankin Industries
-Ransom Motorsports
-Rapid Power
-Rapid Tool & Equipment
-Rat King Kustomz Motorcycle
-Rat King Kustomz Trailer
-Rat Race Trikes
-Raw Iron Choppers
-Rawmaxx
-Ray's Body Shop
-Ray's Custom Trailers
-Raymond's Utility Trailers
-Rayner Equipment Systems
-Rayttle
-Razorback Industries
-Ready Customs
-Reality's Edge Inc.
-Rears Manufacturing Co.
-Rebel Custom Trailers
-Rebel Equipment
-Rebel Manufacturing
-Rebel West
-Recycling Equipment Sales
-Red Baron Choppers
-Red Baron Motors
-Red Baron Trailers
-Red Dawg Trailers
-Red Ewald
-Red Fern Dynamics
-Red Horse Motorworks
-Red Oak Mfg
-Red Ox
-Red Rhino
-Red Rhino Manufacturing
-Red River
-Redi-Haul
-Redland Manufacturing Company
-Redline
-Redman Welding & Trailer
-Reeb Manufacturing
-Reelstrong Inc
-Regal Mobile Solutions, LLC
-Rehme Manufacturing
-Reid's Trailer
-Reilley Welding & Metal Fabrication
-Reinco Inc
-Reinert MFG.
-Reinke Manufacturing Company
-Reiser
-Reitnouer Inc
-Reliance
-Reliance Trailer Sales
-Reliance Trailers
-Relic Custom Trailers, LLC
-Remolques Di-Kar
-Remolques Enmar
-Remolques Narizon
-Remorques
-Renaissance
-Renaldo Sales & Service Inc
-Renco
-Renegade Motorcycles
-Replica Mini Trailer
-Repoman Choppers
-Reserved
-Respo
-Retzer Custom Design Trailers
-Revel 42
-Revology
-Revolution Cycle Company
-Revtech Industries
-Rewaco
-Rewaco Spezialfahrzeuge GMBH dba Rewaco
-Rexhall Industries, Inc
-Rezner
-Rhino Corporation
-Rhino Metals Inc
-Rhino Motorcycles
-Rhino Trailers
-Rice Trailer
-Rice Trailers
-Rich's Vacation Cottages
-Richard Carter MFG.
-Richard Glaves
-Richcreek Muffler, Inc
-Richway Industries
-Rick's Fabrication & Design
-Ride-Rite Motorcycle Trailers
-Ridge & Valley Metalcraft
-Ridge Runner Trailers
-Ridgestone Cabins
-Ridgeview Racing Inc
-Ridley
-Riecher's Truck Body & Equipment
-Rief Design & Manufacturing
-Rig Works
-Riley Design & Fabrication
-Riley Technologies
-Ring-O-Matic Manufacturing Co.
-Ringo
-Ringtown
-Ripple Effects
-Risk Investments dba Vanderhoff Speed and Chrome
-River Bend Choppers
-River Depot
-River Steel
-River Valley Trailer LLC
-Riverbed
-Riverbend Equipment Leasing
-Riverside Custom Karts
-Riverside Hitch & Trailer
-Riverside RV
-Riverside Travel Trailer
-Riverside Welding and Fabrication
-Riverview Manufacturing Inc
-Riverwolf Boats
-Ro Drift Boats
-Road Boss Trailer MFG.
-Road Builders Trailers
-Road King Trailers
-Road Rash Trailers
-Road Truck Engineering
-Road Warrior Sports LLC
-Roadhog
-Roadhog Trailer Mfg
-Roadman Campers
-Roadmaster
-Roadmaster Motor Cycles, Inc
-Roadrunner Trailers, LLC
-Roadway Utility Trailers
-Roar Motorcycles LLC
-Robb Technologies LLC
-Robert Allen Mowery Ramco
-Robert Van Fleet dba Cash Wagons
-Robin Construction
-Robinson Vacuum Tanks
-Rock Bottom Choppers
-Rock City Trailers
-Rock Island Manufacturing
-Rock Line Products
-Rock Rapids Repair
-Rock-N Diamond
-Rockandrod LLC dba Terrain Campers
-Rockem & Sockem Motorcycle
-Rocket International, Inc.
-Rocket Rogers Victory Old 97 Choppers
-Rocket Sled Motors
-Rocking Chair Manufacturing
-Rockland Coach Works
-Rockland Custom Trailers
-Rocky ATV Trailers Inc
-Rocky Mountain Choppers
-Rocky Mountain Manufacturing
-Rocky Mountain Trailer Company
-Rocky Mountain Trailers
-Rocky Mountain Welding & Fabricating
-Rocky Top Trailers
-Rod Chomper
-Rods & Rides By TD
-Roehr Motorcycles
-Roger King dba Myers Welding
-Roketa
-Rokon
-Rolco Trailers
-Roll-A-Home
-RollOn Trailer
-Rollin-S Trailers
-Rolling Boat
-Rolling Industries
-Rolling Thunder
-Rollingstar Manufacturing
-Rollinoak
-Rolloff Systems
-Rollon Trailer Corporation
-Rollrite Trailer Manufacturing
-Rolls Rite Trailers Inc
-Rolls Royce
-Rollz Fabrication
-Roman Wrosz dba Romans Design
-Ron's Trailers
-Ronco Trailer, Inc
-Rondar Raceboats
-Ronred Customs
-Ronson MFG
-Rooster Custom Cycles
-Roseburg Trailer Works
-Rosenbauer Motors,LLC
-Ross Motorcycles
-Ross Technology Corporation
-Roulotte ProLite
-Round 2 Motorcycles
-Route 6 Trailers
-Route Sixty Six Motorcycles LLC
-Roy's Custom Trailers Inc
-Royal Enfield Motors
-Royals
-Roygatti
-Rude Dog Trailers
-Rudes Riggs
-Rudy's Truck Body Repair
-Ruff & Tuff Electric Vehicles
-Ruffneck Custom Trailers
-RuggedBilt-USA, Inc
-Rullo Custom Cycles
-Run Roader
-Runaway Trailers
-Rush & Son Inc
-Rush Creek Welding and Manufacturing
-Russell Marlowe Custom Cycles
-Ruthless Motorcycle Company
-Ry-Chase
-Ryan Trailers
-S & B TRAILERS
-S & C Trailer Sales & Manufacturer
-S & D Manufacturing
-S & J Mfg
-S & R King
-S & S Lite Line
-S & S Manufacturing
-S & S Manufacturing Inc
-S & S Trailer & Truck Equipment
-S & S Welding
-S & W Welding Inc
-S C Trailers
-S STAR S COMPANY
-S and C Enterprises of Tarboro
-S&S Cycle
-S&S Motorsports
-S&S Worldwide
-S&V Fabrication & Steel LLC
-SAAB
-SAAB-Scania
-SAI GON CHAN PHAT JOINT STOCK COMPANY
-SAKO CORPORATION
-SALBOATTRANSPORTER TRAILERS LLC
-SALTY'S MANUFACTURING, LTD
-SAM'S
-SAMSON TRAILERS INC
-SAN CLEMENTE GOLF CARTS
-SAN DIEGO CUSTOM TRAILER & LIQUID TANK MFG.
-SANCHEZ TRAILERS
-SANKEPALLY MOTOR COMPANY LLC
-SANTIAGO CHOPPER SPECIALTIES, LLC
-SANYOU
-SAPPHIRE SCIENTIFIC
-SARATOGA CUSTOM CYCLES
-SAS GROUP LLC
-SAUK TECHNOLOGIES
-SAW MANUFACTURING LLC
-SC TRAILERS INC.
-SCAG GIANT-VAC
-SCAR, INC
-SCEADU DESIGN
-SCENIC VIEW WELDING
-SCHANTZ & SONS, INC
-SCHELL MANUFACTURING
-SCHIEN TRAILERS
-SCHLAGEL MANUFACTURING INC
-SCHNELLER MANUFACTURING INC.
-SCHOOLHOUSE MOTORCYCLE ACCESSORIES, INC.
-SCHRAMM, INC.
-SCHUH SHOP, LLC
-SCHUTT INDUSTRIES
-SCHWARTZKOPF EXCLUSIVE CUSTOMS
-SCHWARZ'S CUSTOM TRAILERS, LLC
-SCHWARZE INDUSTRIES
-SCORPION CHOPPERS
-SCORPION CHOPPERS INC.
-SCORPION MOTORSPORTS, INC.
-SCOTT MANUFACTURING, INC
-SCOTT'S CUSTOM TRAILERS
-SCOTT'S INSANE CHOPPERS
-SCOTTIES
-SCRUGGS TRAILER & EQUIPMENT WSE LEASING, INC.
-SEALCOATERS DEPOT , INC.
-SEALION METAL FABRICATORS
-SEATTLE TINY HOMES
-SEBASTO WELDING
-SELEC TRAILERS, LLC
-SELLNER MANUFACTURING COMPANY
-SERVICES & MATERIALS COMPANY
-SEYMOUR WELDING
-SFC Industries
-SFS Truck Sales
-SH Distributing
-SHANDONG BAOYA NEW ENERGY VEHICLE
-SHANGHAI HONLING MOTORCYCLE MANUFACTURE
-SHANGHAI HUIZHONG AUTOMOTIVE MANUFACTURING
-SHANGHAI JIALING VEHICLE BUSINESS
-SHANGHAI JMSTAR MOTORCYCLE
-SHANNON CUSTOM TRAILERS
-SHAVER MANUFACTURING
-SHELLBOURNE REYNOLDS ENGINEERING
-SHENQI
-SHENZHEN GREENWHEEL ELECTRIC VEHICLE
-SHEPHERD MFG & DIST
-SHETRON CUSTOM TRAILERS
-SHETRON MANUFACTURING
-SHILOH CUSTOM KARTS
-SHILOH MANUFACTURING
-SHINN FU
-SHIPSHE WELDING
-SHOCKWAVE MOTORS
-SHOOK ELECTRONCIS USA, INC.
-SHOWHAULER TRUCKS
-SHUFFETT MACHINE & WELDING, INC
-SIBERIAN TRAILERS
-SIC CYCLES
-SIC METALS & FABRICATION
-SIC Trailers
-SICK PIGS MOTORCYCLE COMPANY
-SICKASSO CYCLE CREATIONS
-SICON
-SIDESHOW'S CYCLES
-SIE, INC
-SIERRA MOTOR CORPORATION
-SIERRA PRECISION TOOL
-SIGEL WELDING
-SIGNALMASTERS, INC.
-SIK N TWISTED PSYCLES
-SIKESTON FENCE & CONSTRUCTION INC
-SIKESTON FENDER
-SILENT DRIVE
-SILOS Y TANQUES GONZALEZ
-SILVER EAGLE BUS MANUFACTURING
-SILVER EAGLE COACH, INC.
-SILVER EAGLE MANUFACTURING
-SILVER EAGLE MANUFACTURING COMPANY
-SILVER MOTOR COACH
-SILVER RANCH INDUSTRIES
-SILVER STAR TRAILERS
-SILVER STATE INDUSTRIES DIVISION
-SILVER WRAITH CHOPPERS
-SILVERLITE TRAILERS
-SIMON-DUPLEX
-SIMPLEX, INC
-SINFUL CYCLEWORKS
-SINISTER CUSTOM CYCLES
-SIOUXLAND TRAILER SALES INC
-SIX GUN WELDING
-SIXTH STREET CHOPPERS
-SIZEMORE WELDING
-SJ PARK MODELS
-SKULLBONE WELDING
-SKUNK MOTORSPORTS
-SKYTOP BREWSTER CO.
-SLATER INCORPORATED
-SLED SHED ENTERPRISES
-SLNYC
-SMALL CAR SOLUTIONS
-SMART MANUFACTURING
-SMART TRAILERS, INC.
-SMART TRANSPORT SOLUTIONS
-SMI & HYDRAULICS
-SMILEY RILEY'S TRAILER
-SMITH ELECTRIC VEHICLES
-SMITH TRAILERS
-SMITHCO MANUFACTURING
-SMJ TRAILERS
-SMOKIN CONCEPTS COMPOSITES
-SMOKIN' BARBEQUE
-SMP
-SNAKE ALLEY CUSTOMS
-SNAKE RIVER TRAILER
-SNAPCO INCORPORATED
-SNIDERBUILT TRAILERS
-SNOW MANUFACTURING INC
-SOUTHERN SPECIALTY WELDING
-SOUTHWEST TRUCK RIGGING & EQUIP.
-SPECIAL CONSTRUCTION MOTORCYCLES
-SPECIALTY BRISTOW SALES, INC.
-SPECIALTY IRON WORKS
-SPECIALTY WELDING
-SPECTRAC
-SPECTRUM ENGINEERING HAWAII
-SPI MANUFACTURING, INC.
-SPIRIT TRAILER MANUFACTURING
-SPM CUSTOMS, INC
-SPORTRUNNER TRAILERS, LLC
-SPORTSMAN
-SPOUTVAC USA INC
-SPS
-SPV
-SPYDER
-SR Products
-SS Trike, LLC
-SSR
-SSR Motorsports
-STA Corporation
-STAGECOACH INDUSTRIES INC
-STAR Electric Cars
-STAR MANUFACTURING INC
-STAR WAGGONS
-STC
-STEEL TRAILERS OF COLORADO
-STEELWRIGHT
-STELLAR INDUSTIES INC.
-STEVENSON'S CYCLE
-STOCKTON TRUCK AND WELDING
-STOLL TRAILERS, INC.
-STRETCH CHASSIS INTERNATIONAL
-STROHL CORPORATION
-STROKERS MANUFACTURING
-STRUK
-SUBURBAN MANUFACTURING CO.
-SUGGS MANUFACTURING COMPANY
-SUNDANCE GOLF CARS
-SUNSHINE PIPING , INC.
-SUNTERA
-SUPERBUS
-SUPERIOR TRAILER INC.
-SVI, Inc
-SWEITZER COMPANIES
-SWM Enterprises
-SYM
-Sabers Specialties
-Sabertooth
-Sabertooth Motorcycles
-Sabre Trailers
-Safari Condo
-Safari Motor Coaches
-Safe-T-Tank Corp.
-Safety Technologies
-Safety Trailers
-Sage Industries
-Sage Oil Vac, INC
-Sail Trailers
-Saleen
-Salsco INC
-Salvation Trailers
-Samhell Choppers
-Sammy
-Samson
-San-Jo Trailer
-Sanborn Building & Design
-Sanchez Brothers Enterprises Inc.
-Sanchez and Son Manufacturing
-Sand's Welding Inc
-Sandbagger Corporation
-Sanden
-Sanders Trailer Service
-Sandpoint Custom Iron
-Santek Trailers
-Saskarc Industries Inc
-Saturn
-Saucier's Welding Inc
-Savage
-Savage Cycles
-Savannah
-Savannah Machine Shop & Loader Co
-Saxon Motorcycle
-Scammell
-Scarab
-Scelzi Equipment
-Schaben Industries
-Schodorf
-Schoon Backhoe Service
-Schwartz, Indy, Inc.
-Scooterbilt Manufacturing
-Scorpion Customs
-Scott's Welding & Fabrication
-Scranton Manufacturing Company Inc
-Scrap Iron Kustoms
-Sculpture Cycles
-Seahorse
-Sebring
-Sebring Auto-Cycle Inc.
-Second Trunk Trailers
-Self-Loading Systems
-Semeredy Imperial
-Semiremolques EL Puma
-Service King Manufacturing
-Setra
-Seven Custom Cycles
-Severe Trailers
-Shaddo International
-ShadeTree Automotive Equipment
-Shadow Custom
-Shadow Trailers
-Shafer & Shafer Welding LLC
-Shafer and Shafer Welding
-Shandong Zhongtong Feiyan Automobile
-Shanghai Howhit Machinery Manufacture
-Shanghai Meitian Motorcycle Company
-Shanghai Shenke Motorcycle Co.
-Shark Cart
-Shark Trailers
-Sharp Companies, LLC dba Stumphouse Scoots
-Sharp MFG.
-Shasta
-Shelf Above, Inc.
-Sheller-Globe Corporation
-Sherpa Trailers
-Sheyenne Tooling & MFG.
-Shift
-Shindaiwa
-Shivers Utility Trailer
-Shoal Runner Boats Inc
-ShoreMaster
-Short Go, Inc
-Show Trucks USA
-Showliner Trailers Inc
-Showoff Trailers
-Shreveport
-Shrum Trailers Manufacturing LLC
-Side Kick RV
-Sidekick Trailers, Inc
-Sidewinders
-Siebert
-Sierra Welding & Fabricating
-Sigma Metals, Inc.
-SignaTour Campers, LLC
-Signature Motor Company
-Silver Creek Homes
-Silver Eagle
-Silver Star Mfg
-Silverwing
-Simpson
-Sirchie
-Six Wheel Wonder
-Skeeter Products
-Skipper B
-Skorczewski Welding
-Skycoach International Inc
-Skyline
-Skyline Corporation
-Slagel
-Sleeping Giant MFG.
-Slingshot
-Slip Stream
-Sloth Truck Equipment Co
-Slusarski Mfg.
-Smack Trailers
-Smart Trailer
-Smart Trailers
-Smit
-Smith Farm Equipment Co
-Smitty-Built Trailers
-Snake River Trailer Company
-Sno-Bird
-Snorkel
-SnowBear
-Snowco
-So-Cal Teardrops
-Solar Guide
-Solar Technology, Inc
-Solares Trailers
-Solectria Corporation
-Solid Steel Fabrication
-Solight
-Somerset
-Somerset Axle Company, LLC
-Sooner
-Sooner Manufacturing, LLC
-Sooner Trailer Mfg
-South Bay Choppers
-South Central Industrial
-South Coast Choppers, Inc.
-South Dade Choppers, LLC.
-South East Body Corporation
-South East Industries, LLC
-South Florida Choppers Inc.
-South Shore Iron Works
-South Side Kustoms
-South Valley Manufacturing
-Southeastern Seating
-Southeastern Steel Choppers, Inc.
-Southern Cartz
-Southern Cycle Works, Inc.
-Southern Dimensions Group
-Southern Field Welding, LLC
-Southern Frac, LLC
-Southern Indiana Materials Co Inc
-Southern Legacy
-Southern Motorcycle Works
-Southern Ohio Chassis
-Southern Pride Distributing, LLC
-Southern Texas Industrial Service Company Inc.
-Southern Vac Trailers LLC
-Southern Yankee Bar-B-Q
-Southwest CMF, LLC
-Southwest Georgia Wholesale Builders Supply, Inc.
-Southwest Golf Cars
-Southwest Signs LLC
-Southwest Specialty Trailers
-Southwest Trailers
-Southwest Welding
-Space Coast Industries, Inc.
-Sparta
-Spartan Cargo Trailers
-Spartan Motors
-Spartan Motors Chassis
-Spartan Tool, LLC.
-Spartan Trailer Mfg INC
-Spartan Truck Company, Inc.
-Spaulding Manufacturing, Inc.
-Spearman Manufacturing
-SpecSys, Inc.
-Special Equipment Manufacturing
-Specialized Hauling Concepts LLC
-Specialized Trailers
-Specialized Truck Equipment
-Specialized Truck Equipment Manufacturing, LLC.
-Specialty Aluminum Works - Trailers
-Specialty Auto Transport
-Specialty Bus Manufacturing, LLC.
-Specialty Fabrication, Inc.
-Specialty Fabrication, LTD.
-Specialty Metal Fab.
-Specialty Performance LLC
-Specialty Trailers Corporation
-Specialty Vehicle Mfg Corp
-Specialty Vehicles & Equipment
-Spector Manufacturing
-Spectre Manufacturing, Inc.
-Speed & Precision Cycles LLC
-Speed Driven Supply
-Speed Street Custom Builds
-Speed and Custom Enterprises
-SpeedWagon Manufacturing
-Speedy Bleacher Corp
-Spencer Bowman Customs
-Spika Welding & Manufacturing
-Spindletop
-Spira
-Spirit Carts
-Spirit Trailers
-Splash Marine, LLC
-Sport Boat Trailers
-Sport Boats
-Sport King LLC
-Sports Hauler Inc.
-Sportworks Northwest, Inc.
-Sprayer Specialties Inc
-Spraying Devices, Inc.
-Spreuer & Son
-Springers Custom Cycles, LLC
-Sprinter (Dodge or Freightliner)
-Spudnik Equipment Co.
-Spur K Custom Trailers
-Spurlock Vehicles, Inc.
-Spyker
-Spykgaard
-Ssinster Choppers
-Stag Trailers MFG LLC.
-Stagecoach Trailers
-Stainless Tank & Equipment LLC
-Stallion Interiors
-Stallion Trailers, Inc.
-Standard
-Standard Motor Corporation
-Stanford Customs
-Stanley Emergency Products, Inc.
-Stanley Trailer & Mfg
-Star Custom
-Star Custom Creations, LLC
-Star EV
-Star Fabrication LLC
-Star-Trans Equipment Manufacturing
-Starboard
-Starcraft
-Starfire Trailer Systems
-Starlight
-Stauffer Mfg.
-Stealth
-Stealth Enterprises, LLC
-Steamroller Motorcycle Company LLC
-Steco, Inc
-Steeds
-Steel Bone Trailer Mfg
-Steel Ponies
-Steel Prep
-Steel Technologies
-Steel-Tech
-Steelbro
-Steele Enterprises
-Stehl Tow
-Stein Metal Fab
-Stephenville Trailers & Truck Accessories
-Stepp Manufacturing Co
-Sterling
-Sterling Fabrication, Inc.
-Sterling Motor Car
-Steves Welding
-Stewart & Stevenson Services Inc.
-Stewart's Fabrication and Welding
-Stiles Trailer Company
-Stiletto Rides
-Still Trailer Manufacturing
-Stingers
-Stirling
-Stock Car Fabrications
-Stock's Garage, Inc.
-Stoess Manufacturing Inc
-Stone Cold
-Stone Construction Equipment
-Stone River
-Stones
-Stonewell Bodies & Machine
-Storm
-Storms Welding
-Storri
-Stoughton Trailers
-StoutBilt
-Stovall Equipment Inc
-Stovall Equipment Inc.
-Stratos Boats Inc
-Stream Industries
-Streamline Designs
-Streamline Precision LLC
-Streamliner Motorcycles
-Streator Dependable
-Street Cars by Volla's Carts & Service
-Street Carts on 12
-Street Golf Carts
-Street Legal Carts
-Street Smart Performance
-Street Steel Motorsports
-Street only
-Streetrod
-Streetrod Productions Inc
-Streetster
-Streight Motorcycles
-Streme Trailer Mfg
-Strick Commercial Trailer
-Strict Development
-Strong Built Trailers LLC
-Strong Island Cycles
-Strong Manufacturing
-Strongback Trailers
-Strother Welding
-Structural Metal Fabricators
-Structural Steel Supply Inc
-Stuart Scotsman
-Stump Smokers
-Stunata Customs
-StunterX Stuntshop
-Stupid Choppers
-Sturdy Built Services, LLC
-Sub Culture Cycles
-Subaru
-Suckerpunch Sallys
-Sudenga Industries, Inc.
-Sugarloaf Fabricators, Inc.
-Suicide Jack Choppers
-Sullivan's Garage
-Sullivans Motorcycles
-Summerset Homes
-Summit
-Summit Industries Incorporated
-Summit Trailer
-Summit Truck Bodies
-Sumstad Mfg
-Sun Coast Trailer
-Sun Country
-Sun Country Trailers
-Sun International Holdings Inc
-Sun Ray Mfg
-Sun West Engineering, Inc.
-Sun-Land Express
-Sun-Lite
-SunDrop Solar Trailers
-Sunbeam Motorsports
-Sunbeam Rentals
-Sunbelt Equipment Marketing
-Suncoast Choppers & Fab
-Suncor
-Sundance Equipment
-Sunlite
-Sunra
-Sunridge Industries Inc
-Sunrise
-Sunset Park & RV
-Sunshine Stainless Tank & Equip
-Suntera (The Solar Electric Chariot Company)
-Super Lite Pro Trailers and Equipment
-Super Vacuum Mfg Co
-Super X Products
-Superior Coaches
-Superior Fabrication, Inc.
-Superior Handling Equipment
-Superior Industries
-Superior Manufacturing & Engineering Cor
-Superior Metal Works
-Superior Steel Products
-Superior Steel Sales, LLC
-Superior Trailer Manufacturing
-Superior Trailers LLC
-Superior Trailers of Georgia
-Superior Transport Inc
-Superior Welding and Manufacturing, Inc.
-Superlite
-Supreme
-Supreme Corporation
-Sure Tech Engineering
-Sure-Load Trailers
-Sure-Trac
-Sureride Trailer Manufacturing
-Sussex Welding, LLC
-Sutter Manufacturing
-Suwanee Camper
-Suzhou Eagle Electric Vehicle
-Suzuki
-Swab Wagon Company Inc
-Sweat's Portable Buildings
-Swede Built
-Sweet Home
-Swift
-Swift Enterprises
-Swinford Mfg
-Swinglift USA Inc
-SylvanSport
-Synergy Technology, LLC
-Synergy Trailer
-Systems Technology Company
-T & B Welding & Trailers
-T & D Enterprises
-T & G Sales
-T & J Welding
-T & M Mfg
-T & R Enterprises
-T & R RACING AND FABRICATION
-T & S CYCLES
-T & T Unlimited
-T C Trailers
-T R Welding
-T&D Trailer Supplies
-T&E Enterprises of Herscher, Inc.
-T&M Custom Trailers LLC
-T&R Trailer Mfg
-T-Built Trailer Company
-T-N-A Custom Motorcycles
-T-RAXX SYSTEMS INC
-T.M.M
-T.S.I
-T2 SERVICES, INC.
-TAKATI MOTORCYCLES LLC
-TALON TRAILERS
-TAMCO
-TAOTAO
-TAXA LP
-TAYLOR MADE CHOPPERS INC.
-TBEI
-TBM Sand & Storage Logistic LLC
-TCB Choppers
-TCM LLC
-TCS Bagger Chassis
-TD Manufacturing, LLC
-TDM
-TDS Disposal Services
-TEAM SPIRIT TRAILERS OF ELKHART, INC.
-TEBCO of KY, Inc
-TECHSYS CHASSIS, INC.
-TEDSON TRAILER & EQUIPMENT REPAIR LLC
-TEMPEST CYCLES
-TERRADYNE EQUIPMENT COMPANY
-TEST
-TEVCO MANUFACTURING LLC
-TEXAN TRUCK BODY CO
-TEXAS TRAILER COMPANY
-TEXAS TRAILER SERVICE
-TEXAS TRAILERS INC.
-TFK CUSTOM TRAILER
-TGMI INC
-THAYCO
-THE ALLIED GROUP
-THE BROWN CO.
-THE HYDROSEEDING COMPANY LLC
-THIELEN MACHINE & WELDING, INC
-THO
-THOMPSON CHOPPERS INC
-THOR
-THOR TRAILERS, INC
-THT Manufacturing
-THULE Trailers
-THUNDER CHOPPER WORKS
-THUNDERDOME ENTERPRISES
-TICO Manufacturing Division
-TIMBERLINE ENTERPRISES
-TIMELEE'S
-TINY CAMPER COMPANY
-TINY HOMES OF OHIO
-TITAN
-TJ OILFIELD SERVICES,LLC.
-TJ Raese and Company LLC
-TJC
-TL ENTERPRISES
-TL Engineering
-TLR Welding & Fabricating
-TM Industries, LLC
-TM Marine Group
-TMC
-TMC Design
-TMC, inc
-TMCO
-TMP Out West
-TMP Truck & Trailer
-TMS, Inc
-TMT Manufacturing
-TNA Customs
-TNT Choppers
-TNT JET TECH, INC
-TNT TRAILER, INC
-TNT Trailers
-TNT, A Division of Banks Trailer Group
-TOMAHAWK TRAILERS INC
-TOMKEN MACHINE INC.
-TOP DECK TRAILERS AND MOTORHOME INC.
-TORSION TRAILERS, LLC
-TOW TRUE TRAILERS
-TOWMORE
-TOY CARRIERS, INC
-TOYHOYST Inc.
-TRACKSTAR INC.
-TRACTO DE MONTERREY Y ASOCIADOS SA DE CV
-TRACTOREMOLQUES Y ADAPTACIONES, SA DE CV
-TRAFCON INDUSTRIES INC.
-TRAIL KING INDUSTRIES
-TRAIL MASTER, INC.
-TRAIL-A-TOY MANUFACTURING CORPORATION
-TRAIL-ET
-TRAIL-RITE TRAILERS
-TRAILBLAZER TRAILERS
-TRAILBLAZER, INC
-TRAILER COMPONENTS, INC.
-TRAILER CREATIONS LLC
-TRAILER FRANCHISE
-TRAILER FX CUSTOM MANUFACTURING
-TRAILER IN A BAG, INC.
-TRAILER INDUSTRIES, INC
-TRAILER MANUFACTURERS OF TOLEDO, LLC
-TRAILER RUSH, INC.
-TRAILER SPECIALTIES, INC.
-TRAILER WELD SHOP
-TRAILER-LIFT LTD.
-TRAILERMAKERS, LLC
-TRAILERMAN TRAILERS, INC.
-TRAILERS BY MIKE
-TRAILERS PLUS
-TRAILERS UNLIMITED OF ARLINGTON
-TRAILEX INC.
-TRAILGRADER FABRICATION, LLC
-TRAILMAN, INC.
-TRAILMANOR
-TRAILMANOR MANUFACTURING COMPANY, LLC
-TRAILON TRAILER CORP.
-TRANSFORMATRUCKS, LLC
-TRANSGLOBAL CONTAINER, LLC
-TRANSHAUL, INC.
-TRANSI-CORP
-TRANSPORT DESIGNS, INC.
-TRANSPORT LEASING LLP
-TRANSPORTATION SYSTEMS SOLUTIONS, LLC
-TRANSWORLD EQUIPMENT CORP.
-TRANSWORLD MANUFACTURING CO.
-TRAVEL LITE, INC.
-TRAVEL UNITS, INC.
-TRAVEL-LITE, INC.
-TRAVELMATE, LLC
-TRAVERTSON INC.
-TRAVIS BODY & TRAILER, INC.
-TRAX MANUFACTURING
-TRAYLORCO
-TRI COUNTY CHOPPERS II
-TRI-COUNTY MANUFACTURING, INC.
-TRI-DEN, INC
-TRI-ONE, INC.
-TRI-STAR TRAILER MFG.
-TRI-STAR TRAILERS
-TRI-STATE CHOPPERS, INC.
-TRI-STATE INDUSTRIES, INC
-TRI-WELDING FABRICATIONS
-TRIAD ALUMINUM FABRICATION
-TRIAD TRAILERS LLC
-TRICK TRAILERS
-TRICKFIGHTERCUSTOMS LLC
-TRIFUN, INC.
-TRIKE WORX LLC
-TRIKES-R-US
-TRILLIUM RV LTD.
-TRINITY FRAME & FAB
-TRINITY INDUSTRIES INC
-TRINITY TRAILERS
-TRIPLE B TRAILERS
-TRIPLE J WELD FAB REPAIR, LLC
-TRIPLE R TRAILER SALES, INC
-TRIPLE-H-TRAILERS
-TRISEN FABRICATION
-TRITON TRIKES, LLC
-TRIVAN TRUCK BODYY TEXAS, LLC
-TROPHY BOAT TRAILERS, INC
-TROPICAL TRAILERS OF LAKELAND, INC
-TROUBADOUR TRAILERS LLC
-TRP Motors
-TRU LEVEL TRAILERS
-TRUCK BED AND TRAILER SALES, LLC
-TRUCK CRANE SOLUTIONS
-TRUCK-TECH ENGINEERS INC.
-TRUCKS UNLIMITED
-TSE International, Inc.
-TUF
-TURNING POINT TRAILER MFG, LLC
-TW Enterprises
-TWI Trailers
-TWIN CITY TRAILER SALES, INC.
-TXC
-TYCO
-TYRRSA
-TYRSOL
-Taboo Motorcycle Co.
-Tac Trailer
-Tag-A-Long Trailers
-Tag-Along
-Tailgater Party Trailers
-Tailgator Concepts
-Tailwinds Trailers
-Taiwan Golden Bee Co
-Taiwan Helio Technology Co.
-Taixing Sandi Motorcycle
-Taizhou Chuanl Motorcycle Manufacturing
-Taizhou Chuanl Motorcycle Manufacturing Co.
-Taizhou Jiaojiang Zhiwei Motorcycle
-Taizhou Oming Motorcycle
-Take 3 Trailers Inc
-Talbert
-Talleres Lozano
-Talon Trikes
-Tamarack Ind.
-Tammy's Trailers
-Tanfield Engineering Systems US
-Tanglewood Management LLC
-Tank Master
-Tank Sports
-Tankko LLC
-Tanom Motors
-Tanques Y Equipos Industriales
-Tanques y Remolques SILMEX
-Tansa
-Tantric Cycles
-TarasPort Trailers
-TareLite Trailer
-Target Trailer
-Tarrant
-Tarter Industries
-Tarter Industries (Tarter West)
-Tate's Customizations
-Tatsa
-Tattoo Yachts, LLC.
-Tavasci
-Taylor
-Taylor Made Equipment
-Taylor Power Systems
-Taylor Tide-Land Trailers
-Taylor Trailers
-Taylor's Fab & Mechanical SVC's
-Taylor's Manufacturing
-Taylor-Dunn
-Tazzari GL SPA
-Team Fenex
-Teardrop Camper
-Teardrops NW Inc.
-Tebben Enterprises
-Techline Engineering
-Technology Development Group Inc
-Technology Systems
-Tee Nee
-Tejas Trailers
-Temisko
-Temp-Air
-Temples Trailer Sales Inc
-Temsa
-Tennessee Trailers
-Tennfab
-Tentrax
-Terco Manufacturing
-Terex Advance Mixer
-Terex USA LLC
-Terminal Service Co
-TerraPod
-Terrafugia
-Terrell
-Terry's Trailers
-Teske Manufacturing
-Tesla
-Teton Buildings
-Teton Homes
-Teton International
-TetonX
-Tex Hill Auto and Trailer Sales
-Tex-All
-Texas Best Trailer Sales & Service
-Texas Custom Choppers
-Texas Iron Designs
-Texas Roll-Back Trailers
-Texas Star Fabrications
-Texas Trailer Cabin
-Texas Trailer Corporation
-Texas Trailers
-Texas Trailers Sales and Service
-Texas Truck and Trailer
-Texas Underground aka Pipehunter
-Texas Wide Welding & Services
-Texline
-Texmo Manufacturing
-Texoma Trailers
-Texoma Waste Control, Inc.
-Texstar RV and Trailers
-Th!nk
-The Advance Metalworking Co
-The American Road Machinery Co
-The Bag Lady
-The Brinkmann Corporation
-The Chariot
-The Chop Shop
-The Concrete Edge Co
-The Cycle Exchange
-The Dickirson Corporation
-The Egg Ranch of Oregon
-The Electric Vehicle Company
-The Factory Metal Works
-The Glass Hand
-The Hog Farm
-The Little Trailer Co, Inc.
-The Perfection Company
-The Piggy Backer Co
-The RV Factory
-The Riverman Boatworks
-The Sholar Co, Inc.
-The Shop
-The Toro Company
-The Trailer Shop Puerto Rico MFG
-The Trailer Shop, INC
-The Vehicle Production Group
-Therm Dynamics MFG
-Thermal Trek Inc
-Thigpen Metalworks
-Think Passenger Car
-Thomas Built
-Thomas Fabricating Inc
-Thomas Grinding
-Thompson & Zaber's Garage, INC
-Thompson Choppers
-Thompson Manufacturing Company Wexford Ltd.
-Thompson Tank Inc
-Thomsen
-Thomson Projects Ltd
-Thor Manufacturing LLC
-Thoroughbred Motorsports INC
-Thorp Equipment, Inc
-Three Feathers
-Three Feathers Manufacturing
-Three Rivers Welding
-Three Two Choppers
-Thru-Air Trailer
-Thru-Way Trailers Centre Limited
-Thug Custom Cycles
-Thunder Mountain Custom Cycles
-Thunder Trikes Inc
-ThunderVolt
-Thunderbolt
-Thunderstruck Custom Bikes
-Thuro-Bilt, Inc.
-Thurston Manufacturing Company
-Ti-Brook
-Tianjin Qingyuan Electric Vehicle Co
-Tibban MFG
-Tidewater Trailers
-Tiffin Motorhomes, Inc
-Tiger Truck Manufacturing
-Tight Lines Trailers LLC
-Tightline Fish House
-Tilman Dump Trailers
-Tim Nobles Trailers
-Timberleaf
-Timberwolf Manufacturing Corporation
-Timbery LLC
-Timeless Travel Trailers
-Timpte, INC
-Tinitron Motors
-Tinitron Trailers
-Tiny Home
-Tiny Home Trailer
-Tiny Homes of Oklahoma LLC
-Tiny House Chattanooga
-Tiny Idahomes
-Tiny Trailer
-Tioga Air Heaters
-Tire
-Tisdell's Implements
-Titan Haul USA
-Titan Imports
-Titan Manufacturing
-Titan Marine LLC
-Titan Trailer MFG
-Titan Trailers
-Titan Trailers Inc.
-Titan UTV
-Titanium Trailer MFG
-Toby's Mechanical
-Todd Geisert
-Toe-me Trailers
-Tom's Trailer Works
-Tomahawk Custom Choppers
-Tomahawk Fabricating
-Tomberlin
-Tombstone Hearse & Trikes
-Tomcar USA
-Tommy 2-Way Trailer
-Tommy Boy Racing
-Tommy Tow Trailers
-Tonkawa Trailers & Steel Fabricators
-Toocylinder
-Top Brand
-Top Dog Aluminum
-Top Enterprises Inc
-Top Hat Industries
-Top Notch Manufacturing
-Top Notch Trailers
-Top Notch Trailers Manufacturing Inc
-Topeka Metal Specialties (TMS Trailers)
-Tortured Steel Choppers
-Total E&S dba Total Equipment and Service
-Total Electric Vehicles
-Total Outdoor Adventures
-Tote 'em Trailers
-Tote'em Trailright Trailers
-Totem Equipment & Supply
-Toter Industries
-Tour de Taverns
-Tournier MFG.
-Tourtec Trailers
-Tow Rite MFG
-Tow Zone Trailer
-Tow-It-All
-Tow-Rite
-Towblazer
-Tower Solutions
-Tower Trailers
-Tower Trikes
-Towerworx
-Towmaxx Speciality Trailer
-Toxic Cycles LLC
-Toy Dolly
-Toy Toters
-Toyota
-Trac Vac
-Trackmaster
-Trackmaster Trailers
-Tradesman Company
-Tradewinds Power Corp
-TraffiCalm Systems
-Traffic Advisor
-Trail A Board
-Trail Craft
-Trail Maker Trailers
-Trail Mate Products
-Trail One LLC
-Trail Star Trailer
-Trail-Rite
-Trail-Rite LLC
-TrailAlong Trailer Inc.
-TrailMax
-TrailRite
-TrailStar
-Trailboss
-Trailboss Boat Trailers Inc
-Trailer & Truck
-Trailer Daddy MFG
-Trailer Force
-Trailer Rebuilders, Inc.
-Trailer Sales of MI
-Trailer Tech, Inc
-Trailer Time Trailers
-Trailer-Pro Inc
-Trailers Express Inc
-Trailers Unlimited
-Trailers and More
-Trailmaster
-Trailmobile
-Tramont Corporation
-Tramont Manufacturing
-Trans-Tech Industries, Inc.
-Transcor International Development Corpo
-Transformer Trailers, Inc
-Transglobal Industries
-Transport Buddy
-Transport Custom Designs
-Transport Designs
-Transport Equipment Manufacturing & Sales Corp
-Transportation Power Inc.
-Transportation Techniques
-Transtar ATW
-Transtech
-Travalong
-Travel Line
-Trekker
-Trelan Manufacturing
-Tri City
-Tri State Industries
-Tri-City Boat Dock
-Tricker Trailers
-Trident Motor
-Trihawk
-Triking
-Triple C Trailers
-Triple Crown Trailers, Inc
-Triple G Smokers
-Triple J
-Triple R
-Triple-C Trailer
-Triple-L
-Tritan Ventures
-Triton
-Triumph
-Triumph Motors
-Trivan Truck Body LLC
-Trojan Trailers
-Trotters Manufacturing, Inc
-Trout Creek Enterprises
-Trout River Industries
-Troxell Company
-Tru-Hitch
-Tru-Tow Trailers
-Tru-Weld
-Truck Equipment Corporation(TEC)
-Truck Tech
-Truck World
-Truck-Tech
-Trucking TRM Inc.
-Trucks & Trailer OU
-True Texan Manufacturing
-True Trail
-Trunks on Wheels
-Tuff Boy Sales
-Tuff Built Products Inc.
-Tuff Built Trailers of Oklahoma
-Tuff Manufacturing LLC
-Tuff Mfg.
-Tuff Trailer
-Tuff-Built Trailers
-Tuff-E-Nuff Mfg
-Tuff-Go
-Tug Hill Trailer Mfg.
-Tulsa Rig Iron
-Tulsa Trikes
-Tumbleweed Trailer
-Turnbow
-Turris Systems
-Turtle Top
-Turtle Up
-Turtleback Trailers
-Twamco Trailer
-Twike Fine Motor GmbH
-Twin City
-Twin Oaks Industries
-Twisted Hawaiian
-Twisted Iron Bobbers
-Twisted Iron Customs
-Twisted Ridez
-Twisted Steel Choppers
-Twister Trailer Mfg Inc
-Twistercity Cycle Works
-Ty-Crop Manufacturing Ltd
-Tyco Fire Protection Products
-Tygar
-U-Dump Trailers LLC
-U.S. Trailer Co.
-UBCO
-UCC
-UD
-ULTIMATE CUSTOM CYCLES
-UM Motorcycles
-UNION CITY BODY COMPANY INCORP.
-UNIQUE DESIGNS, INC.
-UNITED MOUNTAIN TRAILERS, INC.
-UNLIMITED RECREATION, INC.
-URAL
-URAL AMERICA INCOPROATED
-US Built Trailers
-US Tower Corp.
-US Trailer Co
-USA
-USA Choppers
-USA FLIR DETECTION INC.
-USA MOTOR CORPORATION
-USA Motortoys
-USA Trailer
-USA Trailer Co.
-USA Trailer Manufacturer
-USPC
-UTILITY
-Ukeycheyma
-Ullman Auto Sales
-Ultima
-Ultimate Cycleworks
-Ultimate Manufacturing
-Ultimate Trailers
-Ultra
-Ultra Acquisition Corporation
-Ultra Haulers
-Ultra Lite
-Ultra Motorcycle Company, Inc.
-Ultra Trailer
-Uni-Go Nz Ltd
-Unicell Body Company
-Unilift
-Unique Custom Cycles
-Unique Custom Truck & Trailer
-Unique Cycle Works
-Unique Fabrications
-Unique Performance Customs
-Unique Products
-United Alloy, Inc.
-United Expressline
-United Hauler
-United Hydraulics
-United Motors
-United Motors of America
-United Precision Metals
-United Site National Services Company
-United Specialized Trailers
-United Specialties
-United States Motorcycle Corporation
-United Trailer Products
-United Trailers
-United Truck Equipment Corp.
-Universal
-Universal Composite
-Universal Cycle
-Universal Hovercraft
-Universal Specialty Vehicles, Inc.
-Universal Trailer
-Unknown Choppers
-Unruh
-Unverferth
-Upstate Concessions
-Urway
-Ustankco
-Utilimaster Motor Corporation
-Utilitoy
-Utility Buddy
-Utility Tent Trailers
-Utility Van
-UtilityMate
-Uwood
-V TWIN CITY
-V-Force Customs
-V.E. Enterprises
-VA Enterprises
-VACMASTERS OF DENVER INC
-VALLEY MANUFACTURING, INC
-VALLEY TRAILER MFG INC
-VALLEY WELDING & EQUIPMENT, INC
-VAMA Manufacturing
-VAN KAM TRUCK & TRAILER
-VANGUARD NATIONAL TRAILER CORPORATION (VNTC)
-VCS Custom Cycles
-VECTRIX
-VERI-LITE, INC.
-VERTICAL WORKS INC
-VETS
-VIP Custom Coach, Inc.
-VMI Offroad Xtender
-VORTEX MOTORCYCLES CO
-VRC INDUSTRIES
-VRV
-VT Hackney
-VT SVC
-VX Unlimited
-Vac King Trailers
-Vac-Tron Equipment
-Vacation Structures
-Vacationeer
-Valaren Motorsports
-Valderaz Services,LLC
-Valenti Choppers
-Valew (Hayes Welding)
-Valew Quality Truck Bodies East
-Valkyrie Trailers
-Valley Engineering
-Valley Farm Industries
-Valley Industries, LLC
-Valley Trailers
-Valley Vessel Fabric
-Valley View Custom Trailer Manufacturers
-Van
-Van Camp Trailer & Body, Inc
-Van Hool
-Van Overflow Inc
-Vanclaes
-Vanderhall Motor Works
-Vanleigh RV
-Vanmar Manufacturing
-Vanquish Motorcycles
-Vantage Trailers
-Vantage Vehicle International
-Vantem Modular
-Vaporcon
-Vector Technologies
-Vector Trikes
-Vega Integrated Products
-Velocette Trailers
-Vengeance Motorcycles
-Venier Customs
-Venom Trailers
-Venter
-Vento
-Venture Buggy
-Venture Ride Mfg Inc
-Venture Trailers
-Venturetech Corporation
-Veradyn
-Vermeer
-Vermeer Freeman Manufacturing Company
-Vermeer- Delta
-Vernon Trailer Company
-Versatrail, Inc.
-Vertical Reality
-Verucci Motorcycles LLC
-Vetro, Inc.
-Victor Valley Steel Fabricators
-Victor Valley Trailers
-Victory
-Victory Custom Trailers
-Victory Haulers
-Victory Industrial
-Victory Industrial Products
-Victory Sweepers
-Victory Trailers
-Viking
-Viking Fabrication
-Viking Trailer
-Viking-Cives Midwest
-Village Trailer Sales and Parts
-Villmow Racing Developments
-Vindicator Cycles
-Vintage Auto
-Vintage Overland
-Viper Cargo LLC
-Viper Motorcycle Company
-Viper Trailers LLC
-Vironex
-Vision Industries
-Vision Trailers
-Visionary Metals
-Viva Motorsports
-Volkswagen
-Volvo
-Volvo Truck
-Voodoo Choppers
-Vossloh
-Voyager Aluminum
-Voyager Industries
-Voyager Trailers
-Voyager Travel Trailers
-Vtwin Custom MFG
-Vulcan Works, Inc.
-W K Machine
-W W Trailer Manufacturing & Sales Inc.
-WACKER CORPORATION
-WACO
-WADE SERVICES, INC.
-WAGS MOTORCYCLE TRAILERS, LLC
-WAGS UNIQUE MOTORCYCLE TRAILERS
-WALDEN STRUCTURE'S, INC.
-WALINGA, INC.
-WALKER
-WALKER STAINLESS EQUIPMENT CO
-WANQIANG
-WARE'S WELDING
-WARREN MANUFACTURING, INC.
-WASTE STREAM INC.
-WATAUGA WELDING INC
-WB Enterprises
-WCW
-WEDLAKE FABRICATING, INC.
-WEEZE CHOPPERS
-WELDING WORKS
-WEN C
-WESCO
-WESLEY CUSTOM FABRICATION INC
-WEST TEXAS DOLLIES INC.
-WESTECH CUSTOM METAL FABRICATION
-WESTERN WISCONSIN FABRICATING, LLC
-WHISKEY CHOPPERS
-WHITEGMC
-WHIZZER
-WHOLESALE TRAILER WORLD
-WICKED DESIGNS LLC
-WIDOWMAKERS
-WILCO MACHINE & FAB INC.
-WILDCAT MOTORCYCLES
-WILDCAT TRAILER CO
-WINDROCK
-WINSOR METAL PRODUCTS INC
-WINSTON
-WISTAR EQUIPMENT
-WIZARD SPEED AND DESIGN
-WOLVERINE RACING
-WORTHINGTON CRYOGENICS, LLC
-WOT FABRICATION & ENGINEERING, LLC
-WOW CARGO TRAILERS LLC
-WR Manufacturing Inc
-WSD
-WTSI
-WURST
-Wabash National Corporation
-Wacker Neuson Corporation dba Wacker Neuson
-Wadsworth Industries
-Wagner-Smith Equipment Co
-Wagon Wheel Trailers
-Waguespack Welding & Manufacturing Inc
-Walden Structures Construction
-Waldrop's Welding & Fabrication LLC
-Walinga USA
-Wallace Lowboys
-Wallrich Welding
-Walsh Auto & Fabrication
-Walters Group
-Walton Trailers
-Walz Hardcore Cycles USA
-Wanco, Inc
-Wangye
-Wanted Choppers
-War Eagle Motorcycles
-Ward Equipment
-Warhawk Performance
-Warlock
-Warman's Welding LTD
-Warren Inc.
-Warren Power Attachments
-Warrior
-Warrior Lifestyles
-Warrior Manufacturing
-Washington Choppers
-Wastequip Cusco
-Watco Truck Rigging
-Water Hog Trailers
-Waterblasting Technologies
-Waterford Tank and Fabrication
-Waterman Welding & Machining
-Watson
-Wausau Equipment Company
-Wayde Mfg Co inc
-Waymatic Inc
-Wayne
-Wayne Engineering Corporation
-Wayne Wheeled Vehicles
-Wayne's
-Wayne's Trailer Supply
-Weaver Systems
-Webco Pacific
-Weber Generators
-Weber Manufacturing
-Weber Trailer By Mrres Industries
-Weber's Welding & Repair
-Wee Engineer
-Weekend Warrior Trailers
-Weekender
-Wegener Steel & Fabricating
-Weiler
-Weimer Manufacturing
-Welch Trailers
-Weld Built Trailers
-Weld Shop
-Weld-It Company
-Weld-Tek Custom Fabrication
-Welding & Machine
-Welding Unlimited
-Well Done Equipment
-Wellco
-Wells Cargo
-Wells Machine Co Inc
-Wells Western Trailer
-Wellspring
-Wenger Corp
-Wenzhou Light Motorcycle Co.
-Wenzlau Engineering
-Wes Mor Cryogenic Manufacturing
-West Coast ABT Inc.
-West Coast Trailer
-West Georgia Mobile Hydraulic, Inc.
-West Side Choppers
-West Side Cycle
-West-Mark
-Westar Manufacturing
-Westbrook Greenhouse Systems Ltd.
-Westbury Handcrafted Motorcycles
-Western Construction Components
-Western Innovation
-Western Int'l
-Western Metals Company Inc
-Western RV
-Western Recreational Vehicles, Inc.
-Western Star
-Western Trailer Company
-Westinghouse Corporation
-Westline
-Westmor Industries
-Weston Choppers
-Westside Trailers
-Westward Industries
-Wheego Electric Cars
-Wheeler Reeler
-Wheelhaus
-Whiskey Custom Cycles
-Whispering Pines Fabricating
-Whit Service & Supply
-Whit-Log
-White
-White Knuckle Performance Cycles
-White's Welding & Body Shop
-Whitehead Welding and Trailer Sales
-Whitetail Watersports dba Whitetail Airboats
-Whitewater
-Whitlock Mills Trailer
-Wichita Trailer Manufacturing
-Wicked Choppers Corporation
-Wicked Cool Motorcycles
-Wicked Custom Cycles
-Wicked Enterprises
-Wicked Sick Designs Manufacturing T-Town Chopz
-Wicked Sickles
-Wicked Women Choppers
-Wicomico Custom Cycles
-Wide Open Cycles
-Wideside Customs
-Wiechelman Repair
-Wil-Ro Inc
-Wilbert Funeral Services
-Wilcken Industries
-Wilco Manufacturing
-Wild Cat Crane & Welding
-Wild Metal Manufacturing
-Wild Rice Industries
-Wild Side
-Wild Side Customs
-Wild West Motor Company
-Wild West Motor Company, Inc.
-Wild West Trailers
-Wildfire Motors
-Wildlife
-Wilkens Industries, Inc
-Wilkens Manufacturing
-William Clark
-William Steele Welding & Fabrication
-Williams
-Williamson Ocean-Trailers
-Willis Extendable
-Willmar Mfg.
-Wilmer's Welding
-Wilshire Trailers
-Wilson Custom Trailer Inc
-Wilson Manufacturing
-Wilson Steel Products Co.
-Wilson Trailer Co.
-Wilton Manufacturing
-Wimyer
-Winchester Auto Repair & Welding
-Winco
-Windsor Trailer
-Windward Campers Inc
-Windy Ridge Fabrication
-Winnebago
-Winnebago Industries, Inc.
-Winnebago Of Indiana
-Wins Trike Bike
-Wisconsin Body & Hoist
-Wisdom
-Wise Technology
-Wolf Design Metal Fabrication
-Wolf-Trax
-Wolfe Electric
-Wolfpack Chassis, LLC
-Wolverine
-Wolverine custom
-Wolverine trailers llc
-Wood-Mizer Products, Inc.
-Wood-Tex Corporate LLC
-Woodland Park Inc
-Woods line equipment, inc.
-Woodsman, Inc
-Work Area Protection Corp
-Work Easy Trailers LLC
-Work Hawg Trailer Company, LLC
-Work Horse Manufacturing
-Workhorse
-Workhorse Industries of Texas
-Workhorse Manufacturing
-Workhorse Utility Trailers
-Workman and Sons Inc.
-World Transport Authority
-WorldWide Trailer Manufacturing, Inc.
-Worldwide Trailer
-Worldwide Trailer Services
-Worthington Welding Inc.
-Worthy
-Worxs
-Wrench
-Wright Built
-Wright Welding Inc.
-Wright's Design & Favrication
-Wrightbus
-Wurk Metal Products
-Wuxi Jinhong Motorcycle Co.
-Wuxi Tmec Power Technology
-Wuxi Zhida Vehicle Manufacturing Co.
-Wuzheng North America
-Wyatt Engineering & Fabrication
-Wyatt's
-Wyld Rydes
-Wyoming Fabrication & Machine
-X-CEL Trailers
-X-L SPECIALIZED TRAILERS INC
-X-PRESS
-X-Treme Fabricating
-X-Treme Trailer Mfg
-XCS Choppers dba Xtreme Cycle Supply
-XIANFENG
-XIANGJIANG
-XLT
-XPLORER
-XPO
-Xiamen Xiagong Yuwei Heavy Industry Co.
-Xiamen Xiashing Motorcycle Co.
-Xiangrui Vehicle Co.
-Xinri
-Xkeleton Motorcycle
-Xotic Cycle & Motor Werx
-Xplor Campers
-Xtreme Choppers
-Xtreme Custom Conversions
-Xtreme Green Products
-Xtreme LT
-Xtreme Trailers and MFG
-YIBEN
-YINXIANG
-YOUNG'S WELDING, INC.
-YUGO
-YVTS
-Yakima Products
-Yamaha
-Yangzhou Tonghua Semi-Trialer
-Yantai Haide Special Auto Works
-Yantai Jereh Oilfield Service Group Co.
-Yardbeast
-Yellowstone Valley Trailer Services, LLP dba YVTS
-Yester Year Auto
-Yingang
-Yoder Utility Trailer
-Yongfu
-York Welding and Fabrication
-Younessi Motors
-Yuba Trailer
-Z & M Controls
-Z Electric Vehicle Corporation
-Z Fabrication Wildfire Pits and Smokers
-Z Z CHOPS
-Z3 SUPPLY
-ZACKYS
-ZAKS CUSTOM PITS
-ZAP
-ZARK
-ZAT ENTERPRISES
-ZEHR ENTERPRISES INC
-ZELIGSON
-ZENGCHENG HAILI MOTORCYCLE CO
-ZERO MOTORCYCLES
-ZEUS CHOPPERS
-ZHEJIANG JIAJUE APOLLO VEHICLE MANUFACTURE CO
-ZHEJIANG JMSTAR SHENKE MOTORCYCLE CO
-ZHEJIANG KANGDI VEHICLES CO
-ZHEJIANG LEIKE MACHINE INDUSTRY CO
-ZHEJIANG LINGYU VEHICLE INDUSTRY CO
-ZHEJIANG LONGWISE TECHNOLOGY CO
-ZHEJIANG MENGDELI ELECTRICAL CO
-ZHEJIANG RIYA MOTORCYCLE CO
-ZHEJIANG TAIZHOU WANGYE POWER CO
-ZHEJIANG TAOTAO INDUSTRY CO
-ZHEJIANG XINGYUE VEHICLE CO
-ZHONGMO TECHNOLOGY CO
-ZHUZHOU NANFANG MOTORCYCLE CO
-ZHWEKI
-ZIERKE BUILT MANUFACTURING
-ZIMCO MANUFACTURING
-ZIMMERMAN TRAILER
-ZNEN
-ZONE ELECTRIC CAR
-ZONGSHEN INDUSTRIAL GROUP CO
-ZTPOWERSTATION
-ZZ TRAILER
-Zacky's Custom Rods
-Zanetti Trailer Manufacturing
-Zero4Outdoors
-ZheJiang Lingtian Motorcycle Co Ltd
-Zhejiang Kandi Vehicles Co.
-Zhejiang Qianjiang Motorcycle
-Zhengzhou East Industry Co.
-Zhongmao
-Ziffel Manufacturing
-Zimmer
-Zimmerman Manufacturing Corp.
-Zoe Motors
-Zook's Welding
-eCart
-eGO Vehicles, Inc.
-eMa
-eMa Motorworks
-imperial
-inTech Trailers
-inTech Trailers Inc
-industrial Trailer
-knucklehead Power USA
-mycar
-smart
-wolf trailes
-\.
-
-
---
--- TOC entry 1911 (class 2606 OID 82128)
--- Name: pk_brand; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY brand
-    ADD CONSTRAINT pk_brand PRIMARY KEY (brandname);
-
-
--- Completed on 2017-10-27 16:27:52
-
---
--- PostgreSQL database dump complete
---
-
+INSERT INTO "brand" ("brandname") VALUES ('17 Creek Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('1ST CHOICE MANUFACTURING INC');
+INSERT INTO "brand" ("brandname") VALUES ('2-G Trailer Co LLC');
+INSERT INTO "brand" ("brandname") VALUES ('2 Person Street');
+INSERT INTO "brand" ("brandname") VALUES ('2231545 Ontario');
+INSERT INTO "brand" ("brandname") VALUES ('280 Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('33 East Maintenance Inc');
+INSERT INTO "brand" ("brandname") VALUES ('3D Custom Aluminum');
+INSERT INTO "brand" ("brandname") VALUES ('3M Dynamic Message Systems');
+INSERT INTO "brand" ("brandname") VALUES ('3T Mfg.');
+INSERT INTO "brand" ("brandname") VALUES ('4-Star Trailers Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('4 Person Street');
+INSERT INTO "brand" ("brandname") VALUES ('4 Star Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('4 X 4 Trailers Ltd');
+INSERT INTO "brand" ("brandname") VALUES ('4M Farm & Trailer Sales');
+INSERT INTO "brand" ("brandname") VALUES ('5 Starr Trailer Company, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('505 Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('5280 Trailerworks');
+INSERT INTO "brand" ("brandname") VALUES ('58th Street Customs');
+INSERT INTO "brand" ("brandname") VALUES ('5R Ranch Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('801 Trailer Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('A-1 Custom Trailer aka Tow Master');
+INSERT INTO "brand" ("brandname") VALUES ('A-1 Hitch & Trailer Sales, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('A-1 Truck Repair');
+INSERT INTO "brand" ("brandname") VALUES ('A-BAR-D MFG.');
+INSERT INTO "brand" ("brandname") VALUES ('A & A Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('A & B INDUSTRIES');
+INSERT INTO "brand" ("brandname") VALUES ('A & D Company');
+INSERT INTO "brand" ("brandname") VALUES ('A & E Fabricators');
+INSERT INTO "brand" ("brandname") VALUES ('A & E Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('A & F TRAILER MFG INC');
+INSERT INTO "brand" ("brandname") VALUES ('A & H');
+INSERT INTO "brand" ("brandname") VALUES ('A & M FABRICATIONS');
+INSERT INTO "brand" ("brandname") VALUES ('A & W TRAILOR MANUFACTURE');
+INSERT INTO "brand" ("brandname") VALUES ('A Bar K Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('A Smith GT Bentley');
+INSERT INTO "brand" ("brandname") VALUES ('A to Z Auto');
+INSERT INTO "brand" ("brandname") VALUES ('A Trinity Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('A.R.M.');
+INSERT INTO "brand" ("brandname") VALUES ('A1 Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('AA Muffler and Welding');
+INSERT INTO "brand" ("brandname") VALUES ('AA Screen Supply');
+INSERT INTO "brand" ("brandname") VALUES ('AA Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Aapex Trailers Inc');
+INSERT INTO "brand" ("brandname") VALUES ('AAR Welding');
+INSERT INTO "brand" ("brandname") VALUES ('ABASTECEDORA DE TRACTOPARTES Y REFACCIONES');
+INSERT INTO "brand" ("brandname") VALUES ('ABC Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('ABC Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('ABI');
+INSERT INTO "brand" ("brandname") VALUES ('ABI Caravans Ltd');
+INSERT INTO "brand" ("brandname") VALUES ('Ability Metals');
+INSERT INTO "brand" ("brandname") VALUES ('Able Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Absolute Concepts');
+INSERT INTO "brand" ("brandname") VALUES ('Absolute Performance');
+INSERT INTO "brand" ("brandname") VALUES ('Absolute Trailer Sales');
+INSERT INTO "brand" ("brandname") VALUES ('Absolutely Wild Ranch');
+INSERT INTO "brand" ("brandname") VALUES ('ABU');
+INSERT INTO "brand" ("brandname") VALUES ('AC Customs');
+INSERT INTO "brand" ("brandname") VALUES ('AC Propulsion');
+INSERT INTO "brand" ("brandname") VALUES ('Academi Training Center');
+INSERT INTO "brand" ("brandname") VALUES ('ACC TrailRite');
+INSERT INTO "brand" ("brandname") VALUES ('Accelerated Tanks and Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('ACCU-TEK TRAILER MANUFACTURING, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('ACCURATE CYCLE ENGINEERING');
+INSERT INTO "brand" ("brandname") VALUES ('ACcustomX');
+INSERT INTO "brand" ("brandname") VALUES ('Ace');
+INSERT INTO "brand" ("brandname") VALUES ('Ace Custom Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Ace Motorcycle');
+INSERT INTO "brand" ("brandname") VALUES ('Ace of Spades');
+INSERT INTO "brand" ("brandname") VALUES ('Ace Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('ACES CHOPPERWORKS');
+INSERT INTO "brand" ("brandname") VALUES ('ACG');
+INSERT INTO "brand" ("brandname") VALUES ('ACME CRYOGENICS, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Acme Group');
+INSERT INTO "brand" ("brandname") VALUES ('Acme Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Acme Trailer Works');
+INSERT INTO "brand" ("brandname") VALUES ('Acro Trailer Company');
+INSERT INTO "brand" ("brandname") VALUES ('Action Enterprises & Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('Action Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('Action Signs and Billboards');
+INSERT INTO "brand" ("brandname") VALUES ('Action Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('ACTION WELDING & FABRICATION, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Activity Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Activmo Auto');
+INSERT INTO "brand" ("brandname") VALUES ('Acura');
+INSERT INTO "brand" ("brandname") VALUES ('Acv Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Adam Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Adams Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('Adams MFG');
+INSERT INTO "brand" ("brandname") VALUES ('Addco');
+INSERT INTO "brand" ("brandname") VALUES ('ADIRONDACK KABINS, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('ADIRONDACK KOTTAGES');
+INSERT INTO "brand" ("brandname") VALUES ('Adirondack White Pine Cabins');
+INSERT INTO "brand" ("brandname") VALUES ('ADLY');
+INSERT INTO "brand" ("brandname") VALUES ('Admiral Drive Systems');
+INSERT INTO "brand" ("brandname") VALUES ('Admiral Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('ADMIRATION HOMES');
+INSERT INTO "brand" ("brandname") VALUES ('Adrenaline');
+INSERT INTO "brand" ("brandname") VALUES ('Adrian Homes');
+INSERT INTO "brand" ("brandname") VALUES ('Advance Engineered Products');
+INSERT INTO "brand" ("brandname") VALUES ('Advance Lifts');
+INSERT INTO "brand" ("brandname") VALUES ('Advance Mechanical Service');
+INSERT INTO "brand" ("brandname") VALUES ('Advance Metal Fabrication and Machine');
+INSERT INTO "brand" ("brandname") VALUES ('Advance Pump & Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('ADVANCED BOAT TRAILERS, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('ADVANCED CONTAINMENT SYSTEMS, INC');
+INSERT INTO "brand" ("brandname") VALUES ('Advanced Customs & Conversions');
+INSERT INTO "brand" ("brandname") VALUES ('ADVANCED FABRICATORS INC');
+INSERT INTO "brand" ("brandname") VALUES ('ADVANCED MANUFACTURING & POWER SYSTEMS, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Advanced Portable Buildings & Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Advanced Trailer Solutions');
+INSERT INTO "brand" ("brandname") VALUES ('Advanced Trailer Systems');
+INSERT INTO "brand" ("brandname") VALUES ('Advanced Vehicle Assembly');
+INSERT INTO "brand" ("brandname") VALUES ('Advanced Welding and Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Advantaced Vehicles Assembly');
+INSERT INTO "brand" ("brandname") VALUES ('Advantage Customs');
+INSERT INTO "brand" ("brandname") VALUES ('Advantage Terrafab, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Adventure Sports Products, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Adventure Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('AEC Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('AEP North America');
+INSERT INTO "brand" ("brandname") VALUES ('Aero Fiberglass Company');
+INSERT INTO "brand" ("brandname") VALUES ('Aero Flite');
+INSERT INTO "brand" ("brandname") VALUES ('Aero Motors');
+INSERT INTO "brand" ("brandname") VALUES ('Aero Teardrops, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Aero Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Aerobilt Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Aeroglas');
+INSERT INTO "brand" ("brandname") VALUES ('AEROPUP Trailers LLC');
+INSERT INTO "brand" ("brandname") VALUES ('AEROTEK');
+INSERT INTO "brand" ("brandname") VALUES ('Aerovault');
+INSERT INTO "brand" ("brandname") VALUES ('AFAB Petroleum Equipment & Steel Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('AFC Company');
+INSERT INTO "brand" ("brandname") VALUES ('Affordable Aluminum');
+INSERT INTO "brand" ("brandname") VALUES ('AFTER-MARKET SPECIALTIES');
+INSERT INTO "brand" ("brandname") VALUES ('After Hours Bikes, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('AG-Quip, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('AG Dryer Services Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('AG Industrial, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('AG Shield Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Ag Spray Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('Ag Spray Equipment,Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('AG Works International');
+INSERT INTO "brand" ("brandname") VALUES ('AGA Gas Central, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('AGB');
+INSERT INTO "brand" ("brandname") VALUES ('Agri-Drain Corp');
+INSERT INTO "brand" ("brandname") VALUES ('AgriFleet Leasing Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('Aguilar''s Welding, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Ahoy! Houseboats and Fishhouses');
+INSERT INTO "brand" ("brandname") VALUES ('AI-Springfield');
+INSERT INTO "brand" ("brandname") VALUES ('Ainley Kennels & Fabrication, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Airbagged Trailers, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Airstream Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('AirTech Tools');
+INSERT INTO "brand" ("brandname") VALUES ('Airtronics Metal Products');
+INSERT INTO "brand" ("brandname") VALUES ('AJAX TRAILERS, INC');
+INSERT INTO "brand" ("brandname") VALUES ('Al''s Motorsickle Shop Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Al-jon, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Alameda Trailer Sales');
+INSERT INTO "brand" ("brandname") VALUES ('Alan Autosports');
+INSERT INTO "brand" ("brandname") VALUES ('Alan Ritchey, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Alaska Extreme Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Alaska Frontier Fabrication LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Albert Lea');
+INSERT INTO "brand" ("brandname") VALUES ('Albright Bikes');
+INSERT INTO "brand" ("brandname") VALUES ('ALC Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Alcan Trailers, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('ALCAN TRAVELER, INC');
+INSERT INTO "brand" ("brandname") VALUES ('Alcom LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Aldura');
+INSERT INTO "brand" ("brandname") VALUES ('Aleph Group, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('ALEWINE MOTORS, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Alexander Dennis Limited');
+INSERT INTO "brand" ("brandname") VALUES ('Alfa Romeo');
+INSERT INTO "brand" ("brandname") VALUES ('Alfred Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Alien Engineered Products');
+INSERT INTO "brand" ("brandname") VALUES ('Aliner');
+INSERT INTO "brand" ("brandname") VALUES ('Alkane');
+INSERT INTO "brand" ("brandname") VALUES ('All About Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('All American Big Twin');
+INSERT INTO "brand" ("brandname") VALUES ('All American Choppers Co.');
+INSERT INTO "brand" ("brandname") VALUES ('All American Manufacturing, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('All American Trailer Manufacturers');
+INSERT INTO "brand" ("brandname") VALUES ('All Around Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('All Boat Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('All Custom Fabrications');
+INSERT INTO "brand" ("brandname") VALUES ('All Day Lawn');
+INSERT INTO "brand" ("brandname") VALUES ('All Fab Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('ALL IN ONE CUSTOM FABRICATION & DESIGN');
+INSERT INTO "brand" ("brandname") VALUES ('All Marine Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('All Phase Trailer and Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('All Pro Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('All Right Steel, LLC.');
+INSERT INTO "brand" ("brandname") VALUES ('All Seasons Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('All Star Carts & Vehicles, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('All Star Solutions');
+INSERT INTO "brand" ("brandname") VALUES ('All Star Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('All Steel Trailer, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Allco Trailer Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('ALLEN''S MFG INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Allen Boat Company');
+INSERT INTO "brand" ("brandname") VALUES ('Allen Fabricators Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Allentown Shotcrete Technology, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Alley Rat Custom Cycles LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Alleykat Kustoms of Arizona');
+INSERT INTO "brand" ("brandname") VALUES ('Alliance North America, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Allianz Sweeper Company');
+INSERT INTO "brand" ("brandname") VALUES ('Allied Machine Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Allied Manufacturing, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Allied Welding Services');
+INSERT INTO "brand" ("brandname") VALUES ('ALLISON DUMP BODIES & TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('Allmand Brothers');
+INSERT INTO "brand" ("brandname") VALUES ('Alloy');
+INSERT INTO "brand" ("brandname") VALUES ('Alloy Custom Products');
+INSERT INTO "brand" ("brandname") VALUES ('Alloy Custom Vacuum Products Inc');
+INSERT INTO "brand" ("brandname") VALUES ('ALMAR MANUFACTURING');
+INSERT INTO "brand" ("brandname") VALUES ('Almax Holding Limited');
+INSERT INTO "brand" ("brandname") VALUES ('Alpha Products International');
+INSERT INTO "brand" ("brandname") VALUES ('Alpha Products International, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('ALPINE WELDING & FABRICATION INC');
+INSERT INTO "brand" ("brandname") VALUES ('Alsalor Corp.');
+INSERT INTO "brand" ("brandname") VALUES ('ALTA');
+INSERT INTO "brand" ("brandname") VALUES ('ALTAMONT TECHNOLOGIES, INC');
+INSERT INTO "brand" ("brandname") VALUES ('Altec');
+INSERT INTO "brand" ("brandname") VALUES ('Altec Environmental Products');
+INSERT INTO "brand" ("brandname") VALUES ('Altec Industries, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Alum-Line, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Aluma');
+INSERT INTO "brand" ("brandname") VALUES ('Aluma Pro Trailers, LLC.');
+INSERT INTO "brand" ("brandname") VALUES ('Aluma Tower Company');
+INSERT INTO "brand" ("brandname") VALUES ('Alumacar');
+INSERT INTO "brand" ("brandname") VALUES ('AlumaTrek');
+INSERT INTO "brand" ("brandname") VALUES ('Alumax Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Alumina, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Aluminex Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('Aluminum Cargo Trailers Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Aluminum Trailer Co.');
+INSERT INTO "brand" ("brandname") VALUES ('Aluminum Trailers, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Aluminx');
+INSERT INTO "brand" ("brandname") VALUES ('Alumituff Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('ALVAREZ');
+INSERT INTO "brand" ("brandname") VALUES ('AM General');
+INSERT INTO "brand" ("brandname") VALUES ('Amar Motor Development');
+INSERT INTO "brand" ("brandname") VALUES ('AMAZE-N-TOW');
+INSERT INTO "brand" ("brandname") VALUES ('Amaze-N-Tow, LLC.');
+INSERT INTO "brand" ("brandname") VALUES ('Amelit, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('AMEN CHASSIS WORKS');
+INSERT INTO "brand" ("brandname") VALUES ('AmeraTrail');
+INSERT INTO "brand" ("brandname") VALUES ('Ameri-Camp');
+INSERT INTO "brand" ("brandname") VALUES ('AMERI-CAN ENGINEERING, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Ameri-Carts');
+INSERT INTO "brand" ("brandname") VALUES ('America''s Best Cargo');
+INSERT INTO "brand" ("brandname") VALUES ('American Airboat Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('American Airport Support & Rescue Systems');
+INSERT INTO "brand" ("brandname") VALUES ('American Best Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('American Bos Corp');
+INSERT INTO "brand" ("brandname") VALUES ('American Classic Motors Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('American Crafted Trailers, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('American Custom Coach');
+INSERT INTO "brand" ("brandname") VALUES ('American Custom Golf Cars, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('AMERICAN DOZER INC.');
+INSERT INTO "brand" ("brandname") VALUES ('American Eagle Trailers Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('American Eagle Trailers, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('American Electric Vehicle Company, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('American Electronic Sign Co');
+INSERT INTO "brand" ("brandname") VALUES ('American Farrier Systems LLC');
+INSERT INTO "brand" ("brandname") VALUES ('American Hauler');
+INSERT INTO "brand" ("brandname") VALUES ('American Hauler Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('American Homestar Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('American Hotrod Manufacturing, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('American Ironhorse');
+INSERT INTO "brand" ("brandname") VALUES ('American IronHorse Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('American Kulture Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('American Kulture Rod and Cycle Shoppe');
+INSERT INTO "brand" ("brandname") VALUES ('American LaFrance');
+INSERT INTO "brand" ("brandname") VALUES ('American LaFrance, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('American Made');
+INSERT INTO "brand" ("brandname") VALUES ('American Manufacturing Operations');
+INSERT INTO "brand" ("brandname") VALUES ('AMERICAN MANUFACTURING SUPPORT');
+INSERT INTO "brand" ("brandname") VALUES ('American Metal Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('American Motorcycle Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('American Motors Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('American Performance Technologies');
+INSERT INTO "brand" ("brandname") VALUES ('AMERICAN PISTON');
+INSERT INTO "brand" ("brandname") VALUES ('American pride');
+INSERT INTO "brand" ("brandname") VALUES ('AMERICAN PRODUCTS');
+INSERT INTO "brand" ("brandname") VALUES ('AMERICAN QUANTUM CYCLES');
+INSERT INTO "brand" ("brandname") VALUES ('American Recreational Vehicles');
+INSERT INTO "brand" ("brandname") VALUES ('American Scooter Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('American Skier');
+INSERT INTO "brand" ("brandname") VALUES ('American Sport Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('American SportWorks');
+INSERT INTO "brand" ("brandname") VALUES ('American Star Metal Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('American Steel Fabricators');
+INSERT INTO "brand" ("brandname") VALUES ('American Steel Horse Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('American Steel V-Twin');
+INSERT INTO "brand" ("brandname") VALUES ('American Super Cycle');
+INSERT INTO "brand" ("brandname") VALUES ('American Surplus & MFG');
+INSERT INTO "brand" ("brandname") VALUES ('American Teardrop');
+INSERT INTO "brand" ("brandname") VALUES ('American Thunder Tryke');
+INSERT INTO "brand" ("brandname") VALUES ('American Tote');
+INSERT INTO "brand" ("brandname") VALUES ('American Trailer and Manufacturing LLC.');
+INSERT INTO "brand" ("brandname") VALUES ('American Trailer Builders');
+INSERT INTO "brand" ("brandname") VALUES ('American Trailer Manufacturing Company');
+INSERT INTO "brand" ("brandname") VALUES ('AMERICAN TRAILER SYSTEMS');
+INSERT INTO "brand" ("brandname") VALUES ('American Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('AMERICAN TRAILERS CO');
+INSERT INTO "brand" ("brandname") VALUES ('American Truck & Trailer Body');
+INSERT INTO "brand" ("brandname") VALUES ('AMERICAN WARRIOR MOTORCYCLES');
+INSERT INTO "brand" ("brandname") VALUES ('American Wash Company');
+INSERT INTO "brand" ("brandname") VALUES ('American Welding & Machine Co');
+INSERT INTO "brand" ("brandname") VALUES ('American Welding Service');
+INSERT INTO "brand" ("brandname") VALUES ('Americana');
+INSERT INTO "brand" ("brandname") VALUES ('Americana Chopper');
+INSERT INTO "brand" ("brandname") VALUES ('AmeriFab Industries');
+INSERT INTO "brand" ("brandname") VALUES ('AmeriMax');
+INSERT INTO "brand" ("brandname") VALUES ('AmeriQuip');
+INSERT INTO "brand" ("brandname") VALUES ('AMERITECH CORPORATION');
+INSERT INTO "brand" ("brandname") VALUES ('Amfab');
+INSERT INTO "brand" ("brandname") VALUES ('AMP Customs');
+INSERT INTO "brand" ("brandname") VALUES ('AMP Motor Vehicles');
+INSERT INTO "brand" ("brandname") VALUES ('AMPHI-RANGER');
+INSERT INTO "brand" ("brandname") VALUES ('AMS');
+INSERT INTO "brand" ("brandname") VALUES ('AMS Global');
+INSERT INTO "brand" ("brandname") VALUES ('Anaheim Welding & Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('Anderson Custom Iron Works');
+INSERT INTO "brand" ("brandname") VALUES ('Anderson Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Anderson Mfg.');
+INSERT INTO "brand" ("brandname") VALUES ('Anderson Repair');
+INSERT INTO "brand" ("brandname") VALUES ('Anderson Truck Body & Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('Andros Engineering');
+INSERT INTO "brand" ("brandname") VALUES ('Anhui Ankai');
+INSERT INTO "brand" ("brandname") VALUES ('Antioch');
+INSERT INTO "brand" ("brandname") VALUES ('Antrim Metalworking & Repair');
+INSERT INTO "brand" ("brandname") VALUES ('Anvil Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Anysizer Chassis Manufacturing Co');
+INSERT INTO "brand" ("brandname") VALUES ('Anything Goes Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('APA');
+INSERT INTO "brand" ("brandname") VALUES ('Apache');
+INSERT INTO "brand" ("brandname") VALUES ('APACHE  SINCA INDUSTRIES INC');
+INSERT INTO "brand" ("brandname") VALUES ('Apache Golf Cars');
+INSERT INTO "brand" ("brandname") VALUES ('APC EQUIPMENT');
+INSERT INTO "brand" ("brandname") VALUES ('Apex Motor');
+INSERT INTO "brand" ("brandname") VALUES ('API');
+INSERT INTO "brand" ("brandname") VALUES ('Aplus Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Apollo Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('APOLLO TRAILER COMPANY');
+INSERT INTO "brand" ("brandname") VALUES ('Appalachian Teardrop Company');
+INSERT INTO "brand" ("brandname") VALUES ('Appalachian Trailer Sales');
+INSERT INTO "brand" ("brandname") VALUES ('Appalachian Trailers Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Appleton Steel, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Applied Cryo Technologies');
+INSERT INTO "brand" ("brandname") VALUES ('Aprilia spa');
+INSERT INTO "brand" ("brandname") VALUES ('APS Systems');
+INSERT INTO "brand" ("brandname") VALUES ('Aptera Motors');
+INSERT INTO "brand" ("brandname") VALUES ('Aquacraft Inc');
+INSERT INTO "brand" ("brandname") VALUES ('ARC Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Arcade Iron Motorcycle Company');
+INSERT INTO "brand" ("brandname") VALUES ('Arch Cargo Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Arch Motorcycle Co');
+INSERT INTO "brand" ("brandname") VALUES ('Arcimoto');
+INSERT INTO "brand" ("brandname") VALUES ('Arcweld');
+INSERT INTO "brand" ("brandname") VALUES ('Arena Werks');
+INSERT INTO "brand" ("brandname") VALUES ('ARGO FAB, INC');
+INSERT INTO "brand" ("brandname") VALUES ('ARGO Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Arising Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Arizona Trailer Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Arizona Trailer Specialists');
+INSERT INTO "brand" ("brandname") VALUES ('ARIZONA WOODRIVER OUTFITTERS, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Ark Custom Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Arkfeld');
+INSERT INTO "brand" ("brandname") VALUES ('Armadillo Camper Kits');
+INSERT INTO "brand" ("brandname") VALUES ('Armbruster Stageway');
+INSERT INTO "brand" ("brandname") VALUES ('Armor Chassis');
+INSERT INTO "brand" ("brandname") VALUES ('Armor Lite Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Armstrong Trailer Products, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Armstrong Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Arnold Machine');
+INSERT INTO "brand" ("brandname") VALUES ('ARO SA');
+INSERT INTO "brand" ("brandname") VALUES ('Arrow Dump Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('ARROWHEAD');
+INSERT INTO "brand" ("brandname") VALUES ('Arsenal of Virginia');
+INSERT INTO "brand" ("brandname") VALUES ('Arsenal Trailer Manufacturing Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Art''s Portable Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Art In Motion');
+INSERT INTO "brand" ("brandname") VALUES ('Art Roll Tech');
+INSERT INTO "brand" ("brandname") VALUES ('ArTech Parts Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('ASC, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('ASE');
+INSERT INTO "brand" ("brandname") VALUES ('Ashcroft Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('ASHFORD MFG');
+INSERT INTO "brand" ("brandname") VALUES ('ASI TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('ASPEN TRAILER INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Asphalt Equipment & Service');
+INSERT INTO "brand" ("brandname") VALUES ('Asphalt Machinery');
+INSERT INTO "brand" ("brandname") VALUES ('Asphalt Zipper Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Asphalt Zipper Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('AspireTec');
+INSERT INTO "brand" ("brandname") VALUES ('ASTEC INDUSTRIES INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Astec Mobile Screens');
+INSERT INTO "brand" ("brandname") VALUES ('Astec Underground');
+INSERT INTO "brand" ("brandname") VALUES ('Aston Martin');
+INSERT INTO "brand" ("brandname") VALUES ('ASTORIA INDUSTRIES, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Asuna');
+INSERT INTO "brand" ("brandname") VALUES ('Atec Aanhangwagens');
+INSERT INTO "brand" ("brandname") VALUES ('Atek Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('ATK');
+INSERT INTO "brand" ("brandname") VALUES ('Atlanta Fabricating & Equipment Co');
+INSERT INTO "brand" ("brandname") VALUES ('ATLANTIC TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('ATLAS');
+INSERT INTO "brand" ("brandname") VALUES ('Atlas Copco');
+INSERT INTO "brand" ("brandname") VALUES ('Atlas Custom Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('ATLAS Lift Trailers, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Atlas Mfg Co Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Atoka Trailer & Mfg.');
+INSERT INTO "brand" ("brandname") VALUES ('Atomic Electric Vehicles');
+INSERT INTO "brand" ("brandname") VALUES ('ATR');
+INSERT INTO "brand" ("brandname") VALUES ('ATSATV');
+INSERT INTO "brand" ("brandname") VALUES ('ATT R&D');
+INSERT INTO "brand" ("brandname") VALUES ('ATTITUDE CUSTOM CYCLES, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('ATWOOD TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('Audi');
+INSERT INTO "brand" ("brandname") VALUES ('Augusta RV');
+INSERT INTO "brand" ("brandname") VALUES ('Aurora Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Austin EV METRO');
+INSERT INTO "brand" ("brandname") VALUES ('Austin Welding Service');
+INSERT INTO "brand" ("brandname") VALUES ('AUTO-MANIA');
+INSERT INTO "brand" ("brandname") VALUES ('Auto Motion Ind.');
+INSERT INTO "brand" ("brandname") VALUES ('Auto Truck');
+INSERT INTO "brand" ("brandname") VALUES ('Autocar');
+INSERT INTO "brand" ("brandname") VALUES ('Autocar Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Autodelta USA Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Autokad');
+INSERT INTO "brand" ("brandname") VALUES ('Automated Engineering Systems Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Automotive Transformation Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Avanti');
+INSERT INTO "brand" ("brandname") VALUES ('Avanti Motors');
+INSERT INTO "brand" ("brandname") VALUES ('Avera Motors');
+INSERT INTO "brand" ("brandname") VALUES ('Avesco Welding & Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('Avila Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Awesome Rebuild');
+INSERT INTO "brand" ("brandname") VALUES ('Axis Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('AZ-CAL');
+INSERT INTO "brand" ("brandname") VALUES ('AZIMUTH INC.');
+INSERT INTO "brand" ("brandname") VALUES ('AZLand');
+INSERT INTO "brand" ("brandname") VALUES ('Aztec Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Azure Dynamics');
+INSERT INTO "brand" ("brandname") VALUES ('B''s In A Pod Camping LLC');
+INSERT INTO "brand" ("brandname") VALUES ('B-Line Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('B-WELDING');
+INSERT INTO "brand" ("brandname") VALUES ('B & B Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('B & B Fabricators');
+INSERT INTO "brand" ("brandname") VALUES ('B & B TRAILER SALES');
+INSERT INTO "brand" ("brandname") VALUES ('B & B Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('B & D');
+INSERT INTO "brand" ("brandname") VALUES ('B & H Customs');
+INSERT INTO "brand" ("brandname") VALUES ('B & M HI-LITE');
+INSERT INTO "brand" ("brandname") VALUES ('B & M Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('B & M Trailer Sales');
+INSERT INTO "brand" ("brandname") VALUES ('B & R Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('B & R WELDING');
+INSERT INTO "brand" ("brandname") VALUES ('B & S TRAILER SALES');
+INSERT INTO "brand" ("brandname") VALUES ('B & T MANUFACTURING DBA XTREME TRAILER');
+INSERT INTO "brand" ("brandname") VALUES ('B & W CONSTRUCTION');
+INSERT INTO "brand" ("brandname") VALUES ('B & W Mantrad');
+INSERT INTO "brand" ("brandname") VALUES ('B & W TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('B and M Trailer Sales');
+INSERT INTO "brand" ("brandname") VALUES ('B B''S TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('B&A TRAILERS INC.');
+INSERT INTO "brand" ("brandname") VALUES ('B&B MICRO MANUFACTURING INC');
+INSERT INTO "brand" ("brandname") VALUES ('B&B Precision Builders, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('B&M Performance Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('B&W');
+INSERT INTO "brand" ("brandname") VALUES ('B+B Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Bach Built Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('BACK 40 CREATIONS');
+INSERT INTO "brand" ("brandname") VALUES ('Back 40 Supply');
+INSERT INTO "brand" ("brandname") VALUES ('Back Track Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Back Yard Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('BackRoad Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('BackTrek');
+INSERT INTO "brand" ("brandname") VALUES ('BACKWATER TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('Backwoods Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Backyard Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('BACKYARD TRAILERS, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Bad 2D Bone Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Bad Ass Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Bad Boy Buggy');
+INSERT INTO "brand" ("brandname") VALUES ('Bad Boy Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('Bad Boy Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Bad Boys Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Bad Boyz Toyz');
+INSERT INTO "brand" ("brandname") VALUES ('Bad Island Toyz');
+INSERT INTO "brand" ("brandname") VALUES ('Badass Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Badge Boyz Customz');
+INSERT INTO "brand" ("brandname") VALUES ('Badger Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('Badlands Steel Worx');
+INSERT INTO "brand" ("brandname") VALUES ('Baggett''s Trailer Connection');
+INSERT INTO "brand" ("brandname") VALUES ('Bahn Wagen');
+INSERT INTO "brand" ("brandname") VALUES ('BAHR CUSTOM BOATS & TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('Bair Bodies and Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Baird & Slaska Mfg');
+INSERT INTO "brand" ("brandname") VALUES ('Baja');
+INSERT INTO "brand" ("brandname") VALUES ('Baja Custom Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Baja Steel Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Bajaj Auto');
+INSERT INTO "brand" ("brandname") VALUES ('Baker');
+INSERT INTO "brand" ("brandname") VALUES ('Bakers Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Bakkura Mobility');
+INSERT INTO "brand" ("brandname") VALUES ('Baldor Generators');
+INSERT INTO "brand" ("brandname") VALUES ('Bales Equipment Trailers LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Balestra');
+INSERT INTO "brand" ("brandname") VALUES ('BALKO');
+INSERT INTO "brand" ("brandname") VALUES ('Ballard Power Systems Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Ballews');
+INSERT INTO "brand" ("brandname") VALUES ('Balon Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('Baltic Industries Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Balzer');
+INSERT INTO "brand" ("brandname") VALUES ('Balzer Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Bama LSV');
+INSERT INTO "brand" ("brandname") VALUES ('Bandit Choppers LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Bandy Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Banens');
+INSERT INTO "brand" ("brandname") VALUES ('Bantam Trailers USA');
+INSERT INTO "brand" ("brandname") VALUES ('BAODIAO');
+INSERT INTO "brand" ("brandname") VALUES ('Bar-Bel Fabricating');
+INSERT INTO "brand" ("brandname") VALUES ('Bar H Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Bar Y');
+INSERT INTO "brand" ("brandname") VALUES ('Barclay Truck Rebuilders');
+INSERT INTO "brand" ("brandname") VALUES ('BARCO Industrial Supply');
+INSERT INTO "brand" ("brandname") VALUES ('Barcroft Welding and Ornamental Iron');
+INSERT INTO "brand" ("brandname") VALUES ('Bare Knuckle Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Barlow''s Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Barnstorm Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('Barnyard Customs');
+INSERT INTO "brand" ("brandname") VALUES ('BARON MOTORCYCLES, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Baron USA Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Barreto Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Barrett Trailers, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Barrier Systems');
+INSERT INTO "brand" ("brandname") VALUES ('Barro AG Welding & Trailer Repair');
+INSERT INTO "brand" ("brandname") VALUES ('Barro Ag Welding and Trailer Repair');
+INSERT INTO "brand" ("brandname") VALUES ('Barry''s Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Bartel Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Bartley Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('Base Camp Recreational Vehicles');
+INSERT INTO "brand" ("brandname") VALUES ('Basecamp');
+INSERT INTO "brand" ("brandname") VALUES ('Batco');
+INSERT INTO "brand" ("brandname") VALUES ('Battle Wagon Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Bauer');
+INSERT INTO "brand" ("brandname") VALUES ('Baughman Products');
+INSERT INTO "brand" ("brandname") VALUES ('Bauss Manufacturing Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Bay Bridge Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Bay City Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('BAY EQUIPMENT AND REPAIR (BEAR)');
+INSERT INTO "brand" ("brandname") VALUES ('Bay Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Bay Town Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Bayer Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Bayshore');
+INSERT INTO "brand" ("brandname") VALUES ('Bayshore Systems, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('BAZ MFG.');
+INSERT INTO "brand" ("brandname") VALUES ('Bazooka Farmstar Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('BB Buggies');
+INSERT INTO "brand" ("brandname") VALUES ('BB Rollahome');
+INSERT INTO "brand" ("brandname") VALUES ('BBK');
+INSERT INTO "brand" ("brandname") VALUES ('BC TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('BCA Fabrication LLC');
+INSERT INTO "brand" ("brandname") VALUES ('BCA INDUSTRIES');
+INSERT INTO "brand" ("brandname") VALUES ('BCI MANUFACTURING');
+INSERT INTO "brand" ("brandname") VALUES ('BCI Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Be Seen Advertising and Custom Designs');
+INSERT INTO "brand" ("brandname") VALUES ('Beach City Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('Beach King Inc');
+INSERT INTO "brand" ("brandname") VALUES ('BEALL');
+INSERT INTO "brand" ("brandname") VALUES ('Beall Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Beamco');
+INSERT INTO "brand" ("brandname") VALUES ('Bean & Conquest, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Bear');
+INSERT INTO "brand" ("brandname") VALUES ('Bear Bones');
+INSERT INTO "brand" ("brandname") VALUES ('Bear River Fabrication & Machine');
+INSERT INTO "brand" ("brandname") VALUES ('Bear Steel');
+INSERT INTO "brand" ("brandname") VALUES ('Bear Track Products');
+INSERT INTO "brand" ("brandname") VALUES ('Bear Trailer Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Bearcat');
+INSERT INTO "brand" ("brandname") VALUES ('Beck''s Mobile Home and RV Center');
+INSERT INTO "brand" ("brandname") VALUES ('BECK TRAILER MANUFACTURING INC');
+INSERT INTO "brand" ("brandname") VALUES ('Beckenridge');
+INSERT INTO "brand" ("brandname") VALUES ('BEDARD TANKERS INC');
+INSERT INTO "brand" ("brandname") VALUES ('Bee Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Beehive Road Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Behnke Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('Beijing North Huade Neoplan Bus');
+INSERT INTO "brand" ("brandname") VALUES ('Beiler Machine');
+INSERT INTO "brand" ("brandname") VALUES ('Bell Custom Products');
+INSERT INTO "brand" ("brandname") VALUES ('BELL POWER SYSTEMS, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Bella Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('BellaCar');
+INSERT INTO "brand" ("brandname") VALUES ('BELLUE''S WELDING');
+INSERT INTO "brand" ("brandname") VALUES ('Belmont Machine');
+INSERT INTO "brand" ("brandname") VALUES ('Belmont Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Belshe Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Benchmark Motorcycles and Utility Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Bendron Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('Benelli');
+INSERT INTO "brand" ("brandname") VALUES ('Benelli, Q J Srl');
+INSERT INTO "brand" ("brandname") VALUES ('Bennett''s Garage & Towing');
+INSERT INTO "brand" ("brandname") VALUES ('BENTECH INDUSTRIES');
+INSERT INTO "brand" ("brandname") VALUES ('Bentley');
+INSERT INTO "brand" ("brandname") VALUES ('Bentley Industries, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Bentley Trailers & Custom Coaches');
+INSERT INTO "brand" ("brandname") VALUES ('Berg Equipment Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('BERGEI''S BAD BOYZ BIKES');
+INSERT INTO "brand" ("brandname") VALUES ('Berggie');
+INSERT INTO "brand" ("brandname") VALUES ('Bergkamp');
+INSERT INTO "brand" ("brandname") VALUES ('Bering Truck Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('BERLON INDUSTRIES, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Bert Jensen & Sons, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Bert Walters and Sons');
+INSERT INTO "brand" ("brandname") VALUES ('BERTOLINI');
+INSERT INTO "brand" ("brandname") VALUES ('BES&T Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Besler Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Best Bet Fabrication Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Best Bilt');
+INSERT INTO "brand" ("brandname") VALUES ('BEST BUILT');
+INSERT INTO "brand" ("brandname") VALUES ('Best Built Manufacturing Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Best Lane Enterprises dba Ramp Free');
+INSERT INTO "brand" ("brandname") VALUES ('BEST OF SHOW DETAILING SYSTEMS');
+INSERT INTO "brand" ("brandname") VALUES ('BEST TRAILER');
+INSERT INTO "brand" ("brandname") VALUES ('Best Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('BestBilt Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Bestmade');
+INSERT INTO "brand" ("brandname") VALUES ('BesTrailers');
+INSERT INTO "brand" ("brandname") VALUES ('Bestway');
+INSERT INTO "brand" ("brandname") VALUES ('Better-Bilt');
+INSERT INTO "brand" ("brandname") VALUES ('Better Bilt Custom Fabrication & Repair');
+INSERT INTO "brand" ("brandname") VALUES ('BETTER BUILT TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('Better Made Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('BETTER WEIGH MFG');
+INSERT INTO "brand" ("brandname") VALUES ('Betterbuilt Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Beyond Extreme, LLC dba Extreme Cycle Works');
+INSERT INTO "brand" ("brandname") VALUES ('BG Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('BGRS INC');
+INSERT INTO "brand" ("brandname") VALUES ('Bicknell Racing Products');
+INSERT INTO "brand" ("brandname") VALUES ('Bienville');
+INSERT INTO "brand" ("brandname") VALUES ('Big Bear Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Big Boar Custom Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('Big Boy Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Big Boy Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Big Bubba''s Trailer Sales');
+INSERT INTO "brand" ("brandname") VALUES ('Big City Cycle');
+INSERT INTO "brand" ("brandname") VALUES ('Big D''s Products');
+INSERT INTO "brand" ("brandname") VALUES ('Big Dog Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('BIG E TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('Big Easy Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Big Horn');
+INSERT INTO "brand" ("brandname") VALUES ('Big John Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Big O''s Manufacturing,Inc');
+INSERT INTO "brand" ("brandname") VALUES ('BIg Red Engineering');
+INSERT INTO "brand" ("brandname") VALUES ('Big Smith Sales & Service');
+INSERT INTO "brand" ("brandname") VALUES ('Big Tex Trailer Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Big Tony''s Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Big W Sales');
+INSERT INTO "brand" ("brandname") VALUES ('BIGASS GRILLS AND SMOKERS');
+INSERT INTO "brand" ("brandname") VALUES ('BigBoy Trailer, MFG.');
+INSERT INTO "brand" ("brandname") VALUES ('Bigfoot Industries (2010) Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Bigfoot Trailers LLC');
+INSERT INTO "brand" ("brandname") VALUES ('BigLug Trailer Works');
+INSERT INTO "brand" ("brandname") VALUES ('Bike Performance & Accessories');
+INSERT INTO "brand" ("brandname") VALUES ('Bil-Jax');
+INSERT INTO "brand" ("brandname") VALUES ('Bildon Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Bill''s Tralier Sales');
+INSERT INTO "brand" ("brandname") VALUES ('Bill’s Welding & Repair');
+INSERT INTO "brand" ("brandname") VALUES ('Billings Trailer Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('BILLS');
+INSERT INTO "brand" ("brandname") VALUES ('Billy''s Hot Rod Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('Billy Bob''s Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Billy Goat Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Binder Trailer Mfg.');
+INSERT INTO "brand" ("brandname") VALUES ('Biohazard Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('Biotech Systems, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Birschbach MFG.');
+INSERT INTO "brand" ("brandname") VALUES ('Biscamp''s Trailer Sales');
+INSERT INTO "brand" ("brandname") VALUES ('Bison Coach');
+INSERT INTO "brand" ("brandname") VALUES ('Bitter End - Old School Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Bittercreek Hunting Blinds & Dog Boxes, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Bivy');
+INSERT INTO "brand" ("brandname") VALUES ('BJN Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('BK Developments Ltd.');
+INSERT INTO "brand" ("brandname") VALUES ('Black Brothers Equipment Sales');
+INSERT INTO "brand" ("brandname") VALUES ('Black Hawk');
+INSERT INTO "brand" ("brandname") VALUES ('Black Hawk Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Black Horse Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('BLACK IRON CHOPPERS LTD');
+INSERT INTO "brand" ("brandname") VALUES ('BLACK LABEL CHOPPERS LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Black River Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Black Scorpion Off Road');
+INSERT INTO "brand" ("brandname") VALUES ('Black Sunshine Customs');
+INSERT INTO "brand" ("brandname") VALUES ('Black Tie Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Blackrock Trailers Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('Blackseries Campers Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Blacksmith Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Blackstone Trailer Company');
+INSERT INTO "brand" ("brandname") VALUES ('BLACKWATER');
+INSERT INTO "brand" ("brandname") VALUES ('Blair Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Blairz Homes');
+INSERT INTO "brand" ("brandname") VALUES ('Blastcrete Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('Blazing Technologies');
+INSERT INTO "brand" ("brandname") VALUES ('Blockbuster, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Bloomer Trailer Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Bloomfield Custom Fabrication Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Blue Bird');
+INSERT INTO "brand" ("brandname") VALUES ('Blue Coyote');
+INSERT INTO "brand" ("brandname") VALUES ('Blue Coyote Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Blue Lake Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Blue Line Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Blue Mist Holdings');
+INSERT INTO "brand" ("brandname") VALUES ('Blue Ridge Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Blue Ridge Mountain Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Blue Ridge Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Blue Steel Axle & Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('Blue Steel Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Blue Streak Manufacturing LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Blue Thunder Custom Motorcycles Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Bluecar, SAS');
+INSERT INTO "brand" ("brandname") VALUES ('Bluegrass Industries, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Bluegrass Tank & Equipment Co, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Blueline Manufacturing Company');
+INSERT INTO "brand" ("brandname") VALUES ('Blueridge Exotic Transport');
+INSERT INTO "brand" ("brandname") VALUES ('Blueridge Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Blueridge Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Blum''s Fab & Design');
+INSERT INTO "brand" ("brandname") VALUES ('BMC Motorcycle Co.');
+INSERT INTO "brand" ("brandname") VALUES ('BMS');
+INSERT INTO "brand" ("brandname") VALUES ('BMW');
+INSERT INTO "brand" ("brandname") VALUES ('BNM Trailer Sales');
+INSERT INTO "brand" ("brandname") VALUES ('BO Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Boatmate Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Bob''s Custom Creations');
+INSERT INTO "brand" ("brandname") VALUES ('BOB''S TRAILER SALES AND SERVICE');
+INSERT INTO "brand" ("brandname") VALUES ('BOB''S WELDING & FABRICATION');
+INSERT INTO "brand" ("brandname") VALUES ('Bob Boersma Co.');
+INSERT INTO "brand" ("brandname") VALUES ('Bob Gerena Fabricating Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Bobby''s Rule');
+INSERT INTO "brand" ("brandname") VALUES ('Bocats');
+INSERT INTO "brand" ("brandname") VALUES ('Bock Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Bodeann Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Bodholt Brothers Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Bohnenkamp''s Whitewater Customs');
+INSERT INTO "brand" ("brandname") VALUES ('Bohnert Welding');
+INSERT INTO "brand" ("brandname") VALUES ('BOLINGER INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Bollin Tile Stringer');
+INSERT INTO "brand" ("brandname") VALUES ('BOLLINGER-ONKEN INC');
+INSERT INTO "brand" ("brandname") VALUES ('BOMAG PAVING PRODUCTS');
+INSERT INTO "brand" ("brandname") VALUES ('Bonnell Industries');
+INSERT INTO "brand" ("brandname") VALUES ('BOOM');
+INSERT INTO "brand" ("brandname") VALUES ('Boom Trikes USA');
+INSERT INTO "brand" ("brandname") VALUES ('Boomer''s Trikes');
+INSERT INTO "brand" ("brandname") VALUES ('Boondock Campers LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Boondocker Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Boot Hill Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Booth Specialty Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('BOOTSTRAP INC');
+INSERT INTO "brand" ("brandname") VALUES ('Boscher Industrias, SA DE CV dba Boscher');
+INSERT INTO "brand" ("brandname") VALUES ('Boss-LTG');
+INSERT INTO "brand" ("brandname") VALUES ('Boss Equipment Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Boss Hoss Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('Boss Powersports');
+INSERT INTO "brand" ("brandname") VALUES ('Boulder Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Boulder Electric Vehicle');
+INSERT INTO "brand" ("brandname") VALUES ('BOULDING & LAWSON, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Bourbon Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('BOURG CHEMICAL DISTRIBUTING, INC');
+INSERT INTO "brand" ("brandname") VALUES ('BOURGET''S BIKE WORKS');
+INSERT INTO "brand" ("brandname") VALUES ('Bovine Pedicure Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Bowie Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Bowlus Road Chief');
+INSERT INTO "brand" ("brandname") VALUES ('BOXED UTILITY TRAILER TECHNOLOGIES');
+INSERT INTO "brand" ("brandname") VALUES ('Boxes Creek Fabricating & Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Boydstun Metal Works');
+INSERT INTO "brand" ("brandname") VALUES ('BQ Grills');
+INSERT INTO "brand" ("brandname") VALUES ('BRADFORD BUILT');
+INSERT INTO "brand" ("brandname") VALUES ('Bradley');
+INSERT INTO "brand" ("brandname") VALUES ('Brainard Kilman Drill Company');
+INSERT INTO "brand" ("brandname") VALUES ('Braun');
+INSERT INTO "brand" ("brandname") VALUES ('Braun Northwest');
+INSERT INTO "brand" ("brandname") VALUES ('Brave');
+INSERT INTO "brand" ("brandname") VALUES ('Bravo Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Bravo Trailers Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Braxton Creek');
+INSERT INTO "brand" ("brandname") VALUES ('Braxton Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Brazos');
+INSERT INTO "brand" ("brandname") VALUES ('BRC Custom Coaches & Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Breckenridge');
+INSERT INTO "brand" ("brandname") VALUES ('Brehmer');
+INSERT INTO "brand" ("brandname") VALUES ('BRENDERUP TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('Brenner');
+INSERT INTO "brand" ("brandname") VALUES ('Brenner Tank');
+INSERT INTO "brand" ("brandname") VALUES ('BRESEE MANUFACTURING');
+INSERT INTO "brand" ("brandname") VALUES ('Brewer Automotive Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('Brewer Cote Southwest');
+INSERT INTO "brand" ("brandname") VALUES ('BRIAB');
+INSERT INTO "brand" ("brandname") VALUES ('Brindle Products, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Britton');
+INSERT INTO "brand" ("brandname") VALUES ('BRM Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('BROCK''S FIELD SERVICE FABRICATION');
+INSERT INTO "brand" ("brandname") VALUES ('Broken Bonz');
+INSERT INTO "brand" ("brandname") VALUES ('Brooks Brothers');
+INSERT INTO "brand" ("brandname") VALUES ('Brother''s Fleet Service');
+INSERT INTO "brand" ("brandname") VALUES ('Brotherhood Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('Brothers Body and Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('Brothers Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('BROUGHAM BRIDGER');
+INSERT INTO "brand" ("brandname") VALUES ('Brower Equipment Sales');
+INSERT INTO "brand" ("brandname") VALUES ('Brown & Reese Enterprises, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('BROWN EQUIPMENT COMPANY');
+INSERT INTO "brand" ("brandname") VALUES ('Brown Industries');
+INSERT INTO "brand" ("brandname") VALUES ('BROWN MANUFACTURING');
+INSERT INTO "brand" ("brandname") VALUES ('Brownell Boat Trailers, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Brownell Hydraulic Trailers Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Broyhill');
+INSERT INTO "brand" ("brandname") VALUES ('BRP');
+INSERT INTO "brand" ("brandname") VALUES ('Bruder Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Brumby Iron Horse Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('Brumley''s Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Brumley Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Bruno Independent Living Aids');
+INSERT INTO "brand" ("brandname") VALUES ('Bruno Trailer Co.');
+INSERT INTO "brand" ("brandname") VALUES ('BRUNSWICK TRAILERS PLUS AND MARINE INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Bruton Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Brutus');
+INSERT INTO "brand" ("brandname") VALUES ('BRYAN POAGE INC.');
+INSERT INTO "brand" ("brandname") VALUES ('BRYANT''S TRAILERS, INC');
+INSERT INTO "brand" ("brandname") VALUES ('Bryant Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('BSC Motorsports');
+INSERT INTO "brand" ("brandname") VALUES ('BT&T');
+INSERT INTO "brand" ("brandname") VALUES ('BTM');
+INSERT INTO "brand" ("brandname") VALUES ('Bubble Buddy');
+INSERT INTO "brand" ("brandname") VALUES ('Buchanan Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Buck Dandy');
+INSERT INTO "brand" ("brandname") VALUES ('BUCKBILT TRAILERS, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Buckeye Fire');
+INSERT INTO "brand" ("brandname") VALUES ('Buckner Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Bud Antle Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Buell');
+INSERT INTO "brand" ("brandname") VALUES ('Buell (EBR)');
+INSERT INTO "brand" ("brandname") VALUES ('Buffalo Trailer Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Buffalo Truck Equipers, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Bug Motors');
+INSERT INTO "brand" ("brandname") VALUES ('Bugatti');
+INSERT INTO "brand" ("brandname") VALUES ('Buick');
+INSERT INTO "brand" ("brandname") VALUES ('Build 2020');
+INSERT INTO "brand" ("brandname") VALUES ('BUILT-RITE TRAILERS, INC');
+INSERT INTO "brand" ("brandname") VALUES ('Built By Koch');
+INSERT INTO "brand" ("brandname") VALUES ('BUILT RITE TRAILERS OF NEBRASKA, INC');
+INSERT INTO "brand" ("brandname") VALUES ('BUILTRITE TRAILER');
+INSERT INTO "brand" ("brandname") VALUES ('BULK');
+INSERT INTO "brand" ("brandname") VALUES ('BULK FABRICATED PRODUCTS');
+INSERT INTO "brand" ("brandname") VALUES ('Bulk Tank International');
+INSERT INTO "brand" ("brandname") VALUES ('Bulk Tek Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Bull-Dawg Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Bull Manufacturing LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Bull Stout Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Bulldog Carts');
+INSERT INTO "brand" ("brandname") VALUES ('Bulldog Steel Fabrication LLC');
+INSERT INTO "brand" ("brandname") VALUES ('BULLDOG TRAILERWORKS');
+INSERT INTO "brand" ("brandname") VALUES ('Bulletproof Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Bullhead Steel Fabricators, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Bullmobile Trailers Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Bully Brand Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Bundit');
+INSERT INTO "brand" ("brandname") VALUES ('Burch Body Works, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Burch Tank & Truck');
+INSERT INTO "brand" ("brandname") VALUES ('Burch Welding & Tank');
+INSERT INTO "brand" ("brandname") VALUES ('Burchland Mfg.');
+INSERT INTO "brand" ("brandname") VALUES ('Burke''s Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Burke Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('Burkett''s Autorama');
+INSERT INTO "brand" ("brandname") VALUES ('Burns Mfg.');
+INSERT INTO "brand" ("brandname") VALUES ('BURRO TRAVEL TRAILERS, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('BURTEK INCORPORATED');
+INSERT INTO "brand" ("brandname") VALUES ('Busby International, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Bushman');
+INSERT INTO "brand" ("brandname") VALUES ('Bushtec');
+INSERT INTO "brand" ("brandname") VALUES ('Bushtec Products');
+INSERT INTO "brand" ("brandname") VALUES ('Bushwakka');
+INSERT INTO "brand" ("brandname") VALUES ('Busscar');
+INSERT INTO "brand" ("brandname") VALUES ('Butler Trailer Sales');
+INSERT INTO "brand" ("brandname") VALUES ('Buttler Built');
+INSERT INTO "brand" ("brandname") VALUES ('Buy Enterprise');
+INSERT INTO "brand" ("brandname") VALUES ('BWI');
+INSERT INTO "brand" ("brandname") VALUES ('Bwise Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('BWS Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('BXR LLC');
+INSERT INTO "brand" ("brandname") VALUES ('BYC');
+INSERT INTO "brand" ("brandname") VALUES ('BYD');
+INSERT INTO "brand" ("brandname") VALUES ('BYD Auto');
+INSERT INTO "brand" ("brandname") VALUES ('BYD Coach & Bus');
+INSERT INTO "brand" ("brandname") VALUES ('Bye-Rite Trailer Sales');
+INSERT INTO "brand" ("brandname") VALUES ('C-Hawk Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('C-R CHEETAH RACE CARS');
+INSERT INTO "brand" ("brandname") VALUES ('C-Trail');
+INSERT INTO "brand" ("brandname") VALUES ('C & B Quality Trailer Works');
+INSERT INTO "brand" ("brandname") VALUES ('C & B TRAILERS MANUFACTURING LLC');
+INSERT INTO "brand" ("brandname") VALUES ('C & C Mfg.');
+INSERT INTO "brand" ("brandname") VALUES ('C & C Trailer Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('C & C Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('C & D Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('C & H Quality Trailer Sales LLC');
+INSERT INTO "brand" ("brandname") VALUES ('C & H TRAILERS, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('C & M Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('C & M Fabrications, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('C & M Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('C & P Engineering and Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('C & S CHOPPERS INC');
+INSERT INTO "brand" ("brandname") VALUES ('C & S TRAILER DEPOT, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('C & W Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('C and C Tooling');
+INSERT INTO "brand" ("brandname") VALUES ('C B Repair & Trailer Maintenance');
+INSERT INTO "brand" ("brandname") VALUES ('C F Welding & Mfg Inc');
+INSERT INTO "brand" ("brandname") VALUES ('C M MART, INC(PHANTOM TRAILERS)');
+INSERT INTO "brand" ("brandname") VALUES ('C N Power Systems Inc');
+INSERT INTO "brand" ("brandname") VALUES ('C&B Manufacturing (Hitchdoc)');
+INSERT INTO "brand" ("brandname") VALUES ('C&M TRAILERS INC');
+INSERT INTO "brand" ("brandname") VALUES ('C&P Trailer Sales');
+INSERT INTO "brand" ("brandname") VALUES ('C&R Metalworks');
+INSERT INTO "brand" ("brandname") VALUES ('C&W Industries');
+INSERT INTO "brand" ("brandname") VALUES ('C&W Manufacturing and Sales Co.');
+INSERT INTO "brand" ("brandname") VALUES ('C.P.S.');
+INSERT INTO "brand" ("brandname") VALUES ('C.V. INC');
+INSERT INTO "brand" ("brandname") VALUES ('C3 Design');
+INSERT INTO "brand" ("brandname") VALUES ('C3 Welding');
+INSERT INTO "brand" ("brandname") VALUES ('C4 Welding');
+INSERT INTO "brand" ("brandname") VALUES ('CABIN CRAFT INC');
+INSERT INTO "brand" ("brandname") VALUES ('Cable Pulling Equipment Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Cadillac');
+INSERT INTO "brand" ("brandname") VALUES ('Cajas y Semiremolques Blatz');
+INSERT INTO "brand" ("brandname") VALUES ('Cajun Gear Inc');
+INSERT INTO "brand" ("brandname") VALUES ('CAJUN TRAILER AND FARM MFG.');
+INSERT INTO "brand" ("brandname") VALUES ('Cal-Trailer Mfg');
+INSERT INTO "brand" ("brandname") VALUES ('CAL CENTRAL CATERING TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('Calcross');
+INSERT INTO "brand" ("brandname") VALUES ('Calder Brothers');
+INSERT INTO "brand" ("brandname") VALUES ('Calhome');
+INSERT INTO "brand" ("brandname") VALUES ('Calico Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('California');
+INSERT INTO "brand" ("brandname") VALUES ('California Live Floors');
+INSERT INTO "brand" ("brandname") VALUES ('CALIFORNIA METAL WORKS');
+INSERT INTO "brand" ("brandname") VALUES ('California Motorcycle Company (CMC)');
+INSERT INTO "brand" ("brandname") VALUES ('California Performance Iron');
+INSERT INTO "brand" ("brandname") VALUES ('California Scooter');
+INSERT INTO "brand" ("brandname") VALUES ('California Sidecar');
+INSERT INTO "brand" ("brandname") VALUES ('California Trailer Works');
+INSERT INTO "brand" ("brandname") VALUES ('Callahan Custom Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Calmarc Cabs');
+INSERT INTO "brand" ("brandname") VALUES ('Calnan Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('Cam-Concept');
+INSERT INTO "brand" ("brandname") VALUES ('Cam Superline');
+INSERT INTO "brand" ("brandname") VALUES ('CAMERON AND SONS WELDING');
+INSERT INTO "brand" ("brandname") VALUES ('Camp');
+INSERT INTO "brand" ("brandname") VALUES ('Camp-Let');
+INSERT INTO "brand" ("brandname") VALUES ('Camp365');
+INSERT INTO "brand" ("brandname") VALUES ('Campa International');
+INSERT INTO "brand" ("brandname") VALUES ('Campagna');
+INSERT INTO "brand" ("brandname") VALUES ('Campbell Supply Co.');
+INSERT INTO "brand" ("brandname") VALUES ('Camper Exchange');
+INSERT INTO "brand" ("brandname") VALUES ('CAMPER PRODUCT INC');
+INSERT INTO "brand" ("brandname") VALUES ('Campers Choice');
+INSERT INTO "brand" ("brandname") VALUES ('CAN-AM');
+INSERT INTO "brand" ("brandname") VALUES ('Canada Trailers Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Canadian Electric Vehicles');
+INSERT INTO "brand" ("brandname") VALUES ('Canage Custom Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Canajoharie Customs');
+INSERT INTO "brand" ("brandname") VALUES ('Cancade Company Limited');
+INSERT INTO "brand" ("brandname") VALUES ('Cannonball Engineering LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Cannondale Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('Canoetote');
+INSERT INTO "brand" ("brandname") VALUES ('Canyon Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Capacity of Texas');
+INSERT INTO "brand" ("brandname") VALUES ('Capco');
+INSERT INTO "brand" ("brandname") VALUES ('Cape Fear Manufacturing, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Capital Automotive');
+INSERT INTO "brand" ("brandname") VALUES ('Capital Industrial');
+INSERT INTO "brand" ("brandname") VALUES ('Capital Pump & Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('Capitol Packaging');
+INSERT INTO "brand" ("brandname") VALUES ('Capones Street Rod');
+INSERT INTO "brand" ("brandname") VALUES ('Capstone Commerce');
+INSERT INTO "brand" ("brandname") VALUES ('Car Mate Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Car Replica Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Car Twin Trailers Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Carbo Tech, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Cardale Industries');
+INSERT INTO "brand" ("brandname") VALUES ('CARDEL');
+INSERT INTO "brand" ("brandname") VALUES ('Carder''s Custom Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('Cardinal Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Carefree Custom Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('Carga Facil');
+INSERT INTO "brand" ("brandname") VALUES ('Cargo-Liner Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Cargo America');
+INSERT INTO "brand" ("brandname") VALUES ('CARGO CRAFT ,INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Cargo Pro, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Cargo South');
+INSERT INTO "brand" ("brandname") VALUES ('Cargo Trailer Sales');
+INSERT INTO "brand" ("brandname") VALUES ('Cargotec Solutions');
+INSERT INTO "brand" ("brandname") VALUES ('Caribean');
+INSERT INTO "brand" ("brandname") VALUES ('CARLIN MANUFACTURING, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Carlton Professional Tree Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('Carolina Boats & Cars');
+INSERT INTO "brand" ("brandname") VALUES ('Carolina Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Carolina Custom Products');
+INSERT INTO "brand" ("brandname") VALUES ('Carolina Equipment & Supply');
+INSERT INTO "brand" ("brandname") VALUES ('Carolina Equipment Sales, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Carolina Growler');
+INSERT INTO "brand" ("brandname") VALUES ('Carolina Hitch & Truck');
+INSERT INTO "brand" ("brandname") VALUES ('Carolina Services');
+INSERT INTO "brand" ("brandname") VALUES ('Carolina Trailers & Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('Carolina Trikes & Minis');
+INSERT INTO "brand" ("brandname") VALUES ('Carriage');
+INSERT INTO "brand" ("brandname") VALUES ('CARRIER SYSTEMS, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('CARRIER TRANSPORTS, INC');
+INSERT INTO "brand" ("brandname") VALUES ('Carrocerias Ayats');
+INSERT INTO "brand" ("brandname") VALUES ('Carrocerias de Lucio');
+INSERT INTO "brand" ("brandname") VALUES ('Carrocerias Fehr');
+INSERT INTO "brand" ("brandname") VALUES ('Carrocerias Gallegos');
+INSERT INTO "brand" ("brandname") VALUES ('Carron Truck Repair LTD');
+INSERT INTO "brand" ("brandname") VALUES ('Carry-On Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Carson Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('CART-AWAY CONCRETE');
+INSERT INTO "brand" ("brandname") VALUES ('Cart Company');
+INSERT INTO "brand" ("brandname") VALUES ('Cart Masters Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('CARTER''S FABRICATION & DESIGN CO');
+INSERT INTO "brand" ("brandname") VALUES ('Carts Unlimited');
+INSERT INTO "brand" ("brandname") VALUES ('Cartservices');
+INSERT INTO "brand" ("brandname") VALUES ('CARY CART COMPANY');
+INSERT INTO "brand" ("brandname") VALUES ('Cary Faas Racing dba Cfrinc');
+INSERT INTO "brand" ("brandname") VALUES ('Cascade Custom Manufacturing Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Cascade General Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Cascade Trailer & Truck');
+INSERT INTO "brand" ("brandname") VALUES ('Cascadian Co');
+INSERT INTO "brand" ("brandname") VALUES ('Cascon Transportation Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('Casinjac');
+INSERT INTO "brand" ("brandname") VALUES ('Casper''s Carts');
+INSERT INTO "brand" ("brandname") VALUES ('Caspers Carts');
+INSERT INTO "brand" ("brandname") VALUES ('Castle Motorcycle');
+INSERT INTO "brand" ("brandname") VALUES ('Cata - Marine');
+INSERT INTO "brand" ("brandname") VALUES ('Catalina Marina');
+INSERT INTO "brand" ("brandname") VALUES ('Catamaran Cruisers');
+INSERT INTO "brand" ("brandname") VALUES ('Caterpillar');
+INSERT INTO "brand" ("brandname") VALUES ('Cates');
+INSERT INTO "brand" ("brandname") VALUES ('Catolac');
+INSERT INTO "brand" ("brandname") VALUES ('Cattle Country Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('Cazzani Custom Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('CC CYCLES');
+INSERT INTO "brand" ("brandname") VALUES ('CC Trikes & Custom Bikes');
+INSERT INTO "brand" ("brandname") VALUES ('CCC');
+INSERT INTO "brand" ("brandname") VALUES ('CCG Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('CDH Industries');
+INSERT INTO "brand" ("brandname") VALUES ('CDK Mobile Systems, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('CDM');
+INSERT INTO "brand" ("brandname") VALUES ('CDS Corp.');
+INSERT INTO "brand" ("brandname") VALUES ('Cedar Crest Park Homes Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Cee-Jay Tool Company');
+INSERT INTO "brand" ("brandname") VALUES ('CEI Equipment Company, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Cellxion');
+INSERT INTO "brand" ("brandname") VALUES ('CEMENTECH');
+INSERT INTO "brand" ("brandname") VALUES ('Cenntro Automotive Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('Centauro');
+INSERT INTO "brand" ("brandname") VALUES ('Centech Specialty Vehicles');
+INSERT INTO "brand" ("brandname") VALUES ('CENTER LINE FABRICATORS, INC');
+INSERT INTO "brand" ("brandname") VALUES ('Centex Trailers LTD.');
+INSERT INTO "brand" ("brandname") VALUES ('CENTINELA STATE PRISON');
+INSERT INTO "brand" ("brandname") VALUES ('Central Alabama Trailer & Truck Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('Central Florida Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Central MS Custom Built Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Central Ohio Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('Central Parts Welding, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('CENTRAL PURCHASING');
+INSERT INTO "brand" ("brandname") VALUES ('Central Star Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('CENTRAL TANK OF OKLAHOMA, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Central Trailer Corp');
+INSERT INTO "brand" ("brandname") VALUES ('Centralia Machine & Fab');
+INSERT INTO "brand" ("brandname") VALUES ('Centreville');
+INSERT INTO "brand" ("brandname") VALUES ('CENTURION');
+INSERT INTO "brand" ("brandname") VALUES ('Century Built');
+INSERT INTO "brand" ("brandname") VALUES ('Century Tank & Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Century Trailer Company');
+INSERT INTO "brand" ("brandname") VALUES ('Cerberus Trikes');
+INSERT INTO "brand" ("brandname") VALUES ('Cerda Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Certified Advanced Technologies, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('CGM Fabrications');
+INSERT INTO "brand" ("brandname") VALUES ('CGS Premier');
+INSERT INTO "brand" ("brandname") VALUES ('CH TRAILER COMPANY');
+INSERT INTO "brand" ("brandname") VALUES ('Chad Fuller Construction, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Chahta Enterprise Metal Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('Chairiot Mobility');
+INSERT INTO "brand" ("brandname") VALUES ('Chalet RV');
+INSERT INTO "brand" ("brandname") VALUES ('Chalet RV Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Challenger Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('Challenger Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Challenger Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Chameleon Transportation Systems Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Champagne');
+INSERT INTO "brand" ("brandname") VALUES ('Champion');
+INSERT INTO "brand" ("brandname") VALUES ('Champion Bridge');
+INSERT INTO "brand" ("brandname") VALUES ('Champion Bridge Company');
+INSERT INTO "brand" ("brandname") VALUES ('Champion Home Builders Co');
+INSERT INTO "brand" ("brandname") VALUES ('Champion Manufacturing Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Champion Telecom');
+INSERT INTO "brand" ("brandname") VALUES ('Champion Trailer Company');
+INSERT INTO "brand" ("brandname") VALUES ('Champion Trailer Works');
+INSERT INTO "brand" ("brandname") VALUES ('Champion Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Champion Trike');
+INSERT INTO "brand" ("brandname") VALUES ('Chance');
+INSERT INTO "brand" ("brandname") VALUES ('Chance Trailer Manufacturing & Sales');
+INSERT INTO "brand" ("brandname") VALUES ('Chancey');
+INSERT INTO "brand" ("brandname") VALUES ('CHANDLER CUSTOM CYCLES');
+INSERT INTO "brand" ("brandname") VALUES ('Chandler Originals');
+INSERT INTO "brand" ("brandname") VALUES ('CHANGENT SYSTEMS');
+INSERT INTO "brand" ("brandname") VALUES ('CHANGSHU LIGHT MOTORCYCLE FACTORY');
+INSERT INTO "brand" ("brandname") VALUES ('Changzhou Kwang Yang Motor Co.');
+INSERT INTO "brand" ("brandname") VALUES ('Changzhou Yamasaki Motorcycle Co.');
+INSERT INTO "brand" ("brandname") VALUES ('CHAPARRAL TRAILERS OF IOWA');
+INSERT INTO "brand" ("brandname") VALUES ('Chapman Custom Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Chapman Enterprise, LLC.');
+INSERT INTO "brand" ("brandname") VALUES ('CHAR-KAN SALES');
+INSERT INTO "brand" ("brandname") VALUES ('Charger');
+INSERT INTO "brand" ("brandname") VALUES ('Chariot Eagle West');
+INSERT INTO "brand" ("brandname") VALUES ('Chariot Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Charles Blass Welding, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Charles Machine Works, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('CHARLESTON MARINE CONTAINERS');
+INSERT INTO "brand" ("brandname") VALUES ('Charleston Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Charlotte Custom Cycles, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Charlottle County Custom Cycles, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Charmac Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Chart, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Chase Trailers, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Chatham Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('CHEETA');
+INSERT INTO "brand" ("brandname") VALUES ('CHEETAH CHASSIS');
+INSERT INTO "brand" ("brandname") VALUES ('Cheetah Chassis Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('Cheetah Trikes');
+INSERT INTO "brand" ("brandname") VALUES ('CHEMGUARD');
+INSERT INTO "brand" ("brandname") VALUES ('CHENGFEI MOTORCYCLE MANUFACTURING');
+INSERT INTO "brand" ("brandname") VALUES ('Chester Built Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Chester County Customs, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Chevrolet');
+INSERT INTO "brand" ("brandname") VALUES ('Chica Custom Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('Chicago Scooter Company');
+INSERT INTO "brand" ("brandname") VALUES ('Chief Fire');
+INSERT INTO "brand" ("brandname") VALUES ('CHIEF TRANSPORTATION PRODUCTS');
+INSERT INTO "brand" ("brandname") VALUES ('Chilton Manufacturing Corp.');
+INSERT INTO "brand" ("brandname") VALUES ('Chimera Kustom Carts');
+INSERT INTO "brand" ("brandname") VALUES ('Chimera Kustom Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Chimera Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('Chin Yuan Chi Casting Corp');
+INSERT INTO "brand" ("brandname") VALUES ('China Off-Road Products, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('CHLORINATORS & CONTROLS');
+INSERT INTO "brand" ("brandname") VALUES ('CHOCTAW TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('Choice Trailers Manufacturing, LTD');
+INSERT INTO "brand" ("brandname") VALUES ('CHONGQING ASTRONAUTICAL BASHAN MOTORCYCLE');
+INSERT INTO "brand" ("brandname") VALUES ('Chongqing Hi-Bird Motorcycle');
+INSERT INTO "brand" ("brandname") VALUES ('Chongqing Huansong Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Chongqing Kaier Motorcycle');
+INSERT INTO "brand" ("brandname") VALUES ('CHONGQING KINGTON INDUSTRY GROUP');
+INSERT INTO "brand" ("brandname") VALUES ('CHONGQING KINLON MOTORCYCLE MANUFACTURE');
+INSERT INTO "brand" ("brandname") VALUES ('CHONGQING LIFAN INDUSTRY (GROUP) COMPANY');
+INSERT INTO "brand" ("brandname") VALUES ('Chongqing Rato');
+INSERT INTO "brand" ("brandname") VALUES ('Chongqing Zongshen Automobile Industry Co');
+INSERT INTO "brand" ("brandname") VALUES ('CHONGQUING DAIJING MOTORCYCLES CO');
+INSERT INTO "brand" ("brandname") VALUES ('Chop Shop');
+INSERT INTO "brand" ("brandname") VALUES ('Chop Shop Customs');
+INSERT INTO "brand" ("brandname") VALUES ('CHOPPER ALLEY LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Chopper City');
+INSERT INTO "brand" ("brandname") VALUES ('Chopper Designs');
+INSERT INTO "brand" ("brandname") VALUES ('Chopper Nation, INC');
+INSERT INTO "brand" ("brandname") VALUES ('Chopper Works Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('CHOPPERHEAD ROAD');
+INSERT INTO "brand" ("brandname") VALUES ('Choppers East');
+INSERT INTO "brand" ("brandname") VALUES ('Choppers Only');
+INSERT INTO "brand" ("brandname") VALUES ('Chops and Bobbers, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('CHRISMAN CORPORATION');
+INSERT INTO "brand" ("brandname") VALUES ('Christen Brothers, INC');
+INSERT INTO "brand" ("brandname") VALUES ('CHRISTIANSEN WELDING & MACHINE, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('CHRISTIANSON SYSTEMS');
+INSERT INTO "brand" ("brandname") VALUES ('Christini AWD');
+INSERT INTO "brand" ("brandname") VALUES ('Chrysler');
+INSERT INTO "brand" ("brandname") VALUES ('Chubbs INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Chuck Wagon Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Chucks Wagons');
+INSERT INTO "brand" ("brandname") VALUES ('Chunfeng Holding Group Hangzhou Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('Churchill Holdings, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Chuy''s C&5 Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('CHYONG HORNG ENTERPRISE CO');
+INSERT INTO "brand" ("brandname") VALUES ('CIF Industries, INC');
+INSERT INTO "brand" ("brandname") VALUES ('Cikira RV, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Cimarron Trailers, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('CIMC');
+INSERT INTO "brand" ("brandname") VALUES ('CIMC REEFER TRAILER,INC');
+INSERT INTO "brand" ("brandname") VALUES ('CIMC VEHICLES GROUP CO');
+INSERT INTO "brand" ("brandname") VALUES ('Cirbin Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('CIRCLE CITY CHOPPERS');
+INSERT INTO "brand" ("brandname") VALUES ('CIRCLE D TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('Circle G Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('CIRCLE H TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('CIRCLE J TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('Circle M Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Circle N Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('CIRCLE R TRAILER MANUFACTURING');
+INSERT INTO "brand" ("brandname") VALUES ('CIRCUS CITY CUSTOM');
+INSERT INTO "brand" ("brandname") VALUES ('CITAIR');
+INSERT INTO "brand" ("brandname") VALUES ('City-el');
+INSERT INTO "brand" ("brandname") VALUES ('City Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('CIXI KINGRING MOTORCYCLE CO');
+INSERT INTO "brand" ("brandname") VALUES ('CJ''S TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('CJ CARGO INC');
+INSERT INTO "brand" ("brandname") VALUES ('CJAY TRAILERS INC.');
+INSERT INTO "brand" ("brandname") VALUES ('CK POWER');
+INSERT INTO "brand" ("brandname") VALUES ('CK TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('CL WHIGHAM');
+INSERT INTO "brand" ("brandname") VALUES ('CLACKACRAFT DRIFT');
+INSERT INTO "brand" ("brandname") VALUES ('Clackamas Body and Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('CLARK TRAILER SERVICE');
+INSERT INTO "brand" ("brandname") VALUES ('CLARKS WELDING');
+INSERT INTO "brand" ("brandname") VALUES ('Classic');
+INSERT INTO "brand" ("brandname") VALUES ('CLASSIC DESIGN TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('Classic Golf Cart Company, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('CLASSIC MC');
+INSERT INTO "brand" ("brandname") VALUES ('Classic Motor Works');
+INSERT INTO "brand" ("brandname") VALUES ('CLASSIC MOTORCYCLES & SIDECARS');
+INSERT INTO "brand" ("brandname") VALUES ('CLASSIC MOTORWORKS');
+INSERT INTO "brand" ("brandname") VALUES ('CLASSIC ROADSTERS, LTD');
+INSERT INTO "brand" ("brandname") VALUES ('Classic Tows');
+INSERT INTO "brand" ("brandname") VALUES ('CLASSIC TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('CLASSIC TRAILERS SD');
+INSERT INTO "brand" ("brandname") VALUES ('CLASSIC TRAILERS, INC');
+INSERT INTO "brand" ("brandname") VALUES ('Classy Chassis Campers');
+INSERT INTO "brand" ("brandname") VALUES ('CLAY''S TRAILER SALES');
+INSERT INTO "brand" ("brandname") VALUES ('CLC');
+INSERT INTO "brand" ("brandname") VALUES ('CLEAN - TECH');
+INSERT INTO "brand" ("brandname") VALUES ('CLEAN BLAST SERVICES');
+INSERT INTO "brand" ("brandname") VALUES ('CLEAR CUT FABRICATION');
+INSERT INTO "brand" ("brandname") VALUES ('CLEARSPRING CONVERSIONS, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('CLEASBY CONVEYORS');
+INSERT INTO "brand" ("brandname") VALUES ('Clement Industries');
+INSERT INTO "brand" ("brandname") VALUES ('CLEVELAND CYCLEWERKS');
+INSERT INTO "brand" ("brandname") VALUES ('CLEVELAND MOTORCYCLE MANUFACTURING CO');
+INSERT INTO "brand" ("brandname") VALUES ('CLEVELAND T-TRIKE MANUFACTURING, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Cliff''s Welding Service');
+INSERT INTO "brand" ("brandname") VALUES ('CLIFF''S WELDING SERVICE, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Cloud');
+INSERT INTO "brand" ("brandname") VALUES ('Club Car');
+INSERT INTO "brand" ("brandname") VALUES ('CM&W');
+INSERT INTO "brand" ("brandname") VALUES ('CMD POWERSYSTEMS');
+INSERT INTO "brand" ("brandname") VALUES ('CMI');
+INSERT INTO "brand" ("brandname") VALUES ('CMI TEREX');
+INSERT INTO "brand" ("brandname") VALUES ('CMS WELDING');
+INSERT INTO "brand" ("brandname") VALUES ('CnC TRAILERS FABRICATION');
+INSERT INTO "brand" ("brandname") VALUES ('Coachcraft Technologies, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Coachmen');
+INSERT INTO "brand" ("brandname") VALUES ('Coachworks');
+INSERT INTO "brand" ("brandname") VALUES ('Coast');
+INSERT INTO "brand" ("brandname") VALUES ('COAST 2 COAST CHOPPERS');
+INSERT INTO "brand" ("brandname") VALUES ('COASTAL INDUSTRIES');
+INSERT INTO "brand" ("brandname") VALUES ('COASTAL METAL FAB');
+INSERT INTO "brand" ("brandname") VALUES ('COASTAL PRODUCTION SYSTEMS');
+INSERT INTO "brand" ("brandname") VALUES ('COASTLINE MANUFACTURING');
+INSERT INTO "brand" ("brandname") VALUES ('COASTLINE TRAILER');
+INSERT INTO "brand" ("brandname") VALUES ('COASTLINE TRAILER MFG');
+INSERT INTO "brand" ("brandname") VALUES ('Coastline Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Cobra Cars');
+INSERT INTO "brand" ("brandname") VALUES ('Cobra Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Cobra MFG');
+INSERT INTO "brand" ("brandname") VALUES ('COBRA MOTORHOMES & TRAILERS, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Cobra Racing Products Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Cochise Custom Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('CODA AUTOMOTIVE');
+INSERT INTO "brand" ("brandname") VALUES ('COFFEY MFG');
+INSERT INTO "brand" ("brandname") VALUES ('COHEN METALS GROUP');
+INSERT INTO "brand" ("brandname") VALUES ('Coker Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('COLE CUSTOMS');
+INSERT INTO "brand" ("brandname") VALUES ('COLE STEEL');
+INSERT INTO "brand" ("brandname") VALUES ('Coleman');
+INSERT INTO "brand" ("brandname") VALUES ('COLEMAN CUSTOM CHOPPERS');
+INSERT INTO "brand" ("brandname") VALUES ('COLLA TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('COLLIERS CUSTOM CYCLES');
+INSERT INTO "brand" ("brandname") VALUES ('Collin-Arndt Trailer Manufacturing Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Collins');
+INSERT INTO "brand" ("brandname") VALUES ('Collins Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Collins Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Colorado');
+INSERT INTO "brand" ("brandname") VALUES ('Colorado Teardrop Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Colt');
+INSERT INTO "brand" ("brandname") VALUES ('Columbia Basin Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('COLUMBIA INDUSTRIES');
+INSERT INTO "brand" ("brandname") VALUES ('COLUMBIA NORTHWEST');
+INSERT INTO "brand" ("brandname") VALUES ('COLUMBIA PARCAR');
+INSERT INTO "brand" ("brandname") VALUES ('Colvin Motorcycle Company');
+INSERT INTO "brand" ("brandname") VALUES ('COM-FAB INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Combat Support Products');
+INSERT INTO "brand" ("brandname") VALUES ('Combs Trailer Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Comet');
+INSERT INTO "brand" ("brandname") VALUES ('COMFORT CAMPER');
+INSERT INTO "brand" ("brandname") VALUES ('Comfort Station');
+INSERT INTO "brand" ("brandname") VALUES ('COMFORTS OF HOME SERVICES');
+INSERT INTO "brand" ("brandname") VALUES ('Commander');
+INSERT INTO "brand" ("brandname") VALUES ('Commander SCRV');
+INSERT INTO "brand" ("brandname") VALUES ('Commercial Mobile Systems');
+INSERT INTO "brand" ("brandname") VALUES ('Commercial Structures');
+INSERT INTO "brand" ("brandname") VALUES ('COMMERCIAL TRAILER');
+INSERT INTO "brand" ("brandname") VALUES ('Commodore Homes of Indiana');
+INSERT INTO "brand" ("brandname") VALUES ('Commodore Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('COMMON SENSE COTTON SYSTEMS');
+INSERT INTO "brand" ("brandname") VALUES ('COMMUNITY CARS');
+INSERT INTO "brand" ("brandname") VALUES ('COMPACT CONSTRUCTION');
+INSERT INTO "brand" ("brandname") VALUES ('COMPAIR USA');
+INSERT INTO "brand" ("brandname") VALUES ('Compaks');
+INSERT INTO "brand" ("brandname") VALUES ('COMPANION TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('COMPASS NORTH');
+INSERT INTO "brand" ("brandname") VALUES ('COMPETITION BODYWORKS');
+INSERT INTO "brand" ("brandname") VALUES ('COMPLETE FLEET SERVICES');
+INSERT INTO "brand" ("brandname") VALUES ('COMPLIANCE ASSURANCE ASSOCIATES');
+INSERT INTO "brand" ("brandname") VALUES ('COMPREHENSIVE COMMUNICATION SERVICES');
+INSERT INTO "brand" ("brandname") VALUES ('Comptank');
+INSERT INTO "brand" ("brandname") VALUES ('CON-WAY MANUFACTURING');
+INSERT INTO "brand" ("brandname") VALUES ('CONCAR');
+INSERT INTO "brand" ("brandname") VALUES ('CONCEPT PRODUCTS');
+INSERT INTO "brand" ("brandname") VALUES ('Conception Metavic');
+INSERT INTO "brand" ("brandname") VALUES ('Concho Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Condor');
+INSERT INTO "brand" ("brandname") VALUES ('CONDUX INTERNATIONAL');
+INSERT INTO "brand" ("brandname") VALUES ('CONEL');
+INSERT INTO "brand" ("brandname") VALUES ('Confederate Motor Company Inc');
+INSERT INTO "brand" ("brandname") VALUES ('CONLEY FABRICATION');
+INSERT INTO "brand" ("brandname") VALUES ('Conner Farm and Ranch Supply');
+INSERT INTO "brand" ("brandname") VALUES ('Conqueror Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Conquest Trikes');
+INSERT INTO "brand" ("brandname") VALUES ('CONSTRUCTION TRAILER SPECIALISTS');
+INSERT INTO "brand" ("brandname") VALUES ('Consulier');
+INSERT INTO "brand" ("brandname") VALUES ('ConTec');
+INSERT INTO "brand" ("brandname") VALUES ('Contech');
+INSERT INTO "brand" ("brandname") VALUES ('CONTEMPORARY CLASSIC CARS');
+INSERT INTO "brand" ("brandname") VALUES ('Continental');
+INSERT INTO "brand" ("brandname") VALUES ('CONTINENTAL BIOMASS INDUSTRIES');
+INSERT INTO "brand" ("brandname") VALUES ('CONTRACT MANUFACTURER');
+INSERT INTO "brand" ("brandname") VALUES ('CONTRACT WELDING AND FABRICATING');
+INSERT INTO "brand" ("brandname") VALUES ('CONTREE SPRAYER AND EQUIPMENT');
+INSERT INTO "brand" ("brandname") VALUES ('Convoy');
+INSERT INTO "brand" ("brandname") VALUES ('Cooke''s Trailer Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('COOKSHACK');
+INSERT INTO "brand" ("brandname") VALUES ('COOL AMPHIBIOUS MANUFACTURERS');
+INSERT INTO "brand" ("brandname") VALUES ('COOL CARRIERS CUSTOM TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('COOL CITY CUSTOMS');
+INSERT INTO "brand" ("brandname") VALUES ('Cool City Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Cooper Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('Copper River Fabricators');
+INSERT INTO "brand" ("brandname") VALUES ('COPPER STATE CYCLES');
+INSERT INTO "brand" ("brandname") VALUES ('Copperhead Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('COPY CATT TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('Coras Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Corbin Motors Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Cornerstone Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Cornerstone Tiny Homes');
+INSERT INTO "brand" ("brandname") VALUES ('Corratti Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Correct Craft Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Corullo Forest Products Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('Costin sports car');
+INSERT INTO "brand" ("brandname") VALUES ('Cotner');
+INSERT INTO "brand" ("brandname") VALUES ('Count''s Kustoms');
+INSERT INTO "brand" ("brandname") VALUES ('COUNTRY BOY MFG.');
+INSERT INTO "brand" ("brandname") VALUES ('Country Boy Trailers, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Country Coach');
+INSERT INTO "brand" ("brandname") VALUES ('Country Pride Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Country Stones');
+INSERT INTO "brand" ("brandname") VALUES ('Country Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Country Wagon Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Countryside Welding');
+INSERT INTO "brand" ("brandname") VALUES ('County Line Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('COUNTY LINE TRAILER CO.');
+INSERT INTO "brand" ("brandname") VALUES ('Covered Body');
+INSERT INTO "brand" ("brandname") VALUES ('Covered Wagon Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('COWBOY COACHES');
+INSERT INTO "brand" ("brandname") VALUES ('COWBOY TRADING COMPANY INC');
+INSERT INTO "brand" ("brandname") VALUES ('Cowboy Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Cowboy Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Cowboys Kustoms');
+INSERT INTO "brand" ("brandname") VALUES ('COWELL CUSTOM TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('Cowtown Customs and Cobras, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Cox Fabrication, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Coyne Oil');
+INSERT INTO "brand" ("brandname") VALUES ('Coyote MFG LLC Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Coyote Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Cozad');
+INSERT INTO "brand" ("brandname") VALUES ('COZAD TRAILER SALES');
+INSERT INTO "brand" ("brandname") VALUES ('CP Industries, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('CPAT Distribution, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('CPI');
+INSERT INTO "brand" ("brandname") VALUES ('CPS Trailer Company');
+INSERT INTO "brand" ("brandname") VALUES ('CR SPECIALTY MANUFACTURING');
+INSERT INTO "brand" ("brandname") VALUES ('Crafton Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('CRAFTSMEN INDUSTRIES, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Craig Systems Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('Craig Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Crane Carrier');
+INSERT INTO "brand" ("brandname") VALUES ('Crane Hill');
+INSERT INTO "brand" ("brandname") VALUES ('CraneWorks');
+INSERT INTO "brand" ("brandname") VALUES ('CRANFORD RADIATOR INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Crary');
+INSERT INTO "brand" ("brandname") VALUES ('CRARY A DIV OF TERRAMARC INDUSTRIES');
+INSERT INTO "brand" ("brandname") VALUES ('Crary Agricultural Solutions');
+INSERT INTO "brand" ("brandname") VALUES ('Crater Trailers of LA, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Crazy Dago Customs');
+INSERT INTO "brand" ("brandname") VALUES ('Crazy Horse Iron');
+INSERT INTO "brand" ("brandname") VALUES ('CRC Cemetery Services');
+INSERT INTO "brand" ("brandname") VALUES ('Create-a-Custom Cycle');
+INSERT INTO "brand" ("brandname") VALUES ('Create A Custom Cycle');
+INSERT INTO "brand" ("brandname") VALUES ('CREATION DESIGN');
+INSERT INTO "brand" ("brandname") VALUES ('Creative Coachworks');
+INSERT INTO "brand" ("brandname") VALUES ('Creative Custom Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Creative Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('CREATIVE HOT RODS');
+INSERT INTO "brand" ("brandname") VALUES ('Creative Mobile Systems');
+INSERT INTO "brand" ("brandname") VALUES ('Creative Sports Supply');
+INSERT INTO "brand" ("brandname") VALUES ('Creative Trailer Concepts');
+INSERT INTO "brand" ("brandname") VALUES ('CREEK HILL WELDING');
+INSERT INTO "brand" ("brandname") VALUES ('CRESCENT MANUFACTURING');
+INSERT INTO "brand" ("brandname") VALUES ('Criminal Choppers of AZ');
+INSERT INTO "brand" ("brandname") VALUES ('Criminal Customs');
+INSERT INTO "brand" ("brandname") VALUES ('Criminalistics');
+INSERT INTO "brand" ("brandname") VALUES ('CRISMON MOBILE CLASSICS');
+INSERT INTO "brand" ("brandname") VALUES ('CROFT TRAILER SUPPLY');
+INSERT INTO "brand" ("brandname") VALUES ('CROMWELL');
+INSERT INTO "brand" ("brandname") VALUES ('Cronkhite Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Crooked River Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Crop Master Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Cropp Welding & Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('Crosley');
+INSERT INTO "brand" ("brandname") VALUES ('Crosley Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Crosley Trailers, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Cross Cleaning Solutions');
+INSERT INTO "brand" ("brandname") VALUES ('Cross Country');
+INSERT INTO "brand" ("brandname") VALUES ('Cross Energy Solutions');
+INSERT INTO "brand" ("brandname") VALUES ('Cross Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Cross Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Crossed Pistons');
+INSERT INTO "brand" ("brandname") VALUES ('Crossman');
+INSERT INTO "brand" ("brandname") VALUES ('Crossroads Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('CrossRoads RV');
+INSERT INTO "brand" ("brandname") VALUES ('Crow Fabrication, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('CROWD PLEASERS, INC');
+INSERT INTO "brand" ("brandname") VALUES ('Crown Coach Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('Crown Custom Trailers,Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Crown Energy Technologies');
+INSERT INTO "brand" ("brandname") VALUES ('Crown Food Carts Incorporated');
+INSERT INTO "brand" ("brandname") VALUES ('CRP Racing');
+INSERT INTO "brand" ("brandname") VALUES ('CRT');
+INSERT INTO "brand" ("brandname") VALUES ('Cruise Car');
+INSERT INTO "brand" ("brandname") VALUES ('Cruise N Snooze Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Cruiser RV');
+INSERT INTO "brand" ("brandname") VALUES ('CRUISERS MFG, INC (CMI)');
+INSERT INTO "brand" ("brandname") VALUES ('CrustBuster');
+INSERT INTO "brand" ("brandname") VALUES ('CRUX EXPEDITION TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('CRUZER');
+INSERT INTO "brand" ("brandname") VALUES ('CRYENCO, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Cryogenic Vessel Alternatives (CVA)');
+INSERT INTO "brand" ("brandname") VALUES ('Cryotech');
+INSERT INTO "brand" ("brandname") VALUES ('Crystal Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Crysteel Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('CT Coachworks');
+INSERT INTO "brand" ("brandname") VALUES ('CT Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('CT&E');
+INSERT INTO "brand" ("brandname") VALUES ('CT&T America');
+INSERT INTO "brand" ("brandname") VALUES ('CTJ Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('CTM');
+INSERT INTO "brand" ("brandname") VALUES ('CTM Customs');
+INSERT INTO "brand" ("brandname") VALUES ('CUBE MANUFACTURING');
+INSERT INTO "brand" ("brandname") VALUES ('Cuddle Shuttle');
+INSERT INTO "brand" ("brandname") VALUES ('Cumberland Adventure Trailers, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Cumberland County Custom Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('Cumberland Farms');
+INSERT INTO "brand" ("brandname") VALUES ('Currahee Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Current Motor Company');
+INSERT INTO "brand" ("brandname") VALUES ('Curry Customs');
+INSERT INTO "brand" ("brandname") VALUES ('Curry Supply');
+INSERT INTO "brand" ("brandname") VALUES ('Curt''s Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Curtis Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Cushman');
+INSERT INTO "brand" ("brandname") VALUES ('Cusitec');
+INSERT INTO "brand" ("brandname") VALUES ('Custom');
+INSERT INTO "brand" ("brandname") VALUES ('CUSTOM-FAB BODIES AND TRAILERS,INC.');
+INSERT INTO "brand" ("brandname") VALUES ('CUSTOM AIRBOAT TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('Custom Amusement Products');
+INSERT INTO "brand" ("brandname") VALUES ('Custom Bikes of Lauderdale');
+INSERT INTO "brand" ("brandname") VALUES ('Custom Bikeworks Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Custom Built Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Custom Chassis Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Custom Choppers by Otis');
+INSERT INTO "brand" ("brandname") VALUES ('Custom ChopperWerks');
+INSERT INTO "brand" ("brandname") VALUES ('Custom Concessions Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Custom Crank Down Fish Houses');
+INSERT INTO "brand" ("brandname") VALUES ('Custom Cut Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('Custom Cut Fabrication LLC Flat Bed Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Custom Cycle Carrier');
+INSERT INTO "brand" ("brandname") VALUES ('Custom Cycle Studio');
+INSERT INTO "brand" ("brandname") VALUES ('Custom Cycle Studio LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Custom Design');
+INSERT INTO "brand" ("brandname") VALUES ('Custom Engineered Products');
+INSERT INTO "brand" ("brandname") VALUES ('Custom Equipment Co Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Custom Expansion Fabricators');
+INSERT INTO "brand" ("brandname") VALUES ('Custom Fabrication and Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('Custom Farm and Ranch Supply');
+INSERT INTO "brand" ("brandname") VALUES ('Custom Fire Apparatus');
+INSERT INTO "brand" ("brandname") VALUES ('Custom Fit Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Custom Haul');
+INSERT INTO "brand" ("brandname") VALUES ('Custom Hauler');
+INSERT INTO "brand" ("brandname") VALUES ('Custom Iron Workz');
+INSERT INTO "brand" ("brandname") VALUES ('Custom Line Campers');
+INSERT INTO "brand" ("brandname") VALUES ('Custom Marine Components');
+INSERT INTO "brand" ("brandname") VALUES ('Custom Max Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Custom Metal Projects');
+INSERT INTO "brand" ("brandname") VALUES ('Custom Mobile Designs');
+INSERT INTO "brand" ("brandname") VALUES ('Custom Mobile Food Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('Custom Motorcycle Works');
+INSERT INTO "brand" ("brandname") VALUES ('Custom Pits and Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('Custom Pull Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Custom Services');
+INSERT INTO "brand" ("brandname") VALUES ('CUSTOM TANK TECHNOLOGY');
+INSERT INTO "brand" ("brandname") VALUES ('Custom Trailer Company');
+INSERT INTO "brand" ("brandname") VALUES ('Custom Trailers Inc');
+INSERT INTO "brand" ("brandname") VALUES ('CUSTOM TRIKES, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('CW Welding and Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('CYCLE CONCEPTS INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Cycle Products');
+INSERT INTO "brand" ("brandname") VALUES ('CycleStream');
+INSERT INTO "brand" ("brandname") VALUES ('Cyclone');
+INSERT INTO "brand" ("brandname") VALUES ('Cyclops Trike Components');
+INSERT INTO "brand" ("brandname") VALUES ('CYGNUS MANUFACTURING COMPANY (CMC)');
+INSERT INTO "brand" ("brandname") VALUES ('Cynergy Cargo');
+INSERT INTO "brand" ("brandname") VALUES ('Cytec Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('D''s Fiberglass');
+INSERT INTO "brand" ("brandname") VALUES ('D & D Repair and Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('D & D SALES');
+INSERT INTO "brand" ("brandname") VALUES ('D & D Speed');
+INSERT INTO "brand" ("brandname") VALUES ('D & D Trailers & Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('D & D Trailers Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('D & G Welding');
+INSERT INTO "brand" ("brandname") VALUES ('D & H Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('D & H Truck Equipment Inc');
+INSERT INTO "brand" ("brandname") VALUES ('D & J Fabricating LLC');
+INSERT INTO "brand" ("brandname") VALUES ('D & M Marketing Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('D & M Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('D & N Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('D & P Welding');
+INSERT INTO "brand" ("brandname") VALUES ('D & S Trailer Builders');
+INSERT INTO "brand" ("brandname") VALUES ('D & S Trailer Sales');
+INSERT INTO "brand" ("brandname") VALUES ('D&B Cycle Parts & Accessories');
+INSERT INTO "brand" ("brandname") VALUES ('D&D METAL WORKS AND POWDER COATING');
+INSERT INTO "brand" ("brandname") VALUES ('D&D Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('D&L TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('DABCO FABRICATION');
+INSERT INTO "brand" ("brandname") VALUES ('DAECHANG MOTORS COMPANY LIMITED');
+INSERT INTO "brand" ("brandname") VALUES ('Daehan');
+INSERT INTO "brand" ("brandname") VALUES ('Daewoo');
+INSERT INTO "brand" ("brandname") VALUES ('Daigle Brothers');
+INSERT INTO "brand" ("brandname") VALUES ('Daigle Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Daihatsu');
+INSERT INTO "brand" ("brandname") VALUES ('Dailey Trailers Inc');
+INSERT INTO "brand" ("brandname") VALUES ('DaimlerChrysler Commercial Bus');
+INSERT INTO "brand" ("brandname") VALUES ('Daix');
+INSERT INTO "brand" ("brandname") VALUES ('Dakan Mountain Teardrop Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Dakota Airboats');
+INSERT INTO "brand" ("brandname") VALUES ('Dakota Motorcycle Co.');
+INSERT INTO "brand" ("brandname") VALUES ('Dakota Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Dal-Fab & Machine, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Dale''s Welding Sales');
+INSERT INTO "brand" ("brandname") VALUES ('Dallas Smith Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('Dameron');
+INSERT INTO "brand" ("brandname") VALUES ('Damon');
+INSERT INTO "brand" ("brandname") VALUES ('Dan''s Golf Car and Trailer Sales');
+INSERT INTO "brand" ("brandname") VALUES ('DAN''S REPAIR & MFG.');
+INSERT INTO "brand" ("brandname") VALUES ('Dan Gurney Alligator Motorcycles, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('DANCO');
+INSERT INTO "brand" ("brandname") VALUES ('Danco Products');
+INSERT INTO "brand" ("brandname") VALUES ('Danco Trailer Sales');
+INSERT INTO "brand" ("brandname") VALUES ('DANDEA ENTERPRISES, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Dandy Digger & Supply, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Daniel''s Certified Welding Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Daniel Lohr');
+INSERT INTO "brand" ("brandname") VALUES ('Danko Emergency Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('Danzer Industries, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('DARDON, INC');
+INSERT INTO "brand" ("brandname") VALUES ('Daredevil Choppers, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Dark Dayz Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Dark Warrior');
+INSERT INTO "brand" ("brandname") VALUES ('Darkside Chariots');
+INSERT INTO "brand" ("brandname") VALUES ('DARKSIDE CHOPPERS');
+INSERT INTO "brand" ("brandname") VALUES ('Darrell''s Welding Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('DARTRON INDUSTRIES INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Darwin Motorcycle');
+INSERT INTO "brand" ("brandname") VALUES ('DASH');
+INSERT INTO "brand" ("brandname") VALUES ('Dast Tanks');
+INSERT INTO "brand" ("brandname") VALUES ('Dat Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Data Mfg.');
+INSERT INTO "brand" ("brandname") VALUES ('Datsun');
+INSERT INTO "brand" ("brandname") VALUES ('Daughtry');
+INSERT INTO "brand" ("brandname") VALUES ('Dauntless Motors');
+INSERT INTO "brand" ("brandname") VALUES ('DAVE''S WELDING SERVICE');
+INSERT INTO "brand" ("brandname") VALUES ('Dave Hanson Trailers, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('DAVES AUTO SALES');
+INSERT INTO "brand" ("brandname") VALUES ('DAVID BREWER IMPLEMENT INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Davidson Enterprises Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Davis Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Davis Metal Works');
+INSERT INTO "brand" ("brandname") VALUES ('Davis Trailer Sales');
+INSERT INTO "brand" ("brandname") VALUES ('Davis Trailer World LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Davis Village Solutions');
+INSERT INTO "brand" ("brandname") VALUES ('Dawson');
+INSERT INTO "brand" ("brandname") VALUES ('Dayang');
+INSERT INTO "brand" ("brandname") VALUES ('DayStar Motorcycles of America, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Daytona Coach Builders');
+INSERT INTO "brand" ("brandname") VALUES ('Dazon');
+INSERT INTO "brand" ("brandname") VALUES ('DB Industries,Inc');
+INSERT INTO "brand" ("brandname") VALUES ('DB Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('DBAT TRAILER SALES & SERVICE');
+INSERT INTO "brand" ("brandname") VALUES ('DBR Systems LLC');
+INSERT INTO "brand" ("brandname") VALUES ('DBT Designs, LLC.');
+INSERT INTO "brand" ("brandname") VALUES ('DDI');
+INSERT INTO "brand" ("brandname") VALUES ('DEADEYE WELDING AND FABRICATION');
+INSERT INTO "brand" ("brandname") VALUES ('Dealers Choice LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Deano Motorcycle Company');
+INSERT INTO "brand" ("brandname") VALUES ('Debnam');
+INSERT INTO "brand" ("brandname") VALUES ('Debra H Morgan Co');
+INSERT INTO "brand" ("brandname") VALUES ('Debris Systems Plus');
+INSERT INTO "brand" ("brandname") VALUES ('Deceleste SA');
+INSERT INTO "brand" ("brandname") VALUES ('DECK OVER DOLLY');
+INSERT INTO "brand" ("brandname") VALUES ('DEEP SOUTH CARGO TRAILERS LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Deep South Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('DEERSKIN');
+INSERT INTO "brand" ("brandname") VALUES ('Defiance');
+INSERT INTO "brand" ("brandname") VALUES ('Dejana Truck and Utility Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('Del-Val');
+INSERT INTO "brand" ("brandname") VALUES ('Del Mar Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Delavan Industries, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Delaware Valley Cycle');
+INSERT INTO "brand" ("brandname") VALUES ('Delco Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Delivery Concepts, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Dell Rapids Custom Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Delta Oilfield Tank Co.');
+INSERT INTO "brand" ("brandname") VALUES ('Delta Scientific Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('Delta Waseca Mini');
+INSERT INTO "brand" ("brandname") VALUES ('DELUXE WELDING INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Demented Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('Demon Motorcycle Company');
+INSERT INTO "brand" ("brandname") VALUES ('Demons Cycle');
+INSERT INTO "brand" ("brandname") VALUES ('Demountable Concepts');
+INSERT INTO "brand" ("brandname") VALUES ('Dempster Industries Inc');
+INSERT INTO "brand" ("brandname") VALUES ('DeNardis Motocross Factory');
+INSERT INTO "brand" ("brandname") VALUES ('Denbeste Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Denney Brothers Fabrication LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Dennis Boggs Welding Works');
+INSERT INTO "brand" ("brandname") VALUES ('DENTON TRAILER CO.');
+INSERT INTO "brand" ("brandname") VALUES ('Dentoni''s Welding Works');
+INSERT INTO "brand" ("brandname") VALUES ('Dependable Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('DePuy''s Custom Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('Derbi');
+INSERT INTO "brand" ("brandname") VALUES ('Desco Mfg.');
+INSERT INTO "brand" ("brandname") VALUES ('Desert Thunder Customs');
+INSERT INTO "brand" ("brandname") VALUES ('Desert Toys RV');
+INSERT INTO "brand" ("brandname") VALUES ('Desert Wolf');
+INSERT INTO "brand" ("brandname") VALUES ('DESIGN CONCEPTS');
+INSERT INTO "brand" ("brandname") VALUES ('Design Concepts Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Design Home');
+INSERT INTO "brand" ("brandname") VALUES ('Design Worx');
+INSERT INTO "brand" ("brandname") VALUES ('DesignLine');
+INSERT INTO "brand" ("brandname") VALUES ('DesignLine International Holdings');
+INSERT INTO "brand" ("brandname") VALUES ('DesignLine USA');
+INSERT INTO "brand" ("brandname") VALUES ('DeSoto Motors');
+INSERT INTO "brand" ("brandname") VALUES ('Desperado');
+INSERT INTO "brand" ("brandname") VALUES ('Destiny');
+INSERT INTO "brand" ("brandname") VALUES ('DeTect');
+INSERT INTO "brand" ("brandname") VALUES ('Determan Welding & Tank Service, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Detroit Bros.');
+INSERT INTO "brand" ("brandname") VALUES ('Detroit Custom Chassis');
+INSERT INTO "brand" ("brandname") VALUES ('DETROIT TOOL INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Deus Ex Machina');
+INSERT INTO "brand" ("brandname") VALUES ('Deviant Design');
+INSERT INTO "brand" ("brandname") VALUES ('Devil Dawg Custom Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('Devine');
+INSERT INTO "brand" ("brandname") VALUES ('DEWALT UTILITY TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('Dex Unlimited Inc');
+INSERT INTO "brand" ("brandname") VALUES ('DG Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('DHM Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('DHS Systems');
+INSERT INTO "brand" ("brandname") VALUES ('Di-Mond Trailers, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Di Blasi');
+INSERT INTO "brand" ("brandname") VALUES ('DI BLASI OF AMERICA Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Diablo Performance, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Diam D Trailer Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Diamo');
+INSERT INTO "brand" ("brandname") VALUES ('Diamonback');
+INSERT INTO "brand" ("brandname") VALUES ('DIAMOND B TRAILERWORKS');
+INSERT INTO "brand" ("brandname") VALUES ('Diamond Boats Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Diamond Builders, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Diamond C Trailer Mfg.');
+INSERT INTO "brand" ("brandname") VALUES ('Diamond Cargo');
+INSERT INTO "brand" ("brandname") VALUES ('Diamond City Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('DIAMOND COMPONENTS, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Diamond Cut Carriers');
+INSERT INTO "brand" ("brandname") VALUES ('Diamond E Manufacturing, LLC.');
+INSERT INTO "brand" ("brandname") VALUES ('DIAMOND H SALES');
+INSERT INTO "brand" ("brandname") VALUES ('Diamond Heavy Vehicle Solutions, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Diamond K Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Diamond Line Chassis LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Diamond Reo');
+INSERT INTO "brand" ("brandname") VALUES ('Diamond Trailer Manufacturers');
+INSERT INTO "brand" ("brandname") VALUES ('Diamond Trailer Mfg');
+INSERT INTO "brand" ("brandname") VALUES ('DIAMOND Z TRAILER INC');
+INSERT INTO "brand" ("brandname") VALUES ('DiamondBack');
+INSERT INTO "brand" ("brandname") VALUES ('Diamondback Choppers LLC');
+INSERT INTO "brand" ("brandname") VALUES ('DiamondBack Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Diamondback Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Diamondback Trailers, LLC.');
+INSERT INTO "brand" ("brandname") VALUES ('DiamondStar Trailer Industries, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Dick''s Welding, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('DICKSON');
+INSERT INTO "brand" ("brandname") VALUES ('DIEDRICH DRILL, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Dina Autobuses');
+INSERT INTO "brand" ("brandname") VALUES ('DIRECT SALES');
+INSERT INTO "brand" ("brandname") VALUES ('Direct Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Dirt-A-Holic');
+INSERT INTO "brand" ("brandname") VALUES ('Disaster Power & Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('Discovery Cargo Trailers, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Display Compnay dba Speedcheck');
+INSERT INTO "brand" ("brandname") VALUES ('Ditch Witch');
+INSERT INTO "brand" ("brandname") VALUES ('Diversified');
+INSERT INTO "brand" ("brandname") VALUES ('Diversified Service');
+INSERT INTO "brand" ("brandname") VALUES ('DIVERSIFIED TRUCK & TRAILER, INC');
+INSERT INTO "brand" ("brandname") VALUES ('DIW engineering & Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('Dixie Craft Trailers Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Dixie Hitch');
+INSERT INTO "brand" ("brandname") VALUES ('Dixie Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Dixon Trailers & Fabrication, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('DKOI INC');
+INSERT INTO "brand" ("brandname") VALUES ('DLM');
+INSERT INTO "brand" ("brandname") VALUES ('DLW Payless Transmissions');
+INSERT INTO "brand" ("brandname") VALUES ('DM Machine');
+INSERT INTO "brand" ("brandname") VALUES ('DMC Five Star Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('DMP Awnings');
+INSERT INTO "brand" ("brandname") VALUES ('DNA ENTERPRISES INC');
+INSERT INTO "brand" ("brandname") VALUES ('DNA Specialty');
+INSERT INTO "brand" ("brandname") VALUES ('DNM Teardrop Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Dock Doctors');
+INSERT INTO "brand" ("brandname") VALUES ('Dodge');
+INSERT INTO "brand" ("brandname") VALUES ('Dodgen Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Dodger Trailer Manufacturing Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Doepker Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Domatex');
+INSERT INTO "brand" ("brandname") VALUES ('Domine Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('Dominight');
+INSERT INTO "brand" ("brandname") VALUES ('Dominion Motorcycle');
+INSERT INTO "brand" ("brandname") VALUES ('Don Johnson Sales');
+INSERT INTO "brand" ("brandname") VALUES ('Donaldson Fabrications');
+INSERT INTO "brand" ("brandname") VALUES ('DONGFANG');
+INSERT INTO "brand" ("brandname") VALUES ('Dongguan Yongqiang Vehicles');
+INSERT INTO "brand" ("brandname") VALUES ('Donham''s Mobile Service');
+INSERT INTO "brand" ("brandname") VALUES ('Donnerite Incorporated');
+INSERT INTO "brand" ("brandname") VALUES ('Dons Truck Sales');
+INSERT INTO "brand" ("brandname") VALUES ('DOOHAN');
+INSERT INTO "brand" ("brandname") VALUES ('Doonan Specialized Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Doosan');
+INSERT INTO "brand" ("brandname") VALUES ('DORCHEAT MANUFACTURING COMPANY');
+INSERT INTO "brand" ("brandname") VALUES ('Dosko');
+INSERT INTO "brand" ("brandname") VALUES ('DOSKO INDUSTRIES, INCORPORATED');
+INSERT INTO "brand" ("brandname") VALUES ('Double D Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Double Duty');
+INSERT INTO "brand" ("brandname") VALUES ('Double K Custom Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Double R Trailer MFG');
+INSERT INTO "brand" ("brandname") VALUES ('Double R Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Double R Trailers MFG');
+INSERT INTO "brand" ("brandname") VALUES ('Double S Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('Double S Welding');
+INSERT INTO "brand" ("brandname") VALUES ('DoubleEagleUSA');
+INSERT INTO "brand" ("brandname") VALUES ('Douglas Holding LLC');
+INSERT INTO "brand" ("brandname") VALUES ('DOUGLAS MARINE CORPORATION');
+INSERT INTO "brand" ("brandname") VALUES ('Douglas Trailers Inc');
+INSERT INTO "brand" ("brandname") VALUES ('DOUGLASS TRUCK BODIES, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Dover Trailer & Fab');
+INSERT INTO "brand" ("brandname") VALUES ('Dowell Schlumberger Int''l');
+INSERT INTO "brand" ("brandname") VALUES ('Down 2 Earth Cargo LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Down Low Customs');
+INSERT INTO "brand" ("brandname") VALUES ('Down to Earth');
+INSERT INTO "brand" ("brandname") VALUES ('Doz N Go');
+INSERT INTO "brand" ("brandname") VALUES ('DP Coningplant USA Corp.');
+INSERT INTO "brand" ("brandname") VALUES ('Dp Manufacturing LLC');
+INSERT INTO "brand" ("brandname") VALUES ('DPJ');
+INSERT INTO "brand" ("brandname") VALUES ('DRAGGIN'' P, INC');
+INSERT INTO "brand" ("brandname") VALUES ('Draggin Custom Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('Dragon ESP');
+INSERT INTO "brand" ("brandname") VALUES ('Dragon Mobile Rigs');
+INSERT INTO "brand" ("brandname") VALUES ('Dragon Products');
+INSERT INTO "brand" ("brandname") VALUES ('Dragontail Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Dragonz Lair Custom Cycles dba Buffalo');
+INSERT INTO "brand" ("brandname") VALUES ('Drake Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Drake Truck & Trailer Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('DRC Trailer and Sport');
+INSERT INTO "brand" ("brandname") VALUES ('Dream Coach Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Dream Design and Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('Dream Ridge Development Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('Dreamline');
+INSERT INTO "brand" ("brandname") VALUES ('Dressen Custom Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Drewes Engineering');
+INSERT INTO "brand" ("brandname") VALUES ('Drews Ironworks');
+INSERT INTO "brand" ("brandname") VALUES ('Dri-Doc Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Drifta Offroad Tourer');
+INSERT INTO "brand" ("brandname") VALUES ('Drillers Mud Systems');
+INSERT INTO "brand" ("brandname") VALUES ('DRIVEN FAB LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Driving Ambitions');
+INSERT INTO "brand" ("brandname") VALUES ('DRS Cycle Corp');
+INSERT INTO "brand" ("brandname") VALUES ('DRV');
+INSERT INTO "brand" ("brandname") VALUES ('DRYAIR 2000 Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Drydock');
+INSERT INTO "brand" ("brandname") VALUES ('DS Corp dba Crossroads RV');
+INSERT INTO "brand" ("brandname") VALUES ('DTM Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Dub Box USA');
+INSERT INTO "brand" ("brandname") VALUES ('Ducati');
+INSERT INTO "brand" ("brandname") VALUES ('DUCKWORTH BOAT WORKS, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Duesway');
+INSERT INTO "brand" ("brandname") VALUES ('Duffer''s Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Dukane Precast');
+INSERT INTO "brand" ("brandname") VALUES ('Dumas Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Duncan Supply Company');
+INSERT INTO "brand" ("brandname") VALUES ('Durabilt');
+INSERT INTO "brand" ("brandname") VALUES ('Durabody Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Duraco Inc');
+INSERT INTO "brand" ("brandname") VALUES ('DuraLast Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Duralite Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Duralite Truck Body & Container');
+INSERT INTO "brand" ("brandname") VALUES ('DURALITE, INC');
+INSERT INTO "brand" ("brandname") VALUES ('DURANGO TRAILER MFG.');
+INSERT INTO "brand" ("brandname") VALUES ('Durbin''s Custom Weld & Design');
+INSERT INTO "brand" ("brandname") VALUES ('Duruxx');
+INSERT INTO "brand" ("brandname") VALUES ('Dusold Custom Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('Dutch Master');
+INSERT INTO "brand" ("brandname") VALUES ('Dutch Park Homes');
+INSERT INTO "brand" ("brandname") VALUES ('DUTCH PARK INC');
+INSERT INTO "brand" ("brandname") VALUES ('Dutcher Ptv');
+INSERT INTO "brand" ("brandname") VALUES ('Dutchmen Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Duvall Equipment LLC');
+INSERT INTO "brand" ("brandname") VALUES ('DV Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Dyal''s Welding');
+INSERT INTO "brand" ("brandname") VALUES ('DYER''S DOCKING SYSTEMS, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('DYMAC International');
+INSERT INTO "brand" ("brandname") VALUES ('DYMAC Vehicle Group');
+INSERT INTO "brand" ("brandname") VALUES ('Dymax Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Dyna Products');
+INSERT INTO "brand" ("brandname") VALUES ('Dynafab');
+INSERT INTO "brand" ("brandname") VALUES ('Dynamax Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('Dynamic Air Systems');
+INSERT INTO "brand" ("brandname") VALUES ('Dynamic Manufacturing Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('Dynamic Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('DYNAMICS COMPOSITE DESIGNS, INC');
+INSERT INTO "brand" ("brandname") VALUES ('Dynasty Electric Car');
+INSERT INTO "brand" ("brandname") VALUES ('Dynatest');
+INSERT INTO "brand" ("brandname") VALUES ('E-Bilt LLC.');
+INSERT INTO "brand" ("brandname") VALUES ('E-One');
+INSERT INTO "brand" ("brandname") VALUES ('E-PAK MANUFACTURING');
+INSERT INTO "brand" ("brandname") VALUES ('E-SUV');
+INSERT INTO "brand" ("brandname") VALUES ('E-TON');
+INSERT INTO "brand" ("brandname") VALUES ('E-Ton I');
+INSERT INTO "brand" ("brandname") VALUES ('E-Ton II');
+INSERT INTO "brand" ("brandname") VALUES ('E-TUK');
+INSERT INTO "brand" ("brandname") VALUES ('E-W Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('E-Z-Go Division of Textron');
+INSERT INTO "brand" ("brandname") VALUES ('E-Z Dumper Products');
+INSERT INTO "brand" ("brandname") VALUES ('E-Z PULL TRAILERS LLC');
+INSERT INTO "brand" ("brandname") VALUES ('E-Z Tow');
+INSERT INTO "brand" ("brandname") VALUES ('E & L Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('E & T UTILITY TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('E & W Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('E Z Dumper Products LLC');
+INSERT INTO "brand" ("brandname") VALUES ('E Z Ryder Motor');
+INSERT INTO "brand" ("brandname") VALUES ('E.T. Services');
+INSERT INTO "brand" ("brandname") VALUES ('E3 Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Eager Beaver');
+INSERT INTO "brand" ("brandname") VALUES ('Eagle');
+INSERT INTO "brand" ("brandname") VALUES ('EAGLE BRIDGE');
+INSERT INTO "brand" ("brandname") VALUES ('Eagle Car Carriers');
+INSERT INTO "brand" ("brandname") VALUES ('Eagle Coach Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('Eagle Craft, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Eagle Erectors');
+INSERT INTO "brand" ("brandname") VALUES ('Eagle Ford Tanks & Trailers LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Eagle General Contractors, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Eagle Head Lifts');
+INSERT INTO "brand" ("brandname") VALUES ('EAGLE INDUSTRIES');
+INSERT INTO "brand" ("brandname") VALUES ('Eagle Marine Corporation Ltd');
+INSERT INTO "brand" ("brandname") VALUES ('Eagle Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Eagle Trailer Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Eagle Trailer Sales, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Eagle Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Eagle Trailers Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Eagle Trailers LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Eagle Welding & Machine');
+INSERT INTO "brand" ("brandname") VALUES ('EAM');
+INSERT INTO "brand" ("brandname") VALUES ('EARTH TOOL CO LLC');
+INSERT INTO "brand" ("brandname") VALUES ('EARTHWORM INC');
+INSERT INTO "brand" ("brandname") VALUES ('Easley');
+INSERT INTO "brand" ("brandname") VALUES ('Easley Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('East Coast Manufacturing & Design');
+INSERT INTO "brand" ("brandname") VALUES ('EAST COAST RACE CARS, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('East Coast Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('East Kentucky Trailers Mfg Co');
+INSERT INTO "brand" ("brandname") VALUES ('East Manufacturing CORP.');
+INSERT INTO "brand" ("brandname") VALUES ('East Prairie Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('East Tennessee Trailers LLC');
+INSERT INTO "brand" ("brandname") VALUES ('East Texas Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Eastcoast Bikeworks');
+INSERT INTO "brand" ("brandname") VALUES ('EASTERN METAL WORKS');
+INSERT INTO "brand" ("brandname") VALUES ('Eastern Rod and Chopper');
+INSERT INTO "brand" ("brandname") VALUES ('Eastern Shore Trailer, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Eastern Trailer Sales');
+INSERT INTO "brand" ("brandname") VALUES ('EASTERN WHOLESALE DISTRIBUTORS');
+INSERT INTO "brand" ("brandname") VALUES ('EASTERN, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Easy Time Trailers, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Easyrider Motorcycle Company');
+INSERT INTO "brand" ("brandname") VALUES ('Easyrider Motorcycle Company Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Easyway Tailers, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Ebert Precision Products LLC');
+INSERT INTO "brand" ("brandname") VALUES ('eCart');
+INSERT INTO "brand" ("brandname") VALUES ('ECC');
+INSERT INTO "brand" ("brandname") VALUES ('ECHELBERRY MANUFACTURING, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('ECHO');
+INSERT INTO "brand" ("brandname") VALUES ('Echo Accessories');
+INSERT INTO "brand" ("brandname") VALUES ('ECHO Bear Cat');
+INSERT INTO "brand" ("brandname") VALUES ('Echo Manufacturing, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Echo Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Eclipse Aluminum Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Eclipse Recreational vehicles, INC');
+INSERT INTO "brand" ("brandname") VALUES ('Eco-Fueler Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('Eco Motor Company');
+INSERT INTO "brand" ("brandname") VALUES ('Ecojohn, INC');
+INSERT INTO "brand" ("brandname") VALUES ('Econ-O-Haul');
+INSERT INTO "brand" ("brandname") VALUES ('ECONOBOY CORPORATION');
+INSERT INTO "brand" ("brandname") VALUES ('Econoline Trailer, INC');
+INSERT INTO "brand" ("brandname") VALUES ('Economy Drilling Solutions');
+INSERT INTO "brand" ("brandname") VALUES ('Ecosse Moto Works, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Ecotrek Camper');
+INSERT INTO "brand" ("brandname") VALUES ('ECSTASY');
+INSERT INTO "brand" ("brandname") VALUES ('ECSTASY TRIKES INC');
+INSERT INTO "brand" ("brandname") VALUES ('Ed''s Machine & Repair');
+INSERT INTO "brand" ("brandname") VALUES ('Ed Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('EDDIE ENGLISH COMPANY, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('EDDIE INC');
+INSERT INTO "brand" ("brandname") VALUES ('EDDIE TROTTA CUSTOM BIKES');
+INSERT INTO "brand" ("brandname") VALUES ('Eddy''s Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Eddy Motors');
+INSERT INTO "brand" ("brandname") VALUES ('EDGE MANUFACTURING INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Edmondson Custom Built');
+INSERT INTO "brand" ("brandname") VALUES ('Efficient Hauling Systems');
+INSERT INTO "brand" ("brandname") VALUES ('EFL Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('eGO Vehicles, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('EH Concepts');
+INSERT INTO "brand" ("brandname") VALUES ('EHW');
+INSERT INTO "brand" ("brandname") VALUES ('Eiks Bikes');
+INSERT INTO "brand" ("brandname") VALUES ('EIP Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('EISEN');
+INSERT INTO "brand" ("brandname") VALUES ('EL-MAR');
+INSERT INTO "brand" ("brandname") VALUES ('EL-SAN, INC');
+INSERT INTO "brand" ("brandname") VALUES ('El Dorado Foundry Machine & Supply Company, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('EL PASO TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('El Tiron Custom Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('ELAN MANUFACTURING');
+INSERT INTO "brand" ("brandname") VALUES ('ELASTEC');
+INSERT INTO "brand" ("brandname") VALUES ('Elco Industries');
+INSERT INTO "brand" ("brandname") VALUES ('ElDorado National');
+INSERT INTO "brand" ("brandname") VALUES ('Electra Meccanica Vehicles Corp.');
+INSERT INTO "brand" ("brandname") VALUES ('Electric City Motors, North America');
+INSERT INTO "brand" ("brandname") VALUES ('Electric Cycle Co');
+INSERT INTO "brand" ("brandname") VALUES ('Electric Mobile Cars');
+INSERT INTO "brand" ("brandname") VALUES ('Electric Motorsport');
+INSERT INTO "brand" ("brandname") VALUES ('Electric Vehicle Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Electric Vehicle Transportation of America');
+INSERT INTO "brand" ("brandname") VALUES ('Electric Vehicles International');
+INSERT INTO "brand" ("brandname") VALUES ('ELECTRICAL ENGINEERING AND EQUIPMENT');
+INSERT INTO "brand" ("brandname") VALUES ('Electro-Technologies');
+INSERT INTO "brand" ("brandname") VALUES ('Electromotion Design');
+INSERT INTO "brand" ("brandname") VALUES ('Electrovaya');
+INSERT INTO "brand" ("brandname") VALUES ('Elevated Security');
+INSERT INTO "brand" ("brandname") VALUES ('Elgin Sweeper Co');
+INSERT INTO "brand" ("brandname") VALUES ('Eliminator Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Elite');
+INSERT INTO "brand" ("brandname") VALUES ('Elite Cottages');
+INSERT INTO "brand" ("brandname") VALUES ('Elite Custom Trailer,LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Elite Custom Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Elite Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('Elite Motor Sales');
+INSERT INTO "brand" ("brandname") VALUES ('Elite Tool');
+INSERT INTO "brand" ("brandname") VALUES ('Elite Trailer Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Elite Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('ELITE TRAILERS, INC');
+INSERT INTO "brand" ("brandname") VALUES ('Elk River Machine');
+INSERT INTO "brand" ("brandname") VALUES ('Elk Valley');
+INSERT INTO "brand" ("brandname") VALUES ('Elkin Hi-Tech');
+INSERT INTO "brand" ("brandname") VALUES ('Ellington Industry Supply');
+INSERT INTO "brand" ("brandname") VALUES ('Elliott Machine Works Inc');
+INSERT INTO "brand" ("brandname") VALUES ('ELLIS INDUSTRIES, INCORPORTED');
+INSERT INTO "brand" ("brandname") VALUES ('Ellis Manufacturing Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Ellis Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('ELSEY MFG.');
+INSERT INTO "brand" ("brandname") VALUES ('Elusive');
+INSERT INTO "brand" ("brandname") VALUES ('EM Transfer');
+INSERT INTO "brand" ("brandname") VALUES ('eMa');
+INSERT INTO "brand" ("brandname") VALUES ('eMa Motorworks');
+INSERT INTO "brand" ("brandname") VALUES ('EMB INCORPORATED');
+INSERT INTO "brand" ("brandname") VALUES ('EMBUGGY');
+INSERT INTO "brand" ("brandname") VALUES ('EMERALD WELDING');
+INSERT INTO "brand" ("brandname") VALUES ('Emerson Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('EMF');
+INSERT INTO "brand" ("brandname") VALUES ('EMI Technologies');
+INSERT INTO "brand" ("brandname") VALUES ('EMK');
+INSERT INTO "brand" ("brandname") VALUES ('Empire Cargo Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Empire Manufacturing Company');
+INSERT INTO "brand" ("brandname") VALUES ('Empire Tanker');
+INSERT INTO "brand" ("brandname") VALUES ('End 2 End Welding');
+INSERT INTO "brand" ("brandname") VALUES ('EnduraMax');
+INSERT INTO "brand" ("brandname") VALUES ('Enduraplas');
+INSERT INTO "brand" ("brandname") VALUES ('Enduratrailer');
+INSERT INTO "brand" ("brandname") VALUES ('ENERGICA');
+INSERT INTO "brand" ("brandname") VALUES ('ENERGY ABSORPTION SYSTEMS');
+INSERT INTO "brand" ("brandname") VALUES ('ENERGY FABRICATION');
+INSERT INTO "brand" ("brandname") VALUES ('ENERGY PRODUCTS');
+INSERT INTO "brand" ("brandname") VALUES ('ENERGY SYSTEMS');
+INSERT INTO "brand" ("brandname") VALUES ('Engine Connection');
+INSERT INTO "brand" ("brandname") VALUES ('ENGINEERED MANUFACTURING');
+INSERT INTO "brand" ("brandname") VALUES ('ENGLE FABRICATION');
+INSERT INTO "brand" ("brandname") VALUES ('Ennis Trailer Mfg');
+INSERT INTO "brand" ("brandname") VALUES ('Enpro Engineered Products LLC');
+INSERT INTO "brand" ("brandname") VALUES ('ENRY CYCLE CREATIONS LLC');
+INSERT INTO "brand" ("brandname") VALUES ('ENTECH INDUSTRIES');
+INSERT INTO "brand" ("brandname") VALUES ('ENVIRON PRODUCTS INC');
+INSERT INTO "brand" ("brandname") VALUES ('Environmental Service Products');
+INSERT INTO "brand" ("brandname") VALUES ('Envoltz');
+INSERT INTO "brand" ("brandname") VALUES ('Envtech Tank Services, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('EO TRAILER');
+INSERT INTO "brand" ("brandname") VALUES ('EP Design');
+INSERT INTO "brand" ("brandname") VALUES ('Epic');
+INSERT INTO "brand" ("brandname") VALUES ('EPIC CUSTOM CYCLES');
+INSERT INTO "brand" ("brandname") VALUES ('EPV Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('EQUI-TREK');
+INSERT INTO "brand" ("brandname") VALUES ('EQUIBUILT, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Equip Manufacturing, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('EQUIPMENT DEVELOPMENT');
+INSERT INTO "brand" ("brandname") VALUES ('EQUIPMENT INNOVATORS, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('EQUIPMENT SERVICES');
+INSERT INTO "brand" ("brandname") VALUES ('Equipment Source');
+INSERT INTO "brand" ("brandname") VALUES ('EQUIPT');
+INSERT INTO "brand" ("brandname") VALUES ('Equiquest Horse Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('EQUUS AUTOMOTIVE');
+INSERT INTO "brand" ("brandname") VALUES ('Eretz Trailers Manufacturer');
+INSERT INTO "brand" ("brandname") VALUES ('ERICKSON TANK & PUMP');
+INSERT INTO "brand" ("brandname") VALUES ('ERIE ALUMINUM');
+INSERT INTO "brand" ("brandname") VALUES ('Ernest Spencer Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('ERSKINE & SONS');
+INSERT INTO "brand" ("brandname") VALUES ('Erwin Precision');
+INSERT INTO "brand" ("brandname") VALUES ('Esarati Electric Technologies Corp');
+INSERT INTO "brand" ("brandname") VALUES ('Escape');
+INSERT INTO "brand" ("brandname") VALUES ('Escape RV');
+INSERT INTO "brand" ("brandname") VALUES ('Escapod Trailers LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Escobar Truck Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('Escort Trailer Corp.');
+INSERT INTO "brand" ("brandname") VALUES ('Essex Performance Boats');
+INSERT INTO "brand" ("brandname") VALUES ('Esterel');
+INSERT INTO "brand" ("brandname") VALUES ('ET Manufacturing Corp');
+INSERT INTO "brand" ("brandname") VALUES ('ETHER ENTERPRISES, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('ETI ELECTRIC TRANSIT INC');
+INSERT INTO "brand" ("brandname") VALUES ('ETI Global Solutions Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Europa International');
+INSERT INTO "brand" ("brandname") VALUES ('Eurospeed');
+INSERT INTO "brand" ("brandname") VALUES ('Eurostyle');
+INSERT INTO "brand" ("brandname") VALUES ('EV America');
+INSERT INTO "brand" ("brandname") VALUES ('EV Innovations');
+INSERT INTO "brand" ("brandname") VALUES ('EVAC');
+INSERT INTO "brand" ("brandname") VALUES ('Evaco Acquisition');
+INSERT INTO "brand" ("brandname") VALUES ('EVANGEL');
+INSERT INTO "brand" ("brandname") VALUES ('EVCOR');
+INSERT INTO "brand" ("brandname") VALUES ('Evergreen');
+INSERT INTO "brand" ("brandname") VALUES ('Evergreen Off Road Campers');
+INSERT INTO "brand" ("brandname") VALUES ('EverGreen Recreational Vehicles');
+INSERT INTO "brand" ("brandname") VALUES ('Evergreen Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Evil Empire Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Evolve Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('EWD Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('EXA Industrial');
+INSERT INTO "brand" ("brandname") VALUES ('Excaliber Fabrications Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Excalibur Automobile Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('Excalibur Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('EXCALIBUR TRAILER COMPANY');
+INSERT INTO "brand" ("brandname") VALUES ('Excel');
+INSERT INTO "brand" ("brandname") VALUES ('EXCEL TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('Excel Truck Equipment Specialties');
+INSERT INTO "brand" ("brandname") VALUES ('Excelsior-Henderson Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('Execucoach Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Execuhitch');
+INSERT INTO "brand" ("brandname") VALUES ('Exolon Systems Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Exosent Engineering');
+INSERT INTO "brand" ("brandname") VALUES ('Exotic Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Exotix Cycle & Motor Werx');
+INSERT INTO "brand" ("brandname") VALUES ('Experimental Fabrication Inc');
+INSERT INTO "brand" ("brandname") VALUES ('EXPLORER VAN COMPANY');
+INSERT INTO "brand" ("brandname") VALUES ('Express Shuttle Service');
+INSERT INTO "brand" ("brandname") VALUES ('Express Trailers Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Express Welding');
+INSERT INTO "brand" ("brandname") VALUES ('EXTREME CHOPPERS, INC');
+INSERT INTO "brand" ("brandname") VALUES ('Extreme Chute Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Extreme Classic Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Extreme Engineering Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Extreme Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('Extreme Road & Trail');
+INSERT INTO "brand" ("brandname") VALUES ('Extreme Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Extreme Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Extreme Trailers (TN)');
+INSERT INTO "brand" ("brandname") VALUES ('EXTREME TRAILERS LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Extreme Warrior RVs of Idaho');
+INSERT INTO "brand" ("brandname") VALUES ('Extreme Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Exxiss');
+INSERT INTO "brand" ("brandname") VALUES ('Eye4Design Conversions');
+INSERT INTO "brand" ("brandname") VALUES ('Eyeball Eng.');
+INSERT INTO "brand" ("brandname") VALUES ('EZ');
+INSERT INTO "brand" ("brandname") VALUES ('EZ-2-LOAD Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('EZ-HAUL, INC');
+INSERT INTO "brand" ("brandname") VALUES ('EZ Deploy Systems');
+INSERT INTO "brand" ("brandname") VALUES ('EZ Draw Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('EZ GO');
+INSERT INTO "brand" ("brandname") VALUES ('EZ Hunt & Haul');
+INSERT INTO "brand" ("brandname") VALUES ('EZ Life Campers');
+INSERT INTO "brand" ("brandname") VALUES ('EZ Loader Adjustable Boat Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('EZ Loader Boat Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('EZ Loader Custom Boat Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('EZ Pull Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('EZ Trac');
+INSERT INTO "brand" ("brandname") VALUES ('EZ Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('F-3 Trailers & Fab.');
+INSERT INTO "brand" ("brandname") VALUES ('Fab Tec');
+INSERT INTO "brand" ("brandname") VALUES ('Fabco');
+INSERT INTO "brand" ("brandname") VALUES ('Fabform Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Fabricacion y Comercializacion Pena');
+INSERT INTO "brand" ("brandname") VALUES ('FABRICATION & DESIGN INC');
+INSERT INTO "brand" ("brandname") VALUES ('Fabrication Technologies');
+INSERT INTO "brand" ("brandname") VALUES ('Fabricators Plus');
+INSERT INTO "brand" ("brandname") VALUES ('Fabtech');
+INSERT INTO "brand" ("brandname") VALUES ('FabWeld, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Factory Direct Equipment Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Factory Direct Trailer Sales & Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Factory Motorhomes Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Factory Transports, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Fair West');
+INSERT INTO "brand" ("brandname") VALUES ('Fairplay Electric Cars, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Fairview Automated Burnouts');
+INSERT INTO "brand" ("brandname") VALUES ('Faith Forgotten, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Fajumes SA de CV');
+INSERT INTO "brand" ("brandname") VALUES ('Falcon');
+INSERT INTO "brand" ("brandname") VALUES ('Falcon Road Maintenance Equipment, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Falcon Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Falcon Trailerworks');
+INSERT INTO "brand" ("brandname") VALUES ('FAN');
+INSERT INTO "brand" ("brandname") VALUES ('Fanntana Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('FANTASY COACH COMPANY, INC');
+INSERT INTO "brand" ("brandname") VALUES ('FARMBILT INC');
+INSERT INTO "brand" ("brandname") VALUES ('Farmer Fabrications');
+INSERT INTO "brand" ("brandname") VALUES ('FARMERS & CONTRACTORS SUPPLY CO.');
+INSERT INTO "brand" ("brandname") VALUES ('Farwest Golf');
+INSERT INTO "brand" ("brandname") VALUES ('Fast -Way Ideal Mfg Co');
+INSERT INTO "brand" ("brandname") VALUES ('Fast Eddie''s Customs and Classics');
+INSERT INTO "brand" ("brandname") VALUES ('Fast Master Products, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Fast Screen Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Fast Truck Body & Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('FastlaneLSV');
+INSERT INTO "brand" ("brandname") VALUES ('Fastload Enterprise');
+INSERT INTO "brand" ("brandname") VALUES ('Fastrack Engineering');
+INSERT INTO "brand" ("brandname") VALUES ('Fat Attack Custom Bikes');
+INSERT INTO "brand" ("brandname") VALUES ('Fat Boy Trailers, LLC.');
+INSERT INTO "brand" ("brandname") VALUES ('Fat Daddy Racing');
+INSERT INTO "brand" ("brandname") VALUES ('Fat Guinea Customs');
+INSERT INTO "brand" ("brandname") VALUES ('Fat Socks Motorsports');
+INSERT INTO "brand" ("brandname") VALUES ('Fatmancycleworks');
+INSERT INTO "brand" ("brandname") VALUES ('FATT HOGG FRAMES');
+INSERT INTO "brand" ("brandname") VALUES ('Faw Jiaxing Happy Messenger');
+INSERT INTO "brand" ("brandname") VALUES ('FBI Motor Co.');
+INSERT INTO "brand" ("brandname") VALUES ('FCM-Group');
+INSERT INTO "brand" ("brandname") VALUES ('FDM');
+INSERT INTO "brand" ("brandname") VALUES ('Fearless Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Featherlite Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Featherlite Vogue');
+INSERT INTO "brand" ("brandname") VALUES ('Federal Motors Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Feel Good Cars');
+INSERT INTO "brand" ("brandname") VALUES ('Fehr Industrial Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('FEKON');
+INSERT INTO "brand" ("brandname") VALUES ('Felling Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Felony Street Gear');
+INSERT INTO "brand" ("brandname") VALUES ('FEMCO');
+INSERT INTO "brand" ("brandname") VALUES ('FENRIS CYCLE, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Ferguson Built Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Ferguson Truck Body & Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('Fernando Rivera');
+INSERT INTO "brand" ("brandname") VALUES ('Ferocity Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Ferrari');
+INSERT INTO "brand" ("brandname") VALUES ('Ferro Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Fiat');
+INSERT INTO "brand" ("brandname") VALUES ('Fiba Compressed Gas Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('Fiber Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Fiberlite Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Fiberlite Travel Trailers, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Fibertech Services');
+INSERT INTO "brand" ("brandname") VALUES ('Fidelity Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Fido Motors');
+INSERT INTO "brand" ("brandname") VALUES ('Fifties Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('FIMCO');
+INSERT INTO "brand" ("brandname") VALUES ('FINCO');
+INSERT INTO "brand" ("brandname") VALUES ('Fineline Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('FINISHLINE CUSTOM TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('Fire Plus');
+INSERT INTO "brand" ("brandname") VALUES ('Firebird Custom Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Fireblast 451');
+INSERT INTO "brand" ("brandname") VALUES ('Firedancer Manufacturing Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Firely ESV');
+INSERT INTO "brand" ("brandname") VALUES ('Firepower');
+INSERT INTO "brand" ("brandname") VALUES ('Fireside Recreational Vehicles');
+INSERT INTO "brand" ("brandname") VALUES ('FIRETAC SYSTEMS, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('First Call Flagging');
+INSERT INTO "brand" ("brandname") VALUES ('FIRST CLASS TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('First Fueling Systems');
+INSERT INTO "brand" ("brandname") VALUES ('First Line Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('First Products Inc');
+INSERT INTO "brand" ("brandname") VALUES ('First United Industrial Foshan');
+INSERT INTO "brand" ("brandname") VALUES ('Fischer Tharp');
+INSERT INTO "brand" ("brandname") VALUES ('FISHER WELDING COMPANY');
+INSERT INTO "brand" ("brandname") VALUES ('FISHING HOLDINGS, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('FISKER AUTOMOTIVE');
+INSERT INTO "brand" ("brandname") VALUES ('Fitzgerald Kit Trucks & Sales, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Five Diamond Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Five Star Custom Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('FIVE STAR TRAILER AND EQUIPMENT');
+INSERT INTO "brand" ("brandname") VALUES ('Five Star Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Five Stars Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('FLAC INDUSTRIES INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Flame King Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Flaming Hacksaw Fabrication LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Flat Bed');
+INSERT INTO "brand" ("brandname") VALUES ('Flat Creek Lodges');
+INSERT INTO "brand" ("brandname") VALUES ('Flatt Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('Flaunt Electric Vehicles');
+INSERT INTO "brand" ("brandname") VALUES ('FLEET AIR WORLDWIDE, INC');
+INSERT INTO "brand" ("brandname") VALUES ('Fleet Equine');
+INSERT INTO "brand" ("brandname") VALUES ('Fleet Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('Fleet Masters');
+INSERT INTO "brand" ("brandname") VALUES ('Fleetwing Travelers, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Fleetwood Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('Fleetwood Folding Trailer (Pioneer)');
+INSERT INTO "brand" ("brandname") VALUES ('Fleetwood Folding Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Fleetwood RV, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('FLEMING TRAILERS INCORPORATED');
+INSERT INTO "brand" ("brandname") VALUES ('Flex Temp Systems');
+INSERT INTO "brand" ("brandname") VALUES ('Flex Trailers LLC');
+INSERT INTO "brand" ("brandname") VALUES ('FlexTop Trailers LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Flicker Group');
+INSERT INTO "brand" ("brandname") VALUES ('FLINT MANUFACTURING');
+INSERT INTO "brand" ("brandname") VALUES ('Floe International');
+INSERT INTO "brand" ("brandname") VALUES ('Florida Custom Choppers LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Flournoy Trailer Sales');
+INSERT INTO "brand" ("brandname") VALUES ('Flow-Boy by Hi-Way');
+INSERT INTO "brand" ("brandname") VALUES ('Flow Tech Fabricators');
+INSERT INTO "brand" ("brandname") VALUES ('FLXIBLE');
+INSERT INTO "brand" ("brandname") VALUES ('FLYER');
+INSERT INTO "brand" ("brandname") VALUES ('Flynn''s Welding & Machine Shop');
+INSERT INTO "brand" ("brandname") VALUES ('Flyrite Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('FMB Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('FMD Fabrication Services');
+INSERT INTO "brand" ("brandname") VALUES ('FNA GROUP INC');
+INSERT INTO "brand" ("brandname") VALUES ('FOGLEMAN MANUFACTLURING, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Fontaine Specialized Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Fontaine Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Fontaine Trailer Co.');
+INSERT INTO "brand" ("brandname") VALUES ('Fontaine Truck Equipment Company');
+INSERT INTO "brand" ("brandname") VALUES ('Food-Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Food Buggy');
+INSERT INTO "brand" ("brandname") VALUES ('Foral Company');
+INSERT INTO "brand" ("brandname") VALUES ('FORCE MANUFACTURING');
+INSERT INTO "brand" ("brandname") VALUES ('Ford');
+INSERT INTO "brand" ("brandname") VALUES ('Fords Trailer Sales');
+INSERT INTO "brand" ("brandname") VALUES ('Foremost Truck & Trailer Specialists');
+INSERT INTO "brand" ("brandname") VALUES ('Foreshee Flatbed Ladders and Manufacturing LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Forest River');
+INSERT INTO "brand" ("brandname") VALUES ('Foretravel');
+INSERT INTO "brand" ("brandname") VALUES ('Forever Concession Trailers LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Formcaster Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Formula 1 Street Com');
+INSERT INTO "brand" ("brandname") VALUES ('Formula Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Forrest City Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Fortitude Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('FortuneSport VES');
+INSERT INTO "brand" ("brandname") VALUES ('Foshan Fosti Motorcycle Manufacturing Co.');
+INSERT INTO "brand" ("brandname") VALUES ('Foshan Nanhai Yiho Hardware Electric Equipment Co');
+INSERT INTO "brand" ("brandname") VALUES ('Foss Developing');
+INSERT INTO "brand" ("brandname") VALUES ('Fosti');
+INSERT INTO "brand" ("brandname") VALUES ('Foundry Moto');
+INSERT INTO "brand" ("brandname") VALUES ('Four - W Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Four Horseman Motorcycle Co LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Four Winds International Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('Four Winns');
+INSERT INTO "brand" ("brandname") VALUES ('Fourstar Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('FOWLER TRAILERS, INC');
+INSERT INTO "brand" ("brandname") VALUES ('FOX BETTER BUILT TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('Fox Hollow Mfg.');
+INSERT INTO "brand" ("brandname") VALUES ('Fox Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Fox Valley Metal Tech, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Foxworth Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('FRAKER MANUFACTURING CO.');
+INSERT INTO "brand" ("brandname") VALUES ('Francis Trailer Manufacturing Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Franklin Retreats');
+INSERT INTO "brand" ("brandname") VALUES ('Franko''s Custom Cycles Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('FREDERIKSEN ENTERPRISES INC');
+INSERT INTO "brand" ("brandname") VALUES ('FREDY RUIZ MARTINEZ');
+INSERT INTO "brand" ("brandname") VALUES ('Free Drive EV');
+INSERT INTO "brand" ("brandname") VALUES ('Freeborn''s Chop Shop');
+INSERT INTO "brand" ("brandname") VALUES ('Freeborn Customs, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Freedom Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('Freedom Motorcycle Company');
+INSERT INTO "brand" ("brandname") VALUES ('Freedom Outdoor Products');
+INSERT INTO "brand" ("brandname") VALUES ('Freedom Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Freedom Trailers LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Freedom Trailers, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Freedom Trailers, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Freeman''s');
+INSERT INTO "brand" ("brandname") VALUES ('Freeman Choppers, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('FreeMyer Industries');
+INSERT INTO "brand" ("brandname") VALUES ('FREEPORT MILLS SIGNWORKS INC');
+INSERT INTO "brand" ("brandname") VALUES ('Freespirit Recreation');
+INSERT INTO "brand" ("brandname") VALUES ('Freightliner');
+INSERT INTO "brand" ("brandname") VALUES ('Friesen Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Frisbie Construction Co Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Frontier Cargo');
+INSERT INTO "brand" ("brandname") VALUES ('Frontier Equipment Design');
+INSERT INTO "brand" ("brandname") VALUES ('Frontier Industrial');
+INSERT INTO "brand" ("brandname") VALUES ('Frontier RV');
+INSERT INTO "brand" ("brandname") VALUES ('Frontier Trailer Sales');
+INSERT INTO "brand" ("brandname") VALUES ('Frontline');
+INSERT INTO "brand" ("brandname") VALUES ('Fruehauf');
+INSERT INTO "brand" ("brandname") VALUES ('Fruehuaf');
+INSERT INTO "brand" ("brandname") VALUES ('Fruetel');
+INSERT INTO "brand" ("brandname") VALUES ('FTEC');
+INSERT INTO "brand" ("brandname") VALUES ('FTG Equipment Solutions');
+INSERT INTO "brand" ("brandname") VALUES ('Fuel Horse');
+INSERT INTO "brand" ("brandname") VALUES ('Fujian Changchun (Special Vehicle Mfg)');
+INSERT INTO "brand" ("brandname") VALUES ('Fukushu, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Full Throttle Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('Fulmer Fabrications');
+INSERT INTO "brand" ("brandname") VALUES ('Fulu');
+INSERT INTO "brand" ("brandname") VALUES ('Fun Slides Inc');
+INSERT INTO "brand" ("brandname") VALUES ('FUN TECH INDUSTRIES, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Funbuddy');
+INSERT INTO "brand" ("brandname") VALUES ('FUQUA HOMES, INC');
+INSERT INTO "brand" ("brandname") VALUES ('FUTURE HOME TECHNOLOGY');
+INSERT INTO "brand" ("brandname") VALUES ('Fuzion');
+INSERT INTO "brand" ("brandname") VALUES ('FWM Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('FYRBERG WELDING');
+INSERT INTO "brand" ("brandname") VALUES ('G-2 Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('G & B Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('G & C');
+INSERT INTO "brand" ("brandname") VALUES ('G & D Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('G & G Fab');
+INSERT INTO "brand" ("brandname") VALUES ('G & G METAL FABRICATION');
+INSERT INTO "brand" ("brandname") VALUES ('G & K Steelworks');
+INSERT INTO "brand" ("brandname") VALUES ('G & R Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('Gabilan Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Gabriel Villescas West Mesa Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Gaitway Trailer Co');
+INSERT INTO "brand" ("brandname") VALUES ('Galaxy');
+INSERT INTO "brand" ("brandname") VALUES ('Galaxy Trailer Mfg.');
+INSERT INTO "brand" ("brandname") VALUES ('Galfab');
+INSERT INTO "brand" ("brandname") VALUES ('Galion Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('GALPIN MANUFACTURING, INC');
+INSERT INTO "brand" ("brandname") VALUES ('Galvanized International');
+INSERT INTO "brand" ("brandname") VALUES ('Galyean Equipment Co.');
+INSERT INTO "brand" ("brandname") VALUES ('GAM');
+INSERT INTO "brand" ("brandname") VALUES ('Gamble''s Welding & Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('GAMBLE TRAILERS INC');
+INSERT INTO "brand" ("brandname") VALUES ('Gambler');
+INSERT INTO "brand" ("brandname") VALUES ('Game Day Traditions');
+INSERT INTO "brand" ("brandname") VALUES ('Gangster Choppers Inc');
+INSERT INTO "brand" ("brandname") VALUES ('GANGTIEXIA');
+INSERT INTO "brand" ("brandname") VALUES ('Ganzcorp Investments');
+INSERT INTO "brand" ("brandname") VALUES ('Gap Hill Aluminum Shop');
+INSERT INTO "brand" ("brandname") VALUES ('Garcia Industries');
+INSERT INTO "brand" ("brandname") VALUES ('GARDEN STATE CHASSIS REMANUFACTURING INC');
+INSERT INTO "brand" ("brandname") VALUES ('Gardner Denver, Water Jetting Systems');
+INSERT INTO "brand" ("brandname") VALUES ('Garia');
+INSERT INTO "brand" ("brandname") VALUES ('Garland Trailer Designs');
+INSERT INTO "brand" ("brandname") VALUES ('GARLOCK TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('Garneau''s Garage, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Gateway Materials');
+INSERT INTO "brand" ("brandname") VALUES ('Gateway Teardrops');
+INSERT INTO "brand" ("brandname") VALUES ('Gator Made');
+INSERT INTO "brand" ("brandname") VALUES ('Gatormoto Utility Vehicles & More LLC');
+INSERT INTO "brand" ("brandname") VALUES ('GBA Sales Consignment & Rental');
+INSERT INTO "brand" ("brandname") VALUES ('GC-1');
+INSERT INTO "brand" ("brandname") VALUES ('GCK Industrial');
+INSERT INTO "brand" ("brandname") VALUES ('GDM Incorporated');
+INSERT INTO "brand" ("brandname") VALUES ('GE Packaged Power');
+INSERT INTO "brand" ("brandname") VALUES ('GE Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Gear Gasm');
+INSERT INTO "brand" ("brandname") VALUES ('Gear Jammer');
+INSERT INTO "brand" ("brandname") VALUES ('Gearheads Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Geely');
+INSERT INTO "brand" ("brandname") VALUES ('Geistwerks');
+INSERT INTO "brand" ("brandname") VALUES ('GEM');
+INSERT INTO "brand" ("brandname") VALUES ('Gemco Park Homes');
+INSERT INTO "brand" ("brandname") VALUES ('GEMINI AUTO & TRAILER INC');
+INSERT INTO "brand" ("brandname") VALUES ('Gemini Auto Lifts');
+INSERT INTO "brand" ("brandname") VALUES ('Gene''s Golf Carts');
+INSERT INTO "brand" ("brandname") VALUES ('GENERAC MOBILE PRODUCTS, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Generac Power Systems Inc');
+INSERT INTO "brand" ("brandname") VALUES ('General Automotive Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('General Coach');
+INSERT INTO "brand" ("brandname") VALUES ('General Crane Service');
+INSERT INTO "brand" ("brandname") VALUES ('General Duty Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('General Fertilizer Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('General Machine Products');
+INSERT INTO "brand" ("brandname") VALUES ('General Purpose Vehicles');
+INSERT INTO "brand" ("brandname") VALUES ('General Rich Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('General Services, Inc (GSI)');
+INSERT INTO "brand" ("brandname") VALUES ('General Shelters');
+INSERT INTO "brand" ("brandname") VALUES ('General Shelters of Kenedy, TX Ltd');
+INSERT INTO "brand" ("brandname") VALUES ('General Welding and Fabricating Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Genesis');
+INSERT INTO "brand" ("brandname") VALUES ('Genesis Supreme Inc');
+INSERT INTO "brand" ("brandname") VALUES ('GENESIS SUPREME RV, INC');
+INSERT INTO "brand" ("brandname") VALUES ('GENIE MANUFACTURING, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Genuine Jacks');
+INSERT INTO "brand" ("brandname") VALUES ('Genuine Scooters');
+INSERT INTO "brand" ("brandname") VALUES ('GenZe');
+INSERT INTO "brand" ("brandname") VALUES ('Geo');
+INSERT INTO "brand" ("brandname") VALUES ('Georgia Wholesale Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Gerdes Fabricating');
+INSERT INTO "brand" ("brandname") VALUES ('Gerling and Associates');
+INSERT INTO "brand" ("brandname") VALUES ('GETTIG TECHNOLOGIES LTD');
+INSERT INTO "brand" ("brandname") VALUES ('GFA');
+INSERT INTO "brand" ("brandname") VALUES ('GForce Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('Gibson Brothers Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Gichner Refrigerated Systems');
+INSERT INTO "brand" ("brandname") VALUES ('Gichner Truck Bodies');
+INSERT INTO "brand" ("brandname") VALUES ('Gicon Pumps and Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('GIDDINGS MACHINE COMPANY, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Gidget');
+INSERT INTO "brand" ("brandname") VALUES ('Giles RV');
+INSERT INTO "brand" ("brandname") VALUES ('Gillig');
+INSERT INTO "brand" ("brandname") VALUES ('Girtz Industries');
+INSERT INTO "brand" ("brandname") VALUES ('GK Machine');
+INSERT INTO "brand" ("brandname") VALUES ('Glacier');
+INSERT INTO "brand" ("brandname") VALUES ('Gladiator Custom Trailers, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Glastron');
+INSERT INTO "brand" ("brandname") VALUES ('Glendale RV');
+INSERT INTO "brand" ("brandname") VALUES ('Glenn');
+INSERT INTO "brand" ("brandname") VALUES ('GLIDEWELL TRAILER SALES');
+INSERT INTO "brand" ("brandname") VALUES ('Global Electric Motorcars');
+INSERT INTO "brand" ("brandname") VALUES ('Global Fabricators');
+INSERT INTO "brand" ("brandname") VALUES ('GLOBAL FACTORY PRODUCTS, INC');
+INSERT INTO "brand" ("brandname") VALUES ('Global Generation Cult');
+INSERT INTO "brand" ("brandname") VALUES ('Global Inventive Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Global Motorsport Group');
+INSERT INTO "brand" ("brandname") VALUES ('Global Power Components');
+INSERT INTO "brand" ("brandname") VALUES ('Global Pump Company');
+INSERT INTO "brand" ("brandname") VALUES ('Global Steel');
+INSERT INTO "brand" ("brandname") VALUES ('Global Truck & Trailer Sales');
+INSERT INTO "brand" ("brandname") VALUES ('Global Vaccum Systems');
+INSERT INTO "brand" ("brandname") VALUES ('Globe Trailer Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('GM');
+INSERT INTO "brand" ("brandname") VALUES ('GMC');
+INSERT INTO "brand" ("brandname") VALUES ('GMNA (Opel & Daewoo)');
+INSERT INTO "brand" ("brandname") VALUES ('GMR Trailers, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Go Rite Trailers, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Go RV');
+INSERT INTO "brand" ("brandname") VALUES ('Gold Star');
+INSERT INTO "brand" ("brandname") VALUES ('Gold Star Communications');
+INSERT INTO "brand" ("brandname") VALUES ('Gold Star Custom Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Gold Star Trailer Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Golden Building Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('Golden Gait Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('GOLDEN WEST HOMES');
+INSERT INTO "brand" ("brandname") VALUES ('Golf Car Center');
+INSERT INTO "brand" ("brandname") VALUES ('Golf Cars of Arizona');
+INSERT INTO "brand" ("brandname") VALUES ('Golf Cart Outlet Inc');
+INSERT INTO "brand" ("brandname") VALUES ('GOOD PACE INC');
+INSERT INTO "brand" ("brandname") VALUES ('Good Thunder Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('GOOD TIME');
+INSERT INTO "brand" ("brandname") VALUES ('GOOD TIME OUTDOORS, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('GOODSON BUILDING SYSTEMS, INC');
+INSERT INTO "brand" ("brandname") VALUES ('Google');
+INSERT INTO "brand" ("brandname") VALUES ('Goose Creek Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('Gore');
+INSERT INTO "brand" ("brandname") VALUES ('Gorilla Built Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('Gorilla Vehicles');
+INSERT INTO "brand" ("brandname") VALUES ('Gotwals Brothers');
+INSERT INTO "brand" ("brandname") VALUES ('GOVECS');
+INSERT INTO "brand" ("brandname") VALUES ('GR Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('GRA-TER INDUSTRIES INC');
+INSERT INTO "brand" ("brandname") VALUES ('Grabill RV Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Grace Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Graetz Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('GRAND DESIGN RECREATIONAL');
+INSERT INTO "brand" ("brandname") VALUES ('Grand Design Recreational Vehicles');
+INSERT INTO "brand" ("brandname") VALUES ('GRAND ISLAND');
+INSERT INTO "brand" ("brandname") VALUES ('GRAND LAKE FABRICATION');
+INSERT INTO "brand" ("brandname") VALUES ('Grande');
+INSERT INTO "brand" ("brandname") VALUES ('Grande West');
+INSERT INTO "brand" ("brandname") VALUES ('Grandeur Cycles Inc');
+INSERT INTO "brand" ("brandname") VALUES ('GRANDWATT ELECTRIC');
+INSERT INTO "brand" ("brandname") VALUES ('Grasshopper Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('GRAVES CUSTOM CYCLES, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('GRAVITY CONCEPTS');
+INSERT INTO "brand" ("brandname") VALUES ('GREASYHILL');
+INSERT INTO "brand" ("brandname") VALUES ('GREAT AMERICAN CHOPPER');
+INSERT INTO "brand" ("brandname") VALUES ('Great Basin Industries Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Great Dane');
+INSERT INTO "brand" ("brandname") VALUES ('Great Dane Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Great Lakes Cargo');
+INSERT INTO "brand" ("brandname") VALUES ('GREAT LAKES TRAILER');
+INSERT INTO "brand" ("brandname") VALUES ('GREAT NORTHERN TRAILER WORKS');
+INSERT INTO "brand" ("brandname") VALUES ('GREAT PLAINS FABRICATION');
+INSERT INTO "brand" ("brandname") VALUES ('GREAT WHITE TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('GREAT WOLF TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('GREEN''S WELDING AND TRAILER SALES');
+INSERT INTO "brand" ("brandname") VALUES ('GREEN DISTRICT');
+INSERT INTO "brand" ("brandname") VALUES ('GREEN ELEC-MOTOR');
+INSERT INTO "brand" ("brandname") VALUES ('Green Hop''r');
+INSERT INTO "brand" ("brandname") VALUES ('GREEN INTERNATIONAL SOLUTIONS');
+INSERT INTO "brand" ("brandname") VALUES ('GREEN POWER TECHNOLOGY');
+INSERT INTO "brand" ("brandname") VALUES ('GREEN VALLEY MANUFACTURING');
+INSERT INTO "brand" ("brandname") VALUES ('GREENFIELD TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('GreenGo Buggies');
+INSERT INTO "brand" ("brandname") VALUES ('GREENGO TEK');
+INSERT INTO "brand" ("brandname") VALUES ('Greenhead Trailers MFG');
+INSERT INTO "brand" ("brandname") VALUES ('GREENKRAFT');
+INSERT INTO "brand" ("brandname") VALUES ('GREENLITE TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('Greenman Machinery Group(HK)Limited');
+INSERT INTO "brand" ("brandname") VALUES ('GreenPower Motor Company Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('GREENTECH AUTOMOTIVE');
+INSERT INTO "brand" ("brandname") VALUES ('Greenwater Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Gregory Industries Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('GRIFFIN TRAILER');
+INSERT INTO "brand" ("brandname") VALUES ('GRIFFITH CHOPPERS');
+INSERT INTO "brand" ("brandname") VALUES ('Grigsby');
+INSERT INTO "brand" ("brandname") VALUES ('Grimaldi''s Heating & Sheet Metal, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Grimes-Parker IND Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Grizzly Cycle Works');
+INSERT INTO "brand" ("brandname") VALUES ('Grizzly Mountain Manufacturing Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Grooms Welding & Machine Inc');
+INSERT INTO "brand" ("brandname") VALUES ('GROUND FORCE MANUFACTURING LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Ground Heaters');
+INSERT INTO "brand" ("brandname") VALUES ('GRP Fiberglass Limited');
+INSERT INTO "brand" ("brandname") VALUES ('Grubb Trailers, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Grumman');
+INSERT INTO "brand" ("brandname") VALUES ('Grumman Olson');
+INSERT INTO "brand" ("brandname") VALUES ('Grumpys Custom Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('GRUPO REMOLQUES del NORTE');
+INSERT INTO "brand" ("brandname") VALUES ('Gruppe B');
+INSERT INTO "brand" ("brandname") VALUES ('GRYPHON BIKES & CHOPPERS');
+INSERT INTO "brand" ("brandname") VALUES ('GS MANUFACTURING');
+INSERT INTO "brand" ("brandname") VALUES ('GS Motor Company');
+INSERT INTO "brand" ("brandname") VALUES ('GSE CUSTOM CARS AND CYCLES');
+INSERT INTO "brand" ("brandname") VALUES ('GSN CUSTOMS');
+INSERT INTO "brand" ("brandname") VALUES ('GT''S BOAT WORKS');
+INSERT INTO "brand" ("brandname") VALUES ('GT Mfg');
+INSERT INTO "brand" ("brandname") VALUES ('GUAM STEEL SERVICES, LLC dba TSUNAMI MOTORSPORTS');
+INSERT INTO "brand" ("brandname") VALUES ('GUARDAIN TRAILERS INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Guardian');
+INSERT INTO "brand" ("brandname") VALUES ('GUERDON ENTERPRISES LLC');
+INSERT INTO "brand" ("brandname") VALUES ('GUERILLA CUSTOMS');
+INSERT INTO "brand" ("brandname") VALUES ('Gulf Coast Trailer Mfg.');
+INSERT INTO "brand" ("brandname") VALUES ('Gulf South Trailer Works');
+INSERT INTO "brand" ("brandname") VALUES ('Gulf Stream Coach, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('GULL WING INDUSTRIES, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('GULLWING INTERNATIONAL MOTORS, LTD.');
+INSERT INTO "brand" ("brandname") VALUES ('Gun Fighter Customs');
+INSERT INTO "brand" ("brandname") VALUES ('H & H Motor Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('H & H Supply, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('H & H TRAILER SW');
+INSERT INTO "brand" ("brandname") VALUES ('H & H Trailers, LLC.');
+INSERT INTO "brand" ("brandname") VALUES ('H & H Welding');
+INSERT INTO "brand" ("brandname") VALUES ('H & H Welding & Repair LLC');
+INSERT INTO "brand" ("brandname") VALUES ('H & H WELDING, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('H & M GOPHER CONTROL');
+INSERT INTO "brand" ("brandname") VALUES ('H & M Manufacturing, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('H & M TRAILERS LLC');
+INSERT INTO "brand" ("brandname") VALUES ('H & W Trailer Works Inc');
+INSERT INTO "brand" ("brandname") VALUES ('H&H');
+INSERT INTO "brand" ("brandname") VALUES ('H&H Custom Solutlons');
+INSERT INTO "brand" ("brandname") VALUES ('H&H Trailer Co');
+INSERT INTO "brand" ("brandname") VALUES ('Hackney and Sons, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Hackney Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Hackstetter Motor Holdings LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Hageman''s Custom Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Hahm EV');
+INSERT INTO "brand" ("brandname") VALUES ('Halbert Trailer Service and Repair');
+INSERT INTO "brand" ("brandname") VALUES ('Half Moon');
+INSERT INTO "brand" ("brandname") VALUES ('HallBuilt Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Halljack Industries LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Hallstar Trailers, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Halo Cycles LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Halsey Z Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Hamby');
+INSERT INTO "brand" ("brandname") VALUES ('Hamilton Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Hamlet Custom Haulers LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Hamlin Trailer Manufacturer');
+INSERT INTO "brand" ("brandname") VALUES ('Hamm & Phillips Service Company, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Hammar Lift');
+INSERT INTO "brand" ("brandname") VALUES ('Hammelmann Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('Hammer Down Choppers LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Hammerhead Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Hamner');
+INSERT INTO "brand" ("brandname") VALUES ('Hampton Amusement Rides LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Hancock Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Hang Time Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Hank Williams Trailer Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Hansen Hydralift');
+INSERT INTO "brand" ("brandname") VALUES ('Hanson');
+INSERT INTO "brand" ("brandname") VALUES ('Haonuo');
+INSERT INTO "brand" ("brandname") VALUES ('Haoying');
+INSERT INTO "brand" ("brandname") VALUES ('HappiTrails');
+INSERT INTO "brand" ("brandname") VALUES ('Happy Trails Trailers LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Happy Valley Campers');
+INSERT INTO "brand" ("brandname") VALUES ('Harborview Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('HARCO TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('Hard Bikes');
+INSERT INTO "brand" ("brandname") VALUES ('Hard Hat Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('HARDCORE CHOPPERS');
+INSERT INTO "brand" ("brandname") VALUES ('Hardee Manufacturing Company Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Hardknock');
+INSERT INTO "brand" ("brandname") VALUES ('Hardkore Karts');
+INSERT INTO "brand" ("brandname") VALUES ('Hargrove Brand');
+INSERT INTO "brand" ("brandname") VALUES ('Harley Corp.');
+INSERT INTO "brand" ("brandname") VALUES ('Harley Davidson');
+INSERT INTO "brand" ("brandname") VALUES ('HARMAR , INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Harmon');
+INSERT INTO "brand" ("brandname") VALUES ('Harnischfeger');
+INSERT INTO "brand" ("brandname") VALUES ('Harper');
+INSERT INTO "brand" ("brandname") VALUES ('Harrell Performance Engineering');
+INSERT INTO "brand" ("brandname") VALUES ('Harris Custom Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('Harris Fabrication LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Harris Waste Management Group, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Harrod Equipment LLC dba Bluegrass Trailer Mfg');
+INSERT INTO "brand" ("brandname") VALUES ('Hart');
+INSERT INTO "brand" ("brandname") VALUES ('Hart Designs');
+INSERT INTO "brand" ("brandname") VALUES ('Hart Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Hart Steel Company');
+INSERT INTO "brand" ("brandname") VALUES ('Hartstra Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Harvest AG');
+INSERT INTO "brand" ("brandname") VALUES ('Harvest International');
+INSERT INTO "brand" ("brandname") VALUES ('Harvest Services');
+INSERT INTO "brand" ("brandname") VALUES ('Hatton Fabrication, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Haul''n Ass Customs, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Haul-All, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Haul-Rite');
+INSERT INTO "brand" ("brandname") VALUES ('Haulinit');
+INSERT INTO "brand" ("brandname") VALUES ('Haulmark');
+INSERT INTO "brand" ("brandname") VALUES ('HAULMARK INDUSTRIES, INC');
+INSERT INTO "brand" ("brandname") VALUES ('Haulmax Trailer Company');
+INSERT INTO "brand" ("brandname") VALUES ('HaulRite of Four Corners, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Haulstar, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Hawaiian Chariot Wheelchair Motorbikes, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Hawes Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Hawk FRP, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Hawk Motors');
+INSERT INTO "brand" ("brandname") VALUES ('HAWK TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('Hawker Well Works, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Hawkeye Eagle');
+INSERT INTO "brand" ("brandname") VALUES ('HAWKINS WESTERN WORLD');
+INSERT INTO "brand" ("brandname") VALUES ('Hawkline LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Hay Competitor');
+INSERT INTO "brand" ("brandname") VALUES ('Hay Seed Farms LLC');
+INSERT INTO "brand" ("brandname") VALUES ('HAYES TRUCK & TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('Hayvan Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('HB Custom Components, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('HBC GROUP LLC');
+INSERT INTO "brand" ("brandname") VALUES ('HBP-Jaybrake, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('HCL Truck Equipment Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('HDE');
+INSERT INTO "brand" ("brandname") VALUES ('HDK Plastic LTD USA');
+INSERT INTO "brand" ("brandname") VALUES ('HEARTLAND');
+INSERT INTO "brand" ("brandname") VALUES ('Heartland Homes');
+INSERT INTO "brand" ("brandname") VALUES ('Heartland Recreational Vehicles LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Heartland Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Heartland Trailers of BC');
+INSERT INTO "brand" ("brandname") VALUES ('Heat''s on Welding & Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('Heat Innovation');
+INSERT INTO "brand" ("brandname") VALUES ('Heatec, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Heavy Duty Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('HEAVY HITTER');
+INSERT INTO "brand" ("brandname") VALUES ('Heavybilt Manufacturing, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Hedererbuilt Manufacturing, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('HEIL ENVIRONMENTAL INDUSTRIES, LTD');
+INSERT INTO "brand" ("brandname") VALUES ('Heil Trailer International, Co.');
+INSERT INTO "brand" ("brandname") VALUES ('Heisler Boats');
+INSERT INTO "brand" ("brandname") VALUES ('Helfin Sheet Metal Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Hell-Bent Custom Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('Hell Bound Steel LLC');
+INSERT INTO "brand" ("brandname") VALUES ('HellBilly Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('Hellbound Steel Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('Helmuth Quality Power Systems');
+INSERT INTO "brand" ("brandname") VALUES ('HEMCO');
+INSERT INTO "brand" ("brandname") VALUES ('Hemisfear Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('Hemphill, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Henderson Truck Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('Hendrickson Chassis');
+INSERT INTO "brand" ("brandname") VALUES ('Hensim');
+INSERT INTO "brand" ("brandname") VALUES ('Her Chee Industrial Company, Ltd.');
+INSERT INTO "brand" ("brandname") VALUES ('Herbs');
+INSERT INTO "brand" ("brandname") VALUES ('HERCULES');
+INSERT INTO "brand" ("brandname") VALUES ('HERCULES AJAX');
+INSERT INTO "brand" ("brandname") VALUES ('Heritage');
+INSERT INTO "brand" ("brandname") VALUES ('Heritage Custom Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Heritage Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Heritage Manufacturing, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Heritage Motor Cars');
+INSERT INTO "brand" ("brandname") VALUES ('Heritage One RV, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Herman Leasing');
+INSERT INTO "brand" ("brandname") VALUES ('HERNCO FABRICATION & SERVICES');
+INSERT INTO "brand" ("brandname") VALUES ('Hesco');
+INSERT INTO "brand" ("brandname") VALUES ('Hess Services');
+INSERT INTO "brand" ("brandname") VALUES ('HESSE CORPORATION');
+INSERT INTO "brand" ("brandname") VALUES ('Hester and Walton Tailgating Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Hewitt');
+INSERT INTO "brand" ("brandname") VALUES ('Hi-Lite RV Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('HI-Ride Manufacturing LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Hi-Standard Mfg.');
+INSERT INTO "brand" ("brandname") VALUES ('HI-TECH FABRICATORS INC');
+INSERT INTO "brand" ("brandname") VALUES ('Hi-Vac Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('Hi Line Bodies Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Hicks Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('HIDDEN VALLEY MFG, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('HIDDENITE METAL PRODUCTS INC');
+INSERT INTO "brand" ("brandname") VALUES ('High Altitude Aviation, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('HIGH COUNTRY ALUMINUM PRODUCTS, LLC.');
+INSERT INTO "brand" ("brandname") VALUES ('HIGH COUNTRY DEVELOPERS, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('High Desert Golf Cars');
+INSERT INTO "brand" ("brandname") VALUES ('High Gear Repair');
+INSERT INTO "brand" ("brandname") VALUES ('High Plains Custom Cycles LLC');
+INSERT INTO "brand" ("brandname") VALUES ('High Roller Custon Motorcycle');
+INSERT INTO "brand" ("brandname") VALUES ('High Speed Welding');
+INSERT INTO "brand" ("brandname") VALUES ('High Tide Boat Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('High Torque Marine');
+INSERT INTO "brand" ("brandname") VALUES ('Highland');
+INSERT INTO "brand" ("brandname") VALUES ('Highland Manufacturing, LLC.');
+INSERT INTO "brand" ("brandname") VALUES ('Highland Ridge RV, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('HighLine Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Highway Products, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Highwood Global, LP');
+INSERT INTO "brand" ("brandname") VALUES ('Hill Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('Hillbilly Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Hillbilly Trailors');
+INSERT INTO "brand" ("brandname") VALUES ('Hillcrest Manufacturing LLC');
+INSERT INTO "brand" ("brandname") VALUES ('HILLSBORO');
+INSERT INTO "brand" ("brandname") VALUES ('Hilltop Custom Cycle');
+INSERT INTO "brand" ("brandname") VALUES ('Hiniker');
+INSERT INTO "brand" ("brandname") VALUES ('Hino');
+INSERT INTO "brand" ("brandname") VALUES ('Hinterland');
+INSERT INTO "brand" ("brandname") VALUES ('HiPoint');
+INSERT INTO "brand" ("brandname") VALUES ('Hirons Memorial Works');
+INSERT INTO "brand" ("brandname") VALUES ('Hitch-Hiker Mfg');
+INSERT INTO "brand" ("brandname") VALUES ('HITCH -N-GO- TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('HITCH & TRAILERS OF FORT MYERS, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('HITCH BUDDY');
+INSERT INTO "brand" ("brandname") VALUES ('HITCHCOCK, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Hitches ''N'' Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Hitman Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Hitong Motors');
+INSERT INTO "brand" ("brandname") VALUES ('HiVAC');
+INSERT INTO "brand" ("brandname") VALUES ('Hive Trailers LLC');
+INSERT INTO "brand" ("brandname") VALUES ('HJ Customs');
+INSERT INTO "brand" ("brandname") VALUES ('HJV Trailers LLC');
+INSERT INTO "brand" ("brandname") VALUES ('HLT TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('HMC');
+INSERT INTO "brand" ("brandname") VALUES ('HME Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('HME, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('HMF Engineering, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Hobbs Manufacturing LLC');
+INSERT INTO "brand" ("brandname") VALUES ('HOBO');
+INSERT INTO "brand" ("brandname") VALUES ('Hobson & Son');
+INSERT INTO "brand" ("brandname") VALUES ('Hobson Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Hodges Custom Haulers');
+INSERT INTO "brand" ("brandname") VALUES ('Hodges Manufacturing Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Hoedebeck');
+INSERT INTO "brand" ("brandname") VALUES ('Hog Belt Bikes Inc');
+INSERT INTO "brand" ("brandname") VALUES ('HOG HAULER INC');
+INSERT INTO "brand" ("brandname") VALUES ('Hog Haulin Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Hog Heaven Chopper');
+INSERT INTO "brand" ("brandname") VALUES ('Hog Motorcycle Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Hog Shop');
+INSERT INTO "brand" ("brandname") VALUES ('Hog Wild Customs');
+INSERT INTO "brand" ("brandname") VALUES ('HOGENTOGLER & CO INC');
+INSERT INTO "brand" ("brandname") VALUES ('Hogfather Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Holden');
+INSERT INTO "brand" ("brandname") VALUES ('Holden Industries, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Hole Shot Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('Holiday Rambler');
+INSERT INTO "brand" ("brandname") VALUES ('Holland Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Holland Dollie');
+INSERT INTO "brand" ("brandname") VALUES ('Holland Equipment Company');
+INSERT INTO "brand" ("brandname") VALUES ('Holland Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Hollis Trailer Sales Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Holmes Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('Holt Brothers Customs');
+INSERT INTO "brand" ("brandname") VALUES ('Holt Sales and Service');
+INSERT INTO "brand" ("brandname") VALUES ('Hombilt Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Home Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('HOMECO MANUFACTURED HOUSING');
+INSERT INTO "brand" ("brandname") VALUES ('Homegrown Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Homesteader');
+INSERT INTO "brand" ("brandname") VALUES ('Hometown Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Homier Distributing');
+INSERT INTO "brand" ("brandname") VALUES ('HOMIER DISTRIBUTING INC');
+INSERT INTO "brand" ("brandname") VALUES ('Honda');
+INSERT INTO "brand" ("brandname") VALUES ('Hoock Custom Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Hoopes Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Hoosier Trailer & Truck Equipment, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Hoosier Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Hop Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Hoppel Fabrication Specialties');
+INSERT INTO "brand" ("brandname") VALUES ('Horizon Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Horizon Products');
+INSERT INTO "brand" ("brandname") VALUES ('Horse Creek Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Horseshoe Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Horton Homes, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Horton Iron Works');
+INSERT INTO "brand" ("brandname") VALUES ('Horton Vans');
+INSERT INTO "brand" ("brandname") VALUES ('Hosking Trailers Ltd');
+INSERT INTO "brand" ("brandname") VALUES ('Hoss Fabricators');
+INSERT INTO "brand" ("brandname") VALUES ('Host Industries, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Hot Head Customs');
+INSERT INTO "brand" ("brandname") VALUES ('Hot Rod Factory');
+INSERT INTO "brand" ("brandname") VALUES ('Hot Summer Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Hot Tub Hauler');
+INSERT INTO "brand" ("brandname") VALUES ('Houston Marine');
+INSERT INTO "brand" ("brandname") VALUES ('Howe Brothers');
+INSERT INTO "brand" ("brandname") VALUES ('Howell Precision Machine & Engineering');
+INSERT INTO "brand" ("brandname") VALUES ('HP Piping Solutions');
+INSERT INTO "brand" ("brandname") VALUES ('HTMI');
+INSERT INTO "brand" ("brandname") VALUES ('HUAWIN');
+INSERT INTO "brand" ("brandname") VALUES ('Hughes Springs Custom Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Hughes Trailers Works');
+INSERT INTO "brand" ("brandname") VALUES ('Hulk');
+INSERT INTO "brand" ("brandname") VALUES ('Hull Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Humble Houses');
+INSERT INTO "brand" ("brandname") VALUES ('HumDinger Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Hummer');
+INSERT INTO "brand" ("brandname") VALUES ('HUNG DAO CONTAINER CO');
+INSERT INTO "brand" ("brandname") VALUES ('Hunna Mei');
+INSERT INTO "brand" ("brandname") VALUES ('Hunter');
+INSERT INTO "brand" ("brandname") VALUES ('HUNTER DESIGN GROUP, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('HUNTER MARINE CORP.');
+INSERT INTO "brand" ("brandname") VALUES ('Hunter Outdoor Products');
+INSERT INTO "brand" ("brandname") VALUES ('Hunter Technology Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Hurd''s Custom Machinery Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Husaberg');
+INSERT INTO "brand" ("brandname") VALUES ('Husqvarna');
+INSERT INTO "brand" ("brandname") VALUES ('Hustler');
+INSERT INTO "brand" ("brandname") VALUES ('Hutchins');
+INSERT INTO "brand" ("brandname") VALUES ('Huzhou Daixi Scooters');
+INSERT INTO "brand" ("brandname") VALUES ('Hy-Lift Hunting Blinds Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Hy-Line Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('Hy-Tech Truck & Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Hy-way Products');
+INSERT INTO "brand" ("brandname") VALUES ('Hybrid Light Solutions, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Hyde Drift Boats');
+INSERT INTO "brand" ("brandname") VALUES ('Hyde Equipment Co');
+INSERT INTO "brand" ("brandname") VALUES ('Hydra-Lift Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Hydra-Tension Inc');
+INSERT INTO "brand" ("brandname") VALUES ('HYDRA RIG INCORPORATED');
+INSERT INTO "brand" ("brandname") VALUES ('Hydra Service');
+INSERT INTO "brand" ("brandname") VALUES ('Hydratrek LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Hydro Engineering');
+INSERT INTO "brand" ("brandname") VALUES ('HydroCal, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Hydroglide');
+INSERT INTO "brand" ("brandname") VALUES ('Hydrolift');
+INSERT INTO "brand" ("brandname") VALUES ('Hymer Manufacturing Inc');
+INSERT INTO "brand" ("brandname") VALUES ('HYOSUNG');
+INSERT INTO "brand" ("brandname") VALUES ('Hyosung Motors & Machinery');
+INSERT INTO "brand" ("brandname") VALUES ('Hyper Lite Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Hyper Products');
+INSERT INTO "brand" ("brandname") VALUES ('Hyundai');
+INSERT INTO "brand" ("brandname") VALUES ('Hyundai Steel Industries, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('HYUNDAI TRANSLEAD');
+INSERT INTO "brand" ("brandname") VALUES ('I-85 TRAILER MANUFACTURERS');
+INSERT INTO "brand" ("brandname") VALUES ('I.P.P');
+INSERT INTO "brand" ("brandname") VALUES ('IAP');
+INSERT INTO "brand" ("brandname") VALUES ('IBI');
+INSERT INTO "brand" ("brandname") VALUES ('IC');
+INSERT INTO "brand" ("brandname") VALUES ('Ice Cave');
+INSERT INTO "brand" ("brandname") VALUES ('Ice Houses');
+INSERT INTO "brand" ("brandname") VALUES ('Icon Electric Vehicles');
+INSERT INTO "brand" ("brandname") VALUES ('Icon Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Idaho Tote Dolly');
+INSERT INTO "brand" ("brandname") VALUES ('Idaho Truck Specialties');
+INSERT INTO "brand" ("brandname") VALUES ('IDEAL');
+INSERT INTO "brand" ("brandname") VALUES ('Ideal Customs');
+INSERT INTO "brand" ("brandname") VALUES ('IDEAL QUALITY TRAILERS, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Ideal Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Identity Motors Manufacturing & Assembly');
+INSERT INTO "brand" ("brandname") VALUES ('ILAUG');
+INSERT INTO "brand" ("brandname") VALUES ('Illusion Cycles Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Image Custom Cycles Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('IMAGE CYCLES INC');
+INSERT INTO "brand" ("brandname") VALUES ('Imaginative Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Immer Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('Impac Manufacturing, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Impact Welding and Hydraulics');
+INSERT INTO "brand" ("brandname") VALUES ('imperial');
+INSERT INTO "brand" ("brandname") VALUES ('Imperial Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Imperial Trailer Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Imperial Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Imperialite');
+INSERT INTO "brand" ("brandname") VALUES ('Impressive Motorsports');
+INSERT INTO "brand" ("brandname") VALUES ('In2Go');
+INSERT INTO "brand" ("brandname") VALUES ('Independence Motorcycle Company');
+INSERT INTO "brand" ("brandname") VALUES ('INDEPENDENT TRAILER & REPAIR, INC');
+INSERT INTO "brand" ("brandname") VALUES ('INDEPENDENT TRAILER MANUFACTURING');
+INSERT INTO "brand" ("brandname") VALUES ('Indian');
+INSERT INTO "brand" ("brandname") VALUES ('Indian Larry Legacy');
+INSERT INTO "brand" ("brandname") VALUES ('Indian Motorcycle');
+INSERT INTO "brand" ("brandname") VALUES ('Indian River Trailers Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Indiana Custom Cargo, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Indiana Phoenix Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Indianhead Truck & Body');
+INSERT INTO "brand" ("brandname") VALUES ('Indigan');
+INSERT INTO "brand" ("brandname") VALUES ('Industrial Engineering');
+INSERT INTO "brand" ("brandname") VALUES ('INDUSTRIAL FABRICATION & TESTING');
+INSERT INTO "brand" ("brandname") VALUES ('Industrial Machine and Kitting SVCS');
+INSERT INTO "brand" ("brandname") VALUES ('Industrial Machine and Knitting Svcs.');
+INSERT INTO "brand" ("brandname") VALUES ('Industrial Maintenance and Fabricating');
+INSERT INTO "brand" ("brandname") VALUES ('Industrial Manufacturing Solutions Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Industrial Process Services Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Industrial Services Center Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Industrial Structures');
+INSERT INTO "brand" ("brandname") VALUES ('Industrial Systems, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('industrial Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Industrial Truck Bodies');
+INSERT INTO "brand" ("brandname") VALUES ('Industrial Wheel Exchange');
+INSERT INTO "brand" ("brandname") VALUES ('Industrias Met Gri');
+INSERT INTO "brand" ("brandname") VALUES ('Industrias Met GRI SA de CV');
+INSERT INTO "brand" ("brandname") VALUES ('Industrias Proacero Monterrery');
+INSERT INTO "brand" ("brandname") VALUES ('Infamous Motorcycle');
+INSERT INTO "brand" ("brandname") VALUES ('Infern-O-Therm');
+INSERT INTO "brand" ("brandname") VALUES ('Infiniti');
+INSERT INTO "brand" ("brandname") VALUES ('INFINITY TRAILER SALES');
+INSERT INTO "brand" ("brandname") VALUES ('Ingenieria y Maquinaria de Guadalupe');
+INSERT INTO "brand" ("brandname") VALUES ('Inka Outdoor');
+INSERT INTO "brand" ("brandname") VALUES ('Inland Empire');
+INSERT INTO "brand" ("brandname") VALUES ('INLAND EMPIRE CHOPPERS');
+INSERT INTO "brand" ("brandname") VALUES ('Inland Venture');
+INSERT INTO "brand" ("brandname") VALUES ('Innovative');
+INSERT INTO "brand" ("brandname") VALUES ('Innovative Biker');
+INSERT INTO "brand" ("brandname") VALUES ('Innovative Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('Innovative Structure & Design');
+INSERT INTO "brand" ("brandname") VALUES ('Innovative Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Innovative Trailer Design Industries');
+INSERT INTO "brand" ("brandname") VALUES ('INNOVATOR MOTORCYCLES');
+INSERT INTO "brand" ("brandname") VALUES ('Innovator Trailers Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Insane Cycle Designs');
+INSERT INTO "brand" ("brandname") VALUES ('inTech Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('inTech Trailers Inc');
+INSERT INTO "brand" ("brandname") VALUES ('INTEGRA MANUFACTURING INC');
+INSERT INTO "brand" ("brandname") VALUES ('Integrity Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Integrity Metal Fab LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Integrity Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Integrity Trailers Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('INTELLI-CORE LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Intense Creations');
+INSERT INTO "brand" ("brandname") VALUES ('Intercontinental Truck Body');
+INSERT INTO "brand" ("brandname") VALUES ('Intermodal Container Systems');
+INSERT INTO "brand" ("brandname") VALUES ('INTERMOUNTAIN');
+INSERT INTO "brand" ("brandname") VALUES ('Intermountain Truck Rebuilders, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('International');
+INSERT INTO "brand" ("brandname") VALUES ('International Equipment Mfg Co.');
+INSERT INTO "brand" ("brandname") VALUES ('International Lift Corp');
+INSERT INTO "brand" ("brandname") VALUES ('International Structures');
+INSERT INTO "brand" ("brandname") VALUES ('International Tank & Trailer Inc');
+INSERT INTO "brand" ("brandname") VALUES ('International Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('International Transit System');
+INSERT INTO "brand" ("brandname") VALUES ('INTERSTATE');
+INSERT INTO "brand" ("brandname") VALUES ('Interstate Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Interstate Manufacturing, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Interstate Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Interstate Trailers, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Interstate West Corp');
+INSERT INTO "brand" ("brandname") VALUES ('INTO THE WILD');
+INSERT INTO "brand" ("brandname") VALUES ('Intrepid Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('Intrepid Engineering Group (IEG)');
+INSERT INTO "brand" ("brandname") VALUES ('INVADER COACH MANUFACTURING INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Inventors Classical Electric Vehicle');
+INSERT INTO "brand" ("brandname") VALUES ('Invision Trailers Div of Proline Products');
+INSERT INTO "brand" ("brandname") VALUES ('Inzuro');
+INSERT INTO "brand" ("brandname") VALUES ('Iowa Steel Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('Iowa Trailer Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('IPT, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Irbitski Mototsicletny Zavod');
+INSERT INTO "brand" ("brandname") VALUES ('IRBY');
+INSERT INTO "brand" ("brandname") VALUES ('Irisbus France');
+INSERT INTO "brand" ("brandname") VALUES ('Irish Hill Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Iron & Oak');
+INSERT INTO "brand" ("brandname") VALUES ('Iron Craft');
+INSERT INTO "brand" ("brandname") VALUES ('IRON DOG, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Iron Eagle Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('Iron Eagle Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Iron Horse');
+INSERT INTO "brand" ("brandname") VALUES ('Iron Horse BBQ, Incorporated');
+INSERT INTO "brand" ("brandname") VALUES ('IRON MAN WELDING');
+INSERT INTO "brand" ("brandname") VALUES ('Iron Mike Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('Iron Outfitter');
+INSERT INTO "brand" ("brandname") VALUES ('Iron Panther Incorporated');
+INSERT INTO "brand" ("brandname") VALUES ('Ironhorse Manufacturing Inc');
+INSERT INTO "brand" ("brandname") VALUES ('IRONHORSE TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('Ironman');
+INSERT INTO "brand" ("brandname") VALUES ('IRONMAN CUSTOMS TRAILER MANUFACTURING');
+INSERT INTO "brand" ("brandname") VALUES ('Ironman Trailer Company');
+INSERT INTO "brand" ("brandname") VALUES ('IRVING EQUIPMENT');
+INSERT INTO "brand" ("brandname") VALUES ('Island Cart');
+INSERT INTO "brand" ("brandname") VALUES ('Island Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Island Topsoil, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Isuzu');
+INSERT INTO "brand" ("brandname") VALUES ('Italian Choppers LLC');
+INSERT INTO "brand" ("brandname") VALUES ('ITALJET');
+INSERT INTO "brand" ("brandname") VALUES ('Itasca Thunder');
+INSERT INTO "brand" ("brandname") VALUES ('ITI TRAILERS AND TRUCK BODIES');
+INSERT INTO "brand" ("brandname") VALUES ('Iveco');
+INSERT INTO "brand" ("brandname") VALUES ('Iverson Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Ives Motors Corporation (IMC)');
+INSERT INTO "brand" ("brandname") VALUES ('IZA DESIGN & MANUFACTURING');
+INSERT INTO "brand" ("brandname") VALUES ('J-Craft');
+INSERT INTO "brand" ("brandname") VALUES ('J-Lo Industries');
+INSERT INTO "brand" ("brandname") VALUES ('J & B TRAILERS & EQUIPMENT INC');
+INSERT INTO "brand" ("brandname") VALUES ('J & C Mfg Inc');
+INSERT INTO "brand" ("brandname") VALUES ('J & D Welding & Trailer Sales');
+INSERT INTO "brand" ("brandname") VALUES ('J & E Custom Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('J & E Manufacturing Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('J & J Marine Services');
+INSERT INTO "brand" ("brandname") VALUES ('J & J Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('J & L''S CARGO EXPRESS, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('J & L EQUIPMENT');
+INSERT INTO "brand" ("brandname") VALUES ('J & L Tank, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('J & L TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('J & M FABRICATION');
+INSERT INTO "brand" ("brandname") VALUES ('J & N SALES');
+INSERT INTO "brand" ("brandname") VALUES ('J & R');
+INSERT INTO "brand" ("brandname") VALUES ('J & S Contractors');
+INSERT INTO "brand" ("brandname") VALUES ('J & S TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('J & T MERCHANDISE INC');
+INSERT INTO "brand" ("brandname") VALUES ('J & W Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('J AND E STEEL LLC');
+INSERT INTO "brand" ("brandname") VALUES ('J and P Trailer Company');
+INSERT INTO "brand" ("brandname") VALUES ('J Bond & Sons');
+INSERT INTO "brand" ("brandname") VALUES ('J D B Aluminum Fabricating Inc');
+INSERT INTO "brand" ("brandname") VALUES ('J Helgeson Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('J L TRAILER MFG.');
+INSERT INTO "brand" ("brandname") VALUES ('J R Mills Enterprises Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('J Ray''s Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('J T Trailers, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('J&D Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('J&D TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('J&J Trailers and Truck Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('J&L');
+INSERT INTO "brand" ("brandname") VALUES ('J&S Repair');
+INSERT INTO "brand" ("brandname") VALUES ('J.D. ENTERPRISES');
+INSERT INTO "brand" ("brandname") VALUES ('Jac 427');
+INSERT INTO "brand" ("brandname") VALUES ('JACK GREEN CO.');
+INSERT INTO "brand" ("brandname") VALUES ('JACKRABBIT TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('Jackson Mfg.');
+INSERT INTO "brand" ("brandname") VALUES ('Jacksonville Tire & Automotive');
+INSERT INTO "brand" ("brandname") VALUES ('JAG Mobile Solutions');
+INSERT INTO "brand" ("brandname") VALUES ('Jaguar');
+INSERT INTO "brand" ("brandname") VALUES ('Jail Break Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Jailhouse Choppers Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Jalopy Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('JAMCO USA');
+INSERT INTO "brand" ("brandname") VALUES ('JAMES EQUIPMENT COMPANY, INC');
+INSERT INTO "brand" ("brandname") VALUES ('Jamie Pruitt Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('JANAK TRUCK & EQUIPMENT');
+INSERT INTO "brand" ("brandname") VALUES ('Janco Enterprises, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Janssen Welding and Fabrication Big Bear Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Jantz-Femco');
+INSERT INTO "brand" ("brandname") VALUES ('Janus');
+INSERT INTO "brand" ("brandname") VALUES ('JANUS FABRICATING INC');
+INSERT INTO "brand" ("brandname") VALUES ('Jarvis Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Jason Industries Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Jason Mitchell Welding & Fabrication LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Jasper''s Hot Rods LLC');
+INSERT INTO "brand" ("brandname") VALUES ('JAWA');
+INSERT INTO "brand" ("brandname") VALUES ('JAY''S INC');
+INSERT INTO "brand" ("brandname") VALUES ('Jayco');
+INSERT INTO "brand" ("brandname") VALUES ('JBH CUSTOM TRAILERS, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('JC Custom Welding LLC');
+INSERT INTO "brand" ("brandname") VALUES ('JC Fab, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('JCJ Consulting of Mississippi LLC');
+INSERT INTO "brand" ("brandname") VALUES ('JD Enterprise');
+INSERT INTO "brand" ("brandname") VALUES ('JD Handling Systems, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('JDCI Enterprises Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Jeep');
+INSERT INTO "brand" ("brandname") VALUES ('JEFCOAT TRAILER''S');
+INSERT INTO "brand" ("brandname") VALUES ('JEFF''S CUSTOM WELDING');
+INSERT INTO "brand" ("brandname") VALUES ('Jeff Nicklus Customs');
+INSERT INTO "brand" ("brandname") VALUES ('Jefferson State Trailer Works');
+INSERT INTO "brand" ("brandname") VALUES ('Jeffery Brothers');
+INSERT INTO "brand" ("brandname") VALUES ('Jel Corp');
+INSERT INTO "brand" ("brandname") VALUES ('Jenison Airlease Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('JENKINS & JENKINS ENTERPRISES LTD');
+INSERT INTO "brand" ("brandname") VALUES ('Jenner Sales Corp.');
+INSERT INTO "brand" ("brandname") VALUES ('Jensen Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Jeremy''s Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Jerr-Dan');
+INSERT INTO "brand" ("brandname") VALUES ('Jerr-Dan Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('Jerry''s Warehouse');
+INSERT INTO "brand" ("brandname") VALUES ('Jerry''s Welding Service');
+INSERT INTO "brand" ("brandname") VALUES ('Jersey Devil Motorcycles LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Jesse Rooke Customs');
+INSERT INTO "brand" ("brandname") VALUES ('Jet Company Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Jetech,Inc');
+INSERT INTO "brand" ("brandname") VALUES ('JetHeat LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Jetstream LLC');
+INSERT INTO "brand" ("brandname") VALUES ('JFM Services, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('JHC');
+INSERT INTO "brand" ("brandname") VALUES ('Jiajue');
+INSERT INTO "brand" ("brandname") VALUES ('Jialing');
+INSERT INTO "brand" ("brandname") VALUES ('Jiangmen Qipai Motorcycle Co.');
+INSERT INTO "brand" ("brandname") VALUES ('Jiangsu Jinjie Motor Manufacture Co.');
+INSERT INTO "brand" ("brandname") VALUES ('Jiangsu Linhai Power Machinery Group Corp.');
+INSERT INTO "brand" ("brandname") VALUES ('Jiangsu Sinski Sonik Motor Technology Co.');
+INSERT INTO "brand" ("brandname") VALUES ('Jiangsu Sinski Vehicle Science & Technology Co.');
+INSERT INTO "brand" ("brandname") VALUES ('Jiangxi Kama Business Bus Co.');
+INSERT INTO "brand" ("brandname") VALUES ('Jim''s Enterprise');
+INSERT INTO "brand" ("brandname") VALUES ('Jim''s Welding Service');
+INSERT INTO "brand" ("brandname") VALUES ('Jim-Glo Trailers, Trading as Jimglo Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Jim-N-I dba Allied Steel');
+INSERT INTO "brand" ("brandname") VALUES ('JIM CAMPEN TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('Jim Nasi Customs');
+INSERT INTO "brand" ("brandname") VALUES ('JIMGLO Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Jimmy''s Custom Built Trailers & Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('Jincheng Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('JINGLONG');
+INSERT INTO "brand" ("brandname") VALUES ('Jinhua Regard Manufacturing Company USA');
+INSERT INTO "brand" ("brandname") VALUES ('Jinhua Shiwei');
+INSERT INTO "brand" ("brandname") VALUES ('Jinhua Shiwei Vehicle Co.');
+INSERT INTO "brand" ("brandname") VALUES ('Jinyun County Xiangyuan Industry Co.');
+INSERT INTO "brand" ("brandname") VALUES ('JJ Outdoor Industries');
+INSERT INTO "brand" ("brandname") VALUES ('JJ Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('JJR, INC');
+INSERT INTO "brand" ("brandname") VALUES ('JLE Maunfacturing');
+INSERT INTO "brand" ("brandname") VALUES ('JLFD Production ( Fautras Horse Trailers)');
+INSERT INTO "brand" ("brandname") VALUES ('JLG');
+INSERT INTO "brand" ("brandname") VALUES ('JLG Industries');
+INSERT INTO "brand" ("brandname") VALUES ('JLM');
+INSERT INTO "brand" ("brandname") VALUES ('JLR Trailers & Welding Inc');
+INSERT INTO "brand" ("brandname") VALUES ('JM TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('JMD Motor Company');
+INSERT INTO "brand" ("brandname") VALUES ('JMJ Maintenance & Remodeling');
+INSERT INTO "brand" ("brandname") VALUES ('JMW Welding & Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('JN');
+INSERT INTO "brand" ("brandname") VALUES ('JN (Chongqing Guangyu Motorcycle)');
+INSERT INTO "brand" ("brandname") VALUES ('JNEN');
+INSERT INTO "brand" ("brandname") VALUES ('JNM Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('Jo Mac Ltd');
+INSERT INTO "brand" ("brandname") VALUES ('Joe''s Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('Joe''s Motorycles');
+INSERT INTO "brand" ("brandname") VALUES ('Joe''s Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('John Deere');
+INSERT INTO "brand" ("brandname") VALUES ('John Evans Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('John Peper Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('John Thomas');
+INSERT INTO "brand" ("brandname") VALUES ('JOHN WHITE SERVICES');
+INSERT INTO "brand" ("brandname") VALUES ('Johnie Gregory Truck Bodies');
+INSERT INTO "brand" ("brandname") VALUES ('JOHNNY''S TRUCK AND TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('Johnny Pag Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('JOHNS GOLF CARS INC');
+INSERT INTO "brand" ("brandname") VALUES ('Johnson''s Mobile Solutions');
+INSERT INTO "brand" ("brandname") VALUES ('JOHNSON''S WELDING');
+INSERT INTO "brand" ("brandname") VALUES ('Johnson Crushers International');
+INSERT INTO "brand" ("brandname") VALUES ('Johnson Equipment Sales, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('JOHNSON MANUFACTURING, INC');
+INSERT INTO "brand" ("brandname") VALUES ('Johnson Powerlifts');
+INSERT INTO "brand" ("brandname") VALUES ('Johnson Truck Bodies');
+INSERT INTO "brand" ("brandname") VALUES ('Jomar Machining & Fabricating');
+INSERT INTO "brand" ("brandname") VALUES ('Jonco Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Jones County Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Jones Motorsports');
+INSERT INTO "brand" ("brandname") VALUES ('Jones Welding Service');
+INSERT INTO "brand" ("brandname") VALUES ('JONWAY');
+INSERT INTO "brand" ("brandname") VALUES ('Jordan Air');
+INSERT INTO "brand" ("brandname") VALUES ('JOSTEN');
+INSERT INTO "brand" ("brandname") VALUES ('Joyhon');
+INSERT INTO "brand" ("brandname") VALUES ('Joyride');
+INSERT INTO "brand" ("brandname") VALUES ('JR Custom Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('JR KOOP,Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('JR Manufacturing and Sales');
+INSERT INTO "brand" ("brandname") VALUES ('JR TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('JR Welding Inc');
+INSERT INTO "brand" ("brandname") VALUES ('JRB Cuz Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('JRC Custom Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('JRL Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('JRS Custom Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('JSD WELDING INC.');
+INSERT INTO "brand" ("brandname") VALUES ('JSG Industries');
+INSERT INTO "brand" ("brandname") VALUES ('JSR Custom');
+INSERT INTO "brand" ("brandname") VALUES ('JTC Sales');
+INSERT INTO "brand" ("brandname") VALUES ('Jubilee Motor Campany');
+INSERT INTO "brand" ("brandname") VALUES ('Judgement Custom Design');
+INSERT INTO "brand" ("brandname") VALUES ('Jumping J-Jays Franchises USA');
+INSERT INTO "brand" ("brandname") VALUES ('Jumping Jack');
+INSERT INTO "brand" ("brandname") VALUES ('Junior''s Golf Carts');
+INSERT INTO "brand" ("brandname") VALUES ('Junior Motorcycle Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Juskco Services, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Justin Palmer Welding');
+INSERT INTO "brand" ("brandname") VALUES ('JV Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('JV Metal Buildings & Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('JWF Industries');
+INSERT INTO "brand" ("brandname") VALUES ('JZ Riders');
+INSERT INTO "brand" ("brandname") VALUES ('K-Jack Motors');
+INSERT INTO "brand" ("brandname") VALUES ('K-Line Trailers Ltd');
+INSERT INTO "brand" ("brandname") VALUES ('K-N Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('K-otic Kustoms');
+INSERT INTO "brand" ("brandname") VALUES ('K & C Conversions');
+INSERT INTO "brand" ("brandname") VALUES ('K & K SYSTEMS, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('K & K Welding');
+INSERT INTO "brand" ("brandname") VALUES ('K & M Manufacturing Co.');
+INSERT INTO "brand" ("brandname") VALUES ('K INDUSTRIES, INC');
+INSERT INTO "brand" ("brandname") VALUES ('K&K REPAIR SERVICE');
+INSERT INTO "brand" ("brandname") VALUES ('Kaase Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Kace Trailers, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Kainuo');
+INSERT INTO "brand" ("brandname") VALUES ('Kak Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('KAL MANUFACTURING');
+INSERT INTO "brand" ("brandname") VALUES ('Kalmar Industries LLC');
+INSERT INTO "brand" ("brandname") VALUES ('KALYN SIEBERT');
+INSERT INTO "brand" ("brandname") VALUES ('Kanamak Hydraulics');
+INSERT INTO "brand" ("brandname") VALUES ('Kandi Steel LLC dba Kandi Steel');
+INSERT INTO "brand" ("brandname") VALUES ('Kandi USA');
+INSERT INTO "brand" ("brandname") VALUES ('Kann Manufacturing Corp');
+INSERT INTO "brand" ("brandname") VALUES ('Kapels Eng & BLD');
+INSERT INTO "brand" ("brandname") VALUES ('Kar-Karriage');
+INSERT INTO "brand" ("brandname") VALUES ('Kar-Tote');
+INSERT INTO "brand" ("brandname") VALUES ('KAR Fabrication Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Karavan');
+INSERT INTO "brand" ("brandname") VALUES ('Karavan Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Karcher North America (KNA)');
+INSERT INTO "brand" ("brandname") VALUES ('Kard Co');
+INSERT INTO "brand" ("brandname") VALUES ('KARI-KOOL');
+INSERT INTO "brand" ("brandname") VALUES ('KARMA');
+INSERT INTO "brand" ("brandname") VALUES ('Kasi Infrared');
+INSERT INTO "brand" ("brandname") VALUES ('KAST-RITE');
+INSERT INTO "brand" ("brandname") VALUES ('Katharina Loewen dba Taller Fehr');
+INSERT INTO "brand" ("brandname") VALUES ('Kathy Spell dba Southern Built Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('KAUFMAN TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('KAUFMAN TRAILERS OF NC');
+INSERT INTO "brand" ("brandname") VALUES ('KAUFMAN TRAILERS OF SC');
+INSERT INTO "brand" ("brandname") VALUES ('Kawasaki');
+INSERT INTO "brand" ("brandname") VALUES ('KAZ (Russia) Kamsky Auto Assembly Factory');
+INSERT INTO "brand" ("brandname") VALUES ('KBH');
+INSERT INTO "brand" ("brandname") VALUES ('KDZ Kustoms');
+INSERT INTO "brand" ("brandname") VALUES ('KEENWAY MANUFACTURING INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Keino Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('Keith Huber Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Keller Welding');
+INSERT INTO "brand" ("brandname") VALUES ('KELLY WELDING');
+INSERT INTO "brand" ("brandname") VALUES ('KEMP KUSTOMS');
+INSERT INTO "brand" ("brandname") VALUES ('KEN''S CUSTOM TRAILERS AND SUPPLIES');
+INSERT INTO "brand" ("brandname") VALUES ('Kenco Fabricating Company');
+INSERT INTO "brand" ("brandname") VALUES ('KENDALL TRAILER MFG.');
+INSERT INTO "brand" ("brandname") VALUES ('Kendon Industries Incorporated');
+INSERT INTO "brand" ("brandname") VALUES ('Kendrick Prefab Welding');
+INSERT INTO "brand" ("brandname") VALUES ('KENN TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('Kent Power Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Kent Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Kenworth');
+INSERT INTO "brand" ("brandname") VALUES ('Kepler Motors');
+INSERT INTO "brand" ("brandname") VALUES ('KERBY BROTHERS LLC');
+INSERT INTO "brand" ("brandname") VALUES ('KERR-BILT');
+INSERT INTO "brand" ("brandname") VALUES ('Kev''s Welding & Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('KEVIN''S REPAIR & AUTO BODY');
+INSERT INTO "brand" ("brandname") VALUES ('Key Energy Services');
+INSERT INTO "brand" ("brandname") VALUES ('Keystone');
+INSERT INTO "brand" ("brandname") VALUES ('Keystone Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Keystone Kabins');
+INSERT INTO "brand" ("brandname") VALUES ('Keystone LSV Co.');
+INSERT INTO "brand" ("brandname") VALUES ('Keystone Oilfield Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('Keystone Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Keyway Fabrication & Design');
+INSERT INTO "brand" ("brandname") VALUES ('Kia');
+INSERT INTO "brand" ("brandname") VALUES ('Kickin'' Kampers');
+INSERT INTO "brand" ("brandname") VALUES ('KID');
+INSERT INTO "brand" ("brandname") VALUES ('Kiefer-Built');
+INSERT INTO "brand" ("brandname") VALUES ('Kiefer Manufacturing and Sales LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Kiepe');
+INSERT INTO "brand" ("brandname") VALUES ('KIEWIT');
+INSERT INTO "brand" ("brandname") VALUES ('Kikker 5150');
+INSERT INTO "brand" ("brandname") VALUES ('Killion Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('Kimbel Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Kimberley Kampers PTY');
+INSERT INTO "brand" ("brandname") VALUES ('Kimble');
+INSERT INTO "brand" ("brandname") VALUES ('Kimble Chassis');
+INSERT INTO "brand" ("brandname") VALUES ('KINETIC ENGINEERING LTD.');
+INSERT INTO "brand" ("brandname") VALUES ('KING''S TRAVELER, INC');
+INSERT INTO "brand" ("brandname") VALUES ('King American');
+INSERT INTO "brand" ("brandname") VALUES ('King Custom Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('King Equipment Co.');
+INSERT INTO "brand" ("brandname") VALUES ('King Kustom Cycle');
+INSERT INTO "brand" ("brandname") VALUES ('King of the Road');
+INSERT INTO "brand" ("brandname") VALUES ('King Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Kingdom Customs Motorcycle Company');
+INSERT INTO "brand" ("brandname") VALUES ('Kings Way Trailer Mfg');
+INSERT INTO "brand" ("brandname") VALUES ('Kingston Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Kinkaid Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Kinlon');
+INSERT INTO "brand" ("brandname") VALUES ('Kinos Custom Concepts');
+INSERT INTO "brand" ("brandname") VALUES ('Kinroad Xintian Motorcycle Manufacture Co.');
+INSERT INTO "brand" ("brandname") VALUES ('Kioba Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Kirk''s Trailer Mfg.');
+INSERT INTO "brand" ("brandname") VALUES ('Kirkley & Son Machine Shop');
+INSERT INTO "brand" ("brandname") VALUES ('KIT HomeBuilders West');
+INSERT INTO "brand" ("brandname") VALUES ('KIT Manufacturing Co');
+INSERT INTO "brand" ("brandname") VALUES ('Kiwi''s Welding & Repair');
+INSERT INTO "brand" ("brandname") VALUES ('Kiwi Air');
+INSERT INTO "brand" ("brandname") VALUES ('KJD Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('KL Welding & Repair');
+INSERT INTO "brand" ("brandname") VALUES ('KLA TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('KLD Energy Technologies');
+INSERT INTO "brand" ("brandname") VALUES ('KLEIN CORPORATION');
+INSERT INTO "brand" ("brandname") VALUES ('Klinger Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('KLIPPING KING, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Knapheide Truck');
+INSERT INTO "brand" ("brandname") VALUES ('Knapheide Truck Equipment Company Southwest');
+INSERT INTO "brand" ("brandname") VALUES ('Knievel Motorcycle Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Knight''s Dragon Service');
+INSERT INTO "brand" ("brandname") VALUES ('Knight Fabricating');
+INSERT INTO "brand" ("brandname") VALUES ('Knight Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('KnightHaulers');
+INSERT INTO "brand" ("brandname") VALUES ('Knights Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Knights Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('Knights Kargo Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Knowles Manufacturing Company, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('knucklehead Power USA');
+INSERT INTO "brand" ("brandname") VALUES ('Knutson Engineering');
+INSERT INTO "brand" ("brandname") VALUES ('Koastal Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Kodiak Adventure Products');
+INSERT INTO "brand" ("brandname") VALUES ('Koebrick Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Koenigsegg Automotive');
+INSERT INTO "brand" ("brandname") VALUES ('Komfort Corp.');
+INSERT INTO "brand" ("brandname") VALUES ('KONCED MOTORCYCLE');
+INSERT INTO "brand" ("brandname") VALUES ('Kondor Coach Builders');
+INSERT INTO "brand" ("brandname") VALUES ('Kopavi Trikes Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Korando');
+INSERT INTO "brand" ("brandname") VALUES ('Korrupt Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Kountry Aire');
+INSERT INTO "brand" ("brandname") VALUES ('Kountry Lite');
+INSERT INTO "brand" ("brandname") VALUES ('Kovatch Mobile Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('Kraft Custom Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('Kriminal Kustoms');
+INSERT INTO "brand" ("brandname") VALUES ('Kripple Kreek');
+INSERT INTO "brand" ("brandname") VALUES ('Kristi Trailer Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Kross Kountry');
+INSERT INTO "brand" ("brandname") VALUES ('Kruger Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Krugger Auto');
+INSERT INTO "brand" ("brandname") VALUES ('Kruz');
+INSERT INTO "brand" ("brandname") VALUES ('Kruzer Motorcycle Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Krystal Koach, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('KSM Enterprises, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('KTM');
+INSERT INTO "brand" ("brandname") VALUES ('KTM Aluminum Frame');
+INSERT INTO "brand" ("brandname") VALUES ('KTM Steel Frame');
+INSERT INTO "brand" ("brandname") VALUES ('KTMMEX');
+INSERT INTO "brand" ("brandname") VALUES ('Kubota');
+INSERT INTO "brand" ("brandname") VALUES ('Kubvan');
+INSERT INTO "brand" ("brandname") VALUES ('Kuntry Kustom RV');
+INSERT INTO "brand" ("brandname") VALUES ('Kuryente Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('Kustom Karz of Scottsboro');
+INSERT INTO "brand" ("brandname") VALUES ('Kustom Koncepts');
+INSERT INTO "brand" ("brandname") VALUES ('Kustom LSVs');
+INSERT INTO "brand" ("brandname") VALUES ('Kustom Machine & Sheet Metal');
+INSERT INTO "brand" ("brandname") VALUES ('Kutz Farm Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('Kwik Equipment Sales');
+INSERT INTO "brand" ("brandname") VALUES ('KWIK KAMP');
+INSERT INTO "brand" ("brandname") VALUES ('Kwik Load');
+INSERT INTO "brand" ("brandname") VALUES ('Kwik Trench');
+INSERT INTO "brand" ("brandname") VALUES ('KYFAB');
+INSERT INTO "brand" ("brandname") VALUES ('KYMCO');
+INSERT INTO "brand" ("brandname") VALUES ('Kyzer Aluminum Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('KZ-RV');
+INSERT INTO "brand" ("brandname") VALUES ('L & H MANUFACTURING, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('L & J Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('L & L Custom');
+INSERT INTO "brand" ("brandname") VALUES ('L & M MACHINE AND FABRICATION');
+INSERT INTO "brand" ("brandname") VALUES ('L & M MANUFACTURING INC');
+INSERT INTO "brand" ("brandname") VALUES ('L & M Steel and MFG.');
+INSERT INTO "brand" ("brandname") VALUES ('L & S Line Mfg');
+INSERT INTO "brand" ("brandname") VALUES ('L and S Trailers & Supply');
+INSERT INTO "brand" ("brandname") VALUES ('L B Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('L B Maufacturing Co');
+INSERT INTO "brand" ("brandname") VALUES ('L J Welding Inc');
+INSERT INTO "brand" ("brandname") VALUES ('L& J HYDRAULICS CO.');
+INSERT INTO "brand" ("brandname") VALUES ('L&F CUSTOM BUILT TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('L&J Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('L&J Supply');
+INSERT INTO "brand" ("brandname") VALUES ('L6 Systems');
+INSERT INTO "brand" ("brandname") VALUES ('LA Cart''s');
+INSERT INTO "brand" ("brandname") VALUES ('LA Custom Trikes');
+INSERT INTO "brand" ("brandname") VALUES ('LA Shadow Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('LaBarge Products');
+INSERT INTO "brand" ("brandname") VALUES ('LACF');
+INSERT INTO "brand" ("brandname") VALUES ('LACOTA INC');
+INSERT INTO "brand" ("brandname") VALUES ('LACROSSE ENTERPRISES, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Ladner');
+INSERT INTO "brand" ("brandname") VALUES ('LaFarge');
+INSERT INTO "brand" ("brandname") VALUES ('LAFAYETTE COUNTY CAR COMPANY, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('LAFORZA');
+INSERT INTO "brand" ("brandname") VALUES ('Lagoon Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Lake City Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Lake County Cycles Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Lake Forest Builders, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Lake Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Lake Norman Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Lake Technology Products Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Lake View Lodges Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Lakeland');
+INSERT INTO "brand" ("brandname") VALUES ('Lakes Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('Lakeshore Watercraft');
+INSERT INTO "brand" ("brandname") VALUES ('Lakeside Trailer Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Lakeview Mfg');
+INSERT INTO "brand" ("brandname") VALUES ('Lakota');
+INSERT INTO "brand" ("brandname") VALUES ('LAL Acquisition');
+INSERT INTO "brand" ("brandname") VALUES ('LAMAR TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('Lamborghini');
+INSERT INTO "brand" ("brandname") VALUES ('Lamco Mfg and Distributing Company Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Laminated Wood Systems, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Lampi Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('Lance Camper');
+INSERT INTO "brand" ("brandname") VALUES ('Lanchester Trailer Supply');
+INSERT INTO "brand" ("brandname") VALUES ('Lancia');
+INSERT INTO "brand" ("brandname") VALUES ('Land & Sea, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Land and Sea Trailer Shoppe');
+INSERT INTO "brand" ("brandname") VALUES ('Land Rover');
+INSERT INTO "brand" ("brandname") VALUES ('Landa Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Landmark');
+INSERT INTO "brand" ("brandname") VALUES ('Landoll Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('Landry''s Trailer Sales & Service');
+INSERT INTO "brand" ("brandname") VALUES ('Landscape');
+INSERT INTO "brand" ("brandname") VALUES ('Lane Trailer Manufacturing Co.');
+INSERT INTO "brand" ("brandname") VALUES ('Lanier Marine Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Lankota Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Lantz');
+INSERT INTO "brand" ("brandname") VALUES ('Lark United Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Larry''s Trailer Sales Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Larson Cable Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('LARSON INTERNATIONAL');
+INSERT INTO "brand" ("brandname") VALUES ('Las Vegas Classic Coach');
+INSERT INTO "brand" ("brandname") VALUES ('Latco');
+INSERT INTO "brand" ("brandname") VALUES ('Late Nyt Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Latitude');
+INSERT INTO "brand" ("brandname") VALUES ('LAU WELDING INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Laverda');
+INSERT INTO "brand" ("brandname") VALUES ('Lawless Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Lawrimore Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Lawton Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('LAZY-DAZ INC');
+INSERT INTO "brand" ("brandname") VALUES ('Lazy B');
+INSERT INTO "brand" ("brandname") VALUES ('Lazy J MFG.');
+INSERT INTO "brand" ("brandname") VALUES ('Lazy N');
+INSERT INTO "brand" ("brandname") VALUES ('LB Telesystems');
+INSERT INTO "brand" ("brandname") VALUES ('LBT INC');
+INSERT INTO "brand" ("brandname") VALUES ('LBT Stainless Inc');
+INSERT INTO "brand" ("brandname") VALUES ('LC Services of Louisiana');
+INSERT INTO "brand" ("brandname") VALUES ('LC3');
+INSERT INTO "brand" ("brandname") VALUES ('LCT');
+INSERT INTO "brand" ("brandname") VALUES ('LDC INDUSTRIES, INC');
+INSERT INTO "brand" ("brandname") VALUES ('LDJ Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Leber Coach Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Lectrus');
+INSERT INTO "brand" ("brandname") VALUES ('LED Authority');
+INSERT INTO "brand" ("brandname") VALUES ('Ledbetter Welding Company');
+INSERT INTO "brand" ("brandname") VALUES ('Lees Leisure Industries Limited');
+INSERT INTO "brand" ("brandname") VALUES ('Lefort');
+INSERT INTO "brand" ("brandname") VALUES ('Left Coast Development');
+INSERT INTO "brand" ("brandname") VALUES ('Lefty Brothers Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('Legacy Housing');
+INSERT INTO "brand" ("brandname") VALUES ('Legacy RV');
+INSERT INTO "brand" ("brandname") VALUES ('Legacy Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Legend');
+INSERT INTO "brand" ("brandname") VALUES ('Legend Ice House');
+INSERT INTO "brand" ("brandname") VALUES ('Legend Manufacturing Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Legend Trailers Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Legendary Innovations');
+INSERT INTO "brand" ("brandname") VALUES ('Legends Custom Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('Legends Motorsports LLC.');
+INSERT INTO "brand" ("brandname") VALUES ('Leggett & Platt');
+INSERT INTO "brand" ("brandname") VALUES ('Legion Motorcycle Company');
+INSERT INTO "brand" ("brandname") VALUES ('Lektron');
+INSERT INTO "brand" ("brandname") VALUES ('Lemco Tool');
+INSERT INTO "brand" ("brandname") VALUES ('Lemna Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('Leon''s Welding & Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('Leonard Aluminum Utility Buildings');
+INSERT INTO "brand" ("brandname") VALUES ('Lerch RV');
+INSERT INTO "brand" ("brandname") VALUES ('Leroy-Thompson');
+INSERT INTO "brand" ("brandname") VALUES ('Leroy Engineering');
+INSERT INTO "brand" ("brandname") VALUES ('Les'' Service And Canopies');
+INSERT INTO "brand" ("brandname") VALUES ('Lesters Manufacturing Inc');
+INSERT INTO "brand" ("brandname") VALUES ('LET''S GO AERO');
+INSERT INTO "brand" ("brandname") VALUES ('LEVCO WORLDWIDE');
+INSERT INTO "brand" ("brandname") VALUES ('LEVEL TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('LEVON VENDING CARTS CO.');
+INSERT INTO "brand" ("brandname") VALUES ('LEXINGTON TRAILER & HITCH');
+INSERT INTO "brand" ("brandname") VALUES ('Lexus');
+INSERT INTO "brand" ("brandname") VALUES ('LGS INDUSTRIES');
+INSERT INTO "brand" ("brandname") VALUES ('LHT Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Li''l Ice Cream Shop Ltd');
+INSERT INTO "brand" ("brandname") VALUES ('LIANYUNGANG UNIVERSAL SPECIAL PURPOSE');
+INSERT INTO "brand" ("brandname") VALUES ('Liberator Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('LIBERATOR TRIKES');
+INSERT INTO "brand" ("brandname") VALUES ('LIBERTY');
+INSERT INTO "brand" ("brandname") VALUES ('LIBERTY CABINS');
+INSERT INTO "brand" ("brandname") VALUES ('LIBERTY INDUSTRIES');
+INSERT INTO "brand" ("brandname") VALUES ('LIBERTY MOTORS');
+INSERT INTO "brand" ("brandname") VALUES ('Liberty Outdoors');
+INSERT INTO "brand" ("brandname") VALUES ('LIBERTY SEAMLESS ENTERPRISES');
+INSERT INTO "brand" ("brandname") VALUES ('Liberty Trailers Inc');
+INSERT INTO "brand" ("brandname") VALUES ('LIBERTY TRAILERS, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Liddell');
+INSERT INTO "brand" ("brandname") VALUES ('LIFAN-VIETNAM MOTOR');
+INSERT INTO "brand" ("brandname") VALUES ('LIFAN INDUSTRY');
+INSERT INTO "brand" ("brandname") VALUES ('Life Tiny Homes');
+INSERT INTO "brand" ("brandname") VALUES ('Lifestyle');
+INSERT INTO "brand" ("brandname") VALUES ('LIFESTYLE LUXURY');
+INSERT INTO "brand" ("brandname") VALUES ('Lifetime Aluminum');
+INSERT INTO "brand" ("brandname") VALUES ('Lifetime Products Group');
+INSERT INTO "brand" ("brandname") VALUES ('Lifetime Products, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('LIFETRIKE');
+INSERT INTO "brand" ("brandname") VALUES ('Lift N Lock');
+INSERT INTO "brand" ("brandname") VALUES ('LIFTCO');
+INSERT INTO "brand" ("brandname") VALUES ('Light Campers Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Light Engineering');
+INSERT INTO "brand" ("brandname") VALUES ('Lighthouse RV Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Lightline Products Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Lightning Motors Corp');
+INSERT INTO "brand" ("brandname") VALUES ('Lightning Rod Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('Likens Trailer Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Lil John');
+INSERT INTO "brand" ("brandname") VALUES ('LIMBO CONTAINER COMPANY');
+INSERT INTO "brand" ("brandname") VALUES ('Lime City Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('Limos By Tiffany');
+INSERT INTO "brand" ("brandname") VALUES ('Limousine Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Linamar Consumer Products');
+INSERT INTO "brand" ("brandname") VALUES ('Lincoln');
+INSERT INTO "brand" ("brandname") VALUES ('Lindig');
+INSERT INTO "brand" ("brandname") VALUES ('Lindsay Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Lindsay Transportation Solutions');
+INSERT INTO "brand" ("brandname") VALUES ('LINEAR DYNAMICS INC');
+INSERT INTO "brand" ("brandname") VALUES ('Lineman & Son');
+INSERT INTO "brand" ("brandname") VALUES ('Linhai');
+INSERT INTO "brand" ("brandname") VALUES ('Lionhead Haulers');
+INSERT INTO "brand" ("brandname") VALUES ('Lippert Component');
+INSERT INTO "brand" ("brandname") VALUES ('Liquid Asphalt Systems');
+INSERT INTO "brand" ("brandname") VALUES ('Liquid Partners');
+INSERT INTO "brand" ("brandname") VALUES ('LISLE SPECIALTIES INC');
+INSERT INTO "brand" ("brandname") VALUES ('Lit Motors');
+INSERT INTO "brand" ("brandname") VALUES ('Lit Scooters');
+INSERT INTO "brand" ("brandname") VALUES ('Lite-N-Bolt');
+INSERT INTO "brand" ("brandname") VALUES ('Lithium House');
+INSERT INTO "brand" ("brandname") VALUES ('LITO Green Motion');
+INSERT INTO "brand" ("brandname") VALUES ('Little Beaver');
+INSERT INTO "brand" ("brandname") VALUES ('Little D''s Utility Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Little Fox Campers');
+INSERT INTO "brand" ("brandname") VALUES ('Little Guys Group');
+INSERT INTO "brand" ("brandname") VALUES ('Little Joe''s Welding & Sons');
+INSERT INTO "brand" ("brandname") VALUES ('Little Stanley Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('Liv Golf Cars');
+INSERT INTO "brand" ("brandname") VALUES ('LiVecchi Cycle');
+INSERT INTO "brand" ("brandname") VALUES ('Livestock Trailer Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('Livin Lite');
+INSERT INTO "brand" ("brandname") VALUES ('Livingston Custom Boat Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('LLR Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('LMT');
+INSERT INTO "brand" ("brandname") VALUES ('Lo-Pro Fluid Transports');
+INSERT INTO "brand" ("brandname") VALUES ('Load Eaz');
+INSERT INTO "brand" ("brandname") VALUES ('Load Glide Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Load Maxx Trailer Co.');
+INSERT INTO "brand" ("brandname") VALUES ('Load Pro Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Load Rite');
+INSERT INTO "brand" ("brandname") VALUES ('Load Technology');
+INSERT INTO "brand" ("brandname") VALUES ('Load Toters Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Load Trail');
+INSERT INTO "brand" ("brandname") VALUES ('LOADMASTER TRAILER COMPANY LTD.');
+INSERT INTO "brand" ("brandname") VALUES ('Loadstar');
+INSERT INTO "brand" ("brandname") VALUES ('LOBB TRAILER');
+INSERT INTO "brand" ("brandname") VALUES ('Location Water Systems');
+INSERT INTO "brand" ("brandname") VALUES ('Lockwood');
+INSERT INTO "brand" ("brandname") VALUES ('LODAL');
+INSERT INTO "brand" ("brandname") VALUES ('Log - Master Portable');
+INSERT INTO "brand" ("brandname") VALUES ('Logan Coach');
+INSERT INTO "brand" ("brandname") VALUES ('Logan Farm Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('Logano Trucking Company Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Logic Motor Company');
+INSERT INTO "brand" ("brandname") VALUES ('Logic Motors');
+INSERT INTO "brand" ("brandname") VALUES ('LOHR');
+INSERT INTO "brand" ("brandname") VALUES ('Lomar Industry');
+INSERT INTO "brand" ("brandname") VALUES ('Loncin');
+INSERT INTO "brand" ("brandname") VALUES ('London');
+INSERT INTO "brand" ("brandname") VALUES ('London Aire');
+INSERT INTO "brand" ("brandname") VALUES ('LondonCoach Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Lone Star Grillz');
+INSERT INTO "brand" ("brandname") VALUES ('Lone Star Oryogenics');
+INSERT INTO "brand" ("brandname") VALUES ('Lone Star Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Lone Star Trailer Services');
+INSERT INTO "brand" ("brandname") VALUES ('Lone Wolf Customs');
+INSERT INTO "brand" ("brandname") VALUES ('Lone Wolf Trailer Co.');
+INSERT INTO "brand" ("brandname") VALUES ('Lonesome Road Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Lonestar Dock Products');
+INSERT INTO "brand" ("brandname") VALUES ('Lonestar Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Long Chih Industrial');
+INSERT INTO "brand" ("brandname") VALUES ('Long Dog Enterprise');
+INSERT INTO "brand" ("brandname") VALUES ('Long Horn Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Long Trailer Company');
+INSERT INTO "brand" ("brandname") VALUES ('Longbow Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('Longjia');
+INSERT INTO "brand" ("brandname") VALUES ('Longjia or Buccaneer (SSR Motorsports)');
+INSERT INTO "brand" ("brandname") VALUES ('Lopez Welding Shop');
+INSERT INTO "brand" ("brandname") VALUES ('LOS ANGELES ROLLERS');
+INSERT INTO "brand" ("brandname") VALUES ('Lotus');
+INSERT INTO "brand" ("brandname") VALUES ('Loudo Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Low-Tow Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Low Speed Vehicles');
+INSERT INTO "brand" ("brandname") VALUES ('Loyalty Mobile Innovations');
+INSERT INTO "brand" ("brandname") VALUES ('LPD Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('LPG Ventures');
+INSERT INTO "brand" ("brandname") VALUES ('LRG Technologies');
+INSERT INTO "brand" ("brandname") VALUES ('LTT');
+INSERT INTO "brand" ("brandname") VALUES ('Lucas');
+INSERT INTO "brand" ("brandname") VALUES ('Lucas Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('Lucky Devil Metal Works');
+INSERT INTO "brand" ("brandname") VALUES ('Lucky MFG');
+INSERT INTO "brand" ("brandname") VALUES ('Lucon');
+INSERT INTO "brand" ("brandname") VALUES ('Ludwigsen Motor Company');
+INSERT INTO "brand" ("brandname") VALUES ('Luedtke');
+INSERT INTO "brand" ("brandname") VALUES ('Lugo Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Lujeana Peters-Howell Rooks County Trailer Sales');
+INSERT INTO "brand" ("brandname") VALUES ('LUKE''S TRAILER MFG AND SALES, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Lumbee Trikes & Bikes');
+INSERT INTO "brand" ("brandname") VALUES ('Lumen');
+INSERT INTO "brand" ("brandname") VALUES ('Lumpkin Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('Lumpkin Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Luoyang Northern');
+INSERT INTO "brand" ("brandname") VALUES ('Luttrell Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Lux Customs');
+INSERT INTO "brand" ("brandname") VALUES ('Luxe');
+INSERT INTO "brand" ("brandname") VALUES ('Luxxx Custom Cycle');
+INSERT INTO "brand" ("brandname") VALUES ('Luyuan');
+INSERT INTO "brand" ("brandname") VALUES ('Lynx Industries');
+INSERT INTO "brand" ("brandname") VALUES ('M-B-W, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('M-Co Welding');
+INSERT INTO "brand" ("brandname") VALUES ('M-ONE');
+INSERT INTO "brand" ("brandname") VALUES ('M & G');
+INSERT INTO "brand" ("brandname") VALUES ('M & J Trailers Unlimited Inc');
+INSERT INTO "brand" ("brandname") VALUES ('M & M Development Ltd');
+INSERT INTO "brand" ("brandname") VALUES ('M & M Fabricators');
+INSERT INTO "brand" ("brandname") VALUES ('M & M MANUFACTURING');
+INSERT INTO "brand" ("brandname") VALUES ('M & M Trailer & Supply');
+INSERT INTO "brand" ("brandname") VALUES ('M & M Trailer Mfg');
+INSERT INTO "brand" ("brandname") VALUES ('M & M TRAILERS & WELDING');
+INSERT INTO "brand" ("brandname") VALUES ('M & R Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('M & T RESEARCH AND DEVELOPMENT');
+INSERT INTO "brand" ("brandname") VALUES ('M & W Shops');
+INSERT INTO "brand" ("brandname") VALUES ('M Chein Equipment and Logistics');
+INSERT INTO "brand" ("brandname") VALUES ('M Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('M P D Trailer Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('M W Bourne Company');
+INSERT INTO "brand" ("brandname") VALUES ('M&C Trailer Sales');
+INSERT INTO "brand" ("brandname") VALUES ('M&M Industrial Maintenance');
+INSERT INTO "brand" ("brandname") VALUES ('M&R Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('M&R Speciality Trailers and Trucks');
+INSERT INTO "brand" ("brandname") VALUES ('M&S');
+INSERT INTO "brand" ("brandname") VALUES ('M8 A1 MULE OFF ROAD TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('MAC');
+INSERT INTO "brand" ("brandname") VALUES ('Mac''s Custom Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Mac-Lander Incorporated');
+INSERT INTO "brand" ("brandname") VALUES ('MAC LTT');
+INSERT INTO "brand" ("brandname") VALUES ('MAC TRAILER MANUFACTURING');
+INSERT INTO "brand" ("brandname") VALUES ('Mace Welding & Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('MACH ONE TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('Mack');
+INSERT INTO "brand" ("brandname") VALUES ('Mack Trucks');
+INSERT INTO "brand" ("brandname") VALUES ('Mackey Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('MACKS METAL FAB');
+INSERT INTO "brand" ("brandname") VALUES ('Mad Dawg');
+INSERT INTO "brand" ("brandname") VALUES ('MAD FABRICATION, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Mad Products');
+INSERT INTO "brand" ("brandname") VALUES ('MADAMI INTERNATIONAL, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Maddock Machinery Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('MADEWELL PRODUCTS CORPORATION');
+INSERT INTO "brand" ("brandname") VALUES ('MADVENTURE CAMPING');
+INSERT INTO "brand" ("brandname") VALUES ('MAG');
+INSERT INTO "brand" ("brandname") VALUES ('Magic Tilt Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('MagneTek Century Electric');
+INSERT INTO "brand" ("brandname") VALUES ('Magnolia Cargo,Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Magnum');
+INSERT INTO "brand" ("brandname") VALUES ('Magnum Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Magnum Fire and Safety Systems 2014');
+INSERT INTO "brand" ("brandname") VALUES ('Magnum Performance Motorcycles LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Magnum Products');
+INSERT INTO "brand" ("brandname") VALUES ('Magnum Trailer Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('MAHINDRA & MAHINDRA LIMITED');
+INSERT INTO "brand" ("brandname") VALUES ('MAINE HITCH & TRAILER SALES');
+INSERT INTO "brand" ("brandname") VALUES ('Maine Portage');
+INSERT INTO "brand" ("brandname") VALUES ('Maine Source Machining Co.');
+INSERT INTO "brand" ("brandname") VALUES ('Maine Wood Heat Company, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Mainline, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Maintenance & Fabrication Services');
+INSERT INTO "brand" ("brandname") VALUES ('Maintenance Services, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Maisons SRM Blondeau Homes Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Majestic Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('Majona Steel Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('Mak Daddy Builders');
+INSERT INTO "brand" ("brandname") VALUES ('Makaha');
+INSERT INTO "brand" ("brandname") VALUES ('Making You Mobile');
+INSERT INTO "brand" ("brandname") VALUES ('Maktec Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Malach USA, LLP');
+INSERT INTO "brand" ("brandname") VALUES ('Malachi Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('Malibu Boats');
+INSERT INTO "brand" ("brandname") VALUES ('Malon');
+INSERT INTO "brand" ("brandname") VALUES ('MAMMOTH TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('MAN & MATERIAL LIFT ENGINEERING');
+INSERT INTO "brand" ("brandname") VALUES ('Man Cave RV');
+INSERT INTO "brand" ("brandname") VALUES ('MANA');
+INSERT INTO "brand" ("brandname") VALUES ('MANAC');
+INSERT INTO "brand" ("brandname") VALUES ('Manac Trailers USA');
+INSERT INTO "brand" ("brandname") VALUES ('Mang');
+INSERT INTO "brand" ("brandname") VALUES ('Manitowoc Cranes Group');
+INSERT INTO "brand" ("brandname") VALUES ('Mann''s Welding and Fabricationg');
+INSERT INTO "brand" ("brandname") VALUES ('Mann Made Products Inc');
+INSERT INTO "brand" ("brandname") VALUES ('MANN MADE PRODUCTS INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Manning Marine');
+INSERT INTO "brand" ("brandname") VALUES ('Manorette RV, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Mansfield Fabricated Products');
+INSERT INTO "brand" ("brandname") VALUES ('Mantis Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Manufacture Tent Sales DBA Sunfun Rentals');
+INSERT INTO "brand" ("brandname") VALUES ('MANUFACTURERS RESOURCES INTERNATIONAL');
+INSERT INTO "brand" ("brandname") VALUES ('Marathon');
+INSERT INTO "brand" ("brandname") VALUES ('Marathon Metalworks');
+INSERT INTO "brand" ("brandname") VALUES ('Marauder Travelers Incorporated');
+INSERT INTO "brand" ("brandname") VALUES ('Marceaux Cycle Works');
+INSERT INTO "brand" ("brandname") VALUES ('Marci''s Diesel Service Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Margo');
+INSERT INTO "brand" ("brandname") VALUES ('Marina');
+INSERT INTO "brand" ("brandname") VALUES ('MARION FABTECH, INC');
+INSERT INTO "brand" ("brandname") VALUES ('Mariout Motorworks');
+INSERT INTO "brand" ("brandname") VALUES ('Mark''s Trailers Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Mark Miner Enterprise dba Custom');
+INSERT INTO "brand" ("brandname") VALUES ('Mark Taylor Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('Mark Wiener Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Mark Williams Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Markland Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Marksman Manufacturer');
+INSERT INTO "brand" ("brandname") VALUES ('Marley Continental Homes Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Marmon Motor Co');
+INSERT INTO "brand" ("brandname") VALUES ('Marquardt Trailer & Manufacturing Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Marquez Mfg Ltd');
+INSERT INTO "brand" ("brandname") VALUES ('Marrel Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('MARS PERFORMANCE MANUFACTURING');
+INSERT INTO "brand" ("brandname") VALUES ('MARSH INDUSTRIAL SERVICES, INC');
+INSERT INTO "brand" ("brandname") VALUES ('Marshall Austin Productions, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('MARSHALL WELDING INC');
+INSERT INTO "brand" ("brandname") VALUES ('Marshell');
+INSERT INTO "brand" ("brandname") VALUES ('Martex Global Enterprise');
+INSERT INTO "brand" ("brandname") VALUES ('Martin''s Steel Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Martin Camper');
+INSERT INTO "brand" ("brandname") VALUES ('Martin Conquest');
+INSERT INTO "brand" ("brandname") VALUES ('MARTIN ENTERPRISES');
+INSERT INTO "brand" ("brandname") VALUES ('Martin Machine Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Martin RV');
+INSERT INTO "brand" ("brandname") VALUES ('MARTINEZ WELDING, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Martino Motor Company');
+INSERT INTO "brand" ("brandname") VALUES ('Maserati');
+INSERT INTO "brand" ("brandname") VALUES ('Mason Dynamics');
+INSERT INTO "brand" ("brandname") VALUES ('Massimo Motor Sports');
+INSERT INTO "brand" ("brandname") VALUES ('Master Fabricating & Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Master Solutions');
+INSERT INTO "brand" ("brandname") VALUES ('Master Tow');
+INSERT INTO "brand" ("brandname") VALUES ('Mastercarry Trailer Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('MASTERCRAFT BOAT COMPANY');
+INSERT INTO "brand" ("brandname") VALUES ('Masterpiece Trailers, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Mastiff Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Materials Processing Systems');
+INSERT INTO "brand" ("brandname") VALUES ('Mathews Mechanical Contractors Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Matott''s Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Matri-Arc Creations LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Matrix');
+INSERT INTO "brand" ("brandname") VALUES ('Matrix Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Matrix Manufacturing Company');
+INSERT INTO "brand" ("brandname") VALUES ('Matrix Motor Company');
+INSERT INTO "brand" ("brandname") VALUES ('Mattman Global Specialty Vehicles');
+INSERT INTO "brand" ("brandname") VALUES ('MATTOX');
+INSERT INTO "brand" ("brandname") VALUES ('Matty''s  Marine & Motorsports, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Maupin Welding');
+INSERT INTO "brand" ("brandname") VALUES ('MAX-ATLAS');
+INSERT INTO "brand" ("brandname") VALUES ('Maxey Companies');
+INSERT INTO "brand" ("brandname") VALUES ('Maxey Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Maxey Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Maxi-Cube');
+INSERT INTO "brand" ("brandname") VALUES ('Maxi Roule Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Maxim');
+INSERT INTO "brand" ("brandname") VALUES ('Maxpro Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Maxum Trailers Division of Cam Superline, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Maxweld Boats');
+INSERT INTO "brand" ("brandname") VALUES ('MAXXD Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('MAXXD Trailers DROP-N-LOAD');
+INSERT INTO "brand" ("brandname") VALUES ('Maxxum');
+INSERT INTO "brand" ("brandname") VALUES ('MAY MANUFACTURING & DIST CORP');
+INSERT INTO "brand" ("brandname") VALUES ('Maybach');
+INSERT INTO "brand" ("brandname") VALUES ('Mayes Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Maynard Fab & Trailer Sales');
+INSERT INTO "brand" ("brandname") VALUES ('Mazda');
+INSERT INTO "brand" ("brandname") VALUES ('MB & G Oilfield Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('MB Equipment Services');
+INSERT INTO "brand" ("brandname") VALUES ('MBI');
+INSERT INTO "brand" ("brandname") VALUES ('MC TOURING PRODUCTS');
+INSERT INTO "brand" ("brandname") VALUES ('MC Trailers LLC');
+INSERT INTO "brand" ("brandname") VALUES ('MC TRAILERS, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Mcadus US Product Development');
+INSERT INTO "brand" ("brandname") VALUES ('McALLISTER');
+INSERT INTO "brand" ("brandname") VALUES ('MCBRIDE TRAILERS INC.');
+INSERT INTO "brand" ("brandname") VALUES ('MCBS');
+INSERT INTO "brand" ("brandname") VALUES ('McCann''s Customs');
+INSERT INTO "brand" ("brandname") VALUES ('McCartney Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('McClain');
+INSERT INTO "brand" ("brandname") VALUES ('McClain Trailers, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('MCCORD MANUFACTURING INC');
+INSERT INTO "brand" ("brandname") VALUES ('McCOY Manufacturing, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('McCullough');
+INSERT INTO "brand" ("brandname") VALUES ('MCD Manufacturing & Repair');
+INSERT INTO "brand" ("brandname") VALUES ('MCDONALD TRAILER SALES');
+INSERT INTO "brand" ("brandname") VALUES ('MCGEE TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('McKay');
+INSERT INTO "brand" ("brandname") VALUES ('McKenzie');
+INSERT INTO "brand" ("brandname") VALUES ('Mckinley Enterprises dba Longhorn Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Mclaren');
+INSERT INTO "brand" ("brandname") VALUES ('Mclendon Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('McMiller''s Chop Shop');
+INSERT INTO "brand" ("brandname") VALUES ('McNeilus');
+INSERT INTO "brand" ("brandname") VALUES ('McNew Fabrication Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('MCT');
+INSERT INTO "brand" ("brandname") VALUES ('MCT INDUSTRIES, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Me-Two Manufacturing LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Mechanical Mayhem');
+INSERT INTO "brand" ("brandname") VALUES ('Mechtronic Solutions');
+INSERT INTO "brand" ("brandname") VALUES ('Medic');
+INSERT INTO "brand" ("brandname") VALUES ('Medical Coaches');
+INSERT INTO "brand" ("brandname") VALUES ('Meeks Engineering');
+INSERT INTO "brand" ("brandname") VALUES ('Meeks Truck & Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('MEIDUO');
+INSERT INTO "brand" ("brandname") VALUES ('MELISSA MANUFACTURING, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Memory Maker');
+INSERT INTO "brand" ("brandname") VALUES ('Menard Manufacturing Company');
+INSERT INTO "brand" ("brandname") VALUES ('Mercedes-Benz');
+INSERT INTO "brand" ("brandname") VALUES ('Merch Motorcycle Co.');
+INSERT INTO "brand" ("brandname") VALUES ('Merchant''s Trailers and Grills');
+INSERT INTO "brand" ("brandname") VALUES ('Mercury');
+INSERT INTO "brand" ("brandname") VALUES ('Merhow Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Meridian Motors Company');
+INSERT INTO "brand" ("brandname") VALUES ('Merit Tank');
+INSERT INTO "brand" ("brandname") VALUES ('MERKUR');
+INSERT INTO "brand" ("brandname") VALUES ('Merritt Equipment Co.');
+INSERT INTO "brand" ("brandname") VALUES ('Mertz Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Mertz, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Meske Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Metal Craft Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Metal Fab');
+INSERT INTO "brand" ("brandname") VALUES ('Metal Mansions');
+INSERT INTO "brand" ("brandname") VALUES ('Metal Works');
+INSERT INTO "brand" ("brandname") VALUES ('Metalcraft Tool & Die');
+INSERT INTO "brand" ("brandname") VALUES ('METRO FAB INC');
+INSERT INTO "brand" ("brandname") VALUES ('Metro Tank & Steel, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Metro Trailer Manufacturing, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Metzger Machine & Engineering');
+INSERT INTO "brand" ("brandname") VALUES ('Meyers Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('MGS Grand Sport');
+INSERT INTO "brand" ("brandname") VALUES ('MGS Incorparated');
+INSERT INTO "brand" ("brandname") VALUES ('MHC Group Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Miami Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('MIANO''S WELDING');
+INSERT INTO "brand" ("brandname") VALUES ('Michael D''s Custom Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('MICHAEL MANUFACTURING AND REPAIR');
+INSERT INTO "brand" ("brandname") VALUES ('Michael Seltzer Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Micro-Lite Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('MICROFORM PRECISION, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Mid-America Trailer MFG.');
+INSERT INTO "brand" ("brandname") VALUES ('MID-AMERICA TRUCK EQUIPMENT, INC');
+INSERT INTO "brand" ("brandname") VALUES ('MID-ATLANTIC LEASING, CORP.');
+INSERT INTO "brand" ("brandname") VALUES ('Mid-Atlantic Transport');
+INSERT INTO "brand" ("brandname") VALUES ('MID-SOUTH TRAILERS, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Mid-State Tank Company');
+INSERT INTO "brand" ("brandname") VALUES ('Mid-State Trailers, Inc (MST)');
+INSERT INTO "brand" ("brandname") VALUES ('Mid America Designs');
+INSERT INTO "brand" ("brandname") VALUES ('Mid South Distribution Services');
+INSERT INTO "brand" ("brandname") VALUES ('Mid Valley Industries Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Middle Georgia Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Midland Equipment Company');
+INSERT INTO "brand" ("brandname") VALUES ('Midsota Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Midsouth Golf Carts');
+INSERT INTO "brand" ("brandname") VALUES ('Midwest');
+INSERT INTO "brand" ("brandname") VALUES ('MIDWEST CHOPPERS OF IOWA');
+INSERT INTO "brand" ("brandname") VALUES ('Midwest Custom Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('Midwest General Repair & Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('Midwest Industrial Tanks');
+INSERT INTO "brand" ("brandname") VALUES ('Midwest Tack & Trailer Brokers');
+INSERT INTO "brand" ("brandname") VALUES ('Midwest Trailer Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Midwest Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('MIG Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Mighty Lite Aluminum Products');
+INSERT INTO "brand" ("brandname") VALUES ('Mighty Mite Industries, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('MightyMover Trailers Inc');
+INSERT INTO "brand" ("brandname") VALUES ('MIKE''S CUSTOM CARS');
+INSERT INTO "brand" ("brandname") VALUES ('Mike''s Custom Works');
+INSERT INTO "brand" ("brandname") VALUES ('Mike''s Welding & Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Mike Green Hydros Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Mike Olsefski''s Auto Accessories');
+INSERT INTO "brand" ("brandname") VALUES ('Mikes Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Mikey''s Custom Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Miles');
+INSERT INTO "brand" ("brandname") VALUES ('Miley');
+INSERT INTO "brand" ("brandname") VALUES ('Milford Pipe & Supply');
+INSERT INTO "brand" ("brandname") VALUES ('Milford Welding & Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Mill Street Customs');
+INSERT INTO "brand" ("brandname") VALUES ('Mill Works, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Millennium Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Millennium Motorcycle Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('Millennium Transit Services');
+INSERT INTO "brand" ("brandname") VALUES ('Miller');
+INSERT INTO "brand" ("brandname") VALUES ('Miller RV MFG.');
+INSERT INTO "brand" ("brandname") VALUES ('Miller Trailer and Manufacturing Company');
+INSERT INTO "brand" ("brandname") VALUES ('Miller Trailers Incorporated');
+INSERT INTO "brand" ("brandname") VALUES ('Millons Farm Center, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Mills Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Milwaukee Motorcycle Company');
+INSERT INTO "brand" ("brandname") VALUES ('Mind''s Eye Fabrication Inc');
+INSERT INTO "brand" ("brandname") VALUES ('MINI');
+INSERT INTO "brand" ("brandname") VALUES ('Mini Big Trucks');
+INSERT INTO "brand" ("brandname") VALUES ('Minicars');
+INSERT INTO "brand" ("brandname") VALUES ('MiniMixx');
+INSERT INTO "brand" ("brandname") VALUES ('Minimover');
+INSERT INTO "brand" ("brandname") VALUES ('Minitears Company');
+INSERT INTO "brand" ("brandname") VALUES ('Minneapolis Custom Cycle');
+INSERT INTO "brand" ("brandname") VALUES ('Minnesota Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Minnesota Teardrop Trailer LLC dba Vistabule');
+INSERT INTO "brand" ("brandname") VALUES ('MINNESOTA VALLEY ENGINEERING, INC');
+INSERT INTO "brand" ("brandname") VALUES ('Mirage Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('MIROX');
+INSERT INTO "brand" ("brandname") VALUES ('Mirsberger Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Misanthropy Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('Misfit Marketing Services');
+INSERT INTO "brand" ("brandname") VALUES ('Mission Motor Company');
+INSERT INTO "brand" ("brandname") VALUES ('Mission Utility Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Mister Trailer Co');
+INSERT INTO "brand" ("brandname") VALUES ('Mitch Bergeron Customs Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Mitchell Industries Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Mitsubishi');
+INSERT INTO "brand" ("brandname") VALUES ('Mitsubishi Fuso');
+INSERT INTO "brand" ("brandname") VALUES ('Mity Mite Mfg');
+INSERT INTO "brand" ("brandname") VALUES ('Mizer Motor Works');
+INSERT INTO "brand" ("brandname") VALUES ('MJL');
+INSERT INTO "brand" ("brandname") VALUES ('MJT Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('MKR Fabricators, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('MMI');
+INSERT INTO "brand" ("brandname") VALUES ('MMLJ');
+INSERT INTO "brand" ("brandname") VALUES ('Mo Trailers Corp.');
+INSERT INTO "brand" ("brandname") VALUES ('MOBI');
+INSERT INTO "brand" ("brandname") VALUES ('Mobile Armoured Vehicle');
+INSERT INTO "brand" ("brandname") VALUES ('Mobile Barriers');
+INSERT INTO "brand" ("brandname") VALUES ('Mobile Drilling Co.');
+INSERT INTO "brand" ("brandname") VALUES ('Mobile Energy Solutions');
+INSERT INTO "brand" ("brandname") VALUES ('MOBILE MEDICAL INNOVATIONS');
+INSERT INTO "brand" ("brandname") VALUES ('Mobile Medical International Corporation Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Mobile Mini');
+INSERT INTO "brand" ("brandname") VALUES ('Mobile Motorhead Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Mobile Products Inc');
+INSERT INTO "brand" ("brandname") VALUES ('MOBILE RESTROOM RENTALS, INC');
+INSERT INTO "brand" ("brandname") VALUES ('Mobile Specialties');
+INSERT INTO "brand" ("brandname") VALUES ('Mobile Systems, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Mobile Tech Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Mobile Technical Systems, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Mobile Technologies Group');
+INSERT INTO "brand" ("brandname") VALUES ('Mobile Trailers, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Mobile Traveler, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('MOBILIFT INC');
+INSERT INTO "brand" ("brandname") VALUES ('Mobilight');
+INSERT INTO "brand" ("brandname") VALUES ('Mobility Ventures');
+INSERT INTO "brand" ("brandname") VALUES ('Mobridge Manufacturing, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Moby1 Expedition Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Mod Car');
+INSERT INTO "brand" ("brandname") VALUES ('MOD RODS');
+INSERT INTO "brand" ("brandname") VALUES ('MODEC INC');
+INSERT INTO "brand" ("brandname") VALUES ('Modern');
+INSERT INTO "brand" ("brandname") VALUES ('Modern Metalworx');
+INSERT INTO "brand" ("brandname") VALUES ('Modisette Welding & Supply');
+INSERT INTO "brand" ("brandname") VALUES ('Modular Structures International Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Moex');
+INSERT INTO "brand" ("brandname") VALUES ('Mogi MFG');
+INSERT INTO "brand" ("brandname") VALUES ('Mohawk Valley Welding & Stainless Steel');
+INSERT INTO "brand" ("brandname") VALUES ('Monaco');
+INSERT INTO "brand" ("brandname") VALUES ('Monaco RV');
+INSERT INTO "brand" ("brandname") VALUES ('Monaco Towable');
+INSERT INTO "brand" ("brandname") VALUES ('Monarch');
+INSERT INTO "brand" ("brandname") VALUES ('Monarch-McLaren');
+INSERT INTO "brand" ("brandname") VALUES ('Monarch Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Mongoose');
+INSERT INTO "brand" ("brandname") VALUES ('Monitor Systems');
+INSERT INTO "brand" ("brandname") VALUES ('Monon');
+INSERT INTO "brand" ("brandname") VALUES ('Monroe Towmaster');
+INSERT INTO "brand" ("brandname") VALUES ('Monsoon Marine');
+INSERT INTO "brand" ("brandname") VALUES ('Monster Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Monster Power Equipment Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Monster Tanks');
+INSERT INTO "brand" ("brandname") VALUES ('Montana Dreams');
+INSERT INTO "brand" ("brandname") VALUES ('Moody');
+INSERT INTO "brand" ("brandname") VALUES ('Moonlight Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Moonra');
+INSERT INTO "brand" ("brandname") VALUES ('Moore Enterpreses');
+INSERT INTO "brand" ("brandname") VALUES ('MOORE MARINE MARKETING INC');
+INSERT INTO "brand" ("brandname") VALUES ('Moose Boats');
+INSERT INTO "brand" ("brandname") VALUES ('Moped World');
+INSERT INTO "brand" ("brandname") VALUES ('Morbark');
+INSERT INTO "brand" ("brandname") VALUES ('Morgan 3 Wheeler');
+INSERT INTO "brand" ("brandname") VALUES ('Morgan Federal');
+INSERT INTO "brand" ("brandname") VALUES ('Morgan Industries Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Morgan Machine');
+INSERT INTO "brand" ("brandname") VALUES ('Morgan Motor');
+INSERT INTO "brand" ("brandname") VALUES ('Morgan Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Moritz International');
+INSERT INTO "brand" ("brandname") VALUES ('Morocco Electric Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Morris Farms');
+INSERT INTO "brand" ("brandname") VALUES ('Morris Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Morse Manufacturing Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Morton-Davis');
+INSERT INTO "brand" ("brandname") VALUES ('Mosler');
+INSERT INTO "brand" ("brandname") VALUES ('Motion Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Motive Power Industry');
+INSERT INTO "brand" ("brandname") VALUES ('Moto Electric Vehicles');
+INSERT INTO "brand" ("brandname") VALUES ('Moto Guzzi');
+INSERT INTO "brand" ("brandname") VALUES ('MOTO1');
+INSERT INTO "brand" ("brandname") VALUES ('Moto8ight');
+INSERT INTO "brand" ("brandname") VALUES ('MotoAdvent');
+INSERT INTO "brand" ("brandname") VALUES ('MotoCzysz');
+INSERT INTO "brand" ("brandname") VALUES ('Motofino');
+INSERT INTO "brand" ("brandname") VALUES ('Motofino USA');
+INSERT INTO "brand" ("brandname") VALUES ('Motomarina');
+INSERT INTO "brand" ("brandname") VALUES ('Motor Coach Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Motor Truck and Trailer Co');
+INSERT INTO "brand" ("brandname") VALUES ('Motorcycle Machine Shop Services');
+INSERT INTO "brand" ("brandname") VALUES ('Motorized HandleBar');
+INSERT INTO "brand" ("brandname") VALUES ('Motorized Manufacturing Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Motorsport Trailers, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Motus Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('Mountain Creek Cabins LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Mountain Equipment of New Mexico');
+INSERT INTO "brand" ("brandname") VALUES ('MOUNTAIN LION OUTDOOR, INC');
+INSERT INTO "brand" ("brandname") VALUES ('Mountain Ridge Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Mountain Trailer Co.');
+INSERT INTO "brand" ("brandname") VALUES ('Mountain West Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Mountaineer Welding & Trailer Repair');
+INSERT INTO "brand" ("brandname") VALUES ('Mountaintop Custom Kennels');
+INSERT INTO "brand" ("brandname") VALUES ('MountainWest');
+INSERT INTO "brand" ("brandname") VALUES ('MOUSER STEEL SUPPLY, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Movable Roots, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Move-It-All');
+INSERT INTO "brand" ("brandname") VALUES ('MP Trailer & Truck Bodies Inc');
+INSERT INTO "brand" ("brandname") VALUES ('MPD Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('MQ Power');
+INSERT INTO "brand" ("brandname") VALUES ('MRT Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('MSA Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('MSE Welding and Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('MSR Technologies');
+INSERT INTO "brand" ("brandname") VALUES ('Mt Customs Motorcycles and Choppers LLC');
+INSERT INTO "brand" ("brandname") VALUES ('MT TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('MtlWrx');
+INSERT INTO "brand" ("brandname") VALUES ('MTP Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('MTS Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('MTTS');
+INSERT INTO "brand" ("brandname") VALUES ('MTX');
+INSERT INTO "brand" ("brandname") VALUES ('Mud Technology International');
+INSERT INTO "brand" ("brandname") VALUES ('Mudds Customs');
+INSERT INTO "brand" ("brandname") VALUES ('Muddy Creek Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Muddy River MFG');
+INSERT INTO "brand" ("brandname") VALUES ('Mulligan Engineering');
+INSERT INTO "brand" ("brandname") VALUES ('Mulligan Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Multi-Fab');
+INSERT INTO "brand" ("brandname") VALUES ('Multiphibious');
+INSERT INTO "brand" ("brandname") VALUES ('Multiquip');
+INSERT INTO "brand" ("brandname") VALUES ('Multitek');
+INSERT INTO "brand" ("brandname") VALUES ('MURPHY''S WELDING SERVICE');
+INSERT INTO "brand" ("brandname") VALUES ('Murray''s Tag & Title Services');
+INSERT INTO "brand" ("brandname") VALUES ('MUSKOKA');
+INSERT INTO "brand" ("brandname") VALUES ('MUST Technologies Ltd.');
+INSERT INTO "brand" ("brandname") VALUES ('Mustang Horse Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Mustang Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Mutter''s Cycle Supply');
+INSERT INTO "brand" ("brandname") VALUES ('Muv-All');
+INSERT INTO "brand" ("brandname") VALUES ('Muz of North America');
+INSERT INTO "brand" ("brandname") VALUES ('MV Agusta Motor');
+INSERT INTO "brand" ("brandname") VALUES ('MVL Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('MVM7, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('MVP RV');
+INSERT INTO "brand" ("brandname") VALUES ('MVP Technologies');
+INSERT INTO "brand" ("brandname") VALUES ('MWE Monaco MFG');
+INSERT INTO "brand" ("brandname") VALUES ('MWE of Ohio');
+INSERT INTO "brand" ("brandname") VALUES ('My Mini Trailer LLC.');
+INSERT INTO "brand" ("brandname") VALUES ('mycar');
+INSERT INTO "brand" ("brandname") VALUES ('MYCO Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('MYERS');
+INSERT INTO "brand" ("brandname") VALUES ('MYERS MOTORS');
+INSERT INTO "brand" ("brandname") VALUES ('MYROS');
+INSERT INTO "brand" ("brandname") VALUES ('Mystical Custom Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('N-Line Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('N & N Remorque Inc');
+INSERT INTO "brand" ("brandname") VALUES ('NABI');
+INSERT INTO "brand" ("brandname") VALUES ('Nabors Trailers of America');
+INSERT INTO "brand" ("brandname") VALUES ('Nacional De Carrocerias Sa De Cv');
+INSERT INTO "brand" ("brandname") VALUES ('Nakutis Custom Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Namron Trailers Manufacturing Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Nanchang Freedom Technology Limited Company');
+INSERT INTO "brand" ("brandname") VALUES ('Nanfang Space Navigation Science & Technology');
+INSERT INTO "brand" ("brandname") VALUES ('Nanjing Vmoto Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Nasatka Barrier');
+INSERT INTO "brand" ("brandname") VALUES ('Nash');
+INSERT INTO "brand" ("brandname") VALUES ('Nash Car Aluminum Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Nash Car Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Nash Car Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Nash Motocycles');
+INSERT INTO "brand" ("brandname") VALUES ('Nashua');
+INSERT INTO "brand" ("brandname") VALUES ('NATION TANK & TRAILER');
+INSERT INTO "brand" ("brandname") VALUES ('National Customized Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('National Electric Vehicles');
+INSERT INTO "brand" ("brandname") VALUES ('National Golf Cars');
+INSERT INTO "brand" ("brandname") VALUES ('NATIONAL GROUP OF COMPANIES, INC');
+INSERT INTO "brand" ("brandname") VALUES ('NATIONAL MANUFACTURING COMPANY');
+INSERT INTO "brand" ("brandname") VALUES ('National Oilwell Varco');
+INSERT INTO "brand" ("brandname") VALUES ('National Pump & Compressor');
+INSERT INTO "brand" ("brandname") VALUES ('National Signal');
+INSERT INTO "brand" ("brandname") VALUES ('National Trailer Assembly');
+INSERT INTO "brand" ("brandname") VALUES ('National Trailer, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('National Truck');
+INSERT INTO "brand" ("brandname") VALUES ('National Vacuum Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('Nations Trailers Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Nationwide Trailer and Equipment Sales');
+INSERT INTO "brand" ("brandname") VALUES ('Navistar');
+INSERT INTO "brand" ("brandname") VALUES ('NEA');
+INSERT INTO "brand" ("brandname") VALUES ('Neal Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Nealco Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('Neckover Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Neel''s Utility Trailer Mfg');
+INSERT INTO "brand" ("brandname") VALUES ('Neighborhood Electric Vehicle');
+INSERT INTO "brand" ("brandname") VALUES ('Neighbors Garage');
+INSERT INTO "brand" ("brandname") VALUES ('Nelson');
+INSERT INTO "brand" ("brandname") VALUES ('Nelson Manufacturing Company');
+INSERT INTO "brand" ("brandname") VALUES ('Neo Classic Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Neo Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Neoplan');
+INSERT INTO "brand" ("brandname") VALUES ('NEROWALKER BOATS');
+INSERT INTO "brand" ("brandname") VALUES ('Ness Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('Nest Caravans');
+INSERT INTO "brand" ("brandname") VALUES ('Neumann''s Automotive');
+INSERT INTO "brand" ("brandname") VALUES ('Nevada Department of Corrections');
+INSERT INTO "brand" ("brandname") VALUES ('NEVILLE WELDING INC.');
+INSERT INTO "brand" ("brandname") VALUES ('NEW AUTOS INC.');
+INSERT INTO "brand" ("brandname") VALUES ('NEW BUCK CORPORATION');
+INSERT INTO "brand" ("brandname") VALUES ('NEW CUSTOM TRAILERS, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('NEW ENGLAND CHOPPERS');
+INSERT INTO "brand" ("brandname") VALUES ('New Flyer');
+INSERT INTO "brand" ("brandname") VALUES ('New Flyer Blue Bird');
+INSERT INTO "brand" ("brandname") VALUES ('New Flyer Ikarus');
+INSERT INTO "brand" ("brandname") VALUES ('New Generation Park Model Inc');
+INSERT INTO "brand" ("brandname") VALUES ('NEW HEIGHTS LLC');
+INSERT INTO "brand" ("brandname") VALUES ('NEW HORIZONS');
+INSERT INTO "brand" ("brandname") VALUES ('New Market Metal Craft');
+INSERT INTO "brand" ("brandname") VALUES ('NEW MEXICO STEEL FABRICATORS INC.');
+INSERT INTO "brand" ("brandname") VALUES ('NEW PECO INC.');
+INSERT INTO "brand" ("brandname") VALUES ('NEW PROGRESS INCORPORATED');
+INSERT INTO "brand" ("brandname") VALUES ('NEW RIVER HOMES, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('NEW TECH MACHINERY CORP');
+INSERT INTO "brand" ("brandname") VALUES ('NEW WAVE TEARDROP');
+INSERT INTO "brand" ("brandname") VALUES ('New York City Custom Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('New Zealand');
+INSERT INTO "brand" ("brandname") VALUES ('NEWCO INC');
+INSERT INTO "brand" ("brandname") VALUES ('NEWFAB, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('NEWKIRK FABRICATION');
+INSERT INTO "brand" ("brandname") VALUES ('Newman''s Manufacturing Incorporated');
+INSERT INTO "brand" ("brandname") VALUES ('Newman Industries, INC');
+INSERT INTO "brand" ("brandname") VALUES ('Newmar Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('NEWPORT FABRICATING, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('NEXGEN FRAMING SYSTEM, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Nexgen Innovations LLC');
+INSERT INTO "brand" ("brandname") VALUES ('NEXHAUL TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('Next Door Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Niagara Fabrication,Inc');
+INSERT INTO "brand" ("brandname") VALUES ('NICHOLSON MANUFACTURING, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Nickels Boat Works, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Niftylift');
+INSERT INTO "brand" ("brandname") VALUES ('Nikota USA');
+INSERT INTO "brand" ("brandname") VALUES ('NILFISK ADVANCE, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Nilfisk Pressure-Pro LLC');
+INSERT INTO "brand" ("brandname") VALUES ('NILSON MANUFACTURING');
+INSERT INTO "brand" ("brandname") VALUES ('Nina');
+INSERT INTO "brand" ("brandname") VALUES ('Ningbo Motorcycle Factory');
+INSERT INTO "brand" ("brandname") VALUES ('Ninth Circle Customs');
+INSERT INTO "brand" ("brandname") VALUES ('Nissan');
+INSERT INTO "brand" ("brandname") VALUES ('NIX Evil Twins');
+INSERT INTO "brand" ("brandname") VALUES ('NJD Automotive LLC');
+INSERT INTO "brand" ("brandname") VALUES ('NJF MANUFACTURING LLC');
+INSERT INTO "brand" ("brandname") VALUES ('NLB CORP.');
+INSERT INTO "brand" ("brandname") VALUES ('NoGas Electric Scooter Co');
+INSERT INTO "brand" ("brandname") VALUES ('Nogas LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Nomad Custom Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('NOMAD GCS');
+INSERT INTO "brand" ("brandname") VALUES ('NOMADGCS');
+INSERT INTO "brand" ("brandname") VALUES ('Nor-Tech Fabrication LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Norac Systems International Inc');
+INSERT INTO "brand" ("brandname") VALUES ('NORBERT''S MANUFACTURING LTD');
+INSERT INTO "brand" ("brandname") VALUES ('Nordic');
+INSERT INTO "brand" ("brandname") VALUES ('Nordskog Marketeer');
+INSERT INTO "brand" ("brandname") VALUES ('Norman Power Systems');
+INSERT INTO "brand" ("brandname") VALUES ('NORMco Energy Products, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Norris Truck & Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Norstar Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('NORTH - EAST STEEL FABRICATION');
+INSERT INTO "brand" ("brandname") VALUES ('NORTH AMERICAN CARGO');
+INSERT INTO "brand" ("brandname") VALUES ('NORTH AMERICAN INDUSTRIES, LTD');
+INSERT INTO "brand" ("brandname") VALUES ('North American Mfg.');
+INSERT INTO "brand" ("brandname") VALUES ('North American Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('North American Tank');
+INSERT INTO "brand" ("brandname") VALUES ('North American Traveler LLC');
+INSERT INTO "brand" ("brandname") VALUES ('North Bay Truckworks');
+INSERT INTO "brand" ("brandname") VALUES ('North Coast Truck Body  LLC');
+INSERT INTO "brand" ("brandname") VALUES ('North Country Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('North Jersey Cycle');
+INSERT INTO "brand" ("brandname") VALUES ('North park Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('NORTH RIVER JET BOATS');
+INSERT INTO "brand" ("brandname") VALUES ('NORTH SHORE MANUFACTURING COMPANY INC');
+INSERT INTO "brand" ("brandname") VALUES ('North Shore Motorcycle');
+INSERT INTO "brand" ("brandname") VALUES ('NORTH SOUTH AUTO CONNECTION');
+INSERT INTO "brand" ("brandname") VALUES ('North South Connection Auto Sales Ltd');
+INSERT INTO "brand" ("brandname") VALUES ('NORTH STAR MFG');
+INSERT INTO "brand" ("brandname") VALUES ('NORTH VALLEY INDUSTRIES, INC');
+INSERT INTO "brand" ("brandname") VALUES ('Northeast Custom Cycles LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Northeast Fabricators, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('NORTHERN TOOL & EQUIPMENT, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Northland Machine Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Northstar');
+INSERT INTO "brand" ("brandname") VALUES ('NorthStar Fabrication & Machine');
+INSERT INTO "brand" ("brandname") VALUES ('Northwest Aluminum Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Northwest Custom aluminum Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Northwest Enterprises Inc');
+INSERT INTO "brand" ("brandname") VALUES ('NORTHWEST MANUFACTURING, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Northwest technologies Inc');
+INSERT INTO "brand" ("brandname") VALUES ('NORTHWOODS TRAILERS LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Norton MotorCycles');
+INSERT INTO "brand" ("brandname") VALUES ('Nortrail');
+INSERT INTO "brand" ("brandname") VALUES ('Norwalk Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Norwood Sales');
+INSERT INTO "brand" ("brandname") VALUES ('NOTO CUSTOM WELDING');
+INSERT INTO "brand" ("brandname") VALUES ('NovaBUS');
+INSERT INTO "brand" ("brandname") VALUES ('Novae Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Novak Custom Motorcycle');
+INSERT INTO "brand" ("brandname") VALUES ('Now Systems');
+INSERT INTO "brand" ("brandname") VALUES ('NRG');
+INSERT INTO "brand" ("brandname") VALUES ('NRG Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('NST MotorCycles');
+INSERT INTO "brand" ("brandname") VALUES ('Nu-Gen Products');
+INSERT INTO "brand" ("brandname") VALUES ('Nu-Wave Mfg Inc');
+INSERT INTO "brand" ("brandname") VALUES ('NU WA Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Nuko Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Numi');
+INSERT INTO "brand" ("brandname") VALUES ('Nuttall Trailers LLC');
+INSERT INTO "brand" ("brandname") VALUES ('NY Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('O''Dell Mfg & Truck Sales');
+INSERT INTO "brand" ("brandname") VALUES ('O''Neal Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('O & J Trailer Systems');
+INSERT INTO "brand" ("brandname") VALUES ('O3 Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Oak & Iron Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Oak Creek Homes');
+INSERT INTO "brand" ("brandname") VALUES ('Oakland County Chopper Motorcycle');
+INSERT INTO "brand" ("brandname") VALUES ('Oakley Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Ocean Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('OCO Pressure Control Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('OCS Marine Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Octane Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('ODDI CYCLES');
+INSERT INTO "brand" ("brandname") VALUES ('Odom');
+INSERT INTO "brand" ("brandname") VALUES ('Odom''s Manufacturers');
+INSERT INTO "brand" ("brandname") VALUES ('Odulair');
+INSERT INTO "brand" ("brandname") VALUES ('Off The Hook Trailers Corp');
+INSERT INTO "brand" ("brandname") VALUES ('OGAWA ENTERPRISE');
+INSERT INTO "brand" ("brandname") VALUES ('OH DEER AUTO BODY LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Ohalee Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Ohio Fluid Products Company');
+INSERT INTO "brand" ("brandname") VALUES ('Ohio Steel Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Oilfield Repair Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Ok Schooners');
+INSERT INTO "brand" ("brandname") VALUES ('Okie Built Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('OKLAHOMA GOOSENECK MFG INC');
+INSERT INTO "brand" ("brandname") VALUES ('OKT');
+INSERT INTO "brand" ("brandname") VALUES ('Old Dominion Brush');
+INSERT INTO "brand" ("brandname") VALUES ('Old Glory Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Old School Motorcycle');
+INSERT INTO "brand" ("brandname") VALUES ('Old Town Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Oldsmobile');
+INSERT INTO "brand" ("brandname") VALUES ('OLIVER');
+INSERT INTO "brand" ("brandname") VALUES ('Olmax Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('Olson Owsley');
+INSERT INTO "brand" ("brandname") VALUES ('Olympic');
+INSERT INTO "brand" ("brandname") VALUES ('OLYMPIC FIBERGLASS INDUSTRIES, INC');
+INSERT INTO "brand" ("brandname") VALUES ('Olympic Manufacturing and Sales, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Olympic Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Olympic Trailers Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Olympus Technologies Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('OMC Fishing Boat Group, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Omega Manufacturing Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Omega RV');
+INSERT INTO "brand" ("brandname") VALUES ('OMJC Signal Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Omni');
+INSERT INTO "brand" ("brandname") VALUES ('On-site Fleet Services');
+INSERT INTO "brand" ("brandname") VALUES ('On The Road');
+INSERT INTO "brand" ("brandname") VALUES ('Onken''s Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Ontario Bus Industries Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('OP Tank Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Opel');
+INSERT INTO "brand" ("brandname") VALUES ('Open Range RV Company');
+INSERT INTO "brand" ("brandname") VALUES ('Open Road Motorcycles, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('OPM Specialties');
+INSERT INTO "brand" ("brandname") VALUES ('Optima');
+INSERT INTO "brand" ("brandname") VALUES ('Orange County Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Orange EV LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Orchard Hill Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Oregon Food Trucks LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Oregon Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Oreion Motors');
+INSERT INTO "brand" ("brandname") VALUES ('Orion Bus');
+INSERT INTO "brand" ("brandname") VALUES ('Orlando Metal Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('Ornamental Iron Works LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Orteq Energy Services');
+INSERT INTO "brand" ("brandname") VALUES ('Osborne Construction & Backhoe Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Osbornes Welding');
+INSERT INTO "brand" ("brandname") VALUES ('OSCHOOL CHOPPERS');
+INSERT INTO "brand" ("brandname") VALUES ('Oshkosh');
+INSERT INTO "brand" ("brandname") VALUES ('Oshkosh Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Ottawa Brimont Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('Otterbacher');
+INSERT INTO "brand" ("brandname") VALUES ('OutAbout');
+INSERT INTO "brand" ("brandname") VALUES ('Outback');
+INSERT INTO "brand" ("brandname") VALUES ('OUTBACK TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('Outbreak Customz');
+INSERT INTO "brand" ("brandname") VALUES ('Outdoor Aluminum');
+INSERT INTO "brand" ("brandname") VALUES ('Outdoors RV');
+INSERT INTO "brand" ("brandname") VALUES ('Outer Banks Beach Buggies');
+INSERT INTO "brand" ("brandname") VALUES ('Outkast Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('Outkast Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Outlander Trailer, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Outlaw Custom');
+INSERT INTO "brand" ("brandname") VALUES ('Outlaw Mfg Inc');
+INSERT INTO "brand" ("brandname") VALUES ('OUTLAW RANCH TRAILER SALES INC');
+INSERT INTO "brand" ("brandname") VALUES ('Outlaw Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Overland');
+INSERT INTO "brand" ("brandname") VALUES ('Overland Tank');
+INSERT INTO "brand" ("brandname") VALUES ('Owens Cargo');
+INSERT INTO "brand" ("brandname") VALUES ('Owens Classic');
+INSERT INTO "brand" ("brandname") VALUES ('Owensby');
+INSERT INTO "brand" ("brandname") VALUES ('Owings Equipment Co.');
+INSERT INTO "brand" ("brandname") VALUES ('Owosso');
+INSERT INTO "brand" ("brandname") VALUES ('Ox');
+INSERT INTO "brand" ("brandname") VALUES ('OX Industrial');
+INSERT INTO "brand" ("brandname") VALUES ('Oxbo International');
+INSERT INTO "brand" ("brandname") VALUES ('Oxygen SPA');
+INSERT INTO "brand" ("brandname") VALUES ('Oyler');
+INSERT INTO "brand" ("brandname") VALUES ('Ozark');
+INSERT INTO "brand" ("brandname") VALUES ('P & S Machine');
+INSERT INTO "brand" ("brandname") VALUES ('P & T Palmer, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Pace American');
+INSERT INTO "brand" ("brandname") VALUES ('Pacesetter');
+INSERT INTO "brand" ("brandname") VALUES ('Pacesetter Boat');
+INSERT INTO "brand" ("brandname") VALUES ('Pacific Aloha');
+INSERT INTO "brand" ("brandname") VALUES ('Pacific Coachworks');
+INSERT INTO "brand" ("brandname") VALUES ('Pacific Coachworks LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Pacific Coast RV Inc');
+INSERT INTO "brand" ("brandname") VALUES ('PACIFIC INDUSTRIAL SUPPLY');
+INSERT INTO "brand" ("brandname") VALUES ('Pacific Tank Energy');
+INSERT INTO "brand" ("brandname") VALUES ('Pacific Tek Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Pack Mule Camper');
+INSERT INTO "brand" ("brandname") VALUES ('PACKER INDUSTRIES, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Packrat Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('PackUp Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Paddle King');
+INSERT INTO "brand" ("brandname") VALUES ('Pagani');
+INSERT INTO "brand" ("brandname") VALUES ('Pagsta');
+INSERT INTO "brand" ("brandname") VALUES ('Paiute Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Palm Beach Golf Cars');
+INSERT INTO "brand" ("brandname") VALUES ('Palm Harbor Homes');
+INSERT INTO "brand" ("brandname") VALUES ('Palmer');
+INSERT INTO "brand" ("brandname") VALUES ('Palmer''s Welding & Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('Palmer Bodies');
+INSERT INTO "brand" ("brandname") VALUES ('Palmetto Precision');
+INSERT INTO "brand" ("brandname") VALUES ('Palomino');
+INSERT INTO "brand" ("brandname") VALUES ('PAMLICO TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('PANELLA TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('PANOZ AUTO DEVELOPMENT');
+INSERT INTO "brand" ("brandname") VALUES ('Panther');
+INSERT INTO "brand" ("brandname") VALUES ('Panther Motors');
+INSERT INTO "brand" ("brandname") VALUES ('Paradise Trailers Mfg');
+INSERT INTO "brand" ("brandname") VALUES ('Paragon Enviromental System');
+INSERT INTO "brand" ("brandname") VALUES ('Paragon Motorcycles, LLC dba Janus Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('Paramount Custom Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('ParCar');
+INSERT INTO "brand" ("brandname") VALUES ('Paris');
+INSERT INTO "brand" ("brandname") VALUES ('Park City Chopper');
+INSERT INTO "brand" ("brandname") VALUES ('Park Liner');
+INSERT INTO "brand" ("brandname") VALUES ('Park Models Manufacturing Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Parker Brothers Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Parker Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Parker Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Parker Utility');
+INSERT INTO "brand" ("brandname") VALUES ('Parklane Enterprises Inc');
+INSERT INTO "brand" ("brandname") VALUES ('PARKLANE ENTERPRISES INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Parkview Mansions');
+INSERT INTO "brand" ("brandname") VALUES ('ParkWest Industries, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('PAS');
+INSERT INTO "brand" ("brandname") VALUES ('Patent Products, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Patriot');
+INSERT INTO "brand" ("brandname") VALUES ('Patriot Campers');
+INSERT INTO "brand" ("brandname") VALUES ('Patriot Energy Services');
+INSERT INTO "brand" ("brandname") VALUES ('Patriot Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Patriot Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('Patriot Motorcycles DBA');
+INSERT INTO "brand" ("brandname") VALUES ('Patriot Steel Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('Paughco MC, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Pauite Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('PAUL THUN''S CUSTOM WELDING');
+INSERT INTO "brand" ("brandname") VALUES ('Paul Yaffe Originals');
+INSERT INTO "brand" ("brandname") VALUES ('Pauli');
+INSERT INTO "brand" ("brandname") VALUES ('Paver Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('PavMaster');
+INSERT INTO "brand" ("brandname") VALUES ('PAYNE''S TRAILER');
+INSERT INTO "brand" ("brandname") VALUES ('PBM');
+INSERT INTO "brand" ("brandname") VALUES ('PCI Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Peach Cargo');
+INSERT INTO "brand" ("brandname") VALUES ('Peachland Design and Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('Peak Fabrications');
+INSERT INTO "brand" ("brandname") VALUES ('Peak Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Peak Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Peak Manufacturing Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Pearson and Pearson dba Chasony Concession');
+INSERT INTO "brand" ("brandname") VALUES ('Peck Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Pecru Group');
+INSERT INTO "brand" ("brandname") VALUES ('Pedal Crawler');
+INSERT INTO "brand" ("brandname") VALUES ('Peel');
+INSERT INTO "brand" ("brandname") VALUES ('Peerless Limited');
+INSERT INTO "brand" ("brandname") VALUES ('Peerless Manufacturing Co');
+INSERT INTO "brand" ("brandname") VALUES ('Peersouth');
+INSERT INTO "brand" ("brandname") VALUES ('Pegasus');
+INSERT INTO "brand" ("brandname") VALUES ('Pelletier Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Peltz Mfg Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Peltzer Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('PEMBERTON FABRICATORS');
+INSERT INTO "brand" ("brandname") VALUES ('Pemco Equipment Co');
+INSERT INTO "brand" ("brandname") VALUES ('Penn Jersey Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('Pennsylvania Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('Peoria Custom Cookers');
+INSERT INTO "brand" ("brandname") VALUES ('PERAVES AG');
+INSERT INTO "brand" ("brandname") VALUES ('PEREWITZ CUSTOMS');
+INSERT INTO "brand" ("brandname") VALUES ('PERFORMANCE FABRICATING');
+INSERT INTO "brand" ("brandname") VALUES ('Performance Indian');
+INSERT INTO "brand" ("brandname") VALUES ('PERFORMANCE TRAILER INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Performance Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Performance Trailers Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Perrin MFG');
+INSERT INTO "brand" ("brandname") VALUES ('Perry');
+INSERT INTO "brand" ("brandname") VALUES ('Perry Ent');
+INSERT INTO "brand" ("brandname") VALUES ('Personal Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('PES Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Pete''s Golf Carts');
+INSERT INTO "brand" ("brandname") VALUES ('Petenwell Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Peterbilt');
+INSERT INTO "brand" ("brandname") VALUES ('PETERSON BUILT PRODUCTS, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('PETERSON INDUSTRIES');
+INSERT INTO "brand" ("brandname") VALUES ('Peterson Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Petro2Go');
+INSERT INTO "brand" ("brandname") VALUES ('Petrobull');
+INSERT INTO "brand" ("brandname") VALUES ('Petrofab Inc');
+INSERT INTO "brand" ("brandname") VALUES ('PETROSSI WELDING');
+INSERT INTO "brand" ("brandname") VALUES ('PETTY TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('Peugeot');
+INSERT INTO "brand" ("brandname") VALUES ('PEZZAIOLI');
+INSERT INTO "brand" ("brandname") VALUES ('Phantom Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('PHANTOM CYCLE');
+INSERT INTO "brand" ("brandname") VALUES ('Phase ll Truck Body, lnc');
+INSERT INTO "brand" ("brandname") VALUES ('Phat Custom Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('Pheonix');
+INSERT INTO "brand" ("brandname") VALUES ('Phillips Diversified Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Phoenix');
+INSERT INTO "brand" ("brandname") VALUES ('Phoenix Global');
+INSERT INTO "brand" ("brandname") VALUES ('Phoenix Motorcars');
+INSERT INTO "brand" ("brandname") VALUES ('PHOENIX MOTORCYCLE WORKS');
+INSERT INTO "brand" ("brandname") VALUES ('Phoenix Rotary Equipment Ltd.');
+INSERT INTO "brand" ("brandname") VALUES ('PHOENIX TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('Phoenix Trailers INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Phoenix Trailers LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Photo-Sonics');
+INSERT INTO "brand" ("brandname") VALUES ('PI MOBILITY');
+INSERT INTO "brand" ("brandname") VALUES ('Piaggio and Vespa');
+INSERT INTO "brand" ("brandname") VALUES ('Pick A Spot');
+INSERT INTO "brand" ("brandname") VALUES ('PID TRANSIT');
+INSERT INTO "brand" ("brandname") VALUES ('Piedmont Custom Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Pierce Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Pierce Manufacturing Company');
+INSERT INTO "brand" ("brandname") VALUES ('Pik Rite');
+INSERT INTO "brand" ("brandname") VALUES ('PIKE EQUIPMENT & SUPPLY');
+INSERT INTO "brand" ("brandname") VALUES ('Pilgrim International');
+INSERT INTO "brand" ("brandname") VALUES ('Pilgrim International, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Pin Oak Service');
+INSERT INTO "brand" ("brandname") VALUES ('Pine Cone Low Speed');
+INSERT INTO "brand" ("brandname") VALUES ('Pine Ridge');
+INSERT INTO "brand" ("brandname") VALUES ('PINES');
+INSERT INTO "brand" ("brandname") VALUES ('Pininfarina');
+INSERT INTO "brand" ("brandname") VALUES ('PINNACLE INDUSTRIAL SERVICES');
+INSERT INTO "brand" ("brandname") VALUES ('Pinnacle Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Pinnacle Power Services Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Pioneer');
+INSERT INTO "brand" ("brandname") VALUES ('Pioneer Fabricating Inc');
+INSERT INTO "brand" ("brandname") VALUES ('PIONEER METAL WORKS, INC');
+INSERT INTO "brand" ("brandname") VALUES ('Pioneer Pump');
+INSERT INTO "brand" ("brandname") VALUES ('PipeHunter');
+INSERT INTO "brand" ("brandname") VALUES ('Pitbull Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('PITBULL MOTORSPORTS LTD');
+INSERT INTO "brand" ("brandname") VALUES ('Pits by JJ');
+INSERT INTO "brand" ("brandname") VALUES ('Pitt''s & Spitt''s');
+INSERT INTO "brand" ("brandname") VALUES ('Pitt Steel');
+INSERT INTO "brand" ("brandname") VALUES ('Pitts Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Pittsville Homes');
+INSERT INTO "brand" ("brandname") VALUES ('PJ');
+INSERT INTO "brand" ("brandname") VALUES ('Placer Fire Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('Platinum Cottages');
+INSERT INTO "brand" ("brandname") VALUES ('Platinum Manufacturing LLC');
+INSERT INTO "brand" ("brandname") VALUES ('PLAY PEN PRODUCTS');
+INSERT INTO "brand" ("brandname") VALUES ('PLEASANT HILLS');
+INSERT INTO "brand" ("brandname") VALUES ('Pleasant Valley Homes, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Pleasant Valley Teardrop Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Pleasant Valley Trailers, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Pleasant View Mfg');
+INSERT INTO "brand" ("brandname") VALUES ('PLS TRAILER MANUFACTURING');
+INSERT INTO "brand" ("brandname") VALUES ('Plunkett');
+INSERT INTO "brand" ("brandname") VALUES ('Plymouth');
+INSERT INTO "brand" ("brandname") VALUES ('PMD Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('PMI');
+INSERT INTO "brand" ("brandname") VALUES ('Poke Tote');
+INSERT INTO "brand" ("brandname") VALUES ('POL-TECH MANUFACTORY');
+INSERT INTO "brand" ("brandname") VALUES ('Polar Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('Polar Tank Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Polaris');
+INSERT INTO "brand" ("brandname") VALUES ('Polk''s Farm & Fab');
+INSERT INTO "brand" ("brandname") VALUES ('Poly Cal Plastics');
+INSERT INTO "brand" ("brandname") VALUES ('POLYCOAT SYSTEMS');
+INSERT INTO "brand" ("brandname") VALUES ('POLYJOHN TRAILER');
+INSERT INTO "brand" ("brandname") VALUES ('POND KING');
+INSERT INTO "brand" ("brandname") VALUES ('Pontiac');
+INSERT INTO "brand" ("brandname") VALUES ('Pool Trailer Design');
+INSERT INTO "brand" ("brandname") VALUES ('Pop''s LSV''s');
+INSERT INTO "brand" ("brandname") VALUES ('Porkys Chopper');
+INSERT INTO "brand" ("brandname") VALUES ('Porsche');
+INSERT INTO "brand" ("brandname") VALUES ('Port-A-Cool');
+INSERT INTO "brand" ("brandname") VALUES ('Portaboards');
+INSERT INTO "brand" ("brandname") VALUES ('PortAFrame');
+INSERT INTO "brand" ("brandname") VALUES ('Porteon Electric Vehicles');
+INSERT INTO "brand" ("brandname") VALUES ('Pothole Patrol');
+INSERT INTO "brand" ("brandname") VALUES ('POTTER & SON TRAILER FABRICATING INC');
+INSERT INTO "brand" ("brandname") VALUES ('Power');
+INSERT INTO "brand" ("brandname") VALUES ('Power Dynamics');
+INSERT INTO "brand" ("brandname") VALUES ('Power Factory');
+INSERT INTO "brand" ("brandname") VALUES ('Power Manufacturing Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Power Play RV');
+INSERT INTO "brand" ("brandname") VALUES ('Power Products');
+INSERT INTO "brand" ("brandname") VALUES ('POWER SLED MOTORCYCLES, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Power Sports Factory dba Yamati Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('Power Up Mobile');
+INSERT INTO "brand" ("brandname") VALUES ('Power, Process & Industrial');
+INSERT INTO "brand" ("brandname") VALUES ('PowerFab');
+INSERT INTO "brand" ("brandname") VALUES ('Powers Auto & Custom Bikes');
+INSERT INTO "brand" ("brandname") VALUES ('POWERSECURE');
+INSERT INTO "brand" ("brandname") VALUES ('Powertek');
+INSERT INTO "brand" ("brandname") VALUES ('Prairie Creek MFG');
+INSERT INTO "brand" ("brandname") VALUES ('Pratt & Whitney Power Systems');
+INSERT INTO "brand" ("brandname") VALUES ('Pratt Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Prebola Products');
+INSERT INTO "brand" ("brandname") VALUES ('Precedent');
+INSERT INTO "brand" ("brandname") VALUES ('Precious Metal Customs Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Precis');
+INSERT INTO "brand" ("brandname") VALUES ('Precise Metal Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Precision');
+INSERT INTO "brand" ("brandname") VALUES ('Precision-Bilt');
+INSERT INTO "brand" ("brandname") VALUES ('Precision Boatworks');
+INSERT INTO "brand" ("brandname") VALUES ('Precision Chassis & Engineering, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('PRECISION COACH INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Precision Custom Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Precision Custom Trailers LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Precision Cycle Works');
+INSERT INTO "brand" ("brandname") VALUES ('PRECISION EQUIPMENT COMPANY, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Precision Equipment Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('PRECISION FABRICATING & CLEANING');
+INSERT INTO "brand" ("brandname") VALUES ('Precision Laser & Mfg LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Precision Metal Works & Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('Precision Motorcycle Concepts');
+INSERT INTO "brand" ("brandname") VALUES ('Precision Performance Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('Precision Solar Controls');
+INSERT INTO "brand" ("brandname") VALUES ('Precision Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('PRECISION WELDING');
+INSERT INTO "brand" ("brandname") VALUES ('Precision Welding and Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('Predator Custom Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('PREMCO PRODUCTS');
+INSERT INTO "brand" ("brandname") VALUES ('Premier');
+INSERT INTO "brand" ("brandname") VALUES ('Premier Coachbuilders Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Premier Fabricating INC');
+INSERT INTO "brand" ("brandname") VALUES ('Premier Fabricators LLC');
+INSERT INTO "brand" ("brandname") VALUES ('PREMIER NORTHWEST');
+INSERT INTO "brand" ("brandname") VALUES ('Premier Pump and Power');
+INSERT INTO "brand" ("brandname") VALUES ('Premier Pump Company');
+INSERT INTO "brand" ("brandname") VALUES ('Premier Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('PREMIER TRAILER MANUFACTURING, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Premier Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Presidential Arm');
+INSERT INTO "brand" ("brandname") VALUES ('Prevost');
+INSERT INTO "brand" ("brandname") VALUES ('Priefert MFG');
+INSERT INTO "brand" ("brandname") VALUES ('Priest Motor Corp.');
+INSERT INTO "brand" ("brandname") VALUES ('Primus Steel Solutions');
+INSERT INTO "brand" ("brandname") VALUES ('Pro-Craft');
+INSERT INTO "brand" ("brandname") VALUES ('Pro-Formance Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Pro-One');
+INSERT INTO "brand" ("brandname") VALUES ('Pro-Par');
+INSERT INTO "brand" ("brandname") VALUES ('Pro-Street Frameworks');
+INSERT INTO "brand" ("brandname") VALUES ('Pro-Tec');
+INSERT INTO "brand" ("brandname") VALUES ('Pro-Tech');
+INSERT INTO "brand" ("brandname") VALUES ('PRO-TRAK TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('Pro Cycles & Accessories');
+INSERT INTO "brand" ("brandname") VALUES ('Pro Dog Creations');
+INSERT INTO "brand" ("brandname") VALUES ('Pro Fab IND');
+INSERT INTO "brand" ("brandname") VALUES ('Pro Fab US');
+INSERT INTO "brand" ("brandname") VALUES ('Pro Fish Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('PRO PULL');
+INSERT INTO "brand" ("brandname") VALUES ('PRO TILT');
+INSERT INTO "brand" ("brandname") VALUES ('Pro Welding & Fabricating');
+INSERT INTO "brand" ("brandname") VALUES ('Pro West Mechanical, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('PRO X TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('Proaxis');
+INSERT INTO "brand" ("brandname") VALUES ('Probilt Body & Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Proc');
+INSERT INTO "brand" ("brandname") VALUES ('PRODUCTION WELDING');
+INSERT INTO "brand" ("brandname") VALUES ('Productos Y Servicios Regger');
+INSERT INTO "brand" ("brandname") VALUES ('Profab Mex SA DE CV');
+INSERT INTO "brand" ("brandname") VALUES ('Professional Welding');
+INSERT INTO "brand" ("brandname") VALUES ('PROFILE TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('Proform Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Progress');
+INSERT INTO "brand" ("brandname") VALUES ('Progress Solar Solutions');
+INSERT INTO "brand" ("brandname") VALUES ('Progress Tank');
+INSERT INTO "brand" ("brandname") VALUES ('PROGRESSIVE DESIGNS');
+INSERT INTO "brand" ("brandname") VALUES ('Progressive Products');
+INSERT INTO "brand" ("brandname") VALUES ('Progressive Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Prohauler');
+INSERT INTO "brand" ("brandname") VALUES ('Project X Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Proline Products');
+INSERT INTO "brand" ("brandname") VALUES ('Proline Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Prolite Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Proper Chopper');
+INSERT INTO "brand" ("brandname") VALUES ('ProService');
+INSERT INTO "brand" ("brandname") VALUES ('Prostar');
+INSERT INTO "brand" ("brandname") VALUES ('Protected Vehicles');
+INSERT INTO "brand" ("brandname") VALUES ('Proterra');
+INSERT INTO "brand" ("brandname") VALUES ('Protow Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('PROWELD');
+INSERT INTO "brand" ("brandname") VALUES ('PRYCO, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('PST');
+INSERT INTO "brand" ("brandname") VALUES ('Psycles');
+INSERT INTO "brand" ("brandname") VALUES ('PT WELDING');
+INSERT INTO "brand" ("brandname") VALUES ('Puck Custom Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('Puffy Boy');
+INSERT INTO "brand" ("brandname") VALUES ('Pull-Wright');
+INSERT INTO "brand" ("brandname") VALUES ('Pullman Modular');
+INSERT INTO "brand" ("brandname") VALUES ('Pullright Trailer Inc');
+INSERT INTO "brand" ("brandname") VALUES ('PULVER RACE FAB');
+INSERT INTO "brand" ("brandname") VALUES ('Pulverisateur');
+INSERT INTO "brand" ("brandname") VALUES ('PURDY ADVENTURE TEARDROP TRAILERS LLC');
+INSERT INTO "brand" ("brandname") VALUES ('PurdyBilt');
+INSERT INTO "brand" ("brandname") VALUES ('Pure Hell');
+INSERT INTO "brand" ("brandname") VALUES ('PURGATORY TOWING INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Purple Chopper');
+INSERT INTO "brand" ("brandname") VALUES ('Purple Line LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Putzmeister');
+INSERT INTO "brand" ("brandname") VALUES ('Pyramid');
+INSERT INTO "brand" ("brandname") VALUES ('Qianjiang Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('QIANJIANG MOTORCYCLES GROUP CORPORATION');
+INSERT INTO "brand" ("brandname") VALUES ('Qingdao Singamas');
+INSERT INTO "brand" ("brandname") VALUES ('Qingqi');
+INSERT INTO "brand" ("brandname") VALUES ('Qingqi Group Ningbo Rhon Motorcycle');
+INSERT INTO "brand" ("brandname") VALUES ('Qipai');
+INSERT INTO "brand" ("brandname") VALUES ('QMC Hydraulic Cranes');
+INSERT INTO "brand" ("brandname") VALUES ('QMe');
+INSERT INTO "brand" ("brandname") VALUES ('QPS');
+INSERT INTO "brand" ("brandname") VALUES ('Qualitech');
+INSERT INTO "brand" ("brandname") VALUES ('Quality Concession Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Quality Discount Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Quality Industrial Construction');
+INSERT INTO "brand" ("brandname") VALUES ('Quality Machine Company');
+INSERT INTO "brand" ("brandname") VALUES ('Quality Manufacturing Co');
+INSERT INTO "brand" ("brandname") VALUES ('Quality Manufacturing Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('Quality Modular Structures');
+INSERT INTO "brand" ("brandname") VALUES ('Quality Performance Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('QUALITY PRODUCTS');
+INSERT INTO "brand" ("brandname") VALUES ('Quality Rebuilt Autos & Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('QUALITY SPECIALTY PRODUCTS');
+INSERT INTO "brand" ("brandname") VALUES ('Quality Specialty Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Quality Steel & Aluminum Products');
+INSERT INTO "brand" ("brandname") VALUES ('QUALITY TRAILER & RV''S');
+INSERT INTO "brand" ("brandname") VALUES ('Quality Trailer Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('Quality Trailers, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Quality Trailers, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Quality Truck Bodies & Repair, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Quality Welding & Fabrication, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Quality Welding Service Inc');
+INSERT INTO "brand" ("brandname") VALUES ('QualityTrailer Manufactury, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Quantum Leap');
+INSERT INTO "brand" ("brandname") VALUES ('Quantya SA');
+INSERT INTO "brand" ("brandname") VALUES ('Queens Motor Company');
+INSERT INTO "brand" ("brandname") VALUES ('Quest Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('QUICK SILVER CUSTOM TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('Quickloadz Container Delivery System');
+INSERT INTO "brand" ("brandname") VALUES ('Quik Manufacturing DBA QMC');
+INSERT INTO "brand" ("brandname") VALUES ('Quitman Tank Solutions, LLC.');
+INSERT INTO "brand" ("brandname") VALUES ('Quixote MM LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Qunsheng Group');
+INSERT INTO "brand" ("brandname") VALUES ('QWS TRAILER INC.');
+INSERT INTO "brand" ("brandname") VALUES ('R-ANELL HOUSING GROUP');
+INSERT INTO "brand" ("brandname") VALUES ('R-Vision');
+INSERT INTO "brand" ("brandname") VALUES ('R & A Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('R & B Aluminum Fabricators');
+INSERT INTO "brand" ("brandname") VALUES ('R & B Industries');
+INSERT INTO "brand" ("brandname") VALUES ('R & D Baker Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('R & D Design and Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('R & H Specialties');
+INSERT INTO "brand" ("brandname") VALUES ('R & J Trading');
+INSERT INTO "brand" ("brandname") VALUES ('R & J Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('R & J Trailers, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('R & R');
+INSERT INTO "brand" ("brandname") VALUES ('R & R CUSTOM TRAILERS & PARTS INC');
+INSERT INTO "brand" ("brandname") VALUES ('R & R FARMS, MFG');
+INSERT INTO "brand" ("brandname") VALUES ('R & R Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('R & R TRUCK AND TRAILER');
+INSERT INTO "brand" ("brandname") VALUES ('R & R Welding');
+INSERT INTO "brand" ("brandname") VALUES ('R & W Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('R Jenkins Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('R Way Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('R&D Machine of Marlboro County');
+INSERT INTO "brand" ("brandname") VALUES ('R&D Precision Machine & Fab Inc');
+INSERT INTO "brand" ("brandname") VALUES ('R&M Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('R&S CUSTOM CYCLES');
+INSERT INTO "brand" ("brandname") VALUES ('R&S Custom Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('R&S Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('R&W TRAILERS INC');
+INSERT INTO "brand" ("brandname") VALUES ('RACE CITY RV PRODUCTS, LLC.');
+INSERT INTO "brand" ("brandname") VALUES ('RACE COACHES LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Race Tech');
+INSERT INTO "brand" ("brandname") VALUES ('RACE TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('RACEMASTER ENGINEERING TIRE AND PERFORMANCE');
+INSERT INTO "brand" ("brandname") VALUES ('Raceport Custom Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Racing Lizard Chopper');
+INSERT INTO "brand" ("brandname") VALUES ('Radical Curves Custom Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('RADIOACTIVE CYCLES');
+INSERT INTO "brand" ("brandname") VALUES ('Radley Custom Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Rage''n, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Raging Iron Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Raglan Industries Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Rainbow Trailers inc');
+INSERT INTO "brand" ("brandname") VALUES ('Rainier Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('Rainier Truck and Chassis');
+INSERT INTO "brand" ("brandname") VALUES ('Raja Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Rally Sport');
+INSERT INTO "brand" ("brandname") VALUES ('Rally Time');
+INSERT INTO "brand" ("brandname") VALUES ('RallyTime Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Ram');
+INSERT INTO "brand" ("brandname") VALUES ('Ram-Lin');
+INSERT INTO "brand" ("brandname") VALUES ('Ram Enterprises, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Ram Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('Ram Transcorp');
+INSERT INTO "brand" ("brandname") VALUES ('Ramika');
+INSERT INTO "brand" ("brandname") VALUES ('Ramirez');
+INSERT INTO "brand" ("brandname") VALUES ('RAMP AGE TRAILER CO.');
+INSERT INTO "brand" ("brandname") VALUES ('Ramp Champ');
+INSERT INTO "brand" ("brandname") VALUES ('Rampless');
+INSERT INTO "brand" ("brandname") VALUES ('Rampless Motorcycle Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Ramptek');
+INSERT INTO "brand" ("brandname") VALUES ('Ramsey Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('RAMSHORN WELDING');
+INSERT INTO "brand" ("brandname") VALUES ('RamVac');
+INSERT INTO "brand" ("brandname") VALUES ('Rance Aluminum Fabrication Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Rancher Trailer Company, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Randco Tanks');
+INSERT INTO "brand" ("brandname") VALUES ('RANGE');
+INSERT INTO "brand" ("brandname") VALUES ('Ranger');
+INSERT INTO "brand" ("brandname") VALUES ('Ranger Boat');
+INSERT INTO "brand" ("brandname") VALUES ('Ranger Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Rankin Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Ransom Motorsports');
+INSERT INTO "brand" ("brandname") VALUES ('Rapid Power');
+INSERT INTO "brand" ("brandname") VALUES ('Rapid Tool & Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('RAS Internation LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Rat King Kustomz Motorcycle');
+INSERT INTO "brand" ("brandname") VALUES ('Rat King Kustomz Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Rat Race Trikes');
+INSERT INTO "brand" ("brandname") VALUES ('RAT Trailer Mfg');
+INSERT INTO "brand" ("brandname") VALUES ('RAVEN MOTORCYCLE');
+INSERT INTO "brand" ("brandname") VALUES ('Raw Iron Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Rawmaxx');
+INSERT INTO "brand" ("brandname") VALUES ('Ray''s Body Shop');
+INSERT INTO "brand" ("brandname") VALUES ('Ray''s Custom Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('RAYCO');
+INSERT INTO "brand" ("brandname") VALUES ('Raymond''s Utility Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Rayner Equipment Systems');
+INSERT INTO "brand" ("brandname") VALUES ('Rayttle');
+INSERT INTO "brand" ("brandname") VALUES ('Razorback Industries');
+INSERT INTO "brand" ("brandname") VALUES ('RB Components');
+INSERT INTO "brand" ("brandname") VALUES ('RB Fabrication LLC');
+INSERT INTO "brand" ("brandname") VALUES ('RB Trailer Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('RBG INC.');
+INSERT INTO "brand" ("brandname") VALUES ('RC');
+INSERT INTO "brand" ("brandname") VALUES ('RC MOTORSPORTS');
+INSERT INTO "brand" ("brandname") VALUES ('RCM');
+INSERT INTO "brand" ("brandname") VALUES ('RCM Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('RDVehicles');
+INSERT INTO "brand" ("brandname") VALUES ('RE-TECH');
+INSERT INTO "brand" ("brandname") VALUES ('Ready Customs');
+INSERT INTO "brand" ("brandname") VALUES ('Reality''s Edge Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Rears Manufacturing Co.');
+INSERT INTO "brand" ("brandname") VALUES ('Rebel Custom Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Rebel Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('Rebel Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Rebel West');
+INSERT INTO "brand" ("brandname") VALUES ('REBELL INNOVATION');
+INSERT INTO "brand" ("brandname") VALUES ('REBUILDERS & SANDBLASTERS, INC');
+INSERT INTO "brand" ("brandname") VALUES ('Recycling Equipment Sales');
+INSERT INTO "brand" ("brandname") VALUES ('Red Baron Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Red Baron Motors');
+INSERT INTO "brand" ("brandname") VALUES ('Red Baron Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Red Dawg Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Red Ewald');
+INSERT INTO "brand" ("brandname") VALUES ('Red Fern Dynamics');
+INSERT INTO "brand" ("brandname") VALUES ('Red Horse Motorworks');
+INSERT INTO "brand" ("brandname") VALUES ('Red Oak Mfg');
+INSERT INTO "brand" ("brandname") VALUES ('Red Ox');
+INSERT INTO "brand" ("brandname") VALUES ('Red Rhino');
+INSERT INTO "brand" ("brandname") VALUES ('Red Rhino Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Red River');
+INSERT INTO "brand" ("brandname") VALUES ('RED RIVER M TRAILER SALES');
+INSERT INTO "brand" ("brandname") VALUES ('Redi-Haul');
+INSERT INTO "brand" ("brandname") VALUES ('Redland Manufacturing Company');
+INSERT INTO "brand" ("brandname") VALUES ('Redline');
+INSERT INTO "brand" ("brandname") VALUES ('Redman Welding & Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('REDWOOD METAL WORKS');
+INSERT INTO "brand" ("brandname") VALUES ('Reeb Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('REED''S WELDING INC');
+INSERT INTO "brand" ("brandname") VALUES ('Reelstrong Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Regal Mobile Solutions, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Rehme Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Reid''s Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Reilley Welding & Metal Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('Reinco Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Reinert MFG.');
+INSERT INTO "brand" ("brandname") VALUES ('Reinke Manufacturing Company');
+INSERT INTO "brand" ("brandname") VALUES ('Reiser');
+INSERT INTO "brand" ("brandname") VALUES ('Reitnouer Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Reliance');
+INSERT INTO "brand" ("brandname") VALUES ('Reliance Trailer Sales');
+INSERT INTO "brand" ("brandname") VALUES ('Reliance Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Relic Custom Trailers, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Remolques Di-Kar');
+INSERT INTO "brand" ("brandname") VALUES ('Remolques Enmar');
+INSERT INTO "brand" ("brandname") VALUES ('Remolques Narizon');
+INSERT INTO "brand" ("brandname") VALUES ('Remorques');
+INSERT INTO "brand" ("brandname") VALUES ('Renaissance');
+INSERT INTO "brand" ("brandname") VALUES ('Renaldo Sales & Service Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Renco');
+INSERT INTO "brand" ("brandname") VALUES ('Renegade Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('Replica Mini Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Repoman Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Reserved');
+INSERT INTO "brand" ("brandname") VALUES ('Respo');
+INSERT INTO "brand" ("brandname") VALUES ('Retzer Custom Design Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Revel 42');
+INSERT INTO "brand" ("brandname") VALUES ('Revology');
+INSERT INTO "brand" ("brandname") VALUES ('Revolution Cycle Company');
+INSERT INTO "brand" ("brandname") VALUES ('Revtech Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Rewaco');
+INSERT INTO "brand" ("brandname") VALUES ('Rewaco Spezialfahrzeuge GMBH dba Rewaco');
+INSERT INTO "brand" ("brandname") VALUES ('Rexhall Industries, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Rezner');
+INSERT INTO "brand" ("brandname") VALUES ('RHC Specialni Privesy');
+INSERT INTO "brand" ("brandname") VALUES ('RHINO');
+INSERT INTO "brand" ("brandname") VALUES ('Rhino Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('RHINO MARINE');
+INSERT INTO "brand" ("brandname") VALUES ('Rhino Metals Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Rhino Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('Rhino Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('RHM');
+INSERT INTO "brand" ("brandname") VALUES ('RICE');
+INSERT INTO "brand" ("brandname") VALUES ('Rice Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Rice Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Rich''s Vacation Cottages');
+INSERT INTO "brand" ("brandname") VALUES ('Richard Carter MFG.');
+INSERT INTO "brand" ("brandname") VALUES ('Richard Glaves');
+INSERT INTO "brand" ("brandname") VALUES ('Richcreek Muffler, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Richway Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Rick''s Fabrication & Design');
+INSERT INTO "brand" ("brandname") VALUES ('Ride-Rite Motorcycle Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Ridge & Valley Metalcraft');
+INSERT INTO "brand" ("brandname") VALUES ('Ridge Runner Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Ridgestone Cabins');
+INSERT INTO "brand" ("brandname") VALUES ('Ridgeview Racing Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Ridley');
+INSERT INTO "brand" ("brandname") VALUES ('Riecher''s Truck Body & Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('Rief Design & Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Rig Works');
+INSERT INTO "brand" ("brandname") VALUES ('Riley Design & Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('Riley Technologies');
+INSERT INTO "brand" ("brandname") VALUES ('Ring-O-Matic Manufacturing Co.');
+INSERT INTO "brand" ("brandname") VALUES ('Ringo');
+INSERT INTO "brand" ("brandname") VALUES ('Ringtown');
+INSERT INTO "brand" ("brandname") VALUES ('RIONED');
+INSERT INTO "brand" ("brandname") VALUES ('Ripple Effects');
+INSERT INTO "brand" ("brandname") VALUES ('Risk Investments dba Vanderhoff Speed and Chrome');
+INSERT INTO "brand" ("brandname") VALUES ('River Bend Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('River Depot');
+INSERT INTO "brand" ("brandname") VALUES ('RIVER RIM TEARDROPS, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('RIVER RUN ENTERPRISES, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('River Steel');
+INSERT INTO "brand" ("brandname") VALUES ('RIVER VALLEY SALES');
+INSERT INTO "brand" ("brandname") VALUES ('River Valley Trailer LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Riverbed');
+INSERT INTO "brand" ("brandname") VALUES ('Riverbend Equipment Leasing');
+INSERT INTO "brand" ("brandname") VALUES ('Riverside Custom Karts');
+INSERT INTO "brand" ("brandname") VALUES ('Riverside Hitch & Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Riverside RV');
+INSERT INTO "brand" ("brandname") VALUES ('Riverside Travel Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Riverside Welding and Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('Riverview Manufacturing Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Riverwolf Boats');
+INSERT INTO "brand" ("brandname") VALUES ('RJ''s Welding');
+INSERT INTO "brand" ("brandname") VALUES ('RJ Distribution Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('RJK&H Inc');
+INSERT INTO "brand" ("brandname") VALUES ('RKB Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('RMC');
+INSERT INTO "brand" ("brandname") VALUES ('RMD Technologies');
+INSERT INTO "brand" ("brandname") VALUES ('Ro Drift Boats');
+INSERT INTO "brand" ("brandname") VALUES ('Road Boss Trailer MFG.');
+INSERT INTO "brand" ("brandname") VALUES ('Road Builders Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Road King Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Road Rash Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('ROAD RUNNER');
+INSERT INTO "brand" ("brandname") VALUES ('Road Truck Engineering');
+INSERT INTO "brand" ("brandname") VALUES ('Road Warrior Sports LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Roadhog');
+INSERT INTO "brand" ("brandname") VALUES ('Roadhog Trailer Mfg');
+INSERT INTO "brand" ("brandname") VALUES ('Roadman Campers');
+INSERT INTO "brand" ("brandname") VALUES ('Roadmaster');
+INSERT INTO "brand" ("brandname") VALUES ('ROADMASTER INDUSTRIES, INC');
+INSERT INTO "brand" ("brandname") VALUES ('ROADMASTER LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Roadmaster Motor Cycles, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Roadrunner Trailers, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('ROADSTERTEC');
+INSERT INTO "brand" ("brandname") VALUES ('Roadway Utility Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('ROADWORKS MANUFACTURING INC');
+INSERT INTO "brand" ("brandname") VALUES ('Roar Motorcycles LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Robb Technologies LLC');
+INSERT INTO "brand" ("brandname") VALUES ('ROBBINS MANUFACTURING,INC.');
+INSERT INTO "brand" ("brandname") VALUES ('ROBBINS MFG.');
+INSERT INTO "brand" ("brandname") VALUES ('ROBCOL, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Robert Allen Mowery Ramco');
+INSERT INTO "brand" ("brandname") VALUES ('Robert Van Fleet dba Cash Wagons');
+INSERT INTO "brand" ("brandname") VALUES ('ROBERT VAN VLEET');
+INSERT INTO "brand" ("brandname") VALUES ('Robin Construction');
+INSERT INTO "brand" ("brandname") VALUES ('Robinson Vacuum Tanks');
+INSERT INTO "brand" ("brandname") VALUES ('Rock-N Diamond');
+INSERT INTO "brand" ("brandname") VALUES ('Rock Bottom Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Rock City Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('ROCK CREEK CUSTOM TRAILER INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Rock Island Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Rock Line Products');
+INSERT INTO "brand" ("brandname") VALUES ('Rock Rapids Repair');
+INSERT INTO "brand" ("brandname") VALUES ('Rockandrod LLC dba Terrain Campers');
+INSERT INTO "brand" ("brandname") VALUES ('Rockem & Sockem Motorcycle');
+INSERT INTO "brand" ("brandname") VALUES ('ROCKET FIBERGLASS');
+INSERT INTO "brand" ("brandname") VALUES ('Rocket International, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Rocket Rogers Victory Old 97 Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Rocket Sled Motors');
+INSERT INTO "brand" ("brandname") VALUES ('Rocking Chair Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('ROCKING R ENTERPRISES INC');
+INSERT INTO "brand" ("brandname") VALUES ('Rockland Coach Works');
+INSERT INTO "brand" ("brandname") VALUES ('Rockland Custom Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Rocky ATV Trailers Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Rocky Mountain Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Rocky Mountain Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Rocky Mountain Trailer Company');
+INSERT INTO "brand" ("brandname") VALUES ('Rocky Mountain Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Rocky Mountain Welding & Fabricating');
+INSERT INTO "brand" ("brandname") VALUES ('Rocky Top Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Rod Chomper');
+INSERT INTO "brand" ("brandname") VALUES ('Rods & Rides By TD');
+INSERT INTO "brand" ("brandname") VALUES ('Roehr Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('Roger King dba Myers Welding');
+INSERT INTO "brand" ("brandname") VALUES ('ROGUE CHOPPERS');
+INSERT INTO "brand" ("brandname") VALUES ('Roketa');
+INSERT INTO "brand" ("brandname") VALUES ('Rokon');
+INSERT INTO "brand" ("brandname") VALUES ('Rolco Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Roll-A-Home');
+INSERT INTO "brand" ("brandname") VALUES ('Rollin-S Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Rolling Boat');
+INSERT INTO "brand" ("brandname") VALUES ('Rolling Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Rolling Thunder');
+INSERT INTO "brand" ("brandname") VALUES ('Rollingstar Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Rollinoak');
+INSERT INTO "brand" ("brandname") VALUES ('Rolloff Systems');
+INSERT INTO "brand" ("brandname") VALUES ('RollOn Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Rollon Trailer Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('Rollrite Trailer Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Rolls Rite Trailers Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Rolls Royce');
+INSERT INTO "brand" ("brandname") VALUES ('Rollz Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('Roman Wrosz dba Romans Design');
+INSERT INTO "brand" ("brandname") VALUES ('Ron''s Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Ronco Trailer, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Rondar Raceboats');
+INSERT INTO "brand" ("brandname") VALUES ('RONNIE AKERY WELDING');
+INSERT INTO "brand" ("brandname") VALUES ('Ronred Customs');
+INSERT INTO "brand" ("brandname") VALUES ('Ronson MFG');
+INSERT INTO "brand" ("brandname") VALUES ('Rooster Custom Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('ROPER MANUFACTURING');
+INSERT INTO "brand" ("brandname") VALUES ('Roseburg Trailer Works');
+INSERT INTO "brand" ("brandname") VALUES ('Rosenbauer Motors,LLC');
+INSERT INTO "brand" ("brandname") VALUES ('ROSEWOOD');
+INSERT INTO "brand" ("brandname") VALUES ('Ross Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('Ross Technology Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('Roulotte ProLite');
+INSERT INTO "brand" ("brandname") VALUES ('Round 2 Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('Route 6 Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Route Sixty Six Motorcycles LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Roy''s Custom Trailers Inc');
+INSERT INTO "brand" ("brandname") VALUES ('ROYAL CARGO, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Royal Enfield Motors');
+INSERT INTO "brand" ("brandname") VALUES ('Royals');
+INSERT INTO "brand" ("brandname") VALUES ('Roygatti');
+INSERT INTO "brand" ("brandname") VALUES ('RPM');
+INSERT INTO "brand" ("brandname") VALUES ('RPM Custom Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('RS Spider');
+INSERT INTO "brand" ("brandname") VALUES ('RSSI Barriers');
+INSERT INTO "brand" ("brandname") VALUES ('RTA Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('RTD Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('RTDI');
+INSERT INTO "brand" ("brandname") VALUES ('RTM Group');
+INSERT INTO "brand" ("brandname") VALUES ('RTM Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Rude Dog Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Rudes Riggs');
+INSERT INTO "brand" ("brandname") VALUES ('Rudy''s Truck Body Repair');
+INSERT INTO "brand" ("brandname") VALUES ('Ruff & Tuff Electric Vehicles');
+INSERT INTO "brand" ("brandname") VALUES ('Ruffneck Custom Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('RUFFNECK TRAILER COMPANY, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('RuggedBilt-USA, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Rullo Custom Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('Run Roader');
+INSERT INTO "brand" ("brandname") VALUES ('Runaway Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Rush & Son Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Rush Creek Welding and Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Russell Marlowe Custom Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('Ruthless Motorcycle Company');
+INSERT INTO "brand" ("brandname") VALUES ('RV Direct');
+INSERT INTO "brand" ("brandname") VALUES ('RVC Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('RVSQUARED');
+INSERT INTO "brand" ("brandname") VALUES ('RW Welding');
+INSERT INTO "brand" ("brandname") VALUES ('RWCI, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('RWN Contractors');
+INSERT INTO "brand" ("brandname") VALUES ('Ry-Chase');
+INSERT INTO "brand" ("brandname") VALUES ('Ryan Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('S & B TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('S & C Trailer Sales & Manufacturer');
+INSERT INTO "brand" ("brandname") VALUES ('S & D Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('S & J Mfg');
+INSERT INTO "brand" ("brandname") VALUES ('S & R King');
+INSERT INTO "brand" ("brandname") VALUES ('S & S Lite Line');
+INSERT INTO "brand" ("brandname") VALUES ('S & S Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('S & S Manufacturing Inc');
+INSERT INTO "brand" ("brandname") VALUES ('S & S Trailer & Truck Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('S & S Welding');
+INSERT INTO "brand" ("brandname") VALUES ('S & W Welding Inc');
+INSERT INTO "brand" ("brandname") VALUES ('S and C Enterprises of Tarboro');
+INSERT INTO "brand" ("brandname") VALUES ('S C Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('S STAR S COMPANY');
+INSERT INTO "brand" ("brandname") VALUES ('S&S Cycle');
+INSERT INTO "brand" ("brandname") VALUES ('S&S Motorsports');
+INSERT INTO "brand" ("brandname") VALUES ('S&S Worldwide');
+INSERT INTO "brand" ("brandname") VALUES ('S&V Fabrication & Steel LLC');
+INSERT INTO "brand" ("brandname") VALUES ('SAAB');
+INSERT INTO "brand" ("brandname") VALUES ('SAAB-Scania');
+INSERT INTO "brand" ("brandname") VALUES ('Sabers Specialties');
+INSERT INTO "brand" ("brandname") VALUES ('Sabertooth');
+INSERT INTO "brand" ("brandname") VALUES ('Sabertooth Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('Sabre Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Safari Condo');
+INSERT INTO "brand" ("brandname") VALUES ('Safari Motor Coaches');
+INSERT INTO "brand" ("brandname") VALUES ('Safe-T-Tank Corp.');
+INSERT INTO "brand" ("brandname") VALUES ('Safety Technologies');
+INSERT INTO "brand" ("brandname") VALUES ('Safety Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Sage Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Sage Oil Vac, INC');
+INSERT INTO "brand" ("brandname") VALUES ('SAI GON CHAN PHAT JOINT STOCK COMPANY');
+INSERT INTO "brand" ("brandname") VALUES ('Sail Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('SAKO CORPORATION');
+INSERT INTO "brand" ("brandname") VALUES ('SALBOATTRANSPORTER TRAILERS LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Saleen');
+INSERT INTO "brand" ("brandname") VALUES ('Salsco INC');
+INSERT INTO "brand" ("brandname") VALUES ('SALTY''S MANUFACTURING, LTD');
+INSERT INTO "brand" ("brandname") VALUES ('Salvation Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('SAM''S');
+INSERT INTO "brand" ("brandname") VALUES ('Samhell Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Sammy');
+INSERT INTO "brand" ("brandname") VALUES ('Samson');
+INSERT INTO "brand" ("brandname") VALUES ('SAMSON TRAILERS INC');
+INSERT INTO "brand" ("brandname") VALUES ('San-Jo Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('SAN CLEMENTE GOLF CARTS');
+INSERT INTO "brand" ("brandname") VALUES ('SAN DIEGO CUSTOM TRAILER & LIQUID TANK MFG.');
+INSERT INTO "brand" ("brandname") VALUES ('Sanborn Building & Design');
+INSERT INTO "brand" ("brandname") VALUES ('Sanchez and Son Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Sanchez Brothers Enterprises Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('SANCHEZ TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('Sand''s Welding Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Sandbagger Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('Sanden');
+INSERT INTO "brand" ("brandname") VALUES ('Sanders Trailer Service');
+INSERT INTO "brand" ("brandname") VALUES ('Sandpoint Custom Iron');
+INSERT INTO "brand" ("brandname") VALUES ('SANKEPALLY MOTOR COMPANY LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Santek Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('SANTIAGO CHOPPER SPECIALTIES, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('SANYOU');
+INSERT INTO "brand" ("brandname") VALUES ('SAPPHIRE SCIENTIFIC');
+INSERT INTO "brand" ("brandname") VALUES ('SARATOGA CUSTOM CYCLES');
+INSERT INTO "brand" ("brandname") VALUES ('SAS GROUP LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Saskarc Industries Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Saturn');
+INSERT INTO "brand" ("brandname") VALUES ('Saucier''s Welding Inc');
+INSERT INTO "brand" ("brandname") VALUES ('SAUK TECHNOLOGIES');
+INSERT INTO "brand" ("brandname") VALUES ('Savage');
+INSERT INTO "brand" ("brandname") VALUES ('Savage Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('Savannah');
+INSERT INTO "brand" ("brandname") VALUES ('Savannah Machine Shop & Loader Co');
+INSERT INTO "brand" ("brandname") VALUES ('SAW MANUFACTURING LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Saxon Motorcycle');
+INSERT INTO "brand" ("brandname") VALUES ('SC TRAILERS INC.');
+INSERT INTO "brand" ("brandname") VALUES ('SCAG GIANT-VAC');
+INSERT INTO "brand" ("brandname") VALUES ('Scammell');
+INSERT INTO "brand" ("brandname") VALUES ('SCAR, INC');
+INSERT INTO "brand" ("brandname") VALUES ('Scarab');
+INSERT INTO "brand" ("brandname") VALUES ('SCEADU DESIGN');
+INSERT INTO "brand" ("brandname") VALUES ('Scelzi Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('SCENIC VIEW WELDING');
+INSERT INTO "brand" ("brandname") VALUES ('Schaben Industries');
+INSERT INTO "brand" ("brandname") VALUES ('SCHANTZ & SONS, INC');
+INSERT INTO "brand" ("brandname") VALUES ('SCHELL MANUFACTURING');
+INSERT INTO "brand" ("brandname") VALUES ('SCHIEN TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('SCHLAGEL MANUFACTURING INC');
+INSERT INTO "brand" ("brandname") VALUES ('SCHNELLER MANUFACTURING INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Schodorf');
+INSERT INTO "brand" ("brandname") VALUES ('SCHOOLHOUSE MOTORCYCLE ACCESSORIES, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Schoon Backhoe Service');
+INSERT INTO "brand" ("brandname") VALUES ('SCHRAMM, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('SCHUH SHOP, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('SCHUTT INDUSTRIES');
+INSERT INTO "brand" ("brandname") VALUES ('Schwartz, Indy, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('SCHWARTZKOPF EXCLUSIVE CUSTOMS');
+INSERT INTO "brand" ("brandname") VALUES ('SCHWARZ''S CUSTOM TRAILERS, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('SCHWARZE INDUSTRIES');
+INSERT INTO "brand" ("brandname") VALUES ('Scooterbilt Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('SCORPION CHOPPERS');
+INSERT INTO "brand" ("brandname") VALUES ('SCORPION CHOPPERS INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Scorpion Customs');
+INSERT INTO "brand" ("brandname") VALUES ('SCORPION MOTORSPORTS, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('SCOTT''S CUSTOM TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('SCOTT''S INSANE CHOPPERS');
+INSERT INTO "brand" ("brandname") VALUES ('Scott''s Welding & Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('SCOTT MANUFACTURING, INC');
+INSERT INTO "brand" ("brandname") VALUES ('SCOTTIES');
+INSERT INTO "brand" ("brandname") VALUES ('Scranton Manufacturing Company Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Scrap Iron Kustoms');
+INSERT INTO "brand" ("brandname") VALUES ('SCRUGGS TRAILER & EQUIPMENT WSE LEASING, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Sculpture Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('Seahorse');
+INSERT INTO "brand" ("brandname") VALUES ('SEALCOATERS DEPOT , INC.');
+INSERT INTO "brand" ("brandname") VALUES ('SEALION METAL FABRICATORS');
+INSERT INTO "brand" ("brandname") VALUES ('SEATTLE TINY HOMES');
+INSERT INTO "brand" ("brandname") VALUES ('SEBASTO WELDING');
+INSERT INTO "brand" ("brandname") VALUES ('Sebring');
+INSERT INTO "brand" ("brandname") VALUES ('Sebring Auto-Cycle Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Second Trunk Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('SELEC TRAILERS, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Self-Loading Systems');
+INSERT INTO "brand" ("brandname") VALUES ('SELLNER MANUFACTURING COMPANY');
+INSERT INTO "brand" ("brandname") VALUES ('Semeredy Imperial');
+INSERT INTO "brand" ("brandname") VALUES ('Semiremolques EL Puma');
+INSERT INTO "brand" ("brandname") VALUES ('Service King Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('SERVICES & MATERIALS COMPANY');
+INSERT INTO "brand" ("brandname") VALUES ('Setra');
+INSERT INTO "brand" ("brandname") VALUES ('Seven Custom Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('Severe Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('SEYMOUR WELDING');
+INSERT INTO "brand" ("brandname") VALUES ('SFC Industries');
+INSERT INTO "brand" ("brandname") VALUES ('SFS Truck Sales');
+INSERT INTO "brand" ("brandname") VALUES ('SH Distributing');
+INSERT INTO "brand" ("brandname") VALUES ('Shaddo International');
+INSERT INTO "brand" ("brandname") VALUES ('ShadeTree Automotive Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('Shadow Custom');
+INSERT INTO "brand" ("brandname") VALUES ('Shadow Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Shafer & Shafer Welding LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Shafer and Shafer Welding');
+INSERT INTO "brand" ("brandname") VALUES ('SHANDONG BAOYA NEW ENERGY VEHICLE');
+INSERT INTO "brand" ("brandname") VALUES ('Shandong Zhongtong Feiyan Automobile');
+INSERT INTO "brand" ("brandname") VALUES ('SHANGHAI HONLING MOTORCYCLE MANUFACTURE');
+INSERT INTO "brand" ("brandname") VALUES ('Shanghai Howhit Machinery Manufacture');
+INSERT INTO "brand" ("brandname") VALUES ('SHANGHAI HUIZHONG AUTOMOTIVE MANUFACTURING');
+INSERT INTO "brand" ("brandname") VALUES ('SHANGHAI JIALING VEHICLE BUSINESS');
+INSERT INTO "brand" ("brandname") VALUES ('SHANGHAI JMSTAR MOTORCYCLE');
+INSERT INTO "brand" ("brandname") VALUES ('Shanghai Meitian Motorcycle Company');
+INSERT INTO "brand" ("brandname") VALUES ('Shanghai Shenke Motorcycle Co.');
+INSERT INTO "brand" ("brandname") VALUES ('SHANNON CUSTOM TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('Shark Cart');
+INSERT INTO "brand" ("brandname") VALUES ('Shark Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Sharp Companies, LLC dba Stumphouse Scoots');
+INSERT INTO "brand" ("brandname") VALUES ('Sharp MFG.');
+INSERT INTO "brand" ("brandname") VALUES ('Shasta');
+INSERT INTO "brand" ("brandname") VALUES ('SHAVER MANUFACTURING');
+INSERT INTO "brand" ("brandname") VALUES ('Shelf Above, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('SHELLBOURNE REYNOLDS ENGINEERING');
+INSERT INTO "brand" ("brandname") VALUES ('Sheller-Globe Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('SHENQI');
+INSERT INTO "brand" ("brandname") VALUES ('SHENZHEN GREENWHEEL ELECTRIC VEHICLE');
+INSERT INTO "brand" ("brandname") VALUES ('SHEPHERD MFG & DIST');
+INSERT INTO "brand" ("brandname") VALUES ('Sherpa Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('SHETRON CUSTOM TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('SHETRON MANUFACTURING');
+INSERT INTO "brand" ("brandname") VALUES ('Sheyenne Tooling & MFG.');
+INSERT INTO "brand" ("brandname") VALUES ('Shift');
+INSERT INTO "brand" ("brandname") VALUES ('SHILOH CUSTOM KARTS');
+INSERT INTO "brand" ("brandname") VALUES ('SHILOH MANUFACTURING');
+INSERT INTO "brand" ("brandname") VALUES ('Shindaiwa');
+INSERT INTO "brand" ("brandname") VALUES ('SHINN FU');
+INSERT INTO "brand" ("brandname") VALUES ('SHIPSHE WELDING');
+INSERT INTO "brand" ("brandname") VALUES ('Shivers Utility Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Shoal Runner Boats Inc');
+INSERT INTO "brand" ("brandname") VALUES ('SHOCKWAVE MOTORS');
+INSERT INTO "brand" ("brandname") VALUES ('SHOOK ELECTRONCIS USA, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('ShoreMaster');
+INSERT INTO "brand" ("brandname") VALUES ('Short Go, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Show Trucks USA');
+INSERT INTO "brand" ("brandname") VALUES ('SHOWHAULER TRUCKS');
+INSERT INTO "brand" ("brandname") VALUES ('Showliner Trailers Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Showoff Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Shreveport');
+INSERT INTO "brand" ("brandname") VALUES ('Shrum Trailers Manufacturing LLC');
+INSERT INTO "brand" ("brandname") VALUES ('SHUFFETT MACHINE & WELDING, INC');
+INSERT INTO "brand" ("brandname") VALUES ('SIBERIAN TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('SIC CYCLES');
+INSERT INTO "brand" ("brandname") VALUES ('SIC METALS & FABRICATION');
+INSERT INTO "brand" ("brandname") VALUES ('SIC Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('SICK PIGS MOTORCYCLE COMPANY');
+INSERT INTO "brand" ("brandname") VALUES ('SICKASSO CYCLE CREATIONS');
+INSERT INTO "brand" ("brandname") VALUES ('SICON');
+INSERT INTO "brand" ("brandname") VALUES ('Side Kick RV');
+INSERT INTO "brand" ("brandname") VALUES ('Sidekick Trailers, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('SIDESHOW''S CYCLES');
+INSERT INTO "brand" ("brandname") VALUES ('Sidewinders');
+INSERT INTO "brand" ("brandname") VALUES ('SIE, INC');
+INSERT INTO "brand" ("brandname") VALUES ('Siebert');
+INSERT INTO "brand" ("brandname") VALUES ('SIERRA MOTOR CORPORATION');
+INSERT INTO "brand" ("brandname") VALUES ('SIERRA PRECISION TOOL');
+INSERT INTO "brand" ("brandname") VALUES ('Sierra Welding & Fabricating');
+INSERT INTO "brand" ("brandname") VALUES ('SIGEL WELDING');
+INSERT INTO "brand" ("brandname") VALUES ('Sigma Metals, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('SIGNALMASTERS, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('SignaTour Campers, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Signature Motor Company');
+INSERT INTO "brand" ("brandname") VALUES ('SIGNCO');
+INSERT INTO "brand" ("brandname") VALUES ('SIK N TWISTED PSYCLES');
+INSERT INTO "brand" ("brandname") VALUES ('SIKESTON FENCE & CONSTRUCTION INC');
+INSERT INTO "brand" ("brandname") VALUES ('SIKESTON FENDER');
+INSERT INTO "brand" ("brandname") VALUES ('SILENT DRIVE');
+INSERT INTO "brand" ("brandname") VALUES ('SILOS Y TANQUES GONZALEZ');
+INSERT INTO "brand" ("brandname") VALUES ('Silver Creek Homes');
+INSERT INTO "brand" ("brandname") VALUES ('Silver Eagle');
+INSERT INTO "brand" ("brandname") VALUES ('SILVER EAGLE BUS MANUFACTURING');
+INSERT INTO "brand" ("brandname") VALUES ('SILVER EAGLE COACH, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('SILVER EAGLE MANUFACTURING');
+INSERT INTO "brand" ("brandname") VALUES ('SILVER EAGLE MANUFACTURING COMPANY');
+INSERT INTO "brand" ("brandname") VALUES ('SILVER MOTOR COACH');
+INSERT INTO "brand" ("brandname") VALUES ('SILVER RANCH INDUSTRIES');
+INSERT INTO "brand" ("brandname") VALUES ('Silver Star Mfg');
+INSERT INTO "brand" ("brandname") VALUES ('SILVER STAR TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('SILVER STATE INDUSTRIES DIVISION');
+INSERT INTO "brand" ("brandname") VALUES ('SILVER WRAITH CHOPPERS');
+INSERT INTO "brand" ("brandname") VALUES ('SILVERLITE TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('Silverwing');
+INSERT INTO "brand" ("brandname") VALUES ('SIMON-DUPLEX');
+INSERT INTO "brand" ("brandname") VALUES ('SIMPLEX, INC');
+INSERT INTO "brand" ("brandname") VALUES ('Simpson');
+INSERT INTO "brand" ("brandname") VALUES ('SINFUL CYCLEWORKS');
+INSERT INTO "brand" ("brandname") VALUES ('SINISTER CUSTOM CYCLES');
+INSERT INTO "brand" ("brandname") VALUES ('SIOUXLAND TRAILER SALES INC');
+INSERT INTO "brand" ("brandname") VALUES ('Sirchie');
+INSERT INTO "brand" ("brandname") VALUES ('SIX GUN WELDING');
+INSERT INTO "brand" ("brandname") VALUES ('Six Wheel Wonder');
+INSERT INTO "brand" ("brandname") VALUES ('SIXTH STREET CHOPPERS');
+INSERT INTO "brand" ("brandname") VALUES ('SIZEMORE WELDING');
+INSERT INTO "brand" ("brandname") VALUES ('SJ PARK MODELS');
+INSERT INTO "brand" ("brandname") VALUES ('Skeeter Products');
+INSERT INTO "brand" ("brandname") VALUES ('Skipper B');
+INSERT INTO "brand" ("brandname") VALUES ('Skorczewski Welding');
+INSERT INTO "brand" ("brandname") VALUES ('SKULLBONE WELDING');
+INSERT INTO "brand" ("brandname") VALUES ('SKUNK MOTORSPORTS');
+INSERT INTO "brand" ("brandname") VALUES ('Skycoach International Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Skyline');
+INSERT INTO "brand" ("brandname") VALUES ('Skyline Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('SKYTOP BREWSTER CO.');
+INSERT INTO "brand" ("brandname") VALUES ('Slagel');
+INSERT INTO "brand" ("brandname") VALUES ('SLATER INCORPORATED');
+INSERT INTO "brand" ("brandname") VALUES ('SLED SHED ENTERPRISES');
+INSERT INTO "brand" ("brandname") VALUES ('Sleeping Giant MFG.');
+INSERT INTO "brand" ("brandname") VALUES ('Slingshot');
+INSERT INTO "brand" ("brandname") VALUES ('Slip Stream');
+INSERT INTO "brand" ("brandname") VALUES ('SLNYC');
+INSERT INTO "brand" ("brandname") VALUES ('Sloth Truck Equipment Co');
+INSERT INTO "brand" ("brandname") VALUES ('Slusarski Mfg.');
+INSERT INTO "brand" ("brandname") VALUES ('Smack Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('SMALL CAR SOLUTIONS');
+INSERT INTO "brand" ("brandname") VALUES ('smart');
+INSERT INTO "brand" ("brandname") VALUES ('SMART MANUFACTURING');
+INSERT INTO "brand" ("brandname") VALUES ('Smart Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Smart Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('SMART TRAILERS, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('SMART TRANSPORT SOLUTIONS');
+INSERT INTO "brand" ("brandname") VALUES ('SMI & HYDRAULICS');
+INSERT INTO "brand" ("brandname") VALUES ('SMILEY RILEY''S TRAILER');
+INSERT INTO "brand" ("brandname") VALUES ('Smit');
+INSERT INTO "brand" ("brandname") VALUES ('SMITH ELECTRIC VEHICLES');
+INSERT INTO "brand" ("brandname") VALUES ('Smith Farm Equipment Co');
+INSERT INTO "brand" ("brandname") VALUES ('SMITH TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('SMITHCO MANUFACTURING');
+INSERT INTO "brand" ("brandname") VALUES ('Smitty-Built Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('SMJ TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('SMOKIN'' BARBEQUE');
+INSERT INTO "brand" ("brandname") VALUES ('SMOKIN CONCEPTS COMPOSITES');
+INSERT INTO "brand" ("brandname") VALUES ('SMP');
+INSERT INTO "brand" ("brandname") VALUES ('SNAKE ALLEY CUSTOMS');
+INSERT INTO "brand" ("brandname") VALUES ('SNAKE RIVER TRAILER');
+INSERT INTO "brand" ("brandname") VALUES ('Snake River Trailer Company');
+INSERT INTO "brand" ("brandname") VALUES ('SNAPCO INCORPORATED');
+INSERT INTO "brand" ("brandname") VALUES ('SNIDERBUILT TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('Sno-Bird');
+INSERT INTO "brand" ("brandname") VALUES ('Snorkel');
+INSERT INTO "brand" ("brandname") VALUES ('SNOW MANUFACTURING INC');
+INSERT INTO "brand" ("brandname") VALUES ('SnowBear');
+INSERT INTO "brand" ("brandname") VALUES ('Snowco');
+INSERT INTO "brand" ("brandname") VALUES ('So-Cal Teardrops');
+INSERT INTO "brand" ("brandname") VALUES ('Solar Guide');
+INSERT INTO "brand" ("brandname") VALUES ('Solar Technology, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Solares Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Solectria Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('Solid Steel Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('Solight');
+INSERT INTO "brand" ("brandname") VALUES ('Somerset');
+INSERT INTO "brand" ("brandname") VALUES ('Somerset Axle Company, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Sooner');
+INSERT INTO "brand" ("brandname") VALUES ('Sooner Manufacturing, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Sooner Trailer Mfg');
+INSERT INTO "brand" ("brandname") VALUES ('South Bay Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('South Central Industrial');
+INSERT INTO "brand" ("brandname") VALUES ('South Coast Choppers, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('South Dade Choppers, LLC.');
+INSERT INTO "brand" ("brandname") VALUES ('South East Body Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('South East Industries, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('South Florida Choppers Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('South Shore Iron Works');
+INSERT INTO "brand" ("brandname") VALUES ('South Side Kustoms');
+INSERT INTO "brand" ("brandname") VALUES ('South Valley Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Southeastern Seating');
+INSERT INTO "brand" ("brandname") VALUES ('Southeastern Steel Choppers, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Southern Cartz');
+INSERT INTO "brand" ("brandname") VALUES ('Southern Cycle Works, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Southern Dimensions Group');
+INSERT INTO "brand" ("brandname") VALUES ('Southern Field Welding, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Southern Frac, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Southern Indiana Materials Co Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Southern Legacy');
+INSERT INTO "brand" ("brandname") VALUES ('Southern Motorcycle Works');
+INSERT INTO "brand" ("brandname") VALUES ('Southern Ohio Chassis');
+INSERT INTO "brand" ("brandname") VALUES ('Southern Pride Distributing, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('SOUTHERN SPECIALTY WELDING');
+INSERT INTO "brand" ("brandname") VALUES ('Southern Texas Industrial Service Company Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Southern Vac Trailers LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Southern Yankee Bar-B-Q');
+INSERT INTO "brand" ("brandname") VALUES ('Southwest CMF, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Southwest Georgia Wholesale Builders Supply, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Southwest Golf Cars');
+INSERT INTO "brand" ("brandname") VALUES ('Southwest Signs LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Southwest Specialty Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Southwest Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('SOUTHWEST TRUCK RIGGING & EQUIP.');
+INSERT INTO "brand" ("brandname") VALUES ('Southwest Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Space Coast Industries, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Sparta');
+INSERT INTO "brand" ("brandname") VALUES ('Spartan Cargo Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Spartan Motors');
+INSERT INTO "brand" ("brandname") VALUES ('Spartan Motors Chassis');
+INSERT INTO "brand" ("brandname") VALUES ('Spartan Tool, LLC.');
+INSERT INTO "brand" ("brandname") VALUES ('Spartan Trailer Mfg INC');
+INSERT INTO "brand" ("brandname") VALUES ('Spartan Truck Company, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Spaulding Manufacturing, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Spearman Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('SPECIAL CONSTRUCTION MOTORCYCLES');
+INSERT INTO "brand" ("brandname") VALUES ('Special Equipment Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Specialized Hauling Concepts LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Specialized Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Specialized Truck Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('Specialized Truck Equipment Manufacturing, LLC.');
+INSERT INTO "brand" ("brandname") VALUES ('Specialty Aluminum Works - Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Specialty Auto Transport');
+INSERT INTO "brand" ("brandname") VALUES ('SPECIALTY BRISTOW SALES, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Specialty Bus Manufacturing, LLC.');
+INSERT INTO "brand" ("brandname") VALUES ('Specialty Fabrication, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Specialty Fabrication, LTD.');
+INSERT INTO "brand" ("brandname") VALUES ('SPECIALTY IRON WORKS');
+INSERT INTO "brand" ("brandname") VALUES ('Specialty Metal Fab.');
+INSERT INTO "brand" ("brandname") VALUES ('Specialty Performance LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Specialty Trailers Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('Specialty Vehicle Mfg Corp');
+INSERT INTO "brand" ("brandname") VALUES ('Specialty Vehicles & Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('SPECIALTY WELDING');
+INSERT INTO "brand" ("brandname") VALUES ('SpecSys, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Spector Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('SPECTRAC');
+INSERT INTO "brand" ("brandname") VALUES ('Spectre Manufacturing, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('SPECTRUM ENGINEERING HAWAII');
+INSERT INTO "brand" ("brandname") VALUES ('Speed & Precision Cycles LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Speed and Custom Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('Speed Driven Supply');
+INSERT INTO "brand" ("brandname") VALUES ('Speed Street Custom Builds');
+INSERT INTO "brand" ("brandname") VALUES ('SpeedWagon Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Speedy Bleacher Corp');
+INSERT INTO "brand" ("brandname") VALUES ('Spencer Bowman Customs');
+INSERT INTO "brand" ("brandname") VALUES ('SPI MANUFACTURING, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Spika Welding & Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Spindletop');
+INSERT INTO "brand" ("brandname") VALUES ('Spira');
+INSERT INTO "brand" ("brandname") VALUES ('Spirit Carts');
+INSERT INTO "brand" ("brandname") VALUES ('SPIRIT TRAILER MANUFACTURING');
+INSERT INTO "brand" ("brandname") VALUES ('Spirit Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Splash Marine, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('SPM CUSTOMS, INC');
+INSERT INTO "brand" ("brandname") VALUES ('Sport Boat Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Sport Boats');
+INSERT INTO "brand" ("brandname") VALUES ('Sport King LLC');
+INSERT INTO "brand" ("brandname") VALUES ('SPORTRUNNER TRAILERS, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Sports Hauler Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('SPORTSMAN');
+INSERT INTO "brand" ("brandname") VALUES ('Sportworks Northwest, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('SPOUTVAC USA INC');
+INSERT INTO "brand" ("brandname") VALUES ('Sprayer Specialties Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Spraying Devices, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Spreuer & Son');
+INSERT INTO "brand" ("brandname") VALUES ('Springers Custom Cycles, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Sprinter (Dodge or Freightliner)');
+INSERT INTO "brand" ("brandname") VALUES ('SPS');
+INSERT INTO "brand" ("brandname") VALUES ('Spudnik Equipment Co.');
+INSERT INTO "brand" ("brandname") VALUES ('Spur K Custom Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Spurlock Vehicles, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('SPV');
+INSERT INTO "brand" ("brandname") VALUES ('SPYDER');
+INSERT INTO "brand" ("brandname") VALUES ('Spyker');
+INSERT INTO "brand" ("brandname") VALUES ('Spykgaard');
+INSERT INTO "brand" ("brandname") VALUES ('SR Products');
+INSERT INTO "brand" ("brandname") VALUES ('SS Trike, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Ssinster Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('SSR');
+INSERT INTO "brand" ("brandname") VALUES ('SSR Motorsports');
+INSERT INTO "brand" ("brandname") VALUES ('STA Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('Stag Trailers MFG LLC.');
+INSERT INTO "brand" ("brandname") VALUES ('STAGECOACH INDUSTRIES INC');
+INSERT INTO "brand" ("brandname") VALUES ('Stagecoach Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Stainless Tank & Equipment LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Stallion Interiors');
+INSERT INTO "brand" ("brandname") VALUES ('Stallion Trailers, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Standard');
+INSERT INTO "brand" ("brandname") VALUES ('Standard Motor Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('Stanford Customs');
+INSERT INTO "brand" ("brandname") VALUES ('Stanley Emergency Products, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Stanley Trailer & Mfg');
+INSERT INTO "brand" ("brandname") VALUES ('Star-Trans Equipment Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Star Custom');
+INSERT INTO "brand" ("brandname") VALUES ('Star Custom Creations, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('STAR Electric Cars');
+INSERT INTO "brand" ("brandname") VALUES ('Star EV');
+INSERT INTO "brand" ("brandname") VALUES ('Star Fabrication LLC');
+INSERT INTO "brand" ("brandname") VALUES ('STAR MANUFACTURING INC');
+INSERT INTO "brand" ("brandname") VALUES ('STAR WAGGONS');
+INSERT INTO "brand" ("brandname") VALUES ('Starboard');
+INSERT INTO "brand" ("brandname") VALUES ('Starcraft');
+INSERT INTO "brand" ("brandname") VALUES ('Starfire Trailer Systems');
+INSERT INTO "brand" ("brandname") VALUES ('Starlight');
+INSERT INTO "brand" ("brandname") VALUES ('Stauffer Mfg.');
+INSERT INTO "brand" ("brandname") VALUES ('STC');
+INSERT INTO "brand" ("brandname") VALUES ('Stealth');
+INSERT INTO "brand" ("brandname") VALUES ('Stealth Enterprises, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Steamroller Motorcycle Company LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Steco, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Steeds');
+INSERT INTO "brand" ("brandname") VALUES ('Steel-Tech');
+INSERT INTO "brand" ("brandname") VALUES ('Steel Bone Trailer Mfg');
+INSERT INTO "brand" ("brandname") VALUES ('Steel Ponies');
+INSERT INTO "brand" ("brandname") VALUES ('Steel Prep');
+INSERT INTO "brand" ("brandname") VALUES ('Steel Technologies');
+INSERT INTO "brand" ("brandname") VALUES ('STEEL TRAILERS OF COLORADO');
+INSERT INTO "brand" ("brandname") VALUES ('Steelbro');
+INSERT INTO "brand" ("brandname") VALUES ('Steele Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('STEELWRIGHT');
+INSERT INTO "brand" ("brandname") VALUES ('Stehl Tow');
+INSERT INTO "brand" ("brandname") VALUES ('Stein Metal Fab');
+INSERT INTO "brand" ("brandname") VALUES ('STELLAR INDUSTIES INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Stephenville Trailers & Truck Accessories');
+INSERT INTO "brand" ("brandname") VALUES ('Stepp Manufacturing Co');
+INSERT INTO "brand" ("brandname") VALUES ('Sterling');
+INSERT INTO "brand" ("brandname") VALUES ('Sterling Fabrication, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Sterling Motor Car');
+INSERT INTO "brand" ("brandname") VALUES ('STEVENSON''S CYCLE');
+INSERT INTO "brand" ("brandname") VALUES ('Steves Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Stewart''s Fabrication and Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Stewart & Stevenson Services Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Stiles Trailer Company');
+INSERT INTO "brand" ("brandname") VALUES ('Stiletto Rides');
+INSERT INTO "brand" ("brandname") VALUES ('Still Trailer Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Stingers');
+INSERT INTO "brand" ("brandname") VALUES ('Stirling');
+INSERT INTO "brand" ("brandname") VALUES ('Stock''s Garage, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Stock Car Fabrications');
+INSERT INTO "brand" ("brandname") VALUES ('STOCKTON TRUCK AND WELDING');
+INSERT INTO "brand" ("brandname") VALUES ('Stoess Manufacturing Inc');
+INSERT INTO "brand" ("brandname") VALUES ('STOLL TRAILERS, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Stone Cold');
+INSERT INTO "brand" ("brandname") VALUES ('Stone Construction Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('Stone River');
+INSERT INTO "brand" ("brandname") VALUES ('Stones');
+INSERT INTO "brand" ("brandname") VALUES ('Stonewell Bodies & Machine');
+INSERT INTO "brand" ("brandname") VALUES ('Storm');
+INSERT INTO "brand" ("brandname") VALUES ('Storms Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Storri');
+INSERT INTO "brand" ("brandname") VALUES ('Stoughton Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('StoutBilt');
+INSERT INTO "brand" ("brandname") VALUES ('Stovall Equipment Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Stovall Equipment Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Stratos Boats Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Stream Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Streamline Designs');
+INSERT INTO "brand" ("brandname") VALUES ('Streamline Precision LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Streamliner Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('Streator Dependable');
+INSERT INTO "brand" ("brandname") VALUES ('Street Cars by Volla''s Carts & Service');
+INSERT INTO "brand" ("brandname") VALUES ('Street Carts on 12');
+INSERT INTO "brand" ("brandname") VALUES ('Street Golf Carts');
+INSERT INTO "brand" ("brandname") VALUES ('Street Legal Carts');
+INSERT INTO "brand" ("brandname") VALUES ('Street only');
+INSERT INTO "brand" ("brandname") VALUES ('Street Smart Performance');
+INSERT INTO "brand" ("brandname") VALUES ('Street Steel Motorsports');
+INSERT INTO "brand" ("brandname") VALUES ('Streetrod');
+INSERT INTO "brand" ("brandname") VALUES ('Streetrod Productions Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Streetster');
+INSERT INTO "brand" ("brandname") VALUES ('Streight Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('Streme Trailer Mfg');
+INSERT INTO "brand" ("brandname") VALUES ('STRETCH CHASSIS INTERNATIONAL');
+INSERT INTO "brand" ("brandname") VALUES ('Strick Commercial Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Strict Development');
+INSERT INTO "brand" ("brandname") VALUES ('STROHL CORPORATION');
+INSERT INTO "brand" ("brandname") VALUES ('STROKERS MANUFACTURING');
+INSERT INTO "brand" ("brandname") VALUES ('Strong Built Trailers LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Strong Island Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('Strong Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Strongback Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Strother Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Structural Metal Fabricators');
+INSERT INTO "brand" ("brandname") VALUES ('Structural Steel Supply Inc');
+INSERT INTO "brand" ("brandname") VALUES ('STRUK');
+INSERT INTO "brand" ("brandname") VALUES ('Stuart Scotsman');
+INSERT INTO "brand" ("brandname") VALUES ('Stump Smokers');
+INSERT INTO "brand" ("brandname") VALUES ('Stunata Customs');
+INSERT INTO "brand" ("brandname") VALUES ('StunterX Stuntshop');
+INSERT INTO "brand" ("brandname") VALUES ('Stupid Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Sturdy Built Services, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Sub Culture Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('Subaru');
+INSERT INTO "brand" ("brandname") VALUES ('SUBURBAN MANUFACTURING CO.');
+INSERT INTO "brand" ("brandname") VALUES ('Suckerpunch Sallys');
+INSERT INTO "brand" ("brandname") VALUES ('Sudenga Industries, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Sugarloaf Fabricators, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('SUGGS MANUFACTURING COMPANY');
+INSERT INTO "brand" ("brandname") VALUES ('Suicide Jack Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Sullivan''s Garage');
+INSERT INTO "brand" ("brandname") VALUES ('Sullivans Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('Summerset Homes');
+INSERT INTO "brand" ("brandname") VALUES ('Summit');
+INSERT INTO "brand" ("brandname") VALUES ('Summit Industries Incorporated');
+INSERT INTO "brand" ("brandname") VALUES ('Summit Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Summit Truck Bodies');
+INSERT INTO "brand" ("brandname") VALUES ('Sumstad Mfg');
+INSERT INTO "brand" ("brandname") VALUES ('Sun-Land Express');
+INSERT INTO "brand" ("brandname") VALUES ('Sun-Lite');
+INSERT INTO "brand" ("brandname") VALUES ('Sun Coast Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Sun Country');
+INSERT INTO "brand" ("brandname") VALUES ('Sun Country Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Sun International Holdings Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Sun Ray Mfg');
+INSERT INTO "brand" ("brandname") VALUES ('Sun West Engineering, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Sunbeam Motorsports');
+INSERT INTO "brand" ("brandname") VALUES ('Sunbeam Rentals');
+INSERT INTO "brand" ("brandname") VALUES ('Sunbelt Equipment Marketing');
+INSERT INTO "brand" ("brandname") VALUES ('Suncoast Choppers & Fab');
+INSERT INTO "brand" ("brandname") VALUES ('Suncor');
+INSERT INTO "brand" ("brandname") VALUES ('Sundance Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('SUNDANCE GOLF CARS');
+INSERT INTO "brand" ("brandname") VALUES ('SunDrop Solar Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Sunlite');
+INSERT INTO "brand" ("brandname") VALUES ('Sunra');
+INSERT INTO "brand" ("brandname") VALUES ('Sunridge Industries Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Sunrise');
+INSERT INTO "brand" ("brandname") VALUES ('Sunset Park & RV');
+INSERT INTO "brand" ("brandname") VALUES ('SUNSHINE PIPING , INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Sunshine Stainless Tank & Equip');
+INSERT INTO "brand" ("brandname") VALUES ('SUNTERA');
+INSERT INTO "brand" ("brandname") VALUES ('Suntera (The Solar Electric Chariot Company)');
+INSERT INTO "brand" ("brandname") VALUES ('Super Lite Pro Trailers and Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('Super Vacuum Mfg Co');
+INSERT INTO "brand" ("brandname") VALUES ('Super X Products');
+INSERT INTO "brand" ("brandname") VALUES ('SUPERBUS');
+INSERT INTO "brand" ("brandname") VALUES ('Superior Coaches');
+INSERT INTO "brand" ("brandname") VALUES ('Superior Fabrication, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Superior Handling Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('Superior Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Superior Manufacturing & Engineering Cor');
+INSERT INTO "brand" ("brandname") VALUES ('Superior Metal Works');
+INSERT INTO "brand" ("brandname") VALUES ('Superior Steel Products');
+INSERT INTO "brand" ("brandname") VALUES ('Superior Steel Sales, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('SUPERIOR TRAILER INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Superior Trailer Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Superior Trailers LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Superior Trailers of Georgia');
+INSERT INTO "brand" ("brandname") VALUES ('Superior Transport Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Superior Welding and Manufacturing, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Superlite');
+INSERT INTO "brand" ("brandname") VALUES ('Supreme');
+INSERT INTO "brand" ("brandname") VALUES ('Supreme Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('Sure-Load Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Sure-Trac');
+INSERT INTO "brand" ("brandname") VALUES ('Sure Tech Engineering');
+INSERT INTO "brand" ("brandname") VALUES ('Sureride Trailer Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Sussex Welding, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Sutter Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Suwanee Camper');
+INSERT INTO "brand" ("brandname") VALUES ('Suzhou Eagle Electric Vehicle');
+INSERT INTO "brand" ("brandname") VALUES ('Suzuki');
+INSERT INTO "brand" ("brandname") VALUES ('SVI, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Swab Wagon Company Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Sweat''s Portable Buildings');
+INSERT INTO "brand" ("brandname") VALUES ('Swede Built');
+INSERT INTO "brand" ("brandname") VALUES ('Sweet Home');
+INSERT INTO "brand" ("brandname") VALUES ('SWEITZER COMPANIES');
+INSERT INTO "brand" ("brandname") VALUES ('Swift');
+INSERT INTO "brand" ("brandname") VALUES ('Swift Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('Swinford Mfg');
+INSERT INTO "brand" ("brandname") VALUES ('Swinglift USA Inc');
+INSERT INTO "brand" ("brandname") VALUES ('SWM Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('SylvanSport');
+INSERT INTO "brand" ("brandname") VALUES ('SYM');
+INSERT INTO "brand" ("brandname") VALUES ('Synergy Technology, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Synergy Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Systems Technology Company');
+INSERT INTO "brand" ("brandname") VALUES ('T-Built Trailer Company');
+INSERT INTO "brand" ("brandname") VALUES ('T-N-A Custom Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('T-RAXX SYSTEMS INC');
+INSERT INTO "brand" ("brandname") VALUES ('T & B Welding & Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('T & D Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('T & G Sales');
+INSERT INTO "brand" ("brandname") VALUES ('T & J Welding');
+INSERT INTO "brand" ("brandname") VALUES ('T & M Mfg');
+INSERT INTO "brand" ("brandname") VALUES ('T & R Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('T & R RACING AND FABRICATION');
+INSERT INTO "brand" ("brandname") VALUES ('T & S CYCLES');
+INSERT INTO "brand" ("brandname") VALUES ('T & T Unlimited');
+INSERT INTO "brand" ("brandname") VALUES ('T C Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('T R Welding');
+INSERT INTO "brand" ("brandname") VALUES ('T&D Trailer Supplies');
+INSERT INTO "brand" ("brandname") VALUES ('T&E Enterprises of Herscher, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('T&M Custom Trailers LLC');
+INSERT INTO "brand" ("brandname") VALUES ('T&R Trailer Mfg');
+INSERT INTO "brand" ("brandname") VALUES ('T.M.M');
+INSERT INTO "brand" ("brandname") VALUES ('T.S.I');
+INSERT INTO "brand" ("brandname") VALUES ('T2 SERVICES, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Taboo Motorcycle Co.');
+INSERT INTO "brand" ("brandname") VALUES ('Tac Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Tag-A-Long Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Tag-Along');
+INSERT INTO "brand" ("brandname") VALUES ('Tailgater Party Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Tailgator Concepts');
+INSERT INTO "brand" ("brandname") VALUES ('Tailwinds Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Taiwan Golden Bee Co');
+INSERT INTO "brand" ("brandname") VALUES ('Taiwan Helio Technology Co.');
+INSERT INTO "brand" ("brandname") VALUES ('Taixing Sandi Motorcycle');
+INSERT INTO "brand" ("brandname") VALUES ('Taizhou Chuanl Motorcycle Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Taizhou Chuanl Motorcycle Manufacturing Co.');
+INSERT INTO "brand" ("brandname") VALUES ('Taizhou Jiaojiang Zhiwei Motorcycle');
+INSERT INTO "brand" ("brandname") VALUES ('Taizhou Oming Motorcycle');
+INSERT INTO "brand" ("brandname") VALUES ('TAKATI MOTORCYCLES LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Take 3 Trailers Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Talbert');
+INSERT INTO "brand" ("brandname") VALUES ('Talleres Lozano');
+INSERT INTO "brand" ("brandname") VALUES ('TALON TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('Talon Trikes');
+INSERT INTO "brand" ("brandname") VALUES ('Tamarack Ind.');
+INSERT INTO "brand" ("brandname") VALUES ('TAMCO');
+INSERT INTO "brand" ("brandname") VALUES ('Tammy''s Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Tanfield Engineering Systems US');
+INSERT INTO "brand" ("brandname") VALUES ('Tanglewood Management LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Tank Master');
+INSERT INTO "brand" ("brandname") VALUES ('Tank Sports');
+INSERT INTO "brand" ("brandname") VALUES ('Tankko LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Tanom Motors');
+INSERT INTO "brand" ("brandname") VALUES ('Tanques Y Equipos Industriales');
+INSERT INTO "brand" ("brandname") VALUES ('Tanques y Remolques SILMEX');
+INSERT INTO "brand" ("brandname") VALUES ('Tansa');
+INSERT INTO "brand" ("brandname") VALUES ('Tantric Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('TAOTAO');
+INSERT INTO "brand" ("brandname") VALUES ('TarasPort Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('TareLite Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Target Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Tarrant');
+INSERT INTO "brand" ("brandname") VALUES ('Tarter Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Tarter Industries (Tarter West)');
+INSERT INTO "brand" ("brandname") VALUES ('Tate''s Customizations');
+INSERT INTO "brand" ("brandname") VALUES ('Tatsa');
+INSERT INTO "brand" ("brandname") VALUES ('Tattoo Yachts, LLC.');
+INSERT INTO "brand" ("brandname") VALUES ('Tavasci');
+INSERT INTO "brand" ("brandname") VALUES ('TAXA LP');
+INSERT INTO "brand" ("brandname") VALUES ('Taylor');
+INSERT INTO "brand" ("brandname") VALUES ('Taylor''s Fab & Mechanical SVC''s');
+INSERT INTO "brand" ("brandname") VALUES ('Taylor''s Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Taylor-Dunn');
+INSERT INTO "brand" ("brandname") VALUES ('TAYLOR MADE CHOPPERS INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Taylor Made Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('Taylor Power Systems');
+INSERT INTO "brand" ("brandname") VALUES ('Taylor Tide-Land Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Taylor Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Tazzari GL SPA');
+INSERT INTO "brand" ("brandname") VALUES ('TBEI');
+INSERT INTO "brand" ("brandname") VALUES ('TBM Sand & Storage Logistic LLC');
+INSERT INTO "brand" ("brandname") VALUES ('TCB Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('TCM LLC');
+INSERT INTO "brand" ("brandname") VALUES ('TCS Bagger Chassis');
+INSERT INTO "brand" ("brandname") VALUES ('TD Manufacturing, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('TDM');
+INSERT INTO "brand" ("brandname") VALUES ('TDS Disposal Services');
+INSERT INTO "brand" ("brandname") VALUES ('Team Fenex');
+INSERT INTO "brand" ("brandname") VALUES ('TEAM SPIRIT TRAILERS OF ELKHART, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Teardrop Camper');
+INSERT INTO "brand" ("brandname") VALUES ('Teardrops NW Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Tebben Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('TEBCO of KY, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Techline Engineering');
+INSERT INTO "brand" ("brandname") VALUES ('Technology Development Group Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Technology Systems');
+INSERT INTO "brand" ("brandname") VALUES ('TECHSYS CHASSIS, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('TEDSON TRAILER & EQUIPMENT REPAIR LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Tee Nee');
+INSERT INTO "brand" ("brandname") VALUES ('Tejas Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Temisko');
+INSERT INTO "brand" ("brandname") VALUES ('Temp-Air');
+INSERT INTO "brand" ("brandname") VALUES ('TEMPEST CYCLES');
+INSERT INTO "brand" ("brandname") VALUES ('Temples Trailer Sales Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Temsa');
+INSERT INTO "brand" ("brandname") VALUES ('Tennessee Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Tennfab');
+INSERT INTO "brand" ("brandname") VALUES ('Tentrax');
+INSERT INTO "brand" ("brandname") VALUES ('Terco Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Terex Advance Mixer');
+INSERT INTO "brand" ("brandname") VALUES ('Terex USA LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Terminal Service Co');
+INSERT INTO "brand" ("brandname") VALUES ('TERRADYNE EQUIPMENT COMPANY');
+INSERT INTO "brand" ("brandname") VALUES ('Terrafugia');
+INSERT INTO "brand" ("brandname") VALUES ('TerraPod');
+INSERT INTO "brand" ("brandname") VALUES ('Terrell');
+INSERT INTO "brand" ("brandname") VALUES ('Terry''s Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Teske Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Tesla');
+INSERT INTO "brand" ("brandname") VALUES ('TEST');
+INSERT INTO "brand" ("brandname") VALUES ('Teton Buildings');
+INSERT INTO "brand" ("brandname") VALUES ('Teton Homes');
+INSERT INTO "brand" ("brandname") VALUES ('Teton International');
+INSERT INTO "brand" ("brandname") VALUES ('TetonX');
+INSERT INTO "brand" ("brandname") VALUES ('TEVCO MANUFACTURING LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Tex-All');
+INSERT INTO "brand" ("brandname") VALUES ('Tex Hill Auto and Trailer Sales');
+INSERT INTO "brand" ("brandname") VALUES ('TEXAN TRUCK BODY CO');
+INSERT INTO "brand" ("brandname") VALUES ('Texas Best Trailer Sales & Service');
+INSERT INTO "brand" ("brandname") VALUES ('Texas Custom Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Texas Iron Designs');
+INSERT INTO "brand" ("brandname") VALUES ('Texas Roll-Back Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Texas Star Fabrications');
+INSERT INTO "brand" ("brandname") VALUES ('Texas Trailer Cabin');
+INSERT INTO "brand" ("brandname") VALUES ('TEXAS TRAILER COMPANY');
+INSERT INTO "brand" ("brandname") VALUES ('Texas Trailer Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('TEXAS TRAILER SERVICE');
+INSERT INTO "brand" ("brandname") VALUES ('Texas Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('TEXAS TRAILERS INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Texas Trailers Sales and Service');
+INSERT INTO "brand" ("brandname") VALUES ('Texas Truck and Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Texas Underground aka Pipehunter');
+INSERT INTO "brand" ("brandname") VALUES ('Texas Wide Welding & Services');
+INSERT INTO "brand" ("brandname") VALUES ('Texline');
+INSERT INTO "brand" ("brandname") VALUES ('Texmo Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Texoma Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Texoma Waste Control, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Texstar RV and Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('TFK CUSTOM TRAILER');
+INSERT INTO "brand" ("brandname") VALUES ('TGMI INC');
+INSERT INTO "brand" ("brandname") VALUES ('Th!nk');
+INSERT INTO "brand" ("brandname") VALUES ('THAYCO');
+INSERT INTO "brand" ("brandname") VALUES ('The Advance Metalworking Co');
+INSERT INTO "brand" ("brandname") VALUES ('THE ALLIED GROUP');
+INSERT INTO "brand" ("brandname") VALUES ('The American Road Machinery Co');
+INSERT INTO "brand" ("brandname") VALUES ('The Bag Lady');
+INSERT INTO "brand" ("brandname") VALUES ('The Brinkmann Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('THE BROWN CO.');
+INSERT INTO "brand" ("brandname") VALUES ('The Chariot');
+INSERT INTO "brand" ("brandname") VALUES ('The Chop Shop');
+INSERT INTO "brand" ("brandname") VALUES ('The Concrete Edge Co');
+INSERT INTO "brand" ("brandname") VALUES ('The Cycle Exchange');
+INSERT INTO "brand" ("brandname") VALUES ('The Dickirson Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('The Egg Ranch of Oregon');
+INSERT INTO "brand" ("brandname") VALUES ('The Electric Vehicle Company');
+INSERT INTO "brand" ("brandname") VALUES ('The Factory Metal Works');
+INSERT INTO "brand" ("brandname") VALUES ('The Glass Hand');
+INSERT INTO "brand" ("brandname") VALUES ('The Hog Farm');
+INSERT INTO "brand" ("brandname") VALUES ('THE HYDROSEEDING COMPANY LLC');
+INSERT INTO "brand" ("brandname") VALUES ('The Little Trailer Co, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('The Perfection Company');
+INSERT INTO "brand" ("brandname") VALUES ('The Piggy Backer Co');
+INSERT INTO "brand" ("brandname") VALUES ('The Riverman Boatworks');
+INSERT INTO "brand" ("brandname") VALUES ('The RV Factory');
+INSERT INTO "brand" ("brandname") VALUES ('The Sholar Co, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('The Shop');
+INSERT INTO "brand" ("brandname") VALUES ('The Toro Company');
+INSERT INTO "brand" ("brandname") VALUES ('The Trailer Shop Puerto Rico MFG');
+INSERT INTO "brand" ("brandname") VALUES ('The Trailer Shop, INC');
+INSERT INTO "brand" ("brandname") VALUES ('The Vehicle Production Group');
+INSERT INTO "brand" ("brandname") VALUES ('Therm Dynamics MFG');
+INSERT INTO "brand" ("brandname") VALUES ('Thermal Trek Inc');
+INSERT INTO "brand" ("brandname") VALUES ('THIELEN MACHINE & WELDING, INC');
+INSERT INTO "brand" ("brandname") VALUES ('Thigpen Metalworks');
+INSERT INTO "brand" ("brandname") VALUES ('Think Passenger Car');
+INSERT INTO "brand" ("brandname") VALUES ('THO');
+INSERT INTO "brand" ("brandname") VALUES ('Thomas Built');
+INSERT INTO "brand" ("brandname") VALUES ('Thomas Fabricating Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Thomas Grinding');
+INSERT INTO "brand" ("brandname") VALUES ('Thompson & Zaber''s Garage, INC');
+INSERT INTO "brand" ("brandname") VALUES ('Thompson Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('THOMPSON CHOPPERS INC');
+INSERT INTO "brand" ("brandname") VALUES ('Thompson Manufacturing Company Wexford Ltd.');
+INSERT INTO "brand" ("brandname") VALUES ('Thompson Tank Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Thomsen');
+INSERT INTO "brand" ("brandname") VALUES ('Thomson Projects Ltd');
+INSERT INTO "brand" ("brandname") VALUES ('THOR');
+INSERT INTO "brand" ("brandname") VALUES ('Thor Manufacturing LLC');
+INSERT INTO "brand" ("brandname") VALUES ('THOR TRAILERS, INC');
+INSERT INTO "brand" ("brandname") VALUES ('Thoroughbred Motorsports INC');
+INSERT INTO "brand" ("brandname") VALUES ('Thorp Equipment, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Three Feathers');
+INSERT INTO "brand" ("brandname") VALUES ('Three Feathers Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Three Rivers Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Three Two Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Thru-Air Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Thru-Way Trailers Centre Limited');
+INSERT INTO "brand" ("brandname") VALUES ('THT Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Thug Custom Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('THULE Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('THUNDER CHOPPER WORKS');
+INSERT INTO "brand" ("brandname") VALUES ('Thunder Mountain Custom Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('Thunder Trikes Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Thunderbolt');
+INSERT INTO "brand" ("brandname") VALUES ('THUNDERDOME ENTERPRISES');
+INSERT INTO "brand" ("brandname") VALUES ('Thunderstruck Custom Bikes');
+INSERT INTO "brand" ("brandname") VALUES ('ThunderVolt');
+INSERT INTO "brand" ("brandname") VALUES ('Thuro-Bilt, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Thurston Manufacturing Company');
+INSERT INTO "brand" ("brandname") VALUES ('Ti-Brook');
+INSERT INTO "brand" ("brandname") VALUES ('Tianjin Qingyuan Electric Vehicle Co');
+INSERT INTO "brand" ("brandname") VALUES ('Tibban MFG');
+INSERT INTO "brand" ("brandname") VALUES ('TICO Manufacturing Division');
+INSERT INTO "brand" ("brandname") VALUES ('Tidewater Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Tiffin Motorhomes, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Tiger Truck Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Tight Lines Trailers LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Tightline Fish House');
+INSERT INTO "brand" ("brandname") VALUES ('Tilman Dump Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Tim Nobles Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Timberleaf');
+INSERT INTO "brand" ("brandname") VALUES ('TIMBERLINE ENTERPRISES');
+INSERT INTO "brand" ("brandname") VALUES ('Timberwolf Manufacturing Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('Timbery LLC');
+INSERT INTO "brand" ("brandname") VALUES ('TIMELEE''S');
+INSERT INTO "brand" ("brandname") VALUES ('Timeless Travel Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Timpte, INC');
+INSERT INTO "brand" ("brandname") VALUES ('Tinitron Motors');
+INSERT INTO "brand" ("brandname") VALUES ('Tinitron Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('TINY CAMPER COMPANY');
+INSERT INTO "brand" ("brandname") VALUES ('Tiny Home');
+INSERT INTO "brand" ("brandname") VALUES ('Tiny Home Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('TINY HOMES OF OHIO');
+INSERT INTO "brand" ("brandname") VALUES ('Tiny Homes of Oklahoma LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Tiny House Chattanooga');
+INSERT INTO "brand" ("brandname") VALUES ('Tiny Idahomes');
+INSERT INTO "brand" ("brandname") VALUES ('Tiny Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Tioga Air Heaters');
+INSERT INTO "brand" ("brandname") VALUES ('Tire');
+INSERT INTO "brand" ("brandname") VALUES ('Tisdell''s Implements');
+INSERT INTO "brand" ("brandname") VALUES ('TITAN');
+INSERT INTO "brand" ("brandname") VALUES ('Titan Haul USA');
+INSERT INTO "brand" ("brandname") VALUES ('Titan Imports');
+INSERT INTO "brand" ("brandname") VALUES ('Titan Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Titan Marine LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Titan Trailer MFG');
+INSERT INTO "brand" ("brandname") VALUES ('Titan Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Titan Trailers Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Titan UTV');
+INSERT INTO "brand" ("brandname") VALUES ('Titanium Trailer MFG');
+INSERT INTO "brand" ("brandname") VALUES ('TJ OILFIELD SERVICES,LLC.');
+INSERT INTO "brand" ("brandname") VALUES ('TJ Raese and Company LLC');
+INSERT INTO "brand" ("brandname") VALUES ('TJC');
+INSERT INTO "brand" ("brandname") VALUES ('TL Engineering');
+INSERT INTO "brand" ("brandname") VALUES ('TL ENTERPRISES');
+INSERT INTO "brand" ("brandname") VALUES ('TLR Welding & Fabricating');
+INSERT INTO "brand" ("brandname") VALUES ('TM Industries, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('TM Marine Group');
+INSERT INTO "brand" ("brandname") VALUES ('TMC');
+INSERT INTO "brand" ("brandname") VALUES ('TMC Design');
+INSERT INTO "brand" ("brandname") VALUES ('TMC, inc');
+INSERT INTO "brand" ("brandname") VALUES ('TMCO');
+INSERT INTO "brand" ("brandname") VALUES ('TMP Out West');
+INSERT INTO "brand" ("brandname") VALUES ('TMP Truck & Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('TMS, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('TMT Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('TNA Customs');
+INSERT INTO "brand" ("brandname") VALUES ('TNT Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('TNT JET TECH, INC');
+INSERT INTO "brand" ("brandname") VALUES ('TNT TRAILER, INC');
+INSERT INTO "brand" ("brandname") VALUES ('TNT Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('TNT, A Division of Banks Trailer Group');
+INSERT INTO "brand" ("brandname") VALUES ('Toby''s Mechanical');
+INSERT INTO "brand" ("brandname") VALUES ('Todd Geisert');
+INSERT INTO "brand" ("brandname") VALUES ('Toe-me Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Tom''s Trailer Works');
+INSERT INTO "brand" ("brandname") VALUES ('Tomahawk Custom Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Tomahawk Fabricating');
+INSERT INTO "brand" ("brandname") VALUES ('TOMAHAWK TRAILERS INC');
+INSERT INTO "brand" ("brandname") VALUES ('Tomberlin');
+INSERT INTO "brand" ("brandname") VALUES ('Tombstone Hearse & Trikes');
+INSERT INTO "brand" ("brandname") VALUES ('Tomcar USA');
+INSERT INTO "brand" ("brandname") VALUES ('TOMKEN MACHINE INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Tommy 2-Way Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Tommy Boy Racing');
+INSERT INTO "brand" ("brandname") VALUES ('Tommy Tow Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Tonkawa Trailers & Steel Fabricators');
+INSERT INTO "brand" ("brandname") VALUES ('Toocylinder');
+INSERT INTO "brand" ("brandname") VALUES ('Top Brand');
+INSERT INTO "brand" ("brandname") VALUES ('TOP DECK TRAILERS AND MOTORHOME INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Top Dog Aluminum');
+INSERT INTO "brand" ("brandname") VALUES ('Top Enterprises Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Top Hat Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Top Notch Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Top Notch Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Top Notch Trailers Manufacturing Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Topeka Metal Specialties (TMS Trailers)');
+INSERT INTO "brand" ("brandname") VALUES ('TORSION TRAILERS, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Tortured Steel Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Total E&S dba Total Equipment and Service');
+INSERT INTO "brand" ("brandname") VALUES ('Total Electric Vehicles');
+INSERT INTO "brand" ("brandname") VALUES ('Total Outdoor Adventures');
+INSERT INTO "brand" ("brandname") VALUES ('Tote''em Trailright Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Tote ''em Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Totem Equipment & Supply');
+INSERT INTO "brand" ("brandname") VALUES ('Toter Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Tour de Taverns');
+INSERT INTO "brand" ("brandname") VALUES ('Tournier MFG.');
+INSERT INTO "brand" ("brandname") VALUES ('Tourtec Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Tow-It-All');
+INSERT INTO "brand" ("brandname") VALUES ('Tow-Rite');
+INSERT INTO "brand" ("brandname") VALUES ('Tow Rite MFG');
+INSERT INTO "brand" ("brandname") VALUES ('TOW TRUE TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('Tow Zone Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Towblazer');
+INSERT INTO "brand" ("brandname") VALUES ('Tower Solutions');
+INSERT INTO "brand" ("brandname") VALUES ('Tower Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Tower Trikes');
+INSERT INTO "brand" ("brandname") VALUES ('Towerworx');
+INSERT INTO "brand" ("brandname") VALUES ('Towmaxx Speciality Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('TOWMORE');
+INSERT INTO "brand" ("brandname") VALUES ('Toxic Cycles LLC');
+INSERT INTO "brand" ("brandname") VALUES ('TOY CARRIERS, INC');
+INSERT INTO "brand" ("brandname") VALUES ('Toy Dolly');
+INSERT INTO "brand" ("brandname") VALUES ('Toy Toters');
+INSERT INTO "brand" ("brandname") VALUES ('TOYHOYST Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Toyota');
+INSERT INTO "brand" ("brandname") VALUES ('Trac Vac');
+INSERT INTO "brand" ("brandname") VALUES ('Trackmaster');
+INSERT INTO "brand" ("brandname") VALUES ('Trackmaster Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('TRACKSTAR INC.');
+INSERT INTO "brand" ("brandname") VALUES ('TRACTO DE MONTERREY Y ASOCIADOS SA DE CV');
+INSERT INTO "brand" ("brandname") VALUES ('TRACTOREMOLQUES Y ADAPTACIONES, SA DE CV');
+INSERT INTO "brand" ("brandname") VALUES ('Tradesman Company');
+INSERT INTO "brand" ("brandname") VALUES ('Tradewinds Power Corp');
+INSERT INTO "brand" ("brandname") VALUES ('TRAFCON INDUSTRIES INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Traffic Advisor');
+INSERT INTO "brand" ("brandname") VALUES ('TraffiCalm Systems');
+INSERT INTO "brand" ("brandname") VALUES ('TRAIL-A-TOY MANUFACTURING CORPORATION');
+INSERT INTO "brand" ("brandname") VALUES ('TRAIL-ET');
+INSERT INTO "brand" ("brandname") VALUES ('Trail-Rite');
+INSERT INTO "brand" ("brandname") VALUES ('Trail-Rite LLC');
+INSERT INTO "brand" ("brandname") VALUES ('TRAIL-RITE TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('Trail A Board');
+INSERT INTO "brand" ("brandname") VALUES ('Trail Craft');
+INSERT INTO "brand" ("brandname") VALUES ('TRAIL KING INDUSTRIES');
+INSERT INTO "brand" ("brandname") VALUES ('Trail Maker Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('TRAIL MASTER, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Trail Mate Products');
+INSERT INTO "brand" ("brandname") VALUES ('Trail One LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Trail Star Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('TrailAlong Trailer Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('TRAILBLAZER TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('TRAILBLAZER, INC');
+INSERT INTO "brand" ("brandname") VALUES ('Trailboss');
+INSERT INTO "brand" ("brandname") VALUES ('Trailboss Boat Trailers Inc');
+INSERT INTO "brand" ("brandname") VALUES ('TRAILER-LIFT LTD.');
+INSERT INTO "brand" ("brandname") VALUES ('Trailer-Pro Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Trailer & Truck');
+INSERT INTO "brand" ("brandname") VALUES ('TRAILER COMPONENTS, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('TRAILER CREATIONS LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Trailer Daddy MFG');
+INSERT INTO "brand" ("brandname") VALUES ('Trailer Force');
+INSERT INTO "brand" ("brandname") VALUES ('TRAILER FRANCHISE');
+INSERT INTO "brand" ("brandname") VALUES ('TRAILER FX CUSTOM MANUFACTURING');
+INSERT INTO "brand" ("brandname") VALUES ('TRAILER IN A BAG, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('TRAILER INDUSTRIES, INC');
+INSERT INTO "brand" ("brandname") VALUES ('TRAILER MANUFACTURERS OF TOLEDO, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Trailer Rebuilders, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('TRAILER RUSH, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Trailer Sales of MI');
+INSERT INTO "brand" ("brandname") VALUES ('TRAILER SPECIALTIES, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Trailer Tech, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Trailer Time Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('TRAILER WELD SHOP');
+INSERT INTO "brand" ("brandname") VALUES ('TRAILERMAKERS, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('TRAILERMAN TRAILERS, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Trailers and More');
+INSERT INTO "brand" ("brandname") VALUES ('TRAILERS BY MIKE');
+INSERT INTO "brand" ("brandname") VALUES ('Trailers Express Inc');
+INSERT INTO "brand" ("brandname") VALUES ('TRAILERS PLUS');
+INSERT INTO "brand" ("brandname") VALUES ('Trailers Unlimited');
+INSERT INTO "brand" ("brandname") VALUES ('TRAILERS UNLIMITED OF ARLINGTON');
+INSERT INTO "brand" ("brandname") VALUES ('TRAILEX INC.');
+INSERT INTO "brand" ("brandname") VALUES ('TRAILGRADER FABRICATION, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('TRAILMAN, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('TRAILMANOR');
+INSERT INTO "brand" ("brandname") VALUES ('TRAILMANOR MANUFACTURING COMPANY, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Trailmaster');
+INSERT INTO "brand" ("brandname") VALUES ('TrailMax');
+INSERT INTO "brand" ("brandname") VALUES ('Trailmobile');
+INSERT INTO "brand" ("brandname") VALUES ('TRAILON TRAILER CORP.');
+INSERT INTO "brand" ("brandname") VALUES ('TrailRite');
+INSERT INTO "brand" ("brandname") VALUES ('TrailStar');
+INSERT INTO "brand" ("brandname") VALUES ('Tramont Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('Tramont Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Trans-Tech Industries, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Transcor International Development Corpo');
+INSERT INTO "brand" ("brandname") VALUES ('TRANSFORMATRUCKS, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Transformer Trailers, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('TRANSGLOBAL CONTAINER, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Transglobal Industries');
+INSERT INTO "brand" ("brandname") VALUES ('TRANSHAUL, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('TRANSI-CORP');
+INSERT INTO "brand" ("brandname") VALUES ('Transport Buddy');
+INSERT INTO "brand" ("brandname") VALUES ('Transport Custom Designs');
+INSERT INTO "brand" ("brandname") VALUES ('Transport Designs');
+INSERT INTO "brand" ("brandname") VALUES ('TRANSPORT DESIGNS, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Transport Equipment Manufacturing & Sales Corp');
+INSERT INTO "brand" ("brandname") VALUES ('TRANSPORT LEASING LLP');
+INSERT INTO "brand" ("brandname") VALUES ('Transportation Power Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('TRANSPORTATION SYSTEMS SOLUTIONS, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Transportation Techniques');
+INSERT INTO "brand" ("brandname") VALUES ('Transtar ATW');
+INSERT INTO "brand" ("brandname") VALUES ('Transtech');
+INSERT INTO "brand" ("brandname") VALUES ('TRANSWORLD EQUIPMENT CORP.');
+INSERT INTO "brand" ("brandname") VALUES ('TRANSWORLD MANUFACTURING CO.');
+INSERT INTO "brand" ("brandname") VALUES ('Travalong');
+INSERT INTO "brand" ("brandname") VALUES ('TRAVEL-LITE, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Travel Line');
+INSERT INTO "brand" ("brandname") VALUES ('TRAVEL LITE, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('TRAVEL UNITS, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('TRAVELMATE, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('TRAVERTSON INC.');
+INSERT INTO "brand" ("brandname") VALUES ('TRAVIS BODY & TRAILER, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('TRAX MANUFACTURING');
+INSERT INTO "brand" ("brandname") VALUES ('TRAYLORCO');
+INSERT INTO "brand" ("brandname") VALUES ('Trekker');
+INSERT INTO "brand" ("brandname") VALUES ('Trelan Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Tri-City Boat Dock');
+INSERT INTO "brand" ("brandname") VALUES ('TRI-COUNTY MANUFACTURING, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('TRI-DEN, INC');
+INSERT INTO "brand" ("brandname") VALUES ('TRI-ONE, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('TRI-STAR TRAILER MFG.');
+INSERT INTO "brand" ("brandname") VALUES ('TRI-STAR TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('TRI-STATE CHOPPERS, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('TRI-STATE INDUSTRIES, INC');
+INSERT INTO "brand" ("brandname") VALUES ('TRI-WELDING FABRICATIONS');
+INSERT INTO "brand" ("brandname") VALUES ('Tri City');
+INSERT INTO "brand" ("brandname") VALUES ('TRI COUNTY CHOPPERS II');
+INSERT INTO "brand" ("brandname") VALUES ('Tri State Industries');
+INSERT INTO "brand" ("brandname") VALUES ('TRIAD ALUMINUM FABRICATION');
+INSERT INTO "brand" ("brandname") VALUES ('TRIAD TRAILERS LLC');
+INSERT INTO "brand" ("brandname") VALUES ('TRICK TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('Tricker Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('TRICKFIGHTERCUSTOMS LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Trident Motor');
+INSERT INTO "brand" ("brandname") VALUES ('TRIFUN, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Trihawk');
+INSERT INTO "brand" ("brandname") VALUES ('TRIKE WORX LLC');
+INSERT INTO "brand" ("brandname") VALUES ('TRIKES-R-US');
+INSERT INTO "brand" ("brandname") VALUES ('Triking');
+INSERT INTO "brand" ("brandname") VALUES ('TRILLIUM RV LTD.');
+INSERT INTO "brand" ("brandname") VALUES ('TRINITY FRAME & FAB');
+INSERT INTO "brand" ("brandname") VALUES ('TRINITY INDUSTRIES INC');
+INSERT INTO "brand" ("brandname") VALUES ('TRINITY TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('Triple-C Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('TRIPLE-H-TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('Triple-L');
+INSERT INTO "brand" ("brandname") VALUES ('TRIPLE B TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('Triple C Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Triple Crown Trailers, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Triple G Smokers');
+INSERT INTO "brand" ("brandname") VALUES ('Triple J');
+INSERT INTO "brand" ("brandname") VALUES ('TRIPLE J WELD FAB REPAIR, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Triple R');
+INSERT INTO "brand" ("brandname") VALUES ('TRIPLE R TRAILER SALES, INC');
+INSERT INTO "brand" ("brandname") VALUES ('TRISEN FABRICATION');
+INSERT INTO "brand" ("brandname") VALUES ('Tritan Ventures');
+INSERT INTO "brand" ("brandname") VALUES ('Triton');
+INSERT INTO "brand" ("brandname") VALUES ('TRITON TRIKES, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Triumph');
+INSERT INTO "brand" ("brandname") VALUES ('Triumph Motors');
+INSERT INTO "brand" ("brandname") VALUES ('Trivan Truck Body LLC');
+INSERT INTO "brand" ("brandname") VALUES ('TRIVAN TRUCK BODYY TEXAS, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Trojan Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('TROPHY BOAT TRAILERS, INC');
+INSERT INTO "brand" ("brandname") VALUES ('TROPICAL TRAILERS OF LAKELAND, INC');
+INSERT INTO "brand" ("brandname") VALUES ('Trotters Manufacturing, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('TROUBADOUR TRAILERS LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Trout Creek Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('Trout River Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Troxell Company');
+INSERT INTO "brand" ("brandname") VALUES ('TRP Motors');
+INSERT INTO "brand" ("brandname") VALUES ('Tru-Hitch');
+INSERT INTO "brand" ("brandname") VALUES ('Tru-Tow Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Tru-Weld');
+INSERT INTO "brand" ("brandname") VALUES ('TRU LEVEL TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('Truck-Tech');
+INSERT INTO "brand" ("brandname") VALUES ('TRUCK-TECH ENGINEERS INC.');
+INSERT INTO "brand" ("brandname") VALUES ('TRUCK BED AND TRAILER SALES, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('TRUCK CRANE SOLUTIONS');
+INSERT INTO "brand" ("brandname") VALUES ('Truck Equipment Corporation(TEC)');
+INSERT INTO "brand" ("brandname") VALUES ('Truck Tech');
+INSERT INTO "brand" ("brandname") VALUES ('Truck World');
+INSERT INTO "brand" ("brandname") VALUES ('Trucking TRM Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Trucks & Trailer OU');
+INSERT INTO "brand" ("brandname") VALUES ('TRUCKS UNLIMITED');
+INSERT INTO "brand" ("brandname") VALUES ('True Texan Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('True Trail');
+INSERT INTO "brand" ("brandname") VALUES ('Trunks on Wheels');
+INSERT INTO "brand" ("brandname") VALUES ('TSE International, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('TUF');
+INSERT INTO "brand" ("brandname") VALUES ('Tuff-Built Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Tuff-E-Nuff Mfg');
+INSERT INTO "brand" ("brandname") VALUES ('Tuff-Go');
+INSERT INTO "brand" ("brandname") VALUES ('Tuff Boy Sales');
+INSERT INTO "brand" ("brandname") VALUES ('Tuff Built Products Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Tuff Built Trailers of Oklahoma');
+INSERT INTO "brand" ("brandname") VALUES ('Tuff Manufacturing LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Tuff Mfg.');
+INSERT INTO "brand" ("brandname") VALUES ('Tuff Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Tug Hill Trailer Mfg.');
+INSERT INTO "brand" ("brandname") VALUES ('Tulsa Rig Iron');
+INSERT INTO "brand" ("brandname") VALUES ('Tulsa Trikes');
+INSERT INTO "brand" ("brandname") VALUES ('Tumbleweed Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Turnbow');
+INSERT INTO "brand" ("brandname") VALUES ('TURNING POINT TRAILER MFG, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Turris Systems');
+INSERT INTO "brand" ("brandname") VALUES ('Turtle Top');
+INSERT INTO "brand" ("brandname") VALUES ('Turtle Up');
+INSERT INTO "brand" ("brandname") VALUES ('Turtleback Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('TW Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('Twamco Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('TWI Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Twike Fine Motor GmbH');
+INSERT INTO "brand" ("brandname") VALUES ('Twin City');
+INSERT INTO "brand" ("brandname") VALUES ('TWIN CITY TRAILER SALES, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Twin Oaks Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Twisted Hawaiian');
+INSERT INTO "brand" ("brandname") VALUES ('Twisted Iron Bobbers');
+INSERT INTO "brand" ("brandname") VALUES ('Twisted Iron Customs');
+INSERT INTO "brand" ("brandname") VALUES ('Twisted Ridez');
+INSERT INTO "brand" ("brandname") VALUES ('Twisted Steel Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Twister Trailer Mfg Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Twistercity Cycle Works');
+INSERT INTO "brand" ("brandname") VALUES ('TXC');
+INSERT INTO "brand" ("brandname") VALUES ('Ty-Crop Manufacturing Ltd');
+INSERT INTO "brand" ("brandname") VALUES ('TYCO');
+INSERT INTO "brand" ("brandname") VALUES ('Tyco Fire Protection Products');
+INSERT INTO "brand" ("brandname") VALUES ('Tygar');
+INSERT INTO "brand" ("brandname") VALUES ('TYRRSA');
+INSERT INTO "brand" ("brandname") VALUES ('TYRSOL');
+INSERT INTO "brand" ("brandname") VALUES ('U-Dump Trailers LLC');
+INSERT INTO "brand" ("brandname") VALUES ('U.S. Trailer Co.');
+INSERT INTO "brand" ("brandname") VALUES ('UBCO');
+INSERT INTO "brand" ("brandname") VALUES ('UCC');
+INSERT INTO "brand" ("brandname") VALUES ('UD');
+INSERT INTO "brand" ("brandname") VALUES ('Ukeycheyma');
+INSERT INTO "brand" ("brandname") VALUES ('Ullman Auto Sales');
+INSERT INTO "brand" ("brandname") VALUES ('Ultima');
+INSERT INTO "brand" ("brandname") VALUES ('ULTIMATE CUSTOM CYCLES');
+INSERT INTO "brand" ("brandname") VALUES ('Ultimate Cycleworks');
+INSERT INTO "brand" ("brandname") VALUES ('Ultimate Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Ultimate Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Ultra');
+INSERT INTO "brand" ("brandname") VALUES ('Ultra Acquisition Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('Ultra Haulers');
+INSERT INTO "brand" ("brandname") VALUES ('Ultra Lite');
+INSERT INTO "brand" ("brandname") VALUES ('Ultra Motorcycle Company, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Ultra Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('UM Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('Uni-Go Nz Ltd');
+INSERT INTO "brand" ("brandname") VALUES ('Unicell Body Company');
+INSERT INTO "brand" ("brandname") VALUES ('Unilift');
+INSERT INTO "brand" ("brandname") VALUES ('UNION CITY BODY COMPANY INCORP.');
+INSERT INTO "brand" ("brandname") VALUES ('Unique Custom Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('Unique Custom Truck & Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Unique Cycle Works');
+INSERT INTO "brand" ("brandname") VALUES ('UNIQUE DESIGNS, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Unique Fabrications');
+INSERT INTO "brand" ("brandname") VALUES ('Unique Performance Customs');
+INSERT INTO "brand" ("brandname") VALUES ('Unique Products');
+INSERT INTO "brand" ("brandname") VALUES ('United Alloy, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('United Expressline');
+INSERT INTO "brand" ("brandname") VALUES ('United Hauler');
+INSERT INTO "brand" ("brandname") VALUES ('United Hydraulics');
+INSERT INTO "brand" ("brandname") VALUES ('United Motors');
+INSERT INTO "brand" ("brandname") VALUES ('United Motors of America');
+INSERT INTO "brand" ("brandname") VALUES ('UNITED MOUNTAIN TRAILERS, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('United Precision Metals');
+INSERT INTO "brand" ("brandname") VALUES ('United Site National Services Company');
+INSERT INTO "brand" ("brandname") VALUES ('United Specialized Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('United Specialties');
+INSERT INTO "brand" ("brandname") VALUES ('United States Motorcycle Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('United Trailer Products');
+INSERT INTO "brand" ("brandname") VALUES ('United Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('United Truck Equipment Corp.');
+INSERT INTO "brand" ("brandname") VALUES ('Universal');
+INSERT INTO "brand" ("brandname") VALUES ('Universal Composite');
+INSERT INTO "brand" ("brandname") VALUES ('Universal Cycle');
+INSERT INTO "brand" ("brandname") VALUES ('Universal Hovercraft');
+INSERT INTO "brand" ("brandname") VALUES ('Universal Specialty Vehicles, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Universal Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Unknown Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('UNLIMITED RECREATION, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Unruh');
+INSERT INTO "brand" ("brandname") VALUES ('Unverferth');
+INSERT INTO "brand" ("brandname") VALUES ('Upstate Concessions');
+INSERT INTO "brand" ("brandname") VALUES ('URAL');
+INSERT INTO "brand" ("brandname") VALUES ('URAL AMERICA INCOPROATED');
+INSERT INTO "brand" ("brandname") VALUES ('Urway');
+INSERT INTO "brand" ("brandname") VALUES ('US Built Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('US Tower Corp.');
+INSERT INTO "brand" ("brandname") VALUES ('US Trailer Co');
+INSERT INTO "brand" ("brandname") VALUES ('USA');
+INSERT INTO "brand" ("brandname") VALUES ('USA Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('USA FLIR DETECTION INC.');
+INSERT INTO "brand" ("brandname") VALUES ('USA MOTOR CORPORATION');
+INSERT INTO "brand" ("brandname") VALUES ('USA Motortoys');
+INSERT INTO "brand" ("brandname") VALUES ('USA Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('USA Trailer Co.');
+INSERT INTO "brand" ("brandname") VALUES ('USA Trailer Manufacturer');
+INSERT INTO "brand" ("brandname") VALUES ('USPC');
+INSERT INTO "brand" ("brandname") VALUES ('Ustankco');
+INSERT INTO "brand" ("brandname") VALUES ('Utilimaster Motor Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('Utilitoy');
+INSERT INTO "brand" ("brandname") VALUES ('UTILITY');
+INSERT INTO "brand" ("brandname") VALUES ('Utility Buddy');
+INSERT INTO "brand" ("brandname") VALUES ('Utility Tent Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Utility Van');
+INSERT INTO "brand" ("brandname") VALUES ('UtilityMate');
+INSERT INTO "brand" ("brandname") VALUES ('Uwood');
+INSERT INTO "brand" ("brandname") VALUES ('V-Force Customs');
+INSERT INTO "brand" ("brandname") VALUES ('V TWIN CITY');
+INSERT INTO "brand" ("brandname") VALUES ('V.E. Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('VA Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('Vac-Tron Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('Vac King Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Vacation Structures');
+INSERT INTO "brand" ("brandname") VALUES ('Vacationeer');
+INSERT INTO "brand" ("brandname") VALUES ('VACMASTERS OF DENVER INC');
+INSERT INTO "brand" ("brandname") VALUES ('Valaren Motorsports');
+INSERT INTO "brand" ("brandname") VALUES ('Valderaz Services,LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Valenti Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Valew (Hayes Welding)');
+INSERT INTO "brand" ("brandname") VALUES ('Valew Quality Truck Bodies East');
+INSERT INTO "brand" ("brandname") VALUES ('Valkyrie Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Valley Engineering');
+INSERT INTO "brand" ("brandname") VALUES ('Valley Farm Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Valley Industries, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('VALLEY MANUFACTURING, INC');
+INSERT INTO "brand" ("brandname") VALUES ('VALLEY TRAILER MFG INC');
+INSERT INTO "brand" ("brandname") VALUES ('Valley Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Valley Vessel Fabric');
+INSERT INTO "brand" ("brandname") VALUES ('Valley View Custom Trailer Manufacturers');
+INSERT INTO "brand" ("brandname") VALUES ('VALLEY WELDING & EQUIPMENT, INC');
+INSERT INTO "brand" ("brandname") VALUES ('VAMA Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Van');
+INSERT INTO "brand" ("brandname") VALUES ('Van Camp Trailer & Body, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Van Hool');
+INSERT INTO "brand" ("brandname") VALUES ('VAN KAM TRUCK & TRAILER');
+INSERT INTO "brand" ("brandname") VALUES ('Van Overflow Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Vanclaes');
+INSERT INTO "brand" ("brandname") VALUES ('Vanderhall Motor Works');
+INSERT INTO "brand" ("brandname") VALUES ('VANGUARD NATIONAL TRAILER CORPORATION (VNTC)');
+INSERT INTO "brand" ("brandname") VALUES ('Vanleigh RV');
+INSERT INTO "brand" ("brandname") VALUES ('Vanmar Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Vanquish Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('Vantage Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Vantage Vehicle International');
+INSERT INTO "brand" ("brandname") VALUES ('Vantem Modular');
+INSERT INTO "brand" ("brandname") VALUES ('Vaporcon');
+INSERT INTO "brand" ("brandname") VALUES ('VCS Custom Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('Vector Technologies');
+INSERT INTO "brand" ("brandname") VALUES ('Vector Trikes');
+INSERT INTO "brand" ("brandname") VALUES ('VECTRIX');
+INSERT INTO "brand" ("brandname") VALUES ('Vega Integrated Products');
+INSERT INTO "brand" ("brandname") VALUES ('Velocette Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Vengeance Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('Venier Customs');
+INSERT INTO "brand" ("brandname") VALUES ('Venom Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Venter');
+INSERT INTO "brand" ("brandname") VALUES ('Vento');
+INSERT INTO "brand" ("brandname") VALUES ('Venture Buggy');
+INSERT INTO "brand" ("brandname") VALUES ('Venture Ride Mfg Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Venture Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Venturetech Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('Veradyn');
+INSERT INTO "brand" ("brandname") VALUES ('VERI-LITE, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Vermeer');
+INSERT INTO "brand" ("brandname") VALUES ('Vermeer- Delta');
+INSERT INTO "brand" ("brandname") VALUES ('Vermeer Freeman Manufacturing Company');
+INSERT INTO "brand" ("brandname") VALUES ('Vernon Trailer Company');
+INSERT INTO "brand" ("brandname") VALUES ('Versatrail, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Vertical Reality');
+INSERT INTO "brand" ("brandname") VALUES ('VERTICAL WORKS INC');
+INSERT INTO "brand" ("brandname") VALUES ('Verucci Motorcycles LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Vetro, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('VETS');
+INSERT INTO "brand" ("brandname") VALUES ('Victor Valley Steel Fabricators');
+INSERT INTO "brand" ("brandname") VALUES ('Victor Valley Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Victory');
+INSERT INTO "brand" ("brandname") VALUES ('Victory Custom Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Victory Haulers');
+INSERT INTO "brand" ("brandname") VALUES ('Victory Industrial');
+INSERT INTO "brand" ("brandname") VALUES ('Victory Industrial Products');
+INSERT INTO "brand" ("brandname") VALUES ('Victory Sweepers');
+INSERT INTO "brand" ("brandname") VALUES ('Victory Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Viking');
+INSERT INTO "brand" ("brandname") VALUES ('Viking-Cives Midwest');
+INSERT INTO "brand" ("brandname") VALUES ('Viking Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('Viking Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Village Trailer Sales and Parts');
+INSERT INTO "brand" ("brandname") VALUES ('Villmow Racing Developments');
+INSERT INTO "brand" ("brandname") VALUES ('Vindicator Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('Vintage Auto');
+INSERT INTO "brand" ("brandname") VALUES ('Vintage Overland');
+INSERT INTO "brand" ("brandname") VALUES ('VIP Custom Coach, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Viper Cargo LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Viper Motorcycle Company');
+INSERT INTO "brand" ("brandname") VALUES ('Viper Trailers LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Vironex');
+INSERT INTO "brand" ("brandname") VALUES ('Vision Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Vision Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Visionary Metals');
+INSERT INTO "brand" ("brandname") VALUES ('Viva Motorsports');
+INSERT INTO "brand" ("brandname") VALUES ('VMI Offroad Xtender');
+INSERT INTO "brand" ("brandname") VALUES ('Volkswagen');
+INSERT INTO "brand" ("brandname") VALUES ('Volvo');
+INSERT INTO "brand" ("brandname") VALUES ('Volvo Truck');
+INSERT INTO "brand" ("brandname") VALUES ('Voodoo Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('VORTEX MOTORCYCLES CO');
+INSERT INTO "brand" ("brandname") VALUES ('Vossloh');
+INSERT INTO "brand" ("brandname") VALUES ('Voyager Aluminum');
+INSERT INTO "brand" ("brandname") VALUES ('Voyager Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Voyager Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Voyager Travel Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('VRC INDUSTRIES');
+INSERT INTO "brand" ("brandname") VALUES ('VRV');
+INSERT INTO "brand" ("brandname") VALUES ('VT Hackney');
+INSERT INTO "brand" ("brandname") VALUES ('VT SVC');
+INSERT INTO "brand" ("brandname") VALUES ('Vtwin Custom MFG');
+INSERT INTO "brand" ("brandname") VALUES ('Vulcan Works, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('VX Unlimited');
+INSERT INTO "brand" ("brandname") VALUES ('W K Machine');
+INSERT INTO "brand" ("brandname") VALUES ('W W Trailer Manufacturing & Sales Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Wabash National Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('WACKER CORPORATION');
+INSERT INTO "brand" ("brandname") VALUES ('Wacker Neuson Corporation dba Wacker Neuson');
+INSERT INTO "brand" ("brandname") VALUES ('WACO');
+INSERT INTO "brand" ("brandname") VALUES ('WADE SERVICES, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Wadsworth Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Wagner-Smith Equipment Co');
+INSERT INTO "brand" ("brandname") VALUES ('Wagon Wheel Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('WAGS MOTORCYCLE TRAILERS, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('WAGS UNIQUE MOTORCYCLE TRAILERS');
+INSERT INTO "brand" ("brandname") VALUES ('Waguespack Welding & Manufacturing Inc');
+INSERT INTO "brand" ("brandname") VALUES ('WALDEN STRUCTURE''S, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Walden Structures Construction');
+INSERT INTO "brand" ("brandname") VALUES ('Waldrop''s Welding & Fabrication LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Walinga USA');
+INSERT INTO "brand" ("brandname") VALUES ('WALINGA, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('WALKER');
+INSERT INTO "brand" ("brandname") VALUES ('WALKER STAINLESS EQUIPMENT CO');
+INSERT INTO "brand" ("brandname") VALUES ('Wallace Lowboys');
+INSERT INTO "brand" ("brandname") VALUES ('Wallrich Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Walsh Auto & Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('Walters Group');
+INSERT INTO "brand" ("brandname") VALUES ('Walton Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Walz Hardcore Cycles USA');
+INSERT INTO "brand" ("brandname") VALUES ('Wanco, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Wangye');
+INSERT INTO "brand" ("brandname") VALUES ('WANQIANG');
+INSERT INTO "brand" ("brandname") VALUES ('Wanted Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('War Eagle Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('Ward Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('WARE''S WELDING');
+INSERT INTO "brand" ("brandname") VALUES ('Warhawk Performance');
+INSERT INTO "brand" ("brandname") VALUES ('Warlock');
+INSERT INTO "brand" ("brandname") VALUES ('Warman''s Welding LTD');
+INSERT INTO "brand" ("brandname") VALUES ('Warren Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('WARREN MANUFACTURING, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Warren Power Attachments');
+INSERT INTO "brand" ("brandname") VALUES ('Warrior');
+INSERT INTO "brand" ("brandname") VALUES ('Warrior Lifestyles');
+INSERT INTO "brand" ("brandname") VALUES ('Warrior Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Washington Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('WASTE STREAM INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Wastequip Cusco');
+INSERT INTO "brand" ("brandname") VALUES ('WATAUGA WELDING INC');
+INSERT INTO "brand" ("brandname") VALUES ('Watco Truck Rigging');
+INSERT INTO "brand" ("brandname") VALUES ('Water Hog Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Waterblasting Technologies');
+INSERT INTO "brand" ("brandname") VALUES ('Waterford Tank and Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('Waterman Welding & Machining');
+INSERT INTO "brand" ("brandname") VALUES ('Watson');
+INSERT INTO "brand" ("brandname") VALUES ('Wausau Equipment Company');
+INSERT INTO "brand" ("brandname") VALUES ('Wayde Mfg Co inc');
+INSERT INTO "brand" ("brandname") VALUES ('Waymatic Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Wayne');
+INSERT INTO "brand" ("brandname") VALUES ('Wayne''s');
+INSERT INTO "brand" ("brandname") VALUES ('Wayne''s Trailer Supply');
+INSERT INTO "brand" ("brandname") VALUES ('Wayne Engineering Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('Wayne Wheeled Vehicles');
+INSERT INTO "brand" ("brandname") VALUES ('WB Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('WCW');
+INSERT INTO "brand" ("brandname") VALUES ('Weaver Systems');
+INSERT INTO "brand" ("brandname") VALUES ('Webco Pacific');
+INSERT INTO "brand" ("brandname") VALUES ('Weber''s Welding & Repair');
+INSERT INTO "brand" ("brandname") VALUES ('Weber Generators');
+INSERT INTO "brand" ("brandname") VALUES ('Weber Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Weber Trailer By Mrres Industries');
+INSERT INTO "brand" ("brandname") VALUES ('WEDLAKE FABRICATING, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Wee Engineer');
+INSERT INTO "brand" ("brandname") VALUES ('Weekend Warrior Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Weekender');
+INSERT INTO "brand" ("brandname") VALUES ('WEEZE CHOPPERS');
+INSERT INTO "brand" ("brandname") VALUES ('Wegener Steel & Fabricating');
+INSERT INTO "brand" ("brandname") VALUES ('Weiler');
+INSERT INTO "brand" ("brandname") VALUES ('Weimer Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Welch Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Weld-It Company');
+INSERT INTO "brand" ("brandname") VALUES ('Weld-Tek Custom Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('Weld Built Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Weld Shop');
+INSERT INTO "brand" ("brandname") VALUES ('Welding & Machine');
+INSERT INTO "brand" ("brandname") VALUES ('Welding Unlimited');
+INSERT INTO "brand" ("brandname") VALUES ('WELDING WORKS');
+INSERT INTO "brand" ("brandname") VALUES ('Well Done Equipment');
+INSERT INTO "brand" ("brandname") VALUES ('Wellco');
+INSERT INTO "brand" ("brandname") VALUES ('Wells Cargo');
+INSERT INTO "brand" ("brandname") VALUES ('Wells Machine Co Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Wells Western Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Wellspring');
+INSERT INTO "brand" ("brandname") VALUES ('WEN C');
+INSERT INTO "brand" ("brandname") VALUES ('Wenger Corp');
+INSERT INTO "brand" ("brandname") VALUES ('Wenzhou Light Motorcycle Co.');
+INSERT INTO "brand" ("brandname") VALUES ('Wenzlau Engineering');
+INSERT INTO "brand" ("brandname") VALUES ('Wes Mor Cryogenic Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('WESCO');
+INSERT INTO "brand" ("brandname") VALUES ('WESLEY CUSTOM FABRICATION INC');
+INSERT INTO "brand" ("brandname") VALUES ('West-Mark');
+INSERT INTO "brand" ("brandname") VALUES ('West Coast ABT Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('West Coast Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('West Georgia Mobile Hydraulic, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('West Side Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('West Side Cycle');
+INSERT INTO "brand" ("brandname") VALUES ('WEST TEXAS DOLLIES INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Westar Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Westbrook Greenhouse Systems Ltd.');
+INSERT INTO "brand" ("brandname") VALUES ('Westbury Handcrafted Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('WESTECH CUSTOM METAL FABRICATION');
+INSERT INTO "brand" ("brandname") VALUES ('Western Construction Components');
+INSERT INTO "brand" ("brandname") VALUES ('Western Innovation');
+INSERT INTO "brand" ("brandname") VALUES ('Western Int''l');
+INSERT INTO "brand" ("brandname") VALUES ('Western Metals Company Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Western Recreational Vehicles, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Western RV');
+INSERT INTO "brand" ("brandname") VALUES ('Western Star');
+INSERT INTO "brand" ("brandname") VALUES ('Western Trailer Company');
+INSERT INTO "brand" ("brandname") VALUES ('WESTERN WISCONSIN FABRICATING, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Westinghouse Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('Westline');
+INSERT INTO "brand" ("brandname") VALUES ('Westmor Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Weston Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Westside Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Westward Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Wheego Electric Cars');
+INSERT INTO "brand" ("brandname") VALUES ('Wheeler Reeler');
+INSERT INTO "brand" ("brandname") VALUES ('Wheelhaus');
+INSERT INTO "brand" ("brandname") VALUES ('WHISKEY CHOPPERS');
+INSERT INTO "brand" ("brandname") VALUES ('Whiskey Custom Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('Whispering Pines Fabricating');
+INSERT INTO "brand" ("brandname") VALUES ('Whit-Log');
+INSERT INTO "brand" ("brandname") VALUES ('Whit Service & Supply');
+INSERT INTO "brand" ("brandname") VALUES ('White');
+INSERT INTO "brand" ("brandname") VALUES ('White''s Welding & Body Shop');
+INSERT INTO "brand" ("brandname") VALUES ('White Knuckle Performance Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('WHITEGMC');
+INSERT INTO "brand" ("brandname") VALUES ('Whitehead Welding and Trailer Sales');
+INSERT INTO "brand" ("brandname") VALUES ('Whitetail Watersports dba Whitetail Airboats');
+INSERT INTO "brand" ("brandname") VALUES ('Whitewater');
+INSERT INTO "brand" ("brandname") VALUES ('Whitlock Mills Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('WHIZZER');
+INSERT INTO "brand" ("brandname") VALUES ('WHOLESALE TRAILER WORLD');
+INSERT INTO "brand" ("brandname") VALUES ('Wichita Trailer Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Wicked Choppers Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('Wicked Cool Motorcycles');
+INSERT INTO "brand" ("brandname") VALUES ('Wicked Custom Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('WICKED DESIGNS LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Wicked Enterprises');
+INSERT INTO "brand" ("brandname") VALUES ('Wicked Sick Designs Manufacturing T-Town Chopz');
+INSERT INTO "brand" ("brandname") VALUES ('Wicked Sickles');
+INSERT INTO "brand" ("brandname") VALUES ('Wicked Women Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Wicomico Custom Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('Wide Open Cycles');
+INSERT INTO "brand" ("brandname") VALUES ('Wideside Customs');
+INSERT INTO "brand" ("brandname") VALUES ('WIDOWMAKERS');
+INSERT INTO "brand" ("brandname") VALUES ('Wiechelman Repair');
+INSERT INTO "brand" ("brandname") VALUES ('Wil-Ro Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Wilbert Funeral Services');
+INSERT INTO "brand" ("brandname") VALUES ('Wilcken Industries');
+INSERT INTO "brand" ("brandname") VALUES ('WILCO MACHINE & FAB INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Wilco Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Wild Cat Crane & Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Wild Metal Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Wild Rice Industries');
+INSERT INTO "brand" ("brandname") VALUES ('Wild Side');
+INSERT INTO "brand" ("brandname") VALUES ('Wild Side Customs');
+INSERT INTO "brand" ("brandname") VALUES ('Wild West Motor Company');
+INSERT INTO "brand" ("brandname") VALUES ('Wild West Motor Company, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Wild West Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('WILDCAT MOTORCYCLES');
+INSERT INTO "brand" ("brandname") VALUES ('WILDCAT TRAILER CO');
+INSERT INTO "brand" ("brandname") VALUES ('Wildfire Motors');
+INSERT INTO "brand" ("brandname") VALUES ('Wildlife');
+INSERT INTO "brand" ("brandname") VALUES ('Wilkens Industries, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Wilkens Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('William Clark');
+INSERT INTO "brand" ("brandname") VALUES ('William Steele Welding & Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('Williams');
+INSERT INTO "brand" ("brandname") VALUES ('Williamson Ocean-Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Willis Extendable');
+INSERT INTO "brand" ("brandname") VALUES ('Willmar Mfg.');
+INSERT INTO "brand" ("brandname") VALUES ('Wilmer''s Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Wilshire Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Wilson Custom Trailer Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Wilson Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Wilson Steel Products Co.');
+INSERT INTO "brand" ("brandname") VALUES ('Wilson Trailer Co.');
+INSERT INTO "brand" ("brandname") VALUES ('Wilton Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Wimyer');
+INSERT INTO "brand" ("brandname") VALUES ('Winchester Auto Repair & Welding');
+INSERT INTO "brand" ("brandname") VALUES ('Winco');
+INSERT INTO "brand" ("brandname") VALUES ('WINDROCK');
+INSERT INTO "brand" ("brandname") VALUES ('Windsor Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Windward Campers Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Windy Ridge Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('Winnebago');
+INSERT INTO "brand" ("brandname") VALUES ('Winnebago Industries, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Winnebago Of Indiana');
+INSERT INTO "brand" ("brandname") VALUES ('Wins Trike Bike');
+INSERT INTO "brand" ("brandname") VALUES ('WINSOR METAL PRODUCTS INC');
+INSERT INTO "brand" ("brandname") VALUES ('WINSTON');
+INSERT INTO "brand" ("brandname") VALUES ('Wisconsin Body & Hoist');
+INSERT INTO "brand" ("brandname") VALUES ('Wisdom');
+INSERT INTO "brand" ("brandname") VALUES ('Wise Technology');
+INSERT INTO "brand" ("brandname") VALUES ('WISTAR EQUIPMENT');
+INSERT INTO "brand" ("brandname") VALUES ('WIZARD SPEED AND DESIGN');
+INSERT INTO "brand" ("brandname") VALUES ('Wolf-Trax');
+INSERT INTO "brand" ("brandname") VALUES ('Wolf Design Metal Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('wolf trailes');
+INSERT INTO "brand" ("brandname") VALUES ('Wolfe Electric');
+INSERT INTO "brand" ("brandname") VALUES ('Wolfpack Chassis, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Wolverine');
+INSERT INTO "brand" ("brandname") VALUES ('Wolverine custom');
+INSERT INTO "brand" ("brandname") VALUES ('WOLVERINE RACING');
+INSERT INTO "brand" ("brandname") VALUES ('Wolverine trailers llc');
+INSERT INTO "brand" ("brandname") VALUES ('Wood-Mizer Products, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Wood-Tex Corporate LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Woodland Park Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Woods line equipment, inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Woodsman, Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Work Area Protection Corp');
+INSERT INTO "brand" ("brandname") VALUES ('Work Easy Trailers LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Work Hawg Trailer Company, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Work Horse Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Workhorse');
+INSERT INTO "brand" ("brandname") VALUES ('Workhorse Industries of Texas');
+INSERT INTO "brand" ("brandname") VALUES ('Workhorse Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('Workhorse Utility Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('Workman and Sons Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('World Transport Authority');
+INSERT INTO "brand" ("brandname") VALUES ('Worldwide Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('WorldWide Trailer Manufacturing, Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Worldwide Trailer Services');
+INSERT INTO "brand" ("brandname") VALUES ('WORTHINGTON CRYOGENICS, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('Worthington Welding Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Worthy');
+INSERT INTO "brand" ("brandname") VALUES ('Worxs');
+INSERT INTO "brand" ("brandname") VALUES ('WOT FABRICATION & ENGINEERING, LLC');
+INSERT INTO "brand" ("brandname") VALUES ('WOW CARGO TRAILERS LLC');
+INSERT INTO "brand" ("brandname") VALUES ('WR Manufacturing Inc');
+INSERT INTO "brand" ("brandname") VALUES ('Wrench');
+INSERT INTO "brand" ("brandname") VALUES ('Wright''s Design & Favrication');
+INSERT INTO "brand" ("brandname") VALUES ('Wright Built');
+INSERT INTO "brand" ("brandname") VALUES ('Wright Welding Inc.');
+INSERT INTO "brand" ("brandname") VALUES ('Wrightbus');
+INSERT INTO "brand" ("brandname") VALUES ('WSD');
+INSERT INTO "brand" ("brandname") VALUES ('WTSI');
+INSERT INTO "brand" ("brandname") VALUES ('Wurk Metal Products');
+INSERT INTO "brand" ("brandname") VALUES ('WURST');
+INSERT INTO "brand" ("brandname") VALUES ('Wuxi Jinhong Motorcycle Co.');
+INSERT INTO "brand" ("brandname") VALUES ('Wuxi Tmec Power Technology');
+INSERT INTO "brand" ("brandname") VALUES ('Wuxi Zhida Vehicle Manufacturing Co.');
+INSERT INTO "brand" ("brandname") VALUES ('Wuzheng North America');
+INSERT INTO "brand" ("brandname") VALUES ('Wyatt''s');
+INSERT INTO "brand" ("brandname") VALUES ('Wyatt Engineering & Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('Wyld Rydes');
+INSERT INTO "brand" ("brandname") VALUES ('Wyoming Fabrication & Machine');
+INSERT INTO "brand" ("brandname") VALUES ('X-CEL Trailers');
+INSERT INTO "brand" ("brandname") VALUES ('X-L SPECIALIZED TRAILERS INC');
+INSERT INTO "brand" ("brandname") VALUES ('X-PRESS');
+INSERT INTO "brand" ("brandname") VALUES ('X-Treme Fabricating');
+INSERT INTO "brand" ("brandname") VALUES ('X-Treme Trailer Mfg');
+INSERT INTO "brand" ("brandname") VALUES ('XCS Choppers dba Xtreme Cycle Supply');
+INSERT INTO "brand" ("brandname") VALUES ('Xiamen Xiagong Yuwei Heavy Industry Co.');
+INSERT INTO "brand" ("brandname") VALUES ('Xiamen Xiashing Motorcycle Co.');
+INSERT INTO "brand" ("brandname") VALUES ('XIANFENG');
+INSERT INTO "brand" ("brandname") VALUES ('XIANGJIANG');
+INSERT INTO "brand" ("brandname") VALUES ('Xiangrui Vehicle Co.');
+INSERT INTO "brand" ("brandname") VALUES ('Xinri');
+INSERT INTO "brand" ("brandname") VALUES ('Xkeleton Motorcycle');
+INSERT INTO "brand" ("brandname") VALUES ('XLT');
+INSERT INTO "brand" ("brandname") VALUES ('Xotic Cycle & Motor Werx');
+INSERT INTO "brand" ("brandname") VALUES ('Xplor Campers');
+INSERT INTO "brand" ("brandname") VALUES ('XPLORER');
+INSERT INTO "brand" ("brandname") VALUES ('XPO');
+INSERT INTO "brand" ("brandname") VALUES ('Xtreme Choppers');
+INSERT INTO "brand" ("brandname") VALUES ('Xtreme Custom Conversions');
+INSERT INTO "brand" ("brandname") VALUES ('Xtreme Green Products');
+INSERT INTO "brand" ("brandname") VALUES ('Xtreme LT');
+INSERT INTO "brand" ("brandname") VALUES ('Xtreme Trailers and MFG');
+INSERT INTO "brand" ("brandname") VALUES ('Yakima Products');
+INSERT INTO "brand" ("brandname") VALUES ('Yamaha');
+INSERT INTO "brand" ("brandname") VALUES ('Yangzhou Tonghua Semi-Trialer');
+INSERT INTO "brand" ("brandname") VALUES ('Yantai Haide Special Auto Works');
+INSERT INTO "brand" ("brandname") VALUES ('Yantai Jereh Oilfield Service Group Co.');
+INSERT INTO "brand" ("brandname") VALUES ('Yardbeast');
+INSERT INTO "brand" ("brandname") VALUES ('Yellowstone Valley Trailer Services, LLP dba YVTS');
+INSERT INTO "brand" ("brandname") VALUES ('Yester Year Auto');
+INSERT INTO "brand" ("brandname") VALUES ('YIBEN');
+INSERT INTO "brand" ("brandname") VALUES ('Yingang');
+INSERT INTO "brand" ("brandname") VALUES ('YINXIANG');
+INSERT INTO "brand" ("brandname") VALUES ('Yoder Utility Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('Yongfu');
+INSERT INTO "brand" ("brandname") VALUES ('York Welding and Fabrication');
+INSERT INTO "brand" ("brandname") VALUES ('Younessi Motors');
+INSERT INTO "brand" ("brandname") VALUES ('YOUNG''S WELDING, INC.');
+INSERT INTO "brand" ("brandname") VALUES ('Yuba Trailer');
+INSERT INTO "brand" ("brandname") VALUES ('YUGO');
+INSERT INTO "brand" ("brandname") VALUES ('YVTS');
+INSERT INTO "brand" ("brandname") VALUES ('Z & M Controls');
+INSERT INTO "brand" ("brandname") VALUES ('Z Electric Vehicle Corporation');
+INSERT INTO "brand" ("brandname") VALUES ('Z Fabrication Wildfire Pits and Smokers');
+INSERT INTO "brand" ("brandname") VALUES ('Z Z CHOPS');
+INSERT INTO "brand" ("brandname") VALUES ('Z3 SUPPLY');
+INSERT INTO "brand" ("brandname") VALUES ('Zacky''s Custom Rods');
+INSERT INTO "brand" ("brandname") VALUES ('ZACKYS');
+INSERT INTO "brand" ("brandname") VALUES ('ZAKS CUSTOM PITS');
+INSERT INTO "brand" ("brandname") VALUES ('Zanetti Trailer Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('ZAP');
+INSERT INTO "brand" ("brandname") VALUES ('ZARK');
+INSERT INTO "brand" ("brandname") VALUES ('ZAT ENTERPRISES');
+INSERT INTO "brand" ("brandname") VALUES ('ZEHR ENTERPRISES INC');
+INSERT INTO "brand" ("brandname") VALUES ('ZELIGSON');
+INSERT INTO "brand" ("brandname") VALUES ('ZENGCHENG HAILI MOTORCYCLE CO');
+INSERT INTO "brand" ("brandname") VALUES ('ZERO MOTORCYCLES');
+INSERT INTO "brand" ("brandname") VALUES ('Zero4Outdoors');
+INSERT INTO "brand" ("brandname") VALUES ('ZEUS CHOPPERS');
+INSERT INTO "brand" ("brandname") VALUES ('ZHEJIANG JIAJUE APOLLO VEHICLE MANUFACTURE CO');
+INSERT INTO "brand" ("brandname") VALUES ('ZHEJIANG JMSTAR SHENKE MOTORCYCLE CO');
+INSERT INTO "brand" ("brandname") VALUES ('Zhejiang Kandi Vehicles Co.');
+INSERT INTO "brand" ("brandname") VALUES ('ZHEJIANG KANGDI VEHICLES CO');
+INSERT INTO "brand" ("brandname") VALUES ('ZHEJIANG LEIKE MACHINE INDUSTRY CO');
+INSERT INTO "brand" ("brandname") VALUES ('ZheJiang Lingtian Motorcycle Co Ltd');
+INSERT INTO "brand" ("brandname") VALUES ('ZHEJIANG LINGYU VEHICLE INDUSTRY CO');
+INSERT INTO "brand" ("brandname") VALUES ('ZHEJIANG LONGWISE TECHNOLOGY CO');
+INSERT INTO "brand" ("brandname") VALUES ('ZHEJIANG MENGDELI ELECTRICAL CO');
+INSERT INTO "brand" ("brandname") VALUES ('Zhejiang Qianjiang Motorcycle');
+INSERT INTO "brand" ("brandname") VALUES ('ZHEJIANG RIYA MOTORCYCLE CO');
+INSERT INTO "brand" ("brandname") VALUES ('ZHEJIANG TAIZHOU WANGYE POWER CO');
+INSERT INTO "brand" ("brandname") VALUES ('ZHEJIANG TAOTAO INDUSTRY CO');
+INSERT INTO "brand" ("brandname") VALUES ('ZHEJIANG XINGYUE VEHICLE CO');
+INSERT INTO "brand" ("brandname") VALUES ('Zhengzhou East Industry Co.');
+INSERT INTO "brand" ("brandname") VALUES ('Zhongmao');
+INSERT INTO "brand" ("brandname") VALUES ('ZHONGMO TECHNOLOGY CO');
+INSERT INTO "brand" ("brandname") VALUES ('ZHUZHOU NANFANG MOTORCYCLE CO');
+INSERT INTO "brand" ("brandname") VALUES ('ZHWEKI');
+INSERT INTO "brand" ("brandname") VALUES ('ZIERKE BUILT MANUFACTURING');
+INSERT INTO "brand" ("brandname") VALUES ('Ziffel Manufacturing');
+INSERT INTO "brand" ("brandname") VALUES ('ZIMCO MANUFACTURING');
+INSERT INTO "brand" ("brandname") VALUES ('Zimmer');
+INSERT INTO "brand" ("brandname") VALUES ('Zimmerman Manufacturing Corp.');
+INSERT INTO "brand" ("brandname") VALUES ('ZIMMERMAN TRAILER');
+INSERT INTO "brand" ("brandname") VALUES ('ZNEN');
+INSERT INTO "brand" ("brandname") VALUES ('Zoe Motors');
+INSERT INTO "brand" ("brandname") VALUES ('ZONE ELECTRIC CAR');
+INSERT INTO "brand" ("brandname") VALUES ('ZONGSHEN INDUSTRIAL GROUP CO');
+INSERT INTO "brand" ("brandname") VALUES ('Zook''s Welding');
+INSERT INTO "brand" ("brandname") VALUES ('ZTPOWERSTATION');
+INSERT INTO "brand" ("brandname") VALUES ('ZZ TRAILER');
