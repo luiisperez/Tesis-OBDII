@@ -32,9 +32,6 @@
     <string name="error_email_taken">El correo ya está en uso</string>
     <string name="operation_cancelled">La operación ha sido cancelada</string>
     <string name="error_field_required">Este campo es requerido</string>
-    <string name="permission_rationale">"Contacts permissions are needed for providing email
-        completions."
-    </string>
     <string name="title_activity_sign_up">Registro de usuario</string>
 
     <!-- Strings related to menu -->
@@ -84,4 +81,16 @@
     <string name="failure_detected_title">Falla detectada</string>
     <string name="failure_detected_message_pt1">El código de la falla es </string>
     <string name="failure_detected_message_pt2">y el mensaje del error es </string>
+    <string name="menu_start_live_data">Iniciar Lectura</string>
+    <string name="menu_smart_test">Análisis</string>
+    <string name="menu_settings">Configuración</string>
+    <string name="menu_predictions">Reporte predictivo</string>
+    <string name="menu_synchronize">Sincronizar Datos</string>
+    <string name="menu_trouble_codes">Códigos de Error</string>
+    <string name="pref_bluetooth_list_devices_summary">Lista de dispositivos pareados.</string>
+    <string name="pref_bluetooth_list_devices_title">Dispositivos Bluetooth</string>
+    <string name="pref_gps_category_summaryOff">Iniciar GPS</string>
+    <string name="pref_gps_category_summaryOn">Detener GPS</string>
+    <string name="action_clear_codes">Limpiar Códigos</string>
+    <string name="menu_item_trip_delete">Eliminar</string>
 </resources>

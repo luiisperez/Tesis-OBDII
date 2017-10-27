@@ -35,7 +35,6 @@ import javax.ws.rs.QueryParam;
 @Path("heydriverws")
 public class HeyDriverWS {
     Gson gson = new Gson();
-    static private Thread thread2 = new Thread();
     @Context
     private UriInfo context;
 
@@ -73,25 +72,6 @@ public class HeyDriverWS {
         User result = new User();//nuevo
         result.set_email("Prueba exitosa");
         return gson.toJson( result );//nuevo
-    }
-    
-    @GET
-    @Path("syncInfoNHTSA")
-    @Produces("application/json")
-    public String syncInfoNHTSA (){
-        NHTSASyncThread.execute_thread = true;
-        NHTSASyncThread sync = new NHTSASyncThread();
-        thread2 = new Thread(sync);
-        thread2.start();
-        return gson.toJson( "exito" );//nuevo
-    }
-    
-    @GET
-    @Path("stopSyncInfoNHTSA")
-    @Produces("application/json")
-    public String stopSyncInfoNHTSA (){
-        thread2.stop();
-        return gson.toJson( "cancelar" );//nuevo
     }
     
     @GET
