@@ -137,6 +137,40 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
+/**************************************************AGREGAR MARCAS DE VEHICULOS**************************************************/
+
+CREATE OR REPLACE FUNCTION SYNC_NHTSA_INFORMATION_BRANDS(varchar(40)) RETURNS integer AS $$
+DECLARE
+ result integer;
+
+BEGIN
+	IF ((SELECT COUNT(*) FROM brand WHERE brandname = $1) = 0) THEN
+
+		INSERT INTO brand(BRANDNAME) VALUES ($1);
+		result := 200;
+	
+	END IF;
+ 	RETURN result;
+END;
+$$ LANGUAGE plpgsql;
+
+/**************************************************AGREGAR MODELOS DE VEHICULOS**************************************************/
+
+CREATE OR REPLACE FUNCTION SYNC_NHTSA_INFORMATION_MODELS(varchar(40), varchar(40)) RETURNS integer AS $$
+DECLARE
+ result integer;
+
+BEGIN
+	IF ((SELECT COUNT(*) FROM model WHERE modelname = $1 AND model_fk_brand = $2) = 0) THEN
+
+		INSERT INTO model(MODELNAME, MODEL_FK_BRAND) VALUES ($1, $2);
+		result := 200;
+	
+	END IF;
+ 	RETURN result;
+END;
+$$ LANGUAGE plpgsql;
+
 
 /**************************************************AGREGAR_HISTORICO_PORCARRO**************************************************/
 
