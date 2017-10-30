@@ -21,6 +21,8 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.GpsStatus;
 import android.location.Location;
 import android.location.LocationListener;
@@ -81,6 +83,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Random;
 
@@ -123,7 +126,6 @@ public class ObdReaderFragment extends Fragment
         mNotifyMgr.notify(m, mBuilder.build());
     }
 
-    private static ArrayList<String> DETECTED_ERRORS = new ArrayList<String>();
     private static final String TAG = ObdReaderFragment.class.getName();
     private static final int NO_BLUETOOTH_ID = 0;
     private static final int BLUETOOTH_DISABLED = 1;
@@ -397,7 +399,25 @@ public class ObdReaderFragment extends Fragment
             lat = mLastLocation.getLatitude();
             lon = mLastLocation.getLongitude();
             alt = mLastLocation.getAltitude();
+
         }
+
+/* Rutina para colectar la dirección de cada lectura
+        String StreetName=null;
+        Geocoder gcd = new Geocoder(getActivity(), Locale.getDefault());
+        List<Address>  addresses;
+        try {
+            addresses = gcd.getFromLocation(mLastLocation.getLatitude(), mLastLocation.getLongitude(), 10);
+            if (addresses.size() > 0)
+                StreetName = addresses.get(0).getThoroughfare();
+            String s = "My Currrent Street is:"+StreetName;
+            Toast.makeText(getActivity(), s, Toast.LENGTH_LONG).show();
+        }catch (IOException e) {
+            e.printStackTrace();
+            Toast.makeText(getActivity(), e.toString(), Toast.LENGTH_LONG).show();
+        }
+*/
+
 
         //Colección para almacenar en BD
         ContentValues valores = new ContentValues();
@@ -446,19 +466,21 @@ public class ObdReaderFragment extends Fragment
             }
             if (e.getKey().equals( VIN.toString()))
             {
-                //dataSensor.setVehicle_Identification_Number((String) e.getValue());
                 ManageInformation info = new ManageInformation();
                 dataSensor.setVehicle_Identification_Number(info.getCarInformation(getActivity()).get_serial());
             }
             if (e.getKey().equals(TROUBLE_CODES.toString())) {
                 dataSensor.setTrouble_Codes((String) e.getValue());
+                ManageInformation info_car = new ManageInformation();
                 if ( !((String) e.getValue()).equals(""))
                 {
                     String[] split_codes = e.getValue().toString().split("\n");
+                    //String[] split_codes = "P0142\nP0143".toString().split("\n");
                     for (String n : split_codes) {
-                        if (!DETECTED_ERRORS.contains(n)) {
-                            DETECTED_ERRORS.add(n);
-                            showFailureNotification(n, getTroubleMessage(n)); //FALTA LEER EL MENSAJE DE ERROR
+                        if (!findDTC(info_car.getCarInformation(getActivity()).get_serial(),n))
+                        {
+                            saveDTC(info_car.getCarInformation(getActivity()).get_serial(),n);
+                            showFailureNotification(n, getTroubleMessage(n));
                         }
                     }
                 }
@@ -660,6 +682,40 @@ public class ObdReaderFragment extends Fragment
         Toast toast = Toast.makeText(getActivity(), "Sorry, your device doesn\\'t support or has disabled GPS", Toast.LENGTH_SHORT);
         toast.show();
         return false;
+    }
+
+    // Ask if an Trouble Code is in SQLite
+    public boolean findDTC(String vin, String troble_code) {
+        try {
+            SQLiteDatabase db = HomeActivity.controladorSQLite.getWritableDatabase();
+            Cursor cursor = db.rawQuery("SELECT vin_dtc, trouble_code_dtc FROM CAR_DTC where trouble_code_dtc = ? and vin_dtc = ?", new String[] {troble_code,vin});
+            cursor.moveToFirst();
+            if (cursor.getCount()>0)  {
+                    return true;
+                }
+                else
+                    return false;
+            }
+        catch (Exception e)
+        {
+            return false;
+        }
+    }
+    // Save an Trouble Code in SQLite
+    public boolean saveDTC(String vin, String troble_code) {
+        SQLiteDatabase db = HomeActivity.controladorSQLite.getWritableDatabase();
+        ContentValues valores = new ContentValues();
+        valores.put(ControladorSQLite.DatosTabla.VIN_DTC,String.valueOf(vin));
+        valores.put(ControladorSQLite.DatosTabla.TOUBLE_CODE,String.valueOf(troble_code));
+        try
+        {
+            long IdGuardado = db.insert(ControladorSQLite.DatosTabla.NOMBRE_TABLA2, "id", valores);
+            db.close();
+            return true;
+        }
+        catch (Exception e){
+            return false;
+        }
     }
 
     @Nullable

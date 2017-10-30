@@ -14,6 +14,7 @@ public class ControladorSQLite extends SQLiteOpenHelper
     public static abstract class DatosTabla implements BaseColumns
     {
         public static final String NOMBRE_TABLA = "HISTORICO";
+        public static final String NOMBRE_TABLA2 = "CAR_DTC";
         public static final String COLUMNA_ID = "id";
         public static final String AIR_INTAKE_TEMP = "Air_Intake_Temperature";
         public static final String AMBIENT_AIR_TEMP = "Ambient_Air_Temperature";
@@ -43,7 +44,6 @@ public class ControladorSQLite extends SQLiteOpenHelper
         public static final String STFT1 = "Short_Term_Fuel_Trim1";
         public static final String LTFT2 = "Long_Term_Fuel_Trim2";
         public static final String LTFT1 = "Long_Term_Fuel_Trim1";
-
         public static final String ENGINE_OIL_TEMP = "Engine_oil_temperature";
         public static final String AIR_FUEL_RATIO = "AirFuel_Ratio";
         public static final String WIDEBAND_AIR_FUEL_RATIO = "Wideband_AirFuel_Ratio";
@@ -53,10 +53,15 @@ public class ControladorSQLite extends SQLiteOpenHelper
         public static final String LON = "lon";
         public static final String ALT = "alt";
 
+        // CAR_DTC TABLE
+        public static final String VIN_DTC = "vin_dtc";
+        public static final String TOUBLE_CODE = "trouble_code_dtc";
 
         private static final String TEXT_TYPE = " TEXT";
         private static final String TEXT_FLOAT = " REAL";
         private static final String COMMA_SEP = ",";
+
+        //TABLES
         private static final String CREAR_TABLA_1 =
                 "CREATE TABLE " + DatosTabla.NOMBRE_TABLA + " (" +
                         DatosTabla.COLUMNA_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -95,9 +100,19 @@ public class ControladorSQLite extends SQLiteOpenHelper
                         DatosTabla.LON + TEXT_TYPE + COMMA_SEP +
                         DatosTabla.ALT + TEXT_TYPE + " )";
 
+     private static final String CREAR_TABLA_2 =
+             "CREATE TABLE " + DatosTabla.NOMBRE_TABLA2 + " (" +
+                     DatosTabla.COLUMNA_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+                     DatosTabla.VIN_DTC + TEXT_TYPE + COMMA_SEP +
+                     DatosTabla.TOUBLE_CODE + TEXT_TYPE + " )";
+
         private static final String SQL_DELETE_ENTRIES =
                 "DROP TABLE IF EXISTS " + DatosTabla.NOMBRE_TABLA;
+
+        private static final String SQL_DELETE_ENTRIES_DTC =
+                "DROP TABLE IF EXISTS " + DatosTabla.NOMBRE_TABLA2;
     }
+
     public static final int DATABASE_VERSION = 1;
     public static final String DATABASE_NAME = "MiBasedeDatos.db";
 
@@ -108,11 +123,13 @@ public class ControladorSQLite extends SQLiteOpenHelper
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(DatosTabla.CREAR_TABLA_1);
+        db.execSQL(DatosTabla.CREAR_TABLA_2);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
         db.execSQL(DatosTabla.SQL_DELETE_ENTRIES);
+        db.execSQL(DatosTabla.SQL_DELETE_ENTRIES_DTC);
         onCreate(db);
     }
 }
