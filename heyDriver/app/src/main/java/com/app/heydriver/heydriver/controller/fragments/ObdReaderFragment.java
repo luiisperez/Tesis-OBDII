@@ -105,13 +105,14 @@ public class ObdReaderFragment extends Fragment
         NotificationManager mNotifyMgr =(NotificationManager) getContext().getSystemService(NOTIFICATION_SERVICE);
 
         int icono = R.drawable.ic_notification;
+        int largeIcono = R.mipmap.icon_driver;
         Intent i = new Intent(getActivity(), HomeActivity.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(getActivity(), 0, i, 0);
 
         mBuilder =new NotificationCompat.Builder(getContext())
                 .setContentIntent(pendingIntent)
                 .setSmallIcon(icono)
-                .setLargeIcon(BitmapFactory.decodeResource(getResources(), icono))
+                .setLargeIcon(BitmapFactory.decodeResource(getResources(), largeIcono))
                 .setContentTitle(getString(R.string.failure_detected_title))
                 .setContentText(getString(R.string.failure_detected_message_pt1) + "\"" + errorcode + "\"" +
                                 getString(R.string.failure_detected_message_pt2) + "\"" + message + "\"")
