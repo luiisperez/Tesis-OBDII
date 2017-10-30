@@ -104,7 +104,7 @@ public class ObdReaderFragment extends Fragment
         NotificationCompat.Builder mBuilder;
         NotificationManager mNotifyMgr =(NotificationManager) getContext().getSystemService(NOTIFICATION_SERVICE);
 
-        int icono = R.mipmap.icon_driver;
+        int icono = R.drawable.ic_notification;
         Intent i = new Intent(getActivity(), HomeActivity.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(getActivity(), 0, i, 0);
 
