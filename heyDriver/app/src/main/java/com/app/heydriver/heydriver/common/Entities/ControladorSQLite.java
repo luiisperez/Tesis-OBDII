@@ -55,6 +55,7 @@ public class ControladorSQLite extends SQLiteOpenHelper
 
         // CAR_DTC TABLE
         public static final String VIN_DTC = "vin_dtc";
+        public static final String CAR_MODEL = "car_model";
         public static final String TOUBLE_CODE = "trouble_code_dtc";
 
         private static final String TEXT_TYPE = " TEXT";
@@ -103,6 +104,7 @@ public class ControladorSQLite extends SQLiteOpenHelper
      private static final String CREAR_TABLA_2 =
              "CREATE TABLE " + DatosTabla.NOMBRE_TABLA2 + " (" +
                      DatosTabla.COLUMNA_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+                     DatosTabla.CAR_MODEL + TEXT_TYPE + COMMA_SEP +
                      DatosTabla.VIN_DTC + TEXT_TYPE + COMMA_SEP +
                      DatosTabla.TOUBLE_CODE + TEXT_TYPE + " )";
 

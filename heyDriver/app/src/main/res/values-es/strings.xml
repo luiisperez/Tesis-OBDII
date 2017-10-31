@@ -37,6 +37,7 @@
     <!-- Strings related to menu -->
     <string name="title_fragment_home">Inicio</string>
     <string name="menu_OBDII_scanning">Escaneo con OBD-II</string>
+    <string name="title_fragment_trouble_codes">Códigos de error</string>
     <string name="menu_vehicle_registration">Registro de vehículo</string>
     <string name="menu_home">Inicio</string>
 
@@ -93,4 +94,15 @@
     <string name="pref_gps_category_summaryOn">Detener GPS</string>
     <string name="action_clear_codes">Limpiar Códigos</string>
     <string name="menu_item_trip_delete">Eliminar</string>
+    <string name="body_error">Carrocería</string>
+    <string name="chasis_error">Chasis</string>
+    <string name="engine_error">Tren Motriz</string>
+    <string name="network_error">Transmisión de Datos</string>
+    <string name="dialog_loading_title">Cargando</string>
+    <string name="string_car_tc">"Modelo: "</string>
+    <string name="string_serial_tc">"Serial: "</string>
+    <string name="string_desc_tc">"Descripción: "</string>
+    <string name="string_trouble_tc">"Código de error: "</string>
+    <string name="string_zone_tc">"Zona: "</string>
+    <string name="no_trouble_codes">No se han detectado errores</string>
 </resources>

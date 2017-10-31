@@ -28,6 +28,7 @@ import com.app.heydriver.heydriver.controller.adapters.SynchronizingAdapter;
 import com.app.heydriver.heydriver.controller.fragments.CarSelectionFragment;
 import com.app.heydriver.heydriver.controller.fragments.HomeFragment;
 import com.app.heydriver.heydriver.controller.fragments.ObdReaderFragment;
+import com.app.heydriver.heydriver.controller.fragments.TroubleCodesFragment;
 import com.app.heydriver.heydriver.model.ManageInformation;
 import com.app.heydriver.heydriver.model.RestCommunication;
 import com.github.pires.obd.commands.control.TroubleCodesCommand;
@@ -192,7 +193,7 @@ public class HomeActivity extends AppCompatActivity
                     Toast.makeText(getApplicationContext(), getString(R.string.error_not_selected_car),Toast.LENGTH_LONG).show();
                 }
             } else if (id == R.id.nav_trouble_codes) {
-                //changeFragment(R.id.content_frame, fragmentManager, new TroubleCodesFragment(), id, "trouble_codes");
+                changeFragment(R.id.content_frame, fragmentManager, new TroubleCodesFragment(), id, "trouble_codes");
             } else if (id == R.id.nav_predictions) {
                 //changeFragment(R.id.content_frame, fragmentManager, new PredictionsFragment(), id, "predictions");
             } else if (id == R.id.nav_sync) {

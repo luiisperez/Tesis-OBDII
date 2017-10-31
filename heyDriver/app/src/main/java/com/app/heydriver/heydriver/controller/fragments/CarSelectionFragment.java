@@ -112,7 +112,8 @@ public class CarSelectionFragment extends Fragment {
 
             if (success) {
                 //finish();
-                if (response != null){
+                if (response != null)
+                {
                     carsArrayList = response;
                     carSelectionAdapter = new CarSelectionAdapter(carsArrayList);
                     CarSelectionAdapter.holdersList = new ArrayList<CarSelectionAdapter.ViewHolder>();

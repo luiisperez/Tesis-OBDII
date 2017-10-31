@@ -476,11 +476,13 @@ public class ObdReaderFragment extends Fragment
                 if ( !((String) e.getValue()).equals(""))
                 {
                     String[] split_codes = e.getValue().toString().split("\n");
-                    //String[] split_codes = "P0142\nP0143".toString().split("\n");
+                    //String[] split_codes = "P0142\nC0001".toString().split("\n");
                     for (String n : split_codes) {
                         if (!findDTC(info_car.getCarInformation(getActivity()).get_serial(),n))
                         {
-                            saveDTC(info_car.getCarInformation(getActivity()).get_serial(),n);
+                            saveDTC(info_car.getCarInformation(getActivity()).get_serial(),
+                                    info_car.getCarInformation(getActivity()).get_brand()+" "
+                                            +info_car.getCarInformation(getActivity()).get_model(),n);
                             showFailureNotification(n, getTroubleMessage(n));
                         }
                     }
@@ -689,7 +691,7 @@ public class ObdReaderFragment extends Fragment
     public boolean findDTC(String vin, String troble_code) {
         try {
             SQLiteDatabase db = HomeActivity.controladorSQLite.getWritableDatabase();
-            Cursor cursor = db.rawQuery("SELECT vin_dtc, trouble_code_dtc FROM CAR_DTC where trouble_code_dtc = ? and vin_dtc = ?", new String[] {troble_code,vin});
+            Cursor cursor = db.rawQuery("SELECT vin_dtc, trouble_code_dtc FROM CAR_DTC where trouble_code_dtc =? and vin_dtc = ?", new String[] {troble_code,vin});
             cursor.moveToFirst();
             if (cursor.getCount()>0)  {
                     return true;
@@ -703,14 +705,28 @@ public class ObdReaderFragment extends Fragment
         }
     }
     // Save an Trouble Code in SQLite
-    public boolean saveDTC(String vin, String troble_code) {
+    public boolean saveDTC(String vin, String car_model, String troble_code) {
         SQLiteDatabase db = HomeActivity.controladorSQLite.getWritableDatabase();
         ContentValues valores = new ContentValues();
         valores.put(ControladorSQLite.DatosTabla.VIN_DTC,String.valueOf(vin));
+        valores.put(ControladorSQLite.DatosTabla.CAR_MODEL,String.valueOf(car_model));
         valores.put(ControladorSQLite.DatosTabla.TOUBLE_CODE,String.valueOf(troble_code));
         try
         {
             long IdGuardado = db.insert(ControladorSQLite.DatosTabla.NOMBRE_TABLA2, "id", valores);
+            db.close();
+            return true;
+        }
+        catch (Exception e){
+            return false;
+        }
+    }
+    // Reset all Trouble Codes
+    public boolean resetDTC(String vin) {
+        SQLiteDatabase db = HomeActivity.controladorSQLite.getWritableDatabase();
+        try
+        {
+            db.execSQL("delete from "+ ControladorSQLite.DatosTabla.NOMBRE_TABLA2 + " where "+ ControladorSQLite.DatosTabla.VIN_DTC+"='"+vin+"'");
             db.close();
             return true;
         }
@@ -881,8 +897,10 @@ public class ObdReaderFragment extends Fragment
     */
 
     private void startLiveData() {
+        ManageInformation info_car = new ManageInformation();
         Log.d(TAG, "Starting live data..");
         tl.removeAllViews(); //start fresh
+        resetDTC(info_car.getCarInformation(getActivity()).get_serial());
         doBindService();
 
         // start command execution
