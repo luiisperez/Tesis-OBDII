@@ -476,7 +476,7 @@ public class ObdReaderFragment extends Fragment
                 if ( !((String) e.getValue()).equals(""))
                 {
                     String[] split_codes = e.getValue().toString().split("\n");
-                    //String[] split_codes = "P0142\nC0001".toString().split("\n");
+                    //String[] split_codes = "P0142\nC0001\nP0171".toString().split("\n");
                     for (String n : split_codes) {
                         if (!findDTC(info_car.getCarInformation(getActivity()).get_serial(),n))
                         {
