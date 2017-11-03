@@ -22,6 +22,10 @@
             android:id="@+id/nav_predictions"
             android:icon="@drawable/ic_menu_prediction"
             android:title="@string/menu_predictions" />
+        <item
+            android:id="@+id/nav_ubications"
+            android:icon="@drawable/ic_menu_ubication"
+            android:title="@string/menu_ubication" />
     </group>
 
     <item android:title="@string/menu_smart_test">

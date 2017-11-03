@@ -80,8 +80,8 @@
 
     <!-- Strings related to notifications -->
     <string name="failure_detected_title">Falla detectada</string>
-    <string name="failure_detected_message_pt1">El código de la falla es </string>
-    <string name="failure_detected_message_pt2">y el mensaje del error es </string>
+    <string name="failure_detected_message_pt1">Código de Error: </string>
+    <string name="failure_detected_message_pt2">Descripción: </string>
     <string name="menu_start_live_data">Iniciar Lectura</string>
     <string name="menu_smart_test">Análisis</string>
     <string name="menu_settings">Configuración</string>
@@ -105,4 +105,5 @@
     <string name="string_trouble_tc">"Código de error: "</string>
     <string name="string_zone_tc">"Zona: "</string>
     <string name="no_trouble_codes">No se han detectado errores</string>
+    <string name="menu_ubication">Vialidad perjudicial</string>
 </resources>

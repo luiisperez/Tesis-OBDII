@@ -184,8 +184,8 @@
 
     <!-- Strings related to notifications -->
     <string name="failure_detected_title">Failure detected</string>
-    <string name="failure_detected_message_pt1">The failure code is </string>
-    <string name="failure_detected_message_pt2">and the error message is </string>
+    <string name="failure_detected_message_pt1">Failure code: </string>
+    <string name="failure_detected_message_pt2">Error message: </string>
 
     <string name="engine_error">Powertrain</string>
     <string name="body_error">Body</string>
@@ -204,4 +204,5 @@
     <string name="menu_synchronize">Synchronize</string>
     <string name="menu_predictions">Predictive Reports</string>
     <string name="no_trouble_codes">No errors detected</string>
+    <string name="menu_ubication">Damaging roads</string>
 </resources>

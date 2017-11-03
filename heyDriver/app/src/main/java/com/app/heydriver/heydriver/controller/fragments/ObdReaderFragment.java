@@ -29,6 +29,7 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.location.LocationProvider;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
@@ -74,6 +75,7 @@ import com.github.pires.obd.enums.AvailableCommandNames;
 import static android.content.ContentValues.TAG;
 import static android.content.Context.NOTIFICATION_SERVICE;
 import static com.app.heydriver.heydriver.controller.activities.HomeActivity.controladorSQLite;
+import static com.app.heydriver.heydriver.model.AbstractGatewayService.NOTIFICATION_ID;
 import static com.github.pires.obd.enums.AvailableCommandNames.*;
 import java.io.IOException;
 import java.sql.Timestamp;
@@ -99,32 +101,33 @@ public class ObdReaderFragment extends Fragment
         implements ObdProgressListener, LocationListener, GpsStatus.Listener {
 
 
-    //NOTIFICACIONES EN ANDROID
-    public void showFailureNotification(String errorcode, String message) {
-        NotificationCompat.Builder mBuilder;
-        NotificationManager mNotifyMgr =(NotificationManager) getContext().getSystemService(NOTIFICATION_SERVICE);
 
+   //NOTIFICACIONES EN ANDROID
+    public void showFailureNotification(String errorcode, String message) {
         int icono = R.drawable.ic_notification;
         int largeIcono = R.mipmap.icon_driver;
-        Intent i = new Intent(getActivity(), HomeActivity.class);
-        PendingIntent pendingIntent = PendingIntent.getActivity(getActivity(), 0, i, 0);
 
-        mBuilder =new NotificationCompat.Builder(getContext())
-                .setContentIntent(pendingIntent)
-                .setSmallIcon(icono)
-                .setLargeIcon(BitmapFactory.decodeResource(getResources(), largeIcono))
-                .setContentTitle(getString(R.string.failure_detected_title))
-                .setContentText(getString(R.string.failure_detected_message_pt1) + "\"" + errorcode + "\"" +
-                                getString(R.string.failure_detected_message_pt2) + "\"" + message + "\"")
-                .setVibrate(new long[] {100, 250, 100, 500})
-                .setStyle(new NotificationCompat.BigTextStyle()
-                        .bigText(getString(R.string.failure_detected_message_pt1) + " \"" + errorcode + "\" " +
-                                getString(R.string.failure_detected_message_pt2) + " \"" + message + "\""))
-                .setAutoCancel(true);
+        int apiVersion = android.os.Build.VERSION.SDK_INT;
+            NotificationCompat.Builder mBuilder;
+            NotificationManager mNotifyMgr =(NotificationManager) getActivity().getSystemService(NOTIFICATION_SERVICE);
+            Intent i = new Intent(getActivity(), HomeActivity.class);
+            PendingIntent pendingIntent = PendingIntent.getActivity(getActivity(), 0, i, 0);
+            mBuilder =new NotificationCompat.Builder(getActivity())
+                    .setContentIntent(pendingIntent)
+                    .setSmallIcon(icono)
+                    .setLargeIcon(BitmapFactory.decodeResource(getResources(), largeIcono))
+                    .setContentTitle(getString(R.string.failure_detected_title))
+                    .setContentText(getString(R.string.failure_detected_message_pt1) + "\"" + errorcode + "\" \n")
+                    .setSubText(message)
+                    .setVibrate(new long[] {100, 250, 100, 500})
+                    .setStyle(new NotificationCompat.BigTextStyle()
+                            .bigText(getString(R.string.failure_detected_message_pt1) + " \"" + errorcode + "\" \n" +
+                                    getString(R.string.failure_detected_message_pt2) + " \"" + message + "\""))
+                    .setAutoCancel(true);
 
-        Random random = new Random();
-        int m = random.nextInt(9999 - 1000) + 1000;
-        mNotifyMgr.notify(m, mBuilder.build());
+            Random random = new Random();
+            int m = random.nextInt(9999 - 1000) + 1000;
+            mNotifyMgr.notify(m, mBuilder.build());
     }
 
     private static final String TAG = ObdReaderFragment.class.getName();

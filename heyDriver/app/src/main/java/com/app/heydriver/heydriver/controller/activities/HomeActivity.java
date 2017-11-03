@@ -196,7 +196,10 @@ public class HomeActivity extends AppCompatActivity
                 changeFragment(R.id.content_frame, fragmentManager, new TroubleCodesFragment(), id, "trouble_codes");
             } else if (id == R.id.nav_predictions) {
                 //changeFragment(R.id.content_frame, fragmentManager, new PredictionsFragment(), id, "predictions");
-            } else if (id == R.id.nav_sync) {
+            }else if (id == R.id.nav_ubications) {
+                //changeFragment(R.id.content_frame, fragmentManager, new UbicationsFragment(), id, "predictions");
+            }
+            else if (id == R.id.nav_sync) {
                 mSynchronizeTask = new Synchronizing();
                 mSynchronizeTask.execute((Void) null);
             }
