@@ -25,8 +25,8 @@ public class DAOCar extends DAO{
     private static String _sqlAddVehicle = "{?=call ADD_VEHICLE(?,?,?,?,?)}";
     private static String _sqlCarsUserInformation = "{call CARS_USER_INFORMATION(?)}";
     private static String _sqlRemoveVehicle = "{?=call REMOVE_VEHICLE(?,?)}";
-    private static String _sqlCarBrandsInformation = "{?=call CAR_BRANDS_INFORMATION()}";
-    private static String _sqlCarModelsByBrandInformation = "{?=call CAR_MODELS_BY_BRAND_INFORMATION(?)}";
+    private static String _sqlCarBrandsInformation = "{call CAR_BRANDS_INFORMATION()}";
+    private static String _sqlCarModelsByBrandInformation = "{call CAR_MODELS_BY_BRAND_INFORMATION(?)}";
     private ResultSet rs;
     
     public int create(String username, Car _car) throws Exception {
@@ -154,7 +154,7 @@ public class DAOCar extends DAO{
             cstmt = _bdCon.prepareCall(_sqlCarBrandsInformation);
             rs = cstmt.executeQuery();
             while(rs.next()){
-                brandsList.add(rs.getString("brandname"));
+                brandsList.add(rs.getString("brand"));
             }
             return brandsList;
 
@@ -183,11 +183,11 @@ public class DAOCar extends DAO{
 
         try {
             _bdCon = DAO.getBdConnect();
-            cstmt = _bdCon.prepareCall(_sqlCarBrandsInformation);
+            cstmt = _bdCon.prepareCall(_sqlCarModelsByBrandInformation);
             cstmt.setString(1, brandname);
             rs = cstmt.executeQuery();
             while(rs.next()){
-                modelsByBrand.add(rs.getString("brandname"));
+                modelsByBrand.add(rs.getString("model"));
             }
             return modelsByBrand;
 

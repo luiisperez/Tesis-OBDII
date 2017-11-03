@@ -28,13 +28,14 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Locale;
 
 import static android.content.ContentValues.TAG;
 
 public class RestCommunication {
-    private String ip = "192.168.1.108";
+    private String ip = "192.168.0.102";
     private static HttpURLConnection conn;
 
 
@@ -226,6 +227,60 @@ public class RestCommunication {
         }
         catch (Exception ex){
             db.close();
+            throw ex;
+        }
+    }
+
+    public ArrayList<String> callMethodGetVehicleBrands() throws Exception {
+        try {
+            conn = null;
+            Gson gson = new GsonBuilder().create();
+            BufferedReader br = communicate("GET", "getBrands");
+            String output;
+            ArrayList<String> response = new ArrayList<String>();
+            ArrayList<String> _response = new ArrayList<String>();
+            Type listType = new TypeToken<ArrayList<String>>() {}.getType();
+
+            while ((output = br.readLine()) != null) {
+                _response = gson.fromJson(output, listType);
+            }
+            conn.disconnect();
+            Collections.sort(_response, new Comparator<String>() {
+                @Override
+                public int compare(String s1, String s2) {
+                    return s1.compareTo(s2);
+                }
+            });
+            return _response;
+        }
+        catch (Exception ex){
+            throw ex;
+        }
+    }
+
+    public ArrayList<String> callMethodGetVehicleModelsByBrand(String brand) throws Exception {
+        try {
+            conn = null;
+            Gson gson = new GsonBuilder().create();
+            BufferedReader br = communicate("GET", "getModels?brand=" + brand );
+            String output;
+            ArrayList<String> response = new ArrayList<String>();
+            ArrayList<String> _response = new ArrayList<String>();
+            Type listType = new TypeToken<ArrayList<String>>() {}.getType();
+
+            while ((output = br.readLine()) != null) {
+                _response = gson.fromJson(output, listType);
+            }
+            conn.disconnect();
+            Collections.sort(_response, new Comparator<String>() {
+                @Override
+                public int compare(String s1, String s2) {
+                    return s1.compareTo(s2);
+                }
+            });
+            return _response;
+        }
+        catch (Exception ex){
             throw ex;
         }
     }

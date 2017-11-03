@@ -312,18 +312,19 @@ public class CarRegistrationFragment extends Fragment implements AdapterView.OnI
         protected Boolean doInBackground(Void... params) {
             // TODO: attempt authentication against a network service.
             ApiNHTSA apiNHTSA = new ApiNHTSA();
+            RestCommunication webservice = new RestCommunication();
 
             boolean exito = false;
             int repeticiones = 0;
             while ((!exito) && (repeticiones !=2)) {
                 try {
                     if (brand.equals("")) {
-                        ArrayList<String> vehicleBrands = apiNHTSA.getVehicleBrands();
+                        ArrayList<String> vehicleBrands = webservice.callMethodGetVehicleBrands();
                         CarRegistrationFragment.brands = vehicleBrands;
                         //return true;
                         exito = true;
                     } else {
-                        ArrayList<String> vehicleModels = apiNHTSA.getModelsOfABrand(brand);
+                        ArrayList<String> vehicleModels = webservice.callMethodGetVehicleModelsByBrand(brand);
                         CarRegistrationFragment.models = vehicleModels;
                         //return true;
                         exito = true;

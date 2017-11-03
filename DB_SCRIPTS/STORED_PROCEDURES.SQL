@@ -173,7 +173,7 @@ $$ LANGUAGE plpgsql;
 
 /**************************************************CONSULTAR MARCAS DE VEHICULOS**************************************************/
 
-CREATE OR REPLACE FUNCTION CAR_BRANDS_INFORMATION() RETURNS TABLE (brandname varchar(1000)) AS $$
+CREATE OR REPLACE FUNCTION CAR_BRANDS_INFORMATION() RETURNS TABLE (brand varchar(1000)) AS $$
 
 BEGIN
  	RETURN QUERY
@@ -185,7 +185,7 @@ $$ LANGUAGE plpgsql;
 
 /**************************************************CONSULTAR MODELOS DE VEHICULOS POR MARCA**************************************************/
 
-CREATE OR REPLACE FUNCTION CAR_MODELS_BY_BRAND_INFORMATION(varchar(1000)) RETURNS TABLE (modelname varchar(1000), brandname varchar(1000)) AS $$
+CREATE OR REPLACE FUNCTION CAR_MODELS_BY_BRAND_INFORMATION(varchar(1000)) RETURNS TABLE (model varchar(1000), brand varchar(1000)) AS $$
 
 BEGIN
  	RETURN QUERY
