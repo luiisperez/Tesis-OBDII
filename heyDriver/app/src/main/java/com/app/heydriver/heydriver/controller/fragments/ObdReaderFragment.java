@@ -34,6 +34,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.PowerManager;
+import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
@@ -930,24 +931,42 @@ public class ObdReaderFragment extends Fragment
     //Agrega una fila a la lista de parámetros VER
     private void addTableRow(String id, String key, String val) {
 
-        TableRow tr = new TableRow(getActivity());
-        // Recordar que eran Wrap_Content
-        ViewGroup.MarginLayoutParams params = new ViewGroup.MarginLayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-        params.setMargins(TABLE_ROW_MARGIN, TABLE_ROW_MARGIN, TABLE_ROW_MARGIN,
-                TABLE_ROW_MARGIN);
-        tr.setLayoutParams(params);
+        if (!key.startsWith("Vehicle Identification") &&
+                !key.startsWith("Echo Off") &&
+                !key.startsWith("Line Feed") &&
+                !key.startsWith("Timeout") &&
+                !key.startsWith("Select Protocol AUTO") &&
+                !key.startsWith("Fuel Type") &&
+                !key.startsWith("Fuel Consumption Rate") &&
+                !key.startsWith("Engine oil temperature") &&
+                !key.startsWith("Diagnostic Trouble Codes") &&
+                !val.startsWith("NA"))
+        {
+            TableRow tr = new TableRow(getActivity());
+            // Recordar que eran Wrap_Content
+            ViewGroup.MarginLayoutParams params = new ViewGroup.MarginLayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+            params.setMargins(TABLE_ROW_MARGIN, TABLE_ROW_MARGIN, TABLE_ROW_MARGIN,
+                    TABLE_ROW_MARGIN);
+            tr.setLayoutParams(params);
 
-        TextView name = new TextView(getActivity());
-        name.setGravity(Gravity.RIGHT);
-        name.setText(key + ": ");
-        //Show
-        TextView value = new TextView(getActivity());
-        value.setGravity(Gravity.LEFT);
-        value.setText(val); // valor
-        value.setTag(id); //nombre
-        tr.addView(name);
-        tr.addView(value);
-        tl.addView(tr, params);
+            TextView name = new TextView(getActivity());
+            name.setGravity(Gravity.LEFT);
+            name.setText(key + ": ");
+            name.setTextSize(15);
+            name.setTextAppearance(getActivity(),R.style.TextAppearance_FontPath);
+
+            //Show
+            TextView value = new TextView(getActivity());
+            value.setGravity(Gravity.LEFT);
+            value.setText(val); // valor
+            value.setTag(id); //nombre
+            value.setTextSize(15);
+
+            tr.addView(name);
+            tr.addView(value);
+            tr.setPadding(20,5,1,5);
+            tl.addView(tr, params);
+        }
     }
 
     private void queueCommands() {
