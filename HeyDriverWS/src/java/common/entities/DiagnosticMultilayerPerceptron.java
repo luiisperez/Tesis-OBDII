@@ -9,6 +9,7 @@ import org.neuroph.core.NeuralNetwork;
 import org.neuroph.nnet.MultiLayerPerceptron;
 import org.neuroph.core.data.DataSet;
 import org.neuroph.core.data.DataSetRow;
+import org.neuroph.nnet.learning.BackPropagation;
 import org.neuroph.util.TransferFunctionType;
 
 /**
@@ -18,7 +19,7 @@ import org.neuroph.util.TransferFunctionType;
 public class DiagnosticMultilayerPerceptron {
     private int entradas;
     private int salidas;
-    private MultiLayerPerceptron myMlPerceptron;
+    private  MultiLayerPerceptron myMlPerceptron;
 
     
     public static void bildRNA() {
@@ -38,6 +39,11 @@ public class DiagnosticMultilayerPerceptron {
         MultiLayerPerceptron myMlPerceptron = new MultiLayerPerceptron(TransferFunctionType.TANH, 16, 12, 10);
         // learn the training set
         myMlPerceptron.learn(trainingSet);
+        
+        // Aplicación de regla Backpropagation
+        BackPropagation backPropagation = new BackPropagation();
+        backPropagation.setMaxIterations(50000);
+        myMlPerceptron.learn(trainingSet, backPropagation);
 
         // prueba perceptron
         System.out.println("Testing trained neural network");
