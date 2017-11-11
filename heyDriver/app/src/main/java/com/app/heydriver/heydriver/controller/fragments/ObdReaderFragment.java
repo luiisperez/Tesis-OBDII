@@ -799,12 +799,17 @@ public class ObdReaderFragment extends Fragment
                 ConnectivityManager connectivityManager = (ConnectivityManager)getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
 
                 NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
-                if(connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
-                        connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
-                    SynchronizingTask task = new SynchronizingTask();
-                    Toast toast1 = Toast.makeText(getActivity(), R.string.sincronized_data, Toast.LENGTH_SHORT);
-                    toast1.show();
-                }else{
+                try {
+                    if (connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
+                            connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
+                        SynchronizingTask task = new SynchronizingTask();
+                        Toast toast1 = Toast.makeText(getActivity(), R.string.sincronized_data, Toast.LENGTH_SHORT);
+                        toast1.show();
+                    } else {
+                        Toast toast2 = Toast.makeText(getActivity(), R.string.no_internet_error, Toast.LENGTH_LONG);
+                        toast2.show();
+                    }
+                }catch (Exception ex){
                     Toast toast2 = Toast.makeText(getActivity(), R.string.no_internet_error, Toast.LENGTH_LONG);
                     toast2.show();
                 }

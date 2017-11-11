@@ -269,7 +269,7 @@ public class HomeActivity extends AppCompatActivity
                 }
                 else if (response==0)
                 {
-                    Toast toast = Toast.makeText(getApplicationContext(), R.string.error_bad_communication, Toast.LENGTH_LONG);
+                    Toast toast = Toast.makeText(getApplicationContext(), R.string.no_internet_error, Toast.LENGTH_LONG);
                     toast.show();
                 }
             }
