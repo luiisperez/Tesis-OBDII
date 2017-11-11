@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">Hey Driver</string>
 
+    <!-- Strings related to launcher -->
+    <string name="string_start_app">Iniciando la aplicación...</string>
+    <string name="string_sync_info">Sincronizando información...</string>
+
     <!-- Strings related to StartUp -->
     <string name="tv_startup_welcome">Bienvenido a Hey Driver</string>
     <string name="tv_startup_message">Entérate de lo que sucede en tu automóvil</string>
@@ -46,6 +50,7 @@
 
     <string name="action_settings">Ajustes</string>
     <string name="error_not_selected_car">No se ha seleccionado ningún vehículo para escanearlo</string>
+    <string name="error_obd_active">No se puede sincronizar información mientras el OBDII está escaneando</string>
 
     <!-- Strings related to car selection-->
     <string name="title_fragment_car_registration">Registro de vehículos</string>
@@ -76,6 +81,7 @@
     <!-- Strings related to obd reader -->
     <string name="title_fragment_obd_reader">Escaneo con OBD-II</string>
     <string name="unknown_obd_code">Error desconocido. Por favor consulte a un experto</string>
+    <string name="no_internet_error">No se pudo sincronizar los datos extraídos, se sincronizarán en el próximo escaneo, al abrir nuevamente la aplicación o lo puede hacer de forma manual</string>
 
 
     <!-- Strings related to notifications -->

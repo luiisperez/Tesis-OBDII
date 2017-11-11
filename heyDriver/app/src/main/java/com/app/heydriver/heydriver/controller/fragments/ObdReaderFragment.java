@@ -28,6 +28,8 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.location.LocationProvider;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -61,6 +63,7 @@ import com.app.heydriver.heydriver.common.Entities.ControladorSQLite;
 import com.app.heydriver.heydriver.common.Entities.ObdData;
 import com.app.heydriver.heydriver.controller.activities.ConfigActivity;
 import com.app.heydriver.heydriver.controller.activities.HomeActivity;
+import com.app.heydriver.heydriver.controller.adapters.SynchronizingAdapter;
 import com.app.heydriver.heydriver.model.AbstractGatewayService;
 import com.app.heydriver.heydriver.model.ManageInformation;
 import com.app.heydriver.heydriver.model.MockObdGatewayService;
@@ -70,6 +73,7 @@ import com.app.heydriver.heydriver.model.ObdGatewayService;
 import com.app.heydriver.heydriver.model.ObdProgressListener;
 import com.app.heydriver.heydriver.model.ObdReading;
 import com.app.heydriver.heydriver.model.ObdService;
+import com.app.heydriver.heydriver.model.RestCommunication;
 import com.github.pires.obd.commands.ObdCommand;
 import com.github.pires.obd.enums.AvailableCommandNames;
 
@@ -102,6 +106,8 @@ public class ObdReaderFragment extends Fragment
         implements ObdProgressListener, LocationListener, GpsStatus.Listener {
 
 
+
+    public static int sync = 0;
 
    //NOTIFICACIONES EN ANDROID
     public void showFailureNotification(String errorcode, String message) {
@@ -776,16 +782,32 @@ public class ObdReaderFragment extends Fragment
         b_start_data.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                sync = 1;
                 startLiveData();
             }
         });
         b_stop_data.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                sync = 0;
                 stopLiveData();
                 gpsStatusTextView.setText(getString(R.string.status_gps_stopped));
                 Toast toast = Toast.makeText(getActivity(), R.string.menu_stop_live_data, Toast.LENGTH_LONG);
                 toast.show();
+
+                boolean connected = false;
+                ConnectivityManager connectivityManager = (ConnectivityManager)getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+
+                NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+                if(connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
+                        connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
+                    SynchronizingTask task = new SynchronizingTask();
+                    Toast toast1 = Toast.makeText(getActivity(), R.string.sincronized_data, Toast.LENGTH_SHORT);
+                    toast1.show();
+                }else{
+                    Toast toast2 = Toast.makeText(getActivity(), R.string.no_internet_error, Toast.LENGTH_LONG);
+                    toast2.show();
+                }
             }
         });
         return view;
@@ -1102,5 +1124,38 @@ public class ObdReaderFragment extends Fragment
             return null;
         }
 
+    }
+
+    private class SynchronizingTask extends AsyncTask<Void, Void, String> {
+        private ManageInformation info = new ManageInformation();
+        private int response = 0;
+        SynchronizingAdapter sa = new SynchronizingAdapter();
+
+        @Override
+        protected void onPreExecute() {
+
+        }
+
+        @Override
+        protected String doInBackground(Void... params) {
+            List<ObdData> sincData = null;
+            try {
+                RestCommunication con = new RestCommunication();
+                response = con.callMethodSynchronization(sa.syncData());
+                if (response == 1){
+                    return getString(R.string.sincronized_data);
+                }else{
+                    return getString(R.string.no_data);
+                }
+            }
+            catch (Exception e) {
+                return getString(R.string.error_bad_communication);
+            }
+        }
+
+        @Override
+        protected void onPostExecute(final String success) {
+            Toast.makeText(getContext(), success,Toast.LENGTH_LONG).show();
+        }
     }
 }

@@ -200,8 +200,12 @@ public class HomeActivity extends AppCompatActivity
                 //changeFragment(R.id.content_frame, fragmentManager, new UbicationsFragment(), id, "predictions");
             }
             else if (id == R.id.nav_sync) {
-                mSynchronizeTask = new Synchronizing();
-                mSynchronizeTask.execute((Void) null);
+                if (ObdReaderFragment.sync == 0) {
+                    mSynchronizeTask = new Synchronizing();
+                    mSynchronizeTask.execute((Void) null);
+                }else{
+                    Toast.makeText(getApplicationContext(), getString(R.string.error_obd_active),Toast.LENGTH_LONG).show();
+                }
             }
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
