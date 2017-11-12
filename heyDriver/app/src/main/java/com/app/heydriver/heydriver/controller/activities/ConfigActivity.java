@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.LocationManager;
@@ -274,6 +275,25 @@ public class ConfigActivity extends PreferenceActivity implements OnPreferenceCh
 
                 return;
             }
+
+            final Preference bluetooth = (Preference) findPreference("enable_bluetooth_preference");
+            bluetooth.setOnPreferenceClickListener(new OnPreferenceClickListener() {
+
+                public boolean onPreferenceClick(Preference preference) {
+                    if (mBtAdapter == null) {
+                        Toast.makeText(getApplication(),
+                                "This device does not support Bluetooth or it is disabled.",
+                                Toast.LENGTH_LONG).show();
+                        return false;
+                    }else if (!mBtAdapter.isEnabled()) {
+                        Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+                        startActivity(enableBtIntent);
+                    }else if (mBtAdapter.isEnabled()) {
+                        mBtAdapter.disable();
+                    }
+                    return true;
+                }
+            });
 
     /*
      * Listen for preferences click.
