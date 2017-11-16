@@ -500,7 +500,9 @@ public class ObdReaderFragment extends Fragment
             }
             if (e.getKey().equals( TIMING_ADVANCE.toString()))
             {
-                dataSensor.setTiming_Advance(stringToFloat((String) e.getValue()));
+                float ta = stringToFloat((String) e.getValue());
+                dataSensor.setTiming_Advance(((ta*255.0f)/200.0f)-64.0f);
+
             }
             if (e.getKey().equals( CONTROL_MODULE_VOLTAGE.toString()))
             {
