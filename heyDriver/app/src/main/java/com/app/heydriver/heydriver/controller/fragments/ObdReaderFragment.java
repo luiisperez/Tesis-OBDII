@@ -798,10 +798,10 @@ public class ObdReaderFragment extends Fragment
                 toast.show();
 
                 boolean connected = false;
-                ConnectivityManager connectivityManager = (ConnectivityManager)getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
-
-                NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
                 try {
+                    ConnectivityManager connectivityManager = (ConnectivityManager)getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
+                    NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+
                     if (connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
                             connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
                         SynchronizingTask task = new SynchronizingTask();
@@ -1162,7 +1162,7 @@ public class ObdReaderFragment extends Fragment
 
         @Override
         protected void onPostExecute(final String success) {
-            Toast.makeText(getContext(), success,Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity(), success,Toast.LENGTH_LONG).show();
         }
     }
 }
