@@ -50,10 +50,6 @@
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
                 <library dirs="200">
-                    <file>${file.reference.neuroph-core-2.94.jar}</file>
-                    <path-in-war>WEB-INF/lib</path-in-war>
-                </library>
-                <library dirs="200">
                     <file>${file.reference.neuroph-imgrec-2.94.jar}</file>
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
@@ -71,10 +67,6 @@
                 </library>
                 <library dirs="200">
                     <file>${file.reference.logback-core-1.1.2.jar}</file>
-                    <path-in-war>WEB-INF/lib</path-in-war>
-                </library>
-                <library dirs="200">
-                    <file>${file.reference.neuroph-core-2.94.jar}</file>
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
                 <library dirs="200">
