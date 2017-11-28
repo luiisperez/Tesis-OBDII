@@ -74,31 +74,40 @@ public class LauncherActivity extends AppCompatActivity {
                     ConnectivityManager connectivityManager = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
 
                     NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
-                    if(connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
-                            connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
-                        //we are connected to a network
-                        connected = true;
-                        SynchronizingTask task = new SynchronizingTask();
-                        try {
-                            str_result = task.execute((Void) null).get();
-                            status_message.setText(str_result);
-                            new CountDownTimer(2000,1000){
-                                @Override
-                                public void onTick(long millisUntilFinished) {
+                    try {
+                        if(connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
+                                connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
+                            //we are connected to a network
+                            connected = true;
+                            SynchronizingTask task = new SynchronizingTask();
+                            try {
+                                str_result = task.execute((Void) null).get();
+                                status_message.setText(str_result);
+                                new CountDownTimer(2000,1000){
+                                    @Override
+                                    public void onTick(long millisUntilFinished) {
 
-                                }
+                                    }
 
-                                @Override
-                                public void onFinish() {
-                                    finish();
-                                    startActivity(myintent);
-                                }
-                            }.start();
-                        } catch (Exception e) {
-                            e.printStackTrace();
+                                    @Override
+                                    public void onFinish() {
+                                        finish();
+                                        startActivity(myintent);
+                                    }
+                                }.start();
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        }
+                        else{
+                            connected = false;
+                            finish();
+                            startActivity(myintent);
                         }
                     }
-                    else{
+                    //si el dispositivo está registrado en otra red...
+                    catch (Exception e)
+                    {
                         connected = false;
                         finish();
                         startActivity(myintent);

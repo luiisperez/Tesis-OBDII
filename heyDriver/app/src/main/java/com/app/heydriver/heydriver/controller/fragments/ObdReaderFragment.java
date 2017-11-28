@@ -500,7 +500,9 @@ public class ObdReaderFragment extends Fragment
             }
             if (e.getKey().equals( TIMING_ADVANCE.toString()))
             {
-                dataSensor.setTiming_Advance(stringToFloat((String) e.getValue()));
+                float ta = stringToFloat((String) e.getValue());
+                dataSensor.setTiming_Advance(((ta*255.0f)/200.0f)-64.0f);
+
             }
             if (e.getKey().equals( CONTROL_MODULE_VOLTAGE.toString()))
             {
@@ -796,10 +798,10 @@ public class ObdReaderFragment extends Fragment
                 toast.show();
 
                 boolean connected = false;
-                ConnectivityManager connectivityManager = (ConnectivityManager)getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
-
-                NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
                 try {
+                    ConnectivityManager connectivityManager = (ConnectivityManager)getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
+                    NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+
                     if (connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
                             connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
                         SynchronizingTask task = new SynchronizingTask();
@@ -1160,7 +1162,7 @@ public class ObdReaderFragment extends Fragment
 
         @Override
         protected void onPostExecute(final String success) {
-            Toast.makeText(getContext(), success,Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity(), success,Toast.LENGTH_LONG).show();
         }
     }
 }
