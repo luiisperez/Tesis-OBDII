@@ -237,3 +237,17 @@ BEGIN
 	;
 END;
 $$ LANGUAGE plpgsql;
+
+/**************************************************AGREGAR FALLAS DE VEHICULOS**************************************************/
+
+CREATE OR REPLACE FUNCTION ADD_FAILURE(varchar(1000), varchar(1000), varchar(1000)) RETURNS integer AS $$
+DECLARE
+ result integer;
+
+BEGIN
+
+	INSERT INTO failure(FAILUREBRANDNAME, FAILUREBRANDMODEL, FAILUREDESCRIPTION) VALUES ($1, $2, $3);
+	result := 200;
+ 	RETURN result;
+END;
+$$ LANGUAGE plpgsql;

@@ -5,6 +5,7 @@ import com.google.gson.GsonBuilder;
 import common.entities.Car;
 import common.entities.ObdData;
 import common.entities.User;
+import controller.ann_obd_module.ANNStudiesCommand;
 import controller.cars_module.AddCarCommand;
 import controller.cars_module.GetCarBrandsCommand;
 import controller.cars_module.GetCarModelsByBrandCommand;
@@ -13,6 +14,7 @@ import controller.cars_module.RemoveCarCommand;
 import controller.obdData_module.AddObdDataCommand;
 import controller.users_module.LoginCommand;
 import controller.users_module.SignUpCommand;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.ws.rs.core.Context;
@@ -194,6 +196,26 @@ public class HeyDriverWS {
         } catch (Exception ex) {
 
             return gson.toJson( "error" );//nuevo
+        }
+    } 
+    
+    @GET
+    @Path("annStudies")
+    @Produces("application/json")
+    public String annStudies (@QueryParam("brand") String brand, @QueryParam("model") String model, 
+                              @QueryParam("air_fuel_ratio") double air_fuel_ratio, @QueryParam("timeadvance") double timeadvance, 
+                              @QueryParam("rpm") double rpm, @QueryParam("stft2") double stft2, @QueryParam("stft1") double stft1, 
+                              @QueryParam("ltft2") double ltft2, @QueryParam("ltft1") double ltft1, @QueryParam("maf") double maf, 
+                              @QueryParam("coolant") double coolant, @QueryParam("motorcharge") double motorcharge, 
+                              @QueryParam("pressure_at") double pressure_at, @QueryParam("admission_temp") double admission_temp){
+        Gson gson = new GsonBuilder().create();
+        ANNStudiesCommand cmd = new ANNStudiesCommand(brand , model, air_fuel_ratio, timeadvance, rpm, stft2, stft1, ltft2, ltft1, maf, coolant, motorcharge, pressure_at, admission_temp);
+        try {
+            cmd.execute();
+            return gson.toJson(cmd.getFailuresList());
+        } catch (Exception ex) {
+
+            return gson.toJson( new ArrayList<Integer>() );//nuevo
         }
     } 
     

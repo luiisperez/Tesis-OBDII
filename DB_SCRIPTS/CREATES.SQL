@@ -70,3 +70,11 @@ CREATE TABLE HISTORY (
 	LON 						varchar(30) not null, 
 	ALT 						varchar(30) not null
 );
+
+CREATE TABLE FAILURE(
+	FAILUREID					serial not null,
+	FAILUREBRANDNAME			varchar(1000) not null,	
+	FAILUREBRANDMODEL			varchar(1000) not null,	
+	FAILUREDESCRIPTION			varchar(1000) not null,	
+	CONSTRAINT PK_FAILURE PRIMARY KEY (FAILUREID)			
+);
