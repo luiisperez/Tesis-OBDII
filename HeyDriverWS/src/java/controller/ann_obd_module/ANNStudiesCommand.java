@@ -8,6 +8,7 @@ package controller.ann_obd_module;
 import common.entities.Car;
 import controller.Command;
 import java.util.ArrayList;
+import model.ann_obd_module.DAOFailure;
 import model.ann_obd_module.OBDNeuralNetwork;
 import model.cars_module.DAOCar;
 
@@ -17,6 +18,8 @@ import model.cars_module.DAOCar;
  */
 public class ANNStudiesCommand extends Command{
     
+    private String brand;
+    private String model;
     private double air_fuel_ratio;
     private double timeadvance;
     private double rpm;
@@ -31,10 +34,12 @@ public class ANNStudiesCommand extends Command{
     private double admission_temp;
     private ArrayList<Integer> failures;
     
-    public ANNStudiesCommand(double air_fuel_ratio, double timeadvance, double rpm, double stft2, 
+    public ANNStudiesCommand(String brand, String model, double air_fuel_ratio, double timeadvance, double rpm, double stft2, 
                              double stft1, double ltft2, double ltft1, double maf, double coolant, 
                              double motorcharge, double pressure_at, double admission_temp){
-    
+        
+        this.brand = brand;
+        this.model = model;
         this.air_fuel_ratio = air_fuel_ratio;
         this.timeadvance = timeadvance;
         this.rpm = rpm;
@@ -57,10 +62,47 @@ public class ANNStudiesCommand extends Command{
     public void execute() throws Exception{
         try{
             OBDNeuralNetwork ann = new OBDNeuralNetwork();
+            DAOFailure dao = new DAOFailure();
             double[] firstANNResponse = ann.firstNeuralNetwork(air_fuel_ratio, stft2, stft1, ltft2, ltft1, maf, pressure_at);
             double[] secondANNResponse = ann.secondNeuralNetwork(air_fuel_ratio, timeadvance, rpm, stft2, stft1, ltft2, ltft1, maf, coolant, motorcharge);
             double[] thirdANNResponse = ann.thirdNeuralNetwork(air_fuel_ratio, timeadvance, rpm, stft2, stft1, ltft2, ltft1);
             double[] forthANNResponse = ann.forthNeuralNetwork(admission_temp, coolant, air_fuel_ratio, stft2, stft1, ltft2, ltft1, timeadvance, rpm);
+            failures.add((int)Math.round(firstANNResponse[0]));
+            if (Math.round(firstANNResponse[0]) != 0){
+                dao.create(brand, model, "Falla");
+            }
+            failures.add((int)Math.round(firstANNResponse[1]));
+            if (Math.round(firstANNResponse[1]) != 0){
+                dao.create(brand, model, "Falla");
+            }
+            failures.add((int)Math.round(firstANNResponse[2]));
+            if (Math.round(firstANNResponse[2]) != 0){
+                dao.create(brand, model, "Falla");
+            }
+            failures.add((int)Math.round(firstANNResponse[3]));
+            if (Math.round(firstANNResponse[3]) != 0){
+                dao.create(brand, model, "Falla");
+            }
+            failures.add((int)Math.round(secondANNResponse[0]));
+            if (Math.round(secondANNResponse[0]) != 0){
+                dao.create(brand, model, "Falla");
+            }
+            failures.add((int)Math.round(secondANNResponse[1]));
+            if (Math.round(secondANNResponse[1]) != 0){
+                dao.create(brand, model, "Falla");
+            }
+            failures.add((int)Math.round(thirdANNResponse[0]));
+            if (Math.round(thirdANNResponse[0]) != 0){
+                dao.create(brand, model, "Falla");
+            }
+            failures.add((int)Math.round(forthANNResponse[0]));
+            if (Math.round(forthANNResponse[0]) != 0){
+                dao.create(brand, model, "Falla");
+            }
+            failures.add((int)Math.round(forthANNResponse[1]));
+            if (Math.round(forthANNResponse[1]) != 0){
+                dao.create(brand, model, "Falla");
+            }
         }catch (Exception ex){
             throw ex;
         }
