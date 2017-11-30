@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -16,6 +15,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,11 +27,11 @@ import com.app.heydriver.heydriver.common.Entities.User;
 import com.app.heydriver.heydriver.controller.adapters.SynchronizingAdapter;
 import com.app.heydriver.heydriver.controller.fragments.CarSelectionFragment;
 import com.app.heydriver.heydriver.controller.fragments.HomeFragment;
+import com.app.heydriver.heydriver.controller.fragments.LocationsFragment;
 import com.app.heydriver.heydriver.controller.fragments.ObdReaderFragment;
 import com.app.heydriver.heydriver.controller.fragments.TroubleCodesFragment;
 import com.app.heydriver.heydriver.model.ManageInformation;
 import com.app.heydriver.heydriver.model.RestCommunication;
-import com.github.pires.obd.commands.control.TroubleCodesCommand;
 
 import java.util.List;
 
@@ -197,7 +197,8 @@ public class HomeActivity extends AppCompatActivity
             } else if (id == R.id.nav_predictions) {
                 //changeFragment(R.id.content_frame, fragmentManager, new PredictionsFragment(), id, "predictions");
             }else if (id == R.id.nav_ubications) {
-                //changeFragment(R.id.content_frame, fragmentManager, new UbicationsFragment(), id, "predictions");
+                changeFragment(R.id.content_frame, fragmentManager, new LocationsFragment(), id, "predictions");
+
             }
             else if (id == R.id.nav_sync) {
                 if (ObdReaderFragment.sync == 0) {

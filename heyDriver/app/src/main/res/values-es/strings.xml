@@ -112,4 +112,5 @@
     <string name="string_zone_tc">"Zona: "</string>
     <string name="no_trouble_codes">No se han detectado errores</string>
     <string name="menu_ubication">Vialidad perjudicial</string>
+    <string name="status">Estatus</string>
 </resources>
