@@ -6,6 +6,9 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.app.heydriver.heydriver.R;
@@ -27,6 +30,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 public class LocationsFragment extends Fragment implements OnMapReadyCallback {
     private GoogleMap mMap;
+    private Spinner spinner;
     private View view;
 
 
@@ -35,10 +39,46 @@ public class LocationsFragment extends Fragment implements OnMapReadyCallback {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_locations, container, false);
         ((HomeActivity) getActivity()).setActionBarTitle(getString(R.string.title_activity_locations));
+
+        spinner = (Spinner) view.findViewById(R.id.spinner);
+
+
+        ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, android.R.id.text1);
+        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(spinnerAdapter);
+        spinnerAdapter.add(getString(R.string.select_ubication));
+
+        //ejemplos
+        spinnerAdapter.add("Avenida Páez El Paraíso");
+        spinnerAdapter.add("Autopista Caracas La Guaira");
+        spinnerAdapter.add("Autopista Francisco Fajardo");
+
+        spinner.setOnItemSelectedListener(new ItemSelectedListener());
+        spinnerAdapter.notifyDataSetChanged();
+
         return view;
     }
 
-    @Override
+    public class ItemSelectedListener implements AdapterView.OnItemSelectedListener {
+
+        public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+            if (pos == 0) {
+                // ToDo when first item is selected
+            } else {
+                Toast.makeText(parent.getContext(),
+                        getString(R.string.you_selected) + parent.getItemAtPosition(pos).toString(),
+                        Toast.LENGTH_LONG).show();
+                // Todo when item is selected by the user
+            }
+        }
+
+        @Override
+        public void onNothingSelected(AdapterView<?> parent) {
+
+        }
+    }
+
+        @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         try
@@ -71,7 +111,7 @@ public class LocationsFragment extends Fragment implements OnMapReadyCallback {
             LatLng coordenada = new LatLng(10.47706413269043f, -66.94752502441406f);
             // apuntador y icon
             mMap.addMarker(new MarkerOptions().position(coordenada).title("Carro de Luis")).setIcon(BitmapDescriptorFactory.fromResource(R.drawable.map_mark));
-
+            mMap.setTrafficEnabled(true);
             mMap.moveCamera(CameraUpdateFactory.newLatLng(coordenada));
 
             //zoom

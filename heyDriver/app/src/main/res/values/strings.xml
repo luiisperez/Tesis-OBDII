@@ -211,4 +211,6 @@
     <string name="menu_ubication">Damaging roads</string>
     <string name="title_activity_locations">Map</string>
     <string name="status">Status</string>
+    <string name="you_selected">You have selected :</string>
+    <string name="select_ubication">Select a location</string>
 </resources>
