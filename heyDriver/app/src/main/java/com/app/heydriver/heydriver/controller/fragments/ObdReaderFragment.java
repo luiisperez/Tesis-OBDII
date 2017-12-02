@@ -885,49 +885,6 @@ public class ObdReaderFragment extends Fragment
             btStatusTextView.setText(getString(R.string.status_bluetooth_ok));
         }
     }
-/*
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menu.add(0, START_LIVE_DATA, 0, getString(R.string.menu_start_live_data));
-        menu.add(0, STOP_LIVE_DATA, 0, getString(R.string.menu_stop_live_data));
-        menu.add(0, GET_DTC, 0, getString(R.string.menu_get_dtc));
-        menu.add(0, SETTINGS, 0, getString(R.string.menu_settings));
-        getMenuInflater().inflate(R.menu.menu, menu);
-        return true;
-    }
-*/
-
-/*
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        switch (item.getItemId()) {
-            case START_LIVE_DATA:
-                startLiveData();
-                return true;
-            case STOP_LIVE_DATA:
-                stopLiveData();
-                return true;
-            case SETTINGS:
-                updateConfig();
-                return true;
-            case GET_DTC:
-                //getTroubleCodes();
-                //esto iría en un fragment
-                return true;
-        }
-
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-    */
 
     private void startLiveData() {
         ManageInformation info_car = new ManageInformation();
