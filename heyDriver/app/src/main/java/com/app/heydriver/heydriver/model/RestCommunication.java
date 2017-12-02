@@ -284,4 +284,31 @@ public class RestCommunication {
             throw ex;
         }
     }
+
+    public ArrayList<Integer> callMethodGetANNAnalysis(String brand, String model, double air_fuel_ratio, double timeadvance, double rpm,
+                                                       double stft2, double stft1, double ltft2, double ltft1, double maf, double coolant,
+                                                       double motorcharge, double pressure_at, double admission_temp) throws Exception {
+        try {
+            conn = null;
+            Gson gson = new GsonBuilder().create();
+            BufferedReader br = communicate("GET", "annStudies?brand=" + brand + "&model=" + model + "&air_fuel_ratio="
+                                            + air_fuel_ratio + "&timeadvance=" + timeadvance + "&rpm=" + rpm + "&stft2="
+                                            + stft2 + "&stft1=" + stft1 + "&ltft2=" + ltft2 + "&ltft1=" + ltft1 + "&maf=" + maf
+                                            + "&coolant=" + coolant + "&motorcharge=" + motorcharge + "&pressure_at=" + pressure_at
+                                            + "&admission_temp=" + admission_temp);
+            String output;
+            ArrayList<Integer> response = new ArrayList<Integer>();
+            ArrayList<Integer> _response = new ArrayList<Integer>();
+            Type listType = new TypeToken<ArrayList<Integer>>() {}.getType();
+
+            while ((output = br.readLine()) != null) {
+                _response = gson.fromJson(output, listType);
+            }
+            conn.disconnect();
+            return _response;
+        }
+        catch (Exception ex){
+            throw ex;
+        }
+    }
 }
