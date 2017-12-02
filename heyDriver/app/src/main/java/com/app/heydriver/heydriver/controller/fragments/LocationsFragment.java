@@ -1,6 +1,8 @@
 package com.app.heydriver.heydriver.controller.fragments;
 
 import android.app.Fragment;
+import android.location.Address;
+import android.location.Geocoder;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -23,6 +25,11 @@ import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.PolylineOptions;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Cristian on 28/11/2017.
@@ -32,6 +39,8 @@ public class LocationsFragment extends Fragment implements OnMapReadyCallback {
     private GoogleMap mMap;
     private Spinner spinner;
     private View view;
+    String ActualUbication = "";
+    List<Address> addresses;
 
 
     @Nullable
@@ -49,9 +58,9 @@ public class LocationsFragment extends Fragment implements OnMapReadyCallback {
         spinnerAdapter.add(getString(R.string.select_ubication));
 
         //ejemplos
-        spinnerAdapter.add("Avenida Páez El Paraíso");
-        spinnerAdapter.add("Autopista Caracas La Guaira");
-        spinnerAdapter.add("Autopista Francisco Fajardo");
+        spinnerAdapter.add("Av. José Antonio Páez, Caracas, Distrito Capital, Venezuela");
+        spinnerAdapter.add("Autopista Caracas La Guaira Caracas Venezuela");
+        spinnerAdapter.add("Autopista Francisco Fajardo Caracas Venezuela");
 
         spinner.setOnItemSelectedListener(new ItemSelectedListener());
         spinnerAdapter.notifyDataSetChanged();
@@ -61,14 +70,21 @@ public class LocationsFragment extends Fragment implements OnMapReadyCallback {
 
     public class ItemSelectedListener implements AdapterView.OnItemSelectedListener {
 
+        Geocoder geocoder = new Geocoder(getActivity());
         public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
             if (pos == 0) {
-                // ToDo when first item is selected
+                ActualUbication = "";
             } else {
                 Toast.makeText(parent.getContext(),
                         getString(R.string.you_selected) + parent.getItemAtPosition(pos).toString(),
                         Toast.LENGTH_LONG).show();
-                // Todo when item is selected by the user
+                try {
+                    ActualUbication = parent.getItemAtPosition(pos).toString();
+                    addresses = geocoder.getFromLocationName(ActualUbication, 2);
+                    markInMap(mMap,addresses);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
 
@@ -98,8 +114,50 @@ public class LocationsFragment extends Fragment implements OnMapReadyCallback {
 
     }
 
+    public void markInMap(GoogleMap googleMap, List<Address> address)
+    {
+        LatLng coordenada,coordenada2 ;
+        ArrayList<LatLng> points = new ArrayList<LatLng>();
+        PolylineOptions polyLineOptions = new PolylineOptions();
+
+        if (addresses!=null)
+        {
+            if(addresses.size() > 1) {
+
+                coordenada = new LatLng(addresses.get(0).getLatitude(),addresses.get(0).getLongitude());
+                coordenada2 = new LatLng(addresses.get(1).getLatitude(),addresses.get(1).getLongitude());
+
+
+                mMap.addMarker(new MarkerOptions().position(coordenada).title(ActualUbication)).setIcon(BitmapDescriptorFactory.fromResource(R.drawable.map_mark));
+                mMap.setTrafficEnabled(true);
+                mMap.moveCamera(CameraUpdateFactory.newLatLng(coordenada));
+
+                //zoom
+                float zoom =16;
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(coordenada,zoom));
+            }
+            if(addresses.size() == 1) {
+                coordenada = new LatLng(addresses.get(0).getLatitude(),addresses.get(0).getLongitude());
+                mMap.addMarker(new MarkerOptions().position(coordenada).title(ActualUbication)).setIcon(BitmapDescriptorFactory.fromResource(R.drawable.map_mark));
+
+                mMap.setTrafficEnabled(true);
+                mMap.moveCamera(CameraUpdateFactory.newLatLng(coordenada));
+
+                //zoom
+                float zoom =16;
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(coordenada,zoom));
+            }
+            if(addresses.size() == 0) {
+                // no se ha encontrado la ubicación
+                Toast.makeText(getActivity(), getActivity().getString(R.string.error_bad_communication), Toast.LENGTH_LONG).show();
+            }
+
+        }
+    }
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
+
         mMap = googleMap;
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
 
@@ -108,15 +166,10 @@ public class LocationsFragment extends Fragment implements OnMapReadyCallback {
 
         // location
         try {
-            LatLng coordenada = new LatLng(10.47706413269043f, -66.94752502441406f);
+            LatLng coordenada = new LatLng(0.0f, 0.0f);
             // apuntador y icon
-            mMap.addMarker(new MarkerOptions().position(coordenada).title("Carro de Luis")).setIcon(BitmapDescriptorFactory.fromResource(R.drawable.map_mark));
             mMap.setTrafficEnabled(true);
             mMap.moveCamera(CameraUpdateFactory.newLatLng(coordenada));
-
-            //zoom
-            float zoom =16;
-            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(coordenada,zoom));
         }
         catch (Exception e)
         {
