@@ -32,7 +32,7 @@ public class ANNStudiesCommand extends Command{
     private double motorcharge;
     private double pressure_at;
     private double admission_temp;
-    private ArrayList<Integer> failures;
+    private ArrayList<Integer> failures = new ArrayList<Integer>();
     
     public ANNStudiesCommand(String brand, String model, double air_fuel_ratio, double timeadvance, double rpm, double stft2, 
                              double stft1, double ltft2, double ltft1, double maf, double coolant, 
