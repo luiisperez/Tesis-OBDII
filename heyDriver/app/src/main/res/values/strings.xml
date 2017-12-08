@@ -213,4 +213,33 @@
     <string name="status">Status</string>
     <string name="you_selected">You have selected :</string>
     <string name="select_ubication">Select a location</string>
+    <string name="prediction_highConsumption">Disproportionate fuel consumption</string>
+    <string name="desc_highConsumption"> El vehículo está consumiendo una excesiva cantidad de combustible, esto puede ser causado por:\n
+        -	Malos hábitos de conducción.\n
+        -	Desperfectos en los inyectores.\n
+        -	Presión de combustible muy alta.\n
+        -	Desperfectos en el sistema de admisión de aire.
+</string>
+    <string name="desc_mix_to_lean">There is more air than necessary for complete combustion. There may be an increase in combustion temperature, reduction in power, and an increase in nitrogen oxide emissions.</string>
+    <string name="desc_mix_too_rich">There is not enough air (oxygen) to sustain complete combustion. Rich mixtures increase fuel consumption, hydrocarbon (HC) and carbon monoxide (CO) emissions.</string>
+    <string name="desc_maf">The mass air flow sensor determines an important parameter in the calculation of the amount of fuel to be injected, when to start the cylinder, and when to make the gear change in the transmission. Its damage can cause serious problems.</string>
+    <string name="desc_injector">A clogged injector does not allow the engine to receive the proper amount of fuel, which can lead to incorrect mixes in the combustion chamber and significant power losses.</string>
+    <string name="desc_coil">The ignition coils supply the spark plugs with high voltage current to produce the spark needed for combustion of the fuel engine. Its damage can cause the combustion of one or several cylinders to stop.</string>
+    <string name="desc_spark">The spark plug is the element that produces the ignition of the mixture of fuel and oxygen in the cylinders by means of a spark. Its failure causes significant power losses, and a failed combustion in the engine.</string>
+    <string name="desc_temperature">Condition in which the temperature of the engine rises to higher than normal values. If it is maintained for a long time, it can cause serious damage to the engine, such as kinks and valve ruptures, connecting rod arms, blown packaging, kinking of cylinder heads , piston breaks, etc.</string>
+    <string name="desc_radiator">The radiator is responsible for dissipating the heat of the cooling liquid coming from the engine to regulate, in this way, its temperature. Its damage can cause an imminent overheating of the vehicle, and serious faults in the engine.</string>
+    <string name="desc_alternator">The alternator essentially converts the mechanical energy of the crankshaft into electricity through induction, thus maintaining the charge of the battery. Its malfunction can make it impossible to start the vehicle.</string>
+
+
+    <string name="string_anomaly_tc">"Anomaly: "</string>
+    <string name="no_prediction_codes">No predictions have been determined</string>
+    <string name="prediction_mix_too_lean">Air / fuel mixture, too lean</string>
+    <string name="prediction_mix_too_rich">Air / fuel mixture, too rich</string>
+    <string name="prediction_maf">MAF sensor Dirty or damaged</string>
+    <string name="prediction_injectors">Dirty or damaged injectors</string>
+    <string name="prediction_coil">Damaged coil</string>
+    <string name="prediction_spark">Spark plug prone to damage</string>
+    <string name="prediction_temperature">Vehicle prone to overheating</string>
+    <string name="prediction_radiator">Damaged radiator</string>
+    <string name="prediction_alternator">Damaged alternator</string>
 </resources>

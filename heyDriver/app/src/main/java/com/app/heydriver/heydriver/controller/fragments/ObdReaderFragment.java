@@ -1,9 +1,6 @@
 package com.app.heydriver.heydriver.controller.fragments;
 
 import android.Manifest;
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.bluetooth.BluetoothAdapter;
@@ -21,8 +18,6 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import android.location.Address;
-import android.location.Geocoder;
 import android.location.GpsStatus;
 import android.location.Location;
 import android.location.LocationListener;
@@ -31,13 +26,10 @@ import android.location.LocationProvider;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.PowerManager;
-import android.support.annotation.ColorInt;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.app.Fragment;
@@ -49,10 +41,8 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -77,20 +67,15 @@ import com.app.heydriver.heydriver.model.RestCommunication;
 import com.github.pires.obd.commands.ObdCommand;
 import com.github.pires.obd.enums.AvailableCommandNames;
 
-import static android.content.ContentValues.TAG;
 import static android.content.Context.NOTIFICATION_SERVICE;
-import static com.app.heydriver.heydriver.controller.activities.HomeActivity.controladorSQLite;
-import static com.app.heydriver.heydriver.model.AbstractGatewayService.NOTIFICATION_ID;
 import static com.github.pires.obd.enums.AvailableCommandNames.*;
 import java.io.IOException;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 import java.util.Random;
 
@@ -630,7 +615,7 @@ public class ObdReaderFragment extends Fragment
         valores.put(ControladorSQLite.DatosTabla.ALT,String.valueOf(dataSensor.getAlt()));
         try
         {
-            long IdGuardado = db.insert(ControladorSQLite.DatosTabla.NOMBRE_TABLA, "id", valores);
+            long IdGuardado = db.insert(ControladorSQLite.DatosTabla.TABLA_HISTORICO, "id", valores);
             db.close();
         }
         catch (Exception e){
@@ -725,7 +710,7 @@ public class ObdReaderFragment extends Fragment
         valores.put(ControladorSQLite.DatosTabla.TOUBLE_CODE,String.valueOf(troble_code));
         try
         {
-            long IdGuardado = db.insert(ControladorSQLite.DatosTabla.NOMBRE_TABLA2, "id", valores);
+            long IdGuardado = db.insert(ControladorSQLite.DatosTabla.TABLA_CAR_DTC, "id", valores);
             db.close();
             return true;
         }
@@ -738,7 +723,7 @@ public class ObdReaderFragment extends Fragment
         SQLiteDatabase db = HomeActivity.controladorSQLite.getWritableDatabase();
         try
         {
-            db.execSQL("delete from "+ ControladorSQLite.DatosTabla.NOMBRE_TABLA2 + " where "+ ControladorSQLite.DatosTabla.VIN_DTC+"='"+vin+"'");
+            db.execSQL("delete from "+ ControladorSQLite.DatosTabla.TABLA_CAR_DTC + " where "+ ControladorSQLite.DatosTabla.VIN_DTC+"='"+vin+"'");
             db.close();
             return true;
         }

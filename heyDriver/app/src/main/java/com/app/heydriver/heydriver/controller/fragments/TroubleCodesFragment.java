@@ -2,7 +2,6 @@ package com.app.heydriver.heydriver.controller.fragments;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
-import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -18,7 +17,6 @@ import android.widget.Toast;
 import com.app.heydriver.heydriver.R;
 import com.app.heydriver.heydriver.common.Entities.TroubleCode;
 import com.app.heydriver.heydriver.controller.activities.HomeActivity;
-import com.app.heydriver.heydriver.controller.adapters.CarSelectionAdapter;
 import com.app.heydriver.heydriver.controller.adapters.TroubleCodesAdapter;
 
 import java.util.ArrayList;
@@ -79,7 +77,7 @@ public class TroubleCodesFragment extends Fragment {
         try {
             ArrayList<TroubleCode> troubleCodesArrayList = new ArrayList<TroubleCode>();
             SQLiteDatabase db = HomeActivity.controladorSQLite.getWritableDatabase();
-            Cursor cursor = db.rawQuery("SELECT car_model, vin_dtc, trouble_code_dtc FROM CAR_DTC",null);
+            Cursor cursor = db.rawQuery("SELECT car_model, vin_dtc, trouble_code_dtc FROM CAR_DTC order by car_model",null);
             if (cursor.moveToFirst()) {
                 do {
                     //TODO

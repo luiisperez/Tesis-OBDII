@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:viewportWidth="512"
+    android:viewportHeight="512"
+    android:width="512dp"
+    android:height="512dp">
+    <path
+        android:pathData="M76 135l360 0 0 302 -360 0z"
+        android:fillColor="#c5c9f7" />
+    <path
+        android:pathData="M421 45l0 30c0 19.799 -30 19.799 -30 0l0 -30c0 -8.401 -6.599 -15 -15 -15l-240 0c-8.401 0 -15 6.599 -15 15l0 30c0 8.399 -6.599 15 -15 15C97.599 90 91 83.399 91 75L91 45C91 20.099 111.099 0 136 0l240 0c24.901 0 45 20.099 45 45z"
+        android:fillColor="#003a92" />
+    <path
+        android:pathData="M421 45l0 30c0 19.799 -30 19.799 -30 0l0 -30c0 -8.401 -6.599 -15 -15 -15l-120 0 0 -30 120 0c24.901 0 45 20.099 45 45z"
+        android:fillColor="#00246b" />
+    <path
+        android:pathData="M256 135l180 0 0 302 -180 0z"
+        android:fillColor="#a8aff1" />
+    <path
+        android:pathData="M436 120l-360 0c-8.401 0 -15 6.599 -15 15l0 302c0 8.399 6.599 15 15 15l360 0c8.401 0 15 -6.601 15 -15l0 -302c0 -8.401 -6.599 -15 -15 -15zm-315 302l-30 0 0 -272 30 0 0 272zm60 0l-30 0 0 -272 30 0 0 272zm60 0l-30 0 0 -272 30 0 0 272zm60 0l-30 0 0 -272 30 0 0 272zm60 0l-30 0 0 -272 30 0 0 272zm60 0l-30 0 0 -272 30 0 0 272z"
+        android:fillColor="#e1e4fb" />
+    <path
+        android:pathData="M436 422l-360 0c-24.901 0 -45 20.099 -45 45 0 24.899 20.099 45 45 45l360 0c24.901 0 45 -20.101 45 -45 0 -24.901 -20.099 -45 -45 -45z"
+        android:fillColor="#0050b2" />
+    <path
+        android:pathData="M436 120l-180 0 0 332 180 0c8.401 0 15 -6.601 15 -15l0 -302c0 -8.401 -6.599 -15 -15 -15zm-135 302l-30 0 0 -272 30 0 0 272zm60 0l-30 0 0 -272 30 0 0 272zm60 0l-30 0 0 -272 30 0 0 272z"
+        android:fillColor="#c5c9f7" />
+    <path
+        android:pathData="M481 467c0 24.899 -20.099 45 -45 45l-180 0 0 -90 180 0c24.901 0 45 20.099 45 45z"
+        android:fillColor="#003a92" />
+    <path
+        android:pathData="M436 60L76 60c-24.901 0 -45 20.099 -45 45 0 24.899 20.099 45 45 45l360 0c24.901 0 45 -20.101 45 -45 0 -24.901 -20.099 -45 -45 -45z"
+        android:fillColor="#0050b2" />
+    <path
+        android:pathData="M436 150l-180 0 0 -90 180 0c24.901 0 45 20.099 45 45 0 24.899 -20.099 45 -45 45z"
+        android:fillColor="#003a92" />
+</vector>

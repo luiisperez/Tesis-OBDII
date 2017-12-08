@@ -215,7 +215,7 @@ public class HeyDriverWS {
             return gson.toJson(cmd.getFailuresList());
         } catch (Exception ex) {
 
-            return gson.toJson( new ArrayList<Integer>() );//nuevo
+            return gson.toJson( new ArrayList<Long>() );//nuevo
         }
     } 
     

@@ -115,4 +115,37 @@
     <string name="status">Estatus</string>
     <string name="you_selected">Has seleccionado :</string>
     <string name="select_ubication">Selecciona una ubicación</string>
+    <string name="string_anomaly_tc">"Anomalía: "</string>
+    <string name="no_prediction_codes">No se han determinado predicciones</string>
+
+    <!-- Strings related to predictions of decriptions -->
+    <string name="desc_highConsumption"> El vehículo está consumiendo una excesiva cantidad de combustible, esto puede ser causado por:\n
+        -	Malos hábitos de conducción.\n
+        -	Desperfectos en los inyectores.\n
+        -	Presión de combustible muy alta.\n
+        -	Desperfectos en el sistema de admisión de aire.
+</string>
+    <string name="desc_mix_to_lean">Existe más aire del necesario para una combustión completa. Puede producirse un aumento de la temperatura de combustión, reducción de potencia, y un aumento de emisiones de óxidos de nitrógeno.</string>
+    <string name="desc_mix_too_rich">No existe suficiente aire (oxígeno) para sustentar la combustión completa. Las mezclas ricas aumentan el consumo de combustible, las emisiones de hidrocarburos (HC) y de monóxido de carbono (CO).</string>
+    <string name="desc_maf">El sensor de masa de flujo de aire determina un parámetro importante en el cálculo de la cantidad de combustible a inyectar, cuando encender el cilindro, y cuando hacer el cambio de marcha en la transmisión. Su desperfecto puede causar serios problemas.</string>
+    <string name="desc_injector">Un inyector obstruido no permite que el motor reciba la adecuada cantidad de combustible, lo cual puede ocasionar mezclas incorrectas en la cámara de combusión e importantes pérdidas de potencia.</string>
+    <string name="desc_coil">Las bobinas de encendido suministran a las bujías de encendido, corriente de alta tensión para producir la chispa necesaria para la combustión del motor de combustible. Su desperfecto puede ocasionar el detenimiento de la combustión de uno o varios cilindros.</string>
+    <string name="desc_spark">La bujía es el elemento que produce el encendido de la mezcla de combustible y oxígeno en los cilindros mediante una chispa. Su desperfecto, causa notables pérdidas de potencia, y una combustión fallida en el motor.</string>
+    <string name="desc_temperature">Condición en la cual la temperatura del motor se eleva a valores más altos de lo normal, Si se mantiene mucho tiempo llega a producir daños graves en el motor, como torceduras y roturas de válvulas, brazos de biela, soplado de empaques, torceduras de culatas, roturas de pistones, etc.</string>
+    <string name="desc_radiator">El radiador se encarga de disipar el calor del líquido de refrigeración que viene del motor para regular, de este modo, su temperatura. Su desperfecto puede causar un inminente recalentamiento del vehículo, y graves averías en el motor.</string>
+    <string name="desc_alternator">El alternador, esencialmente convierte la energía mecánica del cigüeñal en electricidad a través de la inducción, manteniendo de esta forma la carga de la batería. Su desperfecto puede imposibilitar el encendido del vehículo.</string>
+
+    <!-- Strings related to predictions names -->
+    <string name="prediction_highConsumption">Consumo desproporcionado de combustible</string>
+
+    <string name="prediction_mix_too_lean">Mezcla de Aire/Combustible muy pobre</string>
+    <string name="prediction_mix_too_rich">Mezcla de Aire/Combustible muy rica</string>
+    <string name="prediction_maf">Sensor MAF sucio o averiado</string>
+    <string name="prediction_injectors">Inyectores sucios o averiados</string>
+    <string name="prediction_coil">Bobina Averiada</string>
+    <string name="prediction_spark">Bujías propensas a daños</string>
+    <string name="prediction_temperature">Vehículo propenso a recalentamiento</string>
+    <string name="prediction_radiator">Radiador Averiado</string>
+    <string name="prediction_alternator">Alternador averiado</string>
+
 </resources>

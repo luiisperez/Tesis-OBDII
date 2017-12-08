@@ -29,6 +29,7 @@ import com.app.heydriver.heydriver.controller.fragments.CarSelectionFragment;
 import com.app.heydriver.heydriver.controller.fragments.HomeFragment;
 import com.app.heydriver.heydriver.controller.fragments.LocationsFragment;
 import com.app.heydriver.heydriver.controller.fragments.ObdReaderFragment;
+import com.app.heydriver.heydriver.controller.fragments.PredictionsFragment;
 import com.app.heydriver.heydriver.controller.fragments.TroubleCodesFragment;
 import com.app.heydriver.heydriver.model.ManageInformation;
 import com.app.heydriver.heydriver.model.RestCommunication;
@@ -195,7 +196,7 @@ public class HomeActivity extends AppCompatActivity
             } else if (id == R.id.nav_trouble_codes) {
                 changeFragment(R.id.content_frame, fragmentManager, new TroubleCodesFragment(), id, "trouble_codes");
             } else if (id == R.id.nav_predictions) {
-                //changeFragment(R.id.content_frame, fragmentManager, new PredictionsFragment(), id, "predictions");
+                changeFragment(R.id.content_frame, fragmentManager, new PredictionsFragment(), id, "predictions");
             }else if (id == R.id.nav_ubications) {
                 changeFragment(R.id.content_frame, fragmentManager, new LocationsFragment(), id, "predictions");
 

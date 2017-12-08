@@ -32,7 +32,7 @@ public class ANNStudiesCommand extends Command{
     private double motorcharge;
     private double pressure_at;
     private double admission_temp;
-    private ArrayList<Integer> failures;
+    private ArrayList<Integer> failures = new ArrayList<Integer>();
     
     public ANNStudiesCommand(String brand, String model, double air_fuel_ratio, double timeadvance, double rpm, double stft2, 
                              double stft1, double ltft2, double ltft1, double maf, double coolant, 
@@ -67,6 +67,8 @@ public class ANNStudiesCommand extends Command{
             double[] secondANNResponse = ann.secondNeuralNetwork(air_fuel_ratio, timeadvance, rpm, stft2, stft1, ltft2, ltft1, maf, coolant, motorcharge);
             double[] thirdANNResponse = ann.thirdNeuralNetwork(air_fuel_ratio, timeadvance, rpm, stft2, stft1, ltft2, ltft1);
             double[] forthANNResponse = ann.forthNeuralNetwork(admission_temp, coolant, air_fuel_ratio, stft2, stft1, ltft2, ltft1, timeadvance, rpm);
+            double h = firstANNResponse[0];
+            long j = Math.round(firstANNResponse[0]);
             failures.add((int)Math.round(firstANNResponse[0]));
             if (Math.round(firstANNResponse[0]) != 0){
                 dao.create(brand, model, "Falla");
