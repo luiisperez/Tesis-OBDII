@@ -44,10 +44,8 @@ public class PredictionsFragment extends Fragment {
         rv_prediction_list = (RecyclerView) view.findViewById(R.id.predictios_codes_list);
         manageRecyclerView();
 
-        // (pruebas)
-        saveDTC("10000000000000000","Dodge","Jorney","1000000000");
-        saveDTC("11000000000000000","Dodge","Caliber","0000000001");
-
+        // (pruebas) justo antes de cada sincronización, esta lista debe ser limpiada
+        //saveDTC("KNAMB763386190635","Kia","Sedona","1010100000");
         return view;
     }
 
@@ -60,7 +58,17 @@ public class PredictionsFragment extends Fragment {
         valores.put(ControladorSQLite.DatosTabla.PREDICTION_CODE,String.valueOf(code));
         try
         {
-            long IdGuardado = db.insert(ControladorSQLite.DatosTabla.TABLA_CAR_PREDICTION, "id", valores);
+            Cursor promedium_cursor = db.rawQuery("SELECT count(*) FROM CAR_PROMEDIUM WHERE vin_dtc='"+vin+"'", null);
+            if (promedium_cursor.moveToFirst() ) {
+                if(promedium_cursor.getInt(0)>=1)
+                {
+                    long IdUpdate = db.update(ControladorSQLite.DatosTabla.TABLA_CAR_PREDICTION, valores, "vin_dtc='" + vin + "'", null);
+                }
+                else
+                {
+                    long IdGuardado = db.insert(ControladorSQLite.DatosTabla.TABLA_CAR_PREDICTION, "id", valores);
+                }
+            }
             db.close();
             return true;
         }

@@ -71,39 +71,39 @@ public class ANNStudiesCommand extends Command{
             long j = Math.round(firstANNResponse[0]);
             failures.add((int)Math.round(firstANNResponse[0]));
             if (Math.round(firstANNResponse[0]) != 0){
-                dao.create(brand, model, "Falla");
+                dao.create(brand, model, "Consumo desproporcionado de combustible");
             }
             failures.add((int)Math.round(firstANNResponse[1]));
             if (Math.round(firstANNResponse[1]) != 0){
-                dao.create(brand, model, "Falla");
+                dao.create(brand, model, "Mezcla de Aire/Combustible muy pobre");
             }
             failures.add((int)Math.round(firstANNResponse[2]));
             if (Math.round(firstANNResponse[2]) != 0){
-                dao.create(brand, model, "Falla");
+                dao.create(brand, model, "Mezcla de Aire/Combustible muy rica");
             }
             failures.add((int)Math.round(firstANNResponse[3]));
             if (Math.round(firstANNResponse[3]) != 0){
-                dao.create(brand, model, "Falla");
+                dao.create(brand, model, "Sensor MAF sucio o averiado");
             }
             failures.add((int)Math.round(secondANNResponse[0]));
             if (Math.round(secondANNResponse[0]) != 0){
-                dao.create(brand, model, "Falla");
+                dao.create(brand, model, "Inyectores sucios o averiados");
             }
             failures.add((int)Math.round(secondANNResponse[1]));
             if (Math.round(secondANNResponse[1]) != 0){
-                dao.create(brand, model, "Falla");
+                dao.create(brand, model, "Bobina Averiada");
             }
             failures.add((int)Math.round(thirdANNResponse[0]));
             if (Math.round(thirdANNResponse[0]) != 0){
-                dao.create(brand, model, "Falla");
+                dao.create(brand, model, "Bujías propensas a daños");
             }
             failures.add((int)Math.round(forthANNResponse[0]));
             if (Math.round(forthANNResponse[0]) != 0){
-                dao.create(brand, model, "Falla");
+                dao.create(brand, model, "Vehículo propenso a recalentamiento");
             }
             failures.add((int)Math.round(forthANNResponse[1]));
             if (Math.round(forthANNResponse[1]) != 0){
-                dao.create(brand, model, "Falla");
+                dao.create(brand, model, "Radiador Averiado");
             }
         }catch (Exception ex){
             throw ex;

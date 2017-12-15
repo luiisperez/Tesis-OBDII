@@ -242,4 +242,10 @@
     <string name="prediction_temperature">Vehicle prone to overheating</string>
     <string name="prediction_radiator">Damaged radiator</string>
     <string name="prediction_alternator">Damaged alternator</string>
+
+    <string name="car_home">Selected car</string>
+    <string name="Trouble_codes_home">Trouble codes</string>
+    <string name="predictive_reports_home">Predictive reports</string>
+    <string name="locations_home">Harmful locations</string>
+    <string name="readdings_home">Readings out of sync</string>
 </resources>

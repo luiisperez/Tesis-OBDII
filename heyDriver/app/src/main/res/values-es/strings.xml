@@ -137,7 +137,6 @@
 
     <!-- Strings related to predictions names -->
     <string name="prediction_highConsumption">Consumo desproporcionado de combustible</string>
-
     <string name="prediction_mix_too_lean">Mezcla de Aire/Combustible muy pobre</string>
     <string name="prediction_mix_too_rich">Mezcla de Aire/Combustible muy rica</string>
     <string name="prediction_maf">Sensor MAF sucio o averiado</string>
@@ -147,5 +146,11 @@
     <string name="prediction_temperature">Vehículo propenso a recalentamiento</string>
     <string name="prediction_radiator">Radiador Averiado</string>
     <string name="prediction_alternator">Alternador averiado</string>
+
+    <string name="car_home">Seleccione un vehículo</string>
+    <string name="Trouble_codes_home">Códigos de error</string>
+    <string name="predictive_reports_home">Reportes predictivos</string>
+    <string name="locations_home">Locaciones nocivas</string>
+    <string name="readdings_home">Datos por sincronizar</string>
 
 </resources>

@@ -1,6 +1,7 @@
 package com.app.heydriver.heydriver.controller.fragments;
 
 import android.Manifest;
+import android.app.Fragment;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.bluetooth.BluetoothAdapter;
@@ -32,7 +33,6 @@ import android.os.IBinder;
 import android.os.PowerManager;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
-import android.app.Fragment;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.Toolbar;
@@ -67,8 +67,6 @@ import com.app.heydriver.heydriver.model.RestCommunication;
 import com.github.pires.obd.commands.ObdCommand;
 import com.github.pires.obd.enums.AvailableCommandNames;
 
-import static android.content.Context.NOTIFICATION_SERVICE;
-import static com.github.pires.obd.enums.AvailableCommandNames.*;
 import java.io.IOException;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
@@ -83,9 +81,36 @@ import retrofit.RestAdapter;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
 
+import static android.content.Context.NOTIFICATION_SERVICE;
 import static android.content.Context.SENSOR_SERVICE;
 import static com.app.heydriver.heydriver.controller.activities.ConfigActivity.getGpsDistanceUpdatePeriod;
 import static com.app.heydriver.heydriver.controller.activities.ConfigActivity.getGpsUpdatePeriod;
+import static com.github.pires.obd.enums.AvailableCommandNames.AIR_FUEL_RATIO;
+import static com.github.pires.obd.enums.AvailableCommandNames.AIR_INTAKE_TEMP;
+import static com.github.pires.obd.enums.AvailableCommandNames.AMBIENT_AIR_TEMP;
+import static com.github.pires.obd.enums.AvailableCommandNames.BAROMETRIC_PRESSURE;
+import static com.github.pires.obd.enums.AvailableCommandNames.CONTROL_MODULE_VOLTAGE;
+import static com.github.pires.obd.enums.AvailableCommandNames.DISTANCE_TRAVELED_MIL_ON;
+import static com.github.pires.obd.enums.AvailableCommandNames.DTC_NUMBER;
+import static com.github.pires.obd.enums.AvailableCommandNames.ENGINE_COOLANT_TEMP;
+import static com.github.pires.obd.enums.AvailableCommandNames.ENGINE_LOAD;
+import static com.github.pires.obd.enums.AvailableCommandNames.ENGINE_OIL_TEMP;
+import static com.github.pires.obd.enums.AvailableCommandNames.ENGINE_RPM;
+import static com.github.pires.obd.enums.AvailableCommandNames.ENGINE_RUNTIME;
+import static com.github.pires.obd.enums.AvailableCommandNames.EQUIV_RATIO;
+import static com.github.pires.obd.enums.AvailableCommandNames.FUEL_CONSUMPTION_RATE;
+import static com.github.pires.obd.enums.AvailableCommandNames.FUEL_LEVEL;
+import static com.github.pires.obd.enums.AvailableCommandNames.FUEL_PRESSURE;
+import static com.github.pires.obd.enums.AvailableCommandNames.FUEL_RAIL_PRESSURE;
+import static com.github.pires.obd.enums.AvailableCommandNames.FUEL_TYPE;
+import static com.github.pires.obd.enums.AvailableCommandNames.INTAKE_MANIFOLD_PRESSURE;
+import static com.github.pires.obd.enums.AvailableCommandNames.MAF;
+import static com.github.pires.obd.enums.AvailableCommandNames.SPEED;
+import static com.github.pires.obd.enums.AvailableCommandNames.THROTTLE_POS;
+import static com.github.pires.obd.enums.AvailableCommandNames.TIMING_ADVANCE;
+import static com.github.pires.obd.enums.AvailableCommandNames.TROUBLE_CODES;
+import static com.github.pires.obd.enums.AvailableCommandNames.VIN;
+import static com.github.pires.obd.enums.AvailableCommandNames.WIDEBAND_AIR_FUEL_RATIO;
 
 public class ObdReaderFragment extends Fragment
         implements ObdProgressListener, LocationListener, GpsStatus.Listener {
@@ -781,7 +806,8 @@ public class ObdReaderFragment extends Fragment
                 gpsStatusTextView.setText(getString(R.string.status_gps_stopped));
                 Toast toast = Toast.makeText(getActivity(), R.string.menu_stop_live_data, Toast.LENGTH_LONG);
                 toast.show();
-
+                homologate();
+                promediate();
                 boolean connected = false;
                 try {
                     ConnectivityManager connectivityManager = (ConnectivityManager)getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -803,6 +829,106 @@ public class ObdReaderFragment extends Fragment
             }
         });
         return view;
+    }
+    private void homologate() {
+        SQLiteDatabase db = HomeActivity.controladorSQLite.getWritableDatabase();
+        ManageInformation info_car = new ManageInformation();
+        Cursor avg_cursor = db.rawQuery("SELECT avg(Air_Intake_Temperature), avg(Engine_Coolant_Temperature), " +
+                "avg(Intake_Manifold_Pressure),avg(Mass_Air_Flow), avg(Engine_Load), " +
+                "avg(Engine_RPM), avg(Timing_Advance), avg(Control_Module_Power_Supply), " +
+                "avg(Short_Term_Fuel_Trim2), avg(Short_Term_Fuel_Trim1), avg(Long_Term_Fuel_Trim2), avg(Long_Term_Fuel_Trim1), " +
+                "avg(AirFuel_Ratio) FROM HISTORICO", null);
+        ContentValues cv = new ContentValues();
+        if (avg_cursor.moveToFirst()) {
+            if(avg_cursor.getDouble(0)==0)
+            {
+                cv.put("Air_Intake_Temperature",42.5f);
+            }
+            if(avg_cursor.getDouble(1)==0)
+            {
+                cv.put("Engine_Coolant_Temperature",65f);
+            }
+            if(avg_cursor.getDouble(2)==0)
+            {
+                cv.put("Intake_Manifold_Pressure",35f);
+            }
+            if(avg_cursor.getDouble(3)==0)
+            {
+                cv.put("Mass_Air_Flow",20.5f);
+            }
+            if(avg_cursor.getDouble(4)==0)
+            {
+                cv.put("Engine_Load",50f);
+            }
+            if(avg_cursor.getDouble(5)==0)
+            {
+                cv.put("Engine_RPM",3200.5f);
+            }
+            if(avg_cursor.getDouble(6)==0)
+            {
+                cv.put("Timing_Advance",0.5f);
+            }
+            if(avg_cursor.getDouble(7)==0)
+            {
+                cv.put("Control_Module_Power_Supply",13.5f);
+            }
+            if(avg_cursor.getDouble(12)==0)
+            {
+                cv.put("AirFuel_Ratio",14.7f);
+            }
+            if (cv.size()>=1) {
+                db.update(ControladorSQLite.DatosTabla.TABLA_HISTORICO, cv, "Vehicle_Identification_Number='"+info_car.getCarInformation(getActivity()).get_serial()+"'", null);
+            }
+            db.close();
+        }
+    }
+
+    private void promediate() {
+        SQLiteDatabase db = HomeActivity.controladorSQLite.getWritableDatabase();
+        ManageInformation info_car = new ManageInformation();
+        Cursor avg_cursor = db.rawQuery("SELECT avg(Air_Intake_Temperature), avg(Engine_Coolant_Temperature), " +
+                "avg(Intake_Manifold_Pressure),avg(Mass_Air_Flow), avg(Engine_Load), " +
+                "avg(Engine_RPM), avg(Timing_Advance), avg(Control_Module_Power_Supply), " +
+                "avg(Short_Term_Fuel_Trim2), avg(Short_Term_Fuel_Trim1), avg(Long_Term_Fuel_Trim2), avg(Long_Term_Fuel_Trim1), " +
+                "avg(AirFuel_Ratio) FROM HISTORICO WHERE Vehicle_Identification_Number='"+info_car.getCarInformation(getActivity()).get_serial()+"'", null);
+        ContentValues cv = new ContentValues();
+        if (avg_cursor.moveToFirst()) {
+            cv.put(ControladorSQLite.DatosTabla.CAR_NAME,info_car.getCarInformation(getActivity()).get_brand());
+            cv.put(ControladorSQLite.DatosTabla.CAR_MODEL,info_car.getCarInformation(getActivity()).get_model());
+            cv.put(ControladorSQLite.DatosTabla.VIN_DTC,info_car.getCarInformation(getActivity()).get_serial());
+            cv.put("Air_Intake_Temperature",avg_cursor.getDouble(0));
+            cv.put("Engine_Coolant_Temperature",avg_cursor.getDouble(1));
+            cv.put("Intake_Manifold_Pressure",avg_cursor.getDouble(2));
+            cv.put("Mass_Air_Flow",avg_cursor.getDouble(3));
+            cv.put("Engine_Load",avg_cursor.getDouble(4));
+            cv.put("Engine_RPM",avg_cursor.getDouble(5));
+            cv.put("Timing_Advance",avg_cursor.getDouble(6));
+            cv.put("Control_Module_Power_Supply",avg_cursor.getDouble(7));
+            cv.put("Short_Term_Fuel_Trim2",avg_cursor.getDouble(8));
+            cv.put("Short_Term_Fuel_Trim1",avg_cursor.getDouble(9));
+            cv.put("Long_Term_Fuel_Trim2",avg_cursor.getDouble(10));
+            cv.put("Long_Term_Fuel_Trim1",avg_cursor.getDouble(11));
+            cv.put("AirFuel_Ratio",avg_cursor.getDouble(12));
+            try
+            {
+                Cursor promedium_cursor = db.rawQuery("SELECT count(*) FROM CAR_PROMEDIUM WHERE vin_dtc='"+info_car.getCarInformation(getActivity()).get_serial()+"'", null);
+                if (promedium_cursor.moveToFirst() ) {
+                    if(promedium_cursor.getInt(0)>=1)
+                    {
+                        long IdUpdate = db.update(ControladorSQLite.DatosTabla.TABLA_CAR_PROMEDIUM, cv, "vin_dtc='" + info_car.getCarInformation(getActivity()).get_serial() + "'", null);
+                    }
+                else
+                    {
+                        long IdInsert = db.insert(ControladorSQLite.DatosTabla.TABLA_CAR_PROMEDIUM, "id", cv);
+                    }
+                }
+                db.close();
+            }
+            catch (Exception e){
+                Log.d(TAG, e.getStackTrace().toString());
+                db.close();
+            }
+        }
     }
 
     @Override
