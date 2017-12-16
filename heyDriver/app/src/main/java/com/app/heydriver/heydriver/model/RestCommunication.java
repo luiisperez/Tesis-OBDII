@@ -158,8 +158,7 @@ public class RestCommunication {
             Gson gson = new GsonBuilder().create();
             BufferedReader br = communicate("GET", "getUserVehicles?user=" + username);
             String output;
-            ArrayList<Car> response = new ArrayList<Car>();
-            ArrayList<Car> _response = new ArrayList<Car>();
+            ArrayList<Car> _response = new ArrayList<>();
             Type listType = new TypeToken<ArrayList<Car>>() {}.getType();
 
             while ((output = br.readLine()) != null) {
@@ -216,8 +215,6 @@ public class RestCommunication {
 
                 }
             }
-
-
             if(reading != null){
                 for (ObdData obdData : reading) {
                     if (obdData.getLTFT2()==Float.valueOf(0)){ obdData.setLTFT2(obdData.getLTFT1());}

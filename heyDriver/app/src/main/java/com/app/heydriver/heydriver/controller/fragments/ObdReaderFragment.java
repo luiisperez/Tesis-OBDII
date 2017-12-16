@@ -255,8 +255,6 @@ public class ObdReaderFragment extends Fragment
                     //Objeto para transferir
                     ObdReading reading = new ObdReading(lat, lon, alt, System.currentTimeMillis(), vin, temp);
                     if (reading != null) {
-                        //Aquí se debería guardar en SQLite
-                        //myCSVWriter.writeLineCSV(reading)
                         Toast.makeText(getActivity(), "Guardado", Toast.LENGTH_LONG).show();
                     }
                     ;
@@ -837,7 +835,7 @@ public class ObdReaderFragment extends Fragment
                 "avg(Intake_Manifold_Pressure),avg(Mass_Air_Flow), avg(Engine_Load), " +
                 "avg(Engine_RPM), avg(Timing_Advance), avg(Control_Module_Power_Supply), " +
                 "avg(Short_Term_Fuel_Trim2), avg(Short_Term_Fuel_Trim1), avg(Long_Term_Fuel_Trim2), avg(Long_Term_Fuel_Trim1), " +
-                "avg(AirFuel_Ratio) FROM HISTORICO", null);
+                "avg(AirFuel_Ratio) FROM HISTORICO WHERE Vehicle_Identification_Number='"+info_car.getCarInformation(getActivity()).get_serial()+"'", null);
         ContentValues cv = new ContentValues();
         if (avg_cursor.moveToFirst()) {
             if(avg_cursor.getDouble(0)==0)
@@ -1213,7 +1211,6 @@ public class ObdReaderFragment extends Fragment
 
         @Override
         protected String doInBackground(Void... params) {
-            List<ObdData> sincData = null;
             try {
                 RestCommunication con = new RestCommunication();
                 response = con.callMethodSynchronization(sa.syncData());
