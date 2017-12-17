@@ -51,6 +51,8 @@ public class HomeFragment extends Fragment {
 
             SQLiteDatabase db = HomeActivity.controladorSQLite.getWritableDatabase();
 
+            //db.execSQL("delete from CAR_PROMEDIUM WHERE  vin_dtc='00000000000000000'");
+            //db.execSQL("delete from CAR_PREDICTION WHERE  vin_dtc='00000000000000000'");
 
             Cursor cursor_dtc = db.rawQuery("SELECT count(*) FROM CAR_DTC WHERE vin_dtc='".concat(info_car.getCarInformation(getActivity()).get_serial().concat("'")),null);
             if (cursor_dtc.moveToFirst()) {
