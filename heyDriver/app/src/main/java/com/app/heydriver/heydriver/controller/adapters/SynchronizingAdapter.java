@@ -29,7 +29,7 @@ public class SynchronizingAdapter {
     public List<ObdData> syncData() throws ParseException {
 
         try {
-            homologate();
+            //homologate();
             SQLiteDatabase db = HomeActivity.controladorSQLite.getWritableDatabase();
             Cursor cursor = db
                     //TODO

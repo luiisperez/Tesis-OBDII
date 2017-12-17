@@ -49,19 +49,21 @@ public class HomeFragment extends Fragment {
         if (info_car.getCarInformation(getActivity()).get_model()!= null) {
             tv_selected_car.setText(info_car.getCarInformation(getActivity()).get_brand().toString().concat(" ").concat(info_car.getCarInformation(getActivity()).get_model().toString()));
 
-        SQLiteDatabase db = HomeActivity.controladorSQLite.getWritableDatabase();
-        Cursor cursor_dtc = db.rawQuery("SELECT count(*) FROM CAR_DTC WHERE vin_dtc='".concat(info_car.getCarInformation(getActivity()).get_serial().concat("'")),null);
+            SQLiteDatabase db = HomeActivity.controladorSQLite.getWritableDatabase();
+
+
+            Cursor cursor_dtc = db.rawQuery("SELECT count(*) FROM CAR_DTC WHERE vin_dtc='".concat(info_car.getCarInformation(getActivity()).get_serial().concat("'")),null);
             if (cursor_dtc.moveToFirst()) {
                 tv_troubles_number_home.setText(String.valueOf(cursor_dtc.getString(0)));
             }
-        Cursor cursor_predictions = db.rawQuery("SELECT DISTINCT prediction_code FROM CAR_PREDICTION WHERE vin_dtc='".concat(info_car.getCarInformation(getActivity()).get_serial().concat("'")),null);
+            Cursor cursor_predictions = db.rawQuery("SELECT DISTINCT prediction_code FROM CAR_PREDICTION WHERE vin_dtc='".concat(info_car.getCarInformation(getActivity()).get_serial().concat("'")),null);
             if (cursor_predictions.moveToFirst()) {
                 tv_prediction_number_home.setText(String.valueOf(getCount(cursor_predictions.getString(0))));
             }
 
-        Cursor cursor_locations = db.rawQuery("SELECT car_model, vin_dtc, trouble_code_dtc FROM CAR_DTC order by car_model",null);
+            Cursor cursor_locations = db.rawQuery("SELECT car_model, vin_dtc, trouble_code_dtc FROM CAR_DTC order by car_model",null);
 
-        Cursor cursor_data = db.rawQuery("SELECT count(*) FROM HISTORICO WHERE Vehicle_Identification_Number='".concat(info_car.getCarInformation(getActivity()).get_serial().concat("'")),null);
+            Cursor cursor_data = db.rawQuery("SELECT count(*) FROM HISTORICO WHERE Vehicle_Identification_Number='".concat(info_car.getCarInformation(getActivity()).get_serial().concat("'")),null);
             if (cursor_data.moveToFirst()) {
                 tv_data_number_home.setText(String.valueOf(cursor_data.getString(0)));
             }

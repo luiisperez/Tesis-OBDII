@@ -34,7 +34,7 @@ import java.util.Locale;
 import static android.content.ContentValues.TAG;
 
 public class RestCommunication {
-    private String ip = "192.168.0.110";
+    private String ip = "192.168.43.142";
     private static HttpURLConnection conn;
 
 
@@ -344,10 +344,10 @@ public class RestCommunication {
             conn = null;
             Gson gson = new GsonBuilder().create();
             BufferedReader br = communicate("GET", "annStudies?brand=" + brand + "&model=" + model + "&air_fuel_ratio="
-                                            + air_fuel_ratio + "&timeadvance=" + timeadvance + "&rpm=" + rpm + "&stft2="
-                                            + stft2 + "&stft1=" + stft1 + "&ltft2=" + ltft2 + "&ltft1=" + ltft1 + "&maf=" + maf
-                                            + "&coolant=" + coolant + "&motorcharge=" + motorcharge + "&pressure_at=" + pressure_at
-                                            + "&admission_temp=" + admission_temp);
+                    + air_fuel_ratio + "&timeadvance=" + timeadvance + "&rpm=" + rpm + "&stft2="
+                    + stft2 + "&stft1=" + stft1 + "&ltft2=" + ltft2 + "&ltft1=" + ltft1 + "&maf=" + maf
+                    + "&coolant=" + coolant + "&motorcharge=" + motorcharge + "&pressure_at=" + pressure_at
+                    + "&admission_temp=" + admission_temp);
             String output;
             ArrayList<Integer> response = new ArrayList<Integer>();
             ArrayList<Integer> _response = new ArrayList<Integer>();

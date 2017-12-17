@@ -119,32 +119,32 @@ public class ObdReaderFragment extends Fragment
 
     public static int sync = 0;
 
-   //NOTIFICACIONES EN ANDROID
+    //NOTIFICACIONES EN ANDROID
     public void showFailureNotification(String errorcode, String message) {
         int icono = R.drawable.ic_notification;
         int largeIcono = R.mipmap.icon_driver;
 
         int apiVersion = android.os.Build.VERSION.SDK_INT;
-            NotificationCompat.Builder mBuilder;
-            NotificationManager mNotifyMgr =(NotificationManager) getActivity().getSystemService(NOTIFICATION_SERVICE);
-            Intent i = new Intent(getActivity(), HomeActivity.class);
-            PendingIntent pendingIntent = PendingIntent.getActivity(getActivity(), 0, i, 0);
-            mBuilder =new NotificationCompat.Builder(getActivity())
-                    .setContentIntent(pendingIntent)
-                    .setSmallIcon(icono)
-                    .setLargeIcon(BitmapFactory.decodeResource(getResources(), largeIcono))
-                    .setContentTitle(getString(R.string.failure_detected_title))
-                    .setContentText(getString(R.string.failure_detected_message_pt1) + "\"" + errorcode + "\" \n")
-                    .setSubText(message)
-                    .setVibrate(new long[] {100, 250, 100, 500})
-                    .setStyle(new NotificationCompat.BigTextStyle()
-                            .bigText(getString(R.string.failure_detected_message_pt1) + " \"" + errorcode + "\" \n" +
-                                    getString(R.string.failure_detected_message_pt2) + " \"" + message + "\""))
-                    .setAutoCancel(true);
+        NotificationCompat.Builder mBuilder;
+        NotificationManager mNotifyMgr =(NotificationManager) getActivity().getSystemService(NOTIFICATION_SERVICE);
+        Intent i = new Intent(getActivity(), HomeActivity.class);
+        PendingIntent pendingIntent = PendingIntent.getActivity(getActivity(), 0, i, 0);
+        mBuilder =new NotificationCompat.Builder(getActivity())
+                .setContentIntent(pendingIntent)
+                .setSmallIcon(icono)
+                .setLargeIcon(BitmapFactory.decodeResource(getResources(), largeIcono))
+                .setContentTitle(getString(R.string.failure_detected_title))
+                .setContentText(getString(R.string.failure_detected_message_pt1) + "\"" + errorcode + "\" \n")
+                .setSubText(message)
+                .setVibrate(new long[] {100, 250, 100, 500})
+                .setStyle(new NotificationCompat.BigTextStyle()
+                        .bigText(getString(R.string.failure_detected_message_pt1) + " \"" + errorcode + "\" \n" +
+                                getString(R.string.failure_detected_message_pt2) + " \"" + message + "\""))
+                .setAutoCancel(true);
 
-            Random random = new Random();
-            int m = random.nextInt(9999 - 1000) + 1000;
-            mNotifyMgr.notify(m, mBuilder.build());
+        Random random = new Random();
+        int m = random.nextInt(9999 - 1000) + 1000;
+        mNotifyMgr.notify(m, mBuilder.build());
     }
 
     private static final String TAG = ObdReaderFragment.class.getName();
@@ -714,11 +714,11 @@ public class ObdReaderFragment extends Fragment
             Cursor cursor = db.rawQuery("SELECT vin_dtc, trouble_code_dtc FROM CAR_DTC where trouble_code_dtc =? and vin_dtc = ?", new String[] {troble_code,vin});
             cursor.moveToFirst();
             if (cursor.getCount()>0)  {
-                    return true;
-                }
-                else
-                    return false;
+                return true;
             }
+            else
+                return false;
+        }
         catch (Exception e)
         {
             return false;
@@ -915,7 +915,7 @@ public class ObdReaderFragment extends Fragment
                     {
                         long IdUpdate = db.update(ControladorSQLite.DatosTabla.TABLA_CAR_PROMEDIUM, cv, "vin_dtc='" + info_car.getCarInformation(getActivity()).get_serial() + "'", null);
                     }
-                else
+                    else
                     {
                         long IdInsert = db.insert(ControladorSQLite.DatosTabla.TABLA_CAR_PROMEDIUM, "id", cv);
                     }

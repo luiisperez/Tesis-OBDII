@@ -209,7 +209,7 @@ public class HeyDriverWS {
                               @QueryParam("coolant") double coolant, @QueryParam("motorcharge") double motorcharge, 
                               @QueryParam("pressure_at") double pressure_at, @QueryParam("admission_temp") double admission_temp){
         Gson gson = new GsonBuilder().create();
-        ANNStudiesCommand cmd = new ANNStudiesCommand(brand , model, air_fuel_ratio, timeadvance, rpm, stft2, stft1, ltft2, ltft1, maf, coolant, motorcharge, pressure_at, admission_temp);
+        ANNStudiesCommand cmd = new ANNStudiesCommand(brand , model, air_fuel_ratio/50, timeadvance/90, rpm/5500, stft2/25, stft1/25, ltft2/25, ltft1/25, maf/100, coolant/300, motorcharge/100, pressure_at/100, admission_temp/300);
         try {
             cmd.execute();
             return gson.toJson(cmd.getFailuresList());
