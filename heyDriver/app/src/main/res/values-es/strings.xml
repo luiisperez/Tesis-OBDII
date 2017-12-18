@@ -152,5 +152,6 @@
     <string name="predictive_reports_home">Reportes predictivos</string>
     <string name="locations_home">Locaciones nocivas</string>
     <string name="readdings_home">Datos por sincronizar</string>
+    <string name="select_trouble_from_CAR_DTC">SELECT vin_dtc, trouble_code_dtc FROM CAR_DTC where trouble_code_dtc =? and vin_dtc = ?</string>
 
 </resources>

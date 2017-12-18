@@ -39,6 +39,7 @@ import java.util.List;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 import static com.app.heydriver.heydriver.common.FragmentSwap.changeFragment;
+import static com.app.heydriver.heydriver.common.FragmentSwap.changeFragmentNoAnimation;
 import static com.app.heydriver.heydriver.controller.activities.LauncherActivity.itemPositionStacks;
 
 public class HomeActivity extends AppCompatActivity
@@ -174,9 +175,7 @@ public class HomeActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-
         int previousId = itemPositionStacks.get(itemPositionStacks.size() - 1);
-
 
         FragmentManager fragmentManager = getFragmentManager();
         if (id != previousId) {
@@ -260,6 +259,8 @@ public class HomeActivity extends AppCompatActivity
                     int duration = Toast.LENGTH_SHORT;
                     Toast toast = Toast.makeText(getApplicationContext(), text, duration);
                     toast.show();
+                    FragmentManager fragmentManager = getFragmentManager();
+                    changeFragmentNoAnimation(R.id.content_frame, fragmentManager, new HomeFragment(), R.id.nav_home, "home");
                 }
             }
             else

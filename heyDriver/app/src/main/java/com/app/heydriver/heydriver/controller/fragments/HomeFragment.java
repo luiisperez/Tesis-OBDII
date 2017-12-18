@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,8 @@ import android.widget.TextView;
 import com.app.heydriver.heydriver.R;
 import com.app.heydriver.heydriver.controller.activities.HomeActivity;
 import com.app.heydriver.heydriver.model.ManageInformation;
+
+import static android.content.ContentValues.TAG;
 
 /**
  * Created by LAPGrock on 8/10/2017.
@@ -38,8 +41,6 @@ public class HomeFragment extends Fragment {
         tv_prediction_number_home = (TextView) view.findViewById(R.id.tv_prediction_number_home);
         tv_locations_number_home = (TextView) view.findViewById(R.id.tv_locations_number_home);
         tv_data_number_home = (TextView) view.findViewById(R.id.tv_data_number_home);
-
-
         manageLayout();
         return view;
     }
@@ -48,7 +49,6 @@ public class HomeFragment extends Fragment {
         ManageInformation info_car = new ManageInformation();
         if (info_car.getCarInformation(getActivity()).get_model()!= null) {
             tv_selected_car.setText(info_car.getCarInformation(getActivity()).get_brand().toString().concat(" ").concat(info_car.getCarInformation(getActivity()).get_model().toString()));
-
             SQLiteDatabase db = HomeActivity.controladorSQLite.getWritableDatabase();
 
             //db.execSQL("delete from CAR_PROMEDIUM WHERE  vin_dtc='00000000000000000'");
@@ -70,8 +70,24 @@ public class HomeFragment extends Fragment {
                 tv_data_number_home.setText(String.valueOf(cursor_data.getString(0)));
             }
         }
-
     }
+
+
+
+    @Override
+    public void onPause() {
+        manageLayout();
+        super.onPause();
+        Log.d(TAG, "Pausing home..");
+    }
+
+    @Override
+    public void onResume() {
+        manageLayout();
+        super.onResume();
+        Log.d(TAG, "Resuming home..");
+    }
+
 
     private int getCount(String predictiveCode) {
         int a=0;
@@ -83,6 +99,5 @@ public class HomeFragment extends Fragment {
         }
         return a;
     }
-
 
 }

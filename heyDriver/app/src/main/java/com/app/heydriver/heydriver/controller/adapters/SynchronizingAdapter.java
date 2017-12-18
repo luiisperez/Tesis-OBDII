@@ -29,7 +29,6 @@ public class SynchronizingAdapter {
     public List<ObdData> syncData() throws ParseException {
 
         try {
-            //homologate();
             SQLiteDatabase db = HomeActivity.controladorSQLite.getWritableDatabase();
             Cursor cursor = db
                     //TODO
@@ -104,48 +103,42 @@ public class SynchronizingAdapter {
                 "avg(Intake_Manifold_Pressure),avg(Mass_Air_Flow), avg(Engine_Load), " +
                 "avg(Engine_RPM), avg(Timing_Advance), avg(Control_Module_Power_Supply), " +
                 "avg(Short_Term_Fuel_Trim2), avg(Short_Term_Fuel_Trim1), avg(Long_Term_Fuel_Trim2), avg(Long_Term_Fuel_Trim1), " +
-                "avg(AirFuel_Ratio) FROM HISTORICO", null);
+                "avg(AirFuel_Ratio), Vehicle_Identification_Number FROM HISTORICO GROUP BY Vehicle_Identification_Number", null);
         ContentValues cv = new ContentValues();
         if (avg_cursor.moveToFirst()) {
-            if(avg_cursor.getDouble(0)==0)
-            {
-                cv.put("Air_Intake_Temperature",42.5f);
-            }
-            if(avg_cursor.getDouble(1)==0)
-            {
-                cv.put("Engine_Coolant_Temperature",65f);
-            }
-            if(avg_cursor.getDouble(2)==0)
-            {
-                cv.put("Intake_Manifold_Pressure",35f);
-            }
-            if(avg_cursor.getDouble(3)==0)
-            {
-                cv.put("Mass_Air_Flow",20.5f);
-            }
-            if(avg_cursor.getDouble(4)==0)
-            {
-                cv.put("Engine_Load",50f);
-            }
-            if(avg_cursor.getDouble(5)==0)
-            {
-                cv.put("Engine_RPM",3200.5f);
-            }
-            if(avg_cursor.getDouble(6)==0)
-            {
-                cv.put("Timing_Advance",0.5f);
-            }
-            if(avg_cursor.getDouble(7)==0)
-            {
-                cv.put("Control_Module_Power_Supply",13.5f);
-            }
-            if(avg_cursor.getDouble(12)==0)
-            {
-                cv.put("AirFuel_Ratio",14.7f);
-            }
-            if (cv.size()>=1) {
-                db.update(ControladorSQLite.DatosTabla.TABLA_HISTORICO, cv, "id", null);
-            }
+            do {
+                if (avg_cursor.getDouble(0) == 0) {
+                    cv.put("Air_Intake_Temperature", 42.5f);
+                }
+                if (avg_cursor.getDouble(1) == 0) {
+                    cv.put("Engine_Coolant_Temperature", 65f);
+                }
+                if (avg_cursor.getDouble(2) == 0) {
+                    cv.put("Intake_Manifold_Pressure", 35f);
+                }
+                if (avg_cursor.getDouble(3) == 0) {
+                    cv.put("Mass_Air_Flow", 20.5f);
+                }
+                if (avg_cursor.getDouble(4) == 0) {
+                    cv.put("Engine_Load", 50f);
+                }
+                if (avg_cursor.getDouble(5) == 0) {
+                    cv.put("Engine_RPM", 3200.5f);
+                }
+                if (avg_cursor.getDouble(6) == 0) {
+                    cv.put("Timing_Advance", 0.5f);
+                }
+                if (avg_cursor.getDouble(7) == 0) {
+                    cv.put("Control_Module_Power_Supply", 13.5f);
+                }
+                if (avg_cursor.getDouble(12) == 0) {
+                    cv.put("AirFuel_Ratio", 14.7f);
+                }
+                if (cv.size() >= 1) {
+                    db.update(ControladorSQLite.DatosTabla.TABLA_HISTORICO, cv, "Vehicle_Identification_Number='" + avg_cursor.getDouble(13) + "'", null);
+                }
+                cv.clear();
+            }while (avg_cursor.moveToNext());
             db.close();
         }
     }

@@ -248,4 +248,6 @@
     <string name="predictive_reports_home">Predictive reports</string>
     <string name="locations_home">Harmful locations</string>
     <string name="readdings_home">Readings out of sync</string>
+
+    <string name="select_trouble_from_CAR_DTC">SELECT vin_dtc, trouble_code_dtc FROM CAR_DTC where trouble_code_dtc =? and vin_dtc = ?</string>
 </resources>

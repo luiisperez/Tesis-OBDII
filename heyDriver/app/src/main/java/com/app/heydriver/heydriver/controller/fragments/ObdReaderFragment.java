@@ -711,7 +711,7 @@ public class ObdReaderFragment extends Fragment
     public boolean findDTC(String vin, String troble_code) {
         try {
             SQLiteDatabase db = HomeActivity.controladorSQLite.getWritableDatabase();
-            Cursor cursor = db.rawQuery("SELECT vin_dtc, trouble_code_dtc FROM CAR_DTC where trouble_code_dtc =? and vin_dtc = ?", new String[] {troble_code,vin});
+            Cursor cursor = db.rawQuery(getString(R.string.select_trouble_from_CAR_DTC), new String[] {troble_code,vin});
             cursor.moveToFirst();
             if (cursor.getCount()>0)  {
                 return true;

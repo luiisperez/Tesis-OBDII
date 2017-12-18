@@ -34,7 +34,7 @@ import java.util.Locale;
 import static android.content.ContentValues.TAG;
 
 public class RestCommunication {
-    private String ip = "192.168.43.142";
+    private String ip = "192.168.0.100";
     private static HttpURLConnection conn;
 
 
