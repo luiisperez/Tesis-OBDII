@@ -8,7 +8,6 @@ import android.util.Log;
 import com.app.heydriver.heydriver.common.Entities.ControladorSQLite;
 import com.app.heydriver.heydriver.common.Entities.ObdData;
 import com.app.heydriver.heydriver.controller.activities.HomeActivity;
-import com.app.heydriver.heydriver.model.ManageInformation;
 
 import java.sql.Timestamp;
 import java.text.ParseException;
@@ -19,19 +18,18 @@ import java.util.List;
 import static android.content.ContentValues.TAG;
 
 /**
- * Created by crist on 12/10/2017.
+ * Created by Cristian on 12/10/2017.
  */
 
 public class SynchronizingAdapter {
-    List<ObdData> readings = new ArrayList<ObdData>();
-    SimpleDateFormat mask = new SimpleDateFormat("_dd_MM_yyyy_HH_mm_ss");
+    private List<ObdData> readings = new ArrayList<>();
+    private SimpleDateFormat mask = new SimpleDateFormat("_dd_MM_yyyy_HH_mm_ss");
 
     public List<ObdData> syncData() throws ParseException {
 
         try {
             SQLiteDatabase db = HomeActivity.controladorSQLite.getWritableDatabase();
             Cursor cursor = db
-                    //TODO
                     .rawQuery("SELECT Air_Intake_Temperature, Ambient_Air_Temperature, Engine_Coolant_Temperature, " +
                             "Barometric_Pressure, Fuel_Pressure, Intake_Manifold_Pressure, Engine_Load, Engine_Runtime, " +
                             "Engine_RPM, Vehicle_Speed, Mass_Air_Flow, Throttle_Position, Trouble_Codes, Fuel_Level, Fuel_type, " +
@@ -41,7 +39,6 @@ public class SynchronizingAdapter {
                             "Engine_oil_temperature, AirFuel_Ratio, Wideband_AirFuel_Ratio,time_mark, lat, lon, alt FROM HISTORICO", null);
             if (cursor.moveToFirst()) {
                 do {
-                    //TODO
                     ObdData reading = new ObdData();
                     reading.setAir_Intake_Temperature(cursor.getFloat(0));
                     reading.setAmbient_Air_Temperature(cursor.getFloat(1));
@@ -98,7 +95,6 @@ public class SynchronizingAdapter {
 
     private void homologate() {
         SQLiteDatabase db = HomeActivity.controladorSQLite.getWritableDatabase();
-        ManageInformation info_car = new ManageInformation();
         Cursor avg_cursor = db.rawQuery("SELECT avg(Air_Intake_Temperature), avg(Engine_Coolant_Temperature), " +
                 "avg(Intake_Manifold_Pressure),avg(Mass_Air_Flow), avg(Engine_Load), " +
                 "avg(Engine_RPM), avg(Timing_Advance), avg(Control_Module_Power_Supply), " +

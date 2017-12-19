@@ -1,7 +1,6 @@
 package com.app.heydriver.heydriver.controller.fragments;
 
 import android.app.Fragment;
-import android.app.FragmentManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -22,8 +21,6 @@ import com.app.heydriver.heydriver.controller.adapters.TroubleCodesAdapter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-
-import static com.app.heydriver.heydriver.common.FragmentSwap.changeFragment;
 
 /**
  * Created by Cristian on 31/10/2017.
@@ -108,7 +105,7 @@ public class TroubleCodesFragment extends Fragment {
         troubleCodesArrayList = getTroubleCodesList();
         if (troubleCodesArrayList != null) {
             troubleCodesSelectionAdapter = new TroubleCodesAdapter(troubleCodesArrayList);
-            troubleCodesSelectionAdapter.holdersList = new ArrayList<TroubleCodesAdapter.ViewHolder>();
+            troubleCodesSelectionAdapter.holdersList = new ArrayList<>();
             LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
 
             rv_trouble_list.setLayoutManager(layoutManager);
@@ -119,8 +116,8 @@ public class TroubleCodesFragment extends Fragment {
         {
             Toast toast = Toast.makeText(getActivity(), R.string.no_trouble_codes, Toast.LENGTH_LONG);
             toast.show();
-            FragmentManager fragmentManager = getFragmentManager();
-            changeFragment(R.id.content_frame, fragmentManager, new HomeFragment(), R.id.nav_home, "home");
+            //FragmentManager fragmentManager = getFragmentManager();
+            //changeFragment(R.id.content_frame, fragmentManager, new HomeFragment(), R.id.nav_home, "home");
         }
     }
 }

@@ -1,7 +1,6 @@
 package com.app.heydriver.heydriver.controller.fragments;
 
 import android.app.Fragment;
-import android.app.FragmentManager;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -22,8 +21,6 @@ import com.app.heydriver.heydriver.controller.activities.HomeActivity;
 import com.app.heydriver.heydriver.controller.adapters.PredictionsAdapter;
 
 import java.util.ArrayList;
-
-import static com.app.heydriver.heydriver.common.FragmentSwap.changeFragment;
 
 /**
  * Created by Cristian on 2/12/2017.
@@ -196,8 +193,8 @@ public class PredictionsFragment extends Fragment {
         {
             Toast toast = Toast.makeText(getActivity(), R.string.no_prediction_codes, Toast.LENGTH_LONG);
             toast.show();
-            FragmentManager fragmentManager = getFragmentManager();
-            changeFragment(R.id.content_frame, fragmentManager, new HomeFragment(), R.id.nav_home, "home");
+            //FragmentManager fragmentManager = getFragmentManager();
+            //changeFragment(R.id.content_frame, fragmentManager, new HomeFragment(), R.id.nav_home, "home");
         }
     }
 

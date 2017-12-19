@@ -902,9 +902,18 @@ public class ObdReaderFragment extends Fragment
             cv.put("Engine_RPM",avg_cursor.getDouble(5));
             cv.put("Timing_Advance",avg_cursor.getDouble(6));
             cv.put("Control_Module_Power_Supply",avg_cursor.getDouble(7));
-            cv.put("Short_Term_Fuel_Trim2",avg_cursor.getDouble(8));
+
+            if (avg_cursor.getDouble(8)==Float.valueOf(0)){
+                cv.put("Short_Term_Fuel_Trim2",avg_cursor.getDouble(9));
+            }
+            else cv.put("Short_Term_Fuel_Trim2",avg_cursor.getDouble(8));
+
             cv.put("Short_Term_Fuel_Trim1",avg_cursor.getDouble(9));
-            cv.put("Long_Term_Fuel_Trim2",avg_cursor.getDouble(10));
+
+            if (avg_cursor.getDouble(10)==Float.valueOf(0)){
+                cv.put("Long_Term_Fuel_Trim2",avg_cursor.getDouble(11));
+            }else cv.put("Long_Term_Fuel_Trim2",avg_cursor.getDouble(10));
+
             cv.put("Long_Term_Fuel_Trim1",avg_cursor.getDouble(11));
             cv.put("AirFuel_Ratio",avg_cursor.getDouble(12));
             try
