@@ -61,7 +61,8 @@ namespace HeyDriverWebsite.View
                 brands.Add(ds.Tables[0].Rows[i][0].ToString());
             }
             listado_marcas.InnerHtml = marcas;
-            marcas_listado.InnerHtml = marcas;
+            String marcas1 = "<option value=\"" + "Todas las marcas" + "\" label=\"" + "" + "\" >" + marcas;
+            marcas_listado.InnerHtml = marcas1;
         }
 
         [System.Web.Services.WebMethod]
@@ -228,6 +229,10 @@ namespace HeyDriverWebsite.View
                 "h3yDr1v3r", "heydriverdb");
 
             Boolean correcto = false;
+            if (marca.Equals("Todas las marcas"))
+            {
+                correcto = true;
+            }
             foreach (String brand in brands)
             {
                 if (brand.Equals(marca))
@@ -241,14 +246,14 @@ namespace HeyDriverWebsite.View
                 NpgsqlConnection conn = new NpgsqlConnection(connstring);
                 conn.Open();
                 NpgsqlDataAdapter da = new NpgsqlDataAdapter();
-                if (falla.Equals("Sólo usar la marca"))
+                if (marca.Equals("Todas las marcas"))
                 {
-                    string sql = "SELECT ALL_FAILURES_STATISTICS_by_brand('" + marca + "');";
+                    string sql = "SELECT ALL_BRANDS_STATISTICS_BY_FAILURE('" + falla + "');";
                     da = new NpgsqlDataAdapter(sql, conn);
                 }
                 else
                 {
-                    string sql = "SELECT ALL_FAILURES_STATISTICS_by_model('" + marca + "', '" + falla + "');";
+                    string sql = "SELECT ALL_MODELS_STATISTICS_BY_FAILURE('" + falla + "', '" + marca + "');";
                     da = new NpgsqlDataAdapter(sql, conn);
                 }
 
