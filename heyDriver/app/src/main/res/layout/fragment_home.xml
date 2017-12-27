@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/cardview_light_background"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context="com.app.heydriver.heydriver.controller.activities.StartUpActivity"
-    android:weightSum="1">
+    android:weightSum="1"
+    tools:context="com.app.heydriver.heydriver.controller.activities.StartUpActivity">
 
     <ImageView
         android:id="@+id/logo"
@@ -23,10 +23,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:text="Selected car"
+        android:text="@string/car_home"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="20dp"
+        android:textSize="18dp"
         android:textStyle="bold" />
 
     <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -36,76 +36,190 @@
         android:alignmentMode="alignBounds"
         android:columnCount="2">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="0dp"
             android:layout_height="140dp"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             android:layout_margin="10dp"
             android:background="@color/cardview_light_background"
-            android:gravity="center">
+            android:gravity="center"
+            android:padding="10dp">
+
             <ImageView
-                android:id="@+id/troubles"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="20dp"
+                android:id="@+id/trouble_image"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentTop="true"
+                android:layout_below="@+id/tv_troubles_home"
+                android:layout_marginTop="18dp"
                 android:adjustViewBounds="false"
                 app:srcCompat="@drawable/ic_report_b_body" />
-        </LinearLayout>
 
-        <LinearLayout
+            <TextView
+                android:id="@+id/tv_troubles_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/trouble_image"
+                android:padding="10dp"
+                android:text="@string/Trouble_codes_home"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_troubles_number_home"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/tv_troubles_home"
+                android:padding="10dp"
+                android:text="-"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
             android:layout_width="0dp"
             android:layout_height="140dp"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             android:layout_margin="10dp"
             android:background="@color/cardview_light_background"
-            android:gravity="center">
+            android:gravity="center"
+            android:padding="10dp">
+
             <ImageView
-                android:id="@+id/predictions"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="20dp"
+                android:id="@+id/prediction_image"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentTop="true"
+                android:layout_below="@+id/tv_prediction_home"
+                android:layout_marginTop="18dp"
                 android:adjustViewBounds="false"
                 app:srcCompat="@drawable/ic_menu_prediction" />
-        </LinearLayout>
 
-        <LinearLayout
+            <TextView
+                android:id="@+id/tv_prediction_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/prediction_image"
+                android:padding="10dp"
+                android:text="@string/predictive_reports_home"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_prediction_number_home"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/tv_prediction_home"
+                android:padding="10dp"
+                android:text="-"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
             android:layout_width="0dp"
             android:layout_height="140dp"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             android:layout_margin="10dp"
-            android:background="@color/cardview_light_background"
-            android:gravity="center">
+            android:gravity="center"
+            android:padding="10dp">
+
             <ImageView
-                android:id="@+id/locations"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="20dp"
+                android:id="@+id/location_image"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentTop="true"
+                android:layout_below="@+id/tv_locations_home"
+                android:layout_marginTop="18dp"
                 android:adjustViewBounds="false"
                 app:srcCompat="@drawable/ic_menu_ubication" />
-        </LinearLayout>
 
-        <LinearLayout
+            <TextView
+                android:id="@+id/tv_locations_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/location_image"
+                android:padding="10dp"
+                android:text="@string/locations_home"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_locations_number_home"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/tv_locations_home"
+                android:padding="10dp"
+                android:text="-"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
             android:layout_width="0dp"
             android:layout_height="140dp"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             android:layout_margin="10dp"
             android:background="@color/cardview_light_background"
-            android:gravity="center">
+            android:gravity="center"
+            android:padding="10dp">
+
             <ImageView
-                android:id="@+id/data"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="20dp"
+                android:id="@+id/data_image"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentTop="true"
+                android:layout_below="@+id/tv_data_home"
+                android:layout_marginTop="18dp"
                 android:adjustViewBounds="false"
                 app:srcCompat="@drawable/ic_menu_manage" />
-        </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_data_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/data_image"
+                android:padding="10dp"
+                android:text="@string/readdings_home"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_data_number_home"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/tv_data_home"
+                android:padding="10dp"
+                android:text="-"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
 
     </GridLayout>
-
 
 
 </LinearLayout>

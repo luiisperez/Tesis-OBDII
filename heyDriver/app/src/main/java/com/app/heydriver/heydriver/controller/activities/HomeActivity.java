@@ -29,6 +29,7 @@ import com.app.heydriver.heydriver.controller.fragments.CarSelectionFragment;
 import com.app.heydriver.heydriver.controller.fragments.HomeFragment;
 import com.app.heydriver.heydriver.controller.fragments.LocationsFragment;
 import com.app.heydriver.heydriver.controller.fragments.ObdReaderFragment;
+import com.app.heydriver.heydriver.controller.fragments.PredictionsFragment;
 import com.app.heydriver.heydriver.controller.fragments.TroubleCodesFragment;
 import com.app.heydriver.heydriver.model.ManageInformation;
 import com.app.heydriver.heydriver.model.RestCommunication;
@@ -38,6 +39,7 @@ import java.util.List;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 import static com.app.heydriver.heydriver.common.FragmentSwap.changeFragment;
+import static com.app.heydriver.heydriver.common.FragmentSwap.changeFragmentNoAnimation;
 import static com.app.heydriver.heydriver.controller.activities.LauncherActivity.itemPositionStacks;
 
 public class HomeActivity extends AppCompatActivity
@@ -173,9 +175,7 @@ public class HomeActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-
         int previousId = itemPositionStacks.get(itemPositionStacks.size() - 1);
-
 
         FragmentManager fragmentManager = getFragmentManager();
         if (id != previousId) {
@@ -195,7 +195,7 @@ public class HomeActivity extends AppCompatActivity
             } else if (id == R.id.nav_trouble_codes) {
                 changeFragment(R.id.content_frame, fragmentManager, new TroubleCodesFragment(), id, "trouble_codes");
             } else if (id == R.id.nav_predictions) {
-                //changeFragment(R.id.content_frame, fragmentManager, new PredictionsFragment(), id, "predictions");
+                changeFragment(R.id.content_frame, fragmentManager, new PredictionsFragment(), id, "predictions");
             }else if (id == R.id.nav_ubications) {
                 changeFragment(R.id.content_frame, fragmentManager, new LocationsFragment(), id, "predictions");
 
@@ -259,6 +259,8 @@ public class HomeActivity extends AppCompatActivity
                     int duration = Toast.LENGTH_SHORT;
                     Toast toast = Toast.makeText(getApplicationContext(), text, duration);
                     toast.show();
+                    FragmentManager fragmentManager = getFragmentManager();
+                    changeFragmentNoAnimation(R.id.content_frame, fragmentManager, new HomeFragment(), R.id.nav_home, "home");
                 }
             }
             else

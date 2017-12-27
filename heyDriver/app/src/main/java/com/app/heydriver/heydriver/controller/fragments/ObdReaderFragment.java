@@ -1,9 +1,7 @@
 package com.app.heydriver.heydriver.controller.fragments;
 
 import android.Manifest;
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.app.Notification;
+import android.app.Fragment;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.bluetooth.BluetoothAdapter;
@@ -21,8 +19,6 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import android.location.Address;
-import android.location.Geocoder;
 import android.location.GpsStatus;
 import android.location.Location;
 import android.location.LocationListener;
@@ -31,16 +27,12 @@ import android.location.LocationProvider;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.PowerManager;
-import android.support.annotation.ColorInt;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
-import android.app.Fragment;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.Toolbar;
@@ -49,10 +41,8 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -77,20 +67,13 @@ import com.app.heydriver.heydriver.model.RestCommunication;
 import com.github.pires.obd.commands.ObdCommand;
 import com.github.pires.obd.enums.AvailableCommandNames;
 
-import static android.content.ContentValues.TAG;
-import static android.content.Context.NOTIFICATION_SERVICE;
-import static com.app.heydriver.heydriver.controller.activities.HomeActivity.controladorSQLite;
-import static com.app.heydriver.heydriver.model.AbstractGatewayService.NOTIFICATION_ID;
-import static com.github.pires.obd.enums.AvailableCommandNames.*;
 import java.io.IOException;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 import java.util.Random;
 
@@ -98,9 +81,36 @@ import retrofit.RestAdapter;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
 
+import static android.content.Context.NOTIFICATION_SERVICE;
 import static android.content.Context.SENSOR_SERVICE;
 import static com.app.heydriver.heydriver.controller.activities.ConfigActivity.getGpsDistanceUpdatePeriod;
 import static com.app.heydriver.heydriver.controller.activities.ConfigActivity.getGpsUpdatePeriod;
+import static com.github.pires.obd.enums.AvailableCommandNames.AIR_FUEL_RATIO;
+import static com.github.pires.obd.enums.AvailableCommandNames.AIR_INTAKE_TEMP;
+import static com.github.pires.obd.enums.AvailableCommandNames.AMBIENT_AIR_TEMP;
+import static com.github.pires.obd.enums.AvailableCommandNames.BAROMETRIC_PRESSURE;
+import static com.github.pires.obd.enums.AvailableCommandNames.CONTROL_MODULE_VOLTAGE;
+import static com.github.pires.obd.enums.AvailableCommandNames.DISTANCE_TRAVELED_MIL_ON;
+import static com.github.pires.obd.enums.AvailableCommandNames.DTC_NUMBER;
+import static com.github.pires.obd.enums.AvailableCommandNames.ENGINE_COOLANT_TEMP;
+import static com.github.pires.obd.enums.AvailableCommandNames.ENGINE_LOAD;
+import static com.github.pires.obd.enums.AvailableCommandNames.ENGINE_OIL_TEMP;
+import static com.github.pires.obd.enums.AvailableCommandNames.ENGINE_RPM;
+import static com.github.pires.obd.enums.AvailableCommandNames.ENGINE_RUNTIME;
+import static com.github.pires.obd.enums.AvailableCommandNames.EQUIV_RATIO;
+import static com.github.pires.obd.enums.AvailableCommandNames.FUEL_CONSUMPTION_RATE;
+import static com.github.pires.obd.enums.AvailableCommandNames.FUEL_LEVEL;
+import static com.github.pires.obd.enums.AvailableCommandNames.FUEL_PRESSURE;
+import static com.github.pires.obd.enums.AvailableCommandNames.FUEL_RAIL_PRESSURE;
+import static com.github.pires.obd.enums.AvailableCommandNames.FUEL_TYPE;
+import static com.github.pires.obd.enums.AvailableCommandNames.INTAKE_MANIFOLD_PRESSURE;
+import static com.github.pires.obd.enums.AvailableCommandNames.MAF;
+import static com.github.pires.obd.enums.AvailableCommandNames.SPEED;
+import static com.github.pires.obd.enums.AvailableCommandNames.THROTTLE_POS;
+import static com.github.pires.obd.enums.AvailableCommandNames.TIMING_ADVANCE;
+import static com.github.pires.obd.enums.AvailableCommandNames.TROUBLE_CODES;
+import static com.github.pires.obd.enums.AvailableCommandNames.VIN;
+import static com.github.pires.obd.enums.AvailableCommandNames.WIDEBAND_AIR_FUEL_RATIO;
 
 public class ObdReaderFragment extends Fragment
         implements ObdProgressListener, LocationListener, GpsStatus.Listener {
@@ -109,32 +119,32 @@ public class ObdReaderFragment extends Fragment
 
     public static int sync = 0;
 
-   //NOTIFICACIONES EN ANDROID
+    //NOTIFICACIONES EN ANDROID
     public void showFailureNotification(String errorcode, String message) {
         int icono = R.drawable.ic_notification;
         int largeIcono = R.mipmap.icon_driver;
 
         int apiVersion = android.os.Build.VERSION.SDK_INT;
-            NotificationCompat.Builder mBuilder;
-            NotificationManager mNotifyMgr =(NotificationManager) getActivity().getSystemService(NOTIFICATION_SERVICE);
-            Intent i = new Intent(getActivity(), HomeActivity.class);
-            PendingIntent pendingIntent = PendingIntent.getActivity(getActivity(), 0, i, 0);
-            mBuilder =new NotificationCompat.Builder(getActivity())
-                    .setContentIntent(pendingIntent)
-                    .setSmallIcon(icono)
-                    .setLargeIcon(BitmapFactory.decodeResource(getResources(), largeIcono))
-                    .setContentTitle(getString(R.string.failure_detected_title))
-                    .setContentText(getString(R.string.failure_detected_message_pt1) + "\"" + errorcode + "\" \n")
-                    .setSubText(message)
-                    .setVibrate(new long[] {100, 250, 100, 500})
-                    .setStyle(new NotificationCompat.BigTextStyle()
-                            .bigText(getString(R.string.failure_detected_message_pt1) + " \"" + errorcode + "\" \n" +
-                                    getString(R.string.failure_detected_message_pt2) + " \"" + message + "\""))
-                    .setAutoCancel(true);
+        NotificationCompat.Builder mBuilder;
+        NotificationManager mNotifyMgr =(NotificationManager) getActivity().getSystemService(NOTIFICATION_SERVICE);
+        Intent i = new Intent(getActivity(), HomeActivity.class);
+        PendingIntent pendingIntent = PendingIntent.getActivity(getActivity(), 0, i, 0);
+        mBuilder =new NotificationCompat.Builder(getActivity())
+                .setContentIntent(pendingIntent)
+                .setSmallIcon(icono)
+                .setLargeIcon(BitmapFactory.decodeResource(getResources(), largeIcono))
+                .setContentTitle(getString(R.string.failure_detected_title))
+                .setContentText(getString(R.string.failure_detected_message_pt1) + "\"" + errorcode + "\" \n")
+                .setSubText(message)
+                .setVibrate(new long[] {100, 250, 100, 500})
+                .setStyle(new NotificationCompat.BigTextStyle()
+                        .bigText(getString(R.string.failure_detected_message_pt1) + " \"" + errorcode + "\" \n" +
+                                getString(R.string.failure_detected_message_pt2) + " \"" + message + "\""))
+                .setAutoCancel(true);
 
-            Random random = new Random();
-            int m = random.nextInt(9999 - 1000) + 1000;
-            mNotifyMgr.notify(m, mBuilder.build());
+        Random random = new Random();
+        int m = random.nextInt(9999 - 1000) + 1000;
+        mNotifyMgr.notify(m, mBuilder.build());
     }
 
     private static final String TAG = ObdReaderFragment.class.getName();
@@ -245,8 +255,6 @@ public class ObdReaderFragment extends Fragment
                     //Objeto para transferir
                     ObdReading reading = new ObdReading(lat, lon, alt, System.currentTimeMillis(), vin, temp);
                     if (reading != null) {
-                        //Aquí se debería guardar en SQLite
-                        //myCSVWriter.writeLineCSV(reading)
                         Toast.makeText(getActivity(), "Guardado", Toast.LENGTH_LONG).show();
                     }
                     ;
@@ -630,7 +638,7 @@ public class ObdReaderFragment extends Fragment
         valores.put(ControladorSQLite.DatosTabla.ALT,String.valueOf(dataSensor.getAlt()));
         try
         {
-            long IdGuardado = db.insert(ControladorSQLite.DatosTabla.NOMBRE_TABLA, "id", valores);
+            long IdGuardado = db.insert(ControladorSQLite.DatosTabla.TABLA_HISTORICO, "id", valores);
             db.close();
         }
         catch (Exception e){
@@ -703,14 +711,14 @@ public class ObdReaderFragment extends Fragment
     public boolean findDTC(String vin, String troble_code) {
         try {
             SQLiteDatabase db = HomeActivity.controladorSQLite.getWritableDatabase();
-            Cursor cursor = db.rawQuery("SELECT vin_dtc, trouble_code_dtc FROM CAR_DTC where trouble_code_dtc =? and vin_dtc = ?", new String[] {troble_code,vin});
+            Cursor cursor = db.rawQuery(getString(R.string.select_trouble_from_CAR_DTC), new String[] {troble_code,vin});
             cursor.moveToFirst();
             if (cursor.getCount()>0)  {
-                    return true;
-                }
-                else
-                    return false;
+                return true;
             }
+            else
+                return false;
+        }
         catch (Exception e)
         {
             return false;
@@ -725,7 +733,7 @@ public class ObdReaderFragment extends Fragment
         valores.put(ControladorSQLite.DatosTabla.TOUBLE_CODE,String.valueOf(troble_code));
         try
         {
-            long IdGuardado = db.insert(ControladorSQLite.DatosTabla.NOMBRE_TABLA2, "id", valores);
+            long IdGuardado = db.insert(ControladorSQLite.DatosTabla.TABLA_CAR_DTC, "id", valores);
             db.close();
             return true;
         }
@@ -738,7 +746,7 @@ public class ObdReaderFragment extends Fragment
         SQLiteDatabase db = HomeActivity.controladorSQLite.getWritableDatabase();
         try
         {
-            db.execSQL("delete from "+ ControladorSQLite.DatosTabla.NOMBRE_TABLA2 + " where "+ ControladorSQLite.DatosTabla.VIN_DTC+"='"+vin+"'");
+            db.execSQL("delete from "+ ControladorSQLite.DatosTabla.TABLA_CAR_DTC + " where "+ ControladorSQLite.DatosTabla.VIN_DTC+"='"+vin+"'");
             db.close();
             return true;
         }
@@ -796,17 +804,22 @@ public class ObdReaderFragment extends Fragment
                 gpsStatusTextView.setText(getString(R.string.status_gps_stopped));
                 Toast toast = Toast.makeText(getActivity(), R.string.menu_stop_live_data, Toast.LENGTH_LONG);
                 toast.show();
-
-                boolean connected = false;
+                homologate();
+                promediate();
                 try {
                     ConnectivityManager connectivityManager = (ConnectivityManager)getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
-                    NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
 
                     if (connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
                             connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
                         SynchronizingTask task = new SynchronizingTask();
-                        Toast toast1 = Toast.makeText(getActivity(), R.string.sincronized_data, Toast.LENGTH_SHORT);
-                        toast1.show();
+                        if (ObdReaderFragment.sync == 0) {
+                            task.execute((Void) null);
+                            Toast toast1 = Toast.makeText(getActivity(), R.string.sincronized_data, Toast.LENGTH_SHORT);
+                            toast1.show();
+                        }else{
+                            Toast.makeText(getActivity(), getString(R.string.error_obd_active),Toast.LENGTH_LONG).show();
+                        }
+
                     } else {
                         Toast toast2 = Toast.makeText(getActivity(), R.string.no_internet_error, Toast.LENGTH_LONG);
                         toast2.show();
@@ -818,6 +831,115 @@ public class ObdReaderFragment extends Fragment
             }
         });
         return view;
+    }
+    private void homologate() {
+        SQLiteDatabase db = HomeActivity.controladorSQLite.getWritableDatabase();
+        ManageInformation info_car = new ManageInformation();
+        Cursor avg_cursor = db.rawQuery("SELECT avg(Air_Intake_Temperature), avg(Engine_Coolant_Temperature), " +
+                "avg(Intake_Manifold_Pressure),avg(Mass_Air_Flow), avg(Engine_Load), " +
+                "avg(Engine_RPM), avg(Timing_Advance), avg(Control_Module_Power_Supply), " +
+                "avg(Short_Term_Fuel_Trim2), avg(Short_Term_Fuel_Trim1), avg(Long_Term_Fuel_Trim2), avg(Long_Term_Fuel_Trim1), " +
+                "avg(AirFuel_Ratio) FROM HISTORICO WHERE Vehicle_Identification_Number='"+info_car.getCarInformation(getActivity()).get_serial()+"'", null);
+        ContentValues cv = new ContentValues();
+        if (avg_cursor.moveToFirst()) {
+            if(avg_cursor.getDouble(0)==0)
+            {
+                cv.put("Air_Intake_Temperature",42.5f);
+            }
+            if(avg_cursor.getDouble(1)==0)
+            {
+                cv.put("Engine_Coolant_Temperature",65f);
+            }
+            if(avg_cursor.getDouble(2)==0)
+            {
+                cv.put("Intake_Manifold_Pressure",35f);
+            }
+            if(avg_cursor.getDouble(3)==0)
+            {
+                cv.put("Mass_Air_Flow",20.5f);
+            }
+            if(avg_cursor.getDouble(4)==0)
+            {
+                cv.put("Engine_Load",50f);
+            }
+            if(avg_cursor.getDouble(5)==0)
+            {
+                cv.put("Engine_RPM",3200.5f);
+            }
+            if(avg_cursor.getDouble(6)==0)
+            {
+                cv.put("Timing_Advance",0.5f);
+            }
+            if(avg_cursor.getDouble(7)==0)
+            {
+                cv.put("Control_Module_Power_Supply",13.5f);
+            }
+            if(avg_cursor.getDouble(12)==0)
+            {
+                cv.put("AirFuel_Ratio",14.7f);
+            }
+            if (cv.size()>=1) {
+                db.update(ControladorSQLite.DatosTabla.TABLA_HISTORICO, cv, "Vehicle_Identification_Number='"+info_car.getCarInformation(getActivity()).get_serial()+"'", null);
+            }
+            db.close();
+        }
+    }
+
+    private void promediate() {
+        SQLiteDatabase db = HomeActivity.controladorSQLite.getWritableDatabase();
+        ManageInformation info_car = new ManageInformation();
+        Cursor avg_cursor = db.rawQuery("SELECT avg(Air_Intake_Temperature), avg(Engine_Coolant_Temperature), " +
+                "avg(Intake_Manifold_Pressure),avg(Mass_Air_Flow), avg(Engine_Load), " +
+                "avg(Engine_RPM), avg(Timing_Advance), avg(Control_Module_Power_Supply), " +
+                "avg(Short_Term_Fuel_Trim2), avg(Short_Term_Fuel_Trim1), avg(Long_Term_Fuel_Trim2), avg(Long_Term_Fuel_Trim1), " +
+                "avg(AirFuel_Ratio) FROM HISTORICO WHERE Vehicle_Identification_Number='"+info_car.getCarInformation(getActivity()).get_serial()+"'", null);
+        ContentValues cv = new ContentValues();
+        if (avg_cursor.moveToFirst()) {
+            cv.put(ControladorSQLite.DatosTabla.CAR_NAME,info_car.getCarInformation(getActivity()).get_brand());
+            cv.put(ControladorSQLite.DatosTabla.CAR_MODEL,info_car.getCarInformation(getActivity()).get_model());
+            cv.put(ControladorSQLite.DatosTabla.VIN_DTC,info_car.getCarInformation(getActivity()).get_serial());
+            cv.put("Air_Intake_Temperature",avg_cursor.getDouble(0));
+            cv.put("Engine_Coolant_Temperature",avg_cursor.getDouble(1));
+            cv.put("Intake_Manifold_Pressure",avg_cursor.getDouble(2));
+            cv.put("Mass_Air_Flow",avg_cursor.getDouble(3));
+            cv.put("Engine_Load",avg_cursor.getDouble(4));
+            cv.put("Engine_RPM",avg_cursor.getDouble(5));
+            cv.put("Timing_Advance",avg_cursor.getDouble(6));
+            cv.put("Control_Module_Power_Supply",avg_cursor.getDouble(7));
+
+            if (avg_cursor.getDouble(8)==Float.valueOf(0)){
+                cv.put("Short_Term_Fuel_Trim2",avg_cursor.getDouble(9));
+            }
+            else cv.put("Short_Term_Fuel_Trim2",avg_cursor.getDouble(8));
+
+            cv.put("Short_Term_Fuel_Trim1",avg_cursor.getDouble(9));
+
+            if (avg_cursor.getDouble(10)==Float.valueOf(0)){
+                cv.put("Long_Term_Fuel_Trim2",avg_cursor.getDouble(11));
+            }else cv.put("Long_Term_Fuel_Trim2",avg_cursor.getDouble(10));
+
+            cv.put("Long_Term_Fuel_Trim1",avg_cursor.getDouble(11));
+            cv.put("AirFuel_Ratio",avg_cursor.getDouble(12));
+            try
+            {
+                Cursor promedium_cursor = db.rawQuery("SELECT count(*) FROM CAR_PROMEDIUM WHERE vin_dtc='"+info_car.getCarInformation(getActivity()).get_serial()+"'", null);
+                if (promedium_cursor.moveToFirst() ) {
+                    if(promedium_cursor.getInt(0)>=1)
+                    {
+                        long IdUpdate = db.update(ControladorSQLite.DatosTabla.TABLA_CAR_PROMEDIUM, cv, "vin_dtc='" + info_car.getCarInformation(getActivity()).get_serial() + "'", null);
+                    }
+                    else
+                    {
+                        long IdInsert = db.insert(ControladorSQLite.DatosTabla.TABLA_CAR_PROMEDIUM, "id", cv);
+                    }
+                }
+                db.close();
+            }
+            catch (Exception e){
+                Log.d(TAG, e.getStackTrace().toString());
+                db.close();
+            }
+        }
     }
 
     @Override
@@ -1102,7 +1224,6 @@ public class ObdReaderFragment extends Fragment
 
         @Override
         protected String doInBackground(Void... params) {
-            List<ObdData> sincData = null;
             try {
                 RestCommunication con = new RestCommunication();
                 response = con.callMethodSynchronization(sa.syncData());

@@ -1,18 +1,15 @@
 package com.app.heydriver.heydriver.controller.activities;
 
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
+import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.app.heydriver.heydriver.R;
 import com.app.heydriver.heydriver.common.Entities.ObdData;
@@ -23,7 +20,6 @@ import com.app.heydriver.heydriver.model.RestCommunication;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
@@ -124,7 +120,6 @@ public class LauncherActivity extends AppCompatActivity {
 
 
     private class SynchronizingTask extends AsyncTask<Void, Void, String> {
-        private ManageInformation info = new ManageInformation();
         private int response = 0;
         SynchronizingAdapter sa = new SynchronizingAdapter();
 
@@ -138,7 +133,7 @@ public class LauncherActivity extends AppCompatActivity {
             List<ObdData> sincData = null;
             try {
                 RestCommunication con = new RestCommunication();
-                response = con.callMethodSynchronization(sa.syncData());
+                response = con.callMethodSynchronizationContext(sa.syncDataContext(getApplicationContext()),getApplicationContext());
                 if (response == 1){
                     return getString(R.string.sincronized_data) + "...";
                 }else{

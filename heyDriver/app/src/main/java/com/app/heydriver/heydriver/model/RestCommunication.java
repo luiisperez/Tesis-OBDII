@@ -1,19 +1,20 @@
 package com.app.heydriver.heydriver.model;
 
 
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
 import com.app.heydriver.heydriver.common.Entities.Car;
+import com.app.heydriver.heydriver.common.Entities.ControladorSQLite;
 import com.app.heydriver.heydriver.common.Entities.ObdData;
 import com.app.heydriver.heydriver.common.Entities.User;
 import com.app.heydriver.heydriver.controller.activities.HomeActivity;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.internal.LinkedTreeMap;
 import com.google.gson.reflect.TypeToken;
-
-import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -23,7 +24,6 @@ import java.net.HttpURLConnection;
 import java.net.Inet4Address;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
-import java.net.Proxy;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ArrayList;
@@ -35,8 +35,9 @@ import java.util.Locale;
 import static android.content.ContentValues.TAG;
 
 public class RestCommunication {
-    private String ip = "192.168.0.105";
+    private String ip = "192.168.43.142";
     private static HttpURLConnection conn;
+
 
 
     private BufferedReader communicate(String _requetMethod, String _restfulMethod) throws IOException {
@@ -66,8 +67,7 @@ public class RestCommunication {
     public static String getIP(){
         List<InetAddress> addrs;
         String address = "";
-        try{
-            List<NetworkInterface> interfaces = Collections.list(NetworkInterface.getNetworkInterfaces());
+        try{            List<NetworkInterface> interfaces = Collections.list(NetworkInterface.getNetworkInterfaces());
             for(NetworkInterface intf : interfaces){
                 addrs = Collections.list(intf.getInetAddresses());
                 for(InetAddress addr : addrs){
@@ -160,8 +160,7 @@ public class RestCommunication {
             Gson gson = new GsonBuilder().create();
             BufferedReader br = communicate("GET", "getUserVehicles?user=" + username);
             String output;
-            ArrayList<Car> response = new ArrayList<Car>();
-            ArrayList<Car> _response = new ArrayList<Car>();
+            ArrayList<Car> _response = new ArrayList<>();
             Type listType = new TypeToken<ArrayList<Car>>() {}.getType();
 
             while ((output = br.readLine()) != null) {
@@ -199,8 +198,29 @@ public class RestCommunication {
         try {
             conn = null;
             Gson gson = new GsonBuilder().create();
+
+            Cursor promedium_cursor = db.rawQuery("SELECT count(*) FROM CAR_PROMEDIUM",null);
+            if (promedium_cursor.moveToFirst() ) {
+                Cursor _promedium = db.rawQuery("SELECT car_name, car_model, AirFuel_Ratio, Timing_Advance, Engine_RPM, " +
+                        "Short_Term_Fuel_Trim2, Short_Term_Fuel_Trim1, Long_Term_Fuel_Trim2, Long_Term_Fuel_Trim1, " +
+                        "Mass_Air_Flow, Engine_Coolant_Temperature, Engine_Load, Intake_Manifold_Pressure, Air_Intake_Temperature, vin_dtc" +
+                        " FROM CAR_PROMEDIUM", null);
+                if (_promedium.moveToFirst()) {
+                    do {
+                        String stringcode = getStringCode(callMethodGetANNAnalysis(_promedium.getString(0), _promedium.getString(1), _promedium.getFloat(2), _promedium.getFloat(3),
+                                _promedium.getFloat(4), _promedium.getFloat(5), _promedium.getFloat(6), _promedium.getFloat(7), _promedium.getFloat(8),
+                                _promedium.getFloat(9), _promedium.getFloat(10), _promedium.getFloat(11), _promedium.getFloat(12), _promedium.getFloat(13)));
+
+                        savePrediction(_promedium.getString(14),_promedium.getString(0), _promedium.getString(1),stringcode);
+
+                    } while (_promedium.moveToNext());
+
+                }
+            }
             if(reading != null){
                 for (ObdData obdData : reading) {
+                    if (obdData.getLTFT2()==Float.valueOf(0)){ obdData.setLTFT2(obdData.getLTFT1());}
+                    if (obdData.getSTFT2()==Float.valueOf(0)){ obdData.setSTFT2(obdData.getSTFT1());}
                     BufferedReader br = communicate("GET", "synchronization?obddata=" + URLEncoder.encode(gson.toJson(obdData).toString(), "UTF-8"));
                     String a;
                     String _result="";
@@ -228,6 +248,128 @@ public class RestCommunication {
         catch (Exception ex){
             db.close();
             throw ex;
+        }
+    }
+
+
+    public int callMethodSynchronizationContext(List<ObdData> reading, Context context) throws Exception {
+        ControladorSQLite controladorSQLite=  new ControladorSQLite(context);
+        SQLiteDatabase db = controladorSQLite.getWritableDatabase();
+        try {
+            conn = null;
+            Gson gson = new GsonBuilder().create();
+
+            Cursor promedium_cursor = db.rawQuery("SELECT count(*) FROM CAR_PROMEDIUM",null);
+            if (promedium_cursor.moveToFirst() ) {
+                Cursor _promedium = db.rawQuery("SELECT car_name, car_model, AirFuel_Ratio, Timing_Advance, Engine_RPM, " +
+                        "Short_Term_Fuel_Trim2, Short_Term_Fuel_Trim1, Long_Term_Fuel_Trim2, Long_Term_Fuel_Trim1, " +
+                        "Mass_Air_Flow, Engine_Coolant_Temperature, Engine_Load, Intake_Manifold_Pressure, Air_Intake_Temperature, vin_dtc" +
+                        " FROM CAR_PROMEDIUM", null);
+                if (_promedium.moveToFirst()) {
+                    do {
+                        String stringcode = getStringCode(callMethodGetANNAnalysis(_promedium.getString(0), _promedium.getString(1), _promedium.getFloat(2), _promedium.getFloat(3),
+                                _promedium.getFloat(4), _promedium.getFloat(5), _promedium.getFloat(6), _promedium.getFloat(7), _promedium.getFloat(8),
+                                _promedium.getFloat(9), _promedium.getFloat(10), _promedium.getFloat(11), _promedium.getFloat(12), _promedium.getFloat(13)));
+
+                        savePredictionContext(_promedium.getString(14),_promedium.getString(0), _promedium.getString(1),stringcode,context);
+
+                    } while (_promedium.moveToNext());
+
+                }
+            }
+            if(reading != null){
+                for (ObdData obdData : reading) {
+                    if (obdData.getLTFT2()==Float.valueOf(0)){ obdData.setLTFT2(obdData.getLTFT1());}
+                    if (obdData.getSTFT2()==Float.valueOf(0)){ obdData.setSTFT2(obdData.getSTFT1());}
+                    BufferedReader br = communicate("GET", "synchronization?obddata=" + URLEncoder.encode(gson.toJson(obdData).toString(), "UTF-8"));
+                    String a;
+                    String _result="";
+                    if ((a = br.readLine()) != null) {
+                        _result = gson.fromJson(a, String.class);
+                        String fecha = String.valueOf(obdData.getTime_mark().toString());
+                        db.execSQL("DELETE from HISTORICO WHERE time_mark='"+fecha+"'");
+                    }
+                    if (_result.equals("false")) {
+                        conn.disconnect();
+                        db.close();
+                        return 0;
+                    }
+                }
+            }
+            else
+            {
+                db.close();
+                return 404;
+            }
+            conn.disconnect();
+            db.close();
+            return 1;
+        }
+        catch (Exception ex){
+            db.close();
+            throw ex;
+        }
+    }
+
+    private String getStringCode(ArrayList<Integer> integers) {
+        String _return = "";
+        for(int x=0;x<integers.size();x++) {
+            _return = _return+integers.get(x).toString();
+        }
+        return _return;
+    }
+
+    public void savePrediction(String vin, String car_name,String car_model, String code) {
+        SQLiteDatabase db = HomeActivity.controladorSQLite.getWritableDatabase();
+        ContentValues valores = new ContentValues();
+        valores.put(ControladorSQLite.DatosTabla.VIN_DTC,String.valueOf(vin));
+        valores.put(ControladorSQLite.DatosTabla.CAR_NAME,String.valueOf(car_name));
+        valores.put(ControladorSQLite.DatosTabla.CAR_MODEL,String.valueOf(car_model));
+        valores.put(ControladorSQLite.DatosTabla.PREDICTION_CODE,String.valueOf(code));
+        try
+        {
+            Cursor promedium_cursor = db.rawQuery("SELECT count(*) FROM CAR_PREDICTION WHERE vin_dtc='"+vin+"'", null);
+            if (promedium_cursor.moveToFirst() ) {
+                if(promedium_cursor.getInt(0)>=1)
+                {
+                    long IdUpdate = db.update(ControladorSQLite.DatosTabla.TABLA_CAR_PREDICTION, valores, "vin_dtc='" + vin + "'", null);
+                }
+                else
+                {
+                    long IdGuardado = db.insert(ControladorSQLite.DatosTabla.TABLA_CAR_PREDICTION, "id", valores);
+                }
+            }
+        }
+        catch (Exception e){
+            String b = e.toString();
+        }
+    }
+
+    public void savePredictionContext(String vin, String car_name,String car_model, String code, Context context) {
+        ControladorSQLite controladorSQLite=  new ControladorSQLite(context);
+        SQLiteDatabase db = controladorSQLite.getWritableDatabase();
+
+        ContentValues valores = new ContentValues();
+        valores.put(ControladorSQLite.DatosTabla.VIN_DTC,String.valueOf(vin));
+        valores.put(ControladorSQLite.DatosTabla.CAR_NAME,String.valueOf(car_name));
+        valores.put(ControladorSQLite.DatosTabla.CAR_MODEL,String.valueOf(car_model));
+        valores.put(ControladorSQLite.DatosTabla.PREDICTION_CODE,String.valueOf(code));
+        try
+        {
+            Cursor promedium_cursor = db.rawQuery("SELECT count(*) FROM CAR_PREDICTION WHERE vin_dtc='"+vin+"'", null);
+            if (promedium_cursor.moveToFirst() ) {
+                if(promedium_cursor.getInt(0)>=1)
+                {
+                    long IdUpdate = db.update(ControladorSQLite.DatosTabla.TABLA_CAR_PREDICTION, valores, "vin_dtc='" + vin + "'", null);
+                }
+                else
+                {
+                    long IdGuardado = db.insert(ControladorSQLite.DatosTabla.TABLA_CAR_PREDICTION, "id", valores);
+                }
+            }
+        }
+        catch (Exception e){
+            String b = e.toString();
         }
     }
 
@@ -292,10 +434,10 @@ public class RestCommunication {
             conn = null;
             Gson gson = new GsonBuilder().create();
             BufferedReader br = communicate("GET", "annStudies?brand=" + brand + "&model=" + model + "&air_fuel_ratio="
-                                            + air_fuel_ratio + "&timeadvance=" + timeadvance + "&rpm=" + rpm + "&stft2="
-                                            + stft2 + "&stft1=" + stft1 + "&ltft2=" + ltft2 + "&ltft1=" + ltft1 + "&maf=" + maf
-                                            + "&coolant=" + coolant + "&motorcharge=" + motorcharge + "&pressure_at=" + pressure_at
-                                            + "&admission_temp=" + admission_temp);
+                    + air_fuel_ratio + "&timeadvance=" + timeadvance + "&rpm=" + rpm + "&stft2="
+                    + stft2 + "&stft1=" + stft1 + "&ltft2=" + ltft2 + "&ltft1=" + ltft1 + "&maf=" + maf
+                    + "&coolant=" + coolant + "&motorcharge=" + motorcharge + "&pressure_at=" + pressure_at
+                    + "&admission_temp=" + admission_temp);
             String output;
             ArrayList<Integer> response = new ArrayList<Integer>();
             ArrayList<Integer> _response = new ArrayList<Integer>();

@@ -6,15 +6,18 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.BaseColumns;
 
 /**
- * Created by crist on 7/8/2017.
+ * Created by Cristian on 7/8/2017.
  */
 
 public class ControladorSQLite extends SQLiteOpenHelper
 {
     public static abstract class DatosTabla implements BaseColumns
     {
-        public static final String NOMBRE_TABLA = "HISTORICO";
-        public static final String NOMBRE_TABLA2 = "CAR_DTC";
+        public static final String TABLA_HISTORICO = "HISTORICO";
+        public static final String TABLA_CAR_DTC = "CAR_DTC";
+        public static final String TABLA_CAR_PREDICTION = "CAR_PREDICTION";
+        public static final String TABLA_CAR_PROMEDIUM = "CAR_PROMEDIUM";
+
         public static final String COLUMNA_ID = "id";
         public static final String AIR_INTAKE_TEMP = "Air_Intake_Temperature";
         public static final String AMBIENT_AIR_TEMP = "Ambient_Air_Temperature";
@@ -53,18 +56,20 @@ public class ControladorSQLite extends SQLiteOpenHelper
         public static final String LON = "lon";
         public static final String ALT = "alt";
 
-        // CAR_DTC TABLE
         public static final String VIN_DTC = "vin_dtc";
+        public static final String CAR_NAME = "car_name";
         public static final String CAR_MODEL = "car_model";
         public static final String TOUBLE_CODE = "trouble_code_dtc";
+        public static final String PREDICTION_CODE = "prediction_code";
+
 
         private static final String TEXT_TYPE = " TEXT";
         private static final String TEXT_FLOAT = " REAL";
         private static final String COMMA_SEP = ",";
 
         //TABLES
-        private static final String CREAR_TABLA_1 =
-                "CREATE TABLE " + DatosTabla.NOMBRE_TABLA + " (" +
+        private static final String CREAR_TABLA_HISTORICO =
+                "CREATE TABLE " + DatosTabla.TABLA_HISTORICO + " (" +
                         DatosTabla.COLUMNA_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                         DatosTabla.AIR_INTAKE_TEMP + TEXT_TYPE + COMMA_SEP +
                         DatosTabla.AMBIENT_AIR_TEMP + TEXT_TYPE + COMMA_SEP +
@@ -101,18 +106,51 @@ public class ControladorSQLite extends SQLiteOpenHelper
                         DatosTabla.LON + TEXT_TYPE + COMMA_SEP +
                         DatosTabla.ALT + TEXT_TYPE + " )";
 
-     private static final String CREAR_TABLA_2 =
-             "CREATE TABLE " + DatosTabla.NOMBRE_TABLA2 + " (" +
+     private static final String CREAR_TABLA_CAR_DTC =
+             "CREATE TABLE " + DatosTabla.TABLA_CAR_DTC + " (" +
                      DatosTabla.COLUMNA_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                      DatosTabla.CAR_MODEL + TEXT_TYPE + COMMA_SEP +
                      DatosTabla.VIN_DTC + TEXT_TYPE + COMMA_SEP +
                      DatosTabla.TOUBLE_CODE + TEXT_TYPE + " )";
 
+        private static final String CREAR_TABLA_CAR_PREDICTION =
+                "CREATE TABLE " + DatosTabla.TABLA_CAR_PREDICTION + " (" +
+                        DatosTabla.COLUMNA_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+                        DatosTabla.CAR_NAME + TEXT_TYPE + COMMA_SEP +
+                        DatosTabla.CAR_MODEL + TEXT_TYPE + COMMA_SEP +
+                        DatosTabla.VIN_DTC + TEXT_TYPE + COMMA_SEP +
+                        DatosTabla.PREDICTION_CODE + TEXT_TYPE + " )";
+
+        private static final String CREAR_TABLA_CAR_PROMEDIUM =
+                "CREATE TABLE " + DatosTabla.TABLA_CAR_PROMEDIUM + " (" +
+                        DatosTabla.COLUMNA_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+                        DatosTabla.CAR_NAME + TEXT_TYPE + COMMA_SEP +
+                        DatosTabla.CAR_MODEL + TEXT_TYPE + COMMA_SEP +
+                        DatosTabla.VIN_DTC + TEXT_TYPE + COMMA_SEP +
+                        DatosTabla.AIR_INTAKE_TEMP + TEXT_TYPE + COMMA_SEP +
+                        DatosTabla.ENGINE_COOLANT_TEMP + TEXT_TYPE + COMMA_SEP +
+                        DatosTabla.INTAKE_MANIFOLD_PRESSURE + TEXT_TYPE + COMMA_SEP +
+                        DatosTabla.MAF + TEXT_TYPE + COMMA_SEP +
+                        DatosTabla.ENGINE_LOAD + TEXT_TYPE + COMMA_SEP +
+                        DatosTabla.ENGINE_RPM + TEXT_TYPE + COMMA_SEP +
+                        DatosTabla.TIMING_ADVANCE + TEXT_TYPE + COMMA_SEP +
+                        DatosTabla.CONTROL_MODULE_VOLTAGE + TEXT_TYPE + COMMA_SEP +
+                        DatosTabla.STFT2 + TEXT_TYPE + COMMA_SEP +
+                        DatosTabla.STFT1 + TEXT_TYPE + COMMA_SEP +
+                        DatosTabla.LTFT2 + TEXT_TYPE + COMMA_SEP +
+                        DatosTabla.LTFT1 + TEXT_TYPE + COMMA_SEP +
+                        DatosTabla.AIR_FUEL_RATIO + TEXT_TYPE + " )";
+
         private static final String SQL_DELETE_ENTRIES =
-                "DROP TABLE IF EXISTS " + DatosTabla.NOMBRE_TABLA;
+                "DROP TABLE IF EXISTS " + DatosTabla.TABLA_HISTORICO;
 
         private static final String SQL_DELETE_ENTRIES_DTC =
-                "DROP TABLE IF EXISTS " + DatosTabla.NOMBRE_TABLA2;
+                "DROP TABLE IF EXISTS " + DatosTabla.TABLA_CAR_DTC;
+
+        private static final String SQL_DELETE_ENTRIES_PREDICTIONS =
+                "DROP TABLE IF EXISTS " + DatosTabla.TABLA_CAR_PREDICTION;
+        private static final String SQL_DELETE_ENTRIES_PROMEDIUM =
+                "DROP TABLE IF EXISTS " + DatosTabla.TABLA_CAR_PROMEDIUM;
     }
 
     public static final int DATABASE_VERSION = 1;
@@ -124,14 +162,18 @@ public class ControladorSQLite extends SQLiteOpenHelper
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(DatosTabla.CREAR_TABLA_1);
-        db.execSQL(DatosTabla.CREAR_TABLA_2);
+        db.execSQL(DatosTabla.CREAR_TABLA_HISTORICO);
+        db.execSQL(DatosTabla.CREAR_TABLA_CAR_DTC);
+        db.execSQL(DatosTabla.CREAR_TABLA_CAR_PREDICTION);
+        db.execSQL(DatosTabla.CREAR_TABLA_CAR_PROMEDIUM);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
         db.execSQL(DatosTabla.SQL_DELETE_ENTRIES);
         db.execSQL(DatosTabla.SQL_DELETE_ENTRIES_DTC);
+        db.execSQL(DatosTabla.SQL_DELETE_ENTRIES_PREDICTIONS);
+        db.execSQL(DatosTabla.SQL_DELETE_ENTRIES_PROMEDIUM);
         onCreate(db);
     }
 }
