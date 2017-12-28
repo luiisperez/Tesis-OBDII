@@ -352,7 +352,7 @@
                         </div>
                         <div class="col-xs-4">
                             <label>Marca:  </label>
-                            <input list="marcas_listado" name="listado" runat="server" id="marcas_lista" style="height:30px; width:100%" autocomplete="off" class="form-control" onblur="CargarModelos()">
+                            <input list="marcas_listado" name="listado" runat="server" id="marcas_lista" style="height:30px; width:100%" autocomplete="off" class="form-control">
                             <datalist id="marcas_listado" runat="server">
                                                 
                             </datalist>
@@ -798,7 +798,7 @@
             PageMethods.GetModelos(document.getElementById("marca").value, OnSuccess);
         }
         function OnSuccess(response, userContext, methodName) {
-            if (response != "Por favor seleccione un vehículo del listado mostrado") {
+            if ((response != "Por favor seleccione un vehículo del listado mostrado") && (response != "Ha ocurrido un error, por favor vuelva a intentar") && (response != "No hay nada")) {
                 $('#listado_modelos').html(response);
                 $('#modelo').text("Sólo usar la marca");
             } else {
@@ -809,7 +809,7 @@
             PageMethods.GetDatos(document.getElementById("marca").value, document.getElementById("modelo").value, Exito);
         }
         function Exito(response, userContext, methodName) {
-            if (response != "Por favor revise los datos ingresados") {
+            if ((response != "Por favor revise los datos ingresados") && (response != "Ha ocurrido un error, por favor vuelva a intentar") && (response != "No hay nada")) {
                 var splitted = response.split(",");
                 var chart = AmCharts.makeChart("chartdiv", {
                     "type": "serial",
@@ -925,7 +925,7 @@
             PageMethods.GetDatosFallas(document.getElementById("listado_fallas").value, document.getElementById("marcas_lista").value, ExitoFallas);
         }
         function ExitoFallas(response, userContext, methodName) {
-            if (response != "Por favor revise los datos ingresados") {
+            if ((response != "Por favor revise los datos ingresados") && (response != "Ha ocurrido un error, por favor vuelva a intentar") && (response != "No hay nada")) {
                 var splitted = response.split(",");
                 var chart = AmCharts.makeChart("chartdiv2", {
                     "type": "serial",

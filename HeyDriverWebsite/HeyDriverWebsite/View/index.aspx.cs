@@ -38,284 +38,286 @@ namespace HeyDriverWebsite.View
         public static int value10 = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
-            brands.Clear();
-            string connstring = String.Format("Server={0};Port={1};" +
-                "User Id={2};Password={3};Database={4};",
-                "localhost", "5432", "heydriver",
-                "h3yDr1v3r", "heydriverdb");
-            // Making connection with Npgsql provider
-            NpgsqlConnection conn = new NpgsqlConnection(connstring);
-            conn.Open();
-            // quite complex sql statement
-            string sql = "SELECT BRANDNAME FROM BRAND";
-            // data adapter making request from our connection
-            NpgsqlDataAdapter da = new NpgsqlDataAdapter(sql, conn);
-            ds.Reset();
-            // filling DataSet with result from NpgsqlDataAdapter
-            da.Fill(ds);
-            conn.Close();
-            String marcas = "";
-            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+            try
             {
-                marcas = marcas + "<option value=\"" + ds.Tables[0].Rows[i][0].ToString() + "\" label=\"" + "" + "\" >";
-                brands.Add(ds.Tables[0].Rows[i][0].ToString());
+                brands.Clear();
+                string connstring = String.Format("Server={0};Port={1};" +
+                    "User Id={2};Password={3};Database={4};",
+                    "localhost", "5432", "heydriver",
+                    "h3yDr1v3r", "heydriverdb");
+                // Making connection with Npgsql provider
+                NpgsqlConnection conn = new NpgsqlConnection(connstring);
+                conn.Open();
+                // quite complex sql statement
+                string sql = "SELECT BRANDNAME FROM BRAND";
+                // data adapter making request from our connection
+                NpgsqlDataAdapter da = new NpgsqlDataAdapter(sql, conn);
+                ds.Reset();
+                // filling DataSet with result from NpgsqlDataAdapter
+                da.Fill(ds);
+                conn.Close();
+                String marcas = "";
+                for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                {
+                    marcas = marcas + "<option value=\"" + ds.Tables[0].Rows[i][0].ToString() + "\" label=\"" + "" + "\" >";
+                    brands.Add(ds.Tables[0].Rows[i][0].ToString());
+                }
+                listado_marcas.InnerHtml = marcas;
+                String marcas1 = "<option value=\"" + "Todas las marcas" + "\" label=\"" + "" + "\" >" + marcas;
+                marcas_listado.InnerHtml = marcas1;
             }
-            listado_marcas.InnerHtml = marcas;
-            String marcas1 = "<option value=\"" + "Todas las marcas" + "\" label=\"" + "" + "\" >" + marcas;
-            marcas_listado.InnerHtml = marcas1;
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('Ha ocurrido un error, al cargar la página, por favor refresque la página');</script>");
+            }
         }
+
 
         [System.Web.Services.WebMethod]
         public static String GetModelos(String marca)
         {
-            string connstring = String.Format("Server={0};Port={1};" +
-                "User Id={2};Password={3};Database={4};",
-                "localhost", "5432", "heydriver",
-                "h3yDr1v3r", "heydriverdb");
-            // Making connection with Npgsql provider
-            NpgsqlConnection conn = new NpgsqlConnection(connstring);
-            conn.Open();
-            // quite complex sql statement
-            string sql = "SELECT M.MODELNAME, B.BRANDNAME FROM MODEL M, BRAND B WHERE M.MODEL_FK_BRAND = B.BRANDNAME AND B.BRANDNAME = '" + marca + "'";
-            // data adapter making request from our connection
-            NpgsqlDataAdapter da = new NpgsqlDataAdapter(sql, conn);
-            DataSet ds = new DataSet();
-            ds.Reset();
-            // filling DataSet with result from NpgsqlDataAdapter
-            da.Fill(ds);
-            conn.Close();
-            String modelos = "";
-            Boolean correcto = false;
-            foreach (String brand in brands)
+            try
             {
-                if (brand.Equals(marca))
+                string connstring = String.Format("Server={0};Port={1};" +
+                    "User Id={2};Password={3};Database={4};",
+                    "localhost", "5432", "heydriver",
+                    "h3yDr1v3r", "heydriverdb");
+                // Making connection with Npgsql provider
+                NpgsqlConnection conn = new NpgsqlConnection(connstring);
+                conn.Open();
+                // quite complex sql statement
+                string sql = "SELECT M.MODELNAME, B.BRANDNAME FROM MODEL M, BRAND B WHERE M.MODEL_FK_BRAND = B.BRANDNAME AND B.BRANDNAME = '" + marca + "'";
+                // data adapter making request from our connection
+                NpgsqlDataAdapter da = new NpgsqlDataAdapter(sql, conn);
+                DataSet ds = new DataSet();
+                ds.Reset();
+                // filling DataSet with result from NpgsqlDataAdapter
+                da.Fill(ds);
+                conn.Close();
+                String modelos = "";
+                Boolean correcto = false;
+                foreach (String brand in brands)
                 {
-                    correcto = true;
+                    if (brand.Equals(marca))
+                    {
+                        correcto = true;
+                    }
+                }
+                if (correcto)
+                {
+                    models.Clear();
+                    modelos = modelos + "<option value=\"Sólo usar la marca\" label=\"" + "" + "\" >";
+                    for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                    {
+                        modelos = modelos + "<option value=\"" + ds.Tables[0].Rows[i][0].ToString() + "\" label=\"" + "" + "\" >";
+                        models.Add(ds.Tables[0].Rows[i][0].ToString());
+                    }
+                    return modelos;
+                }
+                else
+                {
+                    if (!marca.Equals(""))
+                    {
+                        return "Por favor seleccione un vehículo del listado mostrado";
+                    }
+                    else
+                    {
+                        return "No hay nada";
+                    }
                 }
             }
-            if (correcto)
+            catch (Exception ex)
             {
-                models.Clear();
-                modelos = modelos + "<option value=\"Sólo usar la marca\" label=\"" + "" + "\" >";
-                for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
-                {
-                    modelos = modelos + "<option value=\"" + ds.Tables[0].Rows[i][0].ToString() + "\" label=\"" + "" + "\" >";
-                    models.Add(ds.Tables[0].Rows[i][0].ToString());
-                }
-                return modelos;
-            }
-            else
-            {
-                return "Por favor seleccione un vehículo del listado mostrado";
+                return "Ha ocurrido un error, por favor vuelva a intentar";
             }
         }
+
 
         [System.Web.Services.WebMethod]
         public static String GetDatos(String marca, String modelo)
         {
-            string connstring = String.Format("Server={0};Port={1};" +
-                "User Id={2};Password={3};Database={4};",
-                "localhost", "5432", "heydriver",
-                "h3yDr1v3r", "heydriverdb");
+            try
+            {
+                string connstring = String.Format("Server={0};Port={1};" +
+                    "User Id={2};Password={3};Database={4};",
+                    "localhost", "5432", "heydriver",
+                    "h3yDr1v3r", "heydriverdb");
 
-            Boolean correcto = false;
-            foreach (String brand in brands)
-            {
-                if (brand.Equals(marca))
+                Boolean correcto = false;
+                foreach (String brand in brands)
                 {
-                    correcto = true;
+                    if (brand.Equals(marca))
+                    {
+                        correcto = true;
+                    }
                 }
-            }
-            Boolean correcto2 = false;
-            if (modelo.Equals("Sólo usar la marca"))
-            {
-                correcto2 = true;
-            }
-            foreach (String model in models)
-            {
-                if (model.Equals(modelo))
+                Boolean correcto2 = false;
+                if (modelo.Equals("Sólo usar la marca"))
                 {
                     correcto2 = true;
                 }
-            }
-            String results = "";
-            if (correcto && correcto2)
-            {
-                NpgsqlConnection conn = new NpgsqlConnection(connstring);
-                conn.Open();
-                NpgsqlDataAdapter da = new NpgsqlDataAdapter();
-                if (modelo.Equals("Sólo usar la marca"))
+                foreach (String model in models)
                 {
-                    string sql = "SELECT ALL_FAILURES_STATISTICS_by_brand('" + marca + "');";
-                    da = new NpgsqlDataAdapter(sql, conn);
+                    if (model.Equals(modelo))
+                    {
+                        correcto2 = true;
+                    }
+                }
+                String results = "";
+                if (correcto && correcto2)
+                {
+                    NpgsqlConnection conn = new NpgsqlConnection(connstring);
+                    conn.Open();
+                    NpgsqlDataAdapter da = new NpgsqlDataAdapter();
+                    if (modelo.Equals("Sólo usar la marca"))
+                    {
+                        string sql = "SELECT ALL_FAILURES_STATISTICS_by_brand('" + marca + "');";
+                        da = new NpgsqlDataAdapter(sql, conn);
+                    }
+                    else
+                    {
+                        string sql = "SELECT ALL_FAILURES_STATISTICS_by_model('" + marca + "', '" + modelo + "');";
+                        da = new NpgsqlDataAdapter(sql, conn);
+                    }
+
+                    DataSet ds = new DataSet();
+                    ds.Reset();
+                    da.Fill(ds);
+                    conn.Close();
+
+                    for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                    {
+                        String result = ds.Tables[0].Rows[i][0].ToString();
+                        result = result.Replace("\"", "");
+                        result = result.Replace("(", "");
+                        result = result.Replace(")", "");
+                        results = results + result + ",";
+                    }
+                    if (!results.Contains("Consumo desproporcionado de combustible"))
+                    {
+                        results = results + "Consumo desproporcionado de combustible" + ",0,";
+                    }
+
+                    if (!results.Contains("Mezcla de Aire/Combustible muy pobre"))
+                    {
+                        results = results + "Mezcla de Aire/Combustible muy pobre" + ",0,";
+                    }
+                    if (!results.Contains("Mezcla de Aire/Combustible muy rica"))
+                    {
+                        results = results + "Mezcla de Aire/Combustible muy rica" + ",0,";
+                    }
+                    if (!results.Contains("Sensor MAF sucio o averiado"))
+                    {
+                        results = results + "Sensor MAF sucio o averiado" + ",0,";
+                    }
+                    if (!results.Contains("Inyectores sucios o averiados"))
+                    {
+                        results = results + "Inyectores sucios o averiados" + ",0,";
+                    }
+                    if (!results.Contains("Bobina Averiada"))
+                    {
+                        results = results + "Bobina Averiada" + ",0,";
+                    }
+                    if (!results.Contains("Bujías propensas a daños"))
+                    {
+                        results = results + "Bujías propensas a daños" + ",0,";
+                    }
+                    if (!results.Contains("Vehículo propenso a recalentamiento"))
+                    {
+                        results = results + "Vehículo propenso a recalentamiento" + ",0,";
+                    }
+                    if (!results.Contains("Radiador Averiado"))
+                    {
+                        results = results + "Radiador Averiado" + ",0,";
+                    }
+                    if (!results.Contains("Alternador defectuoso"))
+                    {
+                        results = results + "Alternador defectuoso" + ",0,";
+                    }
+                    return results;
                 }
                 else
                 {
-                    string sql = "SELECT ALL_FAILURES_STATISTICS_by_model('" + marca + "', '" + modelo + "');";
-                    da = new NpgsqlDataAdapter(sql, conn);
+                    return "Por favor revise los datos ingresados";
                 }
-
-                DataSet ds = new DataSet();
-                ds.Reset();
-                da.Fill(ds);
-                conn.Close();
-
-                for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
-                {
-                    String result = ds.Tables[0].Rows[i][0].ToString();
-                    result = result.Replace("\"", "");
-                    result = result.Replace("(", "");
-                    result = result.Replace(")", "");
-                    results = results + result + ",";
-                }
-                if (!results.Contains("Consumo desproporcionado de combustible"))
-                {
-                    results = results + "Consumo desproporcionado de combustible" + ",0,";
-                }
-
-                if (!results.Contains("Mezcla de Aire/Combustible muy pobre"))
-                {
-                    results = results + "Mezcla de Aire/Combustible muy pobre" + ",0,";
-                }
-                if (!results.Contains("Mezcla de Aire/Combustible muy rica"))
-                {
-                    results = results + "Mezcla de Aire/Combustible muy rica" + ",0,";
-                }
-                if (!results.Contains("Sensor MAF sucio o averiado"))
-                {
-                    results = results + "Sensor MAF sucio o averiado" + ",0,";
-                }
-                if (!results.Contains("Inyectores sucios o averiados"))
-                {
-                    results = results + "Inyectores sucios o averiados" + ",0,";
-                }
-                if (!results.Contains("Bobina Averiada"))
-                {
-                    results = results + "Bobina Averiada" + ",0,";
-                }
-                if (!results.Contains("Bujías propensas a daños"))
-                {
-                    results = results + "Bujías propensas a daños" + ",0,";
-                }
-                if (!results.Contains("Vehículo propenso a recalentamiento"))
-                {
-                    results = results + "Vehículo propenso a recalentamiento" + ",0,";
-                }
-                if (!results.Contains("Radiador Averiado"))
-                {
-                    results = results + "Radiador Averiado" + ",0,";
-                }
-                if (!results.Contains("Alternador defectuoso"))
-                {
-                    results = results + "Alternador defectuoso" + ",0,";
-                }
-                return results;
             }
-            else
+            catch (Exception ex)
             {
-                return "Por favor revise los datos ingresados";
+                return "Ha ocurrido un error, por favor vuelva a intentar";
             }
         }
-
-
 
 
         [System.Web.Services.WebMethod]
         public static String GetDatosFallas(String falla, String marca)
         {
-            string connstring = String.Format("Server={0};Port={1};" +
-                "User Id={2};Password={3};Database={4};",
-                "localhost", "5432", "heydriver",
-                "h3yDr1v3r", "heydriverdb");
+            try
+            {
+                string connstring = String.Format("Server={0};Port={1};" +
+                    "User Id={2};Password={3};Database={4};",
+                    "localhost", "5432", "heydriver",
+                    "h3yDr1v3r", "heydriverdb");
 
-            Boolean correcto = false;
-            if (marca.Equals("Todas las marcas"))
-            {
-                correcto = true;
-            }
-            foreach (String brand in brands)
-            {
-                if (brand.Equals(marca))
+                Boolean correcto = false;
+                if (marca.Equals("Todas las marcas"))
                 {
                     correcto = true;
                 }
-            }
-            String results = "";
-            if (correcto)
-            {
-                NpgsqlConnection conn = new NpgsqlConnection(connstring);
-                conn.Open();
-                NpgsqlDataAdapter da = new NpgsqlDataAdapter();
-                if (marca.Equals("Todas las marcas"))
+                foreach (String brand in brands)
                 {
-                    string sql = "SELECT ALL_BRANDS_STATISTICS_BY_FAILURE('" + falla + "');";
-                    da = new NpgsqlDataAdapter(sql, conn);
+                    if (brand.Equals(marca))
+                    {
+                        correcto = true;
+                    }
+                }
+                String results = "";
+                if (correcto)
+                {
+                    NpgsqlConnection conn = new NpgsqlConnection(connstring);
+                    conn.Open();
+                    NpgsqlDataAdapter da = new NpgsqlDataAdapter();
+                    if (marca.Equals("Todas las marcas"))
+                    {
+                        string sql = "SELECT ALL_BRANDS_STATISTICS_BY_FAILURE('" + falla + "');";
+                        da = new NpgsqlDataAdapter(sql, conn);
+                    }
+                    else
+                    {
+                        string sql = "SELECT ALL_MODELS_STATISTICS_BY_FAILURE('" + falla + "', '" + marca + "');";
+                        da = new NpgsqlDataAdapter(sql, conn);
+                    }
+
+                    DataSet ds = new DataSet();
+                    ds.Reset();
+                    da.Fill(ds);
+                    conn.Close();
+
+                    for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                    {
+                        String result = ds.Tables[0].Rows[i][0].ToString();
+                        result = result.Replace("\"", "");
+                        result = result.Replace("(", "");
+                        result = result.Replace(")", "");
+                        results = results + result + ",";
+                    }
+                    try
+                    {
+                        if (results.Split(',').Length < 10)
+                        {
+                            results = results + ", , , , , , , , , , ";
+                        }
+                    }
+                    catch (Exception ex) { }
+                    return results;
                 }
                 else
                 {
-                    string sql = "SELECT ALL_MODELS_STATISTICS_BY_FAILURE('" + falla + "', '" + marca + "');";
-                    da = new NpgsqlDataAdapter(sql, conn);
+                    return "Por favor revise los datos ingresados";
                 }
-
-                DataSet ds = new DataSet();
-                ds.Reset();
-                da.Fill(ds);
-                conn.Close();
-
-                for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
-                {
-                    String result = ds.Tables[0].Rows[i][0].ToString();
-                    result = result.Replace("\"", "");
-                    result = result.Replace("(", "");
-                    result = result.Replace(")", "");
-                    results = results + result + ",";
-                }
-                if (!results.Contains("Consumo desproporcionado de combustible"))
-                {
-                    results = results + "Consumo desproporcionado de combustible" + ",0,";
-                }
-
-                if (!results.Contains("Mezcla de Aire/Combustible muy pobre"))
-                {
-                    results = results + "Mezcla de Aire/Combustible muy pobre" + ",0,";
-                }
-                if (!results.Contains("Mezcla de Aire/Combustible muy rica"))
-                {
-                    results = results + "Mezcla de Aire/Combustible muy rica" + ",0,";
-                }
-                if (!results.Contains("Sensor MAF sucio o averiado"))
-                {
-                    results = results + "Sensor MAF sucio o averiado" + ",0,";
-                }
-                if (!results.Contains("Inyectores sucios o averiados"))
-                {
-                    results = results + "Inyectores sucios o averiados" + ",0,";
-                }
-                if (!results.Contains("Bobina Averiada"))
-                {
-                    results = results + "Bobina Averiada" + ",0,";
-                }
-                if (!results.Contains("Bujías propensas a daños"))
-                {
-                    results = results + "Bujías propensas a daños" + ",0,";
-                }
-                if (!results.Contains("Vehículo propenso a recalentamiento"))
-                {
-                    results = results + "Vehículo propenso a recalentamiento" + ",0,";
-                }
-                if (!results.Contains("Radiador Averiado"))
-                {
-                    results = results + "Radiador Averiado" + ",0,";
-                }
-                if (!results.Contains("Alternador defectuoso"))
-                {
-                    results = results + "Alternador defectuoso" + ",0,";
-                }
-                return results;
             }
-            else
+            catch (Exception ex)
             {
-                return "Por favor revise los datos ingresados";
+                return "Ha ocurrido un error, por favor vuelva a intentar";
             }
         }
     }
