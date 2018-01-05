@@ -202,14 +202,14 @@ public class HeyDriverWS {
     @GET
     @Path("annStudies")
     @Produces("application/json")
-    public String annStudies (@QueryParam("brand") String brand, @QueryParam("model") String model, 
+    public String annStudies (@QueryParam("serial") String serial, @QueryParam("brand") String brand, @QueryParam("model") String model, 
                               @QueryParam("air_fuel_ratio") double air_fuel_ratio, @QueryParam("timeadvance") double timeadvance, 
                               @QueryParam("rpm") double rpm, @QueryParam("stft2") double stft2, @QueryParam("stft1") double stft1, 
                               @QueryParam("ltft2") double ltft2, @QueryParam("ltft1") double ltft1, @QueryParam("maf") double maf, 
                               @QueryParam("coolant") double coolant, @QueryParam("motorcharge") double motorcharge, 
                               @QueryParam("pressure_at") double pressure_at, @QueryParam("admission_temp") double admission_temp){
         Gson gson = new GsonBuilder().create();
-        ANNStudiesCommand cmd = new ANNStudiesCommand(brand , model, air_fuel_ratio/50, timeadvance/90, rpm/5500, stft2/25, stft1/25, ltft2/25, ltft1/25, maf/100, coolant/300, motorcharge/100, pressure_at/100, admission_temp/300);
+        ANNStudiesCommand cmd = new ANNStudiesCommand(serial, brand , model, air_fuel_ratio/50, timeadvance/90, rpm/5500, stft2/25, stft1/25, ltft2/25, ltft1/25, maf/100, coolant/300, motorcharge/100, pressure_at/100, admission_temp/300);
         try {
             cmd.execute();
             return gson.toJson(cmd.getFailuresList());

@@ -162,6 +162,7 @@
     <Content Include="View\images\prettyPhoto\light_square\sprite.png" />
     <Content Include="View\images\slider\bg1.jpg" />
     <Content Include="View\images\slider\bg2.jpg" />
+    <Content Include="View\images\slider\bg3.jpg" />
     <Content Include="View\images\team\01.jpg" />
     <Content Include="View\images\team\02.jpg" />
     <Content Include="View\images\team\03.jpg" />
