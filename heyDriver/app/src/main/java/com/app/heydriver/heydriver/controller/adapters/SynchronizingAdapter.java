@@ -1,6 +1,5 @@
 package com.app.heydriver.heydriver.controller.adapters;
 
-import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -12,7 +11,6 @@ import com.app.heydriver.heydriver.controller.activities.HomeActivity;
 
 import java.sql.Timestamp;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,7 +22,6 @@ import static android.content.ContentValues.TAG;
 
 public class SynchronizingAdapter {
     private List<ObdData> readings = new ArrayList<>();
-    private SimpleDateFormat mask = new SimpleDateFormat("_dd_MM_yyyy_HH_mm_ss");
 
     public List<ObdData> syncData() throws ParseException {
 
@@ -160,51 +157,6 @@ public class SynchronizingAdapter {
         } catch (Exception e) {
             Log.d(TAG, "callMethodSynchronization: Error de sincronización");
             throw e;
-        }
-    }
-    private void homologate() {
-        SQLiteDatabase db = HomeActivity.controladorSQLite.getWritableDatabase();
-        Cursor avg_cursor = db.rawQuery("SELECT avg(Air_Intake_Temperature), avg(Engine_Coolant_Temperature), " +
-                "avg(Intake_Manifold_Pressure),avg(Mass_Air_Flow), avg(Engine_Load), " +
-                "avg(Engine_RPM), avg(Timing_Advance), avg(Control_Module_Power_Supply), " +
-                "avg(Short_Term_Fuel_Trim2), avg(Short_Term_Fuel_Trim1), avg(Long_Term_Fuel_Trim2), avg(Long_Term_Fuel_Trim1), " +
-                "avg(AirFuel_Ratio), Vehicle_Identification_Number FROM HISTORICO GROUP BY Vehicle_Identification_Number", null);
-        ContentValues cv = new ContentValues();
-        if (avg_cursor.moveToFirst()) {
-            do {
-                if (avg_cursor.getDouble(0) == 0) {
-                    cv.put("Air_Intake_Temperature", 42.5f);
-                }
-                if (avg_cursor.getDouble(1) == 0) {
-                    cv.put("Engine_Coolant_Temperature", 65f);
-                }
-                if (avg_cursor.getDouble(2) == 0) {
-                    cv.put("Intake_Manifold_Pressure", 35f);
-                }
-                if (avg_cursor.getDouble(3) == 0) {
-                    cv.put("Mass_Air_Flow", 20.5f);
-                }
-                if (avg_cursor.getDouble(4) == 0) {
-                    cv.put("Engine_Load", 50f);
-                }
-                if (avg_cursor.getDouble(5) == 0) {
-                    cv.put("Engine_RPM", 3200.5f);
-                }
-                if (avg_cursor.getDouble(6) == 0) {
-                    cv.put("Timing_Advance", 0.5f);
-                }
-                if (avg_cursor.getDouble(7) == 0) {
-                    cv.put("Control_Module_Power_Supply", 13.5f);
-                }
-                if (avg_cursor.getDouble(12) == 0) {
-                    cv.put("AirFuel_Ratio", 14.7f);
-                }
-                if (cv.size() >= 1) {
-                    db.update(ControladorSQLite.DatosTabla.TABLA_HISTORICO, cv, "Vehicle_Identification_Number='" + avg_cursor.getDouble(13) + "'", null);
-                }
-                cv.clear();
-            }while (avg_cursor.moveToNext());
-            db.close();
         }
     }
 
