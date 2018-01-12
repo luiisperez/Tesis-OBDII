@@ -73,7 +73,6 @@ CREATE TABLE HISTORY (
 
 CREATE TABLE FAILURE(
 	FAILUREID					serial not null,
-	FAILURECARSERIAL			varchar(20) not null,
 	FAILUREBRANDNAME			varchar(1000) not null,	
 	FAILUREBRANDMODEL			varchar(1000) not null,	
 	FAILUREDESCRIPTION			varchar(1000) not null,	

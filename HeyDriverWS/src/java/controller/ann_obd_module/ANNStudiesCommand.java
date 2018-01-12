@@ -17,7 +17,7 @@ import model.cars_module.DAOCar;
  * @author LAPGrock
  */
 public class ANNStudiesCommand extends Command{
-    private String serial;
+    
     private String brand;
     private String model;
     private double air_fuel_ratio;
@@ -34,10 +34,10 @@ public class ANNStudiesCommand extends Command{
     private double admission_temp;
     private ArrayList<Integer> failures = new ArrayList<Integer>();
     
-    public ANNStudiesCommand(String serial, String brand, String model, double air_fuel_ratio, double timeadvance, double rpm, double stft2, 
+    public ANNStudiesCommand(String brand, String model, double air_fuel_ratio, double timeadvance, double rpm, double stft2, 
                              double stft1, double ltft2, double ltft1, double maf, double coolant, 
                              double motorcharge, double pressure_at, double admission_temp){
-        this.serial = serial;
+        
         this.brand = brand;
         this.model = model;
         this.air_fuel_ratio = air_fuel_ratio;
@@ -71,39 +71,39 @@ public class ANNStudiesCommand extends Command{
             long j = Math.round(firstANNResponse[0]);
             failures.add((int)Math.round(firstANNResponse[0]));
             if (Math.round(firstANNResponse[0]) != 0){
-                dao.create(serial, brand, model, "Consumo desproporcionado de combustible");
+                dao.create(brand, model, "Consumo desproporcionado de combustible");
             }
             failures.add((int)Math.round(firstANNResponse[1]));
             if (Math.round(firstANNResponse[1]) != 0){
-                dao.create(serial, brand, model, "Mezcla de Aire/Combustible muy pobre");
+                dao.create(brand, model, "Mezcla de Aire/Combustible muy pobre");
             }
             failures.add((int)Math.round(firstANNResponse[2]));
             if (Math.round(firstANNResponse[2]) != 0){
-                dao.create(serial, brand, model, "Mezcla de Aire/Combustible muy rica");
+                dao.create(brand, model, "Mezcla de Aire/Combustible muy rica");
             }
             failures.add((int)Math.round(firstANNResponse[3]));
             if (Math.round(firstANNResponse[3]) != 0){
-                dao.create(serial, brand, model, "Sensor MAF sucio o averiado");
+                dao.create(brand, model, "Sensor MAF sucio o averiado");
             }
             failures.add((int)Math.round(secondANNResponse[0]));
             if (Math.round(secondANNResponse[0]) != 0){
-                dao.create(serial, brand, model, "Inyectores sucios o averiados");
+                dao.create(brand, model, "Inyectores sucios o averiados");
             }
             failures.add((int)Math.round(secondANNResponse[1]));
             if (Math.round(secondANNResponse[1]) != 0){
-                dao.create(serial, brand, model, "Bobina Averiada");
+                dao.create(brand, model, "Bobina Averiada");
             }
             failures.add((int)Math.round(thirdANNResponse[0]));
             if (Math.round(thirdANNResponse[0]) != 0){
-                dao.create(serial, brand, model, "Bujías propensas a daños");
+                dao.create(brand, model, "Bujías propensas a daños");
             }
             failures.add((int)Math.round(forthANNResponse[0]));
             if (Math.round(forthANNResponse[0]) != 0){
-                dao.create(serial, brand, model, "Vehículo propenso a recalentamiento");
+                dao.create(brand, model, "Vehículo propenso a recalentamiento");
             }
             failures.add((int)Math.round(forthANNResponse[1]));
             if (Math.round(forthANNResponse[1]) != 0){
-                dao.create(serial, brand, model, "Radiador Averiado");
+                dao.create(brand, model, "Radiador Averiado");
             }
         }catch (Exception ex){
             throw ex;
