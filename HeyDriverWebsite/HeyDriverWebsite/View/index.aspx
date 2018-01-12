@@ -32,6 +32,23 @@
 </head> 
 
 <body id="home">
+    <style>
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+            width: 120%;
+            height: 15%;
+            background-color:whitesmoke;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
+
+        .container {
+            padding: 2px 16px;
+        }
+    </style>
 
     <header id="header">
         <nav id="main-nav" class="navbar navbar-default navbar-fixed-top" role="banner">
@@ -234,8 +251,11 @@
     <section id="pricing">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title text-center wow fadeInDown">Our Pricing</h2>
-                <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget risus vitae massa <br> semper aliquam quis mattis quam.</p>
+                <h2 class="section-title text-center wow fadeInDown">Fallas y piezas</h2>
+                <p class="text-center wow fadeInDown">Como es de saber una falla en un vehículo involucra piezas en mal estado o inclusive ocasionar que elementos <br> 
+                                                      del automovíl que se encontraban en buen estado se deterioren. Gracias a una extensa documentación<br> 
+                                                      a continuación las piezas que se relacionan con las fallas estudiadas
+                </p>
             </div>
 
             <div class="row"> 
@@ -371,6 +391,41 @@
                         <div class="col-lg-6">
                             <div id="piediv2" class="wow fadeInDown"></div> 
                         </div>
+                    </div>
+                </div>
+
+                
+                <br />
+                <div class="row">
+                    <div class="section-header">
+                        <h3 class="text wow fadeInDown" style="color:white">Registro de fallas por un vehículo</h3>
+                    </div>
+
+            
+            
+                    <div class="col-md-12" style="margin-bottom:50px;text-align:left">
+                        <div class="col-xs-4">
+                            <label>Serial de vehículo (VIN):  </label>
+                            <input runat="server" id="vinvehiculo" style="height:30px; width:100%" autocomplete="off" class="form-control">
+                        </div>
+                        <div class="col-xs-4">
+                            <label> </label>
+
+                            <input type="button" value="Aceptar" class="form-control" style="background-color:#2ECC71; border-color:#2ECC71; color:white; width:75%; margin-top:4px;" onclick="CargarFallasVIN()">
+                        </div>
+                    </div>
+                
+                    <div class="col-lg-12"  style="margin-top:-10px;margin-bottom:20px">
+                        <div class="col-lg-4">
+                            <div class="wow fadeInDown"><label id="marcacar" style="font-size:medium">Marca: </label></div> 
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="wow fadeInDown"><label id="modelocar" style="font-size:medium">Modelo: </label></div> 
+                        </div>
+                    </div>
+                
+                    <div id="tarjetaserror" class="col-lg-12">
+                       
                     </div>
                 </div>
 
@@ -1036,5 +1091,68 @@
         }
     </script>
 
+
+    
+    <script>
+        function CargarFallasVIN() {
+            PageMethods.GetFallasVIN(document.getElementById("vinvehiculo").value, ExitoFallasVIN);
+        }
+        function ExitoFallasVIN(response, userContext, methodName) {
+            if ((response != "Por favor revise los datos ingresados") && (response != "Ha ocurrido un error, por favor vuelva a intentar") && (response != "No hay nada")) {
+                var splitted = response.split("/");
+                document.getElementById('tarjetaserror').innerHTML = "";
+                document.getElementById('marcacar').innerHTML = 'Marca: ' + splitted[0].split(",")[0];
+                document.getElementById('modelocar').innerHTML = 'Modelo: ' + splitted[0].split(",")[1];
+                splitted.forEach(function (element) {
+                    console.log(element.split(",")[2]);
+                    if (element.split(",")[2] != null) {
+                        var imagen = "";
+
+                        if (element.split(",")[2] ==="Consumo desproporcionado de combustible") {
+                            imagen = "images/failureIcon/jerrycan.png";
+                        }
+
+                        if (element.split(",")[2] ==="Mezcla de Aire/Combustible muy pobre") {
+                            imagen = "images/failureIcon/pistonrojo.png";
+                        }
+                        if (element.split(",")[2] ==="Mezcla de Aire/Combustible muy rica") {
+                            imagen = "images/failureIcon/pistonverde.png";
+                        }
+                        if (element.split(",")[2] ==="Sensor MAF sucio o averiado") {
+                            imagen = "images/failureIcon/cpu.png";
+                        }
+                        if (element.split(",")[2] ==="Inyectores sucios o averiados") {
+                            imagen = "images/failureIcon/syringe-needle.png";
+                        }
+                        if (element.split(",")[2] ==="Bobina Averiada") {
+                            imagen = "images/failureIcon/fuse.png";
+                        }
+                        if (element.split(",")[2] ==="Bujías propensas a daños") {
+                            imagen = "images/failureIcon/spark.png";
+                        }
+                        if (element.split(",")[2] ==="Vehículo propenso a recalentamiento") {
+                            imagen = "images/failureIcon/temperature.png";
+                        }
+                        if (element.split(",")[2] ==="Radiador Averiado") {
+                            imagen = "images/failureIcon/pulley.png";
+                        }
+                        if (element.split(",")[2] ==="Alternador defectuoso") {
+                            imagen = "images/failureIcon/motor.png";
+                        }
+                        document.getElementById('tarjetaserror').innerHTML = document.getElementById('tarjetaserror').innerHTML + "<div class=\"col-lg-2\" style=\"margin-right:20px\">"
+                                                                                                                                +   "<div class=\"card\">"
+                                                                                                                                + "<img src=\"" + imagen + "\" width=\"240\" height=\"240\" style=\"width:100%; height:100%; background-color:grey\">"
+                                                                                                                                +       "<div class=\"container\">"
+                                                                                                                                + "<h4 style=\"width:100%\"><font size=\"1.5\"><b>" + element.split(",")[2] + "</b></font></h4>"
+                                                                                                                                +       "</div>"
+                                                                                                                                +   "</div>"
+                                                                                                                                + "</div>";
+                    }
+                });
+            } else {
+                alert(response);
+            }
+        }
+    </script>
 </body>
 </html>

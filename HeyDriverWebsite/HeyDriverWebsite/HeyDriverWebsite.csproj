@@ -98,6 +98,16 @@
     <Content Include="View\fonts\fontawesome-webfont.svg" />
     <Content Include="View\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="View\images\about.png" />
+    <Content Include="View\images\failureIcon\cpu.png" />
+    <Content Include="View\images\failureIcon\fuse.png" />
+    <Content Include="View\images\failureIcon\jerrycan.png" />
+    <Content Include="View\images\failureIcon\motor.png" />
+    <Content Include="View\images\failureIcon\pistonrojo.png" />
+    <Content Include="View\images\failureIcon\pistonverde.png" />
+    <Content Include="View\images\failureIcon\pulley.png" />
+    <Content Include="View\images\failureIcon\spark.png" />
+    <Content Include="View\images\failureIcon\syringe-needle.png" />
+    <Content Include="View\images\failureIcon\temperature.png" />
     <Content Include="View\images\ico\apple-touch-icon-114-precomposed.png" />
     <Content Include="View\images\ico\apple-touch-icon-144-precomposed.png" />
     <Content Include="View\images\ico\apple-touch-icon-57-precomposed.png" />
@@ -162,6 +172,7 @@
     <Content Include="View\images\prettyPhoto\light_square\sprite.png" />
     <Content Include="View\images\slider\bg1.jpg" />
     <Content Include="View\images\slider\bg2.jpg" />
+    <Content Include="View\images\slider\bg3.jpg" />
     <Content Include="View\images\team\01.jpg" />
     <Content Include="View\images\team\02.jpg" />
     <Content Include="View\images\team\03.jpg" />

@@ -320,5 +320,49 @@ namespace HeyDriverWebsite.View
                 return "Ha ocurrido un error, por favor vuelva a intentar";
             }
         }
+
+
+        [System.Web.Services.WebMethod]
+        public static String GetFallasVIN(String vin)
+        {
+            try
+            {
+                string connstring = String.Format("Server={0};Port={1};" +
+                    "User Id={2};Password={3};Database={4};",
+                    "localhost", "5432", "heydriver",
+                    "h3yDr1v3r", "heydriverdb");
+                String results = "";
+                if (!vin.Equals(""))
+                {
+                    NpgsqlConnection conn = new NpgsqlConnection(connstring);
+                    conn.Open();
+                    NpgsqlDataAdapter da = new NpgsqlDataAdapter();
+                    string sql = "SELECT failurebrandname, failurebrandmodel, failuredescription FROM FAILURE WHERE FAILURECARSERIAL = '" + vin + "';";
+                    da = new NpgsqlDataAdapter(sql, conn);
+
+                    DataSet ds = new DataSet();
+                    ds.Reset();
+                    da.Fill(ds);
+                    conn.Close();
+
+                    for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                    {
+                        String brand = ds.Tables[0].Rows[i][0].ToString();
+                        String model = ds.Tables[0].Rows[i][1].ToString();
+                        String failure = ds.Tables[0].Rows[i][2].ToString();
+                        results = results + brand + "," + model + "," + failure + "/";
+                    }
+                    return results;
+                }
+                else
+                {
+                    return "Por favor revise los datos ingresados";
+                }
+            }
+            catch (Exception ex)
+            {
+                return "Ha ocurrido un error, por favor vuelva a intentar";
+            }
+        }
     }
 }
