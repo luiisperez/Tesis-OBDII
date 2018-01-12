@@ -31,7 +31,7 @@ public class DAOFailure  extends DAO{
     private static String _sqlModelsByFailure = "{?=call GET_MODELS_BY_FAILURE(?)}";
     private ResultSet rs;
     
-    public int create(String brand, String model, String failure) throws Exception {
+    public int create(String serial, String brand, String model, String failure) throws Exception {
 
         CallableStatement cstmt;
 
@@ -45,9 +45,10 @@ public class DAOFailure  extends DAO{
             cstmt.registerOutParameter(1, Types.INTEGER);
 
             //Parametros de entrada
-            cstmt.setString(2, brand);
-            cstmt.setString(3, model);
-            cstmt.setString(4, failure);
+            cstmt.setString(2, serial);
+            cstmt.setString(3, brand);
+            cstmt.setString(4, model);
+            cstmt.setString(5, failure);
             cstmt.execute();
 
             response = cstmt.getInt(1);
