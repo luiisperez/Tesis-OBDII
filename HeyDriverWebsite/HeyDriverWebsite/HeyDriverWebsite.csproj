@@ -97,7 +97,7 @@
     <Content Include="View\css\styles.css" />
     <Content Include="View\fonts\fontawesome-webfont.svg" />
     <Content Include="View\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="View\images\about.png" />
+    <Content Include="View\images\about1.png" />
     <Content Include="View\images\failureIcon\cpu.png" />
     <Content Include="View\images\failureIcon\fuse.png" />
     <Content Include="View\images\failureIcon\jerrycan.png" />

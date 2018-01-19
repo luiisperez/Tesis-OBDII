@@ -32,6 +32,14 @@
 </head> 
 
 <body id="home">
+    <style> 
+        #rcorners {
+            border-radius: 25px;
+            border: 2px solid #2ECC71;
+            background-color: white;
+            padding: 20px; 
+        }
+    </style>
     <style>
         .card {
             box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -66,12 +74,10 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li class="scroll active"><a href="#home">Inicio</a></li> 
-                        <li class="scroll"><a href="#services">Services</a></li>
-                        <li class="scroll"><a href="#about">Who We</a></li>
-                        <li class="scroll"><a href="#pricing">Pricing</a></li>
+                        <li class="scroll"><a href="#about">Sobre nosotros</a></li>
+                        <li class="scroll"><a href="#pricing">Fallas y piezas</a></li>
                         <li class="scroll"><a href="#portfolio">Estadísticas</a></li>
-                        <li class="scroll"><a href="#our-team">Team</a></li>
-                        <li class="scroll"><a href="#contact-us">Contact</a></li>                        
+                        <li class="scroll"><a href="#our-team">Equipo</a></li>              
                     </ul>
                 </div>
             </div><!--/.container-->
@@ -86,7 +92,7 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="carousel-content">
-                                    <h2>Clear <span>Car</span> Wash</h2> 
+                                    <h2>Una aplicación para ayudar a tener un vehículo en excelente estado</h2> 
                                 </div>
                             </div>
                         </div>
@@ -99,20 +105,7 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="carousel-content">
-                                    <h2>Clear <span>Car</span> Wash</h2> 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><!--/.item-->
-             <div class="item" style="background-image: url(images/slider/bg3.jpg);">
-                <div class="slider-inner">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="carousel-content">
-                                    <h2>Best <span>Car</span> Servicing</h2> 
+                                    <h2>La información que necesitas sobre las fallas más frecuentes en los vehículos</h2> 
                                 </div>
                             </div>
                         </div>
@@ -125,113 +118,33 @@
     <section id="hero-text" class="wow fadeIn">
         <div class="container">
             <div class="row">
-                <div class="col-sm-9">
-                    <h2>We take care of your Car Servcing </h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget risus vitae massa semper aliquam quis mattis quam. Morbi vitae tortor tempus, placerat leo et, suscipit lectus. Phasellus ut euismod massa, eu eleifend ipsum. 
-                    </p>
+                <div class="col-sm-12">
+                    <div class="col-sm-9">
+                        <h2>Hey Driver te proporcionará tranquilidad al manejar</h2>
+                        <p>Ayudará a que puedas manejar conociendo todo la información interna que maneja tu vehículo. ¡Descárgala en la App Store! 
+                        </p>
+                    </div>
+                    <div class="col-sm-3">
+                        <img class="img-responsive" src="images/google.png" height="120" width="160" alt="">
+                    </div>
+                    
                 </div> 
             </div>
         </div>
     </section><!--/#hero-text-->
-
-      <section id="services" >
-        <div class="container">
-
-            <div class="section-header">
-                <h2 class="section-title text-center wow fadeInDown">Services</h2>
-                <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget risus vitae massa <br> semper aliquam quis mattis quam.</p>
-            </div>
-
-            <div class="row">
-                <div class="features">
-                    <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="0ms">
-                        <div class="media service-box">
-                            <div class="pull-left">
-                                <i class="fa fa-heart"></i>
-                            </div>
-                            <div class="media-body">
-                                <h4 class="media-heading">Car Checkup</h4>
-                                <p>Backed by some of the biggest names in the industry, Firefox OS is an open platform that fosters greater</p>
-                            </div>
-                        </div>
-                    </div><!--/.col-md-4-->
-
-                    <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms">
-                        <div class="media service-box">
-                            <div class="pull-left">
-                                <i class="fa fa-compass"></i>
-                            </div>
-                            <div class="media-body">
-                                <h4 class="media-heading">Car Wash</h4>
-                                <p>Backed by some of the biggest names in the industry, Firefox OS is an open platform that fosters greater</p>
-                            </div>
-                        </div>
-                    </div><!--/.col-md-4-->
-
-                    <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="200ms">
-                        <div class="media service-box">
-                            <div class="pull-left">
-                                <i class="fa fa-bell"></i>
-                            </div>
-                            <div class="media-body">
-                                <h4 class="media-heading">Car Repair</h4>
-                                <p>Morbi vitae tortor tempus, placerat leo et, suscipit lectus. Phasellus ut euismod massa, eu eleifend ipsum.</p>
-                            </div>
-                        </div>
-                    </div><!--/.col-md-4-->
-                
-                    <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="300ms">
-                        <div class="media service-box">
-                            <div class="pull-left">
-                                <i class="fa fa-cube"></i>
-                            </div>
-                            <div class="media-body">
-                                <h4 class="media-heading">Car Paint</h4>
-                                <p>Morbi vitae tortor tempus, placerat leo et, suscipit lectus. Phasellus ut euismod massa, eu eleifend ipsum.</p>
-                            </div>
-                        </div>
-                    </div><!--/.col-md-4-->
-
-                    <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="400ms">
-                        <div class="media service-box">
-                            <div class="pull-left">
-                                <i class="fa fa-yelp"></i>
-                            </div>
-                            <div class="media-body">
-                                <h4 class="media-heading">Car Decor</h4>
-                                <p>Morbi vitae tortor tempus, placerat leo et, suscipit lectus. Phasellus ut euismod massa, eu eleifend ipsum.</p>
-                            </div>
-                        </div>
-                    </div><!--/.col-md-4-->
-
-                    <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="500ms">
-                        <div class="media service-box">
-                            <div class="pull-left">
-                                <i class="fa fa-life-ring"></i>
-                            </div>
-                            <div class="media-body">
-                                <h4 class="media-heading">Car Polish</h4>
-                                <p>Morbi vitae tortor tempus, placerat leo et, suscipit lectus. Phasellus ut euismod massa, eu eleifend ipsum.</p>
-                            </div>
-                        </div>
-                    </div><!--/.col-md-4-->
-                </div>
-            </div><!--/.row-->    
-        </div><!--/.container-->
-    </section><!--/#services-->
    
 
  <section id="about">
         <div class="container">
 
             <div class="section-header">
-                <h2 class="section-title text-center wow fadeInDown">About Us</h2>
+                <h2 class="section-title text-center wow fadeInDown">Sobre nosotros</h2>
                 <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget risus vitae massa <br> semper aliquam quis mattis quam.</p>
             </div>
 
             <div class="row">
                 <div class="col-sm-6 wow fadeInLeft">
-                  <img class="img-responsive" src="images/about.png" alt="">
+                  <img class="img-responsive" src="images/about1.png" alt="">
                 </div>
 
                 <div class="col-sm-6 wow fadeInRight"> 
@@ -252,47 +165,143 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title text-center wow fadeInDown">Fallas y piezas</h2>
-                <p class="text-center wow fadeInDown">Como es de saber una falla en un vehículo involucra piezas en mal estado o inclusive ocasionar que elementos <br> 
+                <p class="text-center wow fadeInDown">Como es de saber una falla en un vehículo involucra piezas en mal estado o inclusive puede ocasionar que elementos <br> 
                                                       del automovíl que se encontraban en buen estado se deterioren. Gracias a una extensa documentación<br> 
-                                                      a continuación las piezas que se relacionan con las fallas estudiadas
+                                                      a continuación mostramos las piezas que se relacionan con las fallas estudiadas
                 </p>
             </div>
 
-            <div class="row"> 
-			<div class="col-md-4">     
-                        <ul class="price" style="width:100%">
-						<li class="header">Basic</li>
-						<li class="grey">Car Checkup</li>
-						<li>Car Wash</li>
-						<li>Car Interior Clean</li>
-						<li>Waxing</li>
-						<li>Polishing</li>
-						<li class="grey"><a href="javascript:void(0)" class="button w3-hover-green">Buy Now</a></li>
-						</ul>
-                        </div>
-						<div class="col-md-4">     
-                             <ul class="price" style="width:100%">
-						<li class="header">Advance</li>
-						<li class="grey">Car Checkup</li>
-						<li>Car Wash</li>
-						<li>Car Interior Clean</li>
-						<li>Waxing</li>
-						<li>Polishing</li>
-						<li class="grey"><a href="javascript:void(0)" class="button w3-hover-green">Buy Now</a></li>
-						</ul>
-                        </div>
-						<div class="col-md-4">  
-						   <ul class="price" style="width:100%">
-						<li class="header">Prime</li>
-						<li class="grey">Car Checkup</li>
-						<li>Car Wash</li>
-						<li>Car Interior Clean</li>
-						<li>Waxing</li>
-						<li>Polishing</li>
-						<li class="grey"><a href="javascript:void(0)" class="button w3-hover-green">Buy Now</a></li>
-						</ul>
-                        </div>
+            <div class="row">
+                <label for="sel1">Fallas:</label>
+                <select class="form-control" id="selectFalla" onchange="cambiarDiv()">
+                    <option>Seleccione una falla...</option>
+                    <option>Consumo desproporcionado de combustible</option>
+                    <option>Mezcla de Aire/Combustible muy pobre</option>
+                    <option>Mezcla de Aire/Combustible muy rica</option>
+                    <option>Sensor MAF sucio o averiado</option>
+                    <option>Inyectores sucios o averiados</option>
+                    <option>Bobina Averiada</option>
+                    <option>Bujías propensas a daños</option>
+                    <option>Vehículo propenso a recalentamiento</option>
+                    <option>Radiador Averiado</option>
+                    <option>Alternador defectuoso</option>
+                </select>
 			</div>
+            <br />
+            <div class="row" id="rcorners" style="display: none;">
+                <div id="consumodesproporcionado" style="display: none;">
+                    <p><span style="font-size: 12.0pt; line-height: 107%;">Existen diversas causas que pueden generar este problema, que se encuentra com&uacute;nmente en autos que no tienen un mantenimiento constante. Si tu veh&iacute;culo es relativamente nuevo o tiene pocos kil&oacute;metros de rodaje no deber&iacute;a padecer de un consumo desproporcionado. Algunas de las piezas asociadas a esta falla son las siguientes:</span></p>
+                    <ul>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Filtro de aire de admisi&oacute;n</span></li>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Tubo de admisi&oacute;n</span></li>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Inyectores</span></li>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Buj&iacute;as</span></li>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Cables de encendido de buj&iacute;as</span></li>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Bobinas de encendido</span></li>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Tap&oacute;n del tanque de gasolina</span></li>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Filtro de combustible</span></li>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Sensor MAF</span></li>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Aceite de motor</span></li>
+                    </ul>
+                </div>
+                <div id="acpobre" style="display: none;">
+                    <p>Para que una combusti&oacute;n &oacute;ptima se produzca, es necesario que la relaci&oacute;n de aire/combustible se encuentre en un rango de valores aceptable.&nbsp;Esta relaci&oacute;n se da al existir aproxim&aacute;damente 14.7 moleculas de aire por cada molecula de combustible. Pero en este caso,&nbsp;la mezcla contiene una excesiva cantidad de aire en relaci&oacute;n a la cantidad de combustible. Las piezas que se relacionan con esta falla son las siguientes:&nbsp;</p>
+                    <ul>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Inyectores</span></li>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Buj&iacute;as</span></li>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Tubo de admisi&oacute;n</span></li>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Sensor MAF</span></li>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Filtro de combustible</span></li>
+                    </ul>
+                </div>
+                <div id="acrica" style="display: none;">
+                    <p>Para que una combusti&oacute;n &oacute;ptima se produzca, es necesario que la relaci&oacute;n de aire/combustible se encuentre en un rango de valores aceptable.&nbsp;Esta relaci&oacute;n se da al existir aproxim&aacute;damente 14.7 moleculas de aire por cada molecula de combustible. pero en este caso,&nbsp;la mezcla contiene una excesiva cantidad de combustible en relaci&oacute;n a la cantidad de aire. Las piezas que se relacionan con esta falla son las siguientes:&nbsp; <span style="font-size: 12.0pt; line-height: 107%; font-family: 'Calibri',sans-serif;"><br style="page-break-before: always;" /> </span></p>
+                    <ul>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Inyectores</span></li>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Buj&iacute;as</span></li>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Bomba de gasolina</span></li>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Catalizador</span></li>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Silenciador</span></li>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Empacaduras de la c&aacute;mara de combusti&oacute;n</span></li>
+                    </ul>
+                </div>
+                <div id="mafsucio" style="display: none;">
+                    <p>El sensor MAF se encarga de medir el flujo de aire que ingresa a las c&aacute;maras del motor, esta informaci&oacute;n viaja hasta el PCM por medio de un cable a trev&eacute;s de una se&ntilde;al de voltaje que cambia de acuerdo al flujo. Las piezas que se relacionan con esta falla son las siguientes:</p>
+                    <ul>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Sensor MAF</span></li>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Filtro de aire de admisi&oacute;n</span></li>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Tubo de admisi&oacute;n</span></li>
+                    </ul>
+                </div>
+                <div id="inyectoresaveriados" style="display: none;">
+                    <p>Los inyectores se encargan de suministrar el combustible para mezclarse con el aire antes de la combusti&oacute;n, ellos se encuentran instalados en el m&uacute;ltiple de admisi&oacute;n y se alimentan de gasolina a presi&oacute;n por la bomba de combustible. Los inyectores fallan principalmente debido a las impurezas contenidas en la gasolina. Las piezas que se relacionan con esta falla son las siguientes:</p>
+                    <ul>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Inyectores</span></li>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Empacaduras de la c&aacute;mara de combusti&oacute;n</span></li>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Catalizador</span></li>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Silenciador</span></li>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Filtro de aire de admisi&oacute;n</span></li>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Bomba de gasolina</span></li>
+                    </ul>
+                </div>
+                <div id="bobinaaveriada" style="display: none;">
+                    <p>Las bobinas son las encargadas de suministrar a&nbsp;las buj&iacute;as&nbsp;corriente de alta tensi&oacute;n para producir la chispa necesaria para la combusti&oacute;n del motor de combustible. Con una bobina en mal estado el motor no ser&iacute;a capaz de arrancar, ya que la buj&iacute;a no producir&iacute;a la chispa. Las piezas que se relacionan con esta falla son las siguientes:</p>
+                    <ul>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Bobinas de encendido</span></li>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Cables de encendido de buj&iacute;as</span></li>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Buj&iacute;as</span></li>
+                    </ul>
+                </div>
+                <div id="bujiasaveriada" style="display: none;">
+                    <p>La&nbsp;buj&iacute;a&nbsp;es la pieza encargada de producir el encendido de la mezcla de&nbsp;combustible&nbsp;y ox&iacute;geno en los cilindros, a trav&eacute;s de una chispa.&nbsp;Su buen funcionamiento es de suma importancia para la ejecuci&oacute;n &oacute;ptima del proceso de combusti&oacute;n/expansi&oacute;n. Las piezas que se relacionan con esta falla son las siguientes:</p>
+                    <ul>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Aceite de motor</span></li>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Inyectores</span></li>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Bobinas de encendido</span></li>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Cilindros de la c&aacute;mara de combusti&oacute;n</span></li>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Buj&iacute;as</span></li>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Filtro de combustible</span></li>
+                    </ul>
+                </div>
+                <div id="recalentamiento" style="display: none;">
+                    <p>El sobrecalentamiento se aprecia cuando el termostato del veh&iacute;culo excede la temperatura aceptable debido al mal estado de alguno de los componentes del sistema de refrigeraci&oacute;n. Las piezas que se relacionan con esta falla son las siguientes:</p>
+                    <ul>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Radiador</span></li>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Termostato</span></li>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Manguera del calefactor</span></li>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Tap&oacute;n del radiador</span></li>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Manguera superior del radiador</span></li>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Manguera inferior del radiador</span></li>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Dep&oacute;sito de refrigerante</span></li>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Electro ventilador</span></li>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Refrigerante</span></li>
+                    </ul>
+                </div>
+                <div id="radiadoraveriado" style="display: none;">
+                    <p>El radiador es un componente del sistema de refrigeraci&oacute;n&nbsp;del veh&iacute;culo, cuya funci&oacute;n principal es evitar que se produzcan sobrecalentamientos en el motor, para que &eacute;ste trabaje de manera eficaz, ofreciendo as&iacute; el m&aacute;ximo rendimiento. Por lo general, las&nbsp;principales aver&iacute;as que aparecen en un radiador da&ntilde;ado son p&eacute;rdidas de hermeticidad o con fugas de agua&nbsp;localizadas en las juntas. Las piezas que se relacionan con esta falla son las siguientes:</p>
+                    <ul>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Radiador</span></li>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Termostato</span></li>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Tap&oacute;n del radiador</span></li>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Manguera superior del radiador</span></li>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Manguera inferior del radiador</span></li>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Dep&oacute;sito de refrigerante</span></li>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Refrigerante</span></li>
+                    </ul>
+                </div>
+                <div id="alternadoraveriado" style="display: none;">
+                    <p>Un&nbsp;alternador&nbsp;es un componente de los veh&iacute;culos, capaz de transformar&nbsp;energ&iacute;a mec&aacute;nica&nbsp;en&nbsp;energ&iacute;a el&eacute;ctrica, generando a su vez corriente alterna&nbsp;mediante&nbsp;inducci&oacute;n electromagn&eacute;tica. La principal falla que ocurren cuando el alternador se encuentra averiado,  es la p&eacute;rdida de energ&iacute;a el&eacute;ctrica en el carro. Las piezas que se relacionan con esta falla son las siguientes:</p>
+                    <ul>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Alternador</span></li>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Polea del alternador</span></li>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Rotor del alternador</span></li>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Regulador del alternador</span></li>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Estator del alternador</span></li>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Diodera del alternador</span></li>
+                        <li><span style="font-size: 12.0pt; line-height: 107%;">Bater&iacute;a</span></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section><!--/#pricing-->
   
@@ -398,7 +407,7 @@
                 <br />
                 <div class="row">
                     <div class="section-header">
-                        <h3 class="text wow fadeInDown" style="color:white">Registro de fallas por un vehículo</h3>
+                        <h3 class="text wow fadeInDown" style="color:white">Registro de fallas por vehículo</h3>
                     </div>
 
             
@@ -439,8 +448,8 @@
     <section id="our-team">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title text-center wow fadeInDown">Team</h2>
-                <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget risus vitae massa <br> semper aliquam quis mattis quam.</p>
+                <h2 class="section-title text-center wow fadeInDown">Equipo de trabajo</h2>
+                <p class="text-center wow fadeInDown">El equipo encargado de traer este aplicativo para sus vehículos es:</p>
             </div>
 
             <div class="row">
@@ -450,8 +459,8 @@
                             <img class="img-responsive" src="images/team/01.jpg" alt="">
                         </div>
                         <div class="team-info">
-                            <h3>John Deo</h3>
-                            <span>Manager</span>
+                            <h3>Luis Pérez</h3>
+                            <span>Desarrollador móvil y web</span>
                         </div>  
                     </div>
                 </div>
@@ -461,30 +470,8 @@
                             <img class="img-responsive" src="images/team/02.jpg" alt="">
                         </div>
                         <div class="team-info">
-                            <h3>Mike Timobbs</h3>
-                            <span>Painter</span>
-                        </div>  
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="200ms">
-                        <div class="team-img">
-                            <img class="img-responsive" src="images/team/03.jpg" alt="">
-                        </div>
-                        <div class="team-info">
-                            <h3>Remo Silvaus</h3>
-                            <span>Enginer</span>
-                        </div>  
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="300ms">
-                        <div class="team-img">
-                            <img class="img-responsive" src="images/team/04.jpg" alt="">
-                        </div>
-                        <div class="team-info">
-                            <h3>Niscal Deon</h3>
-                            <span>Enginer</span>
+                            <h3>Cristian Dos Ramos</h3>
+                            <span>Desarrollador móvil y web</span>
                         </div>  
                     </div>
                 </div>
@@ -493,111 +480,7 @@
         </div>
     </section><!--/#our-team-->
 
-    
-    <section id="testimonial">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-8 col-sm-offset-2">
-
-                    <div id="carousel-testimonial" class="carousel slide text-center" data-ride="carousel">
-                        <!-- Wrapper for slides -->
-                        <div class="carousel-inner" role="listbox">
-                            <div class="item active">
-                                <p><img class="img-thumbnail" src="images/pic1.jpg" alt=""></p>
-                                <h4>John Deo</h4> 
-                                <p>Fusce non fermentum mi. Praesent vel lobortis elit. Nulla sodales, risus quis sollicitudin iaculis, felis dolor aliquet purus, eget elementum velit nunc eu dolor. Curabitur elit tellus.</p>
-                            </div>
-                            <div class="item">
-                                <p><img class="img-thumbnail" src="images/pic2.jpg" alt=""></p>
-                                <h4>Gramth Larry</h4> 
-                                <p>Fusce non fermentum mi. Praesent vel lobortis elit. Nulla sodales, risus quis sollicitudin iaculis, felis dolor aliquet purus, eget elementum velit nunc eu dolor. Curabitur elit tellus, dictu.</p>
-                            </div>
-                        </div>
-
-                        <!-- Controls -->
-                        <div class="btns">
-                            <a class="btn btn-primary btn-sm" href="#carousel-testimonial" role="button" data-slide="prev">
-                                <span class="fa fa-angle-left" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="btn btn-primary btn-sm" href="#carousel-testimonial" role="button" data-slide="next">
-                                <span class="fa fa-angle-right" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section><!--/#testimonial-->
-
-    
-    <section id="contact-us">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title text-center wow fadeInDown">Contact Us</h2>
-                <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget risus vitae massa <br> semper aliquam quis mattis quam.</p>
-            </div>
-        </div>
-    </section><!--/#contact-us-->
-
-
-    <section id="contact">
-        
-        <div class="container-wrapper">
-            <div class="container contact-info">
-                <div class="row">
-				  <div class="col-sm-4 col-md-4">
-                        <div class="contact-form"> 
-                            <address>
-                              <strong>Clear Car Wash</strong><br>
-                              12345 NewYork, Street 125<br>
-                              United States 94107<br>
-                              <abbr title="Phone">P:</abbr> (123) 456-7890
-                            </address>
-					</div></div>
-                    <div class="col-sm-8 col-md-8">                      
-						<div class="contact-form">											
-						  
-		                    <!--NOTE: Update your email Id in "contact_me.php" file in order to receive emails from your contact form-->
-		                    <form name="sentMessage" id="contactForm"  novalidate> 
-		                    <div class="control-group">
-		                    <div class="controls">
-		                    <input type="text" class="form-control" 
-		                    placeholder="Full Name" id="name" required
-		                    data-validation-required-message="Please enter your name" />
-		                    <p class="help-block"></p>
-		                    </div>
-		                    </div> 	
-		                    <div class="control-group">
-		                    <div class="controls">
-		                    <input type="email" class="form-control" placeholder="Email" 
-		                    id="email" required
-		                    data-validation-required-message="Please enter your email" />
-		                    </div>
-		                    </div> 	
-
-		                    <div class="control-group">
-		                    <div class="controls">
-		                    <textarea rows="10" cols="100" class="form-control" 
-		                    placeholder="Message" id="message" required
-		                    data-validation-required-message="Please enter your message" minlength="5" 
-		                    data-validation-minlength-message="Min 5 characters" 
-		                    maxlength="999" style="resize:none"></textarea>
-		                    </div>
-		                    </div> 		 
-		                    <div id="success"> </div> <!-- For success/fail messages -->
-		                    <button type="submit" class="btn btn-primary pull-right">Send</button><br />
-		                    </form>
-
-							 					
-						</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="google-map" style="height:400px" data-latitude="40.7141667" data-longitude="-74.00638891"></div> 
-   </section><!--/#bottom-->
+   
 
     <footer id="footer">
         <div class="container">
@@ -627,7 +510,7 @@
         }	
         
         #piediv {
-	        width		: 100%;
+	        width		: 110%;
 	        height		: 500px;
 	        font-size	: 11px;
         }	
@@ -639,7 +522,7 @@
         }	
         
         #piediv2 {
-	        width		: 100%;
+	        width		: 110%;
 	        height		: 500px;
 	        font-size	: 11px;
         }		
@@ -1150,7 +1033,123 @@
                     }
                 });
             } else {
-                alert(response);
+                alert("Ha ocurrido un error, por favor vuelva a intentar");
+            }
+        }
+    </script>
+    <script>
+        function cambiarDiv() {
+            document.getElementById("rcorners").style.display = "block";
+            if ($("#selectFalla").val() === "Consumo desproporcionado de combustible") {
+                document.getElementById("consumodesproporcionado").style.display = "block";
+                document.getElementById("acpobre").style.display = "none";
+                document.getElementById("acrica").style.display = "none";
+                document.getElementById("mafsucio").style.display = "none";
+                document.getElementById("inyectoresaveriados").style.display = "none";
+                document.getElementById("bobinaaveriada").style.display = "none";
+                document.getElementById("bujiasaveriada").style.display = "none";
+                document.getElementById("recalentamiento").style.display = "none";
+                document.getElementById("radiadoraveriado").style.display = "none";
+                document.getElementById("alternadoraveriado").style.display = "none";
+            } else if ($("#selectFalla").val() === "Mezcla de Aire/Combustible muy pobre") {
+                document.getElementById("consumodesproporcionado").style.display = "none";
+                document.getElementById("acpobre").style.display = "block";
+                document.getElementById("acrica").style.display = "none";
+                document.getElementById("mafsucio").style.display = "none";
+                document.getElementById("inyectoresaveriados").style.display = "none";
+                document.getElementById("bobinaaveriada").style.display = "none";
+                document.getElementById("bujiasaveriada").style.display = "none";
+                document.getElementById("recalentamiento").style.display = "none";
+                document.getElementById("radiadoraveriado").style.display = "none";
+                document.getElementById("alternadoraveriado").style.display = "none";
+            } else if ($("#selectFalla").val() === "Mezcla de Aire/Combustible muy rica") {
+                document.getElementById("consumodesproporcionado").style.display = "none";
+                document.getElementById("acpobre").style.display = "none";
+                document.getElementById("acrica").style.display = "block";
+                document.getElementById("mafsucio").style.display = "none";
+                document.getElementById("inyectoresaveriados").style.display = "none";
+                document.getElementById("bobinaaveriada").style.display = "none";
+                document.getElementById("bujiasaveriada").style.display = "none";
+                document.getElementById("recalentamiento").style.display = "none";
+                document.getElementById("radiadoraveriado").style.display = "none";
+                document.getElementById("alternadoraveriado").style.display = "none";
+            } else if ($("#selectFalla").val() === "Sensor MAF sucio o averiado") {
+                document.getElementById("consumodesproporcionado").style.display = "none";
+                document.getElementById("acpobre").style.display = "none";
+                document.getElementById("acrica").style.display = "none";
+                document.getElementById("mafsucio").style.display = "block";
+                document.getElementById("inyectoresaveriados").style.display = "none";
+                document.getElementById("bobinaaveriada").style.display = "none";
+                document.getElementById("bujiasaveriada").style.display = "none";
+                document.getElementById("recalentamiento").style.display = "none";
+                document.getElementById("radiadoraveriado").style.display = "none";
+                document.getElementById("alternadoraveriado").style.display = "none";
+            } else if ($("#selectFalla").val() === "Inyectores sucios o averiados") {
+                document.getElementById("consumodesproporcionado").style.display = "none";
+                document.getElementById("acpobre").style.display = "none";
+                document.getElementById("acrica").style.display = "none";
+                document.getElementById("mafsucio").style.display = "none";
+                document.getElementById("inyectoresaveriados").style.display = "block";
+                document.getElementById("bobinaaveriada").style.display = "none";
+                document.getElementById("bujiasaveriada").style.display = "none";
+                document.getElementById("recalentamiento").style.display = "none";
+                document.getElementById("radiadoraveriado").style.display = "none";
+                document.getElementById("alternadoraveriado").style.display = "none";
+            } else if ($("#selectFalla").val() === "Bobina Averiada") {
+                document.getElementById("consumodesproporcionado").style.display = "none";
+                document.getElementById("acpobre").style.display = "none";
+                document.getElementById("acrica").style.display = "none";
+                document.getElementById("mafsucio").style.display = "none";
+                document.getElementById("inyectoresaveriados").style.display = "none";
+                document.getElementById("bobinaaveriada").style.display = "block";
+                document.getElementById("bujiasaveriada").style.display = "none";
+                document.getElementById("recalentamiento").style.display = "none";
+                document.getElementById("radiadoraveriado").style.display = "none";
+                document.getElementById("alternadoraveriado").style.display = "none";
+            } else if ($("#selectFalla").val() === "Bujías propensas a daños") {
+                document.getElementById("consumodesproporcionado").style.display = "none";
+                document.getElementById("acpobre").style.display = "none";
+                document.getElementById("acrica").style.display = "none";
+                document.getElementById("mafsucio").style.display = "none";
+                document.getElementById("inyectoresaveriados").style.display = "none";
+                document.getElementById("bobinaaveriada").style.display = "none";
+                document.getElementById("bujiasaveriada").style.display = "block";
+                document.getElementById("recalentamiento").style.display = "none";
+                document.getElementById("radiadoraveriado").style.display = "none";
+                document.getElementById("alternadoraveriado").style.display = "none";
+            } else if ($("#selectFalla").val() === "Vehículo propenso a recalentamiento") {
+                document.getElementById("consumodesproporcionado").style.display = "none";
+                document.getElementById("acpobre").style.display = "none";
+                document.getElementById("acrica").style.display = "none";
+                document.getElementById("mafsucio").style.display = "none";
+                document.getElementById("inyectoresaveriados").style.display = "none";
+                document.getElementById("bobinaaveriada").style.display = "none";
+                document.getElementById("bujiasaveriada").style.display = "none";
+                document.getElementById("recalentamiento").style.display = "block";
+                document.getElementById("radiadoraveriado").style.display = "none";
+                document.getElementById("alternadoraveriado").style.display = "none";
+            } else if ($("#selectFalla").val() === "Radiador Averiado") {
+                document.getElementById("consumodesproporcionado").style.display = "none";
+                document.getElementById("acpobre").style.display = "none";
+                document.getElementById("acrica").style.display = "none";
+                document.getElementById("mafsucio").style.display = "none";
+                document.getElementById("inyectoresaveriados").style.display = "none";
+                document.getElementById("bobinaaveriada").style.display = "none";
+                document.getElementById("bujiasaveriada").style.display = "none";
+                document.getElementById("recalentamiento").style.display = "none";
+                document.getElementById("radiadoraveriado").style.display = "block";
+                document.getElementById("alternadoraveriado").style.display = "none";
+            } else if ($("#selectFalla").val() === "Alternador defectuoso") {
+                document.getElementById("consumodesproporcionado").style.display = "none";
+                document.getElementById("acpobre").style.display = "none";
+                document.getElementById("acrica").style.display = "none";
+                document.getElementById("mafsucio").style.display = "none";
+                document.getElementById("inyectoresaveriados").style.display = "none";
+                document.getElementById("bobinaaveriada").style.display = "none";
+                document.getElementById("bujiasaveriada").style.display = "none";
+                document.getElementById("recalentamiento").style.display = "none";
+                document.getElementById("radiadoraveriado").style.display = "none";
+                document.getElementById("alternadoraveriado").style.display = "block";
             }
         }
     </script>
