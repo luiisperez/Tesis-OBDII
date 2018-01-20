@@ -72,7 +72,6 @@ import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -413,7 +412,6 @@ public class ObdReaderFragment extends Fragment
         double lat = 0;
         double lon = 0;
         double alt = 0;
-        final int posLen = 7;
         if (mGpsIsStarted && mLastLocation != null) {
             lat = mLastLocation.getLatitude();
             lon = mLastLocation.getLongitude();
@@ -441,154 +439,120 @@ public class ObdReaderFragment extends Fragment
         //Colección para almacenar en BD
         ContentValues valores = new ContentValues();
         ObdData dataSensor = new ObdData();
-        Iterator et = commandResult.entrySet().iterator();
-        while (et.hasNext()) {
-            Map.Entry e = (Map.Entry) et.next();
-            if (e.getValue().equals("NA") ||e.getValue().equals("NODATA") ||e.getValue().equals("......UNABLETOCONNECT")) {
+        for (Object o : commandResult.entrySet()) {
+            Map.Entry e = (Map.Entry) o;
+            if (e.getValue().equals("NA") || e.getValue().equals("NODATA") || e.getValue().equals("......UNABLETOCONNECT")) {
                 e.setValue("0.0");
             }
         }
-        Iterator it = commandResult.entrySet().iterator();
-        while (it.hasNext()) {
-            Map.Entry e = (Map.Entry)it.next();
-            if (e.getKey().equals(EQUIV_RATIO.toString()))
-            {
+        for (Object o : commandResult.entrySet()) {
+            Map.Entry e = (Map.Entry) o;
+            if (e.getKey().equals(EQUIV_RATIO.toString())) {
                 dataSensor.setCommand_Equivalence_Ratio(stringToFloat((String) e.getValue()));
             }
-            if (e.getKey().equals( AMBIENT_AIR_TEMP.toString()))
-            {
+            if (e.getKey().equals(AMBIENT_AIR_TEMP.toString())) {
                 dataSensor.setAmbient_Air_Temperature(stringToFloat((String) e.getValue()));
             }
-            if (e.getKey().equals( DISTANCE_TRAVELED_MIL_ON.toString()))
-            {
+            if (e.getKey().equals(DISTANCE_TRAVELED_MIL_ON.toString())) {
                 dataSensor.setDistance_traveled_with_MIL_on(stringToFloat((String) e.getValue()));
             }
-            if (e.getKey().equals( SPEED.toString()))
-            {
+            if (e.getKey().equals(SPEED.toString())) {
                 dataSensor.setVehicle_Speed(stringToFloat((String) e.getValue()));
             }
-            if (e.getKey().equals("Short Term Fuel Trim Bank 2"))
-            {
+            if (e.getKey().equals("Short Term Fuel Trim Bank 2")) {
                 dataSensor.setSTFT2(stringToFloat((String) e.getValue()));
             }
-            if (e.getKey().equals( ENGINE_OIL_TEMP.toString()))
-            {
+            if (e.getKey().equals(ENGINE_OIL_TEMP.toString())) {
                 dataSensor.setEngine_oil_temperature(stringToFloat((String) e.getValue()));
             }
-            if (e.getKey().equals( ENGINE_LOAD.toString()))
-            {
+            if (e.getKey().equals(ENGINE_LOAD.toString())) {
                 dataSensor.setEngine_Load(stringToFloat((String) e.getValue()));
             }
-            if (e.getKey().equals( ENGINE_RUNTIME.toString()))
-            {
+            if (e.getKey().equals(ENGINE_RUNTIME.toString())) {
                 dataSensor.setEngine_Runtime((String) e.getValue());
             }
-            if (e.getKey().equals( VIN.toString()))
-            {
+            if (e.getKey().equals(VIN.toString())) {
                 ManageInformation info = new ManageInformation();
                 dataSensor.setVehicle_Identification_Number(info.getCarInformation(getActivity()).get_serial());
             }
             if (e.getKey().equals(TROUBLE_CODES.toString())) {
                 dataSensor.setTrouble_Codes((String) e.getValue());
                 ManageInformation info_car = new ManageInformation();
-                if ( !((String) e.getValue()).equals(""))
-                {
+                if (!((String) e.getValue()).equals("")) {
                     String[] split_codes = e.getValue().toString().split("\n");
-                    //String[] split_codes = "P0142\nC0001\nP0171".toString().split("\n");
                     for (String n : split_codes) {
-                        if (!findDTC(info_car.getCarInformation(getActivity()).get_serial(),n))
-                        {
+                        if (!findDTC(info_car.getCarInformation(getActivity()).get_serial(), n)) {
                             saveDTC(info_car.getCarInformation(getActivity()).get_serial(),
-                                    info_car.getCarInformation(getActivity()).get_brand()+" "
-                                            +info_car.getCarInformation(getActivity()).get_model(),n);
+                                    info_car.getCarInformation(getActivity()).get_brand() + " "
+                                            + info_car.getCarInformation(getActivity()).get_model(), n);
                             showFailureNotification(n, getTroubleMessage(n));
                         }
                     }
                 }
             }
-            if (e.getKey().equals( TIMING_ADVANCE.toString()))
-            {
+            if (e.getKey().equals(TIMING_ADVANCE.toString())) {
                 float ta = stringToFloat((String) e.getValue());
-                dataSensor.setTiming_Advance(((ta*255.0f)/200.0f)-64.0f);
+                dataSensor.setTiming_Advance(((ta * 255.0f) / 200.0f) - 64.0f);
 
             }
-            if (e.getKey().equals( CONTROL_MODULE_VOLTAGE.toString()))
-            {
+            if (e.getKey().equals(CONTROL_MODULE_VOLTAGE.toString())) {
                 dataSensor.setControl_Module_Power_Supply(stringToFloat((String) e.getValue()));
             }
-            if (e.getKey().equals("Short Term Fuel Trim Bank 1"))
-            {
+            if (e.getKey().equals("Short Term Fuel Trim Bank 1")) {
                 dataSensor.setSTFT1(stringToFloat((String) e.getValue()));
             }
-            if (e.getKey().equals( MAF.toString()))
-            {
+            if (e.getKey().equals(MAF.toString())) {
                 dataSensor.setMass_Air_Flow(stringToFloat((String) e.getValue()));
             }
-            if (e.getKey().equals( FUEL_PRESSURE.toString()))
-            {
+            if (e.getKey().equals(FUEL_PRESSURE.toString())) {
                 dataSensor.setFuel_Pressure(stringToFloat((String) e.getValue()));
             }
-            if (e.getKey().equals( ENGINE_RPM.toString()))
-            {
+            if (e.getKey().equals(ENGINE_RPM.toString())) {
                 dataSensor.setEngine_RPM(stringToFloat((String) e.getValue()));
             }
-            if (e.getKey().equals( THROTTLE_POS.toString()))
-            {
+            if (e.getKey().equals(THROTTLE_POS.toString())) {
                 dataSensor.setThrottle_Position(stringToFloat((String) e.getValue()));
             }
-            if (e.getKey().equals( FUEL_TYPE.toString()))
-            {
+            if (e.getKey().equals(FUEL_TYPE.toString())) {
                 dataSensor.setFuel_type((String) e.getValue());
             }
-            if (e.getKey().equals("Long Term Fuel Trim Bank 2"))
-            {
+            if (e.getKey().equals("Long Term Fuel Trim Bank 2")) {
                 dataSensor.setLTFT2(stringToFloat((String) e.getValue()));
             }
-            if (e.getKey().equals( FUEL_CONSUMPTION_RATE.toString()))
-            {
+            if (e.getKey().equals(FUEL_CONSUMPTION_RATE.toString())) {
                 dataSensor.setFuel_Consumption_Rate(stringToFloat((String) e.getValue()));
             }
-            if (e.getKey().equals( INTAKE_MANIFOLD_PRESSURE.toString()))
-            {
+            if (e.getKey().equals(INTAKE_MANIFOLD_PRESSURE.toString())) {
                 dataSensor.setIntake_Manifold_Pressure(stringToFloat((String) e.getValue()));
             }
-            if (e.getKey().equals( DTC_NUMBER.toString()))
-            {
+            if (e.getKey().equals(DTC_NUMBER.toString())) {
                 dataSensor.setDiagnostic_Trouble_Codes((String) e.getValue());
 
             }
             //AFR
-            if (e.getKey().equals( WIDEBAND_AIR_FUEL_RATIO.toString()))
-            {
+            if (e.getKey().equals(WIDEBAND_AIR_FUEL_RATIO.toString())) {
                 dataSensor.setWideband_AirFuel_Ratio(stringToFloat((String) e.getValue()));
             }
-            if (e.getKey().equals( ENGINE_COOLANT_TEMP.toString()))
-            {
+            if (e.getKey().equals(ENGINE_COOLANT_TEMP.toString())) {
                 dataSensor.setEngine_Coolant_Temperature(stringToFloat((String) e.getValue()));
             }
             //AFR
-            if (e.getKey().equals( AIR_FUEL_RATIO.toString()))
-            {
+            if (e.getKey().equals(AIR_FUEL_RATIO.toString())) {
                 dataSensor.setAirFuel_Ratio(stringToFloat((String) e.getValue()));
             }
-            if (e.getKey().equals("Long Term Fuel Trim Bank 1"))
-            {
+            if (e.getKey().equals("Long Term Fuel Trim Bank 1")) {
                 dataSensor.setLTFT1(stringToFloat((String) e.getValue()));
             }
-            if (e.getKey().equals( BAROMETRIC_PRESSURE.toString()))
-            {
+            if (e.getKey().equals(BAROMETRIC_PRESSURE.toString())) {
                 dataSensor.setBarometric_Pressure(stringToFloat((String) e.getValue()));
             }
-            if (e.getKey().equals( FUEL_LEVEL.toString()))
-            {
+            if (e.getKey().equals(FUEL_LEVEL.toString())) {
                 dataSensor.setFuel_Level(stringToFloat((String) e.getValue()));
             }
-            if (e.getKey().equals( AIR_INTAKE_TEMP.toString()))
-            {
+            if (e.getKey().equals(AIR_INTAKE_TEMP.toString())) {
                 dataSensor.setAir_Intake_Temperature(stringToFloat((String) e.getValue()));
             }
-            if (e.getKey().equals( FUEL_RAIL_PRESSURE.toString()))
-            {
+            if (e.getKey().equals(FUEL_RAIL_PRESSURE.toString())) {
                 dataSensor.setFuel_Rail_Pressure(stringToFloat((String) e.getValue()));
             }
             //end_while

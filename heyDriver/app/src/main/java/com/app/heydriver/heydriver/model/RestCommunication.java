@@ -35,10 +35,8 @@ import java.util.Locale;
 import static android.content.ContentValues.TAG;
 
 public class RestCommunication {
-    private String ip = "192.168.43.142";
+    private String ip = "192.168.0.110";
     private static HttpURLConnection conn;
-
-
 
     private BufferedReader communicate(String _requetMethod, String _restfulMethod) throws IOException {
         try {
@@ -207,7 +205,7 @@ public class RestCommunication {
                         " FROM CAR_PROMEDIUM", null);
                 if (_promedium.moveToFirst()) {
                     do {
-                        String stringcode = getStringCode(callMethodGetANNAnalysis(_promedium.getString(0), _promedium.getString(1), _promedium.getFloat(2), _promedium.getFloat(3),
+                        String stringcode = getStringCode(callMethodGetANNAnalysis(_promedium.getString(14),_promedium.getString(0), _promedium.getString(1), _promedium.getFloat(2), _promedium.getFloat(3),
                                 _promedium.getFloat(4), _promedium.getFloat(5), _promedium.getFloat(6), _promedium.getFloat(7), _promedium.getFloat(8),
                                 _promedium.getFloat(9), _promedium.getFloat(10), _promedium.getFloat(11), _promedium.getFloat(12), _promedium.getFloat(13)));
 
@@ -267,7 +265,7 @@ public class RestCommunication {
                         " FROM CAR_PROMEDIUM", null);
                 if (_promedium.moveToFirst()) {
                     do {
-                        String stringcode = getStringCode(callMethodGetANNAnalysis(_promedium.getString(0), _promedium.getString(1), _promedium.getFloat(2), _promedium.getFloat(3),
+                        String stringcode = getStringCode(callMethodGetANNAnalysis(_promedium.getString(14),_promedium.getString(0), _promedium.getString(1), _promedium.getFloat(2), _promedium.getFloat(3),
                                 _promedium.getFloat(4), _promedium.getFloat(5), _promedium.getFloat(6), _promedium.getFloat(7), _promedium.getFloat(8),
                                 _promedium.getFloat(9), _promedium.getFloat(10), _promedium.getFloat(11), _promedium.getFloat(12), _promedium.getFloat(13)));
 
@@ -312,11 +310,11 @@ public class RestCommunication {
     }
 
     private String getStringCode(ArrayList<Integer> integers) {
-        String _return = "";
+        StringBuilder _return = new StringBuilder();
         for(int x=0;x<integers.size();x++) {
-            _return = _return+integers.get(x).toString();
+            _return.append(integers.get(x).toString());
         }
-        return _return;
+        return _return.toString();
     }
 
     public void savePrediction(String vin, String car_name,String car_model, String code) {
@@ -427,13 +425,13 @@ public class RestCommunication {
         }
     }
 
-    public ArrayList<Integer> callMethodGetANNAnalysis(String brand, String model, double air_fuel_ratio, double timeadvance, double rpm,
+    public ArrayList<Integer> callMethodGetANNAnalysis(String vin, String brand, String model, double air_fuel_ratio, double timeadvance, double rpm,
                                                        double stft2, double stft1, double ltft2, double ltft1, double maf, double coolant,
                                                        double motorcharge, double pressure_at, double admission_temp) throws Exception {
         try {
             conn = null;
             Gson gson = new GsonBuilder().create();
-            BufferedReader br = communicate("GET", "annStudies?brand=" + brand + "&model=" + model + "&air_fuel_ratio="
+            BufferedReader br = communicate("GET", "annStudies?serial=" + vin + "&brand=" + brand + "&model=" + model + "&air_fuel_ratio="
                     + air_fuel_ratio + "&timeadvance=" + timeadvance + "&rpm=" + rpm + "&stft2="
                     + stft2 + "&stft1=" + stft1 + "&ltft2=" + ltft2 + "&ltft1=" + ltft1 + "&maf=" + maf
                     + "&coolant=" + coolant + "&motorcharge=" + motorcharge + "&pressure_at=" + pressure_at

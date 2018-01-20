@@ -3,33 +3,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-<!--
+    <!--
 
-<PreferenceCategory
-        android:key="@string/pref_upload_category"
-        android:title="@string/pref_upload_category_title">
-        <CheckBoxPreference
-            android:defaultValue="false"
-            android:dialogTitle="@string/pref_upload_title"
-            android:key="upload_data_preference"
-            android:summaryOff="@string/pref_upload_summaryOff"
-            android:summaryOn="@string/pref_upload_summaryOn"
-            android:title="@string/pref_upload_title" />
-        <EditTextPreference
-            android:defaultValue="http://www.example.com/obd/get_data.php"
-            android:dialogTitle="@string/pref_upload_url_title"
-            android:key="upload_url_preference"
-            android:summary="@string/pref_upload_url_summary"
-            android:title="@string/pref_upload_url_title" />
-        <EditTextPreference
-            android:defaultValue=""
-            android:dialogTitle="@string/pref_vehicle_id_title"
-            android:key="vehicle_id_preference"
-            android:summary="@string/pref_vehicle_id_summary"
-            android:title="@string/pref_vehicle_id_title" />
-    </PreferenceCategory>
+    <PreferenceCategory
+            android:key="@string/pref_upload_category"
+            android:title="@string/pref_upload_category_title">
+            <CheckBoxPreference
+                android:defaultValue="false"
+                android:dialogTitle="@string/pref_upload_title"
+                android:key="upload_data_preference"
+                android:summaryOff="@string/pref_upload_summaryOff"
+                android:summaryOn="@string/pref_upload_summaryOn"
+                android:title="@string/pref_upload_title" />
+            <EditTextPreference
+                android:defaultValue="http://www.example.com/obd/get_data.php"
+                android:dialogTitle="@string/pref_upload_url_title"
+                android:key="upload_url_preference"
+                android:summary="@string/pref_upload_url_summary"
+                android:title="@string/pref_upload_url_title" />
+            <EditTextPreference
+                android:defaultValue=""
+                android:dialogTitle="@string/pref_vehicle_id_title"
+                android:key="vehicle_id_preference"
+                android:summary="@string/pref_vehicle_id_summary"
+                android:title="@string/pref_vehicle_id_title" />
+        </PreferenceCategory>
 
--->
+    -->
 
     <PreferenceCategory android:title="@string/title_pref_bluetooth"
         android:textAppearance="@style/TextAppearance.FontPath">
@@ -48,7 +48,7 @@
             android:summary="@string/pref_bluetooth_list_devices_summary"
             android:title="@string/pref_bluetooth_list_devices_title" />
     </PreferenceCategory>
-    <!--<PreferenceCategory
+    <PreferenceCategory
         android:key="@string/pref_gps_category"
         android:title="@string/title_pref_gps">
         <CheckBoxPreference
@@ -58,19 +58,21 @@
             android:summaryOff="@string/pref_gps_category_summaryOff"
             android:summaryOn="@string/pref_gps_category_summaryOn"
             android:title="@string/pref_gps_category_title" />
-        <EditTextPreference
-            android:defaultValue="1"
-            android:dialogTitle="@string/pref_gps_update_period_title"
-            android:key="gps_update_period_preference"
-            android:summary="@string/pref_gps_update_period_summary"
-            android:title="@string/pref_gps_update_period_title" />
-        <EditTextPreference
-            android:defaultValue="5"
-            android:dialogTitle="@string/pref_gps_distance_period_title"
-            android:key="gps_distance_period_preference"
-            android:summary="@string/pref_gps_distance_period_summary"
-            android:title="@string/pref_gps_distance_period_title" />
-    </PreferenceCategory>-->
+    </PreferenceCategory>
+    <!--<PreferenceCategory
+<EditTextPreference
+    android:defaultValue="1"
+    android:dialogTitle="@string/pref_gps_update_period_title"
+    android:key="gps_update_period_preference"
+    android:summary="@string/pref_gps_update_period_summary"
+    android:title="@string/pref_gps_update_period_title" />
+<EditTextPreference
+    android:defaultValue="5"
+    android:dialogTitle="@string/pref_gps_distance_period_title"
+    android:key="gps_distance_period_preference"
+    android:summary="@string/pref_gps_distance_period_summary"
+    android:title="@string/pref_gps_distance_period_title" />
+</PreferenceCategory>-->
 
     <PreferenceCategory android:title="@string/title_pref_obd">
         <ListPreference
@@ -118,12 +120,12 @@
 
 
 
-<!--        <EditTextPreference
-            android:defaultValue=""
-            android:dialogTitle="@string/pref_dev_email_title"
-            android:key="dev_email"
-            android:summary="@string/pref_dev_email_summary"
-            android:title="@string/pref_dev_email_title"/>-->
+        <!--        <EditTextPreference
+                    android:defaultValue=""
+                    android:dialogTitle="@string/pref_dev_email_title"
+                    android:key="dev_email"
+                    android:summary="@string/pref_dev_email_summary"
+                    android:title="@string/pref_dev_email_title"/>-->
 
 
 
@@ -137,19 +139,19 @@
 
 
 
-<!--    <PreferenceCategory android:title="@string/title_pref_full_logging">
-        <CheckBoxPreference
-            android:defaultValue="false"
-            android:key="enable_full_logging"
-            android:summary="@string/pref_enable_full_logging_summary"
-            android:title="@string/pref_enable_full_logging_title"/>
-        <EditTextPreference
-            android:defaultValue="@string/default_dirname_full_logging"
-            android:dialogTitle="@string/pref_dirname_dialogTitle"
-            android:key="dirname_full_logging"
-            android:summary="@string/pref_dirname_summary"
-            android:title="@string/pref_dirname_title" />
-    </PreferenceCategory>-->
+    <!--    <PreferenceCategory android:title="@string/title_pref_full_logging">
+            <CheckBoxPreference
+                android:defaultValue="false"
+                android:key="enable_full_logging"
+                android:summary="@string/pref_enable_full_logging_summary"
+                android:title="@string/pref_enable_full_logging_title"/>
+            <EditTextPreference
+                android:defaultValue="@string/default_dirname_full_logging"
+                android:dialogTitle="@string/pref_dirname_dialogTitle"
+                android:key="dirname_full_logging"
+                android:summary="@string/pref_dirname_summary"
+                android:title="@string/pref_dirname_title" />
+        </PreferenceCategory>-->
 
 
 
