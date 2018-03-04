@@ -2,6 +2,8 @@
 <resources>
     <string-array name="dtc_keys">
         <item>C0300</item>
+        <item>C0301</item>
+        <item>C0302</item>
         <item>P0001</item>
         <item>P0002</item>
         <item>P0003</item>
@@ -7941,6 +7943,8 @@
         <item>Generic</item>
         <item>Generic</item>
         <item>Generic</item>
+        <item>Generic</item>
+        <item>Generic</item>
         <item>Nissan</item>
         <item>Generic</item>
         <item>Generic</item>
@@ -15846,6 +15850,8 @@
     </string-array>
     <string-array name="dtc_values">
         <item>Tire sensor fault</item>
+        <item>BBV Sensor Circuit Low Voltage</item>
+        <item>BBV Sensor Circuit Low Voltage</item>
         <item>Fuel Volume Regulator Control Circuit/Open</item>
         <item>Fuel Volume Regulator Control Circuit Range/Performance</item>
         <item>Fuel Volume Regulator Control Circuit Low</item>

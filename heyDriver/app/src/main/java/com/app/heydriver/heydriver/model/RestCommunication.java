@@ -35,7 +35,7 @@ import java.util.Locale;
 import static android.content.ContentValues.TAG;
 
 public class RestCommunication {
-    private String ip = "192.168.0.107";
+    private String ip = "192.168.0.102";
     private static HttpURLConnection conn;
 
     private BufferedReader communicate(String _requetMethod, String _restfulMethod) throws IOException {
