@@ -24,7 +24,7 @@
     <link rel="shortcut icon" href="images/ico/heydriver.ico"> 
     <!-- Resources -->
     <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
-    <script src="//www.amcharts.com/lib/3/pie.js"></script>
+    <script src="https://www.amcharts.com/lib/3/pie.js"></script>
     <script src="https://www.amcharts.com/lib/3/serial.js"></script>
     <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
     <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
@@ -68,7 +68,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html" style="margin-left:10px"><img src="images/heydriver.png" width="140" height="53" alt="logo"></a>
+                    <a class="navbar-brand" href="index.aspx" style="margin-left:10px"><img src="images/heydriver.png" width="140" height="53" alt="logo"></a>
                 </div>
 				
                 <div class="collapse navbar-collapse navbar-right">
@@ -340,8 +340,7 @@
                             </datalist>
                         </div>
                         <div class="col-xs-4">
-                            <label> </label>
-
+                            <br />
                             <input type="button" value="Aceptar" class="form-control" style="background-color:#2ECC71; border-color:#2ECC71; color:white; width:75%; margin-top:4px;" onclick="CargarDatos()">
                         </div>
                     </div>
@@ -387,8 +386,7 @@
                             </datalist>
                         </div>
                         <div class="col-xs-4">
-                            <label> </label>
-
+                            <br />
                             <input type="button" value="Aceptar" class="form-control" style="background-color:#2ECC71; border-color:#2ECC71; color:white; width:75%; margin-top:4px;" onclick="CargarDatosFallas()">
                         </div>
                     </div>
@@ -418,8 +416,7 @@
                             <input runat="server" id="vinvehiculo" style="height:30px; width:100%" autocomplete="off" class="form-control">
                         </div>
                         <div class="col-xs-4">
-                            <label> </label>
-
+                            <br />
                             <input type="button" value="Aceptar" class="form-control" style="background-color:#2ECC71; border-color:#2ECC71; color:white; width:75%; margin-top:4px;" onclick="CargarFallasVIN()">
                         </div>
                     </div>
