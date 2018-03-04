@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="dtc_keys">
+        <item>C0300</item>
         <item>P0001</item>
         <item>P0002</item>
         <item>P0003</item>
@@ -7939,6 +7940,7 @@
         <item>Generic</item>
         <item>Generic</item>
         <item>Generic</item>
+        <item>Generic</item>
         <item>Nissan</item>
         <item>Generic</item>
         <item>Generic</item>
@@ -15843,6 +15845,7 @@
         <item>Generic</item>
     </string-array>
     <string-array name="dtc_values">
+        <item>Falla en el sensor de los neumáticos</item>
         <item>Circuito de control del regulador de volumen de combustible / abierto.</item>
         <item>Rango / rendimiento del circuito de control del regulador de volumen de combustible.</item>
         <item>Circuito de control del regulador de volumen de combustible bajo.</item>
