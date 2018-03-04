@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Text;
 using System.Web;
 
 namespace HeyDriverWebsite.Model
@@ -66,6 +67,7 @@ namespace HeyDriverWebsite.Model
                         result = result.Replace("\"", "");
                         result = result.Replace("(", "");
                         result = result.Replace(")", "");
+                        result = Encoding.UTF8.GetString(Encoding.Default.GetBytes(result));
                         results = results + result + ",";
                     }
                     if (!results.Contains("Consumo desproporcionado de combustible"))
@@ -149,6 +151,11 @@ namespace HeyDriverWebsite.Model
                     NpgsqlConnection conn = new NpgsqlConnection(connstring);
                     conn.Open();
                     NpgsqlDataAdapter da = new NpgsqlDataAdapter();
+                    UTF8Encoding utf8 = new UTF8Encoding();
+
+                    byte[] encodedBytes = utf8.GetBytes(falla);
+
+                    falla = System.Text.Encoding.Default.GetString(encodedBytes);
                     if (marca.Equals("Todas las marcas"))
                     {
                         string sql = "SELECT ALL_BRANDS_STATISTICS_BY_FAILURE('" + falla + "');";
@@ -221,7 +228,9 @@ namespace HeyDriverWebsite.Model
                         String brand = ds.Tables[0].Rows[i][0].ToString();
                         String model = ds.Tables[0].Rows[i][1].ToString();
                         String failure = ds.Tables[0].Rows[i][2].ToString();
-                        results = results + brand + "," + model + "," + failure + "/";
+
+                        failure = Encoding.UTF8.GetString(Encoding.Default.GetBytes(failure));
+                        results = results + brand + "," + model + "," + failure + "|";
                     }
                     return results;
                 }

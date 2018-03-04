@@ -74,7 +74,7 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li class="scroll active"><a href="#home">Inicio</a></li> 
-                        <li class="scroll"><a href="#about">Sobre nosotros</a></li>
+                        <%--<li class="scroll"><a href="#about">Sobre nosotros</a></li>--%>
                         <li class="scroll"><a href="#pricing">Fallas y piezas</a></li>
                         <li class="scroll"><a href="#portfolio">Estadísticas</a></li>
                         <li class="scroll"><a href="#our-team">Equipo</a></li>              
@@ -134,7 +134,7 @@
     </section><!--/#hero-text-->
    
 
- <section id="about">
+<%-- <section id="about">
         <div class="container">
 
             <div class="section-header">
@@ -158,7 +158,7 @@
                 </div>
             </div>
         </div>
-    </section><!--/#about-->
+    </section><!--/#about-->--%>
 
 
     <section id="pricing">
@@ -979,7 +979,7 @@
         }
         function ExitoFallasVIN(response, userContext, methodName) {
             if ((response != "Por favor revise los datos ingresados") && (response != "Ha ocurrido un error, por favor vuelva a intentar") && (response != "No hay nada")) {
-                var splitted = response.split("/");
+                var splitted = response.split("|");
                 document.getElementById('tarjetaserror').innerHTML = "";
                 document.getElementById('marcacar').innerHTML = 'Marca: ' + splitted[0].split(",")[0];
                 document.getElementById('modelocar').innerHTML = 'Modelo: ' + splitted[0].split(",")[1];
