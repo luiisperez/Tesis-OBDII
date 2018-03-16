@@ -1,6 +1,5 @@
 ﻿package com.app.heydriver.heydriver.model;
 
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -35,7 +34,7 @@ import java.util.Locale;
 import static android.content.ContentValues.TAG;
 
 public class RestCommunication {
-    private String ip = "192.168.1.105";
+    private String ip = "192.168.0.103";
     private static HttpURLConnection conn;
 
     private BufferedReader communicate(String _requetMethod, String _restfulMethod) throws IOException {
@@ -460,7 +459,7 @@ public class RestCommunication {
         }
     }
 
-        public ArrayList<String> callMethodLocationStudies(String serial) throws Exception {
+    public ArrayList<String> callMethodLocationStudies(String serial) throws Exception {
         try {
             conn = null;
             Gson gson = new GsonBuilder().create();
