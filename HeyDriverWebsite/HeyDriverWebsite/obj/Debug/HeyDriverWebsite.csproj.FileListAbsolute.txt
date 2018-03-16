@@ -12,3 +12,9 @@ C:\Users\LAPGrock\Documents\GitHub\Tesis-OBDII\HeyDriverWebsite\HeyDriverWebsite
 C:\Users\LAPGrock\Documents\GitHub\Tesis-OBDII\HeyDriverWebsite\HeyDriverWebsite\obj\Debug\HeyDriverWebsite.dll
 C:\Users\LAPGrock\Documents\GitHub\Tesis-OBDII\HeyDriverWebsite\HeyDriverWebsite\obj\Debug\HeyDriverWebsite.pdb
 C:\Users\LAPGrock\Documents\GitHub\Tesis-OBDII\HeyDriverWebsite\HeyDriverWebsite\obj\Debug\HeyDriverWebsite.csprojResolveAssemblyReference.cache
+C:\Users\LuisAlejandro\Documents\GitHub\Tesis-OBDII\HeyDriverWebsite\HeyDriverWebsite\bin\HeyDriverWebsite.dll.config
+C:\Users\LuisAlejandro\Documents\GitHub\Tesis-OBDII\HeyDriverWebsite\HeyDriverWebsite\bin\HeyDriverWebsite.dll
+C:\Users\LuisAlejandro\Documents\GitHub\Tesis-OBDII\HeyDriverWebsite\HeyDriverWebsite\bin\HeyDriverWebsite.pdb
+C:\Users\LuisAlejandro\Documents\GitHub\Tesis-OBDII\HeyDriverWebsite\HeyDriverWebsite\obj\Debug\HeyDriverWebsite.csprojResolveAssemblyReference.cache
+C:\Users\LuisAlejandro\Documents\GitHub\Tesis-OBDII\HeyDriverWebsite\HeyDriverWebsite\obj\Debug\HeyDriverWebsite.dll
+C:\Users\LuisAlejandro\Documents\GitHub\Tesis-OBDII\HeyDriverWebsite\HeyDriverWebsite\obj\Debug\HeyDriverWebsite.pdb

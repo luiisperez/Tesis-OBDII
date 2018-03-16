@@ -24,7 +24,7 @@
     <link rel="shortcut icon" href="images/ico/heydriver.ico"> 
     <!-- Resources -->
     <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
-    <script src="//www.amcharts.com/lib/3/pie.js"></script>
+    <script src="https://www.amcharts.com/lib/3/pie.js"></script>
     <script src="https://www.amcharts.com/lib/3/serial.js"></script>
     <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
     <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
@@ -68,13 +68,13 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html" style="margin-left:10px"><img src="images/heydriver.png" width="140" height="53" alt="logo"></a>
+                    <a class="navbar-brand" href="index.aspx" style="margin-left:10px"><img src="images/heydriver.png" width="140" height="53" alt="logo"></a>
                 </div>
 				
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li class="scroll active"><a href="#home">Inicio</a></li> 
-                        <li class="scroll"><a href="#about">Sobre nosotros</a></li>
+                        <%--<li class="scroll"><a href="#about">Sobre nosotros</a></li>--%>
                         <li class="scroll"><a href="#pricing">Fallas y piezas</a></li>
                         <li class="scroll"><a href="#portfolio">Estadísticas</a></li>
                         <li class="scroll"><a href="#our-team">Equipo</a></li>              
@@ -134,7 +134,7 @@
     </section><!--/#hero-text-->
    
 
- <section id="about">
+<%-- <section id="about">
         <div class="container">
 
             <div class="section-header">
@@ -158,7 +158,7 @@
                 </div>
             </div>
         </div>
-    </section><!--/#about-->
+    </section><!--/#about-->--%>
 
 
     <section id="pricing">
@@ -340,8 +340,7 @@
                             </datalist>
                         </div>
                         <div class="col-xs-4">
-                            <label> </label>
-
+                            <br />
                             <input type="button" value="Aceptar" class="form-control" style="background-color:#2ECC71; border-color:#2ECC71; color:white; width:75%; margin-top:4px;" onclick="CargarDatos()">
                         </div>
                     </div>
@@ -387,8 +386,7 @@
                             </datalist>
                         </div>
                         <div class="col-xs-4">
-                            <label> </label>
-
+                            <br />
                             <input type="button" value="Aceptar" class="form-control" style="background-color:#2ECC71; border-color:#2ECC71; color:white; width:75%; margin-top:4px;" onclick="CargarDatosFallas()">
                         </div>
                     </div>
@@ -418,8 +416,7 @@
                             <input runat="server" id="vinvehiculo" style="height:30px; width:100%" autocomplete="off" class="form-control">
                         </div>
                         <div class="col-xs-4">
-                            <label> </label>
-
+                            <br />
                             <input type="button" value="Aceptar" class="form-control" style="background-color:#2ECC71; border-color:#2ECC71; color:white; width:75%; margin-top:4px;" onclick="CargarFallasVIN()">
                         </div>
                     </div>
@@ -982,7 +979,7 @@
         }
         function ExitoFallasVIN(response, userContext, methodName) {
             if ((response != "Por favor revise los datos ingresados") && (response != "Ha ocurrido un error, por favor vuelva a intentar") && (response != "No hay nada")) {
-                var splitted = response.split("/");
+                var splitted = response.split("|");
                 document.getElementById('tarjetaserror').innerHTML = "";
                 document.getElementById('marcacar').innerHTML = 'Marca: ' + splitted[0].split(",")[0];
                 document.getElementById('modelocar').innerHTML = 'Modelo: ' + splitted[0].split(",")[1];
