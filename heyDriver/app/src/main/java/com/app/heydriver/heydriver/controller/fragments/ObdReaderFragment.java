@@ -419,29 +419,18 @@ public class ObdReaderFragment extends Fragment
 
         }
 
-/* Rutina para colectar la dirección de cada lectura
-        String StreetName=null;
-        Geocoder gcd = new Geocoder(getActivity(), Locale.getDefault());
-        List<Address>  addresses;
-        try {
-            addresses = gcd.getFromLocation(mLastLocation.getLatitude(), mLastLocation.getLongitude(), 10);
-            if (addresses.size() > 0)
-                StreetName = addresses.get(0).getThoroughfare();
-            String s = "My Currrent Street is:"+StreetName;
-            Toast.makeText(getActivity(), s, Toast.LENGTH_LONG).show();
-        }catch (IOException e) {
-            e.printStackTrace();
-            Toast.makeText(getActivity(), e.toString(), Toast.LENGTH_LONG).show();
-        }
-*/
-
-
         //Colección para almacenar en BD
         ContentValues valores = new ContentValues();
         ObdData dataSensor = new ObdData();
         for (Object o : commandResult.entrySet()) {
             Map.Entry e = (Map.Entry) o;
-            if (e.getValue().equals("NA") || e.getValue().equals("NODATA") || e.getValue().equals("......UNABLETOCONNECT")) {
+            if (
+                    e.getValue().equals("NA") ||
+                    e.getValue().equals("NODATA") ||
+                    e.getValue().equals("......UNABLETOCONNECT") ||
+                    e.getValue().toString().indexOf("NO")>-1 &&
+                    e.getKey().equals(TROUBLE_CODES.toString())==false)
+            {
                 e.setValue("0.0");
             }
         }
@@ -739,7 +728,8 @@ public class ObdReaderFragment extends Fragment
         tl = (TableLayout) view.findViewById(R.id.data_table);
         b_start_data = (Button) view.findViewById(R.id.b_start_data);
         b_stop_data = (Button) view.findViewById(R.id.b_stop_data);
-
+        b_stop_data.setEnabled(false);
+        b_start_data.setEnabled(true);
         final BluetoothAdapter btAdapter = BluetoothAdapter.getDefaultAdapter();
         if (btAdapter != null)
             bluetoothDefaultIsEnable = btAdapter.isEnabled();
@@ -757,20 +747,25 @@ public class ObdReaderFragment extends Fragment
             @Override
             public void onClick(View view) {
                 sync = 1;
+                b_start_data.setEnabled(false);
+                b_stop_data.setEnabled(true);
                 startLiveData();
             }
         });
         b_stop_data.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                try {
                 sync = 0;
+                b_start_data.setEnabled(true);
+                b_stop_data.setEnabled(false);
                 stopLiveData();
                 gpsStatusTextView.setText(getString(R.string.status_gps_stopped));
                 Toast toast = Toast.makeText(getActivity(), R.string.menu_stop_live_data, Toast.LENGTH_LONG);
                 toast.show();
                 homologate();
                 promediate();
-                try {
+
                     ConnectivityManager connectivityManager = (ConnectivityManager)getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
 
                     if (connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
@@ -1059,10 +1054,12 @@ public class ObdReaderFragment extends Fragment
                 Intent serviceIntent = new Intent(getActivity(), ObdGatewayService.class);
                 getActivity().bindService(serviceIntent, serviceConn, Context.BIND_AUTO_CREATE);
             } else {
+
                 btStatusTextView.setText(getString(R.string.status_bluetooth_disabled));
                 MockObdGatewayService.obdFragment = this;
                 Intent serviceIntent = new Intent(getActivity(), MockObdGatewayService.class);
                 getActivity().bindService(serviceIntent, serviceConn, Context.BIND_AUTO_CREATE);
+
             }
         }
     }

@@ -12,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.sql.Types;
+import java.util.ArrayList;
 import model.DAO;
 
 /**
@@ -21,6 +22,8 @@ import model.DAO;
 public class DAOObdData extends DAO{
     private Connection _bdCon;
     private static String _sqlAddObdData = "{?=call ADD_OBDDATA(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}";
+    
+    private static String _sqlHistoryInformation = "{call HISTORY_INFORMATION_CAR(?)}";
     private ResultSet rs;
     
     public int create(ObdData _obddata) throws Exception {
@@ -77,6 +80,55 @@ public class DAOObdData extends DAO{
 
             response = cstmt.getInt(1);
             return response;
+
+
+        } catch (SQLException ex) {
+
+            throw ex;
+
+        } catch (Exception ex) {
+            
+            throw ex;
+
+        } finally {
+            _bdCon.close();
+        }
+    }
+    
+        public ArrayList<ObdData> getHistoryBySerial(String serial) throws Exception {
+
+        ObdData _obdDataReg = null;
+        ArrayList<ObdData> obdDataList = new ArrayList<ObdData>();
+        
+        CallableStatement cstmt;
+
+        int response = 0;
+
+        try {
+            _bdCon = DAO.getBdConnect();
+            cstmt = _bdCon.prepareCall(_sqlHistoryInformation);
+            cstmt.setString(1, serial);
+            rs = cstmt.executeQuery();
+            while(rs.next()){
+                              
+                ObdData dataReg = new ObdData(rs.getFloat("AIR_FUEL_RATIO"), 
+                                  rs.getFloat("TIMING_ADVANCE"),
+                                  rs.getFloat("ENGINE_RPM"), 
+                                  rs.getFloat("STFT2"),
+                                  rs.getFloat("STFT1"),
+                                  rs.getFloat("LTFT2"),
+                                  rs.getFloat("LTFT1"),
+                                  rs.getFloat("MAF"),
+                                  rs.getFloat("ENGINE_COOLANT_TEMP"),
+                                  rs.getFloat("ENGINE_LOAD"),
+                                  rs.getFloat("INTAKE_MANIFOLD_PRESSURE"),
+                                  rs.getFloat("AIR_INTAKE_TEMP"),
+                                  rs.getDouble("LAT"), // no son float
+                                  rs.getDouble("LON")); // no son float
+                if(rs.getDouble("LAT")!=0 && rs.getDouble("LON")!=0)
+                obdDataList.add(dataReg);
+            }
+            return obdDataList;
 
 
         } catch (SQLException ex) {

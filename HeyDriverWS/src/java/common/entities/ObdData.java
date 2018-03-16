@@ -43,6 +43,22 @@ public class ObdData {
     private double lon = 0;
     private double alt = 0;
 
+    public ObdData(float STFT2, float engine_Load, float timing_Advance, float STFT1, float mass_Air_Flow, float engine_RPM, float LTFT2, float intake_Manifold_Pressure, float engine_Coolant_Temperature, float airFuel_Ratio, float LTFT1, float air_Intake_Temperature, double lat, double lon) {
+        this.STFT2 = STFT2;
+        this.engine_Load = engine_Load;
+        this.timing_Advance = timing_Advance;
+        this.STFT1 = STFT1;
+        this.mass_Air_Flow = mass_Air_Flow;
+        this.engine_RPM = engine_RPM;
+        this.LTFT2 = LTFT2;
+        this.intake_Manifold_Pressure = intake_Manifold_Pressure;
+        this.engine_Coolant_Temperature = engine_Coolant_Temperature;
+        this.airFuel_Ratio = airFuel_Ratio;
+        this.LTFT1 = LTFT1;
+        this.air_Intake_Temperature = air_Intake_Temperature;
+        this.lat = lat;
+        this.lon = lon;
+    }    
     public ObdData() {}
 
     public Timestamp getTime_mark() {

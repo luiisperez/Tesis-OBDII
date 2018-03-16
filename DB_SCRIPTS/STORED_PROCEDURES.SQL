@@ -1,4 +1,4 @@
-/**************************************************REGISTRO DE USUARIO**************************************************/
+-/**************************************************REGISTRO DE USUARIO**************************************************/
 
 CREATE OR REPLACE FUNCTION CREATE_USER(varchar(20), varchar(50), varchar(50), varchar(50), varchar(50)) RETURNS integer AS $$
 DECLARE
@@ -233,7 +233,9 @@ BEGIN
 	 	H.FUEL_CONSUMPTION_RATE, H.TIMING_ADVANCE, H.DTC_NUMBER, H.EQUIV_RATIO, H.CONTROL_MODULE_VOLTAGE, H.FUEL_RAIL_PRESSURE, H.VIN,
 	 	H.DISTANCE_TRAVELED_MIL_ON, H.STFT2, H.STFT1, H.LTFT2, H.LTFT1, H.ENGINE_OIL_TEMP, H.AIR_FUEL_RATIO, H.WIDEBAND_AIR_FUEL_RATIO, H.TIME_MARK, H.LAT, H.LON, H.ALT
 		FROM HISTORY H
-		WHERE H.VIN = $1
+		WHERE H.VIN = $1 and H.LAT <> '0.0'
+		ORDER BY H.TIME_MARK DESC
+		LIMIT 100
 	;
 END;
 $$ LANGUAGE plpgsql;
@@ -253,9 +255,7 @@ BEGIN
 		result := 200;
 	
 	END IF;
-
-	INSERT INTO failure(FAILURECARSERIAL, FAILUREBRANDNAME, FAILUREBRANDMODEL, FAILUREDESCRIPTION) VALUES ($1, $2, $3, $4);
-	result := 200;
+	result := 500;
  	RETURN result;
 END;
 $$ LANGUAGE plpgsql;

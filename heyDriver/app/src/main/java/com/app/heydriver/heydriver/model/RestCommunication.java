@@ -35,7 +35,7 @@ import java.util.Locale;
 import static android.content.ContentValues.TAG;
 
 public class RestCommunication {
-    private String ip = "192.168.0.110";
+    private String ip = "192.168.1.105";
     private static HttpURLConnection conn;
 
     private BufferedReader communicate(String _requetMethod, String _restfulMethod) throws IOException {
@@ -44,7 +44,7 @@ public class RestCommunication {
             conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod(_requetMethod);
             conn.setRequestProperty("Accept", "application/json");
-            conn.setConnectTimeout(1000); //set timeout to 5 seconds
+            conn.setConnectTimeout(3000); //set timeout to 5 seconds
 
             if (conn.getResponseCode() != 200) {
                 throw new RuntimeException("Failed : HTTP error code : "
@@ -61,23 +61,27 @@ public class RestCommunication {
         }
     }
 
-    //get the actual IP
-    public static String getIP(){
-        List<InetAddress> addrs;
-        String address = "";
-        try{            List<NetworkInterface> interfaces = Collections.list(NetworkInterface.getNetworkInterfaces());
-            for(NetworkInterface intf : interfaces){
-                addrs = Collections.list(intf.getInetAddresses());
-                for(InetAddress addr : addrs){
-                    if(!addr.isLoopbackAddress() && addr instanceof Inet4Address){
-                        address = addr.getHostAddress().toUpperCase(new Locale("es", "MX"));
-                    }
-                }
+    private BufferedReader communicateLocation(String _requetMethod, String _restfulMethod) throws IOException {
+        try {
+            URL url = new URL("http://"+ip+":8084/HeyDriverWS/webresources/heydriverws/" + _restfulMethod);
+            conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod(_requetMethod);
+            conn.setRequestProperty("Accept", "application/json");
+            conn.setConnectTimeout(9000); //set timeout to 5 seconds
+
+            if (conn.getResponseCode() != 200) {
+                throw new RuntimeException("Failed : HTTP error code : "
+                        + conn.getResponseCode());
             }
-        }catch (Exception e){
-            Log.w(TAG, "Ex getting IP value " + e.getMessage());
+
+            BufferedReader br = new BufferedReader(new InputStreamReader(
+                    (conn.getInputStream())));
+
+            return br;
         }
-        return address;
+        catch (Exception ex){
+            throw ex;
+        }
     }
 
     public User callMethodPrueba() throws Exception {
@@ -173,6 +177,7 @@ public class RestCommunication {
     }
 
     public int callMethodDeleteVehicle(String username, String serial) throws Exception {
+        SQLiteDatabase db = HomeActivity.controladorSQLite.getWritableDatabase();
         try {
             conn = null;
             Gson gson = new GsonBuilder().create();
@@ -183,6 +188,9 @@ public class RestCommunication {
                 _code = gson.fromJson(output, Integer.class);
             }
             conn.disconnect();
+            db.execSQL("DELETE from CAR_PROMEDIUM WHERE vin_dtc='"+serial+"'");
+            db.execSQL("DELETE from HISTORICO WHERE vin_dtc='"+serial+"'");
+
             return _code;
         }
         catch (Exception ex){
@@ -451,4 +459,32 @@ public class RestCommunication {
             throw ex;
         }
     }
+
+        public ArrayList<String> callMethodLocationStudies(String serial) throws Exception {
+        try {
+            conn = null;
+            Gson gson = new GsonBuilder().create();
+            BufferedReader br = communicateLocation("GET", "annLocationStudies?serial="+serial);
+            String output;
+            ArrayList<String> _response = new ArrayList<String>();
+            Type listType = new TypeToken<ArrayList<String>>() {}.getType();
+
+            while ((output = br.readLine()) != null) {
+                _response = gson.fromJson(output, listType);
+            }
+            conn.disconnect();
+            Collections.sort(_response, new Comparator<String>() {
+                @Override
+                public int compare(String s1, String s2) {
+                    return s1.compareTo(s2);
+                }
+            });
+            return _response;
+        }
+        catch (Exception ex){
+            throw ex;
+        }
+
+    }
+
 }

@@ -23,10 +23,11 @@ import org.eclipse.jdt.internal.compiler.ast.ForeachStatement;
  */
 public class DAOFailure  extends DAO{
     private Connection _bdCon;
-    private static String _sqlAddFailure = "{?=call ADD_FAILURE(?,?,?)}";
+    private static String _sqlAddFailure = "{?=call ADD_FAILURE(?,?,?,?)}";
     private static String _sqlGetAllFailures = "{call GET_ALL_FAILURES()}";
     private static String _sqlGetAllFailuresByBrand = "{call GET_FAILURES_BY_BRAND(?)}";
     private static String _sqlGetAllFailuresByModel = "{call GET_FAILURES_BY_MODEL(?,?)}";
+    //_sqlGetAllFailuresBy
     private static String _sqlBrandsByFailure = "{?=call GET_BRANDS_BY_FAILURE(?)}";
     private static String _sqlModelsByFailure = "{?=call GET_MODELS_BY_FAILURE(?)}";
     private ResultSet rs;

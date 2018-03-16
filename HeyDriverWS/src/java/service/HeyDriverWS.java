@@ -1,10 +1,22 @@
 package service;
 
+import com.google.code.geocoder.Geocoder;
+import com.google.code.geocoder.GeocoderRequestBuilder;
+import com.google.code.geocoder.model.GeocodeResponse;
+import com.google.code.geocoder.model.GeocoderGeometry;
+import com.google.code.geocoder.model.GeocoderLocationType;
+import com.google.code.geocoder.model.GeocoderRequest;
+import com.google.code.geocoder.model.GeocoderResult;
+import com.google.code.geocoder.model.GeocoderStatus;
+import com.google.code.geocoder.model.LatLng;
+import com.google.code.geocoder.model.LatLngBounds;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+
 import common.entities.Car;
 import common.entities.ObdData;
 import common.entities.User;
+import controller.ann_obd_module.ANNLocationCommand;
 import controller.ann_obd_module.ANNStudiesCommand;
 import controller.cars_module.AddCarCommand;
 import controller.cars_module.GetCarBrandsCommand;
@@ -15,6 +27,8 @@ import controller.obdData_module.AddObdDataCommand;
 import controller.users_module.LoginCommand;
 import controller.users_module.SignUpCommand;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.ws.rs.core.Context;
@@ -143,9 +157,9 @@ public class HeyDriverWS {
     @GET
     @Path("getUserVehicles")
     @Produces("application/json")
-    public String getUserVehicles (@QueryParam("user") String _user){
+    public String getUserVehicles (@QueryParam("user") String _user){    
         GetUsersCarsCommand cmd = new GetUsersCarsCommand(_user);
-        try {
+        try {        
             cmd.execute();
             return gson.toJson( cmd.getResponse());//nuevo
         } catch (Exception ex) {
@@ -170,7 +184,7 @@ public class HeyDriverWS {
     @Path("getModels")
     @Produces("application/json")
     public String getModels (@QueryParam("brand") String _brand){
-        GetCarModelsByBrandCommand cmd = new GetCarModelsByBrandCommand(_brand);
+        GetCarModelsByBrandCommand cmd = new GetCarModelsByBrandCommand(_brand);   
         try {
             cmd.execute();
             return gson.toJson( cmd.getResponse());//nuevo
@@ -211,13 +225,29 @@ public class HeyDriverWS {
         Gson gson = new GsonBuilder().create();
         ANNStudiesCommand cmd = new ANNStudiesCommand(serial, brand , model, air_fuel_ratio/50, timeadvance/90, rpm/5500, stft2/25, stft1/25, ltft2/25, ltft1/25, maf/100, coolant/300, motorcharge/100, pressure_at/100, admission_temp/300);
         try {
-            cmd.execute();
+            cmd.execute();        
             return gson.toJson(cmd.getFailuresList());
         } catch (Exception ex) {
 
             return gson.toJson( new ArrayList<Long>() );//nuevo
         }
     } 
+    
+    @GET
+    @Path("annLocationStudies")
+    @Produces("application/json")
+    public String annLocationStudies (@QueryParam("serial") String serial){
+        Gson gson = new GsonBuilder().create();
+        ANNLocationCommand cmd = new ANNLocationCommand(serial);
+             
+        try {
+            cmd.execute();
+            return gson.toJson(cmd.getLocationsList());
+        } catch (Exception ex) {
+
+            return gson.toJson( new ArrayList<Long>() );//nuevo
+        }
+    }
     
     
 }

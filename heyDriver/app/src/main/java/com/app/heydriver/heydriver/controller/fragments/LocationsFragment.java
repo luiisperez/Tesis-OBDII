@@ -1,8 +1,10 @@
 package com.app.heydriver.heydriver.controller.fragments;
 
 import android.app.Fragment;
+import android.app.ProgressDialog;
 import android.location.Address;
 import android.location.Geocoder;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -15,6 +17,8 @@ import android.widget.Toast;
 
 import com.app.heydriver.heydriver.R;
 import com.app.heydriver.heydriver.controller.activities.HomeActivity;
+import com.app.heydriver.heydriver.model.ManageInformation;
+import com.app.heydriver.heydriver.model.RestCommunication;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -39,8 +43,12 @@ public class LocationsFragment extends Fragment implements OnMapReadyCallback {
     private GoogleMap mMap;
     private Spinner spinner;
     private View view;
+    private LocationsFragment.SynchronizingLocation mSynchronizeTask = null;
     String ActualUbication = "";
     List<Address> addresses;
+    ArrayList<String> _response;
+    ArrayAdapter<String> spinnerAdapter;
+
 
 
     @Nullable
@@ -49,21 +57,27 @@ public class LocationsFragment extends Fragment implements OnMapReadyCallback {
         view = inflater.inflate(R.layout.fragment_locations, container, false);
         ((HomeActivity) getActivity()).setActionBarTitle(getString(R.string.title_activity_locations));
 
-        spinner = (Spinner) view.findViewById(R.id.spinner);
 
 
-        ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, android.R.id.text1);
-        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(spinnerAdapter);
-        spinnerAdapter.add(getString(R.string.select_ubication));
+        try {
+                mSynchronizeTask = new SynchronizingLocation();
+                mSynchronizeTask.execute((Void) null);
+
+
+        }
+        catch (Exception e)
+        {
+            //respuesta
+            Toast.makeText(getActivity(), getActivity().getString(R.string.error_bad_communication), Toast.LENGTH_LONG).show();
+        }
 
         //ejemplos
-        spinnerAdapter.add("Av. José Antonio Páez, Caracas, Distrito Capital, Venezuela");
-        spinnerAdapter.add("Autopista Caracas La Guaira Caracas Venezuela");
-        spinnerAdapter.add("Autopista Francisco Fajardo Caracas Venezuela");
+//        spinnerAdapter.add("Av. José Antonio Páez, Caracas, Distrito Capital, Venezuela");
+//        spinnerAdapter.add("Autopista Caracas La Guaira Caracas Venezuela");
+//        spinnerAdapter.add("Autopista Francisco Fajardo Caracas Venezuela");
 
-        spinner.setOnItemSelectedListener(new ItemSelectedListener());
-        spinnerAdapter.notifyDataSetChanged();
+//        spinner.setOnItemSelectedListener(new ItemSelectedListener());
+//        spinnerAdapter.notifyDataSetChanged();
 
         return view;
     }
@@ -201,4 +215,76 @@ public class LocationsFragment extends Fragment implements OnMapReadyCallback {
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
     }
+
+    private class SynchronizingLocation extends AsyncTask<Void, Void, Boolean> {
+        private ManageInformation info = new ManageInformation();
+        private ProgressDialog dialog = new ProgressDialog(getActivity());
+        private ArrayList<String> response;
+
+        @Override
+        protected void onPreExecute() {
+            this.dialog.setMessage("Please wait");
+            this.dialog.show();
+        }
+
+        @Override
+        protected Boolean doInBackground(Void... params) {
+            try {
+                RestCommunication con = new RestCommunication();
+                response = con.callMethodLocationStudies(info.getCarInformation(getActivity()).get_serial());
+                if (response != null) {
+                    _response = response;
+
+                    return true;
+                } else return false;
+            }
+            catch (Exception e) {
+                response = null;
+                return false;
+            }
+        }
+
+        @Override
+        protected void onPostExecute(final Boolean success) {
+
+            if (success) {
+                if (response != null) {
+                    _response = response;
+
+
+                    spinner = (Spinner) view.findViewById(R.id.spinner);
+                    spinnerAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item, android.R.id.text1);
+                    spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    spinner.setAdapter(spinnerAdapter);
+                    spinnerAdapter.add(getString(R.string.select_ubication));
+
+                    for(int x=0;x<_response.size();x++) {
+                        spinnerAdapter.add(_response.get(x).toString());
+                    }
+                    spinner.setOnItemSelectedListener(new ItemSelectedListener());
+                    spinnerAdapter.notifyDataSetChanged();
+
+
+
+
+                    CharSequence text = getString(R.string.sincronized_data);
+                    int duration = Toast.LENGTH_SHORT;
+                    Toast toast = Toast.makeText(getActivity(), text, duration);
+                    toast.show();
+                }
+            }
+            else
+            {
+                if (response==null)
+                {
+                    Toast toast = Toast.makeText(getActivity(), R.string.no_data, Toast.LENGTH_LONG);
+                    toast.show();
+                }
+            }
+            if (dialog.isShowing()) {
+                dialog.dismiss();
+            }
+        }
+    }
+
 }
