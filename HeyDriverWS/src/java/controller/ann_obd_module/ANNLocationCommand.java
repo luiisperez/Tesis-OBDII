@@ -17,6 +17,7 @@ import model.ann_obd_module.OBDNeuralNetwork;
 import controller.Command;
 import java.util.List;
 import model.obdData_module.DAOObdData;
+import org.apache.jasper.tagplugins.jstl.core.ForEach;
 
 /**
  *
@@ -58,7 +59,7 @@ public class ANNLocationCommand extends Command{
         //air_fuel_ratio/50, timeadvance/90, rpm/5500, stft2/25, stft1/25, ltft2/25, ltft1/25, maf/100, coolant/300, motorcharge/100, pressure_at/100, admission_temp/300
     }
         
-        public ArrayList<String> getLocationsList(){
+    public ArrayList<String> getLocationsList(){
         return this.locations;
     }
         
@@ -98,9 +99,14 @@ public class ANNLocationCommand extends Command{
                     double[] thirdANNResponse = ann.thirdNeuralNetwork(_historie.getAirFuel_Ratio()/50, _historie.getTiming_Advance()/90, _historie.getEngine_RPM()/5500, _historie.getSTFT2()/25, _historie.getSTFT1()/25, _historie.getLTFT2()/25, _historie.getLTFT1()/25);
                     double[] forthANNResponse = ann.forthNeuralNetwork(_historie.getAir_Intake_Temperature()/100, _historie.getEngine_Coolant_Temperature()/300, _historie.getAirFuel_Ratio()/50, _historie.getSTFT2()/25, _historie.getSTFT1()/25, _historie.getLTFT2()/25, _historie.getLTFT1()/25, _historie.getTiming_Advance()/90, _historie.getEngine_RPM()/5500);
                     failures.add((int)Math.round(firstANNResponse[0]));
+                    failures.add((int)Math.round(firstANNResponse[1]));
+                    failures.add((int)Math.round(firstANNResponse[2]));
+                    failures.add((int)Math.round(firstANNResponse[3]));
                     failures.add((int)Math.round(secondANNResponse[0]));
+                    failures.add((int)Math.round(secondANNResponse[1]));
                     failures.add((int)Math.round(thirdANNResponse[0]));
                     failures.add((int)Math.round(forthANNResponse[0]));
+                    failures.add((int)Math.round(forthANNResponse[1]));
                     if (containsFaults(failures) == true) {
                         //Thread.sleep(50);
                         geocoderRequest = new GeocoderRequestBuilder().setLocation(new LatLng(String.valueOf(_historie.getLat()), String.valueOf(_historie.getLon()))).setLanguage("es").getGeocoderRequest();
@@ -108,17 +114,28 @@ public class ANNLocationCommand extends Command{
                         List<GeocoderResult> results = geocoder.geocode(geocoderRequest).getResults();
                         if(geocoderResponse!=null && results.isEmpty() == false)
                         {
-                            if (containsAdress(locations,results.get(0).getFormattedAddress())== false)
-                            {
-                                locations.add(results.get(0).getFormattedAddress());
-                            }
+                            locations.add(results.get(0).getFormattedAddress());
                         }
                     }
                     failures.removeAll(failures);
                 }
+                
+                ArrayList<String> finallocations = new ArrayList<>();
+                for(String location:locations){
+                    int count = 0;
+                    for(String location_:locations){
+                        if (location.equals(location_)){
+                            count++;
+                        }
+                    }
+                    if ((count >= 4) && (!finallocations.contains(location))){
+                        finallocations.add(location);
+                    }
+                }
+                locations = finallocations;
             }catch (Exception ex){
-            throw ex;
-        }
+                throw ex;
+            }
         
     }
     
