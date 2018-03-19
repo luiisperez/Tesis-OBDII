@@ -122,8 +122,8 @@ public class TroubleCodesFragment extends Fragment {
         {
             Toast toast = Toast.makeText(getActivity(), R.string.no_trouble_codes, Toast.LENGTH_LONG);
             toast.show();
-            FragmentManager fragmentManager = getFragmentManager();
-            changeFragment(R.id.content_frame, fragmentManager, new HomeFragment(), R.id.nav_home, "home");
+//            FragmentManager fragmentManager = getFragmentManager();
+//            changeFragment(R.id.content_frame, fragmentManager, new HomeFragment(), R.id.nav_home, "home");
         }
     }
 }
