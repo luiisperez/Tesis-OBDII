@@ -756,25 +756,23 @@ public class ObdReaderFragment extends Fragment
             @Override
             public void onClick(View view) {
                 try {
-                sync = 0;
-                b_start_data.setEnabled(true);
-                b_stop_data.setEnabled(false);
-                stopLiveData();
-                gpsStatusTextView.setText(getString(R.string.status_gps_stopped));
-                Toast toast = Toast.makeText(getActivity(), R.string.menu_stop_live_data, Toast.LENGTH_LONG);
-                toast.show();
-                homologate();
-                promediate();
+                    sync = 0;
+                    b_start_data.setEnabled(true);
+                    b_stop_data.setEnabled(false);
+                    stopLiveData();
+                    gpsStatusTextView.setText(getString(R.string.status_gps_stopped));
+                    Toast toast = Toast.makeText(getActivity(), R.string.menu_stop_live_data, Toast.LENGTH_LONG);
+                    toast.show();
+                    homologate();
+                    promediate();
 
-                    ConnectivityManager connectivityManager = (ConnectivityManager)getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
+                    /*ConnectivityManager connectivityManager = (ConnectivityManager)getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
 
                     if (connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
                             connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
                         SynchronizingTask task = new SynchronizingTask();
                         if (ObdReaderFragment.sync == 0) {
                             task.execute((Void) null);
-                            Toast toast1 = Toast.makeText(getActivity(), R.string.sincronized_data, Toast.LENGTH_SHORT);
-                            toast1.show();
                         }else{
                             Toast.makeText(getActivity(), getString(R.string.error_obd_active),Toast.LENGTH_LONG).show();
                         }
@@ -782,9 +780,9 @@ public class ObdReaderFragment extends Fragment
                     } else {
                         Toast toast2 = Toast.makeText(getActivity(), R.string.no_internet_error, Toast.LENGTH_LONG);
                         toast2.show();
-                    }
+                    }*/
                 }catch (Exception ex){
-                    Toast toast2 = Toast.makeText(getActivity(), R.string.no_internet_error, Toast.LENGTH_LONG);
+                    Toast toast2 = Toast.makeText(getActivity(), R.string.error_bad_communication, Toast.LENGTH_LONG);
                     toast2.show();
                 }
             }
@@ -938,7 +936,7 @@ public class ObdReaderFragment extends Fragment
      * If lock is held, release. Lock will be held when the service is running.
      */
     private void releaseWakeLockIfHeld() {
-        if (wakeLock.isHeld())
+         if (wakeLock.isHeld())
             wakeLock.release();
     }
 
@@ -989,10 +987,14 @@ public class ObdReaderFragment extends Fragment
     }
 
     private void stopLiveData() {
-        Log.d(TAG, "Stopping live data..");
-        tl.removeAllViews();
-        doUnbindService();
-        releaseWakeLockIfHeld();
+        try {
+            Log.d(TAG, "Stopping live data..");
+            tl.removeAllViews();
+            doUnbindService();
+            releaseWakeLockIfHeld();
+        }catch (Exception ex){
+            throw ex;
+        }
     }
 
     //Agrega una fila a la lista de parámetros VER
@@ -1151,24 +1153,29 @@ public class ObdReaderFragment extends Fragment
 
         @Override
         protected Void doInBackground(ObdReading... readings) {
-            Log.d(TAG, "Uploading " + readings.length + " readings..");
-            // instantiate reading service client
-            final String endpoint = prefs.getString(ConfigActivity.UPLOAD_URL_KEY, "");
-            RestAdapter restAdapter = new RestAdapter.Builder()
-                    .setEndpoint(endpoint)
-                    .build();
-            ObdService service = restAdapter.create(ObdService.class);
-            // upload readings
-            for (ObdReading reading : readings) {
-                try {
-                    Response response = service.uploadReading(reading);
-                    assert response.getStatus() == 200;
-                } catch (RetrofitError re) {
-                    Log.e(TAG, re.toString());
+            try {
+                Log.d(TAG, "Uploading " + readings.length + " readings..");
+                // instantiate reading service client
+                final String endpoint = prefs.getString(ConfigActivity.UPLOAD_URL_KEY, "");
+                RestAdapter restAdapter = new RestAdapter.Builder()
+                        .setEndpoint(endpoint)
+                        .build();
+                ObdService service = restAdapter.create(ObdService.class);
+                // upload readings
+                for (ObdReading reading : readings) {
+                    try {
+                        Response response = service.uploadReading(reading);
+                        assert response.getStatus() == 200;
+                    } catch (RetrofitError re) {
+                        Log.e(TAG, re.toString());
+                    }
                 }
+                Log.d(TAG, "Done");
+                return null;
             }
-            Log.d(TAG, "Done");
-            return null;
+            catch (Exception ex){
+                return null;
+            }
         }
 
     }
@@ -1189,6 +1196,7 @@ public class ObdReaderFragment extends Fragment
                 RestCommunication con = new RestCommunication();
                 response = con.callMethodSynchronization(sa.syncData());
                 if (response == 1){
+
                     return getString(R.string.sincronized_data);
                 }else{
                     return getString(R.string.no_data);
@@ -1201,7 +1209,12 @@ public class ObdReaderFragment extends Fragment
 
         @Override
         protected void onPostExecute(final String success) {
-            Toast.makeText(getActivity(), success,Toast.LENGTH_LONG).show();
+            try {
+                Toast.makeText(getActivity(), success,Toast.LENGTH_LONG).show();
+            }
+            catch (Exception e) {
+                Toast.makeText(getActivity(), R.string.error_bad_communication,Toast.LENGTH_LONG).show();
+            }
         }
     }
 }
