@@ -4,6 +4,11 @@
         <item>C0300</item>
         <item>C0301</item>
         <item>C0302</item>
+        <item>P3030</item>
+        <item>P3560</item>
+        <item>C0550</item>
+        <item>C1000</item>
+        <item>U3430</item>
         <item>P0001</item>
         <item>P0002</item>
         <item>P0003</item>
@@ -7945,6 +7950,12 @@
         <item>Generic</item>
         <item>Generic</item>
         <item>Generic</item>
+        <item>Generic</item>
+        <item>Generic</item>
+        <item>Generic</item>
+        <item>Generic</item>
+        <item>Generic</item>
+        <item>Generic</item>
         <item>Nissan</item>
         <item>Generic</item>
         <item>Generic</item>
@@ -15852,6 +15863,12 @@
         <item>Tire sensor fault</item>
         <item>BBV Sensor Circuit Low Voltage</item>
         <item>BBV Sensor Circuit Low Voltage</item>
+        <item>Battery voltage detective line snapped</item>
+        <item>BBV Sensor Circuit Low Voltage</item>
+        <item>ECU malfunction</item>
+        <item>Traction System Control Module</item>
+        <item>Diminished fuel efficiency</item>
+        <item>Fuel Volume Regulator Control Circuit Open</item>
         <item>Fuel Volume Regulator Control Circuit/Open</item>
         <item>Fuel Volume Regulator Control Circuit Range/Performance</item>
         <item>Fuel Volume Regulator Control Circuit Low</item>

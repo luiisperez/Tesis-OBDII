@@ -4,6 +4,11 @@
         <item>C0300</item>
         <item>C0301</item>
         <item>C0302</item>
+        <item>P3030</item>
+        <item>P3560</item>
+        <item>C0550</item>
+        <item>C1000</item>
+        <item>U3430</item>
         <item>P0001</item>
         <item>P0002</item>
         <item>P0003</item>
@@ -7945,6 +7950,12 @@
         <item>Generic</item>
         <item>Generic</item>
         <item>Generic</item>
+        <item>Generic</item>
+        <item>Generic</item>
+        <item>Generic</item>
+        <item>Generic</item>
+        <item>Generic</item>
+        <item>Generic</item>
         <item>Nissan</item>
         <item>Generic</item>
         <item>Generic</item>
@@ -15852,6 +15863,12 @@
         <item>Falla en el sensor de los neumáticos</item>
         <item>Bajo voltaje en el circuito del sensor BBV</item>
         <item>Bajo voltaje en el circuito del sensor BBV</item>
+        <item>Línea detective de voltaje de batería ajustada </item>
+        <item>Baja tensión del circuito del sensor BBV </item>
+        <item>Mal funcionamiento de la ECU </item>
+        <item>Módulo de control del sistema de tracción </item>
+        <item>Disminución de la eficiencia del combustible </item>
+        <item>Circuito de control del regulador del volumen de combustible abierto </item>
         <item>Circuito de control del regulador de volumen de combustible / abierto.</item>
         <item>Rango / rendimiento del circuito de control del regulador de volumen de combustible.</item>
         <item>Circuito de control del regulador de volumen de combustible bajo.</item>
