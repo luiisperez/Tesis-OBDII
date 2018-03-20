@@ -323,36 +323,40 @@ public class ObdReaderFragment extends Fragment
     // Actualizar Estado
     @Override
     public void stateUpdate(final ObdCommandJob job) {
-        final String cmdName = job.getCommand().getName();
-        String cmdResult = "";
-        final String cmdID = LookUpCommand(cmdName);
+        try {
+            final String cmdName = job.getCommand().getName();
+            String cmdResult = "";
+            final String cmdID = LookUpCommand(cmdName);
 
-        if (job.getState().equals(ObdCommandJob.ObdCommandJobState.EXECUTION_ERROR)) {
-            cmdResult = job.getCommand().getResult();
-            if (cmdResult != null && isServiceBound) {
-                obdStatusTextView.setText(cmdResult.toLowerCase());
+            if (job.getState().equals(ObdCommandJob.ObdCommandJobState.EXECUTION_ERROR)) {
+                cmdResult = job.getCommand().getResult();
+                if (cmdResult != null && isServiceBound) {
+                    obdStatusTextView.setText(cmdResult.toLowerCase());
+                }
+            } else if (job.getState().equals(ObdCommandJob.ObdCommandJobState.BROKEN_PIPE)) {
+                if (isServiceBound)
+                    stopLiveData();
+            } else if (job.getState().equals(ObdCommandJob.ObdCommandJobState.NOT_SUPPORTED)) {
+                cmdResult = getString(R.string.status_obd_no_support);
+            } else {
+                cmdResult = job.getCommand().getFormattedResult();
+                if (isServiceBound)
+                    obdStatusTextView.setText(getString(R.string.status_obd_data));
             }
-        } else if (job.getState().equals(ObdCommandJob.ObdCommandJobState.BROKEN_PIPE)) {
-            if (isServiceBound)
-                stopLiveData();
-        } else if (job.getState().equals(ObdCommandJob.ObdCommandJobState.NOT_SUPPORTED)) {
-            cmdResult = getString(R.string.status_obd_no_support);
-        } else {
-            cmdResult = job.getCommand().getFormattedResult();
-            if (isServiceBound)
-                obdStatusTextView.setText(getString(R.string.status_obd_data));
+            // si ya existe el TV, lo actualiza
+            if (vv.findViewWithTag(cmdID) != null) {
+                TextView existingTV = (TextView) vv.findViewWithTag(cmdID);
+                existingTV.setText(cmdResult);
+            }
+            //si no existe el TV, lo crea
+            else addTableRow(cmdID, cmdName, cmdResult);
+            commandResult.put(cmdID, cmdResult);
+            //si ya tengo todos los valores, los almaceno
+            if (commandResult.size() == 30)
+                updateBdStatistic(cmdID, cmdResult);
+        }catch (Exception ex){
+
         }
-        // si ya existe el TV, lo actualiza
-        if (vv.findViewWithTag(cmdID) != null) {
-            TextView existingTV = (TextView) vv.findViewWithTag(cmdID);
-            existingTV.setText(cmdResult);
-        }
-        //si no existe el TV, lo crea
-        else addTableRow(cmdID, cmdName, cmdResult);
-        commandResult.put(cmdID, cmdResult);
-        //si ya tengo todos los valores, los almaceno
-        if (commandResult.size() == 30)
-            updateBdStatistic(cmdID, cmdResult);
     }
 
     public float stringToFloat(String string) {
@@ -999,42 +1003,44 @@ public class ObdReaderFragment extends Fragment
 
     //Agrega una fila a la lista de parámetros VER
     private void addTableRow(String id, String key, String val) {
+        try{
+            if (!key.startsWith("Vehicle Identification") &&
+                    !key.startsWith("Echo Off") &&
+                    !key.startsWith("Line Feed") &&
+                    !key.startsWith("Timeout") &&
+                    !key.startsWith("Select Protocol AUTO") &&
+                    !key.startsWith("Fuel Type") &&
+                    !key.startsWith("Fuel Consumption Rate") &&
+                    !key.startsWith("Engine oil temperature") &&
+                    !key.startsWith("Diagnostic Trouble Codes") &&
+                    !val.startsWith("NA")) {
+                TableRow tr = new TableRow(getActivity());
+                // Recordar que eran Wrap_Content
+                ViewGroup.MarginLayoutParams params = new ViewGroup.MarginLayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+                params.setMargins(TABLE_ROW_MARGIN, TABLE_ROW_MARGIN, TABLE_ROW_MARGIN,
+                        TABLE_ROW_MARGIN);
+                tr.setLayoutParams(params);
 
-        if (!key.startsWith("Vehicle Identification") &&
-                !key.startsWith("Echo Off") &&
-                !key.startsWith("Line Feed") &&
-                !key.startsWith("Timeout") &&
-                !key.startsWith("Select Protocol AUTO") &&
-                !key.startsWith("Fuel Type") &&
-                !key.startsWith("Fuel Consumption Rate") &&
-                !key.startsWith("Engine oil temperature") &&
-                !key.startsWith("Diagnostic Trouble Codes") &&
-                !val.startsWith("NA"))
-        {
-            TableRow tr = new TableRow(getActivity());
-            // Recordar que eran Wrap_Content
-            ViewGroup.MarginLayoutParams params = new ViewGroup.MarginLayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-            params.setMargins(TABLE_ROW_MARGIN, TABLE_ROW_MARGIN, TABLE_ROW_MARGIN,
-                    TABLE_ROW_MARGIN);
-            tr.setLayoutParams(params);
+                TextView name = new TextView(getActivity());
+                name.setGravity(Gravity.LEFT);
+                name.setText(key + ": ");
+                name.setTextSize(15);
+                name.setTextAppearance(getActivity(), R.style.TextAppearance_FontPath);
 
-            TextView name = new TextView(getActivity());
-            name.setGravity(Gravity.LEFT);
-            name.setText(key + ": ");
-            name.setTextSize(15);
-            name.setTextAppearance(getActivity(),R.style.TextAppearance_FontPath);
+                //Show
+                TextView value = new TextView(getActivity());
+                value.setGravity(Gravity.LEFT);
+                value.setText(val); // valor
+                value.setTag(id); //nombre
+                value.setTextSize(15);
 
-            //Show
-            TextView value = new TextView(getActivity());
-            value.setGravity(Gravity.LEFT);
-            value.setText(val); // valor
-            value.setTag(id); //nombre
-            value.setTextSize(15);
+                tr.addView(name);
+                tr.addView(value);
+                tr.setPadding(20, 5, 1, 5);
+                tl.addView(tr, params);
+            }
+        }catch (Exception ex){
 
-            tr.addView(name);
-            tr.addView(value);
-            tr.setPadding(20,5,1,5);
-            tl.addView(tr, params);
         }
     }
 
@@ -1067,16 +1073,20 @@ public class ObdReaderFragment extends Fragment
     }
 
     private void doUnbindService() {
-        if (isServiceBound) {
-            if (service.isRunning()) {
-                service.stopService();
-                if (preRequisites)
-                    btStatusTextView.setText(getString(R.string.status_bluetooth_ok));
+        try {
+            if (isServiceBound) {
+                if (service.isRunning()) {
+                    service.stopService();
+                    if (preRequisites)
+                        btStatusTextView.setText(getString(R.string.status_bluetooth_ok));
+                }
+                Log.d(TAG, "Unbinding OBD service..");
+                getActivity().unbindService(serviceConn);
+                isServiceBound = false;
+                obdStatusTextView.setText(getString(R.string.status_obd_disconnected));
             }
-            Log.d(TAG, "Unbinding OBD service..");
-            getActivity().unbindService(serviceConn);
-            isServiceBound = false;
-            obdStatusTextView.setText(getString(R.string.status_obd_disconnected));
+        }catch (Exception ex){
+            throw ex;
         }
     }
 
