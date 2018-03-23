@@ -215,7 +215,7 @@ namespace HeyDriverWebsite.Model
                     NpgsqlConnection conn = new NpgsqlConnection(connstring);
                     conn.Open();
                     NpgsqlDataAdapter da = new NpgsqlDataAdapter();
-                    string sql = "SELECT failurebrandname, failurebrandmodel, failuredescription FROM FAILURE WHERE FAILURECARSERIAL = '" + vin + "';";
+                    string sql = "SELECT DISTINCT (failurebrandname, failurebrandmodel, failuredescription) FROM FAILURE WHERE FAILURECARSERIAL = '" + vin + "';";
                     da = new NpgsqlDataAdapter(sql, conn);
 
                     DataSet ds = new DataSet();
@@ -225,9 +225,14 @@ namespace HeyDriverWebsite.Model
 
                     for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
                     {
-                        String brand = ds.Tables[0].Rows[i][0].ToString();
-                        String model = ds.Tables[0].Rows[i][1].ToString();
-                        String failure = ds.Tables[0].Rows[i][2].ToString();
+                        String line = ds.Tables[0].Rows[i][0].ToString();
+                        line = line.Replace("\"", "");
+                        line = line.Replace("(", "");
+                        line = line.Replace(")", "");
+                        String[] splitted = line.Split(',');
+                        String brand = splitted[0];
+                        String model = splitted[1];
+                        String failure = splitted[2];
 
                         failure = Encoding.UTF8.GetString(Encoding.Default.GetBytes(failure));
                         results = results + brand + "," + model + "," + failure + "|";
