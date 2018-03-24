@@ -459,11 +459,15 @@ public class CarRegistrationFragment extends Fragment implements AdapterView.OnI
                     toast.show();
                 }
             } else {
-                Context context = getActivity();
-                CharSequence text = getString(R.string.error_bad_communication);
-                int duration = Toast.LENGTH_SHORT;
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
+                try {
+                    Context context = getActivity();
+                    CharSequence text = getString(R.string.error_bad_communication);
+                    int duration = Toast.LENGTH_SHORT;
+                    Toast toast = Toast.makeText(context, text, duration);
+                    toast.show();
+                }catch (Exception ex){
+
+                }
             }
         }
 

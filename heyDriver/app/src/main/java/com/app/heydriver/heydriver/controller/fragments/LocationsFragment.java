@@ -232,14 +232,9 @@ public class LocationsFragment extends Fragment implements OnMapReadyCallback {
             try {
                 RestCommunication con = new RestCommunication();
                 response = con.callMethodLocationStudies(info.getCarInformation(getActivity()).get_serial());
-                if (response != null) {
-                    _response = response;
-
-                    return true;
-                } else return false;
+                return true;
             }
             catch (Exception e) {
-                response = null;
                 return false;
             }
         }
@@ -271,15 +266,16 @@ public class LocationsFragment extends Fragment implements OnMapReadyCallback {
                     int duration = Toast.LENGTH_SHORT;
                     Toast toast = Toast.makeText(getActivity(), text, duration);
                     toast.show();
+
+                }else{
+                    Toast toast = Toast.makeText(getActivity(), R.string.no_data, Toast.LENGTH_LONG);
+                    toast.show();
                 }
             }
             else
             {
-                if (response==null)
-                {
-                    Toast toast = Toast.makeText(getActivity(), R.string.no_data, Toast.LENGTH_LONG);
-                    toast.show();
-                }
+                Toast toast = Toast.makeText(getActivity(), R.string.error_bad_communication, Toast.LENGTH_LONG);
+                toast.show();
             }
             if (dialog.isShowing()) {
                 dialog.dismiss();

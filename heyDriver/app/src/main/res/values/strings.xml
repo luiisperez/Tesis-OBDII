@@ -208,8 +208,8 @@
     <string name="menu_synchronize">Synchronize</string>
     <string name="menu_predictions">Predictive Reports</string>
     <string name="no_trouble_codes">No errors detected</string>
-    <string name="menu_ubication">Damaging roads</string>
-    <string name="title_activity_locations">Map</string>
+    <string name="menu_ubication">Harmful roads</string>
+    <string name="title_activity_locations">Harmful Roads</string>
     <string name="status">Status</string>
     <string name="you_selected">You have selected :</string>
     <string name="select_ubication">Select a location</string>
