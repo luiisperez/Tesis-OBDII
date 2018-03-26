@@ -70,111 +70,15 @@ public class ConfigActivity extends PreferenceActivity implements OnPreferenceCh
      * @return
      */
     public static int getObdUpdatePeriod(SharedPreferences prefs) {
-        String periodString = prefs.
-                getString(ConfigActivity.OBD_UPDATE_PERIOD_KEY, "4"); // 4 as in seconds
-        int period = 4000; // by default 4000ms
-
-        try {
-            period = (int) (Double.parseDouble(periodString) * 1000);
-        } catch (Exception e) {
-        }
-
-        if (period <= 0) {
-            period = 4000;
-        }
-
-        return period;
+        return 4000;
     }
 
     /**
-     * @param prefs
-     * @return
-     */
-    public static double getVolumetricEfficieny(SharedPreferences prefs) {
-        String veString = prefs.getString(ConfigActivity.VOLUMETRIC_EFFICIENCY_KEY, ".85");
-        double ve = 0.85;
-        try {
-            ve = Double.parseDouble(veString);
-        } catch (Exception e) {
-        }
-        return ve;
-    }
-
-    /**
-     * @param prefs
-     * @return
-     */
-    public static double getEngineDisplacement(SharedPreferences prefs) {
-        String edString = prefs.getString(ConfigActivity.ENGINE_DISPLACEMENT_KEY, "1.6");
-        double ed = 1.6;
-        try {
-            ed = Double.parseDouble(edString);
-        } catch (Exception e) {
-        }
-        return ed;
-    }
-
-    /**
-     * @param prefs
-     * @return
-     */
-    public static ArrayList<ObdCommand> getObdCommands(SharedPreferences prefs) {
-        ArrayList<ObdCommand> cmds = ObdConfig.getCommands();
-        ArrayList<ObdCommand> ucmds = new ArrayList<>();
-        for (int i = 0; i < cmds.size(); i++) {
-            ObdCommand cmd = cmds.get(i);
-            boolean selected = prefs.getBoolean(cmd.getName(), true);
-            if (selected)
-                ucmds.add(cmd);
-        }
-        return ucmds;
-    }
-
-    /**
-     * @param prefs
-     * @return
-     */
-    public static double getMaxFuelEconomy(SharedPreferences prefs) {
-        String maxStr = prefs.getString(ConfigActivity.MAX_FUEL_ECON_KEY, "70");
-        double max = 70;
-        try {
-            max = Double.parseDouble(maxStr);
-        } catch (Exception e) {
-        }
-        return max;
-    }
-
-    /**
-     * @param prefs
-     * @return
-     */
-    public static String[] getReaderConfigCommands(SharedPreferences prefs) {
-        String cmdsStr = prefs.getString(CONFIG_READER_KEY, "atsp0\natz");
-        String[] cmds = cmdsStr.split("\n");
-        return cmds;
-    }
-
-    /**
-     * Minimum time between location updates, in milliseconds
-     *
      * @param prefs
      * @return
      */
     public static int getGpsUpdatePeriod(SharedPreferences prefs) {
-        String periodString = prefs
-                .getString(ConfigActivity.GPS_UPDATE_PERIOD_KEY, "1"); // 1 as in seconds
-        int period = 1000; // by default 1000ms
-
-        try {
-            period = (int) (Double.parseDouble(periodString) * 1000);
-        } catch (Exception e) {
-        }
-
-        if (period <= 0) {
-            period = 1000;
-        }
-
-        return period;
+        return 1000;
     }
 
     /**
@@ -222,42 +126,42 @@ public class ConfigActivity extends PreferenceActivity implements OnPreferenceCh
             ArrayList<CharSequence> vals = new ArrayList<>();
             ListPreference listBtDevices = (ListPreference) getPreferenceScreen()
                     .findPreference(BLUETOOTH_LIST_KEY);
-            ArrayList<CharSequence> protocolStrings = new ArrayList<>();
-            ListPreference listProtocols = (ListPreference) getPreferenceScreen()
-                    .findPreference(PROTOCOLS_LIST_KEY);
-            String[] prefKeys = new String[]{ENGINE_DISPLACEMENT_KEY,
-                    VOLUMETRIC_EFFICIENCY_KEY, OBD_UPDATE_PERIOD_KEY, MAX_FUEL_ECON_KEY};
-            for (String prefKey : prefKeys) {
-                EditTextPreference txtPref = (EditTextPreference) getPreferenceScreen()
-                        .findPreference(prefKey);
-                txtPref.setOnPreferenceChangeListener(this);
-            }
+//            ArrayList<CharSequence> protocolStrings = new ArrayList<>();
+//            ListPreference listProtocols = (ListPreference) getPreferenceScreen()
+//                    .findPreference(PROTOCOLS_LIST_KEY);
+//            String[] prefKeys = new String[]{ENGINE_DISPLACEMENT_KEY,
+//                    VOLUMETRIC_EFFICIENCY_KEY, OBD_UPDATE_PERIOD_KEY, MAX_FUEL_ECON_KEY};
+//            for (String prefKey : prefKeys) {
+//                EditTextPreference txtPref = (EditTextPreference) getPreferenceScreen()
+//                        .findPreference(prefKey);
+//                txtPref.setOnPreferenceChangeListener(this);
+//            }
 
     /*
      * Available OBD commands
      *
      * TODO This should be read from preferences database
      */
-            ArrayList<ObdCommand> cmds = ObdConfig.getCommands();
-            PreferenceScreen cmdScr = (PreferenceScreen) getPreferenceScreen()
-                    .findPreference(COMMANDS_SCREEN_KEY);
-            for (ObdCommand cmd : cmds) {
-                CheckBoxPreference cpref = new CheckBoxPreference(this);
-                cpref.setTitle(cmd.getName());
-                cpref.setKey(cmd.getName());
-                cpref.setChecked(true);
-                cmdScr.addPreference(cpref);
-            }
+//            ArrayList<ObdCommand> cmds = ObdConfig.getCommands();
+//            PreferenceScreen cmdScr = (PreferenceScreen) getPreferenceScreen()
+//                    .findPreference(COMMANDS_SCREEN_KEY);
+//            for (ObdCommand cmd : cmds) {
+//                CheckBoxPreference cpref = new CheckBoxPreference(this);
+//                cpref.setTitle(cmd.getName());
+//                cpref.setKey(cmd.getName());
+//                cpref.setChecked(true);
+//                cmdScr.addPreference(cpref);
+//            }
 
     /*
      * Available OBD protocols
      *
      */
-            for (ObdProtocols protocol : ObdProtocols.values()) {
-                protocolStrings.add(protocol.name());
-            }
-            listProtocols.setEntries(protocolStrings.toArray(new CharSequence[0]));
-            listProtocols.setEntryValues(protocolStrings.toArray(new CharSequence[0]));
+//            for (ObdProtocols protocol : ObdProtocols.values()) {
+//                protocolStrings.add(protocol.name());
+//            }
+//            listProtocols.setEntries(protocolStrings.toArray(new CharSequence[0]));
+//            listProtocols.setEntryValues(protocolStrings.toArray(new CharSequence[0]));
 
     /*
      * Let's use this device Bluetooth adapter to select which paired OBD-II

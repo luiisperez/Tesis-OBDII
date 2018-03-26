@@ -110,21 +110,21 @@ public class DAOObdData extends DAO{
             cstmt.setString(1, serial);
             rs = cstmt.executeQuery();
             while(rs.next()){
-                              
-                ObdData dataReg = new ObdData(rs.getFloat("AIR_FUEL_RATIO"), 
-                                  rs.getFloat("TIMING_ADVANCE"),
-                                  rs.getFloat("ENGINE_RPM"), 
-                                  rs.getFloat("STFT2"),
-                                  rs.getFloat("STFT1"),
-                                  rs.getFloat("LTFT2"),
-                                  rs.getFloat("LTFT1"),
-                                  rs.getFloat("MAF"),
-                                  rs.getFloat("ENGINE_COOLANT_TEMP"),
-                                  rs.getFloat("ENGINE_LOAD"),
-                                  rs.getFloat("INTAKE_MANIFOLD_PRESSURE"),
-                                  rs.getFloat("AIR_INTAKE_TEMP"),
-                                  rs.getDouble("LAT"), // no son float
-                                  rs.getDouble("LON")); // no son float
+               
+                ObdData dataReg = new ObdData(rs.getFloat("STFT2"),
+                        rs.getFloat("ENGINE_LOAD"),
+                        rs.getFloat("TIMING_ADVANCE"),
+                        rs.getFloat("STFT1"),
+                        rs.getFloat("MAF"),
+                        rs.getFloat("ENGINE_RPM"),
+                        rs.getFloat("LTFT2"),
+                        rs.getFloat("INTAKE_MANIFOLD_PRESSURE"),
+                        rs.getFloat("ENGINE_COOLANT_TEMP"),
+                        rs.getFloat("AIR_FUEL_RATIO"), 
+                        rs.getFloat("LTFT1"),
+                        rs.getFloat("AIR_INTAKE_TEMP"),
+                        rs.getDouble("LAT"), // no son float
+                        rs.getDouble("LON")); // no son float
                 if(rs.getDouble("LAT")!=0 && rs.getDouble("LON")!=0)
                 obdDataList.add(dataReg);
             }
